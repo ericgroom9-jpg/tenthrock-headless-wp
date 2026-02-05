@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 import Logo from "@/components/shared/Logo";
 
 const logoWhite = "/images/logos/Green-White-Logo.png";
@@ -914,109 +915,8 @@ export default function ServiceTemplate({
         </section>
       </main>
 
-      {/* Footer */}
-      <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white py-20 border-t border-white/5">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="space-y-8"
-            >
-              <Logo variant="white" />
-              <p className="text-white/60 leading-relaxed max-w-xs">
-                Redefining commercial waste management with speed, transparency, and reliability across all 50 states.
-              </p>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                  <Linkedin className="w-5 h-5" />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                  <Twitter className="w-5 h-5" />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                  <Instagram className="w-5 h-5" />
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                  <Facebook className="w-5 h-5" />
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <h3 className="font-bold text-lg mb-6 text-white">Services</h3>
-              <ul className="space-y-2 text-white/60">
-                <li><Link href="/services/waste-removal" className="block py-2 hover:text-[#c5d520] transition-colors">Waste Removal</Link></li>
-                <li><Link href="/services/dumpster-rentals" className="block py-2 hover:text-[#c5d520] transition-colors">Dumpster Rentals</Link></li>
-                <li><Link href="/services/emergency-waste-removal" className="block py-2 hover:text-[#c5d520] transition-colors">Emergency Waste Removal</Link></li>
-                <li><Link href="/services/commercial-waste" className="block py-2 hover:text-[#c5d520] transition-colors">Commercial Waste Services</Link></li>
-              </ul>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
-              <ul className="space-y-2 text-white/60">
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] transition-colors">About Us</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] transition-colors">Careers</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] transition-colors">Success Stories</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] transition-colors">Contact</a></li>
-              </ul>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="space-y-6"
-            >
-              <h3 className="font-bold text-lg text-white">Stay Updated</h3>
-              <p className="text-white/60">
-                Get the latest industry insights and compliance updates.
-              </p>
-              <div className="flex gap-2">
-                <Input 
-                  placeholder="Enter your email" 
-                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6" 
-                />
-                <Button size="lg" className="bg-[#c5d520] text-[#042940] min-h-[52px] rounded-full">
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </div>
-              <div className="pt-4 border-t border-white/10 mt-6">
-                <p className="text-sm font-bold text-white mb-2">Need Immediate Help?</p>
-                <a href="tel:8885550123" className="text-xl font-bold text-[#c5d520] hover:underline">
-                  (888) 555-0123
-                </a>
-              </div>
-            </motion.div>
-          </div>
-          
-          <Separator className="bg-white/10 mb-8" />
-          
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
-            <p>© 2026 Tenth Rock Solutions. All rights reserved.</p>
-            <div className="flex gap-8 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      {/* Footer - Shared Component */}
+      <Footer />
     </div>
   );
 }

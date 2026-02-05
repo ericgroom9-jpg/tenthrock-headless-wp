@@ -4532,11 +4532,6 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-gray-50:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-}
-
 .hover\:bg-muted:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--muted) / var(--tw-bg-opacity, 1));
@@ -4774,11 +4769,6 @@ h1, h3, h4, h5, h6, h2 {
   --tw-ring-offset-width: 2px;
 }
 
-.focus-visible\:bg-gray-50:focus-visible {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-}
-
 .focus-visible\:text-\[\#c5d520\]:focus-visible {
   --tw-text-opacity: 1;
   color: rgb(197 213 32 / var(--tw-text-opacity, 1));
@@ -4871,11 +4861,6 @@ h1, h3, h4, h5, h6, h2 {
 .active\:bg-gray-100:active {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-}
-
-.active\:bg-gray-50:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
 
 .active\:bg-primary:active {
