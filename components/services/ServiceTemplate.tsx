@@ -159,7 +159,7 @@ export default function ServiceTemplate({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px]">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px] whitespace-pre-line">
                   {serviceName}
                 </h1>
                 <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">

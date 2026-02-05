@@ -2512,6 +2512,10 @@ h1, h3, h4, h5, h6, h2 {
   white-space: nowrap;
 }
 
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
 .break-words {
   overflow-wrap: break-word;
 }
