@@ -15,9 +15,6 @@ const serviceLinks = [
   { label: "Waste Removal", href: "/services/waste-removal" },
   { label: "Dumpster Rentals", href: "/services/dumpster-rentals" },
   { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
-  { label: "Store Decommissioning", href: "/services/commercial-waste" },
-  { label: "Event & Stadium Services", href: "/services/commercial-waste" },
-  { label: "Centralized Programs", href: "/services/commercial-waste" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
