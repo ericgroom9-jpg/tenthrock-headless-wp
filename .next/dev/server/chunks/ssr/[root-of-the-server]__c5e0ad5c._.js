@@ -105,10 +105,10 @@ const faqs = [
 function EducationalPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$industries$2f$IndustryTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         industryName: "Educational Institutions",
-        heroImage: "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg",
+        heroImage: "/images/stock/industry-educational.jpg",
         heroDescription: "Comprehensive waste management solutions designed for the unique needs of universities, colleges, and K-12 schools. From daily operations to major campus events.",
         aboutTitle: "Waste Solutions Built for Campus Life",
-        aboutImage: "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg",
+        aboutImage: "/images/stock/industry-educational.jpg",
         bulletPoints: bulletPoints,
         faqs: faqs
     }, void 0, false, {
