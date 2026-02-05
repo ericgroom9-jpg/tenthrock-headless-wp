@@ -5,7 +5,7 @@ const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jp
 export default function EmergencyWasteRemovalPage() {
   return (
     <ServiceTemplate
-      serviceName="Emergency & Overflow Waste Response"
+      serviceName="Emergency & Overflow Response"
       serviceDescription="24/7 rapid response for unexpected waste emergencies and overflow situations. Our teams are deployed within hours, not days."
       heroImage={imgServiceEmergencyOverflow}
     />
