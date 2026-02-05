@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Phone, Check, ArrowUpRight, ArrowDown, ChevronDown, MapPin, Clock, Mail } from "lucide-react";
+import { Phone, Check, ArrowUpRight, ArrowDown, ChevronDown } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
@@ -13,11 +13,10 @@ import CaseStudySection from "@/components/shared/CaseStudySection";
 import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
+import ProcessSection from "@/components/shared/ProcessSection";
 
 const imgPlaceholder = "/images/stock/service-centralized-program.jpg";
 const imgInfoBlock = "/images/stock/service-dumpster-rental.jpg";
-const imgHowItWorks = "/images/stock/service-emergency-overflow.jpg";
-
 const aboutAccordions = [
   {
     title: "About Location",
@@ -37,28 +36,6 @@ const aboutAccordions = [
   },
 ];
 
-const howItWorksSteps = [
-  {
-    num: "1",
-    title: "Get In Touch",
-    desc: "Call us or fill out our form. We'll assess your needs and provide a same-day quote tailored to your location.",
-  },
-  {
-    num: "2",
-    title: "We Dispatch Your Team",
-    desc: "Local crews are deployed within hours, not days, ensuring your project stays on schedule and your site stays clean.",
-  },
-  {
-    num: "3",
-    title: "We Execute The Job",
-    desc: "Professional removal, haulage, and site clearing with full safety compliance and real-time status updates.",
-  },
-  {
-    num: "4",
-    title: "Step Title",
-    desc: "Full documentation provided. We follow up to confirm satisfaction and schedule recurring service if needed.",
-  },
-];
 
 function formatSlug(slug: string): string {
   return slug
@@ -428,65 +405,8 @@ export default function LocationTemplatePage() {
       {/* Commercial Waste Services (same as homepage) */}
       <CommercialWasteServices />
 
-      {/* How It Works */}
-      <section className="py-16 md:py-24 bg-white overflow-hidden" aria-labelledby="how-it-works-heading">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="rounded-[5px] overflow-hidden h-[350px] md:h-[480px] lg:h-[640px] order-2 lg:order-1"
-            >
-              <img
-                src={imgHowItWorks}
-                alt="Our process in action"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-1 lg:order-2"
-            >
-              <h2
-                id="how-it-works-heading"
-                className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-10 lg:mb-16 leading-tight"
-              >
-                How It Works
-              </h2>
-
-              <div className="space-y-8 lg:space-y-10">
-                {howItWorksSteps.map((step, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className="flex gap-6 lg:gap-8"
-                    data-testid={`step-${i}`}
-                  >
-                    <div className="text-3xl lg:text-4xl font-bold text-primary/20 shrink-0 w-8 lg:w-10">
-                      {step.num}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl lg:text-2xl font-bold text-primary mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-primary/60 leading-relaxed">{step.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* How It Works (same as homepage) */}
+      <ProcessSection />
 
       {/* CTA Banner (same as homepage) */}
       <CtaBannerSection />

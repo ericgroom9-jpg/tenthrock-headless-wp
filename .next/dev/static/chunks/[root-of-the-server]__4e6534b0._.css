@@ -3795,10 +3795,6 @@ h1, h3, h4, h5, h6, h2 {
   color: hsl(var(--primary-foreground) / var(--tw-text-opacity, 1));
 }
 
-.text-primary\/20 {
-  color: hsl(var(--primary) / .2);
-}
-
 .text-primary\/40 {
   color: hsl(var(--primary) / .4);
 }
@@ -6804,10 +6800,6 @@ h1, h3, h4, h5, h6, h2 {
     margin-top: -8rem;
   }
 
-  .lg\:mb-16 {
-    margin-bottom: 4rem;
-  }
-
   .lg\:aspect-auto {
     aspect-ratio: auto;
   }
@@ -6838,10 +6830,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:w-1\/2 {
     width: 50%;
-  }
-
-  .lg\:w-10 {
-    width: 2.5rem;
   }
 
   .lg\:w-\[360px\] {
@@ -6914,12 +6902,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:gap-8 {
     gap: 2rem;
-  }
-
-  .lg\:space-y-10 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
   }
 
   .lg\:space-y-8 > :not([hidden]) ~ :not([hidden]) {
@@ -7011,16 +6993,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:pt-8 {
     padding-top: 2rem;
-  }
-
-  .lg\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .lg\:text-5xl {
