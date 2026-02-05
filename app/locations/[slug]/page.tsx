@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Phone, Check, ArrowUpRight, ArrowDown, ChevronDown } from "lucide-react";
+import { Phone, Check, ArrowUpRight, ArrowDown } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
@@ -199,9 +199,12 @@ export default function LocationTemplatePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-[#F9F9F6] rounded-[5px] p-6 sm:p-8 lg:p-10"
+              className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8"
             >
-              <h3 className="text-2xl font-bold text-primary mb-6">Request a Quote</h3>
+              <div className="mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
+                <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
+              </div>
               <form
                 className="space-y-5"
                 onSubmit={(e) => {
@@ -211,7 +214,7 @@ export default function LocationTemplatePage() {
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-primary mb-2">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-[#042940] mb-2">
                       First name
                     </label>
                     <input
@@ -219,13 +222,12 @@ export default function LocationTemplatePage() {
                       id="firstName"
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
-                      placeholder="First name"
-                      className="w-full px-4 py-3 border border-primary/20 rounded-[5px] bg-white text-primary placeholder:text-primary/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent transition-all"
+                      className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
                       data-testid="input-firstName"
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-primary mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-[#042940] mb-2">
                       Last name
                     </label>
                     <input
@@ -233,8 +235,7 @@ export default function LocationTemplatePage() {
                       id="lastName"
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
-                      placeholder="Last name"
-                      className="w-full px-4 py-3 border border-primary/20 rounded-[5px] bg-white text-primary placeholder:text-primary/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent transition-all"
+                      className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
                       data-testid="input-lastName"
                     />
                   </div>
@@ -242,7 +243,7 @@ export default function LocationTemplatePage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#042940] mb-2">
                       Email
                     </label>
                     <input
@@ -250,13 +251,12 @@ export default function LocationTemplatePage() {
                       id="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
-                      placeholder="you@company.com"
-                      className="w-full px-4 py-3 border border-primary/20 rounded-[5px] bg-white text-primary placeholder:text-primary/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent transition-all"
+                      className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
                       data-testid="input-email"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-[#042940] mb-2">
                       Phone number
                     </label>
                     <input
@@ -264,8 +264,7 @@ export default function LocationTemplatePage() {
                       id="phone"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
-                      placeholder="(555) 000-0000"
-                      className="w-full px-4 py-3 border border-primary/20 rounded-[5px] bg-white text-primary placeholder:text-primary/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent transition-all"
+                      className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
                       data-testid="input-phone"
                     />
                   </div>
@@ -273,7 +272,7 @@ export default function LocationTemplatePage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-primary mb-2">
+                    <label htmlFor="company" className="block text-sm font-medium text-[#042940] mb-2">
                       Company
                     </label>
                     <input
@@ -281,71 +280,67 @@ export default function LocationTemplatePage() {
                       id="company"
                       value={formData.company}
                       onChange={(e) => handleInputChange("company", e.target.value)}
-                      placeholder="Your company"
-                      className="w-full px-4 py-3 border border-primary/20 rounded-[5px] bg-white text-primary placeholder:text-primary/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent transition-all"
+                      className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
                       data-testid="input-company"
                     />
                   </div>
                   <div>
-                    <label htmlFor="interest" className="block text-sm font-medium text-primary mb-2">
+                    <label htmlFor="interest" className="block text-sm font-medium text-[#042940] mb-2">
                       I'm interested in help with:
                     </label>
-                    <div className="relative">
-                      <select
-                        id="interest"
-                        value={formData.interest}
-                        onChange={(e) => handleInputChange("interest", e.target.value)}
-                        className="w-full px-4 py-3 border border-primary/20 rounded-[5px] bg-white text-primary appearance-none focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent transition-all"
-                        data-testid="select-interest"
-                      >
-                        <option value="" disabled>
-                          Select one...
-                        </option>
-                        <option value="emergency">Emergency Waste Removal</option>
-                        <option value="dumpster">Dumpster Rental</option>
-                        <option value="decommission">Store Decommissioning</option>
-                        <option value="event">Event Waste Logistics</option>
-                        <option value="centralized">Centralized Program</option>
-                        <option value="maintenance">Compactor Maintenance</option>
-                        <option value="other">Other</option>
-                      </select>
-                      <ChevronDown className="w-5 h-5 text-primary/40 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    </div>
+                    <select
+                      id="interest"
+                      value={formData.interest}
+                      onChange={(e) => handleInputChange("interest", e.target.value)}
+                      className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
+                      data-testid="select-interest"
+                    >
+                      <option value="" disabled>Select one...</option>
+                      <option value="emergency">Emergency Waste Removal</option>
+                      <option value="dumpster">Dumpster Rental</option>
+                      <option value="decommission">Store Decommissioning</option>
+                      <option value="event">Event Waste Logistics</option>
+                      <option value="centralized">Centralized Program</option>
+                      <option value="maintenance">Compactor Maintenance</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-[#042940] mb-2">
                     Message
                   </label>
                   <textarea
                     id="message"
-                    rows={5}
+                    rows={4}
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
                     placeholder="Type your message..."
-                    className="w-full px-4 py-3 border border-primary/20 rounded-[5px] bg-white text-primary placeholder:text-primary/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent transition-all resize-none"
+                    className="w-full px-4 py-3 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none resize-none transition-colors"
                     data-testid="textarea-message"
                   />
                 </div>
 
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-[#042940]/10">
                   <label className="flex items-center gap-3 cursor-pointer" data-testid="checkbox-consent">
                     <input
                       type="checkbox"
                       checked={formData.consent}
                       onChange={(e) => handleInputChange("consent", e.target.checked)}
-                      className="w-5 h-5 border-primary/20 rounded accent-[#c5d520] focus:ring-[#c5d520]"
+                      className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]"
                     />
-                    <span className="text-sm text-primary/70">I agree to the terms and conditions</span>
+                    <span className="text-sm text-[#042940]/80">
+                      I accept the <a href="/terms" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors">Terms</a>
+                    </span>
                   </label>
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full sm:w-auto bg-[#042940] text-white rounded-[5px] font-bold min-h-[48px]"
+                    className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] hover:shadow-[0_0_30px_rgba(197,213,32,0.5)] transition-all"
                     data-testid="button-form-submit"
                   >
-                    Submit
+                    Submit Request
                   </Button>
                 </div>
               </form>
