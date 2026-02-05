@@ -50,6 +50,9 @@ import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/shared/Navbar";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import Footer from "@/components/shared/Footer";
+import ReasonsSection from "@/components/shared/ReasonsSection";
+import StatsSection from "@/components/shared/StatsSection";
+import FaqSection from "@/components/shared/FaqSection";
 
 // Assets - Main Logos
 const logoMain = "/images/logos/TenthRock-Logo.png";
@@ -1315,10 +1318,10 @@ export default function Home() {
       <CtaBanner />
       <Process />
       <CaseStudySection />
-      <Reasons />
-      <Stats />
+      <ReasonsSection />
+      <StatsSection />
       <Testimonials />
-      <Faq />
+      <FaqSection />
       <Location />
       <FinalCta />
       </main>

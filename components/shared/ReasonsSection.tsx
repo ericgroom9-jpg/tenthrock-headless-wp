@@ -1,0 +1,68 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Headset, CheckCircle2, MapPin, Truck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const features = [
+  { title: "Dedicated Point of Contact", icon: <Headset className="w-6 h-6" />, desc: "One person to handle everything. No call centers, no runarounds, just answers." },
+  { title: "Job Completion Proof", icon: <CheckCircle2 className="w-6 h-6" />, desc: "Visual confirmation for every job we complete, available instantly." },
+  { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "We operate in every zip code across the country with vetted local partners." },
+  { title: "Price Savings Just for You", icon: <Truck className="w-6 h-6" />, desc: "Volume pricing passed directly to your bottom line, typically saving 15-20%." }
+];
+
+export default function ReasonsSection() {
+  return (
+    <section className="py-16 md:py-24 bg-[#F8F8F8]">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+          {/* Left Sticky Content */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.6 }}
+             >
+               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
+                  <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                  Benefits
+               </div>
+               <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
+                 More Reasons You'll Love Us
+               </h2>
+               <p className="text-lg text-primary/60 mb-8 leading-relaxed">
+                 We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.
+               </p>
+               <Button size="lg" className="w-full sm:w-auto bg-secondary text-primary hover:bg-secondary/90 min-h-[52px] whitespace-nowrap rounded-full">
+                  Request a Service
+               </Button>
+             </motion.div>
+          </div>
+
+          {/* Right Grid Content */}
+          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+            {features.map((item, i) => (
+              <motion.div 
+                key={i} 
+                className="group bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-transparent hover:border-secondary/20 active:border-secondary/20 hover:shadow-xl active:shadow-xl transition-all duration-300"
+                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-14 h-14 rounded-[5px] bg-[#F9F9F6] group-hover:bg-secondary group-hover:text-primary transition-colors duration-300 flex items-center justify-center text-primary mb-6">
+                  {item.icon}
+                </div>
+                
+                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
+                <p className="text-primary/60 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

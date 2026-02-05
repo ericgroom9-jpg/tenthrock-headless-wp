@@ -7,20 +7,15 @@ import {
   ArrowRight, 
   Phone, 
   Clock, 
-  MapPin, 
-  ChevronDown,
-  Plus,
-  Minus,
-  Mail,
-  Users,
-  FileCheck,
-  Globe,
-  PiggyBank
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
+import ReasonsSection from "@/components/shared/ReasonsSection";
+import StatsSection from "@/components/shared/StatsSection";
+import FaqSection from "@/components/shared/FaqSection";
 
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
 const imgHowItWorks = "/images/stock/service-emergency-overflow.jpg";
@@ -28,32 +23,7 @@ const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
 const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
 const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
-const imgPhoneForm = "/images/stock/service-dumpster-rental.jpg";
-const imgCredibility = "/images/stock/service-maintenance.jpg";
 const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
-
-const benefits = [
-  {
-    icon: Users,
-    title: "Dedicated Point of Contact",
-    description: "Your single go-to expert who knows your business, coordinates services, and ensures seamless communication across all locations."
-  },
-  {
-    icon: FileCheck,
-    title: "Job Completion Proof",
-    description: "Full digital documentation with photos, timestamps, and audit trails for every service—giving you complete visibility and accountability."
-  },
-  {
-    icon: Globe,
-    title: "Local Crews, National Reach",
-    description: "Access to vetted local haulers nationwide, all managed through one central platform with consistent service standards."
-  },
-  {
-    icon: PiggyBank,
-    title: "Price Savings Just for You",
-    description: "Leverage our buying power and vendor relationships to secure competitive rates across all your locations."
-  }
-];
 
 const processSteps = [
   { num: "1", title: "Get In Touch", desc: "Call us or submit a request online. Our team is ready 24/7 to understand your waste management needs.", active: true },
@@ -62,53 +32,17 @@ const processSteps = [
   { num: "4", title: "Documentation Provided", desc: "Complete digital records and audit trails for every completed job.", active: false }
 ];
 
-const stats = [
-  { value: "30%", label: "Case / Stat Here", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-  { value: "70K", label: "Case / Stat Here", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-  { value: "80%", label: "Case / Stat Here", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." }
-];
-
-const faqs = [
-  {
-    question: "What industries do you serve?",
-    answer: "We serve retail chains, hospitality, healthcare, educational institutions, municipalities, event venues, and commercial real estate across the nation."
-  },
-  {
-    question: "How quickly can you respond to emergency requests?",
-    answer: "Our 24/7 dispatch team can coordinate emergency pickups within hours, not days. We have local crews nationwide ready to respond."
-  },
-  {
-    question: "Do you provide documentation for compliance purposes?",
-    answer: "Yes, we provide full digital documentation including photos, timestamps, weight tickets, and disposal manifests for every job."
-  },
-  {
-    question: "Can you manage waste services across multiple locations?",
-    answer: "Absolutely. Our centralized program management handles vendors, pricing, reporting, and service levels across all your locations through a single point of contact."
-  },
-  {
-    question: "What types of waste do you handle?",
-    answer: "We handle general commercial waste, construction debris, recyclables, organic waste, and specialty waste streams. Contact us for specific requirements."
-  }
-];
-
 export default function WhoWeServePage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [activeStep, setActiveStep] = useState(0);
   
   const heroRef = useRef(null);
-  const benefitsRef = useRef(null);
   const processRef = useRef(null);
-  const statsRef = useRef(null);
   const caseStudyRef = useRef(null);
-  const faqRef = useRef(null);
   const contactRef = useRef(null);
 
   const heroInView = useInView(heroRef, { once: true });
-  const benefitsInView = useInView(benefitsRef, { once: true, margin: "-100px" });
   const processInView = useInView(processRef, { once: true, margin: "-100px" });
-  const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
   const caseStudyInView = useInView(caseStudyRef, { once: true, margin: "-100px" });
-  const faqInView = useInView(faqRef, { once: true, margin: "-100px" });
   const contactInView = useInView(contactRef, { once: true, margin: "-100px" });
 
   return (
@@ -165,49 +99,8 @@ export default function WhoWeServePage() {
       {/* Commercial Waste Services - Shared Component */}
       <CommercialWasteServices />
 
-      {/* More Reasons You'll Love Us */}
-      <section 
-        ref={benefitsRef}
-        className="bg-[#F9F9F6] py-16 md:py-20 lg:py-24"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12 md:mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-4">
-              More Reasons You'll Love Us
-            </h2>
-            <p className="text-primary/70 max-w-2xl mx-auto">
-              Beyond reliable service, we bring transparency, accountability, and cost savings to every partnership.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-12 h-12 mx-auto mb-4 bg-[#042940] rounded-full flex items-center justify-center">
-                  <benefit.icon className="w-6 h-6 text-[#c5d520]" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-medium text-primary tracking-tight mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-primary/70 text-sm md:text-base">
-                  {benefit.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* More Reasons You'll Love Us - Shared Component (same as homepage) */}
+      <ReasonsSection />
 
       {/* How It Works */}
       <section 
@@ -349,102 +242,8 @@ export default function WhoWeServePage() {
         </div>
       </section>
 
-      {/* Stats / Why Clients Call Us */}
-      <section 
-        ref={statsRef}
-        className="bg-white py-16 md:py-20 lg:py-24"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mb-12 lg:mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="lg:w-1/2"
-            >
-              <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">
-                Why Clients Call Us Again And Again
-              </h2>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="lg:w-1/2"
-            >
-              <p className="text-primary/70 mb-6">
-                Our track record speaks for itself. From cost savings to reliability, here's why businesses trust us with their waste management needs year after year.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button 
-                  size="lg"
-                  className="bg-[#042940] hover:bg-[#042940]/90 text-white rounded-full min-h-[52px]"
-                >
-                  See Our Results
-                </Button>
-                <Button 
-                  size="lg"
-                  variant="ghost"
-                  className="text-primary hover:text-[#c5d520]"
-                >
-                  Learn More
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="border border-primary/20 p-6 md:p-8"
-            >
-              <p className="text-sm font-semibold text-primary/60 mb-4">Average Cost Savings</p>
-              <p className="text-5xl md:text-6xl font-bold text-primary text-right mb-2">30%</p>
-              <div className="h-px bg-primary/20 my-4" />
-              <p className="text-primary/70 text-sm text-right">
-                Clients save an average of 30% on waste management costs through our vendor network.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col gap-6"
-            >
-              <div className="h-48 md:h-56 rounded-[5px] overflow-hidden">
-                <img src={imgCredibility} alt="Credibility" className="w-full h-full object-cover" />
-              </div>
-              <div className="border border-primary/20 p-6 flex-1">
-                <p className="text-sm font-semibold text-primary/60 mb-4">Jobs Completed</p>
-                <p className="text-5xl md:text-6xl font-bold text-primary text-right mb-2">70K</p>
-                <div className="h-px bg-primary/20 my-4" />
-                <p className="text-primary/70 text-sm text-right">
-                  Over 70,000 successful waste pickups and projects completed nationwide.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="border border-primary/20 p-6 md:p-8"
-            >
-              <p className="text-sm font-semibold text-primary/60 mb-4">Client Retention Rate</p>
-              <p className="text-5xl md:text-6xl font-bold text-primary text-right mb-2">80%</p>
-              <div className="h-px bg-primary/20 my-4" />
-              <p className="text-primary/70 text-sm text-right">
-                80% of our clients continue partnering with us year after year.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Stats / Why Clients Call Us - Shared Component (same as homepage) */}
+      <StatsSection />
 
       {/* Case Study Section */}
       <section 
@@ -522,85 +321,8 @@ export default function WhoWeServePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section 
-        ref={faqRef}
-        className="bg-white py-16 md:py-20 lg:py-24"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={faqInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-4">
-              FAQs
-            </h2>
-            <p className="text-primary/70 max-w-2xl mx-auto">
-              Have questions? Find answers to common inquiries about our services and how we can help your business.
-            </p>
-          </motion.div>
-
-          <div className="max-w-3xl mx-auto">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                animate={faqInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="border-t border-primary/20"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between py-5 text-left"
-                  data-testid={`faq-trigger-${index}`}
-                >
-                  <span className="text-lg font-medium text-primary pr-4">{faq.question}</span>
-                  <span className="shrink-0">
-                    {openFaq === index ? (
-                      <Minus className="w-6 h-6 text-primary" />
-                    ) : (
-                      <Plus className="w-6 h-6 text-primary" />
-                    )}
-                  </span>
-                </button>
-                <AnimatePresence>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="pb-5 text-primary/70">{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
-            <div className="border-t border-primary/20" />
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-12">
-            <Button 
-              size="lg"
-              className="bg-[#042940] hover:bg-[#042940]/90 text-white rounded-full min-h-[52px]"
-            >
-              Contact Us
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary/5 rounded-full min-h-[52px]"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              (123) 456-7890
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* FAQ Section - Shared Component (same as homepage) */}
+      <FaqSection />
 
       {/* Where to Find Us */}
       <section 
