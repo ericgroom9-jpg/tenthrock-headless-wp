@@ -5,7 +5,7 @@ const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
 export default function DumpsterRentalsPage() {
   return (
     <ServiceTemplate
-      serviceName="Dumpster Rental & Temporary Containers"
+      serviceName="Dumpster Rental & Containers"
       serviceDescription="Flexible dumpster rental solutions for construction, renovation, and commercial cleanouts. Multiple sizes available with quick delivery."
       heroImage={imgServiceDumpsterRental}
     />
