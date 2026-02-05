@@ -541,7 +541,7 @@ const ServicesSection = () => {
            </div>
 
            {/* Content Display */}
-           <div className="lg:col-span-8 cursor-pointer h-full" role="button" tabIndex={0} aria-label="View service details" onClick={() => console.log('Navigate to service details')} onKeyDown={(e) => e.key === 'Enter' && console.log('Navigate to service details')}>
+           <div className="lg:col-span-8 cursor-pointer h-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-[5px]" role="button" tabIndex={0} aria-label="View service details" onClick={() => console.log('Navigate to service details')} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && console.log('Navigate to service details')}>
              <div className="relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group">
                <AnimatePresence mode="wait">
                  <motion.div
@@ -1512,11 +1512,11 @@ const Footer = () => {
           >
              <h3 className="font-bold text-lg mb-6 text-white">Services</h3>
              <ul className="space-y-2 text-white/60">
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Waste Removal</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Dumpster Rentals</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Recycling Programs</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Emergency Cleanups</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Compliance Audits</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Waste Removal</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Dumpster Rentals</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Recycling Programs</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Emergency Cleanups</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Compliance Audits</a></li>
              </ul>
           </motion.div>
 
@@ -1529,11 +1529,11 @@ const Footer = () => {
           >
              <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
              <ul className="space-y-2 text-white/60">
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">About Us</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Careers</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Success Stories</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Partner Program</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Contact</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">About Us</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Careers</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Success Stories</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Partner Program</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Contact</a></li>
              </ul>
           </motion.div>
 

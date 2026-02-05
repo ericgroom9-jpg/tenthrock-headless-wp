@@ -485,7 +485,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#emergency",
-                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2",
+                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2",
                                     children: "Emergency Waste Removal"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -494,7 +494,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#sectors",
-                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2",
+                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2",
                                     children: "Who We Serve"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -503,7 +503,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#process",
-                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2",
+                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2",
                                     children: "Our Process"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -512,7 +512,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#about",
-                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2",
+                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2",
                                     children: "About Us"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -582,7 +582,7 @@ const Navbar = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#services",
-                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center",
+                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none",
                                     onClick: ()=>setIsNavExpanded(false),
                                     children: "Commercial Waste Services"
                                 }, void 0, false, {
@@ -592,7 +592,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#emergency",
-                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center",
+                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none",
                                     onClick: ()=>setIsNavExpanded(false),
                                     children: "Emergency Waste Removal"
                                 }, void 0, false, {
@@ -602,7 +602,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#sectors",
-                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center",
+                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none",
                                     onClick: ()=>setIsNavExpanded(false),
                                     children: "Who We Serve"
                                 }, void 0, false, {
@@ -612,7 +612,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#process",
-                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center",
+                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none",
                                     onClick: ()=>setIsNavExpanded(false),
                                     children: "Our Process"
                                 }, void 0, false, {
@@ -622,7 +622,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                     href: "#about",
-                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center",
+                                    className: "text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none",
                                     onClick: ()=>setIsNavExpanded(false),
                                     children: "About Us"
                                 }, void 0, false, {
@@ -1407,12 +1407,12 @@ const ServicesSection = ()=>{
                             columnNumber: 12
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "lg:col-span-8 cursor-pointer h-full",
+                            className: "lg:col-span-8 cursor-pointer h-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-[5px]",
                             role: "button",
                             tabIndex: 0,
                             "aria-label": "View service details",
                             onClick: ()=>console.log('Navigate to service details'),
-                            onKeyDown: (e)=>e.key === 'Enter' && console.log('Navigate to service details'),
+                            onKeyDown: (e)=>(e.key === 'Enter' || e.key === ' ') && console.log('Navigate to service details'),
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -4226,7 +4226,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Waste Removal"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4241,7 +4241,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Dumpster Rentals"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4256,7 +4256,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Recycling Programs"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4271,7 +4271,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Emergency Cleanups"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4286,7 +4286,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Compliance Audits"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4341,7 +4341,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "About Us"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4356,7 +4356,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Careers"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4371,7 +4371,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Success Stories"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4386,7 +4386,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Partner Program"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4401,7 +4401,7 @@ const Footer = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "#",
-                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
                                                 children: "Contact"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
