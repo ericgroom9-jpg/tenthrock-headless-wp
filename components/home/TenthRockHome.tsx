@@ -144,16 +144,25 @@ const Navbar = () => {
             <Logo variant="main" />
           </Link>
 
-          {/* Nav toggle for smaller screens */}
-          <button 
-            className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors xl:hidden min-w-[44px] min-h-[44px] flex items-center justify-center"
-            onClick={() => setIsNavExpanded(!isNavExpanded)}
-            aria-expanded={isNavExpanded}
-            aria-label="Toggle navigation menu"
-            data-testid="button-nav-toggle"
-          >
-            {isNavExpanded ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Mobile: CTA + Hamburger visible in top bar */}
+          <div className="flex items-center gap-2 xl:hidden">
+            <Button 
+              size="sm" 
+              className="bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[44px] px-4"
+              data-testid="button-mobile-cta"
+            >
+              Get a Quote
+            </Button>
+            <button 
+              className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center"
+              onClick={() => setIsNavExpanded(!isNavExpanded)}
+              aria-expanded={isNavExpanded}
+              aria-label="Toggle navigation menu"
+              data-testid="button-nav-toggle"
+            >
+              {isNavExpanded ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
 
           {/* Desktop inline nav - visible on xl+ */}
           <nav className="hidden xl:flex items-center gap-6 flex-1 justify-center">
@@ -243,17 +252,17 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
               className="xl:hidden overflow-hidden"
             >
-              <div className="pt-4 pb-2 flex flex-col gap-3">
-                <a href="#services" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
-                <a href="#emergency" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
-                <a href="#sectors" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
-                <a href="#process" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Our Process</a>
-                <a href="#about" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>About Us</a>
-                <div className="flex flex-wrap gap-3 pt-3 border-t border-gray-100">
-                  <Button variant="ghost" className="flex-1 min-w-[120px] text-primary font-bold uppercase tracking-wide text-sm" onClick={() => setIsNavExpanded(false)}>
+              <div className="pt-6 pb-4 flex flex-col gap-1">
+                <a href="#services" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
+                <a href="#emergency" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
+                <a href="#sectors" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
+                <a href="#process" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Our Process</a>
+                <a href="#about" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>About Us</a>
+                <div className="flex flex-col gap-3 pt-6 mt-4 border-t border-gray-100">
+                  <Button variant="ghost" className="w-full text-primary font-bold uppercase tracking-wide text-base min-h-[52px] justify-center" onClick={() => setIsNavExpanded(false)}>
                     Login
                   </Button>
-                  <Button className="flex-1 min-w-[140px] bg-[#c5d520] text-[#042940]" onClick={() => setIsNavExpanded(false)}>
+                  <Button className="w-full bg-[#c5d520] text-[#042940] font-bold text-base min-h-[52px] whitespace-nowrap" onClick={() => setIsNavExpanded(false)}>
                     Request a Quote
                   </Button>
                 </div>

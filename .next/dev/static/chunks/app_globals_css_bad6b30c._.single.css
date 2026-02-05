@@ -1881,6 +1881,10 @@ h2 {
   min-width: 100%;
 }
 
+.min-w-\[48px\] {
+  min-width: 48px;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
