@@ -827,9 +827,9 @@ const CtaBanner = () => {
           transition={{ duration: 0.8 }}
           className="relative bg-[#042940] rounded-[5px] p-12 md:p-20 overflow-hidden shadow-2xl text-center"
         >
-           {/* Background Grid & Glow */}
-           <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: `url(${imgIndustryMunicipalities})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+           {/* Background Map & Glow */}
+           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `url(/images/stock/us-map.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+           <div className="absolute inset-0 bg-[#042940]/60"></div>
            
            {/* Center Glow */}
            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none"></div>

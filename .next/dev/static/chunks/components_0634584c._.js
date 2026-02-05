@@ -2261,9 +2261,9 @@ const CtaBanner = ()=>{
                 className: "relative bg-[#042940] rounded-[5px] p-12 md:p-20 overflow-hidden shadow-2xl text-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 opacity-10 mix-blend-overlay",
+                        className: "absolute inset-0 opacity-20",
                         style: {
-                            backgroundImage: `url(${imgIndustryMunicipalities})`,
+                            backgroundImage: `url(/images/stock/us-map.jpg)`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center'
                         }
@@ -2273,11 +2273,7 @@ const CtaBanner = ()=>{
                         columnNumber: 12
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 opacity-20",
-                        style: {
-                            backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)',
-                            backgroundSize: '30px 30px'
-                        }
+                        className: "absolute inset-0 bg-[#042940]/60"
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
                         lineNumber: 832,
