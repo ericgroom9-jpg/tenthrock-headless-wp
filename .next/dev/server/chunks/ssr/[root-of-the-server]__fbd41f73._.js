@@ -59,37 +59,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 ;
 ;
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
-const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
-const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
-const subServices = [
-    {
-        title: "Waste Removal",
-        description: "Complete waste removal services for commercial properties of all sizes.",
-        image: imgServiceEmergencyOverflow,
-        link: "/services/waste-removal"
-    },
-    {
-        title: "Dumpster Rentals",
-        description: "Flexible dumpster rental solutions for construction, renovation, and cleanouts.",
-        image: imgServiceDumpsterRental,
-        link: "/services/dumpster-rentals"
-    },
-    {
-        title: "Emergency Waste Removal",
-        description: "24/7 rapid response for unexpected waste emergencies and overflow situations.",
-        image: imgServiceEventStadium,
-        link: "/services/emergency-waste-removal"
-    }
-];
 function EmergencyWasteRemovalPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-        serviceName: "Emergency Waste Removal",
+        serviceName: "Emergency & Overflow Waste Response",
         serviceDescription: "24/7 rapid response for unexpected waste emergencies and overflow situations. Our teams are deployed within hours, not days.",
-        heroImage: imgServiceEventStadium,
-        subServices: subServices
+        heroImage: imgServiceEmergencyOverflow
     }, void 0, false, {
         fileName: "[project]/app/services/emergency-waste-removal/page.tsx",
-        lineNumber: 30,
+        lineNumber: 7,
         columnNumber: 5
     }, this);
 }

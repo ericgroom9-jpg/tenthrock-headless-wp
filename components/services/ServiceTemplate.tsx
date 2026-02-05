@@ -39,7 +39,7 @@ interface ServiceTemplateProps {
   serviceName: string;
   serviceDescription: string;
   heroImage?: string;
-  subServices: {
+  subServices?: {
     title: string;
     description: string;
     image: string;
