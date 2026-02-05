@@ -10,17 +10,23 @@
 /* LIGHT MODE */
 :root {
   /* ----- BRAND COLORS -----
-     Replace these with your brand colors.
-     Format: H S% L% (hue saturation lightness, space-separated) */
-  --color-brand: 217 91% 35%;           /* Primary brand color */
-  --color-brand-foreground: 0 0% 98%;   /* Text on brand color */
-  --color-accent: 24 95% 53%;           /* Secondary/accent color (e.g., orange) */
-  --color-accent-foreground: 0 0% 100%; /* Text on accent color */
+     Tenth Rock Brand Palette:
+     #111e26 (Dark Blue/Black) -> 204 38% 11%
+     #c5d520 (Lime Green - Primary Action) -> 65 74% 48%
+     #d6d98b (Pale Green - Soft Accent) -> 63 46% 70%
+     #042940 (Dark Blue - Trust Color) -> 203 88% 13%
+     #f2f2f2 (Light Gray) -> 0 0% 95%
+     #ffffff (White) -> 0 0% 100% */
+  --color-brand: 203 88% 13%;           /* #042940 - Dark Blue (Trust/Stable) */
+  --color-brand-foreground: 0 0% 100%;  /* White text on brand */
+  --color-accent: 65 74% 48%;           /* #c5d520 - Lime Green (Action/Highlight) */
+  --color-accent-foreground: 203 88% 13%; /* Dark Blue text on accent */
 
   /* ----- FONT FAMILIES -----
-     Replace with your brand fonts or Google Fonts */
-  --font-heading: Inter, system-ui, sans-serif;
-  --font-body: Inter, system-ui, sans-serif;
+     Tenth Rock uses Manrope for most headings and Inter for H2s */
+  --font-heading: 'Manrope', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
   --font-mono: 'Fira Code', Menlo, monospace;
 
   /* ----- TYPOGRAPHY SCALE: HEADINGS -----
@@ -86,40 +92,40 @@
   --opaque-button-border-intensity: -8;
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
-  --background: 0 0% 100%;
-  --foreground: 0 0% 9%;
-  --border: 0 0% 89%;
-  --card: 0 0% 98%;
-  --card-foreground: 0 0% 9%;
-  --card-border: 0 0% 94%;
+  --background: 0 0% 100%;            /* #ffffff */
+  --foreground: 204 38% 11%;          /* #111e26 - Deep dark text */
+  --border: 204 10% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 204 38% 11%;
+  --card-border: 204 10% 90%;
   --sidebar: 0 0% 96%;
-  --sidebar-foreground: 0 0% 9%;
-  --sidebar-border: 0 0% 92%;
-  --sidebar-primary: 217 91% 35%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 0 0% 92%;
-  --sidebar-accent-foreground: 0 0% 9%;
-  --sidebar-ring: 217 91% 35%;
-  --popover: 0 0% 94%;
-  --popover-foreground: 0 0% 9%;
-  --popover-border: 0 0% 90%;
+  --sidebar-foreground: 204 38% 11%;
+  --sidebar-border: 204 10% 90%;
+  --sidebar-primary: 203 88% 13%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 63 46% 70%;       /* #d6d98b - Pale Green */
+  --sidebar-accent-foreground: 203 88% 13%;
+  --sidebar-ring: 65 74% 48%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 204 38% 11%;
+  --popover-border: 204 10% 90%;
   --primary: var(--color-brand);
   --primary-foreground: var(--color-brand-foreground);
-  --secondary: 0 0% 90%;
-  --secondary-foreground: 0 0% 9%;
-  --muted: 0 0% 92%;
-  --muted-foreground: 0 0% 35%;
-  --accent: 217 8% 91%;
-  --accent-foreground: 0 0% 9%;
-  --destructive: 0 84% 37%;
+  --secondary: 65 74% 48%;            /* #c5d520 - Lime Green (Action Color) */
+  --secondary-foreground: 203 88% 13%;
+  --muted: 0 0% 95%;                  /* #f2f2f2 */
+  --muted-foreground: 204 20% 40%;
+  --accent: 63 46% 70%;               /* #d6d98b - Softer Green */
+  --accent-foreground: 203 88% 13%;
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  --input: 0 0% 75%;
-  --ring: 217 91% 35%;
-  --chart-1: 217 91% 35%;
-  --chart-2: 142 76% 36%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 49%;
-  --chart-5: 27 87% 47%;
+  --input: 204 10% 90%;
+  --ring: 65 74% 48%;                 /* Lime green ring */
+  --chart-1: 203 88% 13%;
+  --chart-2: 65 74% 48%;
+  --chart-3: 63 46% 70%;
+  --chart-4: 204 38% 11%;
+  --chart-5: 62 75% 48%;
   --font-sans: var(--font-body);
   --font-serif: Georgia, serif;
   --radius: .5rem;
@@ -165,11 +171,11 @@
 
 .dark {
   /* ----- DARK MODE BRAND COLORS -----
-     Adjust these for dark mode (often slightly lighter/brighter) */
-  --color-brand: 217 91% 55%;           /* Lighter brand for dark mode */
-  --color-brand-foreground: 0 0% 98%;
-  --color-accent: 24 95% 58%;           /* Slightly lighter accent */
-  --color-accent-foreground: 0 0% 100%;
+     Tenth Rock dark mode - not prioritized but safe defaults */
+  --color-brand: 65 74% 48%;            /* Lime green becomes primary in dark */
+  --color-brand-foreground: 203 88% 13%;
+  --color-accent: 63 46% 70%;           /* Pale green accent */
+  --color-accent-foreground: 203 88% 13%;
 
   /* ----- DARK MODE MOBILE TYPOGRAPHY -----
      Mobile sizes remain the same in dark mode */
@@ -185,40 +191,40 @@
   --opaque-button-border-intensity: 9;
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
-  --background: 0 0% 9%;
+  --background: 204 38% 11%;           /* #111e26 - Dark background */
   --foreground: 0 0% 98%;
-  --border: 0 0% 18%;
-  --card: 0 0% 11%;
+  --border: 204 30% 20%;
+  --card: 204 38% 13%;
   --card-foreground: 0 0% 98%;
-  --card-border: 0 0% 14%;
-  --sidebar: 0 0% 13%;
+  --card-border: 204 30% 18%;
+  --sidebar: 204 38% 13%;
   --sidebar-foreground: 0 0% 98%;
-  --sidebar-border: 0 0% 17%;
-  --sidebar-primary: 217 91% 60%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 0 0% 16%;
+  --sidebar-border: 204 30% 17%;
+  --sidebar-primary: 65 74% 48%;
+  --sidebar-primary-foreground: 203 88% 13%;
+  --sidebar-accent: 204 30% 20%;
   --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-ring: 217 91% 60%;
-  --popover: 0 0% 15%;
+  --sidebar-ring: 65 74% 48%;
+  --popover: 204 38% 15%;
   --popover-foreground: 0 0% 98%;
-  --popover-border: 0 0% 18%;
+  --popover-border: 204 30% 18%;
   --primary: var(--color-brand);
   --primary-foreground: var(--color-brand-foreground);
-  --secondary: 0 0% 18%;
+  --secondary: 203 88% 13%;
   --secondary-foreground: 0 0% 98%;
-  --muted: 0 0% 17%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 217 8% 18%;
+  --muted: 204 30% 20%;
+  --muted-foreground: 204 20% 70%;
+  --accent: 204 30% 20%;
   --accent-foreground: 0 0% 98%;
-  --destructive: 0 84% 37%;
+  --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 98%;
-  --input: 0 0% 30%;
-  --ring: 217 91% 60%;
-  --chart-1: 217 91% 65%;
-  --chart-2: 142 76% 64%;
-  --chart-3: 197 37% 76%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
+  --input: 204 30% 30%;
+  --ring: 65 74% 48%;
+  --chart-1: 65 74% 55%;
+  --chart-2: 63 46% 70%;
+  --chart-3: 203 50% 50%;
+  --chart-4: 62 75% 55%;
+  --chart-5: 204 38% 40%;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.00);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.00), 0px 1px 2px -1px hsl(0 0% 0% / 0.00);
@@ -265,6 +271,25 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  h1, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply tracking-tight text-primary;
+  }
+
+  h2 {
+    font-family: var(--font-inter);
+    @apply tracking-tight text-primary;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
 }
 
 /**
