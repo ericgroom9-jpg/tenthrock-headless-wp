@@ -827,12 +827,21 @@ const CtaBanner = () => {
           transition={{ duration: 0.8 }}
           className="relative bg-[#042940] rounded-[5px] p-12 md:p-20 overflow-hidden shadow-2xl text-center"
         >
-           {/* Background Map & Glow */}
-           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `url(/images/stock/us-map.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-           <div className="absolute inset-0 bg-[#042940]/60"></div>
+           {/* Background Map Pattern - visible in corners */}
+           <div 
+             className="absolute inset-0 opacity-30" 
+             style={{ 
+               backgroundImage: `url(/images/stock/us-map.jpg)`, 
+               backgroundSize: 'cover', 
+               backgroundPosition: 'center',
+               maskImage: 'radial-gradient(ellipse 70% 70% at center, transparent 30%, black 100%)',
+               WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at center, transparent 30%, black 100%)'
+             }}
+           ></div>
            
-           {/* Center Glow */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none"></div>
+           {/* Subtle lime glow in corners */}
+           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/5 rounded-full blur-[100px] pointer-events-none translate-x-1/4 translate-y-1/4"></div>
+           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#c5d520]/5 rounded-full blur-[80px] pointer-events-none -translate-x-1/4 translate-y-1/4"></div>
 
            <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-sm shadow-sm mb-8">
