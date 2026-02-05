@@ -13,7 +13,7 @@ import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 
 const imgOurStory = "/images/stock/clean-city-hero.jpg";
-const imgAtOurCore = "/images/stock/clean-city.jpg";
+const imgAtOurCore = "/images/stock/city-nature.jpg";
 const imgCommunity = "/images/stock/cyclist.jpg";
 
 const coreValues = [
