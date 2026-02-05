@@ -376,7 +376,7 @@ export default function LocationTemplatePage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-[#042940] text-white rounded-[5px] font-bold"
+                  className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
                   data-testid="button-info-cta"
                 >
                   Call to Action
@@ -384,10 +384,10 @@ export default function LocationTemplatePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-primary/20 text-primary rounded-[5px] font-bold"
+                  className="w-full sm:w-auto border-[#042940]/20 text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
                   data-testid="button-info-phone"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
+                  <Phone className="mr-2 h-5 w-5" />
                   (123) 456 - 7890
                 </Button>
               </div>
