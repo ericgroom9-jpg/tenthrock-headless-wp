@@ -12,9 +12,12 @@ interface NavbarProps {
 }
 
 const serviceLinks = [
-  { label: "Waste Removal", href: "/services/waste-removal" },
-  { label: "Dumpster Rentals", href: "/services/dumpster-rentals" },
-  { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
+  { label: "Emergency & Overflow Waste Response", href: "/services/emergency-waste-removal" },
+  { label: "Store Decommissioning & Remodel Support", href: "/services/store-decommissioning" },
+  { label: "Event & Stadium Waste Logistics", href: "/services/event-stadium" },
+  { label: "Dumpster Rental & Temporary Containers", href: "/services/dumpster-rentals" },
+  { label: "Centralized Waste Program Management", href: "/services/centralized-programs" },
+  { label: "Environmental & Compactor Maintenance Services", href: "/services/environmental-maintenance" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
