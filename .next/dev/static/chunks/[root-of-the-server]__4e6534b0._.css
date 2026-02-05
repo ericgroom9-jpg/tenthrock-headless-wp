@@ -2733,11 +2733,6 @@ h1, h3, h4, h5, h6, h2 {
   border-color: #0000;
 }
 
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-
 .border-white\/10 {
   border-color: #ffffff1a;
 }
@@ -3480,10 +3475,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .lowercase {
   text-transform: lowercase;
-}
-
-.normal-case {
-  text-transform: none;
 }
 
 .tabular-nums {
@@ -4717,10 +4708,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .hover\:bg-white\/50:hover {
   background-color: #ffffff80;
-}
-
-.hover\:bg-white\/90:hover {
-  background-color: #ffffffe6;
 }
 
 .hover\:text-\[\#042940\]:hover {
