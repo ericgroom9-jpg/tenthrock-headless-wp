@@ -1228,6 +1228,7 @@ const ServicesSection = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            id: "services-heading",
                             className: "text-4xl md:text-5xl font-medium text-primary leading-tight mb-4 tracking-tighter",
                             children: "Commercial Waste Services"
                         }, void 0, false, {
@@ -1578,6 +1579,7 @@ const WhoWeHelp = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            id: "sectors-heading",
                             className: "text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter",
                             children: "Who We Help"
                         }, void 0, false, {
@@ -2384,6 +2386,7 @@ const Process = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                            id: "process-heading",
                             className: "text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter",
                             children: "How It Works"
                         }, void 0, false, {
@@ -3326,6 +3329,7 @@ const Faq = ()=>{
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                id: "faq-heading",
                                 className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter",
                                 children: "Frequently Asked Questions"
                             }, void 0, false, {
