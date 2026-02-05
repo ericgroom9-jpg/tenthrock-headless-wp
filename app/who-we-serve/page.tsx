@@ -1,12 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useInView } from "framer-motion";
-import { 
-  ArrowRight, 
-  Phone
-} from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -16,30 +13,19 @@ import StatsSection from "@/components/shared/StatsSection";
 import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import CtaBannerSection from "@/components/shared/CtaBannerSection";
+import ProcessSection from "@/components/shared/ProcessSection";
 
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
-const imgHowItWorks = "/images/stock/service-emergency-overflow.jpg";
 const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
 const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
 const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
-const processSteps = [
-  { num: "1", title: "Get In Touch", desc: "Call us or submit a request online. Our team is ready 24/7 to understand your waste management needs.", active: true },
-  { num: "2", title: "We Dispatch Your Team", desc: "Local crews are deployed within hours, ensuring your project stays on schedule.", active: false },
-  { num: "3", title: "We Execute The Job", desc: "Professional removal, haulage, and site clearing with full safety compliance.", active: false },
-  { num: "4", title: "Documentation Provided", desc: "Complete digital records and audit trails for every completed job.", active: false }
-];
-
 export default function WhoWeServePage() {
-  const [activeStep, setActiveStep] = useState(0);
-  
   const heroRef = useRef(null);
-  const processRef = useRef(null);
   const caseStudyRef = useRef(null);
 
   const heroInView = useInView(heroRef, { once: true });
-  const processInView = useInView(processRef, { once: true, margin: "-100px" });
   const caseStudyInView = useInView(caseStudyRef, { once: true, margin: "-100px" });
 
   return (
@@ -99,114 +85,8 @@ export default function WhoWeServePage() {
       {/* More Reasons You'll Love Us - Shared Component (same as homepage) */}
       <ReasonsSection />
 
-      {/* How It Works */}
-      <section 
-        ref={processRef}
-        className="bg-white py-16 md:py-20 lg:py-24"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={processInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="w-full lg:w-1/2"
-            >
-              <div className="relative aspect-[4/3] lg:aspect-square rounded-[5px] overflow-hidden">
-                <img 
-                  src={imgHowItWorks} 
-                  alt="How it works" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={processInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full lg:w-1/2"
-            >
-              <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-8 lg:mb-12">
-                How It Works
-              </h2>
-
-              <div className="space-y-0">
-                {processSteps.map((step, index) => (
-                  <div 
-                    key={step.num}
-                    className="cursor-pointer"
-                    onClick={() => setActiveStep(index)}
-                  >
-                    <div className="flex gap-4 md:gap-6 py-4">
-                      <span className="text-2xl md:text-3xl font-semibold text-primary/40">
-                        {step.num}
-                      </span>
-                      <div className="flex-1">
-                        <h3 className={`text-2xl md:text-3xl font-medium tracking-tight transition-colors ${
-                          activeStep === index ? "text-primary" : "text-primary/60"
-                        }`}>
-                          {step.title}
-                        </h3>
-                        <AnimatePresence>
-                          {activeStep === index && (
-                            <motion.p
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="text-primary/70 mt-2"
-                            >
-                              {step.desc}
-                            </motion.p>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    </div>
-                    {/* Progress bar for active step */}
-                    <div className="h-0.5 bg-gray-200 overflow-hidden">
-                      {activeStep === index && (
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: "100%" }}
-                          transition={{ duration: 3 }}
-                          className="h-full bg-primary"
-                          onAnimationComplete={() => {
-                            if (index < processSteps.length - 1) {
-                              setActiveStep(index + 1);
-                            } else {
-                              setActiveStep(0);
-                            }
-                          }}
-                        />
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 mt-8">
-                <Button 
-                  size="lg"
-                  className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full min-h-[52px]"
-                >
-                  Get Started
-                </Button>
-                <Button 
-                  size="lg"
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary/5 rounded-full min-h-[52px]"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  (123) 456-7890
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* How It Works - Shared Component (same as homepage) */}
+      <ProcessSection />
 
       {/* CTA Banner - Shared Component (same as homepage) */}
       <CtaBannerSection />

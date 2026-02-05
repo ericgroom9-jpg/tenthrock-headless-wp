@@ -1661,10 +1661,6 @@ h1, h3, h4, h5, h6, h2 {
   height: 0;
 }
 
-.h-0\.5 {
-  height: .125rem;
-}
-
 .h-1 {
   height: .25rem;
 }
@@ -2426,12 +2422,6 @@ h1, h3, h4, h5, h6, h2 {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0px * var(--tw-space-y-reverse));
-}
-
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2937,11 +2927,6 @@ h1, h3, h4, h5, h6, h2 {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
 
 .bg-green-50 {
@@ -4737,10 +4722,6 @@ h1, h3, h4, h5, h6, h2 {
   background-color: hsl(var(--primary) / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-primary\/5:hover {
-  background-color: hsl(var(--primary) / .05);
-}
-
 .hover\:bg-primary\/90:hover {
   background-color: hsl(var(--primary) / .9);
 }
@@ -6298,10 +6279,6 @@ h1, h3, h4, h5, h6, h2 {
     gap: 3rem;
   }
 
-  .md\:gap-6 {
-    gap: 1.5rem;
-  }
-
   .md\:gap-8 {
     gap: 2rem;
   }
@@ -6573,10 +6550,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:-mt-32 {
     margin-top: -8rem;
-  }
-
-  .lg\:mb-12 {
-    margin-bottom: 3rem;
   }
 
   .lg\:aspect-auto {
