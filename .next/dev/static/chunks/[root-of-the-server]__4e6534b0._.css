@@ -1554,10 +1554,6 @@ h1, h3, h4, h5, h6, h2 {
   margin-top: .375rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1650,10 +1646,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .aspect-\[4\/3\] {
   aspect-ratio: 4 / 3;
-}
-
-.aspect-\[4\/5\] {
-  aspect-ratio: 4 / 5;
 }
 
 .aspect-square {
@@ -1755,10 +1747,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .h-\[280px\] {
   height: 280px;
-}
-
-.h-\[2px\] {
-  height: 2px;
 }
 
 .h-\[350px\] {
@@ -2458,12 +2446,6 @@ h1, h3, h4, h5, h6, h2 {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0px * var(--tw-space-y-reverse));
-}
-
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2665,11 +2647,6 @@ h1, h3, h4, h5, h6, h2 {
   border-color: #0429400d;
 }
 
-.border-\[\#bcbcbc\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(188 188 188 / var(--tw-border-opacity, 1));
-}
-
 .border-\[--color-border\] {
   border-color: var(--color-border);
 }
@@ -2856,11 +2833,6 @@ h1, h3, h4, h5, h6, h2 {
 .bg-\[\#FDFDFD\] {
   --tw-bg-opacity: 1;
   background-color: rgb(253 253 253 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#bcbcbc\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(188 188 188 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#c5d520\] {
@@ -3607,10 +3579,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-\[\#042940\]\/70 {
   color: #042940b3;
-}
-
-.text-\[\#042940\]\/80 {
-  color: #042940cc;
 }
 
 .text-\[\#c5d520\] {
@@ -4632,10 +4600,6 @@ h1, h3, h4, h5, h6, h2 {
 .last\:rounded-r-md:last-child {
   border-top-right-radius: .375rem;
   border-bottom-right-radius: .375rem;
-}
-
-.last\:border-b-0:last-child {
-  border-bottom-width: 0;
 }
 
 .focus-within\:relative:focus-within {
@@ -6420,11 +6384,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:pt-28 {
     padding-top: 7rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .md\:text-4xl {

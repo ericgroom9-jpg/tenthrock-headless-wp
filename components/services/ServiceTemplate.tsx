@@ -449,93 +449,43 @@ export default function ServiceTemplate({
           </div>
         </section>
 
-        {/* How It Works Accordion Section */}
-        <section className="py-16 md:py-24 bg-white" aria-labelledby="how-it-works-heading">
+        {/* How It Works Section - Matching Homepage Design Exactly */}
+        <section id="process" aria-labelledby="process-heading" className="py-16 md:py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              {/* Image Side */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative aspect-[4/5] rounded-[5px] overflow-hidden"
-              >
-                <img 
-                  src={imgCaseStudyMain} 
-                  alt="How it works"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
+            <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                Our Process
+              </div>
+              <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
+                How It Works
+              </h2>
+              <p className="text-lg text-[#042940]/60">
+                A simple, transparent process designed to get your problem solved fast.
+              </p>
+            </div>
 
-              {/* Accordion Side */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 id="how-it-works-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-10 md:mb-16">
-                  How it Works
-                </h2>
-
-                <div className="space-y-0">
-                  {processSteps.map((step, i) => (
-                    <div key={i} className="border-b border-[#bcbcbc] last:border-b-0">
-                      <button
-                        onClick={() => setActiveStep(activeStep === i ? -1 : i)}
-                        className="w-full min-h-[52px] py-6 flex items-start gap-6 text-left"
-                        aria-expanded={activeStep === i}
-                        data-testid={`button-step-${i}`}
-                      >
-                        <span className="text-2xl md:text-3xl font-semibold text-[#042940]">
-                          {i + 1}
-                        </span>
-                        <div className="flex-1">
-                          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#042940]">
-                            {step.title}
-                          </h3>
-                          <AnimatePresence>
-                            {activeStep === i && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden"
-                              >
-                                <p className="text-[#042940]/80 mt-3 text-base md:text-lg">
-                                  {step.desc}
-                                </p>
-                                {/* Progress Bar */}
-                                <div className="mt-4 h-[2px] bg-[#bcbcbc] w-full">
-                                  <motion.div
-                                    className="h-full bg-[#042940]"
-                                    initial={{ width: 0 }}
-                                    animate={{ width: "60%" }}
-                                    transition={{ duration: 0.5, delay: 0.2 }}
-                                  />
-                                </div>
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-10">
-                  <Button 
-                    size="lg" 
-                    className="bg-[#042940] text-white min-h-[52px] rounded-full"
-                    data-testid="button-process-cta"
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </motion.div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+              {processSteps.map((step, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
+                >
+                  <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
+                    {step.num}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#042940] mb-4 group-hover:text-[#c5d520] transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-[#042940]/70 leading-relaxed text-sm">
+                    {step.desc}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
