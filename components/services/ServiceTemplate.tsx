@@ -384,8 +384,12 @@ export default function ServiceTemplate({
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-[#042940]/10 p-6 md:p-8 lg:-mt-32 relative z-10"
+                className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8 lg:-mt-32 relative z-10"
               >
+                <div className="mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
+                  <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
+                </div>
                 <form className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -395,7 +399,7 @@ export default function ServiceTemplate({
                       <Input 
                         id="firstName"
                         type="text"
-                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
+                        className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-first-name"
                       />
                     </div>
@@ -406,7 +410,7 @@ export default function ServiceTemplate({
                       <Input 
                         id="lastName"
                         type="text"
-                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
+                        className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-last-name"
                       />
                     </div>
@@ -420,7 +424,7 @@ export default function ServiceTemplate({
                       <Input 
                         id="email"
                         type="email"
-                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
+                        className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-email"
                       />
                     </div>
@@ -431,7 +435,7 @@ export default function ServiceTemplate({
                       <Input 
                         id="phone"
                         type="tel"
-                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
+                        className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-phone"
                       />
                     </div>
@@ -445,7 +449,7 @@ export default function ServiceTemplate({
                       <Input 
                         id="company"
                         type="text"
-                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
+                        className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-company"
                       />
                     </div>
@@ -455,7 +459,7 @@ export default function ServiceTemplate({
                       </label>
                       <select 
                         id="interest"
-                        className="w-full h-12 px-3 border border-[#042940]/20 rounded-none bg-white text-[#042940] focus:border-[#042940] focus:ring-1 focus:ring-[#042940] outline-none"
+                        className="w-full h-12 px-3 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
                         data-testid="select-interest"
                         defaultValue=""
                       >
@@ -477,29 +481,29 @@ export default function ServiceTemplate({
                       id="message"
                       rows={4}
                       placeholder="Type your message..."
-                      className="w-full px-3 py-3 border border-[#042940]/20 rounded-none bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#042940] focus:ring-1 focus:ring-[#042940] outline-none resize-none"
+                      className="w-full px-4 py-3 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none resize-none transition-colors"
                       data-testid="textarea-message"
                     />
                   </div>
                   
-                  <div className="flex items-center justify-between pt-2">
-                    <label className="flex items-center gap-2 cursor-pointer">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-[#042940]/10">
+                    <label className="flex items-center gap-3 cursor-pointer">
                       <input 
                         type="checkbox" 
-                        className="w-5 h-5 rounded-none border-[#042940]/20 text-[#042940] focus:ring-[#042940]"
+                        className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]"
                         data-testid="checkbox-terms"
                       />
-                      <span className="text-sm text-[#042940]">
-                        I accept the <a href="/terms" className="underline hover:text-[#c5d520]">Terms</a>
+                      <span className="text-sm text-[#042940]/80">
+                        I accept the <a href="/terms" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors">Terms</a>
                       </span>
                     </label>
                     <Button 
                       type="submit"
                       size="lg"
-                      className="bg-[#042940] text-white hover:bg-[#042940]/90 min-h-[52px] rounded-none px-8"
+                      className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] hover:shadow-[0_0_30px_rgba(197,213,32,0.5)] transition-all"
                       data-testid="button-form-submit"
                     >
-                      Submit
+                      Submit Request
                     </Button>
                   </div>
                 </form>
