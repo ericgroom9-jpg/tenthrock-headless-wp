@@ -20,9 +20,19 @@ const serviceLinks = [
   { label: "Environmental & Compactor Maintenance Services", href: "/services/environmental-maintenance" },
 ];
 
+const sectorLinks = [
+  { label: "Retail & Big Box Stores", href: "/#sectors" },
+  { label: "Grocery & Supermarkets", href: "/#sectors" },
+  { label: "Restaurants & Food Service", href: "/#sectors" },
+  { label: "Hotels & Hospitality", href: "/#sectors" },
+  { label: "Healthcare Facilities", href: "/#sectors" },
+  { label: "Commercial Real Estate", href: "/#sectors" },
+];
+
 export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isSectorsOpen, setIsSectorsOpen] = useState(false);
 
   const isFloating = variant === "floating";
 
@@ -122,7 +132,70 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             </div>
 
             <a href="/services/emergency-waste-removal" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Emergency Waste Removal</a>
-            <a href="/#sectors" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Who We Serve</a>
+            
+            {/* Who We Serve Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsSectorsOpen(true)}
+              onMouseLeave={() => setIsSectorsOpen(false)}
+            >
+              <div
+                className="inline-flex items-center gap-1 min-h-[44px]"
+                data-testid="button-nav-sectors"
+              >
+                <a
+                  href="/#sectors"
+                  className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+                >
+                  Who We Serve
+                </a>
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={isSectorsOpen}
+                  onClick={() => setIsSectorsOpen((v) => !v)}
+                  className="p-1 hover:text-[#c5d520] transition-colors"
+                  aria-label="Toggle sectors menu"
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+
+              <AnimatePresence>
+                {isSectorsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                    transition={{ duration: 0.16, ease: "easeOut" }}
+                    className="absolute left-0 top-[calc(100%+14px)] w-[320px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    role="menu"
+                    data-testid="menu-nav-sectors"
+                  >
+                    <div className="p-3">
+                      <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
+                        Industries
+                      </div>
+                      <div className="grid gap-1">
+                        {sectorLinks.map((sector) => (
+                          <a
+                            key={sector.label}
+                            href={sector.href}
+                            data-testid={`link-nav-sectors-${sector.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
+                            onClick={() => setIsSectorsOpen(false)}
+                          >
+                            <span className="pr-3">{sector.label}</span>
+                            <ChevronRight className="w-4 h-4 text-primary/40" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <a href="/#process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Our Process</a>
             <a href="/#about" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">About Us</a>
           </nav>
@@ -207,13 +280,57 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 >
                   Emergency Waste Removal
                 </a>
-                <a 
-                  href="/#sectors" 
-                  className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
-                  onClick={() => setIsNavExpanded(false)}
-                >
-                  Who We Serve
-                </a>
+                
+                {/* Who We Serve Accordion */}
+                <div>
+                  <div
+                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
+                    data-testid="button-mobile-sectors"
+                  >
+                    <a
+                      href="/#sectors"
+                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      onClick={() => setIsNavExpanded(false)}
+                    >
+                      Who We Serve
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setIsSectorsOpen(!isSectorsOpen)}
+                      aria-expanded={isSectorsOpen}
+                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      aria-label="Toggle sectors submenu"
+                    >
+                      <ChevronDown className={`w-5 h-5 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
+                  <AnimatePresence>
+                    {isSectorsOpen && (
+                      <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 pb-2">
+                          {sectorLinks.map((sector) => (
+                            <a
+                              key={sector.label}
+                              href={sector.href}
+                              className="block font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
+                              onClick={() => { setIsNavExpanded(false); setIsSectorsOpen(false); }}
+                              data-testid={`link-mobile-sectors-${sector.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            >
+                              {sector.label}
+                            </a>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <a 
                   href="/#process" 
                   className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
