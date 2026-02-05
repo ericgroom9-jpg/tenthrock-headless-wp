@@ -128,6 +128,7 @@ export default function ServiceTemplate({
   const [activeStep, setActiveStep] = useState(0);
   const [openItem, setOpenItem] = useState("item-0");
   const [activeService, setActiveService] = useState(0);
+  const [openAccordion, setOpenAccordion] = useState<string | null>("about");
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -188,62 +189,194 @@ export default function ServiceTemplate({
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                {/* About Service - Open State */}
-                <div className="pb-8 border-b border-[#042940]/10">
-                  <div className="flex items-center justify-between mb-6">
+                {/* About Service - Accordion Item */}
+                <div className="border-b border-[#042940]/10">
+                  <button 
+                    onClick={() => setOpenAccordion(openAccordion === "about" ? null : "about")}
+                    className="w-full flex items-center justify-between py-6 group cursor-pointer"
+                    data-testid="accordion-about-service"
+                  >
                     <h2 className="text-2xl md:text-3xl font-bold text-[#042940]">About Service</h2>
-                    <div className="w-10 h-10 rounded-full border-2 border-[#042940] flex items-center justify-center">
-                      <ArrowRight className="w-5 h-5 text-[#042940] -rotate-45" />
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                      openAccordion === "about" 
+                        ? "border-2 border-[#042940] bg-transparent" 
+                        : "bg-[#042940] group-hover:bg-[#c5d520]"
+                    }`}>
+                      <ArrowRight className={`w-5 h-5 transition-transform ${
+                        openAccordion === "about" 
+                          ? "text-[#042940] -rotate-45" 
+                          : "text-white group-hover:text-[#042940]"
+                      }`} />
                     </div>
-                  </div>
-
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-center gap-3 text-[#042940]">
-                      <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span>Benefit or Differentiator</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-[#042940]">
-                      <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span>Benefit or Differentiator</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-[#042940]">
-                      <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span>Benefit or Differentiator</span>
-                    </li>
-                  </ul>
-
-                  <p className="text-[#042940]/70 leading-relaxed">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                  </p>
+                  </button>
+                  <AnimatePresence>
+                    {openAccordion === "about" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-8">
+                          <ul className="space-y-3 mb-6">
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span>Benefit or Differentiator</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span>Benefit or Differentiator</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span>Benefit or Differentiator</span>
+                            </li>
+                          </ul>
+                          <p className="text-[#042940]/70 leading-relaxed">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
-                {/* How Service Works - Closed State */}
-                <a href="#process" className="flex items-center justify-between py-6 border-b border-[#042940]/10 group">
-                  <h3 className="text-xl font-bold text-[#042940]">How Service Works</h3>
-                  <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
-                    <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
-                  </div>
-                </a>
+                {/* How Service Works - Accordion Item */}
+                <div className="border-b border-[#042940]/10">
+                  <button 
+                    onClick={() => setOpenAccordion(openAccordion === "how" ? null : "how")}
+                    className="w-full flex items-center justify-between py-6 group cursor-pointer"
+                    data-testid="accordion-how-service-works"
+                  >
+                    <h3 className="text-xl font-bold text-[#042940]">How Service Works</h3>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                      openAccordion === "how" 
+                        ? "border-2 border-[#042940] bg-transparent" 
+                        : "bg-[#042940] group-hover:bg-[#c5d520]"
+                    }`}>
+                      <ArrowRight className={`w-5 h-5 transition-transform ${
+                        openAccordion === "how" 
+                          ? "text-[#042940] -rotate-45" 
+                          : "text-white group-hover:text-[#042940]"
+                      }`} />
+                    </div>
+                  </button>
+                  <AnimatePresence>
+                    {openAccordion === "how" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-8">
+                          <p className="text-[#042940]/70 leading-relaxed mb-4">
+                            Our streamlined process ensures efficient service delivery from initial contact to completion. We handle all the logistics so you can focus on your business.
+                          </p>
+                          <ul className="space-y-3">
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <span className="text-xs font-bold text-[#042940]">1</span>
+                              </div>
+                              <span>Request a quote online or by phone</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <span className="text-xs font-bold text-[#042940]">2</span>
+                              </div>
+                              <span>We schedule pickup at your convenience</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <span className="text-xs font-bold text-[#042940]">3</span>
+                              </div>
+                              <span>Professional team handles removal</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
-                {/* Other Services - Closed State */}
-                <a href="#services" className="flex items-center justify-between py-6 group">
-                  <h3 className="text-xl font-bold text-[#042940]">Other Services</h3>
-                  <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
-                    <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
-                  </div>
-                </a>
+                {/* Other Services - Accordion Item */}
+                <div>
+                  <button 
+                    onClick={() => setOpenAccordion(openAccordion === "other" ? null : "other")}
+                    className="w-full flex items-center justify-between py-6 group cursor-pointer"
+                    data-testid="accordion-other-services"
+                  >
+                    <h3 className="text-xl font-bold text-[#042940]">Other Services</h3>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                      openAccordion === "other" 
+                        ? "border-2 border-[#042940] bg-transparent" 
+                        : "bg-[#042940] group-hover:bg-[#c5d520]"
+                    }`}>
+                      <ArrowRight className={`w-5 h-5 transition-transform ${
+                        openAccordion === "other" 
+                          ? "text-[#042940] -rotate-45" 
+                          : "text-white group-hover:text-[#042940]"
+                      }`} />
+                    </div>
+                  </button>
+                  <AnimatePresence>
+                    {openAccordion === "other" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-8">
+                          <p className="text-[#042940]/70 leading-relaxed mb-4">
+                            Explore our full range of waste management and commercial services designed to meet your business needs.
+                          </p>
+                          <ul className="space-y-3">
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span>Dumpster Rental</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span>Emergency & Overflow Services</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-[#042940]">
+                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                </svg>
+                              </div>
+                              <span>Store Decommissioning</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </motion.div>
 
               {/* Right - Contact Form */}
