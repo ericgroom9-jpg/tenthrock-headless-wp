@@ -101,26 +101,11 @@ const services = [
 ];
 
 const processSteps = [
-  {
-    number: 1,
-    title: "Get In Touch",
-    description: "Contact our team to discuss your waste management needs and get a customized quote.",
-  },
-  {
-    number: 2,
-    title: "We Dispatch Your Team",
-    description: "Our trained professionals are dispatched to your location with the right equipment.",
-  },
-  {
-    number: 3,
-    title: "We Execute The Job",
-    description: "Efficient and thorough waste removal following all environmental regulations.",
-  },
-  {
-    number: 4,
-    title: "Follow-Up & Reporting",
-    description: "Detailed documentation and follow-up to ensure complete satisfaction.",
-  },
+  { num: "01", title: "You Request Service", desc: "Call us or book online. We are ready 24/7 to handle your waste needs immediately." },
+  { num: "02", title: "We Dispatch Your Team", desc: "Local crews are deployed within hours, not days, ensuring your project stays on schedule." },
+  { num: "03", title: "We Execute The Job", desc: "Professional removal, haulage, and site clearing with full safety compliance." },
+  { num: "04", title: "Documentation Provided", desc: "We provide full digital documentation and audit trails for every job completed." },
+  { num: "05", title: "Satisfaction Guaranteed", desc: "We ensure your site is spotless and follow up to confirm you are 100% satisfied with our service." },
 ];
 
 const faqs = [
@@ -411,7 +396,7 @@ export default function CommercialWasteServices() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
               {processSteps.map((step, i) => (
                 <motion.div 
                   key={i}
@@ -422,13 +407,13 @@ export default function CommercialWasteServices() {
                   className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
-                    {step.number}
+                    {step.num}
                   </div>
                   <h3 className="text-xl font-bold text-[#042940] mb-4 group-hover:text-[#c5d520] transition-colors duration-300">
                     {step.title}
                   </h3>
                   <p className="text-[#042940]/70 leading-relaxed text-sm">
-                    {step.description}
+                    {step.desc}
                   </p>
                 </motion.div>
               ))}
