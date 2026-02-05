@@ -275,15 +275,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6, h2 {
   font-family: var(--font-display);
-  letter-spacing: -.025em;
-  --tw-text-opacity: 1;
-  color: hsl(var(--primary) / var(--tw-text-opacity, 1));
-}
-
-h2 {
-  font-family: var(--font-inter);
   letter-spacing: -.025em;
   --tw-text-opacity: 1;
   color: hsl(var(--primary) / var(--tw-text-opacity, 1));
@@ -3970,7 +3963,7 @@ h2 {
 }
 
 .text-h2 {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 1.75rem;
   font-weight: var(--heading-weight);
   letter-spacing: -.01em;
@@ -5541,7 +5534,7 @@ h2 {
 }
 
 .prose-h2\:text-h2 :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 1.75rem;
   font-weight: var(--heading-weight);
   letter-spacing: -.01em;

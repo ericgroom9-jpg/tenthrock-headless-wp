@@ -141,7 +141,7 @@
   }
 
   h2 {
-    font-family: var(--font-inter);
+    font-family: var(--font-display);
     @apply tracking-tight text-primary;
   }
 }
@@ -236,7 +236,7 @@
   }
   
   .text-h2 {
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-display), sans-serif;
     font-size: 1.75rem;
     font-weight: var(--heading-weight);
     line-height: 1.2;
