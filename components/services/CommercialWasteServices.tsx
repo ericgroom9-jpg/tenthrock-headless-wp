@@ -244,7 +244,15 @@ export default function CommercialWasteServices() {
       <main id="main-content" className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-[#042940] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/90 to-[#042940]/70" />
+          <div className="absolute inset-0">
+            <img 
+              src={imgServiceCentralizedProgram}
+              alt=""
+              className="w-full h-full object-cover"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/90 to-[#042940]/60" />
+          </div>
           <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
