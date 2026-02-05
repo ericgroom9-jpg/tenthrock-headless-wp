@@ -300,7 +300,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto text-center"
+          className="max-w-5xl mx-auto text-left sm:text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8 animate-fade-in-up">
             <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
@@ -315,11 +315,11 @@ const Hero = () => {
             Emergency pickups, dumpster rentals, and site cleanouts. We respond in hours — not days.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[48px]" aria-label="Request a waste removal service" data-testid="button-hero-cta">
+          <div className="flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center">
+            <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap" aria-label="Request a waste removal service" data-testid="button-hero-cta">
               Request A Service
             </Button>
-            <Button size="lg" variant="outline" className="backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[48px]" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
               See How It Works
             </Button>
           </div>
@@ -409,7 +409,7 @@ const LogoList = () => {
   return (
     <section className="py-12 bg-white border-b border-primary/5 overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-8">
+        <div className="text-left sm:text-center mb-8">
           <div data-testid="text-logo-reel-headline" className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70">
             Supporting these leading national brands
           </div>
@@ -611,7 +611,7 @@ const WhoWeHelp = () => {
   return (
     <section id="sectors" aria-labelledby="sectors-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-16">
+        <div className="text-left sm:text-center max-w-4xl mx-auto mb-10 md:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Industries
@@ -821,10 +821,10 @@ const WhyUs = () => {
              </div>
 
              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[48px]">
+                <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap">
                   Get Started
                 </Button>
-                <Button size="lg" variant="outline" className="border-[#042940] text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white min-h-[48px]">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-[#042940] text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white min-h-[52px] whitespace-nowrap">
                   Read More
                 </Button>
              </div>
@@ -844,7 +844,7 @@ const CtaBanner = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-[#042940] rounded-[5px] p-12 md:p-20 overflow-hidden shadow-2xl text-center"
+          className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"
         >
            {/* Background Grid & Glow */}
            <div 
@@ -883,7 +883,7 @@ const CtaBanner = () => {
                  placeholder="Enter Zip Code" 
                  className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
                />
-               <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[48px]">
+               <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[52px] whitespace-nowrap">
                  Check Now
                </Button>
              </div>
@@ -907,7 +907,7 @@ const Process = () => {
   return (
     <section id="process" aria-labelledby="process-heading" className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
               Our Process
@@ -1035,10 +1035,10 @@ const Stats = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary text-white">
+                <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap">
                   Request a Service
                 </Button>
-                <Button size="lg" variant="ghost" className="text-primary hover:bg-transparent hover:underline flex items-center gap-2">
+                <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap">
                    <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
                 </Button>
               </div>
@@ -1240,7 +1240,7 @@ const Faq = () => {
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-left sm:text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-4">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Common Questions
@@ -1300,9 +1300,9 @@ const Faq = () => {
           ))}
         </div>
         
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-left sm:text-center">
            <p className="text-primary/60 mb-4 font-medium">Still Have Questions?</p>
-           <Button size="lg" className="shadow-lg">
+           <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap">
               Contact Us
            </Button>
         </div>
@@ -1321,7 +1321,7 @@ const Location = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-left sm:text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -1432,7 +1432,7 @@ const FinalCta = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                   <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[48px]">
+                   <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap">
                       Request a Service
                    </Button>
                 </div>
