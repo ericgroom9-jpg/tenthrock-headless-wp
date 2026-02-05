@@ -21,12 +21,12 @@ const serviceLinks = [
 ];
 
 const sectorLinks = [
-  { label: "Retail & Big Box Stores", href: "/#sectors" },
-  { label: "Grocery & Supermarkets", href: "/#sectors" },
-  { label: "Restaurants & Food Service", href: "/#sectors" },
-  { label: "Hotels & Hospitality", href: "/#sectors" },
-  { label: "Healthcare Facilities", href: "/#sectors" },
-  { label: "Commercial Real Estate", href: "/#sectors" },
+  { label: "Retail & Big Box Stores", href: "/who-we-serve" },
+  { label: "Grocery & Supermarkets", href: "/who-we-serve" },
+  { label: "Restaurants & Food Service", href: "/who-we-serve" },
+  { label: "Hotels & Hospitality", href: "/who-we-serve" },
+  { label: "Healthcare Facilities", href: "/who-we-serve" },
+  { label: "Commercial Real Estate", href: "/who-we-serve" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
@@ -144,7 +144,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 data-testid="button-nav-sectors"
               >
                 <a
-                  href="/#sectors"
+                  href="/who-we-serve"
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
                 >
                   Who We Serve
@@ -288,7 +288,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     data-testid="button-mobile-sectors"
                   >
                     <a
-                      href="/#sectors"
+                      href="/who-we-serve"
                       className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >

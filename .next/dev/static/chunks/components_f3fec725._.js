@@ -232,27 +232,27 @@ const serviceLinks = [
 const sectorLinks = [
     {
         label: "Retail & Big Box Stores",
-        href: "/#sectors"
+        href: "/who-we-serve"
     },
     {
         label: "Grocery & Supermarkets",
-        href: "/#sectors"
+        href: "/who-we-serve"
     },
     {
         label: "Restaurants & Food Service",
-        href: "/#sectors"
+        href: "/who-we-serve"
     },
     {
         label: "Hotels & Hospitality",
-        href: "/#sectors"
+        href: "/who-we-serve"
     },
     {
         label: "Healthcare Facilities",
-        href: "/#sectors"
+        href: "/who-we-serve"
     },
     {
         label: "Commercial Real Estate",
-        href: "/#sectors"
+        href: "/who-we-serve"
     }
 ];
 function Navbar({ variant = "floating" }) {
@@ -483,7 +483,7 @@ function Navbar({ variant = "floating" }) {
                                             "data-testid": "button-nav-sectors",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "/#sectors",
+                                                    href: "/who-we-serve",
                                                     className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors",
                                                     children: "Who We Serve"
                                                 }, void 0, false, {
@@ -797,7 +797,7 @@ function Navbar({ variant = "floating" }) {
                                             "data-testid": "button-mobile-sectors",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "/#sectors",
+                                                    href: "/who-we-serve",
                                                     className: "font-bold text-primary hover:text-[#c5d520] transition-colors flex-1",
                                                     onClick: ()=>setIsNavExpanded(false),
                                                     children: "Who We Serve"
@@ -1216,9 +1216,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/who-we-serve",
                                                 className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
-                                                children: "Careers"
+                                                children: "Who We Serve"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Footer.tsx",
                                                 lineNumber: 82,
