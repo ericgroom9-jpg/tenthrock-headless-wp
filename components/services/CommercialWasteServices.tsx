@@ -159,7 +159,7 @@ export default function CommercialWasteServices() {
 
       {/* Navigation */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link href="/" className="shrink-0">
               <Logo variant="main" />
@@ -245,7 +245,7 @@ export default function CommercialWasteServices() {
         {/* Hero Section */}
         <section className="relative bg-[#042940] overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/90 to-[#042940]/70" />
-          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
+          <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -563,7 +563,7 @@ export default function CommercialWasteServices() {
 
         {/* Case Study Section */}
         <section className="bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="case-study-heading">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -706,7 +706,7 @@ export default function CommercialWasteServices() {
 
         {/* Location Section */}
         <section className="bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="location-heading">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto px-4 md:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
