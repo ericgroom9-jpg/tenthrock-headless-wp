@@ -2786,11 +2786,6 @@ h1, h3, h4, h5, h6, h2 {
   border-color: #0000;
 }
 
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-
 .border-white\/10 {
   border-color: #ffffff1a;
 }

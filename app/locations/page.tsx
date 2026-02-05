@@ -90,7 +90,7 @@ export default function LocationsPage() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="w-full sm:w-auto border-white text-white rounded-full font-bold"
+                className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white rounded-full font-bold min-h-[52px] whitespace-nowrap"
                 data-testid="button-locations-phone"
               >
                 <Phone className="w-5 h-5 mr-2" />
