@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const imgCyclist = "/images/stock/cyclist-sustainable-city.jpg";
+const imgCyclist = "/images/stock/cyclist.jpg";
 
 export default function FinalCtaSection() {
   return (
