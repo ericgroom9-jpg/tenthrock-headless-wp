@@ -156,17 +156,15 @@ export default function ServiceTemplate({
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button 
-                    size="lg" 
                     variant="outline"
-                    className="w-full sm:w-auto border-white text-[#042940] bg-white hover:bg-white/90 min-h-[52px] rounded-none whitespace-nowrap font-medium"
+                    className="w-full sm:w-auto border-white text-[#042940] bg-white hover:bg-white/90 h-14 px-8 rounded-[5px] whitespace-nowrap font-medium normal-case text-base"
                     data-testid="button-hero-cta"
                   >
                     Call To Action
                   </Button>
                   <Button 
-                    size="lg" 
                     variant="outline"
-                    className="w-full sm:w-auto border-white text-white bg-transparent hover:bg-white hover:text-[#042940] min-h-[52px] rounded-none whitespace-nowrap font-medium"
+                    className="w-full sm:w-auto border-white text-white bg-transparent hover:bg-white hover:text-[#042940] h-14 px-8 rounded-[5px] whitespace-nowrap font-medium normal-case text-base"
                     data-testid="button-hero-phone"
                   >
                     <Phone className="mr-2 h-5 w-5" />
