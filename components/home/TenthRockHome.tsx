@@ -53,6 +53,7 @@ import Footer from "@/components/shared/Footer";
 import ReasonsSection from "@/components/shared/ReasonsSection";
 import StatsSection from "@/components/shared/StatsSection";
 import FaqSection from "@/components/shared/FaqSection";
+import LocationSection from "@/components/shared/LocationSection";
 
 // Assets - Main Logos
 const logoMain = "/images/logos/TenthRock-Logo.png";
@@ -1322,7 +1323,7 @@ export default function Home() {
       <StatsSection />
       <Testimonials />
       <FaqSection />
-      <Location />
+      <LocationSection />
       <FinalCta />
       </main>
       <Footer />

@@ -5,9 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { 
   ArrowRight, 
-  Phone, 
-  Clock, 
-  MapPin
+  Phone
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -16,6 +14,7 @@ import CommercialWasteServices from "@/components/shared/CommercialWasteServices
 import ReasonsSection from "@/components/shared/ReasonsSection";
 import StatsSection from "@/components/shared/StatsSection";
 import FaqSection from "@/components/shared/FaqSection";
+import LocationSection from "@/components/shared/LocationSection";
 
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
 const imgHowItWorks = "/images/stock/service-emergency-overflow.jpg";
@@ -23,7 +22,6 @@ const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
 const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
 const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
-const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
 
 const processSteps = [
   { num: "1", title: "Get In Touch", desc: "Call us or submit a request online. Our team is ready 24/7 to understand your waste management needs.", active: true },
@@ -38,12 +36,10 @@ export default function WhoWeServePage() {
   const heroRef = useRef(null);
   const processRef = useRef(null);
   const caseStudyRef = useRef(null);
-  const contactRef = useRef(null);
 
   const heroInView = useInView(heroRef, { once: true });
   const processInView = useInView(processRef, { once: true, margin: "-100px" });
   const caseStudyInView = useInView(caseStudyRef, { once: true, margin: "-100px" });
-  const contactInView = useInView(contactRef, { once: true, margin: "-100px" });
 
   return (
     <main className="min-h-screen bg-white">
@@ -324,94 +320,8 @@ export default function WhoWeServePage() {
       {/* FAQ Section - Shared Component (same as homepage) */}
       <FaqSection />
 
-      {/* Where to Find Us */}
-      <section 
-        ref={contactRef}
-        className="bg-white py-16 md:py-20 lg:py-24"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={contactInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-4">
-              Where to Find Us
-            </h2>
-            <p className="text-primary/70 max-w-2xl mx-auto">
-              With local crews nationwide, we're always close by when you need us.
-            </p>
-          </motion.div>
-
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={contactInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:w-1/3 space-y-8"
-            >
-              <div>
-                <div className="w-10 h-10 mb-3">
-                  <MapPin className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-primary mb-2">Office</h3>
-                <p className="text-primary/70">
-                  123 Business Ave, Suite 100<br />
-                  Dallas, TX 75001
-                </p>
-                <Button variant="link" className="p-0 h-auto text-primary hover:text-[#c5d520] mt-2">
-                  Get Directions
-                  <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
-              </div>
-
-              <div>
-                <div className="w-10 h-10 mb-3">
-                  <Phone className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-primary mb-2">Phone</h3>
-                <p className="text-primary/70">
-                  Available 24/7 for emergencies
-                </p>
-                <p className="text-primary font-medium">+1 (555) 000-0000</p>
-              </div>
-
-              <div>
-                <div className="w-10 h-10 mb-3">
-                  <Clock className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-primary mb-2">Business Hours</h3>
-                <p className="text-primary/70">
-                  Monday-Friday: 8:00am – 6:00pm<br />
-                  Emergency: 24/7
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Map Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={contactInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:w-2/3"
-            >
-              <div className="relative aspect-[16/9] lg:aspect-[4/3] bg-gray-100 rounded-[5px] overflow-hidden">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                >
-                  <source src={usMapVideo} type="video/mp4" />
-                </video>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Where to Find Us - Shared Component (same as homepage) */}
+      <LocationSection />
 
       {/* Final CTA Banner */}
       <section className="bg-[#042940] py-16 md:py-20 lg:py-24">
