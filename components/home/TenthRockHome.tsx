@@ -207,16 +207,16 @@ const Navbar = () => {
                           "Centralized Waste Program Management",
                           "Environmental & Compactor Maintenance Services",
                         ].map((label) => (
-                          <a
+                          <Link
                             key={label}
-                            href="#services"
+                            href="/services/commercial-waste"
                             data-testid={`link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                             className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
                             onClick={() => setIsServicesOpen(false)}
                           >
                             <span className="pr-3">{label}</span>
                             <ChevronRight className="w-4 h-4 text-primary/40" />
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -253,7 +253,7 @@ const Navbar = () => {
               className="xl:hidden overflow-hidden"
             >
               <div className="pt-6 pb-4 flex flex-col gap-1">
-                <a href="#services" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
+                <Link href="/services/commercial-waste" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</Link>
                 <a href="#emergency" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
                 <a href="#sectors" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
                 <a href="#process" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Our Process</a>
