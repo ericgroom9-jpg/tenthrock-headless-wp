@@ -259,7 +259,7 @@ const Navbar = () => {
 // Hero Section
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
+    <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video 
@@ -288,7 +288,7 @@ const Hero = () => {
             Nationwide Commercial Waste Solutions
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg" style={{ textWrap: "balance" }}>
+          <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[5rem] font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg" style={{ textWrap: "balance" }}>
             Fast, Reliable Waste Solutions—Anywhere You Need Them
           </h1>
           
@@ -297,10 +297,10 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform hover:-translate-y-1 hover:scale-105 border-2 border-[#c5d520]">
+            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform hover:-translate-y-1 hover:scale-105 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2" aria-label="Request a waste removal service" data-testid="button-hero-cta">
               Request A Service
             </Button>
-            <Button size="lg" variant="outline" className="backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#042940] shadow-lg transition-all transform hover:-translate-y-1 hover:scale-105" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button size="lg" variant="outline" className="backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#042940] shadow-lg transition-all transform hover:-translate-y-1 hover:scale-105 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
               See How It Works
             </Button>
           </div>
@@ -335,8 +335,8 @@ const Counter = ({ from = 0, to, duration = 2, suffix = "", prefix = "" }: { fro
 // Simple Numbers 2
 const SimpleNumbers = () => {
   return (
-    <section className="py-20 bg-white border-b border-primary/5">
-      <div className="container mx-auto px-4 md:px-8">
+    <section aria-label="Company statistics" className="py-20 bg-white border-b border-primary/5">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-primary/10 max-w-5xl mx-auto">
            <div className="flex flex-col items-center text-center px-8">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
@@ -467,7 +467,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-[#F9F9F6]">
+    <section id="services" aria-labelledby="services-heading" className="py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -480,7 +480,7 @@ const ServicesSection = () => {
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Our Services
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary leading-tight mb-4 tracking-tighter">
+          <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-primary leading-tight mb-4 tracking-tighter">
             Commercial Waste Services
           </h2>
           <p className="text-lg text-primary/60">
@@ -590,14 +590,14 @@ const WhoWeHelp = () => {
   ];
 
   return (
-    <section id="sectors" className="py-24 bg-[#F9F9F6]">
+    <section id="sectors" aria-labelledby="sectors-heading" className="py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Industries
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">Who We Help</h2>
+          <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">Who We Help</h2>
           <p className="text-lg text-primary/60">
             From local businesses to enterprise operations, we serve industries that demand reliability.
           </p>
@@ -874,14 +874,14 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-white relative overflow-hidden">
+    <section id="process" aria-labelledby="process-heading" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
               Our Process
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
+          <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
             How It Works
           </h2>
           <p className="text-lg text-[#042940]/60">
@@ -1204,7 +1204,7 @@ const Faq = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-[#F9F9F6] relative overflow-hidden">
+    <section id="faq" aria-labelledby="faq-heading" className="py-24 bg-[#F9F9F6] relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       
@@ -1214,7 +1214,7 @@ const Faq = () => {
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Common Questions
           </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
           <p className="text-lg text-primary/60 max-w-2xl mx-auto">
             Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
           </p>
@@ -1431,7 +1431,7 @@ const FinalCta = () => {
 // Footer (Modern Dark)
 const Footer = () => {
   return (
-    <footer className="bg-[#042940] text-white py-20 border-t border-white/5">
+    <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white py-20 border-t border-white/5">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
@@ -1470,7 +1470,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-             <h4 className="font-bold text-lg mb-6 text-white">Services</h4>
+             <h2 className="font-bold text-lg mb-6 text-white">Services</h2>
              <ul className="space-y-4 text-white/60">
                 <li><a href="#" className="hover:text-[#c5d520] transition-colors">Waste Removal</a></li>
                 <li><a href="#" className="hover:text-[#c5d520] transition-colors">Dumpster Rentals</a></li>
@@ -1487,7 +1487,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-             <h4 className="font-bold text-lg mb-6 text-white">Company</h4>
+             <h2 className="font-bold text-lg mb-6 text-white">Company</h2>
              <ul className="space-y-4 text-white/60">
                 <li><a href="#" className="hover:text-[#c5d520] transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-[#c5d520] transition-colors">Careers</a></li>
@@ -1505,7 +1505,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="space-y-6"
           >
-             <h4 className="font-bold text-lg text-white">Stay Updated</h4>
+             <h2 className="font-bold text-lg text-white">Stay Updated</h2>
              <p className="text-white/60">
                 Get the latest industry insights and compliance updates.
              </p>
@@ -1545,8 +1545,13 @@ const Footer = () => {
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
+      {/* Skip link for accessibility */}
+      <a href="#main-content" className="skip-link" data-testid="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
       <Hero />
+      <main id="main-content" role="main">
       <LogoList />
       <ServicesSection />
       <WhoWeHelp />
@@ -1559,6 +1564,7 @@ export default function Home() {
       <Faq />
       <Location />
       <FinalCta />
+      </main>
       <Footer />
     </div>
   );
