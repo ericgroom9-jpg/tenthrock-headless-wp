@@ -2,10 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Phone, MapPin, ArrowRight, ChevronLeft, ChevronRight, CheckSquare } from "lucide-react";
+import { Phone, ChevronLeft, ChevronRight, CheckSquare } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import CtaBannerSection from "@/components/shared/CtaBannerSection";
 import StatsSection from "@/components/shared/StatsSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
 import FaqSection from "@/components/shared/FaqSection";
@@ -13,8 +13,6 @@ import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import { useState } from "react";
 
-const heroImage = "/images/stock/hero-aerial.jpg";
-const zipcodeImage = "/images/stock/zipcode-mockup.jpg";
 
 const states = [
   "Alabama", "Arizona", "Arkansas", "California", "Colorado",
@@ -54,7 +52,6 @@ const services = [
 ];
 
 export default function LocationsPage() {
-  const [zipcode, setZipcode] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -164,68 +161,8 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      {/* Ready to Start CTA Section */}
-      <section 
-        className="py-16 md:py-24 bg-[#F9F9F6]"
-        aria-labelledby="ready-heading"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 
-                id="ready-heading"
-                className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"
-              >
-                Ready<br />to start?
-              </h2>
-              <p className="text-base md:text-lg text-primary/70 leading-relaxed mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-              
-              {/* Zipcode Form */}
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md">
-                <label htmlFor="zipcode-input" className="sr-only">Enter your zipcode</label>
-                <Input
-                  id="zipcode-input"
-                  type="text"
-                  placeholder="Enter your zipcode"
-                  value={zipcode}
-                  onChange={(e) => setZipcode(e.target.value)}
-                  className="flex-1 rounded-full border-primary/20 focus-visible:ring-[#c5d520] focus-visible:border-[#c5d520]"
-                  data-testid="input-zipcode"
-                  aria-label="Zipcode"
-                />
-                <Button 
-                  size="lg"
-                  className="bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
-                  data-testid="button-check-zipcode"
-                >
-                  Check Availability
-                </Button>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="rounded-[5px] overflow-hidden aspect-[4/3] bg-[#e5e5e5]"
-            >
-              <img 
-                src={zipcodeImage} 
-                alt="Zipcode availability checker" 
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* CTA Banner Section (same as homepage) */}
+      <CtaBannerSection />
 
       {/* Services Slider Section */}
       <section 
