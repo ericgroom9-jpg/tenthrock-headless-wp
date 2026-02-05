@@ -188,58 +188,62 @@ export default function ServiceTemplate({
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#042940]">About Service</h2>
-                  <div className="w-10 h-10 rounded-full border border-[#042940] flex items-center justify-center">
-                    <ArrowRight className="w-5 h-5 text-[#042940] rotate-[-45deg]" />
+                {/* About Service - Open State */}
+                <div className="pb-8 border-b border-[#042940]/10">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#042940]">About Service</h2>
+                    <div className="w-10 h-10 rounded-full border-2 border-[#042940] flex items-center justify-center">
+                      <ArrowRight className="w-5 h-5 text-[#042940] -rotate-45" />
+                    </div>
                   </div>
+
+                  <ul className="space-y-3 mb-6">
+                    <li className="flex items-center gap-3 text-[#042940]">
+                      <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span>Benefit or Differentiator</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-[#042940]">
+                      <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span>Benefit or Differentiator</span>
+                    </li>
+                    <li className="flex items-center gap-3 text-[#042940]">
+                      <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span>Benefit or Differentiator</span>
+                    </li>
+                  </ul>
+
+                  <p className="text-[#042940]/70 leading-relaxed">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                  </p>
                 </div>
 
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center gap-3 text-[#042940]">
-                    <div className="w-5 h-5 rounded-full bg-[#c5d520] flex items-center justify-center">
-                      <svg className="w-3 h-3 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span>Benefit or Differentiator</span>
-                  </li>
-                  <li className="flex items-center gap-3 text-[#042940]">
-                    <div className="w-5 h-5 rounded-full bg-[#c5d520] flex items-center justify-center">
-                      <svg className="w-3 h-3 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span>Benefit or Differentiator</span>
-                  </li>
-                  <li className="flex items-center gap-3 text-[#042940]">
-                    <div className="w-5 h-5 rounded-full bg-[#c5d520] flex items-center justify-center">
-                      <svg className="w-3 h-3 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span>Benefit or Differentiator</span>
-                  </li>
-                </ul>
+                {/* How Service Works - Closed State */}
+                <a href="#process" className="flex items-center justify-between py-6 border-b border-[#042940]/10 group">
+                  <h3 className="text-xl font-bold text-[#042940]">How Service Works</h3>
+                  <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
+                    <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
+                  </div>
+                </a>
 
-                <p className="text-[#042940]/70 mb-8 leading-relaxed">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                </p>
-
-                <div className="space-y-0 border-t border-[#042940]/10">
-                  <a href="#process" className="flex items-center justify-between py-5 border-b border-[#042940]/10 group">
-                    <h3 className="text-xl font-bold text-[#042940]">How Service Works</h3>
-                    <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
-                      <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
-                    </div>
-                  </a>
-                  <a href="#services" className="flex items-center justify-between py-5 group">
-                    <h3 className="text-xl font-bold text-[#042940]">Other Services</h3>
-                    <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
-                      <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
-                    </div>
-                  </a>
-                </div>
+                {/* Other Services - Closed State */}
+                <a href="#services" className="flex items-center justify-between py-6 group">
+                  <h3 className="text-xl font-bold text-[#042940]">Other Services</h3>
+                  <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
+                    <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
+                  </div>
+                </a>
               </motion.div>
 
               {/* Right - Contact Form */}
