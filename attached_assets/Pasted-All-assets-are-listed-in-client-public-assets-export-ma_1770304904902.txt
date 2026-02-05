@@ -1,0 +1,52 @@
+All assets are listed in client/public/assets_export/manifest.json. Use this JSON to programmatically fetch the correct file paths.
+
+1. Header & Branding
+Main Logo (Light backgrounds):
+Asset: logos/TenthRock-Logo_1_1768490965922.png
+Component: Navbar, LoadingScreen
+Usage: Primary navigation bar logo.
+White Logo (Dark backgrounds):
+Asset: logos/Green-White-Logo_1_1768490965923.png
+Component: Footer
+Usage: Footer logo against dark blue background.
+2. Hero Section
+Background Video:
+Asset: videos/hero-background.mp4
+Component: Hero section
+Implementation: <video autoPlay loop muted className="object-cover opacity-80" /> with a dark blue (#042940) overlay (mix-blend-multiply).
+3. Partner Logos (Logo Reel)
+Assets: All files in the logos/ directory starting with brand names (e.g., 7-Eleven_Logo..., Arby's_Logo..., Home_Depot...).
+Component: LogoList
+Usage: Infinite scrolling marquee. Display logos in grayscale opacity-60 by default, transitioning to full color opacity-100 on hover.
+4. Services Section (Tabbed Interface)
+Map these specific images to the corresponding service tabs:
+
+Service Title	Asset Filename
+Emergency & Overflow	stock_images/service-emergency-overflow.jpg
+Store Decommissioning	stock_images/service-store-decommissioning.jpg
+Event & Stadium Logistics	stock_images/service-event-stadium.jpg
+Dumpster Rental	stock_images/service-dumpster-rental.jpg
+Centralized Program	stock_images/service-centralized-program.jpg
+Compactor Maintenance	stock_images/service-maintenance.jpg
+5. Industry Sectors ("Who We Serve")
+Map these images to the industry cards:
+
+Industry/Sector	Asset Filename
+Retail & Multi-Site	stock_images/industry-real-estate.jpg
+Construction & Demolition	stock_images/white_truck_side_view.jpg
+Industrial & Logistics	stock_images/clean_city_street.jpg
+Hospitality & Events	stock_images/industry-hospitality.jpg
+Disaster Relief	stock_images/industry-natural-disasters.jpg
+6. Interactive Map Section
+3D Map Visual:
+Asset: generated_images/3d_isometric_usa_map_dark_blue_lime_green.png
+Component: CoverageSection (or Map Component)
+Usage: Main visual for the "Nationwide Coverage" section.
+Animated Pins:
+Asset: videos/us-map-pins-loop.mp4
+Usage: Optional overlay or alternative for the static map to show activity.
+7. Case Studies
+**Main Featured
+Image:** stock_images/case_study_main.jpg
+
+Thumbnails: stock_images/case_study_thumb1.jpg, thumb2.jpg, thumb3.jpg
