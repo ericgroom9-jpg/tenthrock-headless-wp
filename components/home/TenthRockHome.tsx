@@ -48,6 +48,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/shared/Navbar";
+import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import Footer from "@/components/shared/Footer";
 
 // Assets - Main Logos
@@ -1309,7 +1310,7 @@ export default function Home() {
       <Hero />
       <main id="main-content" role="main">
       <LogoList />
-      <ServicesSection />
+      <CommercialWasteServices />
       <WhoWeHelp />
       <CtaBanner />
       <Process />
