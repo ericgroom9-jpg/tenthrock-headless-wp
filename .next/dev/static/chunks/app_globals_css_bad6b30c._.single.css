@@ -1922,6 +1922,10 @@ h1, h3, h4, h5, h6, h2 {
   max-width: 540px;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
 .max-w-\[640px\] {
   max-width: 640px;
 }
@@ -6399,6 +6403,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:w-\[360px\] {
     width: 360px;
+  }
+
+  .lg\:max-w-\[700px\] {
+    max-width: 700px;
   }
 
   .lg\:flex-shrink-0 {

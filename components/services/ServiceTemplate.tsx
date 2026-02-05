@@ -153,13 +153,13 @@ export default function ServiceTemplate({
             <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
           </div>
           <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
-            <div className="max-w-xl">
+            <div className="max-w-2xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[600px] lg:max-w-[700px]">
                   {serviceName}
                 </h1>
                 <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">
