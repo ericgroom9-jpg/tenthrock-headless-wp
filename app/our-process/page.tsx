@@ -12,6 +12,7 @@ import CaseStudySection from "@/components/shared/CaseStudySection";
 import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
+import CtaBannerSection from "@/components/shared/CtaBannerSection";
 
 const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
@@ -79,35 +80,8 @@ export default function OurProcessPage() {
       {/* How It Works / Process Section (same as homepage) */}
       <ProcessSection />
 
-      {/* Ready to Start CTA Section */}
-      <section className="py-16 md:py-24 bg-white" aria-labelledby="ready-to-start-heading">
-        <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 
-              id="ready-to-start-heading"
-              className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter"
-            >
-              Ready to Start?
-            </h2>
-            <p className="text-lg text-[#042940]/60 mb-8 max-w-xl mx-auto">
-              Get in touch with our team today. We'll have a solution tailored to your needs within 24 hours.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-[#042940] text-white rounded-full font-bold shadow-lg"
-              data-testid="button-ready-to-start"
-            >
-              Contact Us Today
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      {/* Zipcode Checker CTA Section (same as homepage) */}
+      <CtaBannerSection />
 
       {/* Commercial Waste Services Section (same as homepage) */}
       <CommercialWasteServices />
