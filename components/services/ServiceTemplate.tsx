@@ -159,7 +159,7 @@ export default function ServiceTemplate({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
                   {serviceName}
                 </h1>
                 <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">
@@ -206,7 +206,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-about-service"
                   >
-                    <h2 className="text-xl md:text-2xl font-bold text-[#042940]">About Service</h2>
+                    <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter">About Service</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "about" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -271,7 +271,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-how-service-works"
                   >
-                    <h3 className="text-xl md:text-2xl font-bold text-[#042940]">How Service Works</h3>
+                    <h3 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter">How Service Works</h3>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "how" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -330,7 +330,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-other-services"
                   >
-                    <h3 className="text-xl md:text-2xl font-bold text-[#042940]">Other Services</h3>
+                    <h3 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter">Other Services</h3>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "other" 
                         ? "border-2 border-[#042940] bg-transparent" 
