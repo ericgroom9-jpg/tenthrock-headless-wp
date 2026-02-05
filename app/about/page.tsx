@@ -113,7 +113,7 @@ export default function AboutPage() {
             >
               <h2 
                 id="core-heading"
-                className="text-4xl md:text-5xl lg:text-6xl font-medium text-primary tracking-tighter mb-10 leading-[1.1]"
+                className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-10 leading-tight"
               >
                 AT OUR CORE
               </h2>
@@ -211,7 +211,7 @@ export default function AboutPage() {
             >
               <h2 
                 id="community-heading"
-                className="text-4xl md:text-5xl lg:text-6xl font-medium text-primary tracking-tighter mb-6 leading-[1.1]"
+                className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"
               >
                 IN THE COMMUNITY
               </h2>

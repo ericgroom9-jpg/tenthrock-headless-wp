@@ -72,7 +72,7 @@ export default function LocationsPage() {
           >
             <h1 
               id="locations-hero-heading"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tighter mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4"
             >
               WHENEVER YOU NEED US
             </h1>
@@ -116,7 +116,7 @@ export default function LocationsPage() {
           >
             <h2 
               id="areas-heading"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tighter mb-6 leading-[1.1]"
+              className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"
             >
               Nationwide Coverage. Local Support.
             </h2>
@@ -167,7 +167,7 @@ export default function LocationsPage() {
             >
               <h2 
                 id="ready-heading"
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tighter mb-6 leading-[1.1]"
+                className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"
               >
                 Ready<br />to start?
               </h2>
@@ -230,7 +230,7 @@ export default function LocationsPage() {
           >
             <h2 
               id="services-heading"
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tighter leading-[1.1]"
+              className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight"
             >
               Our Services
             </h2>

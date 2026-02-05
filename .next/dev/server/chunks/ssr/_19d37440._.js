@@ -2999,7 +2999,7 @@ function LocationsPage() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                     id: "locations-hero-heading",
-                                    className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tighter mb-4",
+                                    className: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4",
                                     children: "WHENEVER YOU NEED US"
                                 }, void 0, false, {
                                     fileName: "[project]/app/locations/page.tsx",
@@ -3095,7 +3095,7 @@ function LocationsPage() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     id: "areas-heading",
-                                    className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tighter mb-6 leading-[1.1]",
+                                    className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight",
                                     children: "Nationwide Coverage. Local Support."
                                 }, void 0, false, {
                                     fileName: "[project]/app/locations/page.tsx",
@@ -3207,7 +3207,7 @@ function LocationsPage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                         id: "ready-heading",
-                                        className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tighter mb-6 leading-[1.1]",
+                                        className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight",
                                         children: [
                                             "Ready",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
@@ -3348,7 +3348,7 @@ function LocationsPage() {
                             className: "mb-12",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 id: "services-heading",
-                                className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tighter leading-[1.1]",
+                                className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight",
                                 children: "Our Services"
                             }, void 0, false, {
                                 fileName: "[project]/app/locations/page.tsx",
