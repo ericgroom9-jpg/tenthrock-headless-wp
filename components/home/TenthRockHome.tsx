@@ -165,7 +165,7 @@ const Navbar = () => {
               <button
                 type="button"
                 data-testid="button-nav-services"
-                className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-[#c5d520] transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px]"
                 aria-haspopup="menu"
                 aria-expanded={isServicesOpen}
                 onClick={() => setIsServicesOpen((v) => !v)}
@@ -202,7 +202,7 @@ const Navbar = () => {
                             key={label}
                             href="#services"
                             data-testid={`link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                            className="flex items-center justify-between rounded-[5px] px-3 py-2 text-sm font-bold text-primary hover:bg-[#F9F9F6] hover:text-[#042940] transition-colors"
+                            className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
                             onClick={() => setIsServicesOpen(false)}
                           >
                             <span className="pr-3">{label}</span>
@@ -216,10 +216,10 @@ const Navbar = () => {
               </AnimatePresence>
             </div>
 
-            <a href="#emergency" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">Emergency Waste Removal</a>
-            <a href="#sectors" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">Who We Serve</a>
-            <a href="#process" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">Our Process</a>
-            <a href="#about" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">About Us</a>
+            <a href="#emergency" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">Emergency Waste Removal</a>
+            <a href="#sectors" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">Who We Serve</a>
+            <a href="#process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">Our Process</a>
+            <a href="#about" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">About Us</a>
           </nav>
 
           {/* Right Side Actions - always visible, scales down */}
@@ -244,11 +244,11 @@ const Navbar = () => {
               className="xl:hidden overflow-hidden"
             >
               <div className="pt-4 pb-2 flex flex-col gap-3">
-                <a href="#services" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
-                <a href="#emergency" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
-                <a href="#sectors" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
-                <a href="#process" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Our Process</a>
-                <a href="#about" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>About Us</a>
+                <a href="#services" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
+                <a href="#emergency" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
+                <a href="#sectors" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
+                <a href="#process" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>Our Process</a>
+                <a href="#about" className="text-base font-bold text-primary py-3 hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center" onClick={() => setIsNavExpanded(false)}>About Us</a>
                 <div className="flex flex-wrap gap-3 pt-3 border-t border-gray-100">
                   <Button variant="ghost" className="flex-1 min-w-[120px] text-primary font-bold uppercase tracking-wide text-sm" onClick={() => setIsNavExpanded(false)}>
                     Login
@@ -416,14 +416,14 @@ const LogoList = () => {
       >
         <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
            {logos.map((logo, i) => (
-             <div key={`logo-1-${i}`} className="h-16 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+             <div key={`logo-1-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
                <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
              </div>
            ))}
         </div>
         <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
            {logos.map((logo, i) => (
-             <div key={`logo-2-${i}`} className="h-16 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+             <div key={`logo-2-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
                <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
              </div>
            ))}
@@ -506,10 +506,10 @@ const ServicesSection = () => {
                  key={i}
                  onClick={() => setActiveService(i)}
                  onMouseEnter={() => setActiveService(i)}
-                 className={`text-left px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group ${
+                 className={`text-left px-6 md:px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${
                    activeService === i 
                      ? "bg-white shadow-lg text-primary border border-primary/5" 
-                     : "text-primary/40 hover:text-primary hover:bg-white/50"
+                     : "text-primary/40 hover:text-primary active:text-primary hover:bg-white/50 active:bg-white/50"
                  }`}
                >
                  <span className="relative z-10 flex items-center justify-between">
@@ -617,7 +617,7 @@ const WhoWeHelp = () => {
           {sectors.map((sector, i) => (
             <motion.div 
               key={i} 
-              className="group relative h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
@@ -730,13 +730,13 @@ const CaseStudySection = () => {
 
             <div className="flex gap-4">
               <button 
-                className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white text-primary transition-all duration-300 shadow-sm hover:shadow-lg"
+                className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary active:bg-primary hover:text-white active:text-white text-primary transition-all duration-300 shadow-sm hover:shadow-lg active:shadow-lg min-w-[44px] min-h-[44px]"
                 aria-label="Previous case study"
               >
                 <ArrowRight className="w-5 h-5 rotate-180" />
               </button>
               <button 
-                className="w-14 h-14 rounded-full bg-[#042940] text-white flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="w-14 h-14 rounded-full bg-[#042940] text-white flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] hover:text-[#042940] active:text-[#042940] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
                 aria-label="Next case study"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -919,7 +919,7 @@ const Process = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-center text-center hover:-translate-y-1"
+              className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-center text-center md:hover:-translate-y-1"
             >
               <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
                 {step.num}
