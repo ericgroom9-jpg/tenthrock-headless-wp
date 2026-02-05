@@ -3502,97 +3502,97 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 const sectors = [
     {
         title: "Educational",
-        img: "/images/stock/industry-educational.jpg",
+        img: "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__GraduationCap$3e$__["GraduationCap"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 8,
-            columnNumber: 80
+            columnNumber: 120
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/educational"
     },
     {
         title: "Stadiums & Events",
-        img: "/images/stock/industry-stadiums-events.jpg",
+        img: "/assets_export/stock_images/industry-stadiums-events.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trophy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trophy$3e$__["Trophy"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 9,
-            columnNumber: 90
+            columnNumber: 104
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/stadiums-events"
     },
     {
         title: "Faith Based",
-        img: "/images/stock/industry-faith-based.jpg",
+        img: "/assets_export/stock_images/panoramic-view-church-building_1768502470001.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Heart$3e$__["Heart"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 10,
-            columnNumber: 80
+            columnNumber: 118
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/faith-based"
     },
     {
         title: "Municipalities",
-        img: "/images/stock/industry-municipalities.jpg",
+        img: "/assets_export/stock_images/clean_city_street.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$landmark$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Landmark$3e$__["Landmark"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 11,
-            columnNumber: 86
+            columnNumber: 94
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/municipalities"
     },
     {
         title: "Hospitality",
-        img: "/images/stock/industry-hospitality.jpg",
+        img: "/assets_export/stock_images/industry-hospitality.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$utensils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Utensils$3e$__["Utensils"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 12,
-            columnNumber: 80
+            columnNumber: 94
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/hospitality"
     },
     {
         title: "Natural Disasters",
-        img: "/images/stock/industry-natural-disasters.jpg",
+        img: "/assets_export/stock_images/industry-natural-disasters.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__["Siren"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 13,
-            columnNumber: 92
+            columnNumber: 106
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/natural-disasters"
     },
     {
         title: "Real Estate",
-        img: "/images/stock/industry-real-estate.jpg",
+        img: "/assets_export/stock_images/industry-real-estate.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 14,
-            columnNumber: 80
+            columnNumber: 94
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/real-estate"
     },
     {
         title: "Retail",
-        img: "/images/stock/industry-retail.jpg",
+        img: "/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 15,
-            columnNumber: 70
+            columnNumber: 100
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/retail"
     }
@@ -3843,9 +3843,7 @@ function WhoWeServePage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "min-h-screen bg-white",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                variant: "sticky"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/who-we-serve/page.tsx",
                 lineNumber: 28,
                 columnNumber: 7
@@ -3872,7 +3870,7 @@ function WhoWeServePage() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28",
+                        className: "relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28 pt-32 sm:pt-36 md:pt-40 lg:pt-44",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                             initial: {
                                 opacity: 0,

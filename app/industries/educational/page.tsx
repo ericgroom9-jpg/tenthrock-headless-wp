@@ -52,10 +52,10 @@ export default function EducationalPage() {
   return (
     <IndustryTemplate
       industryName="Educational Institutions"
-      heroImage="/images/stock/industry-educational.jpg"
+      heroImage="/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg"
       heroDescription="Comprehensive waste management solutions designed for the unique needs of universities, colleges, and K-12 schools. From daily operations to major campus events."
       aboutTitle="Waste Solutions Built for Campus Life"
-      aboutImage="/images/stock/industry-educational.jpg"
+      aboutImage="/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg"
       bulletPoints={bulletPoints}
       faqs={faqs}
     />
