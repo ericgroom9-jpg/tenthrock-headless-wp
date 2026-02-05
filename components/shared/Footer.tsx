@@ -113,7 +113,7 @@ export default function Footer() {
               <li><Link href="/who-we-serve" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Who We Serve</Link></li>
               <li><Link href="/locations" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Locations</Link></li>
               <li><Link href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Success Stories</Link></li>
-              <li><Link href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Partner Program</Link></li>
+              <li><Link href="/join-our-network" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Join Our Network</Link></li>
               <li><Link href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Contact</Link></li>
             </ul>
           </motion.div>

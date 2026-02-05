@@ -545,6 +545,16 @@ function Navbar({ variant = "floating" }) {
                                     fileName: "[project]/components/shared/Navbar.tsx",
                                     lineNumber: 202,
                                     columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: "/join-our-network",
+                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2",
+                                    "data-testid": "link-nav-join-network",
+                                    children: "Join Our Network"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                    lineNumber: 203,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
@@ -562,7 +572,7 @@ function Navbar({ variant = "floating" }) {
                                     children: "Login"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 207,
+                                    lineNumber: 208,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -571,13 +581,13 @@ function Navbar({ variant = "floating" }) {
                                     children: "Get a Quote"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 210,
+                                    lineNumber: 211,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 206,
+                            lineNumber: 207,
                             columnNumber: 11
                         }, this)
                     ]
@@ -622,7 +632,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Commercial Waste Services"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 234,
+                                                    lineNumber: 235,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -635,18 +645,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 248,
+                                                        lineNumber: 249,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 241,
+                                                    lineNumber: 242,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 230,
+                                            lineNumber: 231,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -677,28 +687,28 @@ function Navbar({ variant = "floating" }) {
                                                             children: service.label
                                                         }, service.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 262,
+                                                            lineNumber: 263,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 260,
+                                                    lineNumber: 261,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 253,
+                                                lineNumber: 254,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 251,
+                                            lineNumber: 252,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 229,
+                                    lineNumber: 230,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -708,7 +718,7 @@ function Navbar({ variant = "floating" }) {
                                     children: "Emergency Waste Removal"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 278,
+                                    lineNumber: 279,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -724,7 +734,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Who We Serve"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 292,
+                                                    lineNumber: 293,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -737,18 +747,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 306,
+                                                        lineNumber: 307,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 299,
+                                                    lineNumber: 300,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 288,
+                                            lineNumber: 289,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -779,28 +789,28 @@ function Navbar({ variant = "floating" }) {
                                                             children: sector.label
                                                         }, sector.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 320,
+                                                            lineNumber: 321,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 318,
+                                                    lineNumber: 319,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 311,
+                                                lineNumber: 312,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 309,
+                                            lineNumber: 310,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 287,
+                                    lineNumber: 288,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -810,7 +820,7 @@ function Navbar({ variant = "floating" }) {
                                     children: "Our Process"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 336,
+                                    lineNumber: 337,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -820,7 +830,18 @@ function Navbar({ variant = "floating" }) {
                                     children: "About Us"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 343,
+                                    lineNumber: 344,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: "/join-our-network",
+                                    className: "font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center",
+                                    onClick: ()=>setIsNavExpanded(false),
+                                    "data-testid": "link-mobile-join-network",
+                                    children: "Join Our Network"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                    lineNumber: 351,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -831,28 +852,28 @@ function Navbar({ variant = "floating" }) {
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 352,
+                                        lineNumber: 361,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 351,
+                                    lineNumber: 360,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 227,
+                            lineNumber: 228,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/shared/Navbar.tsx",
-                        lineNumber: 219,
+                        lineNumber: 220,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/shared/Navbar.tsx",
-                    lineNumber: 217,
+                    lineNumber: 218,
                     columnNumber: 9
                 }, this)
             ]
@@ -1335,9 +1356,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/join-our-network",
                                                 className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
-                                                children: "Partner Program"
+                                                children: "Join Our Network"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Footer.tsx",
                                                 lineNumber: 116,

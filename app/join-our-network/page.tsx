@@ -1,0 +1,652 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  ArrowRight, 
+  Phone, 
+  Star, 
+  ChevronLeft, 
+  ChevronRight, 
+  ChevronDown,
+  Shield,
+  Zap,
+  Clock,
+  Users
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
+import FaqSection from "@/components/shared/FaqSection";
+
+const heroImage = "/images/stock/hero-skyscrapers.jpg";
+
+const partnerLogos = [
+  { src: "/images/logos/7-eleven.png", alt: "7-Eleven" },
+  { src: "/images/logos/arbys.png", alt: "Arby's" },
+  { src: "/images/logos/best-buy.png", alt: "Best Buy" },
+  { src: "/images/logos/bonefish.png", alt: "Bonefish Grill" },
+  { src: "/images/logos/bp.png", alt: "BP" },
+  { src: "/images/logos/chipotle.png", alt: "Chipotle" },
+  { src: "/images/logos/circle-k.png", alt: "Circle K" },
+  { src: "/images/logos/dollar-general.png", alt: "Dollar General" },
+  { src: "/images/logos/doordash.png", alt: "DoorDash" },
+  { src: "/images/logos/dunkin.png", alt: "Dunkin'" },
+  { src: "/images/logos/five-below.png", alt: "Five Below" },
+  { src: "/images/logos/food-lion.png", alt: "Food Lion" },
+  { src: "/images/logos/gnc.png", alt: "GNC" },
+  { src: "/images/logos/goodyear.png", alt: "Goodyear" },
+  { src: "/images/logos/heb.png", alt: "H-E-B" },
+  { src: "/images/logos/kfc.png", alt: "KFC" },
+  { src: "/images/logos/kroger.png", alt: "Kroger" },
+  { src: "/images/logos/maggianos.png", alt: "Maggiano's" },
+  { src: "/images/logos/mcdonalds.png", alt: "McDonald's" },
+  { src: "/images/logos/red-lobster.png", alt: "Red Lobster" }
+];
+
+const vendorTestimonials = [
+  {
+    quote: "Partnering with Tenth Rock gave our business a steady stream of contracts across multiple states. The onboarding was seamless.",
+    author: "James Hartley",
+    role: "Owner",
+    company: "Hartley Waste Services",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "Their dispatch system is top-notch. We get job alerts instantly and the payment process is reliable and transparent.",
+    author: "Maria Gonzalez",
+    role: "Operations Manager",
+    company: "Southwest Hauling Co.",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "Joining the Tenth Rock network was the best business decision we made. Volume is up 40% and growing every quarter.",
+    author: "Robert Chen",
+    role: "VP of Business Development",
+    company: "Pacific Disposal Group",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "The support team is incredible. Any issue we've had was resolved within the hour. True partners in every sense.",
+    author: "Lisa Thompson",
+    role: "Fleet Manager",
+    company: "Greenway Environmental",
+    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "We've expanded into three new states since joining. Tenth Rock handles the client relationships so we can focus on operations.",
+    author: "David Park",
+    role: "CEO",
+    company: "Atlas Waste Solutions",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
+  }
+];
+
+const vendorFaqs = [
+  {
+    question: "What are the requirements to join the network?",
+    answer: "We look for licensed, insured waste hauling companies with reliable equipment and a track record of professional service. You'll need valid business insurance, proper licensing for your service area, and the capacity to handle commercial-scale jobs."
+  },
+  {
+    question: "How quickly can I start receiving jobs?",
+    answer: "Once your application is approved and onboarding is complete, you can start receiving job alerts within 48 hours. The onboarding process typically takes 3-5 business days depending on documentation review."
+  },
+  {
+    question: "How does payment work?",
+    answer: "We offer transparent, reliable payment terms. Invoices are processed bi-weekly with direct deposit. You'll have full visibility into all completed jobs and payments through our vendor portal."
+  },
+  {
+    question: "Can I choose which jobs to accept?",
+    answer: "Yes. You receive job alerts based on your service area, equipment capabilities, and availability preferences. You have full control over which jobs you accept or decline."
+  },
+  {
+    question: "Is there a fee to join the network?",
+    answer: "There is no upfront fee to join our vendor network. We operate on a partnership model where we handle client acquisition, billing, and account management while you focus on service delivery."
+  }
+];
+
+const processSteps = [
+  {
+    num: 1,
+    title: "Get In Touch",
+    desc: "Fill out the form or call us directly. Our vendor relations team will review your application and reach out within 24 hours."
+  },
+  {
+    num: 2,
+    title: "We Dispatch Your Team",
+    desc: "Once onboarded, you'll receive real-time job alerts matched to your service area, equipment, and availability."
+  },
+  {
+    num: 3,
+    title: "We Execute The Job",
+    desc: "Complete the job to our quality standards. Our team provides support every step of the way."
+  },
+  {
+    num: 4,
+    title: "Get Paid Reliably",
+    desc: "Transparent invoicing and reliable bi-weekly payments deposited directly to your account."
+  }
+];
+
+const values = [
+  {
+    icon: Zap,
+    title: "Instant Job Alerts",
+    desc: "Receive real-time notifications for jobs in your service area. Never miss an opportunity with our smart dispatch system."
+  },
+  {
+    icon: Shield,
+    title: "Reliable Payments",
+    desc: "Transparent billing and bi-weekly direct deposits. No chasing invoices or dealing with payment delays."
+  },
+  {
+    icon: Clock,
+    title: "Flexible Scheduling",
+    desc: "You control your availability. Accept jobs that fit your capacity and turn down the rest, no penalties."
+  },
+  {
+    icon: Users,
+    title: "Dedicated Support",
+    desc: "Your vendor relations manager is one call away. We handle client relationships so you can focus on operations."
+  }
+];
+
+export default function JoinOurNetworkPage() {
+  return (
+    <main>
+      <Navbar variant="floating" />
+      <HeroSection />
+      <LogoReel />
+      <FormSection />
+      <ValuesSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
+      <FaqSection faqs={vendorFaqs} />
+      <Footer />
+    </main>
+  );
+}
+
+function HeroSection() {
+  return (
+    <section className="relative bg-[#042940] pt-24 md:pt-28 overflow-hidden" data-testid="section-join-hero">
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage}
+          alt=""
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
+      </div>
+      <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
+        <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
+              JOIN OUR NETWORK
+            </h1>
+            <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">
+              Partner with the fastest-growing commercial waste network in America. Grow your business with steady contracts, reliable payments, and dedicated support.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Button 
+                size="lg"
+                className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                data-testid="button-join-hero-cta"
+              >
+                Request a Service
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                data-testid="button-join-hero-phone"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                (123) 456 - 7890
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LogoReel() {
+  return (
+    <section className="py-12 bg-white border-b border-primary/5 overflow-hidden" data-testid="section-join-logos">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-left sm:text-center mb-8">
+          <div className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70" data-testid="text-join-logo-headline">
+            Our Biggest Vendors We've Worked With
+          </div>
+        </div>
+      </div>
+
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative flex overflow-hidden group"
+      >
+        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
+          {partnerLogos.map((logo, i) => (
+            <div key={`logo-1-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
+              <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
+            </div>
+          ))}
+        </div>
+        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
+          {partnerLogos.map((logo, i) => (
+            <div key={`logo-2-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
+              <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
+function FormSection() {
+  return (
+    <section className="py-16 md:py-24 bg-white" data-testid="section-join-form">
+      <div className="container mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8 md:p-12">
+            <div className="mb-8">
+              <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-2" data-testid="text-join-form-heading">
+                Personal + Company Information
+              </h2>
+              <p className="text-[#042940]/60">
+                Tell us about your business and we'll get you started.
+              </p>
+            </div>
+
+            <form className="space-y-6" data-testid="form-join-network">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-bold text-[#042940] mb-2">First Name *</label>
+                  <Input 
+                    id="firstName"
+                    placeholder="First Name" 
+                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
+                    data-testid="input-first-name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-bold text-[#042940] mb-2">Last Name *</label>
+                  <Input 
+                    id="lastName"
+                    placeholder="Last Name" 
+                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
+                    data-testid="input-last-name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-bold text-[#042940] mb-2">Email *</label>
+                  <Input 
+                    id="email"
+                    type="email"
+                    placeholder="you@company.com" 
+                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
+                    data-testid="input-email"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-bold text-[#042940] mb-2">Phone *</label>
+                  <Input 
+                    id="phone"
+                    type="tel"
+                    placeholder="(555) 000-0000" 
+                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
+                    data-testid="input-phone"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="companyName" className="block text-sm font-bold text-[#042940] mb-2">Company Name *</label>
+                <Input 
+                  id="companyName"
+                  placeholder="Your Company Name" 
+                  className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
+                  data-testid="input-company"
+                  required
+                />
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="serviceArea" className="block text-sm font-bold text-[#042940] mb-2">Service Area / State(s)</label>
+                  <Input 
+                    id="serviceArea"
+                    placeholder="e.g. Texas, Oklahoma" 
+                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
+                    data-testid="input-service-area"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="fleetSize" className="block text-sm font-bold text-[#042940] mb-2">Fleet Size</label>
+                  <Input 
+                    id="fleetSize"
+                    placeholder="Number of trucks" 
+                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
+                    data-testid="input-fleet-size"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-bold text-[#042940] mb-2">Additional Information</label>
+                <textarea 
+                  id="message"
+                  rows={4}
+                  placeholder="Tell us about your services, equipment, and capabilities..."
+                  className="w-full rounded-md border border-[#042940]/10 px-3 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 resize-none"
+                  data-testid="input-message"
+                />
+              </div>
+
+              <div className="border-t border-[#042940]/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <label className="flex items-start gap-3 cursor-pointer" data-testid="label-terms">
+                  <input type="checkbox" className="mt-1 rounded border-[#042940]/20 text-[#c5d520] focus:ring-[#c5d520]" data-testid="input-terms" />
+                  <span className="text-sm text-[#042940]/60">
+                    I accept the{" "}
+                    <a href="#" className="text-[#042940] underline font-bold hover:text-[#c5d520] transition-colors">Terms</a>
+                    {" "}and{" "}
+                    <a href="#" className="text-[#042940] underline font-bold hover:text-[#c5d520] transition-colors">Privacy Policy</a>
+                  </span>
+                </label>
+                <Button 
+                  type="submit"
+                  size="lg"
+                  className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] rounded-full px-10 shadow-lg hover:shadow-[0_0_40px_rgba(197,213,32,0.3)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap font-bold"
+                  data-testid="button-submit-form"
+                >
+                  Submit Application
+                </Button>
+              </div>
+            </form>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+function ValuesSection() {
+  return (
+    <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-join-values">
+      <div className="container mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-left sm:text-center max-w-3xl mx-auto mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-6 leading-tight" data-testid="text-join-values-heading">
+            More Reasons You'll Love Us
+          </h2>
+          <p className="text-lg text-[#042940]/60">
+            We've built the tools and support system to help your waste hauling business grow faster and operate smoother.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {values.map((value, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="text-left sm:text-center"
+              data-testid={`card-value-${i}`}
+            >
+              <div className="w-12 h-12 rounded-full bg-[#042940]/5 flex items-center justify-center mx-auto sm:mx-auto mb-6">
+                <value.icon className="w-5 h-5 text-[#042940]" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-4">
+                {value.title}
+              </h3>
+              <p className="text-[#042940]/60 leading-relaxed">
+                {value.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HowItWorksSection() {
+  const [activeStep, setActiveStep] = useState(0);
+
+  return (
+    <section className="py-16 md:py-24 bg-white" data-testid="section-join-how-it-works">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative aspect-[4/3] lg:aspect-auto lg:h-[640px] rounded-[5px] overflow-hidden order-2 lg:order-1"
+          >
+            <img 
+              src="/images/stock/service-commercial.jpg" 
+              alt="Commercial waste service team" 
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="order-1 lg:order-2"
+          >
+            <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-12 leading-tight" data-testid="text-join-how-heading">
+              How It Works
+            </h2>
+
+            <div className="space-y-0">
+              {processSteps.map((step, i) => (
+                <div key={i} data-testid={`step-${i}`}>
+                  <button
+                    onClick={() => setActiveStep(i)}
+                    className="w-full text-left py-6 flex gap-6 md:gap-8 items-start group"
+                    aria-expanded={activeStep === i}
+                  >
+                    <span className={`text-2xl md:text-3xl font-bold shrink-0 transition-colors duration-300 ${
+                      activeStep === i ? "text-[#042940]" : "text-[#042940]/30"
+                    }`}>
+                      {step.num}
+                    </span>
+                    <div className="flex-1">
+                      <h3 className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${
+                        activeStep === i ? "text-[#042940]" : "text-[#042940]/40"
+                      }`}>
+                        {step.title}
+                      </h3>
+                      <div className={`transition-all duration-400 ease-in-out overflow-hidden ${
+                        activeStep === i ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0"
+                      }`}>
+                        <p className="text-[#042940]/60 leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </button>
+                  
+                  <div className="relative h-[2px] bg-[#042940]/10">
+                    {activeStep === i && (
+                      <motion.div 
+                        className="absolute left-0 top-0 h-full bg-[#042940]"
+                        initial={{ width: "0%" }}
+                        animate={{ width: "60%" }}
+                        transition={{ duration: 0.5 }}
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
+              <Button 
+                size="lg"
+                className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                data-testid="button-join-cta"
+              >
+                Apply Today
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto border-[#042940]/20 text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                data-testid="button-join-phone"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                (123) 456 - 7890
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleCount = 3;
+  const maxIndex = vendorTestimonials.length - visibleCount;
+
+  const next = () => setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+  const prev = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
+
+  return (
+    <section className="py-16 md:py-24 bg-white overflow-hidden" data-testid="section-join-testimonials">
+      <div className="container mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-left sm:text-center max-w-3xl mx-auto mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-6 leading-tight" data-testid="text-join-testimonials-heading">
+            Hear From Our Vendor Clients
+          </h2>
+          <p className="text-lg text-[#042940]/60">
+            Real feedback from partners who have grown their business with us.
+          </p>
+        </motion.div>
+
+        <div className="relative">
+          <div className="overflow-hidden">
+            <motion.div 
+              className="flex gap-6 md:gap-8"
+              animate={{ x: `-${currentIndex * (100 / visibleCount + 2)}%` }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              {vendorTestimonials.map((testimonial, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="min-w-[280px] sm:min-w-[340px] lg:min-w-[calc(33.333%-1.5rem)] shrink-0"
+                  data-testid={`testimonial-card-${i}`}
+                >
+                  <div className="border border-[#042940]/10 rounded-[5px] p-6 md:p-8 h-full flex flex-col">
+                    <div className="flex gap-1 mb-6">
+                      {[1, 2, 3, 4, 5].map(s => (
+                        <Star key={s} className="w-4 h-4 fill-[#c5d520] text-[#c5d520]" />
+                      ))}
+                    </div>
+                    <blockquote className="text-[#042940] text-base md:text-lg leading-relaxed mb-8 flex-1">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
+                        <img 
+                          src={testimonial.img} 
+                          alt={testimonial.author} 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <div className="font-bold text-[#042940]">{testimonial.author}</div>
+                        <div className="text-sm text-[#042940]/60">{testimonial.role}, {testimonial.company}</div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 mt-10">
+            <button
+              onClick={prev}
+              disabled={currentIndex === 0}
+              className="w-12 h-12 rounded-full border border-[#042940]/20 flex items-center justify-center hover:bg-[#042940]/5 active:bg-[#042940]/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-w-[44px] min-h-[44px]"
+              aria-label="Previous testimonials"
+              data-testid="button-testimonial-prev"
+            >
+              <ChevronLeft className="w-5 h-5 text-[#042940]" />
+            </button>
+            <div className="flex gap-2">
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    i === currentIndex ? "bg-[#042940] w-6" : "bg-[#042940]/20"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              disabled={currentIndex === maxIndex}
+              className="w-12 h-12 rounded-full border border-[#042940]/20 flex items-center justify-center hover:bg-[#042940]/5 active:bg-[#042940]/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-w-[44px] min-h-[44px]"
+              aria-label="Next testimonials"
+              data-testid="button-testimonial-next"
+            >
+              <ChevronRight className="w-5 h-5 text-[#042940]" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
