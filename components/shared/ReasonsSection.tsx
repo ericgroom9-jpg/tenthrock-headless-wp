@@ -34,7 +34,7 @@ export default function ReasonsSection() {
                <p className="text-lg text-primary/60 mb-8 leading-relaxed">
                  We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.
                </p>
-               <Button size="lg" className="w-full sm:w-auto bg-secondary text-primary hover:bg-secondary/90 min-h-[52px] whitespace-nowrap rounded-full">
+               <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full">
                   Request a Service
                </Button>
              </motion.div>
