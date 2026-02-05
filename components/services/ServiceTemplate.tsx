@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { 
@@ -10,12 +10,6 @@ import {
   MapPin, 
   ChevronRight,
   ChevronDown,
-  ChevronLeft,
-  Mail,
-  Instagram,
-  Twitter,
-  Facebook,
-  Linkedin,
   Plus,
   Minus
 } from "lucide-react";
@@ -48,6 +42,7 @@ interface ServiceTemplateProps {
     description: string;
     image: string;
     link: string;
+    features?: string[];
   }[];
   processSteps?: {
     num: string;
@@ -132,48 +127,7 @@ export default function ServiceTemplate({
 }: ServiceTemplateProps) {
   const [activeStep, setActiveStep] = useState(0);
   const [openItem, setOpenItem] = useState("item-0");
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(true);
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  const updateScrollButtons = () => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    
-    setCanScrollPrev(slider.scrollLeft > 10);
-    setCanScrollNext(slider.scrollLeft < slider.scrollWidth - slider.clientWidth - 10);
-  };
-
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    
-    updateScrollButtons();
-    slider.addEventListener('scroll', updateScrollButtons);
-    window.addEventListener('resize', updateScrollButtons);
-    
-    return () => {
-      slider.removeEventListener('scroll', updateScrollButtons);
-      window.removeEventListener('resize', updateScrollButtons);
-    };
-  }, []);
-
-  const scrollSlider = (direction: 'prev' | 'next') => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-    
-    const card = slider.querySelector('.service-card') as HTMLElement;
-    if (!card) return;
-    
-    const cardWidth = card.offsetWidth;
-    const gap = parseFloat(getComputedStyle(slider).gap) || 24;
-    const scrollAmount = cardWidth + gap;
-    
-    slider.scrollBy({
-      left: direction === 'next' ? scrollAmount : -scrollAmount,
-      behavior: 'smooth'
-    });
-  };
+  const [activeService, setActiveService] = useState(0);
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -359,93 +313,117 @@ export default function ServiceTemplate({
           </div>
         </section>
 
-        {/* Services Slider Section */}
-        <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="sub-services-heading">
+        {/* Our Services Section - Matching Homepage Design Exactly */}
+        <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
           <div className="container mx-auto px-4 md:px-8">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mb-10 md:mb-12"
+              className="mb-10 md:mb-16 max-w-2xl"
             >
-              <h2 id="sub-services-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
                 Our Services
+              </div>
+              <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-4 tracking-tighter">
+                Commercial Waste Services
               </h2>
+              <p className="text-lg text-[#042940]/60">
+                Comprehensive solutions for businesses of all sizes, available nationwide.
+              </p>
             </motion.div>
-
-            {/* Slider Container with CSS scroll-snap */}
-            <div className="relative">
-              <div 
-                ref={sliderRef}
-                className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mb-4"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
+            
+            <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+              {/* Navigation List */}
+              <div className="lg:col-span-4 flex flex-col space-y-[6px]">
                 {subServices.map((service, i) => (
-                  <motion.div
+                  <button
                     key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="service-card flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
+                    onClick={() => setActiveService(i)}
+                    onMouseEnter={() => setActiveService(i)}
+                    className={`text-left px-6 md:px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${
+                      activeService === i 
+                        ? "bg-white shadow-lg text-[#042940] border border-[#042940]/5" 
+                        : "text-[#042940]/40 hover:text-[#042940] active:text-[#042940] hover:bg-white/50 active:bg-white/50"
+                    }`}
+                    data-testid={`button-service-${i}`}
                   >
-                    <div className="relative h-[480px] sm:h-[450px] lg:h-[560px] rounded-[5px] overflow-hidden bg-[#d2d2d2]">
-                      <img 
-                        src={service.image} 
-                        alt={`${service.title} service`}
-                        className="w-full h-full object-cover"
+                    <span className="relative z-10 flex items-center justify-between">
+                      {service.title}
+                      {activeService === i && (
+                        <motion.span layoutId="active-indicator" className="w-2 h-2 rounded-full bg-[#c5d520]" />
+                      )}
+                    </span>
+                    {activeService === i && (
+                      <motion.div
+                        layoutId="active-bg"
+                        className="absolute left-0 top-0 bottom-0 w-1 bg-[#c5d520]"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/60 to-transparent" />
-                      
-                      {/* Content - Always visible for accessibility */}
-                      <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-6">
-                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-                          {service.title}
-                        </h3>
-                        
-                        <div className="space-y-4">
-                          <p className="text-white/90 text-sm sm:text-base">
-                            {service.description}
-                          </p>
-                          <Link 
-                            href={service.link}
-                            className="inline-flex items-center justify-center w-full border border-white/30 text-white min-h-[52px] rounded-[5px] font-medium transition-colors backdrop-blur-sm bg-white/10 hover-elevate"
-                            data-testid={`link-service-${i}`}
-                          >
-                            Learn More
-                            <ArrowRight className="ml-2 h-5 w-5" />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
+                    )}
+                  </button>
                 ))}
               </div>
 
-              {/* Slider Controls - 52px touch targets with scroll bounds */}
-              {subServices.length > 1 && (
-                <div className="flex gap-3 mt-8">
-                  <button
-                    onClick={() => scrollSlider('prev')}
-                    disabled={!canScrollPrev}
-                    className="w-[52px] h-[52px] rounded-full bg-[#042940] border border-[#042940] flex items-center justify-center text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover-elevate"
-                    aria-label="Previous slide"
-                    data-testid="button-slider-prev"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={() => scrollSlider('next')}
-                    disabled={!canScrollNext}
-                    className="w-[52px] h-[52px] rounded-full bg-[#042940] border border-[#042940] flex items-center justify-center text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed hover-elevate"
-                    aria-label="Next slide"
-                    data-testid="button-slider-next"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                </div>
-              )}
+              {/* Content Display */}
+              <div className="lg:col-span-8 h-full">
+                <Link 
+                  href={subServices[activeService]?.link || "#"} 
+                  className="block relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
+                  data-testid={`link-service-detail-${activeService}`}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeService}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0"
+                    >
+                      <img 
+                        src={subServices[activeService]?.image} 
+                        alt={subServices[activeService]?.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/70 md:via-[#042940]/60 to-transparent opacity-95 md:opacity-90"></div>
+                      
+                      <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">
+                            {subServices[activeService]?.title}
+                          </h3>
+                          <p className="text-white/90 text-xl leading-relaxed max-w-2xl font-medium mb-8">
+                            {subServices[activeService]?.description}
+                          </p>
+                          
+                          {subServices[activeService]?.features && (
+                            <div className="flex flex-wrap gap-4 mb-8">
+                              {subServices[activeService].features.map((feature, idx) => (
+                                <span key={idx} className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white text-sm font-bold border border-white/10 hover:bg-white/20 transition-colors">
+                                  {feature}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
+                          <div className="flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide group-hover:gap-4 transition-all">
+                            Learn More <ArrowRight className="w-5 h-5" />
+                          </div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

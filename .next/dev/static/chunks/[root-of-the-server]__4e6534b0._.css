@@ -1462,10 +1462,6 @@ h1, h3, h4, h5, h6, h2 {
   margin-bottom: .25rem;
 }
 
-.-mb-4 {
-  margin-bottom: -1rem;
-}
-
 .-ml-4 {
   margin-left: -1rem;
 }
@@ -1757,14 +1753,6 @@ h1, h3, h4, h5, h6, h2 {
   height: 400px;
 }
 
-.h-\[480px\] {
-  height: 480px;
-}
-
-.h-\[52px\] {
-  height: 52px;
-}
-
 .h-\[600px\] {
   height: 600px;
 }
@@ -1967,10 +1955,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .w-\[420px\] {
   width: 420px;
-}
-
-.w-\[52px\] {
-  width: 52px;
 }
 
 .w-\[600px\] {
@@ -2308,22 +2292,6 @@ h1, h3, h4, h5, h6, h2 {
   resize: none;
 }
 
-.resize {
-  resize: both;
-}
-
-.snap-x {
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
-.snap-mandatory {
-  --tw-scroll-snap-strictness: mandatory;
-}
-
-.snap-start {
-  scroll-snap-align: start;
-}
-
 .list-none {
   list-style-type: none;
 }
@@ -2516,10 +2484,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-x-auto {
-  overflow-x: auto;
 }
 
 .overflow-y-auto {
@@ -2846,11 +2810,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .bg-\[\#c5d520\]\/5 {
   background-color: #c5d5200d;
-}
-
-.bg-\[\#d2d2d2\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(210 210 210 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[--color-bg\] {
@@ -5110,10 +5069,6 @@ h1, h3, h4, h5, h6, h2 {
   cursor: not-allowed;
 }
 
-.disabled\:opacity-30:disabled {
-  opacity: .3;
-}
-
 .disabled\:opacity-50:disabled {
   opacity: .5;
 }
@@ -6068,14 +6023,6 @@ h1, h3, h4, h5, h6, h2 {
     display: flex;
   }
 
-  .sm\:h-\[450px\] {
-    height: 450px;
-  }
-
-  .sm\:w-\[calc\(50\%-12px\)\] {
-    width: calc(50% - 12px);
-  }
-
   .sm\:w-auto {
     width: auto;
   }
@@ -6167,16 +6114,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .sm\:text-center {
     text-align: center;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .sm\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .sm\:text-lg {
@@ -6542,10 +6479,6 @@ h1, h3, h4, h5, h6, h2 {
     height: 2.5rem;
   }
 
-  .lg\:h-\[560px\] {
-    height: 560px;
-  }
-
   .lg\:h-\[600px\] {
     height: 600px;
   }
@@ -6560,10 +6493,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:w-\[360px\] {
     width: 360px;
-  }
-
-  .lg\:w-\[calc\(33\.333\%-16px\)\] {
-    width: calc(33.333% - 16px);
   }
 
   .lg\:flex-shrink-0 {
@@ -6690,11 +6619,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:pl-8 {
     padding-left: 2rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .lg\:text-5xl {

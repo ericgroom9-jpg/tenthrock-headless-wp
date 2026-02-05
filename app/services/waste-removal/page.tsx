@@ -6,22 +6,46 @@ const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
 
 const subServices = [
   {
-    title: "Waste Removal",
-    description: "Complete waste removal services for commercial properties of all sizes.",
+    title: "Emergency & Overflow Waste Response",
+    description: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can't wait. Built for retail, industrial, and multi-site emergencies.",
     image: imgServiceEmergencyOverflow,
-    link: "/services/waste-removal",
+    link: "/services/emergency-waste-removal",
+    features: ["24/7 Dispatch", "Overflow & Surge Capacity", "Nationwide Network"],
   },
   {
-    title: "Dumpster Rentals",
-    description: "Flexible dumpster rental solutions for construction, renovation, and cleanouts.",
+    title: "Store Decommissioning & Remodel Support",
+    description: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
+    image: imgServiceDumpsterRental,
+    link: "/services/store-decommissioning",
+    features: ["Project Scheduling", "Site Cleanouts", "Multi-location Coordination"],
+  },
+  {
+    title: "Event & Stadium Waste Logistics",
+    description: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
+    image: imgServiceEventStadium,
+    link: "/services/event-stadium",
+    features: ["Venue Routing", "High-volume Support", "Diversion Planning"],
+  },
+  {
+    title: "Dumpster Rental & Temporary Containers",
+    description: "Temporary containers and compactor solutions for projects and peaks. Transparent sizing, delivery windows, and swap schedules.",
     image: imgServiceDumpsterRental,
     link: "/services/dumpster-rentals",
+    features: ["Roll-offs & Front-load", "Fast Delivery", "Flexible Terms"],
   },
   {
-    title: "Emergency Waste Removal",
-    description: "24/7 rapid response for unexpected waste emergencies and overflow situations.",
+    title: "Centralized Waste Program Management",
+    description: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
+    image: imgServiceEmergencyOverflow,
+    link: "/services/centralized-programs",
+    features: ["Standardized SLAs", "Spend Visibility", "Single Point of Contact"],
+  },
+  {
+    title: "Environmental & Compactor Maintenance Services",
+    description: "Preventative maintenance and service for compactors and waste equipment, plus environmental support to keep sites compliant and running.",
     image: imgServiceEventStadium,
-    link: "/services/emergency-waste-removal",
+    link: "/services/environmental-maintenance",
+    features: ["PM Schedules", "On-site Repairs", "Compliance Support"],
   },
 ];
 
