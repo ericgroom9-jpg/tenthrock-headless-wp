@@ -1462,6 +1462,11 @@ h1, h3, h4, h5, h6, h2 {
   margin-bottom: .25rem;
 }
 
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .-ml-4 {
   margin-left: -1rem;
 }
@@ -1847,6 +1852,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .min-h-\[44px\] {
   min-height: 44px;
+}
+
+.min-h-\[48px\] {
+  min-height: 48px;
 }
 
 .min-h-\[50vh\] {
@@ -3169,6 +3178,10 @@ h1, h3, h4, h5, h6, h2 {
   --tw-gradient-to: #042940b3 var(--tw-gradient-to-position);
 }
 
+.to-\[\#042940\]\/80 {
+  --tw-gradient-to: #042940cc var(--tw-gradient-to-position);
+}
+
 .to-\[\#0a3a55\] {
   --tw-gradient-to: #0a3a55 var(--tw-gradient-to-position);
 }
@@ -3780,6 +3793,10 @@ h1, h3, h4, h5, h6, h2 {
 .text-primary-foreground {
   --tw-text-opacity: 1;
   color: hsl(var(--primary-foreground) / var(--tw-text-opacity, 1));
+}
+
+.text-primary\/20 {
+  color: hsl(var(--primary) / .2);
 }
 
 .text-primary\/40 {
@@ -4592,6 +4609,10 @@ h1, h3, h4, h5, h6, h2 {
   color: hsl(var(--muted-foreground) / var(--tw-text-opacity, 1));
 }
 
+.placeholder\:text-primary\/40::placeholder {
+  color: hsl(var(--primary) / .4);
+}
+
 .placeholder\:text-white\/30::placeholder {
   color: #ffffff4d;
 }
@@ -4958,6 +4979,10 @@ h1, h3, h4, h5, h6, h2 {
   border-color: rgb(197 213 32 / var(--tw-border-opacity, 1));
 }
 
+.focus\:border-transparent:focus {
+  border-color: #0000;
+}
+
 .focus\:bg-accent:focus {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--accent) / var(--tw-bg-opacity, 1));
@@ -5246,6 +5271,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .group:hover .group-hover\:gap-4 {
   gap: 1rem;
+}
+
+.group:hover .group-hover\:border-primary\/40 {
+  border-color: hsl(var(--primary) / .4);
 }
 
 .group:hover .group-hover\:bg-\[\#042940\]\/10 {
@@ -6237,6 +6266,10 @@ h1, h3, h4, h5, h6, h2 {
     justify-content: center;
   }
 
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
   .sm\:gap-2\.5 {
     gap: .625rem;
   }
@@ -6283,6 +6316,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .sm\:p-6 {
     padding: 1.5rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-6 {
@@ -6419,6 +6456,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:h-\[320px\] {
     height: 320px;
+  }
+
+  .md\:h-\[480px\] {
+    height: 480px;
   }
 
   .md\:min-h-\[65vh\] {
@@ -6763,6 +6804,10 @@ h1, h3, h4, h5, h6, h2 {
     margin-top: -8rem;
   }
 
+  .lg\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .lg\:aspect-auto {
     aspect-ratio: auto;
   }
@@ -6779,6 +6824,10 @@ h1, h3, h4, h5, h6, h2 {
     height: 600px;
   }
 
+  .lg\:h-\[640px\] {
+    height: 640px;
+  }
+
   .lg\:min-h-\[70vh\] {
     min-height: 70vh;
   }
@@ -6789,6 +6838,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:w-10 {
+    width: 2.5rem;
   }
 
   .lg\:w-\[360px\] {
@@ -6863,6 +6916,12 @@ h1, h3, h4, h5, h6, h2 {
     gap: 2rem;
   }
 
+  .lg\:space-y-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+  }
+
   .lg\:space-y-8 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
@@ -6893,6 +6952,10 @@ h1, h3, h4, h5, h6, h2 {
   .lg\:object-right {
     -o-object-position: right;
     object-position: right;
+  }
+
+  .lg\:p-10 {
+    padding: 2.5rem;
   }
 
   .lg\:p-20 {
@@ -6948,6 +7011,16 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:pt-8 {
     padding-top: 2rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .lg\:text-5xl {
