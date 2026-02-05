@@ -25,7 +25,7 @@ export default function WhoWeServePage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Navbar variant="sticky" />
+      <Navbar />
 
       {/* Hero Section */}
       <section 
@@ -38,7 +38,7 @@ export default function WhoWeServePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
         
-        <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28">
+        <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
