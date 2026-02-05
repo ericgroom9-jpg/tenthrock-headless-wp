@@ -112,7 +112,7 @@ export default function IndustryTemplate({
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-white/30 text-white hover:bg-white/10 active:bg-white/10 rounded-full min-h-[52px] gap-2 w-full sm:w-auto"
+                  className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[52px] rounded-full gap-2"
                   data-testid="button-hero-phone"
                 >
                   <Phone className="w-5 h-5" />
