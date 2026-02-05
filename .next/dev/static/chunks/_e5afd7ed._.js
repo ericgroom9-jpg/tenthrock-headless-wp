@@ -21,10 +21,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-bold tracking-tight transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:scale-105 active:scale-95", {
     variants: {
         variant: {
-            default: "bg-primary text-primary-foreground border border-primary-border hover:bg-primary/90 shadow-sm",
-            destructive: "bg-destructive text-destructive-foreground shadow-sm border-destructive-border hover:bg-destructive/90",
+            default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
+            destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
             outline: "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-            secondary: "border bg-secondary text-secondary-foreground border border-secondary-border hover:bg-secondary/80",
+            secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
             ghost: "hover:bg-accent hover:text-accent-foreground",
             link: "text-primary underline-offset-4 hover:underline"
         },

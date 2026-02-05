@@ -2644,10 +2644,6 @@ h2 {
   border-color: hsl(var(--destructive) / var(--tw-border-opacity, 1));
 }
 
-.border-destructive-border {
-  border-color: var(--destructive-border);
-}
-
 .border-destructive\/20 {
   border-color: hsl(var(--destructive) / .2);
 }
@@ -2685,10 +2681,6 @@ h2 {
   border-color: hsl(var(--primary) / var(--tw-border-opacity, 1));
 }
 
-.border-primary-border {
-  border-color: var(--primary-border);
-}
-
 .border-primary\/10 {
   border-color: hsl(var(--primary) / .1);
 }
@@ -2704,10 +2696,6 @@ h2 {
 .border-red-200 {
   --tw-border-opacity: 1;
   border-color: rgb(254 202 202 / var(--tw-border-opacity, 1));
-}
-
-.border-secondary-border {
-  border-color: var(--secondary-border);
 }
 
 .border-sidebar-border {
