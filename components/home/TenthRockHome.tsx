@@ -668,8 +668,8 @@ const CaseStudySection = () => {
     <section className="py-24 bg-white border-b border-primary/5">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Images */}
-          <div className="space-y-4">
+          {/* Left Column - Images (order-2 on mobile, order-1 on lg) */}
+          <div className="space-y-4 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -703,13 +703,13 @@ const CaseStudySection = () => {
             </div>
           </div>
 
-          {/* Right Column - Content */}
+          {/* Right Column - Content (order-1 on mobile, order-2 on lg) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:pl-8"
+            className="lg:pl-8 order-1 lg:order-2"
           >
             <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">
               Case Study: <br/>Urban Redevelopment
@@ -770,24 +770,24 @@ const WhyUs = () => {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-           {/* Left Image Side */}
+           {/* Left Image Side (order-2 on mobile) */}
            <motion.div 
              initial={{ opacity: 0, x: -20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.8 }}
-             className="h-[600px] relative rounded-[5px] overflow-hidden"
+             className="h-[350px] lg:h-[600px] relative rounded-[5px] overflow-hidden order-2 lg:order-1"
            >
               <img src={imgTruck} alt="Tenth Rock Operations" className="absolute inset-0 w-full h-full object-cover" />
            </motion.div>
            
-           {/* Right Content Side */}
+           {/* Right Content Side (order-1 on mobile) */}
            <motion.div 
              initial={{ opacity: 0, x: 20 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true }}
              transition={{ duration: 0.8 }}
-             className="flex flex-col justify-center"
+             className="flex flex-col justify-center order-1 lg:order-2"
            >
              <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-12 tracking-tighter">
                Why You’ll Love Tenth Rock Solutions
