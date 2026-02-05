@@ -7,7 +7,6 @@ import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import ReasonsSection from "@/components/shared/ReasonsSection";
 import StatsSection from "@/components/shared/StatsSection";
 import FaqSection from "@/components/shared/FaqSection";
@@ -16,6 +15,7 @@ import CtaBannerSection from "@/components/shared/CtaBannerSection";
 import ProcessSection from "@/components/shared/ProcessSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
+import WhoWeHelpSection from "@/components/shared/WhoWeHelpSection";
 
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
 
@@ -74,8 +74,8 @@ export default function WhoWeServePage() {
         </div>
       </section>
 
-      {/* Commercial Waste Services - Shared Component */}
-      <CommercialWasteServices />
+      {/* Who We Help - Shared Component (same as homepage) */}
+      <WhoWeHelpSection />
 
       {/* More Reasons You'll Love Us - Shared Component (same as homepage) */}
       <ReasonsSection />
