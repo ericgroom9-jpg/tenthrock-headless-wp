@@ -383,7 +383,7 @@ export default function ServiceTemplate({
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-[#042940]/10 p-6 md:p-8 lg:-mt-64 relative z-10"
+                className="bg-white border border-[#042940]/10 p-6 md:p-8 lg:-mt-32 relative z-10"
               >
                 <form className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
