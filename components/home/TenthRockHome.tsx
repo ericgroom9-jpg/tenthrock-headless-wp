@@ -281,8 +281,8 @@ const Hero = () => {
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-[#042940]/60 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-transparent to-[#042940]/30"></div>
+        <div className="absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/20 md:via-transparent to-[#042940]/40 md:to-[#042940]/30"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
       </div>
 
@@ -548,15 +548,15 @@ const ServicesSection = () => {
                      alt={services[activeService].title} 
                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                    />
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/60 to-transparent opacity-90"></div>
+                   <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/70 md:via-[#042940]/60 to-transparent opacity-95 md:opacity-90"></div>
                    
-                   <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                   <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end">
                      <motion.div
                        initial={{ opacity: 0, y: 20 }}
                        animate={{ opacity: 1, y: 0 }}
                        transition={{ delay: 0.2 }}
                      >
-                       <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                       <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">
                          {services[activeService].title}
                        </h3>
                        <p className="text-white/90 text-xl leading-relaxed max-w-2xl font-medium mb-8">
@@ -628,8 +628,8 @@ const WhoWeHelp = () => {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 alt={sector.title} 
               />
-              <div className="absolute inset-0 bg-[#042940]/80 group-hover:bg-[#042940]/60 transition-colors duration-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#042940] to-transparent opacity-90"></div>
+              <div className="absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 group-hover:bg-[#042940]/60 group-active:bg-[#042940]/60 transition-colors duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90"></div>
               
               <div className="absolute inset-0 p-6 flex flex-col justify-end">
                  <div className="transform transition-transform duration-300 translate-y-4 group-hover:translate-y-0">
@@ -1431,9 +1431,9 @@ const FinalCta = () => {
 
              {/* Image Side */}
              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <img src={imgCyclist} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-[#042940]/20 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#042940] to-transparent lg:via-[#042940]/50"></div>
+                <img src={imgCyclist} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover object-center lg:object-right" />
+                <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 
              {/* Floating Stat Card */}
                 <motion.div 
