@@ -139,18 +139,16 @@ export default function ServiceTemplate({
 
       <main id="main-content" className="flex-1">
         {/* Hero Section - Solid Dark Background */}
-        <section className="relative bg-[#1a1a1a] pt-24 md:pt-28">
-          <div className="container mx-auto px-4 md:px-8 py-12 sm:py-16 lg:py-20">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Left Content */}
+        <section className="relative bg-[#042940] pt-24 md:pt-28">
+          <div className="container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
+            <div className="max-w-xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="max-w-xl"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
-                  <span className="underline decoration-2 underline-offset-8">{serviceName}</span>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
+                  {serviceName}
                 </h1>
                 <p className="text-base sm:text-lg text-white/70 mb-6 sm:mb-8 max-w-md">
                   {serviceDescription}
@@ -159,7 +157,7 @@ export default function ServiceTemplate({
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="w-full sm:w-auto border-white text-[#1a1a1a] bg-white hover:bg-white/90 min-h-[52px] rounded-none whitespace-nowrap font-medium"
+                    className="w-full sm:w-auto border-white text-[#042940] bg-white hover:bg-white/90 min-h-[52px] rounded-none whitespace-nowrap font-medium"
                     data-testid="button-hero-cta"
                   >
                     Call To Action
@@ -167,7 +165,7 @@ export default function ServiceTemplate({
                   <Button 
                     size="lg" 
                     variant="outline"
-                    className="w-full sm:w-auto border-white text-white bg-transparent hover:bg-white hover:text-[#1a1a1a] min-h-[52px] rounded-none whitespace-nowrap font-medium"
+                    className="w-full sm:w-auto border-white text-white bg-transparent hover:bg-white hover:text-[#042940] min-h-[52px] rounded-none whitespace-nowrap font-medium"
                     data-testid="button-hero-phone"
                   >
                     <Phone className="mr-2 h-5 w-5" />
@@ -175,9 +173,6 @@ export default function ServiceTemplate({
                   </Button>
                 </div>
               </motion.div>
-
-              {/* Spacer for form positioning */}
-              <div className="hidden lg:block" />
             </div>
           </div>
         </section>
@@ -194,32 +189,32 @@ export default function ServiceTemplate({
                 transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a]">About Service</h2>
-                  <div className="w-10 h-10 rounded-full border border-[#1a1a1a] flex items-center justify-center">
-                    <ArrowRight className="w-5 h-5 text-[#1a1a1a] rotate-[-45deg]" />
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#042940]">About Service</h2>
+                  <div className="w-10 h-10 rounded-full border border-[#042940] flex items-center justify-center">
+                    <ArrowRight className="w-5 h-5 text-[#042940] rotate-[-45deg]" />
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-6">
-                  <li className="flex items-center gap-3 text-[#1a1a1a]">
-                    <div className="w-5 h-5 rounded-full bg-[#1a1a1a] flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <li className="flex items-center gap-3 text-[#042940]">
+                    <div className="w-5 h-5 rounded-full bg-[#c5d520] flex items-center justify-center">
+                      <svg className="w-3 h-3 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span>Benefit or Differentiator</span>
                   </li>
-                  <li className="flex items-center gap-3 text-[#1a1a1a]">
-                    <div className="w-5 h-5 rounded-full bg-[#1a1a1a] flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <li className="flex items-center gap-3 text-[#042940]">
+                    <div className="w-5 h-5 rounded-full bg-[#c5d520] flex items-center justify-center">
+                      <svg className="w-3 h-3 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <span>Benefit or Differentiator</span>
                   </li>
-                  <li className="flex items-center gap-3 text-[#1a1a1a]">
-                    <div className="w-5 h-5 rounded-full bg-[#1a1a1a] flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <li className="flex items-center gap-3 text-[#042940]">
+                    <div className="w-5 h-5 rounded-full bg-[#c5d520] flex items-center justify-center">
+                      <svg className="w-3 h-3 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -227,21 +222,21 @@ export default function ServiceTemplate({
                   </li>
                 </ul>
 
-                <p className="text-[#1a1a1a]/70 mb-8 leading-relaxed">
+                <p className="text-[#042940]/70 mb-8 leading-relaxed">
                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
 
-                <div className="space-y-4 border-t border-[#1a1a1a]/10 pt-6">
-                  <a href="#process" className="flex items-center justify-between py-4 border-b border-[#1a1a1a]/10 group">
-                    <h3 className="text-xl font-bold text-[#1a1a1a]">How Service Works</h3>
-                    <div className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
-                      <ArrowRight className="w-5 h-5 text-white" />
+                <div className="space-y-0 border-t border-[#042940]/10">
+                  <a href="#process" className="flex items-center justify-between py-5 border-b border-[#042940]/10 group">
+                    <h3 className="text-xl font-bold text-[#042940]">How Service Works</h3>
+                    <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
+                      <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
                     </div>
                   </a>
-                  <a href="#services" className="flex items-center justify-between py-4 group">
-                    <h3 className="text-xl font-bold text-[#1a1a1a]">Other Services</h3>
-                    <div className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
-                      <ArrowRight className="w-5 h-5 text-white" />
+                  <a href="#services" className="flex items-center justify-between py-5 group">
+                    <h3 className="text-xl font-bold text-[#042940]">Other Services</h3>
+                    <div className="w-10 h-10 rounded-full bg-[#042940] flex items-center justify-center group-hover:bg-[#c5d520] transition-colors">
+                      <ArrowRight className="w-5 h-5 text-white group-hover:text-[#042940]" />
                     </div>
                   </a>
                 </div>
@@ -252,29 +247,29 @@ export default function ServiceTemplate({
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white border border-[#1a1a1a]/10 p-6 md:p-8 lg:-mt-48 relative z-10"
+                className="bg-white border border-[#042940]/10 p-6 md:p-8 lg:-mt-64 relative z-10"
               >
                 <form className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-[#1a1a1a] mb-2">
+                      <label htmlFor="firstName" className="block text-sm font-medium text-[#042940] mb-2">
                         First name
                       </label>
                       <Input 
                         id="firstName"
                         type="text"
-                        className="w-full h-12 border-[#1a1a1a]/20 rounded-none focus:border-[#1a1a1a] focus:ring-[#1a1a1a]"
+                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
                         data-testid="input-first-name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-[#1a1a1a] mb-2">
+                      <label htmlFor="lastName" className="block text-sm font-medium text-[#042940] mb-2">
                         Last name
                       </label>
                       <Input 
                         id="lastName"
                         type="text"
-                        className="w-full h-12 border-[#1a1a1a]/20 rounded-none focus:border-[#1a1a1a] focus:ring-[#1a1a1a]"
+                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
                         data-testid="input-last-name"
                       />
                     </div>
@@ -282,24 +277,24 @@ export default function ServiceTemplate({
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-[#1a1a1a] mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-[#042940] mb-2">
                         Email
                       </label>
                       <Input 
                         id="email"
                         type="email"
-                        className="w-full h-12 border-[#1a1a1a]/20 rounded-none focus:border-[#1a1a1a] focus:ring-[#1a1a1a]"
+                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
                         data-testid="input-email"
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-[#1a1a1a] mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-[#042940] mb-2">
                         Phone number
                       </label>
                       <Input 
                         id="phone"
                         type="tel"
-                        className="w-full h-12 border-[#1a1a1a]/20 rounded-none focus:border-[#1a1a1a] focus:ring-[#1a1a1a]"
+                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
                         data-testid="input-phone"
                       />
                     </div>
@@ -307,23 +302,23 @@ export default function ServiceTemplate({
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-[#1a1a1a] mb-2">
+                      <label htmlFor="company" className="block text-sm font-medium text-[#042940] mb-2">
                         Company
                       </label>
                       <Input 
                         id="company"
                         type="text"
-                        className="w-full h-12 border-[#1a1a1a]/20 rounded-none focus:border-[#1a1a1a] focus:ring-[#1a1a1a]"
+                        className="w-full h-12 border-[#042940]/20 rounded-none focus:border-[#042940] focus:ring-[#042940]"
                         data-testid="input-company"
                       />
                     </div>
                     <div>
-                      <label htmlFor="interest" className="block text-sm font-medium text-[#1a1a1a] mb-2">
+                      <label htmlFor="interest" className="block text-sm font-medium text-[#042940] mb-2">
                         I'm interested in help with:
                       </label>
                       <select 
                         id="interest"
-                        className="w-full h-12 px-3 border border-[#1a1a1a]/20 rounded-none bg-white text-[#1a1a1a] focus:border-[#1a1a1a] focus:ring-1 focus:ring-[#1a1a1a] outline-none"
+                        className="w-full h-12 px-3 border border-[#042940]/20 rounded-none bg-white text-[#042940] focus:border-[#042940] focus:ring-1 focus:ring-[#042940] outline-none"
                         data-testid="select-interest"
                         defaultValue=""
                       >
@@ -338,14 +333,14 @@ export default function ServiceTemplate({
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#1a1a1a] mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-[#042940] mb-2">
                       Message
                     </label>
                     <textarea 
                       id="message"
                       rows={4}
                       placeholder="Type your message..."
-                      className="w-full px-3 py-3 border border-[#1a1a1a]/20 rounded-none bg-white text-[#1a1a1a] placeholder:text-[#1a1a1a]/40 focus:border-[#1a1a1a] focus:ring-1 focus:ring-[#1a1a1a] outline-none resize-none"
+                      className="w-full px-3 py-3 border border-[#042940]/20 rounded-none bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#042940] focus:ring-1 focus:ring-[#042940] outline-none resize-none"
                       data-testid="textarea-message"
                     />
                   </div>
@@ -354,17 +349,17 @@ export default function ServiceTemplate({
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input 
                         type="checkbox" 
-                        className="w-5 h-5 rounded-none border-[#1a1a1a]/20 text-[#1a1a1a] focus:ring-[#1a1a1a]"
+                        className="w-5 h-5 rounded-none border-[#042940]/20 text-[#042940] focus:ring-[#042940]"
                         data-testid="checkbox-terms"
                       />
-                      <span className="text-sm text-[#1a1a1a]">
+                      <span className="text-sm text-[#042940]">
                         I accept the <a href="/terms" className="underline hover:text-[#c5d520]">Terms</a>
                       </span>
                     </label>
                     <Button 
                       type="submit"
                       size="lg"
-                      className="bg-[#1a1a1a] text-white hover:bg-[#1a1a1a]/90 min-h-[52px] rounded-none px-8"
+                      className="bg-[#042940] text-white hover:bg-[#042940]/90 min-h-[52px] rounded-none px-8"
                       data-testid="button-form-submit"
                     >
                       Submit
