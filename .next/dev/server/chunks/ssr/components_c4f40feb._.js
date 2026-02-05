@@ -281,7 +281,7 @@ const Navbar = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                     size: "sm",
-                                    className: "bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[44px] px-4",
+                                    className: "bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4",
                                     "data-testid": "button-mobile-cta",
                                     children: "Get a Quote"
                                 }, void 0, false, {
@@ -290,7 +290,7 @@ const Navbar = ()=>{
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center",
+                                    className: "p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[52px] min-h-[52px] flex items-center justify-center",
                                     onClick: ()=>setIsNavExpanded(!isNavExpanded),
                                     "aria-expanded": isNavExpanded,
                                     "aria-label": "Toggle navigation menu",
@@ -501,7 +501,7 @@ const Navbar = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                     size: "lg",
                                     variant: "ghost",
-                                    className: "text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2",
+                                    className: "text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap",
                                     children: "Login"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -510,7 +510,7 @@ const Navbar = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                     size: "lg",
-                                    className: "bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20",
+                                    className: "bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap",
                                     children: "Request a Quote"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -605,7 +605,7 @@ const Navbar = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                             variant: "ghost",
-                                            className: "w-full text-primary font-bold uppercase tracking-wide text-base min-h-[52px] justify-center",
+                                            className: "w-full text-primary font-bold uppercase tracking-wide text-base min-h-[52px] justify-center whitespace-nowrap",
                                             onClick: ()=>setIsNavExpanded(false),
                                             children: "Login"
                                         }, void 0, false, {
@@ -2253,7 +2253,7 @@ const CtaBanner = ()=>{
                 transition: {
                     duration: 0.8
                 },
-                className: "relative bg-[#042940] rounded-[5px] p-12 md:p-20 overflow-hidden shadow-2xl text-center",
+                className: "relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 opacity-10 mix-blend-overlay",
@@ -2634,7 +2634,7 @@ const Reasons = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                     size: "lg",
-                                    className: "bg-secondary text-primary hover:bg-secondary/90",
+                                    className: "w-full sm:w-auto bg-secondary text-primary hover:bg-secondary/90 min-h-[52px] whitespace-nowrap",
                                     children: "Request a Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4400,7 +4400,7 @@ const Footer = ()=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                             size: "lg",
-                                            className: "bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940]",
+                                            className: "bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px]",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {

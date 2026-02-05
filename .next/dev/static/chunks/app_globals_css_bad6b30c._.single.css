@@ -1677,10 +1677,6 @@ h2 {
   min-height: 44px;
 }
 
-.min-h-\[48px\] {
-  min-height: 48px;
-}
-
 .min-h-\[52px\] {
   min-height: 52px;
 }
@@ -1861,8 +1857,8 @@ h2 {
   min-width: 44px;
 }
 
-.min-w-\[48px\] {
-  min-width: 48px;
+.min-w-\[52px\] {
+  min-width: 52px;
 }
 
 .min-w-\[8rem\] {
@@ -2948,10 +2944,6 @@ h2 {
 
 .p-10 {
   padding: 2.5rem;
-}
-
-.p-12 {
-  padding: 3rem;
 }
 
 .p-2 {
@@ -5996,10 +5988,6 @@ h2 {
     padding: 3.5rem;
   }
 
-  .md\:p-20 {
-    padding: 5rem;
-  }
-
   .md\:p-6 {
     padding: 1.5rem;
   }
@@ -6295,6 +6283,10 @@ h2 {
   .lg\:object-right {
     -o-object-position: right;
     object-position: right;
+  }
+
+  .lg\:p-20 {
+    padding: 5rem;
   }
 
   .lg\:px-12 {

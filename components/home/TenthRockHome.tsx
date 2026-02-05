@@ -148,13 +148,13 @@ const Navbar = () => {
           <div className="flex items-center gap-2 xl:hidden">
             <Button 
               size="sm" 
-              className="bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[44px] px-4"
+              className="bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4"
               data-testid="button-mobile-cta"
             >
               Get a Quote
             </Button>
             <button 
-              className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[48px] min-h-[48px] flex items-center justify-center"
+              className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[52px] min-h-[52px] flex items-center justify-center"
               onClick={() => setIsNavExpanded(!isNavExpanded)}
               aria-expanded={isNavExpanded}
               aria-label="Toggle navigation menu"
@@ -233,10 +233,10 @@ const Navbar = () => {
 
           {/* Right Side Actions - always visible, scales down */}
           <div className="hidden xl:flex items-center gap-3 shrink-0">
-            <Button size="lg" variant="ghost" className="text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2">
+            <Button size="lg" variant="ghost" className="text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap">
               Login
             </Button>
-            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20">
+            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap">
               Request a Quote
             </Button>
           </div>
@@ -259,7 +259,7 @@ const Navbar = () => {
                 <a href="#process" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Our Process</a>
                 <a href="#about" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>About Us</a>
                 <div className="flex flex-col gap-3 pt-6 mt-4 border-t border-gray-100">
-                  <Button variant="ghost" className="w-full text-primary font-bold uppercase tracking-wide text-base min-h-[52px] justify-center" onClick={() => setIsNavExpanded(false)}>
+                  <Button variant="ghost" className="w-full text-primary font-bold uppercase tracking-wide text-base min-h-[52px] justify-center whitespace-nowrap" onClick={() => setIsNavExpanded(false)}>
                     Login
                   </Button>
                   <Button className="w-full bg-[#c5d520] text-[#042940] font-bold text-base min-h-[52px] whitespace-nowrap" onClick={() => setIsNavExpanded(false)}>
@@ -928,7 +928,7 @@ const Process = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-center text-center md:hover:-translate-y-1"
+              className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
             >
               <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
                 {step.num}
@@ -978,7 +978,7 @@ const Reasons = () => {
                <p className="text-lg text-primary/60 mb-8 leading-relaxed">
                  We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.
                </p>
-               <Button size="lg" className="bg-secondary text-primary hover:bg-secondary/90">
+               <Button size="lg" className="w-full sm:w-auto bg-secondary text-primary hover:bg-secondary/90 min-h-[52px] whitespace-nowrap">
                   Request a Service
                </Button>
              </motion.div>
@@ -1554,7 +1554,7 @@ const Footer = () => {
                   placeholder="Enter your email" 
                   className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6" 
                 />
-                <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940]">
+                <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px]">
                    <ArrowRight className="w-5 h-5" />
                 </Button>
              </div>
