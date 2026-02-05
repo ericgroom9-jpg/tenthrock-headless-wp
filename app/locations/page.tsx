@@ -56,7 +56,7 @@ export default function LocationsPage() {
               id="locations-hero-heading"
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg"
             >
-              WHENEVER YOU NEED US
+              Whenever You Need Us
             </h1>
             <p className="text-base text-white/90 mb-8 max-w-xl leading-relaxed font-normal tracking-tight drop-shadow-md">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
