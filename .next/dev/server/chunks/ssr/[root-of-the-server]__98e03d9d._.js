@@ -3337,104 +3337,122 @@ function LocationTemplatePage() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "relative pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-16 md:pb-24 bg-[#042940] overflow-hidden",
+                className: "relative bg-[#042940] pt-24 md:pt-28 overflow-hidden",
                 "aria-labelledby": "location-hero-heading",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-gradient-to-br from-[#042940] via-[#042940]/95 to-[#042940]/80"
-                    }, void 0, false, {
+                        className: "absolute inset-0",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                src: imgPlaceholder,
+                                alt: "",
+                                className: "w-full h-full object-cover",
+                                "aria-hidden": "true"
+                            }, void 0, false, {
+                                fileName: "[project]/app/locations/[slug]/page.tsx",
+                                lineNumber: 78,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70"
+                            }, void 0, false, {
+                                fileName: "[project]/app/locations/[slug]/page.tsx",
+                                lineNumber: 84,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/app/locations/[slug]/page.tsx",
                         lineNumber: 77,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay"
-                    }, void 0, false, {
-                        fileName: "[project]/app/locations/[slug]/page.tsx",
-                        lineNumber: 78,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "container mx-auto px-4 md:px-8 relative z-10",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            initial: {
-                                opacity: 0,
-                                y: 20
-                            },
-                            animate: {
-                                opacity: 1,
-                                y: 0
-                            },
-                            transition: {
-                                duration: 0.6
-                            },
+                        className: "relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "max-w-2xl",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                    id: "location-hero-heading",
-                                    className: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg",
-                                    children: locationName
-                                }, void 0, false, {
-                                    fileName: "[project]/app/locations/[slug]/page.tsx",
-                                    lineNumber: 86,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-base text-white/90 mb-8 max-w-xl leading-relaxed font-normal tracking-tight drop-shadow-md",
-                                    children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
-                                }, void 0, false, {
-                                    fileName: "[project]/app/locations/[slug]/page.tsx",
-                                    lineNumber: 92,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex flex-col sm:flex-row gap-3 sm:gap-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                            size: "lg",
-                                            className: "w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold",
-                                            "data-testid": "button-location-cta",
-                                            children: "Get Started"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/locations/[slug]/page.tsx",
-                                            lineNumber: 96,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                            size: "lg",
-                                            variant: "outline",
-                                            className: "w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white rounded-full font-bold min-h-[52px] whitespace-nowrap",
-                                            "data-testid": "button-location-phone",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
-                                                    className: "w-5 h-5 mr-2"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                    lineNumber: 109,
-                                                    columnNumber: 17
-                                                }, this),
-                                                "(888) 555-0123"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/locations/[slug]/page.tsx",
-                                            lineNumber: 103,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/locations/[slug]/page.tsx",
-                                    lineNumber: 95,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                initial: {
+                                    opacity: 0,
+                                    y: 20
+                                },
+                                animate: {
+                                    opacity: 1,
+                                    y: 0
+                                },
+                                transition: {
+                                    duration: 0.6
+                                },
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                        id: "location-hero-heading",
+                                        className: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px]",
+                                        children: locationName
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/locations/[slug]/page.tsx",
+                                        lineNumber: 93,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md",
+                                        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/locations/[slug]/page.tsx",
+                                        lineNumber: 99,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex flex-col sm:flex-row gap-3 sm:gap-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                size: "lg",
+                                                className: "w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap",
+                                                "data-testid": "button-location-cta",
+                                                children: "Get a Quote"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/locations/[slug]/page.tsx",
+                                                lineNumber: 103,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                size: "lg",
+                                                variant: "outline",
+                                                className: "w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap",
+                                                "data-testid": "button-location-phone",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
+                                                        className: "mr-2 h-5 w-5"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/locations/[slug]/page.tsx",
+                                                        lineNumber: 116,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    "(888) 555-0123"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/locations/[slug]/page.tsx",
+                                                lineNumber: 110,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/locations/[slug]/page.tsx",
+                                        lineNumber: 102,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/locations/[slug]/page.tsx",
+                                lineNumber: 88,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
                             fileName: "[project]/app/locations/[slug]/page.tsx",
-                            lineNumber: 80,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                        lineNumber: 79,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this)
                 ]
@@ -3473,7 +3491,7 @@ function LocationTemplatePage() {
                                                 className: "h-px bg-primary/10 my-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 139,
                                                 columnNumber: 31
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3488,7 +3506,7 @@ function LocationTemplatePage() {
                                                         children: section.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 138,
+                                                        lineNumber: 146,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3497,24 +3515,24 @@ function LocationTemplatePage() {
                                                             className: "w-5 h-5 text-white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                            lineNumber: 152,
+                                                            lineNumber: 160,
                                                             columnNumber: 25
                                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
                                                             className: "w-5 h-5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                            lineNumber: 154,
+                                                            lineNumber: 162,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 144,
+                                                        lineNumber: 152,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 140,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -3549,7 +3567,7 @@ function LocationTemplatePage() {
                                                                                 className: "w-5 h-5 text-[#c5d520] mt-0.5 shrink-0"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 173,
+                                                                                lineNumber: 181,
                                                                                 columnNumber: 35
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3557,18 +3575,18 @@ function LocationTemplatePage() {
                                                                                 children: benefit
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 174,
+                                                                                lineNumber: 182,
                                                                                 columnNumber: 35
                                                                             }, this)
                                                                         ]
                                                                     }, bIdx, true, {
                                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                        lineNumber: 172,
+                                                                        lineNumber: 180,
                                                                         columnNumber: 33
                                                                     }, this))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 170,
+                                                                lineNumber: 178,
                                                                 columnNumber: 29
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3576,34 +3594,34 @@ function LocationTemplatePage() {
                                                                 children: section.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 179,
+                                                                lineNumber: 187,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 168,
+                                                        lineNumber: 176,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                    lineNumber: 161,
+                                                    lineNumber: 169,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 159,
+                                                lineNumber: 167,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, idx, true, {
                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 138,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                lineNumber: 122,
+                                lineNumber: 130,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3628,7 +3646,7 @@ function LocationTemplatePage() {
                                         children: "Request a Quote"
                                     }, void 0, false, {
                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 204,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -3649,7 +3667,7 @@ function LocationTemplatePage() {
                                                                 children: "First name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 206,
+                                                                lineNumber: 214,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3662,13 +3680,13 @@ function LocationTemplatePage() {
                                                                 "data-testid": "input-firstName"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 209,
+                                                                lineNumber: 217,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 205,
+                                                        lineNumber: 213,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3679,7 +3697,7 @@ function LocationTemplatePage() {
                                                                 children: "Last name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 220,
+                                                                lineNumber: 228,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3692,19 +3710,19 @@ function LocationTemplatePage() {
                                                                 "data-testid": "input-lastName"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 223,
+                                                                lineNumber: 231,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 219,
+                                                        lineNumber: 227,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 204,
+                                                lineNumber: 212,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3718,7 +3736,7 @@ function LocationTemplatePage() {
                                                                 children: "Email"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 237,
+                                                                lineNumber: 245,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3731,13 +3749,13 @@ function LocationTemplatePage() {
                                                                 "data-testid": "input-email"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 240,
+                                                                lineNumber: 248,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 236,
+                                                        lineNumber: 244,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3748,7 +3766,7 @@ function LocationTemplatePage() {
                                                                 children: "Phone number"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 251,
+                                                                lineNumber: 259,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3761,19 +3779,19 @@ function LocationTemplatePage() {
                                                                 "data-testid": "input-phone"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 254,
+                                                                lineNumber: 262,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 250,
+                                                        lineNumber: 258,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 235,
+                                                lineNumber: 243,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3787,7 +3805,7 @@ function LocationTemplatePage() {
                                                                 children: "Company"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 268,
+                                                                lineNumber: 276,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -3800,13 +3818,13 @@ function LocationTemplatePage() {
                                                                 "data-testid": "input-company"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 271,
+                                                                lineNumber: 279,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 267,
+                                                        lineNumber: 275,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3817,7 +3835,7 @@ function LocationTemplatePage() {
                                                                 children: "I'm interested in help with:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 282,
+                                                                lineNumber: 290,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3836,7 +3854,7 @@ function LocationTemplatePage() {
                                                                                 children: "Select one..."
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 293,
+                                                                                lineNumber: 301,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3844,7 +3862,7 @@ function LocationTemplatePage() {
                                                                                 children: "Emergency Waste Removal"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 296,
+                                                                                lineNumber: 304,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3852,7 +3870,7 @@ function LocationTemplatePage() {
                                                                                 children: "Dumpster Rental"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 297,
+                                                                                lineNumber: 305,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3860,7 +3878,7 @@ function LocationTemplatePage() {
                                                                                 children: "Store Decommissioning"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 298,
+                                                                                lineNumber: 306,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3868,7 +3886,7 @@ function LocationTemplatePage() {
                                                                                 children: "Event Waste Logistics"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 299,
+                                                                                lineNumber: 307,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3876,7 +3894,7 @@ function LocationTemplatePage() {
                                                                                 children: "Centralized Program"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 300,
+                                                                                lineNumber: 308,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3884,7 +3902,7 @@ function LocationTemplatePage() {
                                                                                 children: "Compactor Maintenance"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 301,
+                                                                                lineNumber: 309,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3892,38 +3910,38 @@ function LocationTemplatePage() {
                                                                                 children: "Other"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                                lineNumber: 302,
+                                                                                lineNumber: 310,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                        lineNumber: 286,
+                                                                        lineNumber: 294,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                                                         className: "w-5 h-5 text-primary/40 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                        lineNumber: 304,
+                                                                        lineNumber: 312,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 285,
+                                                                lineNumber: 293,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 289,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 266,
+                                                lineNumber: 274,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3934,7 +3952,7 @@ function LocationTemplatePage() {
                                                         children: "Message"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 310,
+                                                        lineNumber: 318,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -3947,13 +3965,13 @@ function LocationTemplatePage() {
                                                         "data-testid": "textarea-message"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 313,
+                                                        lineNumber: 321,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 309,
+                                                lineNumber: 317,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3970,7 +3988,7 @@ function LocationTemplatePage() {
                                                                 className: "w-5 h-5 border-primary/20 rounded accent-[#c5d520] focus:ring-[#c5d520]"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 326,
+                                                                lineNumber: 334,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3978,13 +3996,13 @@ function LocationTemplatePage() {
                                                                 children: "I agree to the terms and conditions"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                                lineNumber: 332,
+                                                                lineNumber: 340,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 325,
+                                                        lineNumber: 333,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3995,41 +4013,41 @@ function LocationTemplatePage() {
                                                         children: "Submit"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 334,
+                                                        lineNumber: 342,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 324,
+                                                lineNumber: 332,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 205,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                lineNumber: 189,
+                                lineNumber: 197,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                        lineNumber: 120,
+                        lineNumber: 128,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/locations/[slug]/page.tsx",
-                    lineNumber: 119,
+                    lineNumber: 127,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 118,
+                lineNumber: 126,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4062,7 +4080,7 @@ function LocationTemplatePage() {
                                         children: "Another Informational Block"
                                     }, void 0, false, {
                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                        lineNumber: 359,
+                                        lineNumber: 367,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4070,7 +4088,7 @@ function LocationTemplatePage() {
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
                                     }, void 0, false, {
                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                        lineNumber: 365,
+                                        lineNumber: 373,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4083,7 +4101,7 @@ function LocationTemplatePage() {
                                                 children: "Call to Action"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 369,
+                                                lineNumber: 377,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -4096,26 +4114,26 @@ function LocationTemplatePage() {
                                                         className: "w-5 h-5 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                        lineNumber: 382,
+                                                        lineNumber: 390,
                                                         columnNumber: 19
                                                     }, this),
                                                     "(123) 456 - 7890"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                                lineNumber: 376,
+                                                lineNumber: 384,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                                        lineNumber: 368,
+                                        lineNumber: 376,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                lineNumber: 353,
+                                lineNumber: 361,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4140,68 +4158,68 @@ function LocationTemplatePage() {
                                     className: "w-full h-full object-cover"
                                 }, void 0, false, {
                                     fileName: "[project]/app/locations/[slug]/page.tsx",
-                                    lineNumber: 395,
+                                    lineNumber: 403,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                                lineNumber: 388,
+                                lineNumber: 396,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/locations/[slug]/page.tsx",
-                        lineNumber: 352,
+                        lineNumber: 360,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/locations/[slug]/page.tsx",
-                    lineNumber: 351,
+                    lineNumber: 359,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 350,
+                lineNumber: 358,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$CommercialWasteServices$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 406,
+                lineNumber: 414,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$ProcessSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 409,
+                lineNumber: 417,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$CtaBannerSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 412,
+                lineNumber: 420,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$CaseStudySection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 415,
+                lineNumber: 423,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FaqSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 418,
+                lineNumber: 426,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$LocationSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 421,
+                lineNumber: 429,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FinalCtaSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 424,
+                lineNumber: 432,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/locations/[slug]/page.tsx",
-                lineNumber: 427,
+                lineNumber: 435,
                 columnNumber: 7
             }, this)
         ]

@@ -71,46 +71,54 @@ export default function LocationTemplatePage() {
 
       {/* Interior Hero */}
       <section
-        className="relative pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-16 md:pb-24 bg-[#042940] overflow-hidden"
+        className="relative bg-[#042940] pt-24 md:pt-28 overflow-hidden"
         aria-labelledby="location-hero-heading"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#042940] via-[#042940]/95 to-[#042940]/80" />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay" />
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
-          >
-            <h1
-              id="location-hero-heading"
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg"
+        <div className="absolute inset-0">
+          <img
+            src={imgPlaceholder}
+            alt=""
+            className="w-full h-full object-cover"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
+        </div>
+        <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="max-w-2xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              {locationName}
-            </h1>
-            <p className="text-base text-white/90 mb-8 max-w-xl leading-relaxed font-normal tracking-tight drop-shadow-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold"
-                data-testid="button-location-cta"
+              <h1
+                id="location-hero-heading"
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px]"
               >
-                Get Started
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white rounded-full font-bold min-h-[52px] whitespace-nowrap"
-                data-testid="button-location-phone"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                (888) 555-0123
-              </Button>
-            </div>
-          </motion.div>
+                {locationName}
+              </h1>
+              <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                  data-testid="button-location-cta"
+                >
+                  Get a Quote
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                  data-testid="button-location-phone"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  (888) 555-0123
+                </Button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
