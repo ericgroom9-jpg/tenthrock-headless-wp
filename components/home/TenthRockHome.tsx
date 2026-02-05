@@ -48,61 +48,66 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 
-// Assets - Main Logos (from public folder)
-const logoMain = "/images/TenthRock-Logo_1.png";
-const logoWhite = "/images/Green-White-Logo_1.png";
+// Assets - Main Logos
+const logoMain = "/images/logos/TenthRock-Logo.png";
+const logoWhite = "/images/logos/Green-White-Logo.png";
 
 // Stock images for services
-const imgServiceEmergencyOverflow = "/images/services/service-emergency-overflow.jpg";
-const imgServiceDumpsterRental = "/images/services/service-dumpster-rental.jpg";
-const imgServiceEventStadium = "/images/services/service-event-stadium.jpg";
-const imgServiceMaintenance = "/images/services/service-maintenance.jpg";
-const imgServiceStoreDecommissioning = "/images/services/service-store-decommissioning.jpg";
-const imgServiceCentralizedProgram = "/images/services/service-centralized-program.jpg";
+const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
+const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
+const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
+const imgServiceMaintenance = "/images/stock/service-maintenance.jpg";
+const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
+const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.jpg";
 
 // Stock images for industries
-const imgIndustryEducational = "/images/industries/industry-educational.jpg";
-const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/industries/industry-faith-based.jpg";
-const imgIndustryMunicipalities = "/images/industries/industry-municipalities.jpg";
-const imgIndustryHospitality = "/images/industries/industry-hospitality.jpg";
-const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
-const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
-const imgIndustryRetail = "/images/industries/industry-retail.jpg";
+const imgIndustryEducational = "/images/stock/university.jpg";
+const imgIndustryStadiumsEvents = "/images/stock/industry-stadiums-events.jpg";
+const imgIndustryFaithBased = "/images/stock/church.jpg";
+const imgIndustryMunicipalities = "/images/stock/clean-city.jpg";
+const imgIndustryHospitality = "/images/stock/industry-hospitality.jpg";
+const imgIndustryNaturalDisasters = "/images/stock/industry-natural-disasters.jpg";
+const imgIndustryRealEstate = "/images/stock/industry-real-estate.jpg";
+const imgIndustryRetail = "/images/stock/hotel.jpg";
 
 // Decorative/Section-specific images
-const imgTruck = "/images/white_truck_side_view.jpg";
-const imgCleanCity = "/images/clean_city_street.jpg";
-const imgCyclist = "/images/industries/industry-educational.jpg"; // Using available image
-const imgParkWater = "/images/industries/industry-hospitality.jpg"; // Using available image
+const imgTruck = "/images/stock/white-truck.jpg";
+const imgCleanCity = "/images/stock/clean-city.jpg";
+const imgCyclist = "/images/stock/cyclist.jpg";
+const imgParkWater = "/images/stock/floor-park.jpg";
+const imgHeroSkyscrapers = "/images/stock/hero-skyscrapers.jpg";
+const imgUSMap = "/images/generated/3d-usa-map.png";
 
 // Case study images
-const imgCaseStudyMain = "/images/case_study_main.jpg";
-const imgCaseStudyThumb1 = "/images/case_study_thumb1.jpg";
-const imgCaseStudyThumb2 = "/images/case_study_thumb2.jpg";
-const imgCaseStudyThumb3 = "/images/case_study_thumb3.jpg";
+const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
+const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
+const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
+const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
+
+// Hero video
+const heroVideo = "/videos/hero-background.mp4";
 
 // Partner Logos
-const logo7Eleven = "/images/partners/7-eleven.png";
-const logoArbys = "/images/partners/arbys.png";
-const logoBestBuy = "/images/partners/best-buy.png";
-const logoBonefish = "/images/partners/bonefish.png";
-const logoBp = "/images/partners/bp.png";
-const logoChipotle = "/images/partners/chipotle.png";
-const logoCircleK = "/images/partners/circle-k.png";
-const logoDollarGeneral = "/images/partners/dollar-general.png";
-const logoDoorDash = "/images/partners/doordash.png";
-const logoDunkin = "/images/partners/dunkin.png";
-const logoFiveBelow = "/images/partners/five-below.png";
-const logoFoodLion = "/images/partners/food-lion.png";
-const logoGNC = "/images/partners/gnc.png";
-const logoGoodyear = "/images/partners/goodyear.png";
-const logoHEB = "/images/partners/heb.png";
-const logoKFC = "/images/partners/kfc.png";
-const logoKroger = "/images/partners/kroger.png";
-const logoMaggianos = "/images/partners/maggianos.png";
-const logoMcDonalds = "/images/partners/mcdonalds.png";
-const logoRedLobster = "/images/partners/red-lobster.png";
+const logo7Eleven = "/images/logos/7-eleven.png";
+const logoArbys = "/images/logos/arbys.png";
+const logoBestBuy = "/images/logos/best-buy.png";
+const logoBonefish = "/images/logos/bonefish.png";
+const logoBp = "/images/logos/bp.png";
+const logoChipotle = "/images/logos/chipotle.png";
+const logoCircleK = "/images/logos/circle-k.png";
+const logoDollarGeneral = "/images/logos/dollar-general.png";
+const logoDoorDash = "/images/logos/doordash.png";
+const logoDunkin = "/images/logos/dunkin.png";
+const logoFiveBelow = "/images/logos/five-below.png";
+const logoFoodLion = "/images/logos/food-lion.png";
+const logoGNC = "/images/logos/gnc.png";
+const logoGoodyear = "/images/logos/goodyear.png";
+const logoHEB = "/images/logos/heb.png";
+const logoKFC = "/images/logos/kfc.png";
+const logoKroger = "/images/logos/kroger.png";
+const logoMaggianos = "/images/logos/maggianos.png";
+const logoMcDonalds = "/images/logos/mcdonalds.png";
+const logoRedLobster = "/images/logos/red-lobster.png";
 
 const Logo = ({ className = "", variant = "main" }: { className?: string, variant?: "main" | "white" }) => {
   const logoSrc = variant === "main" ? logoMain : logoWhite;
@@ -257,7 +262,15 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <img src={imgServiceEventStadium} alt="" className="w-full h-full object-cover opacity-60" />
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover opacity-80"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-[#042940]/60 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-transparent to-[#042940]/30"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
