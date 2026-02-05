@@ -14,6 +14,7 @@ import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import CtaBannerSection from "@/components/shared/CtaBannerSection";
 import ProcessSection from "@/components/shared/ProcessSection";
+import FinalCtaSection from "@/components/shared/FinalCtaSection";
 
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
 const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
@@ -176,38 +177,8 @@ export default function WhoWeServePage() {
       {/* Where to Find Us - Shared Component (same as homepage) */}
       <LocationSection />
 
-      {/* Final CTA Banner */}
-      <section className="bg-[#042940] py-16 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white tracking-tighter mb-4">
-                Ready to streamline your waste management?
-              </h2>
-              <p className="text-white/70 max-w-xl">
-                Get in touch today for a free consultation and custom quote for your business.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Button 
-                size="lg"
-                className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full min-h-[52px]"
-              >
-                Get a Quote
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 rounded-full min-h-[52px]"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Final CTA - Shared Component (same as homepage) */}
+      <FinalCtaSection />
 
       <Footer />
     </main>

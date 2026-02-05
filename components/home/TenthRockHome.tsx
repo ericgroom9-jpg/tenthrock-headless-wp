@@ -56,6 +56,7 @@ import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import CtaBannerSection from "@/components/shared/CtaBannerSection";
 import ProcessSection from "@/components/shared/ProcessSection";
+import FinalCtaSection from "@/components/shared/FinalCtaSection";
 
 // Assets - Main Logos
 const logoMain = "/images/logos/TenthRock-Logo.png";
@@ -1326,7 +1327,7 @@ export default function Home() {
       <Testimonials />
       <FaqSection />
       <LocationSection />
-      <FinalCta />
+      <FinalCtaSection />
       </main>
       <Footer />
     </div>
