@@ -1296,10 +1296,6 @@ h1, h3, h4, h5, h6, h2 {
   bottom: 1rem;
 }
 
-.bottom-8 {
-  bottom: 2rem;
-}
-
 .left-0 {
   left: 0;
 }
@@ -1652,10 +1648,6 @@ h1, h3, h4, h5, h6, h2 {
   aspect-ratio: 3 / 4;
 }
 
-.aspect-\[3\/5\] {
-  aspect-ratio: 3 / 5;
-}
-
 .aspect-\[4\/3\] {
   aspect-ratio: 4 / 3;
 }
@@ -1981,10 +1973,6 @@ h1, h3, h4, h5, h6, h2 {
   width: 1px;
 }
 
-.w-\[280px\] {
-  width: 280px;
-}
-
 .w-\[400px\] {
   width: 400px;
 }
@@ -2155,10 +2143,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .max-w-none {
   max-width: none;
-}
-
-.max-w-sm {
-  max-width: 24rem;
 }
 
 .max-w-xl {
@@ -2586,10 +2570,6 @@ h1, h3, h4, h5, h6, h2 {
   border-radius: 1rem;
 }
 
-.rounded-\[20px\] {
-  border-radius: 20px;
-}
-
 .rounded-\[2px\] {
   border-radius: 2px;
 }
@@ -2901,11 +2881,6 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(210 210 210 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#f8f8f8\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 248 248 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[--color-bg\] {
   background-color: var(--color-bg);
 }
@@ -3109,12 +3084,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .from-\[\#042940\] {
   --tw-gradient-from: #042940 var(--tw-gradient-from-position);
-  --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-\[\#042940\]\/40 {
-  --tw-gradient-from: #04294066 var(--tw-gradient-from-position);
   --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
@@ -6154,10 +6123,6 @@ h1, h3, h4, h5, h6, h2 {
     height: 450px;
   }
 
-  .sm\:w-\[320px\] {
-    width: 320px;
-  }
-
   .sm\:w-\[calc\(50\%-12px\)\] {
     width: calc(50% - 12px);
   }
@@ -6329,10 +6294,6 @@ h1, h3, h4, h5, h6, h2 {
     height: 320px;
   }
 
-  .md\:w-\[350px\] {
-    width: 350px;
-  }
-
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
     width: var(--radix-navigation-menu-viewport-width);
   }
@@ -6367,10 +6328,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:gap-12 {
     gap: 3rem;
-  }
-
-  .md\:gap-16 {
-    gap: 4rem;
   }
 
   .md\:gap-8 {
@@ -6463,10 +6420,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:pt-28 {
     padding-top: 7rem;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-3xl {

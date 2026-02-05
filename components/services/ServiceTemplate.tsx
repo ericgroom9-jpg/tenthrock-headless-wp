@@ -540,48 +540,59 @@ export default function ServiceTemplate({
           </div>
         </section>
 
-        {/* Ready to Start CTA Section */}
-        <section className="py-16 md:py-24 bg-[#f8f8f8]" aria-labelledby="ready-cta-heading">
-          <div className="container mx-auto px-4 md:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 lg:gap-24">
-              {/* Text Content */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-center md:text-left max-w-sm"
-              >
-                <h2 id="ready-cta-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
-                  Ready<br />to start?
-                </h2>
-                <p className="text-[#042940]/80 text-base md:text-lg">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </motion.div>
+        {/* Zipcode Checker Section - Matching Homepage Design Exactly */}
+        <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+          <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"
+            >
+              {/* Background Grid & Glow */}
+              <div 
+                className="absolute inset-0 opacity-10 mix-blend-overlay" 
+                style={{ 
+                  backgroundImage: `url(/assets_export/generated_images/line_art_us_map_illustration.png)`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+              <div 
+                className="absolute inset-0 opacity-20" 
+                style={{ 
+                  backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', 
+                  backgroundSize: '30px 30px' 
+                }} 
+              />
+              {/* Center Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none" />
 
-              {/* Phone Mockup Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative"
-              >
-                <div className="relative w-[280px] sm:w-[320px] md:w-[350px] aspect-[3/5]">
-                  <img 
-                    src={imgCyclist} 
-                    alt="Mobile app preview"
-                    className="w-full h-full object-cover rounded-[20px] shadow-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#042940]/40 to-transparent rounded-[20px]" />
-                  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-                    <p className="text-white text-lg font-bold">We're closer</p>
-                    <p className="text-white/80 text-sm">than you think!</p>
-                  </div>
+              <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-sm shadow-sm mb-8">
+                  <div className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></div>
+                  Service Availability
                 </div>
-              </motion.div>
-            </div>
+                
+                <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6 tracking-tighter">
+                  Check If We Service <span className="text-[#c5d520]">Your Area.</span>
+                </h2>
+                <p className="text-xl text-white/70 font-medium leading-relaxed max-w-xl mb-10">
+                  Enter your zip code below to instantly see if our network of local vendors covers your location.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center">
+                  <Input 
+                    placeholder="Enter Zip Code" 
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
+                  />
+                  <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[52px] whitespace-nowrap">
+                    Check Now
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
