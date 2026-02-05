@@ -3,24 +3,15 @@
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
-const imgIndustryEducational = "/images/industries/industry-educational.jpg";
-const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/industries/industry-faith-based.jpg";
-const imgIndustryMunicipalities = "/images/industries/industry-municipalities.jpg";
-const imgIndustryHospitality = "/images/industries/industry-hospitality.jpg";
-const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
-const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
-const imgIndustryRetail = "/images/industries/industry-retail.jpg";
-
 const sectors = [
-  { title: "Educational", img: imgIndustryEducational, icon: <GraduationCap className="w-6 h-6" /> },
-  { title: "Stadiums & Events", img: imgIndustryStadiumsEvents, icon: <Trophy className="w-6 h-6" /> },
-  { title: "Faith Based", img: imgIndustryFaithBased, icon: <Heart className="w-6 h-6" /> },
-  { title: "Municipalities", img: imgIndustryMunicipalities, icon: <Landmark className="w-6 h-6" /> },
-  { title: "Hospitality", img: imgIndustryHospitality, icon: <Utensils className="w-6 h-6" /> },
-  { title: "Natural Disasters", img: imgIndustryNaturalDisasters, icon: <Siren className="w-6 h-6" /> },
-  { title: "Real Estate", img: imgIndustryRealEstate, icon: <HomeIcon className="w-6 h-6" /> },
-  { title: "Retail", img: imgIndustryRetail, icon: <Store className="w-6 h-6" /> }
+  { title: "Educational", img: "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg", icon: <GraduationCap className="w-6 h-6" /> },
+  { title: "Stadiums & Events", img: "/assets_export/stock_images/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" /> },
+  { title: "Faith Based", img: "/assets_export/stock_images/panoramic-view-church-building_1768502470001.jpg", icon: <Heart className="w-6 h-6" /> },
+  { title: "Municipalities", img: "/assets_export/stock_images/clean_city_street.jpg", icon: <Landmark className="w-6 h-6" /> },
+  { title: "Hospitality", img: "/assets_export/stock_images/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" /> },
+  { title: "Natural Disasters", img: "/assets_export/stock_images/industry-natural-disasters.jpg", icon: <Siren className="w-6 h-6" /> },
+  { title: "Real Estate", img: "/assets_export/stock_images/industry-real-estate.jpg", icon: <HomeIcon className="w-6 h-6" /> },
+  { title: "Retail", img: "/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg", icon: <Store className="w-6 h-6" /> }
 ];
 
 export default function WhoWeHelpSection() {

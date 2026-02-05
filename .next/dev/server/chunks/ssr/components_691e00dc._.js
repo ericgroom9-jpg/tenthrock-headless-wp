@@ -3676,101 +3676,93 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const imgIndustryEducational = "/images/industries/industry-educational.jpg";
-const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/industries/industry-faith-based.jpg";
-const imgIndustryMunicipalities = "/images/industries/industry-municipalities.jpg";
-const imgIndustryHospitality = "/images/industries/industry-hospitality.jpg";
-const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
-const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
-const imgIndustryRetail = "/images/industries/industry-retail.jpg";
 const sectors = [
     {
         title: "Educational",
-        img: imgIndustryEducational,
+        img: "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__GraduationCap$3e$__["GraduationCap"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 16,
-            columnNumber: 62
+            lineNumber: 7,
+            columnNumber: 120
         }, ("TURBOPACK compile-time value", void 0))
     },
     {
         title: "Stadiums & Events",
-        img: imgIndustryStadiumsEvents,
+        img: "/assets_export/stock_images/industry-stadiums-events.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trophy$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Trophy$3e$__["Trophy"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 17,
-            columnNumber: 71
+            lineNumber: 8,
+            columnNumber: 104
         }, ("TURBOPACK compile-time value", void 0))
     },
     {
         title: "Faith Based",
-        img: imgIndustryFaithBased,
+        img: "/assets_export/stock_images/panoramic-view-church-building_1768502470001.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Heart$3e$__["Heart"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 18,
-            columnNumber: 61
+            lineNumber: 9,
+            columnNumber: 118
         }, ("TURBOPACK compile-time value", void 0))
     },
     {
         title: "Municipalities",
-        img: imgIndustryMunicipalities,
+        img: "/assets_export/stock_images/clean_city_street.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$landmark$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Landmark$3e$__["Landmark"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 19,
-            columnNumber: 68
+            lineNumber: 10,
+            columnNumber: 94
         }, ("TURBOPACK compile-time value", void 0))
     },
     {
         title: "Hospitality",
-        img: imgIndustryHospitality,
+        img: "/assets_export/stock_images/industry-hospitality.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$utensils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Utensils$3e$__["Utensils"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 20,
-            columnNumber: 62
+            lineNumber: 11,
+            columnNumber: 94
         }, ("TURBOPACK compile-time value", void 0))
     },
     {
         title: "Natural Disasters",
-        img: imgIndustryNaturalDisasters,
+        img: "/assets_export/stock_images/industry-natural-disasters.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__["Siren"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 21,
-            columnNumber: 73
+            lineNumber: 12,
+            columnNumber: 106
         }, ("TURBOPACK compile-time value", void 0))
     },
     {
         title: "Real Estate",
-        img: imgIndustryRealEstate,
+        img: "/assets_export/stock_images/industry-real-estate.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 22,
-            columnNumber: 61
+            lineNumber: 13,
+            columnNumber: 94
         }, ("TURBOPACK compile-time value", void 0))
     },
     {
         title: "Retail",
-        img: imgIndustryRetail,
+        img: "/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 23,
-            columnNumber: 52
+            lineNumber: 14,
+            columnNumber: 100
         }, ("TURBOPACK compile-time value", void 0))
     }
 ];
@@ -3792,14 +3784,14 @@ function WhoWeHelpSection() {
                                     className: "w-2 h-2 rounded-full bg-secondary"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                    lineNumber: 32,
+                                    lineNumber: 23,
                                     columnNumber: 15
                                 }, this),
                                 "Industries"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 31,
+                            lineNumber: 22,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3808,7 +3800,7 @@ function WhoWeHelpSection() {
                             children: "Who We Help"
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 35,
+                            lineNumber: 26,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3816,13 +3808,13 @@ function WhoWeHelpSection() {
                             children: "From local businesses to enterprise operations, we serve industries that demand reliability."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 36,
+                            lineNumber: 27,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                    lineNumber: 30,
+                    lineNumber: 21,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3851,21 +3843,21 @@ function WhoWeHelpSection() {
                                     alt: sector.title
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 42,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 group-hover:bg-[#042940]/60 group-active:bg-[#042940]/60 transition-colors duration-300"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                    lineNumber: 56,
+                                    lineNumber: 47,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                    lineNumber: 57,
+                                    lineNumber: 48,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3878,7 +3870,7 @@ function WhoWeHelpSection() {
                                                 children: sector.icon
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                lineNumber: 61,
+                                                lineNumber: 52,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3886,7 +3878,7 @@ function WhoWeHelpSection() {
                                                 children: sector.title
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                lineNumber: 64,
+                                                lineNumber: 55,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3901,7 +3893,7 @@ function WhoWeHelpSection() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                        lineNumber: 66,
+                                                        lineNumber: 57,
                                                         columnNumber: 24
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3912,52 +3904,52 @@ function WhoWeHelpSection() {
                                                                 className: "w-4 h-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                                lineNumber: 70,
+                                                                lineNumber: 61,
                                                                 columnNumber: 38
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                        lineNumber: 69,
+                                                        lineNumber: 60,
                                                         columnNumber: 24
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                lineNumber: 65,
+                                                lineNumber: 56,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 51,
                                         columnNumber: 18
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 50,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, i, true, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 43,
+                            lineNumber: 34,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                    lineNumber: 41,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 29,
+            lineNumber: 20,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-        lineNumber: 28,
+        lineNumber: 19,
         columnNumber: 5
     }, this);
 }

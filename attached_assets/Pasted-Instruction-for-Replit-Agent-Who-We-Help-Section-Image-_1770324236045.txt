@@ -1,0 +1,28 @@
+Instruction for Replit Agent: "Who We Help" Section Image Mapping
+Component: WhoWeHelp
+Section: Industries Grid
+
+Mapping Guide:
+Assign the following image assets to the corresponding industry cards in the grid.
+
+Industry Title	Export Asset Path	Description
+Educational	/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg	University campus building with tower
+Stadiums & Events	/assets_export/stock_images/industry-stadiums-events.jpg	Large stadium interior view
+Faith Based	/assets_export/stock_images/panoramic-view-church-building_1768502470001.jpg	Church architecture/arches
+Municipalities	/assets_export/stock_images/clean_city_street.jpg	Clean city street/urban environment
+Hospitality	/assets_export/stock_images/industry-hospitality.jpg	Hotel corridor/room interior
+Natural Disasters	/assets_export/stock_images/industry-natural-disasters.jpg	Stormy sky/dark clouds
+Real Estate	/assets_export/stock_images/industry-real-estate.jpg	Modern apartment/condo balconies
+Retail	/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg	Shopping center/indoor mall view
+Code Implementation Snippet:
+
+const sectors = [
+  { title: "Educational", img: "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg", icon: <GraduationCap className="w-6 h-6" /> },
+  { title: "Stadiums & Events", img: "/assets_export/stock_images/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" /> },
+  { title: "Faith Based", img: "/assets_export/stock_images/panoramic-view-church-building_1768502470001.jpg", icon: <Heart className="w-6 h-6" /> },
+  { title: "Municipalities", img: "/assets_export/stock_images/clean_city_street.jpg", icon: <Landmark className="w-6 h-6" /> },
+  { title: "Hospitality", img: "/assets_export/stock_images/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" /> },
+  { title: "Natural Disasters", img: "/assets_export/stock_images/industry-natural-disasters.jpg", icon: <Siren className="w-6 h-6" /> },
+  { title: "Real Estate", img: "/assets_export/stock_images/industry-real-estate.jpg", icon: <HomeIcon className="w-6 h-6" /> },
+  { title: "Retail", img: "/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg", icon: <Store className="w-6 h-6" /> }
+];
