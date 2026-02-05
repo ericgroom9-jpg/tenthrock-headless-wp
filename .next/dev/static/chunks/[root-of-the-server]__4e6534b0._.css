@@ -6234,8 +6234,8 @@ h1, h3, h4, h5, h6, h2 {
     padding-bottom: 1.25rem;
   }
 
-  .sm\:pt-28 {
-    padding-top: 7rem;
+  .sm\:pt-36 {
+    padding-top: 9rem;
   }
 
   .sm\:text-left {
@@ -6490,8 +6490,8 @@ h1, h3, h4, h5, h6, h2 {
     padding-top: 7rem;
   }
 
-  .md\:pt-32 {
-    padding-top: 8rem;
+  .md\:pt-40 {
+    padding-top: 10rem;
   }
 
   .md\:text-2xl {
@@ -6838,8 +6838,8 @@ h1, h3, h4, h5, h6, h2 {
     padding-left: 2rem;
   }
 
-  .lg\:pt-24 {
-    padding-top: 6rem;
+  .lg\:pt-44 {
+    padding-top: 11rem;
   }
 
   .lg\:text-5xl {

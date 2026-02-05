@@ -1,3 +1,4 @@
 {
-  "/industries/educational/page": "app/industries/educational/page.js"
+  "/industries/educational/page": "app/industries/educational/page.js",
+  "/page": "app/page.js"
 }
