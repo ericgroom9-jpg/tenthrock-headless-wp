@@ -70,6 +70,18 @@ const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disaste
 const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
 const imgIndustryRetail = "/images/industries/industry-retail.jpg";
 
+// Decorative/Section-specific images
+const imgTruck = "/images/white_truck_side_view.jpg";
+const imgCleanCity = "/images/clean_city_street.jpg";
+const imgCyclist = "/images/industries/industry-educational.jpg"; // Using available image
+const imgParkWater = "/images/industries/industry-hospitality.jpg"; // Using available image
+
+// Case study images
+const imgCaseStudyMain = "/images/case_study_main.jpg";
+const imgCaseStudyThumb1 = "/images/case_study_thumb1.jpg";
+const imgCaseStudyThumb2 = "/images/case_study_thumb2.jpg";
+const imgCaseStudyThumb3 = "/images/case_study_thumb3.jpg";
+
 // Partner Logos
 const logo7Eleven = "/images/partners/7-eleven.png";
 const logoArbys = "/images/partners/arbys.png";
@@ -643,13 +655,13 @@ const CaseStudySection = () => {
               className="rounded-[5px] overflow-hidden h-[400px]"
             >
               <img 
-                src={imgServiceEventStadium} 
+                src={imgCaseStudyMain} 
                 alt="Case Study Main" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
               />
             </motion.div>
             <div className="grid grid-cols-3 gap-4">
-              {[imgServiceEmergencyOverflow, imgServiceDumpsterRental, imgServiceMaintenance].map((img, i) => (
+              {[imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3].map((img, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -743,7 +755,7 @@ const WhyUs = () => {
              transition={{ duration: 0.8 }}
              className="h-[600px] relative rounded-[5px] overflow-hidden"
            >
-              <img src={imgServiceDumpsterRental} alt="Tenth Rock Operations" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={imgTruck} alt="Tenth Rock Operations" className="absolute inset-0 w-full h-full object-cover" />
            </motion.div>
            
            {/* Right Content Side */}
@@ -1011,7 +1023,7 @@ const Stats = () => {
                className="border border-primary/10 p-8 rounded-[5px] bg-white"
              >
                 <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                  <img src={imgIndustryHospitality} className="w-full h-full object-cover" alt="Stats Visual" />
+                  <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
                 </div>
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
@@ -1375,7 +1387,7 @@ const FinalCta = () => {
 
              {/* Image Side */}
              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <img src={imgIndustryEducational} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={imgCyclist} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-[#042940]/20 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#042940] to-transparent lg:via-[#042940]/50"></div>
                 
