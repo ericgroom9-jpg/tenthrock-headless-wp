@@ -2623,6 +2623,10 @@ h1, h3, h4, h5, h6, h2 {
   border-top-color: #0000;
 }
 
+.\!bg-white\/10 {
+  background-color: #ffffff1a !important;
+}
+
 .bg-\[\#042940\] {
   --tw-bg-opacity: 1;
   background-color: rgb(4 41 64 / var(--tw-bg-opacity, 1));

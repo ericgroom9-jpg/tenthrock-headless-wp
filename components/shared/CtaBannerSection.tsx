@@ -50,7 +50,8 @@ export default function CtaBannerSection() {
              <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center">
                <Input 
                  placeholder="Enter Zip Code" 
-                 className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
+                 className="!bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
+                 style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                />
                <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[52px] whitespace-nowrap rounded-full">
                  Check Now
