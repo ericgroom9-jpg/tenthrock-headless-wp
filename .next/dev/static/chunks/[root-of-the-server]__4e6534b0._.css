@@ -4517,12 +4517,6 @@ h2 {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:scale-110:hover {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .hover\:border-primary\/10:hover {
   border-color: hsl(var(--primary) / .1);
 }
@@ -4871,6 +4865,11 @@ h2 {
   border-color: hsl(var(--secondary) / .2);
 }
 
+.active\:bg-\[\#042940\]:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(4 41 64 / var(--tw-bg-opacity, 1));
+}
+
 .active\:bg-\[\#F9F9F6\]:active {
   --tw-bg-opacity: 1;
   background-color: rgb(249 249 246 / var(--tw-bg-opacity, 1));
@@ -4884,6 +4883,11 @@ h2 {
 .active\:bg-\[\#d6d98b\]:active {
   --tw-bg-opacity: 1;
   background-color: rgb(214 217 139 / var(--tw-bg-opacity, 1));
+}
+
+.active\:bg-gray-100:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .active\:bg-primary:active {
@@ -4901,18 +4905,12 @@ h2 {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.active\:bg-white\/10:active {
+  background-color: #ffffff1a;
+}
+
 .active\:bg-white\/50:active {
   background-color: #ffffff80;
-}
-
-.active\:bg-gray-100:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-}
-
-.active\:bg-\[\#042940\]:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(4 41 64 / var(--tw-bg-opacity, 1));
 }
 
 .active\:text-\[\#042940\]:active {
@@ -4938,6 +4936,12 @@ h2 {
 .active\:text-white:active {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.active\:shadow-\[0_0_50px_rgba\(197\,213\,32\,0\.5\)\]:active {
+  --tw-shadow: 0 0 50px #c5d52080;
+  --tw-shadow-colored: 0 0 50px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .active\:shadow-\[0_0_60px_rgba\(197\,213\,32\,0\.5\)\]:active {
@@ -4967,12 +4971,6 @@ h2 {
 .active\:shadow-xl:active {
   --tw-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.active\:shadow-\[0_0_50px_rgba\(197\,213\,32\,0\.5\)\]:active {
-  --tw-shadow: 0 0 50px #c5d52080;
-  --tw-shadow-colored: 0 0 50px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
