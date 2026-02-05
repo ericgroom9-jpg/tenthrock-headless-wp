@@ -93,7 +93,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.98 }}
                     transition={{ duration: 0.16, ease: "easeOut" }}
-                    className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+14px)] w-[420px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    className="absolute left-0 top-[calc(100%+14px)] w-[420px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
                     role="menu"
                     data-testid="menu-nav-services"
                   >
