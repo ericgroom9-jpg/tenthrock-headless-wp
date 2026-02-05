@@ -569,60 +569,69 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Case Study Section */}
-        <section className="bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="case-study-heading">
+        {/* Case Study Section - Matching Homepage Design */}
+        <section className="py-16 md:py-24 bg-white border-b border-[#042940]/5">
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="space-y-4"
-              >
-                <div className="relative aspect-[4/3] rounded-[5px] overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4 order-2 lg:order-1">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="rounded-[5px] overflow-hidden h-[400px]"
+                >
                   <img 
                     src={imgCaseStudyMain} 
-                    alt="Case study main"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    alt="Case Study Main" 
+                    className="w-full h-full object-cover md:hover:scale-105 transition-transform duration-700" 
                   />
-                </div>
+                </motion.div>
                 <div className="grid grid-cols-3 gap-4">
-                  {[imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3].map((img, index) => (
-                    <div key={index} className="relative aspect-square rounded-[5px] overflow-hidden">
+                  {[imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3].map((img, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+                      className="rounded-[5px] overflow-hidden aspect-square"
+                    >
                       <img 
                         src={img} 
-                        alt={`Case study thumbnail ${index + 1}`}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        alt={`Case Study Detail ${i + 1}`} 
+                        className="w-full h-full object-cover md:hover:scale-110 transition-transform duration-500" 
                       />
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.6 }}
+                className="lg:pl-8 order-1 lg:order-2"
               >
-                <h2 id="case-study-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-6">
+                <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter">
                   Case Study Title
                 </h2>
-                <p className="text-gray-600 text-base sm:text-lg mb-8">
+                <p className="text-lg text-[#042940]/70 mb-8 md:mb-12 leading-relaxed">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8">
+                <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
                   {[
                     { value: "32%", label: "Reduction in waste costs" },
                     { value: "32%", label: "Improvement in efficiency" },
                     { value: "32%", label: "Increase in recycling" },
                     { value: "32%", label: "Customer satisfaction" },
-                  ].map((item, index) => (
-                    <div key={index} className="py-2">
-                      <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940]">{item.value}</p>
-                      <p className="text-gray-600 text-sm sm:text-base">{item.label}</p>
+                  ].map((stat, i) => (
+                    <div key={i}>
+                      <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
+                      <div className="text-sm font-bold text-[#042940] uppercase tracking-wide">{stat.label}</div>
+                      <div className="h-1 w-12 bg-[#042940]/10 mt-3" />
                     </div>
                   ))}
                 </div>
