@@ -4798,6 +4798,11 @@ h2 {
   --tw-ring-offset-width: 2px;
 }
 
+.focus-visible\:text-\[\#c5d520\]:focus-visible {
+  --tw-text-opacity: 1;
+  color: rgb(197 213 32 / var(--tw-text-opacity, 1));
+}
+
 .focus-visible\:outline-none:focus-visible {
   outline-offset: 2px;
   outline: 2px solid #0000;

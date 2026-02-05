@@ -225,10 +225,10 @@ const Navbar = () => {
               </AnimatePresence>
             </div>
 
-            <a href="#emergency" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">Emergency Waste Removal</a>
-            <a href="#sectors" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">Who We Serve</a>
-            <a href="#process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">Our Process</a>
-            <a href="#about" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors py-2">About Us</a>
+            <a href="#emergency" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Emergency Waste Removal</a>
+            <a href="#sectors" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Who We Serve</a>
+            <a href="#process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Our Process</a>
+            <a href="#about" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">About Us</a>
           </nav>
 
           {/* Right Side Actions - always visible, scales down */}
@@ -253,11 +253,11 @@ const Navbar = () => {
               className="xl:hidden overflow-hidden"
             >
               <div className="pt-6 pb-4 flex flex-col gap-1">
-                <a href="#services" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
-                <a href="#emergency" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
-                <a href="#sectors" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
-                <a href="#process" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>Our Process</a>
-                <a href="#about" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>About Us</a>
+                <a href="#services" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
+                <a href="#emergency" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
+                <a href="#sectors" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
+                <a href="#process" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>Our Process</a>
+                <a href="#about" className="text-lg font-bold text-primary py-4 px-2 hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] hover:bg-gray-50 active:bg-gray-50 focus-visible:bg-gray-50 rounded-[5px] transition-colors min-h-[52px] flex items-center focus-visible:outline-none" onClick={() => setIsNavExpanded(false)}>About Us</a>
                 <div className="flex flex-col gap-3 pt-6 mt-4 border-t border-gray-100">
                   <Button variant="ghost" className="w-full text-primary font-bold uppercase tracking-wide text-base min-h-[52px] justify-center whitespace-nowrap" onClick={() => setIsNavExpanded(false)}>
                     Login
@@ -541,7 +541,7 @@ const ServicesSection = () => {
            </div>
 
            {/* Content Display */}
-           <div className="lg:col-span-8 cursor-pointer h-full" onClick={() => console.log('Navigate to service details')}>
+           <div className="lg:col-span-8 cursor-pointer h-full" role="button" tabIndex={0} aria-label="View service details" onClick={() => console.log('Navigate to service details')} onKeyDown={(e) => e.key === 'Enter' && console.log('Navigate to service details')}>
              <div className="relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group">
                <AnimatePresence mode="wait">
                  <motion.div
@@ -1510,13 +1510,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-             <h2 className="font-bold text-lg mb-6 text-white">Services</h2>
-             <ul className="space-y-4 text-white/60">
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Waste Removal</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Dumpster Rentals</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Recycling Programs</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Emergency Cleanups</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Compliance Audits</a></li>
+             <h3 className="font-bold text-lg mb-6 text-white">Services</h3>
+             <ul className="space-y-2 text-white/60">
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Waste Removal</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Dumpster Rentals</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Recycling Programs</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Emergency Cleanups</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Compliance Audits</a></li>
              </ul>
           </motion.div>
 
@@ -1527,13 +1527,13 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-             <h2 className="font-bold text-lg mb-6 text-white">Company</h2>
-             <ul className="space-y-4 text-white/60">
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Success Stories</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Partner Program</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Contact</a></li>
+             <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
+             <ul className="space-y-2 text-white/60">
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">About Us</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Careers</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Success Stories</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Partner Program</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors">Contact</a></li>
              </ul>
           </motion.div>
 
@@ -1545,7 +1545,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="space-y-6"
           >
-             <h2 className="font-bold text-lg text-white">Stay Updated</h2>
+             <h3 className="font-bold text-lg text-white">Stay Updated</h3>
              <p className="text-white/60">
                 Get the latest industry insights and compliance updates.
              </p>
