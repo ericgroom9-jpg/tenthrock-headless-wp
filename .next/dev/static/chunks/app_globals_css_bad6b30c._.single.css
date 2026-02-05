@@ -2397,11 +2397,6 @@ h1, h3, h4, h5, h6, h2 {
   border-radius: .75rem;
 }
 
-.rounded-r-\[5px\] {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
 .rounded-t-\[10px\] {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -2440,10 +2435,6 @@ h1, h3, h4, h5, h6, h2 {
   border-left-width: 1px;
 }
 
-.border-l-2 {
-  border-left-width: 2px;
-}
-
 .border-r {
   border-right-width: 1px;
 }
@@ -2467,11 +2458,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .border-\[\#042940\]\/5 {
   border-color: #0429400d;
-}
-
-.border-\[\#c5d520\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(197 213 32 / var(--tw-border-opacity, 1));
 }
 
 .border-\[--color-border\] {
@@ -2541,11 +2527,6 @@ h1, h3, h4, h5, h6, h2 {
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
-}
-
-.border-gray-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
 
 .border-green-200 {
@@ -2767,16 +2748,6 @@ h1, h3, h4, h5, h6, h2 {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
-}
-
-.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
 }
 
 .bg-green-50 {
@@ -4432,11 +4403,6 @@ h1, h3, h4, h5, h6, h2 {
   border-color: #0429401a;
 }
 
-.hover\:border-gray-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
-}
-
 .hover\:border-primary\/10:hover {
   border-color: hsl(var(--primary) / .1);
 }
@@ -5973,21 +5939,12 @@ h1, h3, h4, h5, h6, h2 {
     padding-bottom: 5rem;
   }
 
-  .sm\:pl-6 {
-    padding-left: 1.5rem;
-  }
-
   .sm\:text-left {
     text-align: left;
   }
 
   .sm\:text-center {
     text-align: center;
-  }
-
-  .sm\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .sm\:text-4xl {
@@ -6365,10 +6322,6 @@ h1, h3, h4, h5, h6, h2 {
     grid-row: span 2 / span 2;
   }
 
-  .lg\:mb-12 {
-    margin-bottom: 3rem;
-  }
-
   .lg\:flex {
     display: flex;
   }
@@ -6534,11 +6487,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:pl-8 {
     padding-left: 2rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .lg\:text-5xl {

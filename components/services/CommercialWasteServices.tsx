@@ -434,46 +434,57 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Ready to Start CTA */}
-        <section className="bg-gray-100 py-12 sm:py-16 lg:py-20">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="text-left md:text-left"
-              >
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940] tracking-tighter mb-4">
-                  Ready<br />to Start?
-                </h2>
-                <p className="text-gray-600 text-base sm:text-lg mb-6">
-                  Get a free consultation and customized quote for your business waste management needs.
-                </p>
-                <Button 
-                  size="lg"
-                  className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto"
-                >
-                  Request a Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </motion.div>
+        {/* Check If We Service Your Area - Matching Homepage Design */}
+        <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+          <div className="container mx-auto px-4 md:px-8 relative z-10">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"
+            >
+              <div 
+                className="absolute inset-0 opacity-10 mix-blend-overlay" 
+                style={{ 
+                  backgroundImage: `url(/assets_export/generated_images/line_art_us_map_illustration.png)`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+              <div 
+                className="absolute inset-0 opacity-20" 
+                style={{ 
+                  backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', 
+                  backgroundSize: '30px 30px' 
+                }} 
+              />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none" />
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="relative aspect-[4/3] rounded-[5px] overflow-hidden"
-              >
-                <img 
-                  src={imgCyclist} 
-                  alt="Clean environment"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </motion.div>
-            </div>
+              <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-sm shadow-sm mb-8">
+                  <div className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse" />
+                  Service Availability
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6 tracking-tighter">
+                  Check If We Service <span className="text-[#c5d520]">Your Area.</span>
+                </h2>
+                <p className="text-xl text-white/70 font-medium leading-relaxed max-w-xl mb-10">
+                  Enter your zip code below to instantly see if our network of local vendors covers your location.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center">
+                  <Input 
+                    placeholder="Enter Zip Code" 
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
+                  />
+                  <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[52px] whitespace-nowrap">
+                    Check Now
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
