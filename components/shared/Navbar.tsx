@@ -64,17 +64,27 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <button
-                type="button"
+              <div
+                className="inline-flex items-center gap-1 min-h-[44px]"
                 data-testid="button-nav-services"
-                className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px]"
-                aria-haspopup="menu"
-                aria-expanded={isServicesOpen}
-                onClick={() => setIsServicesOpen((v) => !v)}
               >
-                <span>Commercial Waste Services</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
-              </button>
+                <Link
+                  href="/services/commercial-waste"
+                  className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+                >
+                  Commercial Waste Services
+                </Link>
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={isServicesOpen}
+                  onClick={() => setIsServicesOpen((v) => !v)}
+                  className="p-1 hover:text-[#c5d520] transition-colors"
+                  aria-label="Toggle services menu"
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+              </div>
 
               <AnimatePresence>
                 {isServicesOpen && (
@@ -142,16 +152,27 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               <div className="flex flex-col gap-1 pb-4">
                 {/* Services Accordion */}
                 <div>
-                  <button
-                    type="button"
-                    onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="flex items-center justify-between w-full text-left font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
-                    aria-expanded={isServicesOpen}
+                  <div
+                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
                     data-testid="button-mobile-services"
                   >
-                    <span>Commercial Waste Services</span>
-                    <ChevronDown className={`w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
-                  </button>
+                    <Link
+                      href="/services/commercial-waste"
+                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      onClick={() => setIsNavExpanded(false)}
+                    >
+                      Commercial Waste Services
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setIsServicesOpen(!isServicesOpen)}
+                      aria-expanded={isServicesOpen}
+                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      aria-label="Toggle services submenu"
+                    >
+                      <ChevronDown className={`w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
                   <AnimatePresence>
                     {isServicesOpen && (
                       <motion.div
