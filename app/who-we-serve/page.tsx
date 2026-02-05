@@ -15,19 +15,13 @@ import LocationSection from "@/components/shared/LocationSection";
 import CtaBannerSection from "@/components/shared/CtaBannerSection";
 import ProcessSection from "@/components/shared/ProcessSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
+import CaseStudySection from "@/components/shared/CaseStudySection";
 
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
-const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
-const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
-const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
-const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
 export default function WhoWeServePage() {
   const heroRef = useRef(null);
-  const caseStudyRef = useRef(null);
-
   const heroInView = useInView(heroRef, { once: true });
-  const caseStudyInView = useInView(caseStudyRef, { once: true, margin: "-100px" });
 
   return (
     <main className="min-h-screen bg-white">
@@ -95,81 +89,8 @@ export default function WhoWeServePage() {
       {/* Stats / Why Clients Call Us - Shared Component (same as homepage) */}
       <StatsSection />
 
-      {/* Case Study Section */}
-      <section 
-        ref={caseStudyRef}
-        className="bg-white py-16 md:py-20 lg:py-24"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
-            {/* Images Grid */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={caseStudyInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="w-full lg:w-1/2"
-            >
-              <div className="grid gap-4">
-                <div className="aspect-video rounded-[5px] overflow-hidden">
-                  <img src={imgCaseStudyMain} alt="Case study" className="w-full h-full object-cover" />
-                </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="aspect-video rounded-[5px] overflow-hidden">
-                    <img src={imgCaseStudyThumb1} alt="Case study" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-video rounded-[5px] overflow-hidden">
-                    <img src={imgCaseStudyThumb2} alt="Case study" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="aspect-video rounded-[5px] overflow-hidden">
-                    <img src={imgCaseStudyThumb3} alt="Case study" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={caseStudyInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full lg:w-1/2"
-            >
-              <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6">
-                Case Study Title
-              </h2>
-              <p className="text-primary/70 mb-8">
-                Learn how we helped a national retail chain streamline their waste management operations across 500+ locations, reducing costs by 32% while improving service reliability.
-              </p>
-
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div>
-                  <p className="text-4xl md:text-5xl font-bold text-primary">32%</p>
-                  <p className="text-primary/70 text-sm mt-1">Cost reduction achieved</p>
-                </div>
-                <div>
-                  <p className="text-4xl md:text-5xl font-bold text-primary">32%</p>
-                  <p className="text-primary/70 text-sm mt-1">Faster response times</p>
-                </div>
-                <div>
-                  <p className="text-4xl md:text-5xl font-bold text-primary">32%</p>
-                  <p className="text-primary/70 text-sm mt-1">Waste diversion rate</p>
-                </div>
-                <div>
-                  <p className="text-4xl md:text-5xl font-bold text-primary">32%</p>
-                  <p className="text-primary/70 text-sm mt-1">Client satisfaction score</p>
-                </div>
-              </div>
-
-              <Button 
-                size="lg"
-                className="bg-[#042940] hover:bg-[#042940]/90 text-white rounded-full min-h-[52px]"
-              >
-                Read Full Case Study
-              </Button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      {/* Case Study Section - Shared Component (same as homepage) */}
+      <CaseStudySection />
 
       {/* FAQ Section - Shared Component (same as homepage) */}
       <FaqSection />

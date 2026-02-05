@@ -4499,10 +4499,6 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(4 41 64 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-\[\#042940\]\/90:hover {
-  background-color: #042940e6;
-}
-
 .hover\:bg-\[\#F9F9F6\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 249 246 / var(--tw-bg-opacity, 1));

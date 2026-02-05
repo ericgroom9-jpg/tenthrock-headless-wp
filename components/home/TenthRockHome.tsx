@@ -57,6 +57,7 @@ import LocationSection from "@/components/shared/LocationSection";
 import CtaBannerSection from "@/components/shared/CtaBannerSection";
 import ProcessSection from "@/components/shared/ProcessSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
+import CaseStudySection from "@/components/shared/CaseStudySection";
 
 // Assets - Main Logos
 const logoMain = "/images/logos/TenthRock-Logo.png";
