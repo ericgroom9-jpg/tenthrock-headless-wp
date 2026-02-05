@@ -1395,10 +1395,6 @@ h1, h3, h4, h5, h6, h2 {
   margin-top: .375rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1684,10 +1680,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .min-h-\[560px\] {
   min-height: 560px;
-}
-
-.min-h-\[60px\] {
-  min-height: 60px;
 }
 
 .min-h-\[80px\] {
@@ -2289,12 +2281,6 @@ h1, h3, h4, h5, h6, h2 {
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0px * var(--tw-space-y-reverse));
-}
-
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2659,6 +2645,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .bg-\[\#042940\]\/40 {
   background-color: #04294066;
+}
+
+.bg-\[\#042940\]\/5 {
+  background-color: #0429400d;
 }
 
 .bg-\[\#042940\]\/70 {
@@ -3157,11 +3147,6 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: 1rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -3186,10 +3171,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pb-5 {
-  padding-bottom: 1.25rem;
 }
 
 .pb-6 {
@@ -3222,10 +3203,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .pr-3 {
   padding-right: .75rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
 }
 
 .pr-8 {
@@ -4468,6 +4445,10 @@ h1, h3, h4, h5, h6, h2 {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:border-\[\#042940\]\/10:hover {
+  border-color: #0429401a;
+}
+
 .hover\:border-gray-400:hover {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
@@ -4998,6 +4979,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .group:hover .group-hover\:gap-4 {
   gap: 1rem;
+}
+
+.group:hover .group-hover\:bg-\[\#042940\]\/10 {
+  background-color: #0429401a;
 }
 
 .group:hover .group-hover\:bg-\[\#042940\]\/60 {
@@ -5892,16 +5877,8 @@ h1, h3, h4, h5, h6, h2 {
     top: auto;
   }
 
-  .sm\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
   .sm\:mb-12 {
     margin-bottom: 3rem;
-  }
-
-  .sm\:mb-4 {
-    margin-bottom: 1rem;
   }
 
   .sm\:mb-6 {
@@ -6394,10 +6371,6 @@ h1, h3, h4, h5, h6, h2 {
     order: 9999;
   }
 
-  .lg\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -6506,10 +6479,6 @@ h1, h3, h4, h5, h6, h2 {
     align-items: flex-end;
   }
 
-  .lg\:items-center {
-    align-items: center;
-  }
-
   .lg\:justify-between {
     justify-content: space-between;
   }
@@ -6562,10 +6531,6 @@ h1, h3, h4, h5, h6, h2 {
     object-position: right;
   }
 
-  .lg\:p-12 {
-    padding: 3rem;
-  }
-
   .lg\:p-20 {
     padding: 5rem;
   }
@@ -6614,11 +6579,6 @@ h1, h3, h4, h5, h6, h2 {
     line-height: 2.25rem;
   }
 
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
   .lg\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -6633,11 +6593,6 @@ h1, h3, h4, h5, h6, h2 {
     font-size: 4.5rem;
     line-height: 1;
   }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -6647,11 +6602,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .xl\:hidden {
     display: none;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 
   .xl\:text-7xl {

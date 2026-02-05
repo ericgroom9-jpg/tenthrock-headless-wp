@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 
 const logoMain = "/images/logos/TenthRock-Logo.png";
 const logoWhite = "/images/logos/Green-White-Logo.png";
@@ -628,80 +629,75 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="faq-heading">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-8 sm:mb-12"
-            >
-              <h2 id="faq-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940] tracking-tighter mb-4">
-                FAQs
-              </h2>
-              <p className="text-gray-600 text-base sm:text-lg">
-                Common questions about our commercial waste services.
+        {/* FAQ Section - Matching Homepage Design */}
+        <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#042940]/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+          
+          <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
+            <div className="text-left sm:text-center mb-16 space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
+                Common Questions
+              </div>
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter">Frequently Asked Questions</h2>
+              <p className="text-lg text-[#042940]/60 max-w-2xl mx-auto">
+                Everything you need to know about our commercial waste services. Can't find the answer you're looking for? Reach out to our team.
               </p>
-            </motion.div>
-
-            <div className="space-y-0">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="border-t border-[#042940]"
-                >
-                  <button
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full py-5 flex items-center justify-between text-left min-h-[60px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520]"
-                    aria-expanded={openFaq === index}
-                  >
-                    <span className="font-bold text-[#042940] text-base sm:text-lg pr-4">{faq.question}</span>
-                    <span className="shrink-0">
-                      {openFaq === index ? (
-                        <Minus className="h-6 w-6 text-[#042940]" />
-                      ) : (
-                        <Plus className="h-6 w-6 text-[#042940]" />
-                      )}
-                    </span>
-                  </button>
-                  <AnimatePresence>
-                    {openFaq === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-5 text-gray-600 text-sm sm:text-base">{faq.answer}</p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-              <div className="border-t border-[#042940]" />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
-              <Button 
-                size="lg"
-                className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto"
-              >
+            <div className="grid gap-4">
+              {faqs.map((faq, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div 
+                    className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
+                      openFaq === i 
+                        ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
+                        : "bg-white border-transparent hover:border-[#042940]/10 shadow-sm hover:shadow-md"
+                    }`}
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  >
+                    <button className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none min-h-[52px]">
+                      <span className={`text-xl font-bold transition-colors duration-300 ${
+                        openFaq === i ? "text-white" : "text-[#042940]"
+                      }`}>
+                        {faq.question}
+                      </span>
+                      <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        openFaq === i 
+                          ? "bg-[#c5d520] rotate-180" 
+                          : "bg-[#042940]/5 group-hover:bg-[#042940]/10"
+                      }`}>
+                        <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
+                          openFaq === i ? "text-[#042940]" : "text-[#042940]"
+                        }`} />
+                      </div>
+                    </button>
+                    <div 
+                      className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                        openFaq === i ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="px-6 md:px-8 pb-8 pt-0">
+                        <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            
+            <div className="mt-16 text-left sm:text-center">
+              <p className="text-[#042940]/60 mb-4 font-medium">Still Have Questions?</p>
+              <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full">
                 Contact Us
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-[#042940] text-[#042940] hover:bg-[#042940] hover:text-white min-h-[52px] rounded-full w-full sm:w-auto"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                (123) 456-7890
               </Button>
             </div>
           </div>
@@ -783,120 +779,161 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Final CTA Banner */}
-        <section className="bg-white py-12 sm:py-16 lg:py-20">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-[#042940] rounded-[5px] p-6 sm:p-8 lg:p-12">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <div className="flex-1">
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white tracking-tighter mb-2 sm:mb-4">
-                    Ready to Get Started?
-                  </h2>
-                  <p className="text-white/80 text-sm sm:text-base lg:text-lg">
-                    Contact us today for a free consultation and quote.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button 
-                    size="lg"
-                    className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto whitespace-nowrap"
-                  >
-                    Get a Quote
-                  </Button>
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-white/30 text-white hover:bg-white hover:text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto whitespace-nowrap backdrop-blur-sm bg-white/5"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    (123) 456-7890
+        {/* Final CTA - Matching Homepage Design */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
+            >
+              <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
+                
+                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
+                  Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
+                </h2>
+                <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">
+                  Join thousands of businesses optimizing their disposal costs and sustainability with Tenth Rock. One partner, zero headaches.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full">
+                    Request a Service
                   </Button>
                 </div>
               </div>
-            </div>
+
+              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
+                <img src={imgCyclist} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover object-center lg:object-right" />
+                <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent" />
+                
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.4 }}
+                  className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform md:hover:scale-105 transition-transform duration-300"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
+                      <Phone className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="text-[#c5d520] text-xl font-bold">(888) 555-0123</div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#042940] text-white py-12 sm:py-16 lg:py-20">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
-            <div className="sm:col-span-2 lg:col-span-1">
-              <Logo variant="white" className="mb-6" />
-              <div className="space-y-4 text-white/60">
-                <div>
-                  <p className="font-semibold text-white text-sm">Address:</p>
-                  <p className="text-sm">Level 1, 12 Sample St, Sydney NSW 2000</p>
+      {/* Footer - Matching Homepage Design */}
+      <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white py-20 border-t border-white/5">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="space-y-8"
+            >
+              <Logo variant="white" />
+              <p className="text-white/60 leading-relaxed max-w-xs">
+                Redefining commercial waste management with speed, transparency, and reliability across all 50 states.
+              </p>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+                  <Linkedin className="w-5 h-5" />
                 </div>
-                <div>
-                  <p className="font-semibold text-white text-sm">Contact:</p>
-                  <p className="text-sm">1800 123 4567</p>
-                  <p className="text-sm">info@tenthrock.com</p>
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+                  <Twitter className="w-5 h-5" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+                  <Instagram className="w-5 h-5" />
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+                  <Facebook className="w-5 h-5" />
                 </div>
               </div>
-              <div className="flex gap-3 mt-6">
-                <a href="#" className="text-white/60 hover:text-[#c5d520] transition-colors p-2" aria-label="Facebook">
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-white/60 hover:text-[#c5d520] transition-colors p-2" aria-label="Instagram">
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-white/60 hover:text-[#c5d520] transition-colors p-2" aria-label="Twitter">
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-white/60 hover:text-[#c5d520] transition-colors p-2" aria-label="LinkedIn">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-lg mb-4 sm:mb-6 text-white">Services</h3>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <h3 className="font-bold text-lg mb-6 text-white">Services</h3>
               <ul className="space-y-2 text-white/60">
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Waste Removal</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Dumpster Rentals</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Recycling Programs</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Emergency Cleanups</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Compliance Audits</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Waste Removal</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Dumpster Rentals</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Recycling Programs</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Emergency Cleanups</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Compliance Audits</a></li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div>
-              <h3 className="font-bold text-lg mb-4 sm:mb-6 text-white">Company</h3>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
               <ul className="space-y-2 text-white/60">
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">About Us</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Careers</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Success Stories</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Partner Program</a></li>
-                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors text-sm">Contact</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">About Us</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Careers</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Success Stories</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Partner Program</a></li>
+                <li><a href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Contact</a></li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div>
-              <h3 className="font-bold text-lg mb-4 sm:mb-6 text-white">Stay Updated</h3>
-              <p className="text-white/60 text-sm mb-4">
-                Get the latest industry insights and updates.
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="space-y-6"
+            >
+              <h3 className="font-bold text-lg text-white">Stay Updated</h3>
+              <p className="text-white/60">
+                Get the latest industry insights and compliance updates.
               </p>
               <div className="flex gap-2">
                 <Input 
                   placeholder="Enter your email" 
-                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-full px-4 focus-visible:ring-[#c5d520] flex-1" 
+                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6" 
                 />
-                <Button className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] h-12 px-4 rounded-full">
-                  <ArrowRight className="h-5 w-5" />
+                <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full">
+                  <ArrowRight className="w-5 h-5" />
                 </Button>
               </div>
-            </div>
-          </div>
-
-          <div className="border-t border-white/10 pt-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-              <p className="text-white/60 text-sm">© 2024 Tenth Rock. All rights reserved.</p>
-              <div className="flex gap-6">
-                <a href="#" className="text-white/60 hover:text-[#c5d520] text-sm transition-colors">Privacy Policy</a>
-                <a href="#" className="text-white/60 hover:text-[#c5d520] text-sm transition-colors">Terms of Service</a>
+              <div className="pt-4 border-t border-white/10 mt-6">
+                <p className="text-sm font-bold text-white mb-2">Need Immediate Help?</p>
+                <a href="tel:8885550123" className="text-xl font-bold text-[#c5d520] hover:underline">
+                  (888) 555-0123
+                </a>
               </div>
+            </motion.div>
+          </div>
+          
+          <Separator className="bg-white/10 mb-8" />
+          
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+            <p>© 2026 Tenth Rock Solutions. All rights reserved.</p>
+            <div className="flex gap-8 mt-4 md:mt-0">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
             </div>
           </div>
         </div>
