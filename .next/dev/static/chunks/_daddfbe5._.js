@@ -3054,7 +3054,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Fina
 ;
 ;
 ;
-const imgOurStory = "/images/stock/hero-skyscrapers.jpg";
+const imgOurStory = "/images/stock/clean-city-hero.jpg";
 const imgAtOurCore = "/images/stock/clean-city.jpg";
 const imgCommunity = "/images/stock/cyclist.jpg";
 const coreValues = [

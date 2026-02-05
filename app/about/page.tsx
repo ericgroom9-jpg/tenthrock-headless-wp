@@ -12,7 +12,7 @@ import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 
-const imgOurStory = "/images/stock/hero-skyscrapers.jpg";
+const imgOurStory = "/images/stock/clean-city-hero.jpg";
 const imgAtOurCore = "/images/stock/clean-city.jpg";
 const imgCommunity = "/images/stock/cyclist.jpg";
 
