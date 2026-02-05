@@ -3789,35 +3789,21 @@ const Location = ()=>{
                             },
                             className: "h-[600px] overflow-visible relative bg-white",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-full h-full relative",
+                                className: "w-full h-full relative overflow-hidden",
                                 "data-testid": "map-coverage",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        src: "/images/stock/us-map.jpg",
-                                        alt: "US coverage map showing 48 states served",
-                                        className: "w-full h-full object-contain"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 1373,
-                                        columnNumber: 17
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 flex items-center justify-center",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "text-6xl font-bold text-primary/30 drop-shadow-lg",
-                                            children: "48 States"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 1379,
-                                            columnNumber: 19
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 1378,
-                                        columnNumber: 17
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                ]
-                            }, void 0, true, {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                    src: "/assets_export/videos/us-map-pins-loop.mp4",
+                                    className: "w-full h-full object-contain scale-110 bg-white",
+                                    autoPlay: true,
+                                    loop: true,
+                                    muted: true,
+                                    playsInline: true
+                                }, void 0, false, {
+                                    fileName: "[project]/components/home/TenthRockHome.tsx",
+                                    lineNumber: 1373,
+                                    columnNumber: 17
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
                                 lineNumber: 1372,
                                 columnNumber: 15

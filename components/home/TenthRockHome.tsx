@@ -1368,16 +1368,16 @@ const Location = () => {
              transition={{ duration: 0.6 }}
              className="h-[600px] overflow-visible relative bg-white"
            >
-              {/* Map */}
-              <div className="w-full h-full relative" data-testid="map-coverage">
-                <img 
-                  src="/images/stock/us-map.jpg" 
-                  alt="US coverage map showing 48 states served" 
-                  className="w-full h-full object-contain"
+              {/* Map Video */}
+              <div className="w-full h-full relative overflow-hidden" data-testid="map-coverage">
+                <video
+                  src="/assets_export/videos/us-map-pins-loop.mp4"
+                  className="w-full h-full object-contain scale-110 bg-white"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-primary/30 drop-shadow-lg">48 States</div>
-                </div>
               </div>
            </motion.div>
         </div>
