@@ -1928,7 +1928,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         className: "w-full flex items-center justify-between py-6 group cursor-pointer",
                                                         "data-testid": "accordion-about-service",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                                 className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter",
                                                                 children: "About Service"
                                                             }, void 0, false, {
