@@ -1068,23 +1068,21 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 ;
 ;
-const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0", {
+const buttonVariants = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$class$2d$variance$2d$authority$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["cva"])("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-bold tracking-tight transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:scale-105 active:scale-95", {
     variants: {
         variant: {
-            default: "bg-primary text-primary-foreground border border-primary-border hover:bg-primary/90 active:bg-primary/80",
-            destructive: "bg-destructive text-destructive-foreground border border-destructive-border hover:bg-destructive/90 active:bg-destructive/80",
-            outline: "border [border-color:var(--button-outline)] shadow-xs hover:bg-accent/50 hover:text-accent-foreground active:bg-accent/70 active:shadow-none",
-            secondary: "border bg-secondary text-secondary-foreground border-secondary-border hover:bg-secondary/80 active:bg-secondary/70",
-            ghost: "border border-transparent hover:bg-accent/50 hover:text-accent-foreground active:bg-accent/70"
+            default: "bg-primary text-primary-foreground border border-primary-border hover:bg-primary/90 shadow-sm",
+            destructive: "bg-destructive text-destructive-foreground shadow-sm border-destructive-border hover:bg-destructive/90",
+            outline: "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+            secondary: "border bg-secondary text-secondary-foreground border border-secondary-border hover:bg-secondary/80",
+            ghost: "hover:bg-accent hover:text-accent-foreground",
+            link: "text-primary underline-offset-4 hover:underline"
         },
-        // Heights are set as "min" heights, because sometimes Ai will place large amount of content
-        // inside buttons. With a min-height they will look appropriate with small amounts of content,
-        // but will expand to fit large amounts of content.
         size: {
-            default: "min-h-9 px-4 py-2",
-            sm: "min-h-8 rounded-md px-3 text-xs",
-            lg: "min-h-10 rounded-md px-8",
-            icon: "h-9 w-9"
+            default: "h-11 px-6 rounded-full",
+            sm: "h-9 rounded-full px-4 text-xs",
+            lg: "h-14 px-10 rounded-full text-sm uppercase font-extrabold tracking-wide",
+            icon: "h-11 w-11 rounded-full"
         }
     },
     defaultVariants: {
@@ -1104,7 +1102,7 @@ const Button = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$nod
         ...props
     }, void 0, false, {
         fileName: "[project]/components/ui/button.tsx",
-        lineNumber: 50,
+        lineNumber: 47,
         columnNumber: 7
     }, ("TURBOPACK compile-time value", void 0));
 });

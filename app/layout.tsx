@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { GlobalScripts } from "@/components/scripts/GlobalScripts";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const manrope = Manrope({ 
+  subsets: ["latin"], 
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "WordPress Headless CMS",
-  description: "A modern headless WordPress implementation with Next.js and PostgreSQL caching.",
+  title: "Tenth Rock Waste Solutions | Nationwide Commercial Waste Management",
+  description: "Leading commercial waste management solutions across 48 states. Dumpster rental, emergency overflow, event services, and centralized waste programs for businesses.",
 };
 
 export default function RootLayout({
@@ -18,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}>
         <GlobalScripts />
         {children}
         <Toaster />
