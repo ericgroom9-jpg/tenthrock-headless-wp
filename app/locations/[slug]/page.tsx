@@ -123,9 +123,9 @@ export default function LocationTemplatePage() {
       </section>
 
       {/* About Location + Contact Form */}
-      <section className="py-16 md:py-24 bg-white" aria-labelledby="about-location-heading">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <section className="relative bg-white" aria-labelledby="about-location-heading">
+        <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-10 pb-12 md:pb-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - About Location Accordions */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -199,7 +199,7 @@ export default function LocationTemplatePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8"
+              className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8 lg:-mt-32 relative z-10"
             >
               <div className="mb-6">
                 <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
