@@ -140,9 +140,18 @@ export default function ServiceTemplate({
       <Navbar variant="floating" />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Section - Solid Dark Background */}
-        <section className="relative bg-[#042940] pt-24 md:pt-28">
-          <div className="container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
+        {/* Hero Section with Background Image */}
+        <section className="relative bg-[#042940] pt-24 md:pt-28 overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={heroImage}
+              alt=""
+              className="w-full h-full object-cover"
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
+          </div>
+          <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
             <div className="max-w-xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -152,7 +161,7 @@ export default function ServiceTemplate({
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
                   {serviceName}
                 </h1>
-                <p className="text-base sm:text-lg text-white/70 mb-6 sm:mb-8 max-w-md">
+                <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">
                   {serviceDescription}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

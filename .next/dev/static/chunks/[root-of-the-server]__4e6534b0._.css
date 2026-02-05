@@ -3063,6 +3063,11 @@ h1, h3, h4, h5, h6, h2 {
   --tw-gradient-stops: var(--tw-gradient-from), #042940e6 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
+.via-\[\#042940\]\/95 {
+  --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #042940f2 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .via-black\/20 {
   --tw-gradient-to: #0000 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #0003 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -3079,6 +3084,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .to-\[\#042940\]\/60 {
   --tw-gradient-to: #04294099 var(--tw-gradient-to-position);
+}
+
+.to-\[\#042940\]\/70 {
+  --tw-gradient-to: #042940b3 var(--tw-gradient-to-position);
 }
 
 .to-\[\#0a3a55\] {
