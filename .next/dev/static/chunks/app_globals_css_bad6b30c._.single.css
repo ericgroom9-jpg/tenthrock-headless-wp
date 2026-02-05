@@ -1107,10 +1107,6 @@ h1, h3, h4, h5, h6, h2 {
   inset: 0;
 }
 
-.inset-4 {
-  inset: 1rem;
-}
-
 .inset-x-0 {
   left: 0;
   right: 0;
@@ -1584,10 +1580,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .h-8 {
   height: 2rem;
-}
-
-.h-80 {
-  height: 20rem;
 }
 
 .h-9 {
@@ -3429,10 +3421,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .tracking-wide {
   letter-spacing: .025em;
-}
-
-.tracking-wider {
-  letter-spacing: .05em;
 }
 
 .tracking-widest {
@@ -6115,16 +6103,8 @@ h1, h3, h4, h5, h6, h2 {
     height: 2.5rem;
   }
 
-  .md\:h-96 {
-    height: 24rem;
-  }
-
   .md\:h-\[320px\] {
     height: 320px;
-  }
-
-  .md\:w-80 {
-    width: 20rem;
   }
 
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
@@ -6161,10 +6141,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:gap-12 {
     gap: 3rem;
-  }
-
-  .md\:gap-16 {
-    gap: 4rem;
   }
 
   .md\:gap-6 {
@@ -6269,10 +6245,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:pt-28 {
     padding-top: 7rem;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-2xl {

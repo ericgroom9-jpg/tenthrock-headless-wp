@@ -15,6 +15,7 @@ import ReasonsSection from "@/components/shared/ReasonsSection";
 import StatsSection from "@/components/shared/StatsSection";
 import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
+import CtaBannerSection from "@/components/shared/CtaBannerSection";
 
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
 const imgHowItWorks = "/images/stock/service-emergency-overflow.jpg";
@@ -207,36 +208,8 @@ export default function WhoWeServePage() {
         </div>
       </section>
 
-      {/* Ready to Start CTA */}
-      <section className="bg-[#F9F9F6] py-16 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 max-w-4xl mx-auto">
-            <div className="text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-4">
-                Ready<br />to start?
-              </h2>
-              <p className="text-primary/70 max-w-xs">
-                Get in touch today and discover how we can streamline your waste management operations.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="w-64 md:w-80 h-80 md:h-96 bg-[#042940] rounded-[5px] overflow-hidden relative">
-                <div className="absolute inset-4 bg-white rounded-[5px] shadow-xl p-4">
-                  <div className="text-xs font-bold text-primary/50 uppercase tracking-wider mb-3">
-                    We're closer than you think!
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-8 bg-gray-100 rounded-[5px]" />
-                    <div className="h-8 bg-gray-100 rounded-[5px]" />
-                    <div className="h-8 bg-gray-100 rounded-[5px]" />
-                    <div className="h-10 bg-[#c5d520] rounded-[5px]" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CTA Banner - Shared Component (same as homepage) */}
+      <CtaBannerSection />
 
       {/* Stats / Why Clients Call Us - Shared Component (same as homepage) */}
       <StatsSection />
