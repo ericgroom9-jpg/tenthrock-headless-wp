@@ -57,35 +57,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 ;
 ;
 const imgEventStadium = "/images/stock/service-event-stadium.jpg";
-const subServices = [
-    {
-        title: "Concert & Festival Waste",
-        description: "Large-scale waste management for concerts, music festivals, and outdoor events.",
-        image: "/images/stock/service-event-stadium.jpg",
-        link: "/services/event-stadium"
-    },
-    {
-        title: "Stadium Game Day Services",
-        description: "Rapid waste removal and recycling during and after sporting events.",
-        image: "/images/stock/service-dumpster-rental.jpg",
-        link: "/services/event-stadium"
-    },
-    {
-        title: "Convention Center Support",
-        description: "Trade show and convention waste logistics with on-site coordination.",
-        image: "/images/stock/service-emergency-overflow.jpg",
-        link: "/services/event-stadium"
-    }
-];
 function EventStadiumPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Event & Stadium Waste Logistics",
         serviceDescription: "Comprehensive waste management solutions for large-scale events, stadiums, and venues. From setup to breakdown, we keep your event clean.",
-        heroImage: imgEventStadium,
-        subServices: subServices
+        heroImage: imgEventStadium
     }, void 0, false, {
         fileName: "[project]/app/services/event-stadium/page.tsx",
-        lineNumber: 28,
+        lineNumber: 7,
         columnNumber: 5
     }, this);
 }

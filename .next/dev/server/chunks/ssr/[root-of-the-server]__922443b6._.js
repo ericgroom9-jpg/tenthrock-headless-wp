@@ -56,36 +56,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/services/ServiceTemplate.tsx [app-rsc] (ecmascript)");
 ;
 ;
-const imgStoreDecommissioning = "/images/stock/service-dumpster-rental.jpg";
-const subServices = [
-    {
-        title: "Complete Store Closures",
-        description: "Full-service decommissioning for retail closures, including fixture removal, waste hauling, and site cleanup.",
-        image: "/images/stock/service-dumpster-rental.jpg",
-        link: "/services/store-decommissioning"
-    },
-    {
-        title: "Remodel Support",
-        description: "Debris removal and waste management during store renovations and remodels.",
-        image: "/images/stock/service-event-stadium.jpg",
-        link: "/services/store-decommissioning"
-    },
-    {
-        title: "Fixture & Equipment Removal",
-        description: "Safe removal and recycling of store fixtures, shelving, and equipment.",
-        image: "/images/stock/service-emergency-overflow.jpg",
-        link: "/services/store-decommissioning"
-    }
-];
+const imgStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
 function StoreDecommissioningPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Store Decommissioning & Remodel Support",
         serviceDescription: "Professional decommissioning services for retail closures, renovations, and remodels. We handle everything from fixture removal to final site cleanup.",
-        heroImage: imgStoreDecommissioning,
-        subServices: subServices
+        heroImage: imgStoreDecommissioning
     }, void 0, false, {
         fileName: "[project]/app/services/store-decommissioning/page.tsx",
-        lineNumber: 28,
+        lineNumber: 7,
         columnNumber: 5
     }, this);
 }

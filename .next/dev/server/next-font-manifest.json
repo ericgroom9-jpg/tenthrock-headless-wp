@@ -4,7 +4,15 @@
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
-    "[project]/app/services/emergency-waste-removal/page": [
+    "[project]/app/services/centralized-programs/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/dumpster-rentals/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/environmental-maintenance/page": [
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],

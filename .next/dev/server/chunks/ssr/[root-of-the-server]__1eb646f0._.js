@@ -56,36 +56,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/services/ServiceTemplate.tsx [app-rsc] (ecmascript)");
 ;
 ;
-const imgCentralized = "/images/stock/service-dumpster-rental.jpg";
-const subServices = [
-    {
-        title: "Multi-Location Management",
-        description: "Unified waste management across all your locations with centralized reporting and billing.",
-        image: "/images/stock/service-dumpster-rental.jpg",
-        link: "/services/centralized-programs"
-    },
-    {
-        title: "Vendor Consolidation",
-        description: "Reduce complexity by consolidating multiple waste vendors into one managed program.",
-        image: "/images/stock/service-event-stadium.jpg",
-        link: "/services/centralized-programs"
-    },
-    {
-        title: "Compliance & Reporting",
-        description: "Automated compliance tracking and sustainability reporting across your portfolio.",
-        image: "/images/stock/service-emergency-overflow.jpg",
-        link: "/services/centralized-programs"
-    }
-];
+const imgCentralized = "/images/stock/service-centralized-program.jpg";
 function CentralizedProgramsPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Centralized Waste Program Management",
         serviceDescription: "Streamline waste operations across your entire organization with our centralized management platform. One partner, one invoice, complete visibility.",
-        heroImage: imgCentralized,
-        subServices: subServices
+        heroImage: imgCentralized
     }, void 0, false, {
         fileName: "[project]/app/services/centralized-programs/page.tsx",
-        lineNumber: 28,
+        lineNumber: 7,
         columnNumber: 5
     }, this);
 }

@@ -56,36 +56,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/services/ServiceTemplate.tsx [app-rsc] (ecmascript)");
 ;
 ;
-const imgEnvironmental = "/images/stock/service-emergency-overflow.jpg";
-const subServices = [
-    {
-        title: "Compactor Maintenance",
-        description: "Regular maintenance and repair services for commercial compactors and balers.",
-        image: "/images/stock/service-emergency-overflow.jpg",
-        link: "/services/environmental-maintenance"
-    },
-    {
-        title: "Equipment Installation",
-        description: "Professional installation of waste handling equipment and compaction systems.",
-        image: "/images/stock/service-dumpster-rental.jpg",
-        link: "/services/environmental-maintenance"
-    },
-    {
-        title: "Environmental Consulting",
-        description: "Expert guidance on waste reduction, recycling optimization, and sustainability goals.",
-        image: "/images/stock/service-event-stadium.jpg",
-        link: "/services/environmental-maintenance"
-    }
-];
+const imgEnvironmental = "/images/stock/service-maintenance.jpg";
 function EnvironmentalMaintenancePage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Environmental & Compactor Maintenance Services",
         serviceDescription: "Keep your waste handling equipment running efficiently with our maintenance and environmental consulting services.",
-        heroImage: imgEnvironmental,
-        subServices: subServices
+        heroImage: imgEnvironmental
     }, void 0, false, {
         fileName: "[project]/app/services/environmental-maintenance/page.tsx",
-        lineNumber: 28,
+        lineNumber: 7,
         columnNumber: 5
     }, this);
 }
