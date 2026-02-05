@@ -2819,12 +2819,6 @@ h2 {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-\[\#042940\]\/5 {
-  --tw-gradient-from: #0429400d var(--tw-gradient-from-position);
-  --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-black\/80 {
   --tw-gradient-from: #000c var(--tw-gradient-from-position);
   --tw-gradient-to: #0000 var(--tw-gradient-to-position);
@@ -2863,10 +2857,6 @@ h2 {
 
 .to-\[\#0a3a55\] {
   --tw-gradient-to: #0a3a55 var(--tw-gradient-to-position);
-}
-
-.to-\[\#c5d520\]\/10 {
-  --tw-gradient-to: #c5d5201a var(--tw-gradient-to-position);
 }
 
 .to-brand-accent {
@@ -3448,8 +3438,8 @@ h2 {
   color: hsl(var(--primary-foreground) / var(--tw-text-opacity, 1));
 }
 
-.text-primary\/20 {
-  color: hsl(var(--primary) / .2);
+.text-primary\/30 {
+  color: hsl(var(--primary) / .3);
 }
 
 .text-primary\/40 {

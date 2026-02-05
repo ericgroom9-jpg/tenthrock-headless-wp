@@ -1360,7 +1360,16 @@ const Location = () => {
              className="h-[600px] overflow-visible relative bg-white"
            >
               {/* Map */}
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#042940]/5 to-[#c5d520]/10" data-testid="map-coverage-placeholder"><div className="text-6xl font-bold text-primary/20">48 States</div></div>
+              <div className="w-full h-full relative" data-testid="map-coverage">
+                <img 
+                  src="/images/stock/us-map.jpg" 
+                  alt="US coverage map showing 48 states served" 
+                  className="w-full h-full object-contain"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-6xl font-bold text-primary/30 drop-shadow-lg">48 States</div>
+                </div>
+              </div>
            </motion.div>
         </div>
       </div>
