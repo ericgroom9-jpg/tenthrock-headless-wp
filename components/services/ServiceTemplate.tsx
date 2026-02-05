@@ -183,7 +183,7 @@ export default function ServiceTemplate({
       <Navbar variant="floating" />
 
       <main id="main-content" className="flex-1">
-        {/* Interior Hero Section */}
+        {/* Interior Hero Section with Form */}
         <section className="relative bg-[#042940] overflow-hidden pt-24 md:pt-28">
           <div className="absolute inset-0">
             <img 
@@ -195,38 +195,166 @@ export default function ServiceTemplate({
             <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/90 to-[#042940]/60" />
           </div>
           <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-2xl"
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
-                {serviceName}
-              </h1>
-              <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-xl">
-                {serviceDescription}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button 
-                  size="lg" 
-                  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] rounded-full whitespace-nowrap"
-                  data-testid="button-hero-cta"
-                >
-                  Get a Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="w-full sm:w-auto border-white/30 text-white min-h-[52px] rounded-full whitespace-nowrap backdrop-blur-sm bg-white/5"
-                  data-testid="button-hero-phone"
-                >
-                  <Phone className="mr-2 h-5 w-5" />
-                  (123) 456-7890
-                </Button>
-              </div>
-            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Left Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-xl"
+              >
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
+                  {serviceName}
+                </h1>
+                <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8">
+                  {serviceDescription}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#042940] min-h-[52px] rounded-[5px] whitespace-nowrap"
+                    data-testid="button-hero-cta"
+                  >
+                    Call To Action
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto bg-[#042940] border border-white text-white min-h-[52px] rounded-[5px] whitespace-nowrap"
+                    data-testid="button-hero-phone"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    (123) 456-7890
+                  </Button>
+                </div>
+              </motion.div>
+
+              {/* Right Form */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-[5px] p-6 md:p-8 shadow-2xl"
+              >
+                <form className="space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-primary mb-2">
+                        First name
+                      </label>
+                      <Input 
+                        id="firstName"
+                        type="text"
+                        className="w-full h-12 border-primary/20 rounded-[5px] focus:border-primary focus:ring-primary"
+                        data-testid="input-first-name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-primary mb-2">
+                        Last name
+                      </label>
+                      <Input 
+                        id="lastName"
+                        type="text"
+                        className="w-full h-12 border-primary/20 rounded-[5px] focus:border-primary focus:ring-primary"
+                        data-testid="input-last-name"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
+                        Email
+                      </label>
+                      <Input 
+                        id="email"
+                        type="email"
+                        className="w-full h-12 border-primary/20 rounded-[5px] focus:border-primary focus:ring-primary"
+                        data-testid="input-email"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
+                        Phone number
+                      </label>
+                      <Input 
+                        id="phone"
+                        type="tel"
+                        className="w-full h-12 border-primary/20 rounded-[5px] focus:border-primary focus:ring-primary"
+                        data-testid="input-phone"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="company" className="block text-sm font-medium text-primary mb-2">
+                        Company
+                      </label>
+                      <Input 
+                        id="company"
+                        type="text"
+                        className="w-full h-12 border-primary/20 rounded-[5px] focus:border-primary focus:ring-primary"
+                        data-testid="input-company"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="interest" className="block text-sm font-medium text-primary mb-2">
+                        I'm interested in help with:
+                      </label>
+                      <select 
+                        id="interest"
+                        className="w-full h-12 px-3 border border-primary/20 rounded-[5px] bg-white text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+                        data-testid="select-interest"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>Select one...</option>
+                        <option value="waste-removal">Waste Removal</option>
+                        <option value="dumpster-rental">Dumpster Rental</option>
+                        <option value="emergency">Emergency Services</option>
+                        <option value="consulting">Waste Consulting</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
+                      Message
+                    </label>
+                    <textarea 
+                      id="message"
+                      rows={4}
+                      placeholder="Type your message..."
+                      className="w-full px-3 py-3 border border-primary/20 rounded-[5px] bg-white text-primary placeholder:text-primary/40 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none"
+                      data-testid="textarea-message"
+                    />
+                  </div>
+                  
+                  <div className="flex items-center justify-between pt-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input 
+                        type="checkbox" 
+                        className="w-5 h-5 rounded border-primary/20 text-primary focus:ring-primary"
+                        data-testid="checkbox-terms"
+                      />
+                      <span className="text-sm text-primary">
+                        I accept the <a href="/terms" className="underline hover:text-secondary">Terms</a>
+                      </span>
+                    </label>
+                    <Button 
+                      type="submit"
+                      size="lg"
+                      className="bg-primary text-white hover:bg-primary/90 min-h-[52px] rounded-[5px] px-8"
+                      data-testid="button-form-submit"
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                </form>
+              </motion.div>
+            </div>
           </div>
         </section>
 
