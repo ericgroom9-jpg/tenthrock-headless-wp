@@ -2070,12 +2070,12 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                 children: "Skip to main content"
             }, void 0, false, {
                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                lineNumber: 59,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Navbar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                lineNumber: 62,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -2112,7 +2112,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                 children: "Based on 300+ Reviews"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 83,
+                                                lineNumber: 84,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2126,12 +2126,12 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                 className: "w-3 h-3 sm:w-4 sm:h-4 fill-[#c5d520] text-[#c5d520]"
                                                             }, i, false, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 87,
+                                                                lineNumber: 88,
                                                                 columnNumber: 23
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 85,
+                                                        lineNumber: 86,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2143,7 +2143,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 91,
+                                                                lineNumber: 92,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -2152,25 +2152,25 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                 className: "h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 92,
+                                                                lineNumber: 93,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 91,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 85,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 83,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -2178,7 +2178,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                         children: industryName
                                     }, void 0, false, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2186,7 +2186,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                         children: heroDescription
                                     }, void 0, false, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2199,7 +2199,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                 children: "Request a Quote"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 105,
+                                                lineNumber: 106,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2212,36 +2212,36 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                         className: "w-5 h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 119,
                                                         columnNumber: 19
                                                     }, this),
                                                     "(888) 555-0123"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 113,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 105,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                lineNumber: 75,
+                                lineNumber: 76,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                            lineNumber: 74,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                        lineNumber: 66,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2272,7 +2272,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                 children: aboutTitle
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 137,
+                                                lineNumber: 138,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2295,7 +2295,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                         children: i + 1
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                        lineNumber: 152,
+                                                                        lineNumber: 153,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2306,7 +2306,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                                 children: point.title
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                                lineNumber: 156,
+                                                                                lineNumber: 157,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2328,24 +2328,24 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                                     children: point.description
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                                    lineNumber: 174,
+                                                                                    lineNumber: 175,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                                lineNumber: 161,
+                                                                                lineNumber: 162,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                        lineNumber: 155,
+                                                                        lineNumber: 156,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 144,
+                                                                lineNumber: 145,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2364,23 +2364,23 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                    lineNumber: 182,
+                                                                    lineNumber: 183,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 181,
+                                                                lineNumber: 182,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, i, true, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 144,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 142,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2393,7 +2393,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                         children: "Get Started"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 194,
+                                                        lineNumber: 195,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2404,25 +2404,25 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                 className: "w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 203,
+                                                                lineNumber: 204,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 201,
+                                                        lineNumber: 202,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 193,
+                                                lineNumber: 194,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 132,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2449,33 +2449,33 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                 className: "w-full h-full object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 217,
+                                                lineNumber: 218,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                            lineNumber: 216,
+                                            lineNumber: 217,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 209,
+                                        lineNumber: 210,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                lineNumber: 129,
+                                lineNumber: 130,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                            lineNumber: 128,
+                            lineNumber: 129,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                        lineNumber: 127,
+                        lineNumber: 128,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2509,17 +2509,17 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                 className: "w-full h-full object-cover"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 241,
+                                                lineNumber: 242,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                            lineNumber: 240,
+                                            lineNumber: 241,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 233,
+                                        lineNumber: 234,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2543,7 +2543,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                 children: "How It Works"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 256,
+                                                lineNumber: 257,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2566,7 +2566,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                         children: i + 1
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                        lineNumber: 271,
+                                                                        lineNumber: 272,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2577,7 +2577,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                                 children: step.title
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                                lineNumber: 275,
+                                                                                lineNumber: 276,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2599,24 +2599,24 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                                     children: step.description
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                                    lineNumber: 293,
+                                                                                    lineNumber: 294,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                                lineNumber: 280,
+                                                                                lineNumber: 281,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                        lineNumber: 274,
+                                                                        lineNumber: 275,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 263,
+                                                                lineNumber: 264,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2635,23 +2635,23 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                    lineNumber: 301,
+                                                                    lineNumber: 302,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 300,
+                                                                lineNumber: 301,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, i, true, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 262,
+                                                        lineNumber: 263,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 260,
+                                                lineNumber: 261,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2664,7 +2664,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                         children: "Get Started"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 313,
+                                                        lineNumber: 314,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2677,54 +2677,54 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                                 className: "w-5 h-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                                lineNumber: 326,
+                                                                lineNumber: 327,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "(888) 555-0123"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                        lineNumber: 320,
+                                                        lineNumber: 321,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                lineNumber: 312,
+                                                lineNumber: 313,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                        lineNumber: 250,
+                                        lineNumber: 251,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                lineNumber: 231,
+                                lineNumber: 232,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                            lineNumber: 230,
+                            lineNumber: 231,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                        lineNumber: 229,
+                        lineNumber: 230,
                         columnNumber: 9
                     }, this),
                     faqs && faqs.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FaqSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         faqs: faqs
                     }, void 0, false, {
                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                        lineNumber: 336,
+                        lineNumber: 337,
                         columnNumber: 37
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$LocationSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                        lineNumber: 339,
+                        lineNumber: 340,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2758,7 +2758,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                     children: ctaTitle
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                    lineNumber: 353,
+                                                    lineNumber: 354,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2766,13 +2766,13 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                     children: ctaDescription
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 357,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                            lineNumber: 352,
+                                            lineNumber: 353,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2785,7 +2785,7 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                     children: "Request a Quote"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                    lineNumber: 361,
+                                                    lineNumber: 362,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2798,58 +2798,58 @@ function IndustryTemplate({ industryName, heroImage, heroDescription, aboutTitle
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                            lineNumber: 374,
+                                                            lineNumber: 375,
                                                             columnNumber: 21
                                                         }, this),
                                                         "(888) 555-0123"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                                    lineNumber: 368,
+                                                    lineNumber: 369,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                            lineNumber: 360,
+                                            lineNumber: 361,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                    lineNumber: 351,
+                                    lineNumber: 352,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                                lineNumber: 344,
+                                lineNumber: 345,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                            lineNumber: 343,
+                            lineNumber: 344,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                        lineNumber: 342,
+                        lineNumber: 343,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                lineNumber: 64,
+                lineNumber: 65,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/industries/IndustryTemplate.tsx",
-                lineNumber: 384,
+                lineNumber: 385,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/industries/IndustryTemplate.tsx",
-        lineNumber: 58,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }

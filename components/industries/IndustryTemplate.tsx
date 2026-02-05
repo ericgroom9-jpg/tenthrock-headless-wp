@@ -8,13 +8,9 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
+import ProcessSection from "@/components/shared/ProcessSection";
 
 interface BulletPoint {
-  title: string;
-  description: string;
-}
-
-interface ProcessStep {
   title: string;
   description: string;
 }
@@ -31,8 +27,6 @@ interface IndustryTemplateProps {
   aboutTitle: string;
   aboutImage: string;
   bulletPoints: BulletPoint[];
-  processSteps: ProcessStep[];
-  processImage: string;
   faqs?: FaqItem[];
   ctaTitle?: string;
   ctaDescription?: string;
@@ -45,14 +39,11 @@ export default function IndustryTemplate({
   aboutTitle,
   aboutImage,
   bulletPoints,
-  processSteps,
-  processImage,
   faqs,
   ctaTitle = "Ready to Streamline Your Waste Management?",
   ctaDescription = "Get in touch with our team today for a customized solution that fits your needs.",
 }: IndustryTemplateProps) {
   const [activeBullet, setActiveBullet] = useState(0);
-  const [activeStep, setActiveStep] = useState(0);
 
   return (
     <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
@@ -225,112 +216,8 @@ export default function IndustryTemplate({
           </div>
         </section>
 
-        {/* How It Works Section */}
-        <section className="py-16 md:py-20 lg:py-24 bg-[#F9F9F6]">
-          <div className="container mx-auto px-4 sm:px-6 md:px-8">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-              {/* Left Image */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative order-first"
-              >
-                <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[4/5] rounded-[5px] overflow-hidden shadow-2xl">
-                  <img 
-                    src={processImage} 
-                    alt="How it works"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Right Content */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-medium text-[#042940] mb-8 md:mb-12 tracking-tighter leading-tight">
-                  How It Works
-                </h2>
-
-                <div className="space-y-0" role="region" aria-label="How it works accordion">
-                  {processSteps.map((step, i) => (
-                    <div key={i}>
-                      <button
-                        onClick={() => setActiveStep(activeStep === i ? -1 : i)}
-                        className="w-full text-left py-4 sm:py-5 md:py-6 flex items-start gap-4 sm:gap-5 md:gap-6 group"
-                        data-testid={`step-${i}`}
-                        aria-expanded={activeStep === i}
-                        aria-controls={`step-panel-${i}`}
-                        id={`step-button-${i}`}
-                      >
-                        <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#042940] shrink-0 w-6 sm:w-8" aria-hidden="true">
-                          {i + 1}
-                        </span>
-                        <div className="flex-1 min-w-0">
-                          <h3 className={`text-lg sm:text-xl md:text-2xl font-bold transition-colors duration-300 ${
-                            activeStep === i ? "text-[#042940]" : "text-[#042940]"
-                          }`}>
-                            {step.title}
-                          </h3>
-                          <motion.div
-                            id={`step-panel-${i}`}
-                            role="region"
-                            aria-labelledby={`step-button-${i}`}
-                            initial={false}
-                            animate={{ 
-                              height: activeStep === i ? "auto" : 0,
-                              opacity: activeStep === i ? 1 : 0,
-                              marginTop: activeStep === i ? 12 : 0
-                            }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
-                          >
-                            <p className="text-[#042940]/80 leading-relaxed text-sm sm:text-base">
-                              {step.description}
-                            </p>
-                          </motion.div>
-                        </div>
-                      </button>
-                      {/* Progress bar */}
-                      <div className="h-0.5 bg-gray-300 ml-10 sm:ml-12 md:ml-14" aria-hidden="true">
-                        <motion.div
-                          className="h-full bg-[#042940]"
-                          initial={{ width: "0%" }}
-                          animate={{ width: activeStep === i ? "60%" : "0%" }}
-                          transition={{ duration: 0.5 }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-10">
-                  <Button 
-                    size="lg" 
-                    className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] w-full sm:w-auto"
-                    data-testid="button-process-cta"
-                  >
-                    Get Started
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-[#042940]/20 text-[#042940] hover:bg-[#042940]/5 active:bg-[#042940]/5 rounded-full min-h-[52px] gap-2 w-full sm:w-auto"
-                    data-testid="button-process-phone"
-                  >
-                    <Phone className="w-5 h-5" />
-                    (888) 555-0123
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        {/* How It Works Section - Uses shared ProcessSection */}
+        <ProcessSection />
 
         {/* FAQ Section */}
         {faqs && faqs.length > 0 && <FaqSection faqs={faqs} />}

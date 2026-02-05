@@ -25,25 +25,6 @@ const bulletPoints = [
   }
 ];
 
-const processSteps = [
-  {
-    title: "Campus Assessment",
-    description: "We conduct a thorough analysis of your campus waste streams, identifying opportunities for cost savings and improved sustainability."
-  },
-  {
-    title: "Custom Program Design",
-    description: "Our team designs a tailored waste management program that fits your campus layout, student population, and sustainability goals."
-  },
-  {
-    title: "Seamless Implementation",
-    description: "We handle all logistics from container placement to pickup schedules, coordinating with your facilities team for minimal disruption."
-  },
-  {
-    title: "Ongoing Optimization",
-    description: "Regular reviews and reporting ensure your program evolves with your campus needs and continuously improves diversion rates."
-  }
-];
-
 const faqs = [
   {
     question: "How do you handle waste during move-in and move-out periods?",
@@ -76,8 +57,6 @@ export default function EducationalPage() {
       aboutTitle="Waste Solutions Built for Campus Life"
       aboutImage="/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg"
       bulletPoints={bulletPoints}
-      processSteps={processSteps}
-      processImage="/images/stock/cyclist.jpg"
       faqs={faqs}
       ctaTitle="Ready to Transform Your Campus Waste Program?"
       ctaDescription="Partner with Tenth Rock for sustainable, efficient waste management that supports your institution's environmental goals."
