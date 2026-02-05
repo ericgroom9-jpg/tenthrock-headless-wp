@@ -64,33 +64,39 @@ const Logo = ({ variant = "main", className = "" }: { variant?: "main" | "white"
 const services = [
   {
     title: "Emergency Overflow",
-    description: "Rapid response teams available 24/7 for unexpected waste emergencies and overflow situations.",
+    desc: "Rapid response teams available 24/7 for unexpected waste emergencies and overflow situations.",
     img: imgServiceEmergencyOverflow,
+    features: ["24/7 Response", "Rapid Deployment", "Emergency Cleanup"],
   },
   {
     title: "Dumpster Rentals",
-    description: "Flexible dumpster rental solutions for construction, renovation, and commercial cleanouts.",
+    desc: "Flexible dumpster rental solutions for construction, renovation, and commercial cleanouts.",
     img: imgServiceDumpsterRental,
+    features: ["Multiple Sizes", "Flexible Terms", "Quick Delivery"],
   },
   {
     title: "Event & Stadium",
-    description: "Comprehensive waste management for large-scale events, concerts, and sporting venues.",
+    desc: "Comprehensive waste management for large-scale events, concerts, and sporting venues.",
     img: imgServiceEventStadium,
+    features: ["Large Events", "Venue Support", "Post-Event Cleanup"],
   },
   {
     title: "Maintenance Services",
-    description: "Regular maintenance and cleaning services to keep your facilities spotless and compliant.",
+    desc: "Regular maintenance and cleaning services to keep your facilities spotless and compliant.",
     img: imgServiceMaintenance,
+    features: ["Scheduled Service", "Compliance Ready", "Full Reporting"],
   },
   {
     title: "Store Decommissioning",
-    description: "Complete store closure and decommissioning services with responsible disposal practices.",
+    desc: "Complete store closure and decommissioning services with responsible disposal practices.",
     img: imgServiceStoreDecommissioning,
+    features: ["Full Removal", "Asset Recovery", "Eco-Friendly"],
   },
   {
     title: "Centralized Programs",
-    description: "Enterprise-wide waste management programs for multi-location businesses.",
+    desc: "Enterprise-wide waste management programs for multi-location businesses.",
     img: imgServiceCentralizedProgram,
+    features: ["Multi-Location", "Single Invoice", "Dedicated Support"],
   },
 ];
 
@@ -148,17 +154,9 @@ const faqs = [
 
 export default function CommercialWasteServices() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [activeService, setActiveService] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const nextService = () => {
-    setCurrentServiceIndex((prev) => (prev + 1) % services.length);
-  };
-
-  const prevService = () => {
-    setCurrentServiceIndex((prev) => (prev - 1 + services.length) % services.length);
-  };
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -290,74 +288,107 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Services Slider Section */}
-        <section className="bg-gray-50 py-12 sm:py-16 lg:py-20" aria-labelledby="services-heading">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
+        {/* Services Section - Matching Homepage Design */}
+        <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
+          <div className="container mx-auto px-4 md:px-8">
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-8 sm:mb-12"
+              transition={{ duration: 0.6 }}
+              className="mb-10 md:mb-16 max-w-2xl"
             >
-              <h2 id="services-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940] tracking-tighter">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
                 Our Services
+              </div>
+              <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-4 tracking-tighter">
+                Commercial Waste Services
               </h2>
+              <p className="text-lg text-[#042940]/60">
+                Comprehensive solutions for businesses of all sizes, available nationwide.
+              </p>
             </motion.div>
-
-            <div className="relative">
-              <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
-                {services.map((service, index) => (
-                  <motion.div
-                    key={service.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[400px] snap-start"
+            
+            <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+              <div className="lg:col-span-4 flex flex-col space-y-[6px]">
+                {services.map((service, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveService(i)}
+                    onMouseEnter={() => setActiveService(i)}
+                    className={`text-left px-6 md:px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${
+                      activeService === i 
+                        ? "bg-white shadow-lg text-[#042940] border border-[#042940]/5" 
+                        : "text-[#042940]/40 hover:text-[#042940] active:text-[#042940] hover:bg-white/50 active:bg-white/50"
+                    }`}
                   >
-                    <div className="relative h-[400px] sm:h-[480px] lg:h-[560px] rounded-[5px] overflow-hidden group cursor-pointer">
-                      <img 
-                        src={service.img} 
-                        alt={service.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    <span className="relative z-10 flex items-center justify-between">
+                      {service.title}
+                      {activeService === i && (
+                        <motion.span layoutId="active-indicator" className="w-2 h-2 rounded-full bg-[#c5d520]" />
+                      )}
+                    </span>
+                    {activeService === i && (
+                      <motion.div
+                        layoutId="active-bg"
+                        className="absolute left-0 top-0 bottom-0 w-1 bg-[#c5d520]"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/50 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
-                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">{service.title}</h3>
-                        <p className="text-white/80 text-sm sm:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          {service.description}
-                        </p>
-                        <Button 
-                          className="mt-4 bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        >
-                          Learn More
-                        </Button>
-                      </div>
-                    </div>
-                  </motion.div>
+                    )}
+                  </button>
                 ))}
               </div>
 
-              <div className="flex gap-3 mt-6">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={prevService}
-                  className="rounded-full border-[#042940] text-[#042940] hover:bg-[#042940] hover:text-white min-h-[52px] min-w-[52px]"
-                  aria-label="Previous service"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={nextService}
-                  className="rounded-full border-[#042940] text-[#042940] hover:bg-[#042940] hover:text-white min-h-[52px] min-w-[52px]"
-                  aria-label="Next service"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </Button>
+              <div className="lg:col-span-8 cursor-pointer h-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-[5px]" role="button" tabIndex={0} aria-label="View service details" onClick={() => console.log('Navigate to service details')} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && console.log('Navigate to service details')}>
+                <div className="relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeService}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0"
+                    >
+                      <img 
+                        src={services[activeService].img} 
+                        alt={services[activeService].title} 
+                        className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/70 md:via-[#042940]/60 to-transparent opacity-95 md:opacity-90" />
+                      
+                      <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">
+                            {services[activeService].title}
+                          </h3>
+                          <p className="text-white/90 text-xl leading-relaxed max-w-2xl font-medium mb-8">
+                            {services[activeService].desc}
+                          </p>
+                          
+                          <div className="flex flex-wrap gap-4 mb-8">
+                            {services[activeService].features.map((feature, idx) => (
+                              <span key={idx} className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white text-sm font-bold border border-white/10 hover:bg-white/20 transition-colors">
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+
+                          <div className="flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide group-hover:gap-4 transition-all">
+                            Learn More <ArrowRight className="w-5 h-5" />
+                          </div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
             </div>
           </div>

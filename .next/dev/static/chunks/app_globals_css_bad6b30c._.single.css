@@ -1794,10 +1794,6 @@ h1, h3, h4, h5, h6, h2 {
   width: 1px;
 }
 
-.w-\[280px\] {
-  width: 280px;
-}
-
 .w-\[400px\] {
   width: 400px;
 }
@@ -2147,18 +2143,6 @@ h1, h3, h4, h5, h6, h2 {
   user-select: none;
 }
 
-.snap-x {
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
-.snap-mandatory {
-  --tw-scroll-snap-strictness: mandatory;
-}
-
-.snap-start {
-  scroll-snap-align: start;
-}
-
 .list-none {
   list-style-type: none;
 }
@@ -2351,10 +2335,6 @@ h1, h3, h4, h5, h6, h2 {
   overflow: visible;
 }
 
-.overflow-x-auto {
-  overflow-x: auto;
-}
-
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -2483,6 +2463,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .border-\[\#042940\]\/10 {
   border-color: #0429401a;
+}
+
+.border-\[\#042940\]\/5 {
+  border-color: #0429400d;
 }
 
 .border-\[\#c5d520\] {
@@ -2920,11 +2904,6 @@ h1, h3, h4, h5, h6, h2 {
 .via-\[\#042940\]\/40 {
   --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #04294066 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.via-\[\#042940\]\/50 {
-  --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #04294080 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .via-\[\#042940\]\/60 {
@@ -3403,6 +3382,10 @@ h1, h3, h4, h5, h6, h2 {
 .text-\[\#042940\] {
   --tw-text-opacity: 1;
   color: rgb(4 41 64 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#042940\]\/40 {
+  color: #04294066;
 }
 
 .text-\[\#042940\]\/60 {
@@ -5897,14 +5880,6 @@ h1, h3, h4, h5, h6, h2 {
     display: flex;
   }
 
-  .sm\:h-\[480px\] {
-    height: 480px;
-  }
-
-  .sm\:w-\[320px\] {
-    width: 320px;
-  }
-
   .sm\:w-auto {
     width: auto;
   }
@@ -6013,11 +5988,6 @@ h1, h3, h4, h5, h6, h2 {
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 
   .sm\:text-4xl {
@@ -6419,10 +6389,6 @@ h1, h3, h4, h5, h6, h2 {
     height: 2.5rem;
   }
 
-  .lg\:h-\[560px\] {
-    height: 560px;
-  }
-
   .lg\:h-\[600px\] {
     height: 600px;
   }
@@ -6437,10 +6403,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:w-\[360px\] {
     width: 360px;
-  }
-
-  .lg\:w-\[400px\] {
-    width: 400px;
   }
 
   .lg\:flex-shrink-0 {
