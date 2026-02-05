@@ -3052,7 +3052,10 @@ function CtaBannerSection() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                         placeholder: "Enter Zip Code",
-                                        className: "bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full"
+                                        className: "!bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full",
+                                        style: {
+                                            backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                                        }
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
                                         lineNumber: 51,
@@ -3064,7 +3067,7 @@ function CtaBannerSection() {
                                         children: "Check Now"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 56,
                                         columnNumber: 16
                                     }, this)
                                 ]
