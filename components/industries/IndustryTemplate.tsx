@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, Phone, ArrowUpRight } from "lucide-react";
+import { Phone, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -66,22 +66,6 @@ export default function IndustryTemplate({
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              {/* Reviews Badge */}
-              <div className="flex flex-col items-start gap-2 mb-4 sm:mb-6">
-                <p className="text-white/80 text-xs sm:text-sm">Based on 300+ Reviews</p>
-                <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
-                  <div className="flex gap-0.5 sm:gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-[#c5d520] text-[#c5d520]" />
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <img src="/assets_export/logos/google-icon.svg" alt="Google" className="h-4 w-4" />
-                    <img src="/assets_export/logos/clutch-icon.svg" alt="Clutch" className="h-4 w-4" />
-                  </div>
-                </div>
-              </div>
-
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 tracking-tighter leading-[1.1]">
                 {industryName}
               </h1>
