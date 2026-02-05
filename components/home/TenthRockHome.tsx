@@ -146,7 +146,7 @@ const Navbar = () => {
 
           {/* Nav toggle for smaller screens */}
           <button 
-            className="p-2 text-primary rounded-[5px] hover:bg-gray-100 transition-colors xl:hidden"
+            className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors xl:hidden min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsNavExpanded(!isNavExpanded)}
             aria-expanded={isNavExpanded}
             aria-label="Toggle navigation menu"
@@ -307,10 +307,10 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform hover:-translate-y-1 hover:scale-105 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2" aria-label="Request a waste removal service" data-testid="button-hero-cta">
+            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[48px]" aria-label="Request a waste removal service" data-testid="button-hero-cta">
               Request A Service
             </Button>
-            <Button size="lg" variant="outline" className="backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#042940] shadow-lg transition-all transform hover:-translate-y-1 hover:scale-105 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
+            <Button size="lg" variant="outline" className="backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[48px]" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
               See How It Works
             </Button>
           </div>
@@ -546,7 +546,7 @@ const ServicesSection = () => {
                    <img 
                      src={services[activeService].img} 
                      alt={services[activeService].title} 
-                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                     className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105" 
                    />
                    <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/70 md:via-[#042940]/60 to-transparent opacity-95 md:opacity-90"></div>
                    
@@ -625,7 +625,7 @@ const WhoWeHelp = () => {
             >
               <img 
                 src={sector.img} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110" 
                 alt={sector.title} 
               />
               <div className="absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 group-hover:bg-[#042940]/60 group-active:bg-[#042940]/60 transition-colors duration-300"></div>
@@ -680,7 +680,7 @@ const CaseStudySection = () => {
               <img 
                 src={imgCaseStudyMain} 
                 alt="Case Study Main" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+                className="w-full h-full object-cover md:hover:scale-105 transition-transform duration-700" 
               />
             </motion.div>
             <div className="grid grid-cols-3 gap-4">
@@ -696,7 +696,7 @@ const CaseStudySection = () => {
                   <img 
                     src={img} 
                     alt={`Case Study Detail ${i + 1}`} 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" 
+                    className="w-full h-full object-cover md:hover:scale-110 transition-transform duration-500" 
                   />
                 </motion.div>
               ))}
@@ -812,10 +812,10 @@ const WhyUs = () => {
              </div>
 
              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b]">
+                <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[48px]">
                   Get Started
                 </Button>
-                <Button size="lg" variant="outline" className="border-[#042940] text-[#042940] hover:bg-[#042940] hover:text-white">
+                <Button size="lg" variant="outline" className="border-[#042940] text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white min-h-[48px]">
                   Read More
                 </Button>
              </div>
@@ -874,7 +874,7 @@ const CtaBanner = () => {
                  placeholder="Enter Zip Code" 
                  className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
                />
-               <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto">
+               <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[48px]">
                  Check Now
                </Button>
              </div>
@@ -980,7 +980,7 @@ const Reasons = () => {
             {features.map((item, i) => (
               <motion.div 
                 key={i} 
-                className="group bg-white p-8 rounded-[5px] shadow-sm border border-transparent hover:border-secondary/20 hover:shadow-xl transition-all duration-300"
+                className="group bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-transparent hover:border-secondary/20 active:border-secondary/20 hover:shadow-xl active:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1179,14 +1179,14 @@ const Testimonials = () => {
            <div className="flex gap-4 pt-8">
               <button 
                 onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 text-white transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 active:bg-white/10 text-white transition-all duration-300 min-w-[44px] min-h-[44px]"
                 aria-label="Previous testimonial"
               >
                 <ArrowRight className="w-5 h-5 rotate-180" />
               </button>
               <button 
                 onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full bg-[#c5d520] text-[#042940] flex items-center justify-center hover:bg-[#d6d98b] transition-all duration-300 shadow-lg hover:scale-110"
+                className="w-12 h-12 rounded-full bg-[#c5d520] text-[#042940] flex items-center justify-center hover:bg-[#d6d98b] active:bg-[#d6d98b] transition-all duration-300 shadow-lg md:hover:scale-110 active:scale-95 min-w-[44px] min-h-[44px]"
                 aria-label="Next testimonial"
               >
                 <ArrowRight className="w-5 h-5" />
@@ -1423,7 +1423,7 @@ const FinalCta = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                   <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-lg hover:scale-105 transition-all duration-300">
+                   <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[48px]">
                       Request a Service
                    </Button>
                 </div>
@@ -1441,7 +1441,7 @@ const FinalCta = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5, duration: 0.4 }}
-                  className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform hover:scale-105 transition-transform duration-300"
+                  className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform md:hover:scale-105 transition-transform duration-300"
                 >
                    <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
