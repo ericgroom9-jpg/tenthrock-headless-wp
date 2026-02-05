@@ -119,14 +119,15 @@ export default function LocationsPage() {
                 className={`space-y-3 sm:space-y-4 ${columnIndex < stateColumns.length - 1 ? 'lg:border-r lg:border-primary/10 lg:pr-6 xl:pr-8' : ''}`}
               >
                 {column.map((state, stateIndex) => (
-                  <div 
+                  <a 
                     key={stateIndex}
-                    className="flex items-center gap-2 sm:gap-3"
+                    href={`/locations/${state.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="flex items-center gap-2 sm:gap-3 py-1 rounded-md hover:text-[#c5d520] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
                     data-testid={`state-${columnIndex}-${stateIndex}`}
                   >
                     <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6 text-[#c5d520] flex-shrink-0" />
-                    <span className="font-bold text-primary text-sm sm:text-base">{state}</span>
-                  </div>
+                    <span className="font-bold text-primary text-sm sm:text-base group-hover:text-[#c5d520] hover:text-[#c5d520] transition-colors">{state}</span>
+                  </a>
                 ))}
               </motion.div>
             ))}
