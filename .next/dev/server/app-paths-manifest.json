@@ -1,7 +1,5 @@
 {
   "/[slug]/page": "app/[slug]/page.js",
-  "/locations/[slug]/page": "app/locations/[slug]/page.js",
   "/locations/page": "app/locations/page.js",
-  "/page": "app/page.js",
-  "/services/emergency-waste-removal/page": "app/services/emergency-waste-removal/page.js"
+  "/page": "app/page.js"
 }
