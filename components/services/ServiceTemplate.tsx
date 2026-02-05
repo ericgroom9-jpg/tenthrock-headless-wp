@@ -11,7 +11,8 @@ import {
   ChevronRight,
   ChevronDown,
   Plus,
-  Minus
+  Minus,
+  Mail
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -995,10 +996,10 @@ export default function ServiceTemplate({
 
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <Clock className="h-6 w-6 text-[#c5d520]" />
-                    <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Business Hours</h3>
+                    <Mail className="h-6 w-6 text-[#c5d520]" />
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Email</h3>
                   </div>
-                  <p className="text-gray-600 ml-9">Monday-Friday: 9:00am – 4:30pm</p>
+                  <p className="text-gray-600 ml-9">hello@tenthrock.com</p>
                 </div>
               </motion.div>
 
