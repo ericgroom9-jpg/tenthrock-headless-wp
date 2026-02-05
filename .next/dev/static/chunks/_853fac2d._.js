@@ -204,12 +204,30 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 const serviceLinks = [
-    "Emergency & Overflow Waste Response",
-    "Store Decommissioning & Remodel Support",
-    "Event & Stadium Waste Logistics",
-    "Dumpster Rental & Temporary Containers",
-    "Centralized Waste Program Management",
-    "Environmental & Compactor Maintenance Services"
+    {
+        label: "Waste Removal",
+        href: "/services/waste-removal"
+    },
+    {
+        label: "Dumpster Rentals",
+        href: "/services/dumpster-rentals"
+    },
+    {
+        label: "Emergency Waste Removal",
+        href: "/services/emergency-waste-removal"
+    },
+    {
+        label: "Store Decommissioning",
+        href: "/services/commercial-waste"
+    },
+    {
+        label: "Event & Stadium Services",
+        href: "/services/commercial-waste"
+    },
+    {
+        label: "Centralized Programs",
+        href: "/services/commercial-waste"
+    }
 ];
 function Navbar({ variant = "floating" }) {
     _s();
@@ -365,15 +383,15 @@ function Navbar({ variant = "floating" }) {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "grid gap-1",
-                                                            children: serviceLinks.map((label)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                                    href: "/services/commercial-waste",
-                                                                    "data-testid": `link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+                                                            children: serviceLinks.map((service)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: service.href,
+                                                                    "data-testid": `link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
                                                                     className: "flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]",
                                                                     onClick: ()=>setIsServicesOpen(false),
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                             className: "pr-3",
-                                                                            children: label
+                                                                            children: service.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
                                                                             lineNumber: 113,
@@ -387,7 +405,7 @@ function Navbar({ variant = "floating" }) {
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
-                                                                }, label, true, {
+                                                                }, service.label, true, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
                                                                     lineNumber: 106,
                                                                     columnNumber: 27
@@ -575,16 +593,16 @@ function Navbar({ variant = "floating" }) {
                                                 className: "overflow-hidden",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "pl-4 pb-2",
-                                                    children: serviceLinks.map((label)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                            href: "/services/commercial-waste",
+                                                    children: serviceLinks.map((service)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            href: service.href,
                                                             className: "block font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center",
                                                             onClick: ()=>{
                                                                 setIsNavExpanded(false);
                                                                 setIsServicesOpen(false);
                                                             },
-                                                            "data-testid": `link-mobile-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-                                                            children: label
-                                                        }, label, false, {
+                                                            "data-testid": `link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+                                                            children: service.label
+                                                        }, service.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
                                                             lineNumber: 187,
                                                             columnNumber: 29

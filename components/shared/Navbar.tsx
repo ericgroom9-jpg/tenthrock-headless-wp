@@ -12,12 +12,12 @@ interface NavbarProps {
 }
 
 const serviceLinks = [
-  "Emergency & Overflow Waste Response",
-  "Store Decommissioning & Remodel Support",
-  "Event & Stadium Waste Logistics",
-  "Dumpster Rental & Temporary Containers",
-  "Centralized Waste Program Management",
-  "Environmental & Compactor Maintenance Services",
+  { label: "Waste Removal", href: "/services/waste-removal" },
+  { label: "Dumpster Rentals", href: "/services/dumpster-rentals" },
+  { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
+  { label: "Store Decommissioning", href: "/services/commercial-waste" },
+  { label: "Event & Stadium Services", href: "/services/commercial-waste" },
+  { label: "Centralized Programs", href: "/services/commercial-waste" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
@@ -102,15 +102,15 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         Services
                       </div>
                       <div className="grid gap-1">
-                        {serviceLinks.map((label) => (
+                        {serviceLinks.map((service) => (
                           <Link
-                            key={label}
-                            href="/services/commercial-waste"
-                            data-testid={`link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            key={service.label}
+                            href={service.href}
+                            data-testid={`link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                             className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
                             onClick={() => setIsServicesOpen(false)}
                           >
-                            <span className="pr-3">{label}</span>
+                            <span className="pr-3">{service.label}</span>
                             <ChevronRight className="w-4 h-4 text-primary/40" />
                           </Link>
                         ))}
@@ -183,15 +183,15 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         className="overflow-hidden"
                       >
                         <div className="pl-4 pb-2">
-                          {serviceLinks.map((label) => (
+                          {serviceLinks.map((service) => (
                             <Link
-                              key={label}
-                              href="/services/commercial-waste"
+                              key={service.label}
+                              href={service.href}
                               className="block font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
                               onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
-                              data-testid={`link-mobile-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                              data-testid={`link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                             >
-                              {label}
+                              {service.label}
                             </Link>
                           ))}
                         </div>
