@@ -130,7 +130,7 @@ export default function ServiceTemplate({
   caseStudy = defaultCaseStudy,
 }: ServiceTemplateProps) {
   const [activeStep, setActiveStep] = useState(0);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openItem, setOpenItem] = useState("item-0");
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -457,78 +457,81 @@ export default function ServiceTemplate({
           </div>
         </section>
 
-        {/* Stats Section - Why Clients Call Us */}
-        <section className="py-16 md:py-24 bg-white" aria-labelledby="stats-heading">
+        {/* Stats Section - Matching Homepage Design Exactly */}
+        <section className="py-16 md:py-24 bg-[#FDFDFD]">
           <div className="container mx-auto px-4 md:px-8">
-            {/* Header */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 mb-12 md:mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 id="stats-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter">
-                  Why Clients Call Us Again and Again.
-                </h2>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="space-y-6"
-              >
-                <p className="text-[#042940]/80 text-base md:text-lg">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim in eros elementum tristique.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <Button 
-                    size="lg" 
-                    className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] rounded-full whitespace-nowrap"
-                    data-testid="button-stats-cta"
-                  >
-                    Get a Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="w-full sm:w-auto border-[#042940] text-[#042940] min-h-[52px] rounded-full whitespace-nowrap"
-                    data-testid="button-stats-phone"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    (123) 456-7890
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Stats Grid */}
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-              {stats.map((stat, i) => (
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div className="sticky top-32">
                 <motion.div
-                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
+                    <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                    Key Metrics
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
+                    Why Clients Call Us Again and Again.
+                  </h2>
+                  <p className="text-lg text-primary/60 mb-8">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap">
+                      Request a Service
+                    </Button>
+                    <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap">
+                      <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
+                    </Button>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="grid gap-8">
+                <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="border border-[#042940] p-6 md:p-8 flex flex-col justify-between min-h-[280px]"
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="border border-primary/10 p-8 rounded-[5px] bg-white"
                 >
-                  <p className="text-[#042940] font-semibold text-lg">
-                    {stat.label}
-                  </p>
-                  <div className="space-y-4">
-                    <p className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#c5d520] text-right">
-                      {stat.value}
-                    </p>
-                    <div className="h-px bg-[#042940]" />
-                    <p className="text-[#042940]/80 text-right text-sm md:text-base">
-                      {stat.description}
-                    </p>
-                  </div>
+                  <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+                  <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
+                  <Separator className="bg-primary/10 mb-4" />
+                  <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </motion.div>
-              ))}
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="border border-primary/10 p-8 rounded-[5px] bg-white"
+                >
+                  <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
+                    <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
+                  </div>
+                  <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+                  <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
+                  <Separator className="bg-primary/10 mb-4" />
+                  <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="border border-primary/10 p-8 rounded-[5px] bg-white"
+                >
+                  <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+                  <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
+                  <Separator className="bg-primary/10 mb-4" />
+                  <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -603,87 +606,76 @@ export default function ServiceTemplate({
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-16 md:py-24 bg-white" aria-labelledby="faq-heading">
-          <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12 md:mb-16"
-            >
-              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-4">
-                FAQs
-              </h2>
-              <p className="text-[#042940]/80 text-base md:text-lg max-w-2xl mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+        {/* FAQ Section - Matching Homepage Design Exactly */}
+        <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
+          {/* Background Decor */}
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+          
+          <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
+            <div className="text-left sm:text-center mb-16 space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-4">
+                <span className="w-2 h-2 rounded-full bg-secondary"></span>
+                Common Questions
+              </div>
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
+              <p className="text-lg text-primary/60 max-w-2xl mx-auto">
+                Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="space-y-0">
+            <div className="grid gap-4">
               {faqs.map((faq, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="border-t border-[#042940] last:border-b"
+                  viewport={{ once: true }}
                 >
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full min-h-[52px] py-5 md:py-6 flex items-center justify-between text-left gap-4"
-                    aria-expanded={openFaq === i}
-                    data-testid={`button-faq-${i}`}
+                  <div 
+                    className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
+                      openItem === `item-${i}` 
+                        ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
+                        : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
+                    }`}
+                    onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
                   >
-                    <span className="text-lg md:text-xl font-bold text-[#042940]">
-                      {faq.question}
-                    </span>
-                    <div className="shrink-0 w-[52px] h-[52px] rounded-full border border-[#042940] flex items-center justify-center">
-                      {openFaq === i ? (
-                        <Minus className="w-5 h-5 text-[#042940]" />
-                      ) : (
-                        <Plus className="w-5 h-5 text-[#042940]" />
-                      )}
-                    </div>
-                  </button>
-                  <AnimatePresence>
-                    {openFaq === i && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="pb-6 text-[#042940]/80 text-base md:text-lg pr-12">
+                    <button className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none">
+                      <span className={`text-xl font-bold transition-colors duration-300 ${
+                        openItem === `item-${i}` ? "text-white" : "text-primary"
+                      }`}>
+                        {faq.question}
+                      </span>
+                      <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        openItem === `item-${i}` 
+                          ? "bg-[#c5d520] rotate-180" 
+                          : "bg-primary/5 group-hover:bg-primary/10"
+                      }`}>
+                        <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
+                          openItem === `item-${i}` ? "text-[#042940]" : "text-primary"
+                        }`} />
+                      </div>
+                    </button>
+                    <div 
+                      className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                        openItem === `item-${i}` ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="px-6 md:px-8 pb-8 pt-0">
+                        <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6">
                           {faq.answer}
                         </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
-
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <Button 
-                size="lg" 
-                className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] rounded-full whitespace-nowrap"
-                data-testid="button-faq-cta"
-              >
-                Get a Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="w-full sm:w-auto border-[#042940] text-[#042940] min-h-[52px] rounded-full whitespace-nowrap"
-                data-testid="button-faq-phone"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                (123) 456-7890
+            
+            <div className="mt-16 text-left sm:text-center">
+              <p className="text-primary/60 mb-4 font-medium">Still Have Questions?</p>
+              <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap">
+                Contact Us
               </Button>
             </div>
           </div>
@@ -777,36 +769,49 @@ export default function ServiceTemplate({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-[#042940] rounded-[5px] overflow-hidden"
+              className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
             >
-              <div className="flex flex-col lg:flex-row items-center justify-between p-8 md:p-12 gap-8">
-                <div className="flex-1">
-                  <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
-                    CTA Banner
-                  </h2>
-                  <p className="text-white/80 text-base md:text-lg max-w-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 shrink-0">
-                  <Button 
-                    size="lg" 
-                    className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] rounded-full whitespace-nowrap"
-                    data-testid="button-final-cta"
-                  >
-                    Get a Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="w-full sm:w-auto border-white/30 text-white min-h-[52px] rounded-full whitespace-nowrap"
-                    data-testid="button-final-phone"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    (123) 456-7890
+              {/* Content Side */}
+              <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+                
+                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
+                  Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
+                </h2>
+                <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">
+                  Join thousands of businesses optimizing their disposal costs and sustainability with Tenth Rock. One partner, zero headaches.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap">
+                    Request a Service
                   </Button>
                 </div>
+              </div>
+
+              {/* Image Side */}
+              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
+                <img src={imgCyclist} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover object-center lg:object-right" />
+                <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
+                
+                {/* Floating Stat Card */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.4 }}
+                  className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform md:hover:scale-105 transition-transform duration-300"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
+                      <Phone className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="text-[#c5d520] text-xl font-bold">(888) 555-0123</div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -830,16 +835,16 @@ export default function ServiceTemplate({
                 Redefining commercial waste management with speed, transparency, and reliability across all 50 states.
               </p>
               <div className="flex gap-4">
-                <div className="w-[52px] h-[52px] rounded-full bg-white/5 flex items-center justify-center transition-colors cursor-pointer hover-elevate">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                   <Linkedin className="w-5 h-5" />
                 </div>
-                <div className="w-[52px] h-[52px] rounded-full bg-white/5 flex items-center justify-center transition-colors cursor-pointer hover-elevate">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                   <Twitter className="w-5 h-5" />
                 </div>
-                <div className="w-[52px] h-[52px] rounded-full bg-white/5 flex items-center justify-center transition-colors cursor-pointer hover-elevate">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                   <Instagram className="w-5 h-5" />
                 </div>
-                <div className="w-[52px] h-[52px] rounded-full bg-white/5 flex items-center justify-center transition-colors cursor-pointer hover-elevate">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                   <Facebook className="w-5 h-5" />
                 </div>
               </div>

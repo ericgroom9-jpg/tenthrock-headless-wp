@@ -1849,10 +1849,6 @@ h1, h3, h4, h5, h6, h2 {
   min-height: 0;
 }
 
-.min-h-\[280px\] {
-  min-height: 280px;
-}
-
 .min-h-\[300px\] {
   min-height: 300px;
 }
@@ -3359,11 +3355,6 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: 1rem;
 }
 
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -3408,10 +3399,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .pl-8 {
   padding-left: 2rem;
-}
-
-.pr-12 {
-  padding-right: 3rem;
 }
 
 .pr-2 {
@@ -3468,10 +3455,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-center {
   text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .align-middle {
@@ -4661,10 +4644,6 @@ h1, h3, h4, h5, h6, h2 {
 .last\:rounded-r-md:last-child {
   border-top-right-radius: .375rem;
   border-bottom-right-radius: .375rem;
-}
-
-.last\:border-b:last-child {
-  border-bottom-width: 1px;
 }
 
 .last\:border-b-0:last-child {
@@ -6442,11 +6421,6 @@ h1, h3, h4, h5, h6, h2 {
     padding-bottom: 6rem;
   }
 
-  .md\:py-6 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
   .md\:pt-0 {
     padding-top: 0;
   }
@@ -6492,11 +6466,6 @@ h1, h3, h4, h5, h6, h2 {
   .md\:text-sm {
     font-size: .875rem;
     line-height: 1.25rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .md\:opacity-0 {
@@ -6807,11 +6776,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:text-6xl {
     font-size: 3.75rem;
-    line-height: 1;
-  }
-
-  .lg\:text-7xl {
-    font-size: 4.5rem;
     line-height: 1;
   }
 }
