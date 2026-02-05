@@ -2,16 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Phone, ChevronLeft, ChevronRight, CheckSquare } from "lucide-react";
+import { Phone, CheckSquare } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import CtaBannerSection from "@/components/shared/CtaBannerSection";
+import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import StatsSection from "@/components/shared/StatsSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
 import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
-import { useState } from "react";
 
 
 const states = [
@@ -33,34 +33,7 @@ const stateColumns = Array.from({ length: columnCount }, (_, i) =>
   states.slice(i * perColumn, (i + 1) * perColumn)
 );
 
-const services = [
-  {
-    title: "Dumpster Rental",
-    description: "Flexible rental options for construction, renovation, and cleanout projects of any size.",
-    image: "/images/stock/service-dumpster.jpg"
-  },
-  {
-    title: "Commercial Waste",
-    description: "Reliable scheduled pickups and customized waste management solutions for businesses.",
-    image: "/images/stock/service-commercial.jpg"
-  },
-  {
-    title: "Emergency Removal",
-    description: "24/7 rapid response for storm debris, disaster cleanup, and urgent waste situations.",
-    image: "/images/stock/service-emergency.jpg"
-  }
-];
-
 export default function LocationsPage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % services.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
-  };
 
   return (
     <main className="min-h-screen bg-white">
@@ -164,123 +137,8 @@ export default function LocationsPage() {
       {/* CTA Banner Section (same as homepage) */}
       <CtaBannerSection />
 
-      {/* Services Slider Section */}
-      <section 
-        className="py-16 md:py-24 lg:py-32 bg-[#F5F5F5]"
-        aria-labelledby="services-heading"
-      >
-        <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <h2 
-              id="services-heading"
-              className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight"
-            >
-              Our Services
-            </h2>
-          </motion.div>
-
-          {/* Desktop Grid / Mobile Slider */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative bg-[#d2d2d2] rounded-[5px] overflow-hidden aspect-[4/5]"
-                data-testid={`service-card-${index}`}
-              >
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute top-6 left-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                    {service.title}
-                  </h3>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white/90 text-sm mb-4">{service.description}</p>
-                  <Button 
-                    variant="outline"
-                    className="w-full border-white/20 text-white bg-white/10 backdrop-blur-sm rounded-[5px]"
-                    data-testid={`button-service-learn-more-${index}`}
-                  >
-                    Learn More
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Mobile Slider */}
-          <div className="md:hidden">
-            <div className="relative overflow-hidden rounded-[5px]">
-              <div 
-                className="flex transition-transform duration-300"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {services.map((service, index) => (
-                  <div
-                    key={service.title}
-                    className="w-full flex-shrink-0 bg-[#d2d2d2] aspect-[4/5] relative"
-                  >
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute top-6 left-6">
-                      <h3 className="text-2xl font-bold text-white">
-                        {service.title}
-                      </h3>
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <p className="text-white/90 text-sm mb-4">{service.description}</p>
-                      <Button 
-                        variant="outline"
-                        className="w-full border-white/20 text-white bg-white/10 backdrop-blur-sm rounded-[5px]"
-                      >
-                        Learn More
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Slider Controls */}
-            <div className="flex gap-3 mt-6">
-              <button
-                onClick={prevSlide}
-                className="w-9 h-9 rounded-full bg-primary flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 focus-visible:outline-none"
-                aria-label="Previous service"
-                data-testid="button-prev-slide"
-              >
-                <ChevronLeft className="w-5 h-5 text-white" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="w-9 h-9 rounded-full bg-primary flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 focus-visible:outline-none"
-                aria-label="Next service"
-                data-testid="button-next-slide"
-              >
-                <ChevronRight className="w-5 h-5 text-white" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Commercial Waste Services (same as homepage) */}
+      <CommercialWasteServices />
 
       {/* Stats Section (same as homepage) */}
       <StatsSection />
