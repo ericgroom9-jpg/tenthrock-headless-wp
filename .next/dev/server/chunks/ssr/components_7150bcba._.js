@@ -1876,7 +1876,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         "data-testid": "accordion-about-service",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter",
+                                                                className: "text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter",
                                                                 children: "About Service"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
@@ -2101,7 +2101,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         "data-testid": "accordion-how-service-works",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter",
+                                                                className: "text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter",
                                                                 children: "How Service Works"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
@@ -2289,7 +2289,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         "data-testid": "accordion-other-services",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                                className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter",
+                                                                className: "text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter",
                                                                 children: "Other Services"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
