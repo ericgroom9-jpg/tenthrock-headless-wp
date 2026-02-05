@@ -2608,6 +2608,10 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(4 41 64 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#042940\]\/10 {
+  background-color: #0429401a;
+}
+
 .bg-\[\#042940\]\/40 {
   background-color: #04294066;
 }
@@ -3193,10 +3197,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-center {
   text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .align-middle {
@@ -5920,10 +5920,6 @@ h1, h3, h4, h5, h6, h2 {
     padding: 1.5rem;
   }
 
-  .sm\:p-8 {
-    padding: 2rem;
-  }
-
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -5954,11 +5950,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .sm\:text-5xl {
     font-size: 3rem;
-    line-height: 1;
-  }
-
-  .sm\:text-6xl {
-    font-size: 3.75rem;
     line-height: 1;
   }
 
@@ -6157,10 +6148,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:pt-0 {
     padding-top: 0;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-4xl {
@@ -6496,11 +6483,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:text-6xl {
     font-size: 3.75rem;
-    line-height: 1;
-  }
-
-  .lg\:text-7xl {
-    font-size: 4.5rem;
     line-height: 1;
   }
 }

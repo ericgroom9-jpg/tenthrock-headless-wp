@@ -123,12 +123,6 @@ const processSteps = [
   },
 ];
 
-const stats = [
-  { value: "30%", label: "Average cost savings for our clients" },
-  { value: "70K", label: "Tons of waste processed annually" },
-  { value: "80%", label: "Waste diverted from landfills" },
-];
-
 const faqs = [
   {
     question: "What types of commercial waste do you handle?",
@@ -488,67 +482,81 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="stats-heading">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h2 id="stats-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940] tracking-tighter">
-                  Why Clients Call Us Again and Again.
-                </h2>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <p className="text-gray-600 text-base sm:text-lg mb-6">
-                  We've built our reputation on reliability, efficiency, and exceptional customer service. Our clients trust us to handle their waste management needs because we consistently deliver results.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button 
-                    size="lg"
-                    className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto"
-                  >
-                    Get Started
-                  </Button>
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="border-[#042940] text-[#042940] hover:bg-[#042940] hover:text-white min-h-[52px] rounded-full w-full sm:w-auto"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    (123) 456-7890
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {stats.map((stat, index) => (
+        {/* Stats Section - Matching Homepage Design */}
+        <section className="py-16 md:py-24 bg-[#FDFDFD]">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              <div className="sticky top-32">
                 <motion.div
-                  key={stat.value}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+                    <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
+                    Key Metrics
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
+                    Why Clients Call Us Again and Again.
+                  </h2>
+                  <p className="text-lg text-[#042940]/60 mb-8">
+                    We've built our reputation on reliability, efficiency, and exceptional customer service. Our clients trust us to handle their waste management needs because we consistently deliver results.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button size="lg" className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap">
+                      Request a Service
+                    </Button>
+                    <Button size="lg" variant="ghost" className="w-full sm:w-auto text-[#042940] hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap">
+                      <Phone className="w-5 h-5 text-[#c5d520]" /> (888) 555-0123
+                    </Button>
+                  </div>
+                </motion.div>
+              </div>
+
+              <div className="grid gap-8">
+                <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="border border-[#042940] p-6 sm:p-8"
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="border border-[#042940]/10 p-8 rounded-[5px] bg-white"
                 >
-                  <p className="text-sm font-semibold text-[#042940] mb-4">Case / Stat Here</p>
-                  <p className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#042940] text-right mb-4">
-                    {stat.value}
-                  </p>
-                  <div className="h-px bg-[#042940] mb-4" />
-                  <p className="text-gray-600 text-right text-sm sm:text-base">{stat.label}</p>
+                  <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
+                  <div className="text-7xl font-extrabold text-[#042940] mb-4">30%</div>
+                  <Separator className="bg-[#042940]/10 mb-4" />
+                  <p className="text-[#042940]/60">Average cost savings for our clients</p>
                 </motion.div>
-              ))}
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="border border-[#042940]/10 p-8 rounded-[5px] bg-white"
+                >
+                  <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
+                    <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
+                  </div>
+                  <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
+                  <div className="text-7xl font-extrabold text-[#042940] mb-4">70K</div>
+                  <Separator className="bg-[#042940]/10 mb-4" />
+                  <p className="text-[#042940]/60">Tons of waste processed annually</p>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="border border-[#042940]/10 p-8 rounded-[5px] bg-white"
+                >
+                  <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
+                  <div className="text-7xl font-extrabold text-[#042940] mb-4">80%</div>
+                  <Separator className="bg-[#042940]/10 mb-4" />
+                  <p className="text-[#042940]/60">Waste diverted from landfills</p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
