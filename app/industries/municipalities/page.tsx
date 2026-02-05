@@ -1,0 +1,63 @@
+import IndustryTemplate from "@/components/industries/IndustryTemplate";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Municipal Waste Management | Government & Public Sector | Tenth Rock",
+  description: "Comprehensive waste management solutions for municipalities, government facilities, and public sector organizations. Reliable service that serves your community.",
+};
+
+const bulletPoints = [
+  {
+    title: "Public Facility Coverage",
+    description: "Complete waste services for city halls, libraries, parks, recreation centers, and public works facilities. One partner for all your municipal waste needs."
+  },
+  {
+    title: "Special Event & Festival Support",
+    description: "Scalable solutions for community events, parades, farmers markets, and public celebrations. We help keep your public spaces clean and welcoming."
+  },
+  {
+    title: "Compliance & Reporting",
+    description: "Detailed documentation that meets state and federal requirements. Transparent reporting helps you demonstrate fiscal responsibility to constituents."
+  },
+  {
+    title: "Emergency Response Ready",
+    description: "Rapid mobilization for storm cleanup, emergency debris removal, and disaster response. We're ready when your community needs us most."
+  }
+];
+
+const faqs = [
+  {
+    question: "Do you work with government procurement processes?",
+    answer: "Yes, we're experienced with municipal RFP processes, cooperative purchasing agreements, and state contracts. We provide all required documentation and can work within your procurement requirements."
+  },
+  {
+    question: "How do you handle seasonal variations in park usage?",
+    answer: "We adjust service frequency based on seasonal patterns - increasing pickups during summer months and special events, then scaling back during quieter periods to optimize your budget."
+  },
+  {
+    question: "Can you support our community recycling goals?",
+    answer: "Absolutely. We help municipalities design and implement recycling programs that engage residents, provide educational materials, and track progress toward waste diversion goals."
+  },
+  {
+    question: "What's your response time for emergency cleanup?",
+    answer: "For municipalities with service agreements, we maintain emergency response protocols with 24-48 hour mobilization for most situations. We prioritize public safety and rapid restoration of services."
+  },
+  {
+    question: "Do you provide service to all municipal facilities?",
+    answer: "Yes, we can service all municipal buildings and facilities under a single contract - from administrative offices to public works yards, parks, and community centers."
+  }
+];
+
+export default function MunicipalitiesPage() {
+  return (
+    <IndustryTemplate
+      industryName="Municipalities"
+      heroImage="/assets_export/stock_images/clean_city_street.jpg"
+      heroDescription="Professional waste management for cities, towns, and public agencies. We help you serve your community with reliable, cost-effective solutions."
+      aboutTitle="Serving Those Who Serve the Public"
+      aboutImage="/assets_export/stock_images/clean_city_street.jpg"
+      bulletPoints={bulletPoints}
+      faqs={faqs}
+    />
+  );
+}
