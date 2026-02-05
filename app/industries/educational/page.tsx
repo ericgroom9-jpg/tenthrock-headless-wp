@@ -58,8 +58,6 @@ export default function EducationalPage() {
       aboutImage="/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg"
       bulletPoints={bulletPoints}
       faqs={faqs}
-      ctaTitle="Ready to Transform Your Campus Waste Program?"
-      ctaDescription="Partner with Tenth Rock for sustainable, efficient waste management that supports your institution's environmental goals."
     />
   );
 }

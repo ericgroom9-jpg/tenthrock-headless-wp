@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, ChevronDown, Phone, ArrowUpRight } from "lucide-react";
+import { Star, Phone, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import ProcessSection from "@/components/shared/ProcessSection";
+import FinalCtaSection from "@/components/shared/FinalCtaSection";
 
 interface BulletPoint {
   title: string;
@@ -28,8 +29,6 @@ interface IndustryTemplateProps {
   aboutImage: string;
   bulletPoints: BulletPoint[];
   faqs?: FaqItem[];
-  ctaTitle?: string;
-  ctaDescription?: string;
 }
 
 export default function IndustryTemplate({
@@ -40,8 +39,6 @@ export default function IndustryTemplate({
   aboutImage,
   bulletPoints,
   faqs,
-  ctaTitle = "Ready to Streamline Your Waste Management?",
-  ctaDescription = "Get in touch with our team today for a customized solution that fits your needs.",
 }: IndustryTemplateProps) {
   const [activeBullet, setActiveBullet] = useState(0);
 
@@ -225,47 +222,8 @@ export default function IndustryTemplate({
         {/* Location Section */}
         <LocationSection />
 
-        {/* Final CTA Banner */}
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 md:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-[#042940] rounded-[5px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl"
-            >
-              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 md:gap-8">
-                <div className="max-w-2xl">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-3 md:mb-4 tracking-tighter leading-tight">
-                    {ctaTitle}
-                  </h2>
-                  <p className="text-white text-base sm:text-lg">
-                    {ctaDescription}
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 shrink-0 w-full lg:w-auto">
-                  <Button 
-                    size="lg" 
-                    className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] shadow-lg whitespace-nowrap w-full sm:w-auto"
-                    data-testid="button-final-cta"
-                  >
-                    Request a Quote
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline" 
-                    className="border-white/30 text-white hover:bg-white/10 active:bg-white/10 rounded-full min-h-[52px] gap-2 whitespace-nowrap w-full sm:w-auto"
-                    data-testid="button-final-phone"
-                  >
-                    <Phone className="w-5 h-5" />
-                    (888) 555-0123
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        {/* Final CTA Banner - Uses shared FinalCtaSection */}
+        <FinalCtaSection />
       </main>
 
       <Footer />

@@ -110,11 +110,7 @@ function EducationalPage() {
         aboutTitle: "Waste Solutions Built for Campus Life",
         aboutImage: "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg",
         bulletPoints: bulletPoints,
-        processSteps: processSteps,
-        processImage: "/images/stock/cyclist.jpg",
-        faqs: faqs,
-        ctaTitle: "Ready to Transform Your Campus Waste Program?",
-        ctaDescription: "Partner with Tenth Rock for sustainable, efficient waste management that supports your institution's environmental goals."
+        faqs: faqs
     }, void 0, false, {
         fileName: "[project]/app/industries/educational/page.tsx",
         lineNumber: 53,

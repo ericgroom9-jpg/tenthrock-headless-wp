@@ -2800,11 +2800,6 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
 
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1));
-}
-
 .bg-green-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 253 244 / var(--tw-bg-opacity, 1));
@@ -4530,10 +4525,6 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(4 41 64 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-\[\#042940\]\/5:hover {
-  background-color: #0429400d;
-}
-
 .hover\:bg-\[\#F9F9F6\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(249 249 246 / var(--tw-bg-opacity, 1));
@@ -4894,10 +4885,6 @@ h1, h3, h4, h5, h6, h2 {
 .active\:bg-\[\#042940\]:active {
   --tw-bg-opacity: 1;
   background-color: rgb(4 41 64 / var(--tw-bg-opacity, 1));
-}
-
-.active\:bg-\[\#042940\]\/5:active {
-  background-color: #0429400d;
 }
 
 .active\:bg-\[\#F9F9F6\]:active {
