@@ -16,12 +16,24 @@ import { useState } from "react";
 const heroImage = "/images/stock/hero-aerial.jpg";
 const zipcodeImage = "/images/stock/zipcode-mockup.jpg";
 
-const cities = [
-  ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"],
-  ["Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose"],
-  ["Austin", "Jacksonville", "Fort Worth", "Columbus", "Charlotte"],
-  ["Indianapolis", "Seattle", "Denver", "Washington DC", "Boston"]
+const states = [
+  "Alabama", "Arizona", "Arkansas", "California", "Colorado",
+  "Connecticut", "Delaware", "Florida", "Georgia", "Idaho",
+  "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+  "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan",
+  "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
+  "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon",
+  "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+  "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+  "Washington", "West Virginia", "Wisconsin", "Wyoming"
 ];
+
+const columnCount = 4;
+const perColumn = Math.ceil(states.length / columnCount);
+const stateColumns = Array.from({ length: columnCount }, (_, i) =>
+  states.slice(i * perColumn, (i + 1) * perColumn)
+);
 
 const services = [
   {
@@ -127,23 +139,23 @@ export default function LocationsPage() {
 
           {/* Cities Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {cities.map((column, columnIndex) => (
+            {stateColumns.map((column, columnIndex) => (
               <motion.div
                 key={columnIndex}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: columnIndex * 0.1 }}
-                className={`space-y-3 sm:space-y-4 ${columnIndex < cities.length - 1 ? 'lg:border-r lg:border-primary/10 lg:pr-6 xl:pr-8' : ''}`}
+                className={`space-y-3 sm:space-y-4 ${columnIndex < stateColumns.length - 1 ? 'lg:border-r lg:border-primary/10 lg:pr-6 xl:pr-8' : ''}`}
               >
-                {column.map((city, cityIndex) => (
+                {column.map((state, stateIndex) => (
                   <div 
-                    key={cityIndex}
+                    key={stateIndex}
                     className="flex items-center gap-2 sm:gap-3"
-                    data-testid={`city-${columnIndex}-${cityIndex}`}
+                    data-testid={`state-${columnIndex}-${stateIndex}`}
                   >
                     <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6 text-[#c5d520] flex-shrink-0" />
-                    <span className="font-bold text-primary text-sm sm:text-base">{city}</span>
+                    <span className="font-bold text-primary text-sm sm:text-base">{state}</span>
                   </div>
                 ))}
               </motion.div>
