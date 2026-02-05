@@ -3312,6 +3312,10 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: 2rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .pb-2 {
   padding-bottom: .5rem;
 }
@@ -6351,8 +6355,16 @@ h1, h3, h4, h5, h6, h2 {
     padding-bottom: 6rem;
   }
 
+  .md\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
   .md\:pt-0 {
     padding-top: 0;
+  }
+
+  .md\:pt-10 {
+    padding-top: 2.5rem;
   }
 
   .md\:pt-28 {

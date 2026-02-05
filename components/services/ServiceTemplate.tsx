@@ -190,7 +190,7 @@ export default function ServiceTemplate({
 
         {/* About Service + Form Section */}
         <section className="relative bg-white">
-          <div className="container mx-auto px-4 md:px-8 py-12 md:py-16">
+          <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-10 pb-12 md:pb-16">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               {/* Left - About Service */}
               <motion.div
