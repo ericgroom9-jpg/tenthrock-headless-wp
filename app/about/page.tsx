@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Calendar, ArrowRight } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -117,27 +118,28 @@ export default function AboutPage() {
                 AT OUR CORE
               </h2>
               
-              <div className="space-y-8">
+              <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
                 {coreValues.map((value, index) => (
-                  <motion.div
-                    key={value.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className={`pl-6 ${index === 0 ? 'bg-[#c5d520]/10 py-4 pr-4 rounded-[5px]' : ''}`}
+                  <AccordionItem 
+                    key={value.title} 
+                    value={`item-${index}`}
+                    className="border-0"
+                    data-testid={`accordion-item-${index}`}
                   >
-                    <h3 className="text-xl md:text-2xl font-semibold text-primary mb-2">
+                    <AccordionTrigger 
+                      className="text-xl md:text-2xl font-semibold text-primary py-4 px-6 rounded-[5px] hover:no-underline data-[state=open]:bg-[#c5d520]/10 transition-colors"
+                      data-testid={`accordion-trigger-${index}`}
+                    >
                       {value.title}
-                    </h3>
-                    {index === 0 && (
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-4 pt-0">
                       <p className="text-base text-primary/70 leading-relaxed">
                         {value.description}
                       </p>
-                    )}
-                  </motion.div>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
                 <Button 

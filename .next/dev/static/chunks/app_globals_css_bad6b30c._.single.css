@@ -3258,10 +3258,6 @@ h1, h3, h4, h5, h6, h2 {
   padding-left: 1rem;
 }
 
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
 .pl-8 {
   padding-left: 2rem;
 }
@@ -3280,10 +3276,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .pr-3 {
   padding-right: .75rem;
-}
-
-.pr-4 {
-  padding-right: 1rem;
 }
 
 .pr-8 {
@@ -4729,6 +4721,10 @@ h1, h3, h4, h5, h6, h2 {
   text-decoration-line: underline;
 }
 
+.hover\:no-underline:hover {
+  text-decoration-line: none;
+}
+
 .hover\:opacity-100:hover {
   opacity: 1;
 }
@@ -5350,7 +5346,16 @@ h1, h3, h4, h5, h6, h2 {
   background-color: hsl(var(--primary) / var(--tw-bg-opacity, 1));
 }
 
-.data-\[state\=on\]\:bg-accent[data-state="on"], .data-\[state\=open\]\:bg-accent[data-state="open"] {
+.data-\[state\=on\]\:bg-accent[data-state="on"] {
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--accent) / var(--tw-bg-opacity, 1));
+}
+
+.data-\[state\=open\]\:bg-\[\#c5d520\]\/10[data-state="open"] {
+  background-color: #c5d5201a;
+}
+
+.data-\[state\=open\]\:bg-accent[data-state="open"] {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--accent) / var(--tw-bg-opacity, 1));
 }
