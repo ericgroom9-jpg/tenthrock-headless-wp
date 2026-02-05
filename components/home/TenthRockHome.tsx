@@ -126,7 +126,7 @@ const Logo = ({ className = "", variant = "main" }: { className?: string, varian
 // Navigation
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   useEffect(() => {
@@ -137,121 +137,131 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
-      <div className="container mx-auto max-w-[92rem] bg-white rounded-[5px] shadow-lg px-6 py-3 flex items-center justify-between relative">
-        <Link href="/" className="hover:opacity-90 transition-opacity">
-          <Logo variant="main" />
-        </Link>
+      <div className="container mx-auto max-w-[92rem] bg-white rounded-[5px] shadow-lg px-4 sm:px-6 py-3">
+        {/* Top row: Logo + Toggle + CTA */}
+        <div className="flex items-center justify-between gap-4">
+          <Link href="/" className="hover:opacity-90 transition-opacity shrink-0">
+            <Logo variant="main" />
+          </Link>
 
-        {/* Desktop Nav - Centralized */}
-        <nav className="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-          <div
-            className="relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}
-          >
-            <button
-              type="button"
-              data-testid="button-nav-services"
-              className="inline-flex items-center gap-2 text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal"
-              aria-haspopup="menu"
-              aria-expanded={isServicesOpen}
-              onClick={() => setIsServicesOpen((v) => !v)}
-            >
-              <span>Commercial Waste Services</span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            <AnimatePresence>
-              {isServicesOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                  transition={{ duration: 0.16, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+14px)] w-[420px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
-                  role="menu"
-                  data-testid="menu-nav-services"
-                >
-                  <div className="p-3">
-                    <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
-                      Services
-                    </div>
-                    <div className="grid gap-1">
-                      {[ 
-                        "Emergency & Overflow Waste Response",
-                        "Store Decommissioning & Remodel Support",
-                        "Event & Stadium Waste Logistics",
-                        "Dumpster Rental & Temporary Containers",
-                        "Centralized Waste Program Management",
-                        "Environmental & Compactor Maintenance Services",
-                      ].map((label) => (
-                        <a
-                          key={label}
-                          href="#services"
-                          data-testid={`link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                          className="flex items-center justify-between rounded-[5px] px-3 py-2 text-sm font-bold text-primary hover:bg-[#F9F9F6] hover:text-[#042940] transition-colors"
-                          onClick={() => setIsServicesOpen(false)}
-                        >
-                          <span className="pr-3">{label}</span>
-                          <ChevronRight className="w-4 h-4 text-primary/40" />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          <a href="#emergency" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Emergency Waste Removal</a>
-          <a href="#sectors" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Who We Serve</a>
-          <a href="#process" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Our Process</a>
-          <a href="#about" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">About Us</a>
-        </nav>
-
-        {/* Right Side Actions */}
-        <div className="flex items-center gap-3">
-          <Button size="lg" variant="ghost" className="hidden lg:flex text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2">
-            Login
-          </Button>
-          <Button size="lg" className="hidden lg:flex bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20">
-            Request a Quote
-          </Button>
-
-          {/* Mobile Menu Toggle */}
+          {/* Nav toggle for smaller screens */}
           <button 
-            className="lg:hidden p-2 text-primary"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 text-primary rounded-[5px] hover:bg-gray-100 transition-colors xl:hidden"
+            onClick={() => setIsNavExpanded(!isNavExpanded)}
+            aria-expanded={isNavExpanded}
+            aria-label="Toggle navigation menu"
+            data-testid="button-nav-toggle"
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isNavExpanded ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
-        </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            className="lg:hidden absolute top-24 left-4 right-4 bg-white rounded-[5px] shadow-xl p-6 border border-gray-100"
-          >
-            <div className="flex flex-col space-y-4 text-center">
-              <a href="#services" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
-              <a href="#sectors" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Industries</a>
-              <a href="#about" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Who We Are</a>
-              <a href="#contact" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-              <Button size="lg" variant="ghost" className="w-full text-primary font-bold uppercase tracking-wide text-sm" onClick={() => setIsMobileMenuOpen(false)}>
-                Login
-              </Button>
-              <Button size="lg" className="w-full bg-[#c5d520] text-[#042940] mt-2">
-                Request a Quote
-              </Button>
+          {/* Desktop inline nav - visible on xl+ */}
+          <nav className="hidden xl:flex items-center gap-6 flex-1 justify-center">
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button
+                type="button"
+                data-testid="button-nav-services"
+                className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-[#c5d520] transition-colors"
+                aria-haspopup="menu"
+                aria-expanded={isServicesOpen}
+                onClick={() => setIsServicesOpen((v) => !v)}
+              >
+                <span>Commercial Waste Services</span>
+                <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                    transition={{ duration: 0.16, ease: "easeOut" }}
+                    className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+14px)] w-[420px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    role="menu"
+                    data-testid="menu-nav-services"
+                  >
+                    <div className="p-3">
+                      <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
+                        Services
+                      </div>
+                      <div className="grid gap-1">
+                        {[ 
+                          "Emergency & Overflow Waste Response",
+                          "Store Decommissioning & Remodel Support",
+                          "Event & Stadium Waste Logistics",
+                          "Dumpster Rental & Temporary Containers",
+                          "Centralized Waste Program Management",
+                          "Environmental & Compactor Maintenance Services",
+                        ].map((label) => (
+                          <a
+                            key={label}
+                            href="#services"
+                            data-testid={`link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            className="flex items-center justify-between rounded-[5px] px-3 py-2 text-sm font-bold text-primary hover:bg-[#F9F9F6] hover:text-[#042940] transition-colors"
+                            onClick={() => setIsServicesOpen(false)}
+                          >
+                            <span className="pr-3">{label}</span>
+                            <ChevronRight className="w-4 h-4 text-primary/40" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            <a href="#emergency" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">Emergency Waste Removal</a>
+            <a href="#sectors" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">Who We Serve</a>
+            <a href="#process" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">Our Process</a>
+            <a href="#about" className="text-sm font-bold text-primary hover:text-[#c5d520] transition-colors">About Us</a>
+          </nav>
+
+          {/* Right Side Actions - always visible, scales down */}
+          <div className="hidden xl:flex items-center gap-3 shrink-0">
+            <Button size="lg" variant="ghost" className="text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2">
+              Login
+            </Button>
+            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20">
+              Request a Quote
+            </Button>
+          </div>
+        </div>
+
+        {/* Expandable nav panel - reflows naturally */}
+        <AnimatePresence>
+          {isNavExpanded && (
+            <motion.nav
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="xl:hidden overflow-hidden"
+            >
+              <div className="pt-4 pb-2 flex flex-col gap-3">
+                <a href="#services" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Commercial Waste Services</a>
+                <a href="#emergency" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Emergency Waste Removal</a>
+                <a href="#sectors" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Who We Serve</a>
+                <a href="#process" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>Our Process</a>
+                <a href="#about" className="text-base font-bold text-primary py-2 hover:text-[#c5d520] transition-colors" onClick={() => setIsNavExpanded(false)}>About Us</a>
+                <div className="flex flex-wrap gap-3 pt-3 border-t border-gray-100">
+                  <Button variant="ghost" className="flex-1 min-w-[120px] text-primary font-bold uppercase tracking-wide text-sm" onClick={() => setIsNavExpanded(false)}>
+                    Login
+                  </Button>
+                  <Button className="flex-1 min-w-[140px] bg-[#c5d520] text-[#042940]" onClick={() => setIsNavExpanded(false)}>
+                    Request a Quote
+                  </Button>
+                </div>
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
+      </div>
     </header>
   );
 };
@@ -1431,7 +1441,7 @@ const FinalCta = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5, duration: 0.4 }}
-                  className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-[5px] max-w-xs hidden md:block transform hover:scale-105 transition-transform duration-300"
+                  className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform hover:scale-105 transition-transform duration-300"
                 >
                    <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">

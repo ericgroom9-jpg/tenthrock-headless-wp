@@ -1299,8 +1299,8 @@ h2 {
   bottom: 0;
 }
 
-.bottom-12 {
-  bottom: 3rem;
+.bottom-4 {
+  bottom: 1rem;
 }
 
 .left-0 {
@@ -1323,10 +1323,6 @@ h2 {
   left: .75rem;
 }
 
-.left-4 {
-  left: 1rem;
-}
-
 .left-\[50\%\] {
   left: 50%;
 }
@@ -1337,10 +1333,6 @@ h2 {
 
 .right-1 {
   right: .25rem;
-}
-
-.right-12 {
-  right: 3rem;
 }
 
 .right-2 {
@@ -1369,10 +1361,6 @@ h2 {
 
 .top-2 {
   top: .5rem;
-}
-
-.top-24 {
-  top: 6rem;
 }
 
 .top-3 {
@@ -1996,8 +1984,16 @@ h2 {
   min-width: 2.25rem;
 }
 
+.min-w-\[120px\] {
+  min-width: 120px;
+}
+
 .min-w-\[12rem\] {
   min-width: 12rem;
+}
+
+.min-w-\[140px\] {
+  min-width: 140px;
 }
 
 .min-w-\[8rem\] {
@@ -2042,6 +2038,10 @@ h2 {
 
 .max-w-\[1200px\] {
   max-width: 1200px;
+}
+
+.max-w-\[200px\] {
+  max-width: 200px;
 }
 
 .max-w-\[240px\] {
@@ -3341,10 +3341,6 @@ h2 {
   font-size: 11px;
 }
 
-.text-\[13px\] {
-  font-size: 13px;
-}
-
 .text-\[18px\] {
   font-size: 18px;
 }
@@ -3433,10 +3429,6 @@ h2 {
 
 .tracking-\[0\.2em\] {
   letter-spacing: .2em;
-}
-
-.tracking-normal {
-  letter-spacing: 0;
 }
 
 .tracking-tight {
@@ -4553,6 +4545,11 @@ h2 {
 
 .hover\:bg-destructive\/90:hover {
   background-color: hsl(var(--destructive) / .9);
+}
+
+.hover\:bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-muted:hover {
@@ -5760,8 +5757,16 @@ h2 {
     bottom: 0;
   }
 
+  .sm\:bottom-8 {
+    bottom: 2rem;
+  }
+
   .sm\:right-0 {
     right: 0;
+  }
+
+  .sm\:right-8 {
+    right: 2rem;
   }
 
   .sm\:top-auto {
@@ -5782,6 +5787,10 @@ h2 {
 
   .sm\:max-w-sm {
     max-width: 24rem;
+  }
+
+  .sm\:max-w-xs {
+    max-width: 20rem;
   }
 
   .sm\:grid-cols-2 {
@@ -5826,6 +5835,15 @@ h2 {
     border-radius: .5625rem;
   }
 
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .sm\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .sm\:text-left {
     text-align: left;
   }
@@ -5838,6 +5856,14 @@ h2 {
 @media (min-width: 768px) {
   .md\:absolute {
     position: absolute;
+  }
+
+  .md\:bottom-12 {
+    bottom: 3rem;
+  }
+
+  .md\:right-12 {
+    right: 3rem;
   }
 
   .md\:mt-0 {
@@ -6029,14 +6055,6 @@ h2 {
     grid-row: span 2 / span 2;
   }
 
-  .lg\:flex {
-    display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
-  }
-
   .lg\:aspect-auto {
     aspect-ratio: auto;
   }
@@ -6161,14 +6179,17 @@ h2 {
 }
 
 @media (min-width: 1280px) {
+  .xl\:flex {
+    display: flex;
+  }
+
+  .xl\:hidden {
+    display: none;
+  }
+
   .xl\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
-  }
-
-  .xl\:text-sm {
-    font-size: .875rem;
-    line-height: 1.25rem;
   }
 }
 
