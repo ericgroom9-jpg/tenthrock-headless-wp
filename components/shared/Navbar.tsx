@@ -199,7 +199,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             </div>
 
             <a href="/our-process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Our Process</a>
-            <a href="/#about" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">About Us</a>
+            <a href="/about" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">About Us</a>
           </nav>
 
           {/* Right Side Actions - desktop only */}
@@ -341,7 +341,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   Our Process
                 </a>
                 <a 
-                  href="/#about" 
+                  href="/about" 
                   className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
                   onClick={() => setIsNavExpanded(false)}
                 >

@@ -108,7 +108,7 @@ export default function Footer() {
           >
             <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
             <ul className="space-y-2 text-white/60">
-              <li><Link href="/#about" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">About Us</Link></li>
+              <li><Link href="/about" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">About Us</Link></li>
               <li><Link href="/our-process" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Our Process</Link></li>
               <li><Link href="/who-we-serve" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Who We Serve</Link></li>
               <li><Link href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">Success Stories</Link></li>

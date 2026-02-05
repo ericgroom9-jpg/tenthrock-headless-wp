@@ -1399,6 +1399,10 @@ h1, h3, h4, h5, h6, h2 {
   margin-top: .375rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1489,12 +1493,20 @@ h1, h3, h4, h5, h6, h2 {
   aspect-ratio: 16 / 10;
 }
 
+.aspect-\[16\/9\] {
+  aspect-ratio: 16 / 9;
+}
+
 .aspect-\[3\/4\] {
   aspect-ratio: 3 / 4;
 }
 
 .aspect-\[4\/3\] {
   aspect-ratio: 4 / 3;
+}
+
+.aspect-\[4\/5\] {
+  aspect-ratio: 4 / 5;
 }
 
 .aspect-square {
@@ -3246,6 +3258,10 @@ h1, h3, h4, h5, h6, h2 {
   padding-left: 1rem;
 }
 
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
 .pl-8 {
   padding-left: 2rem;
 }
@@ -3264,6 +3280,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .pr-3 {
   padding-right: .75rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .pr-8 {
@@ -3451,6 +3471,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .tracking-wide {
   letter-spacing: .025em;
+}
+
+.tracking-wider {
+  letter-spacing: .05em;
 }
 
 .tracking-widest {
@@ -6197,6 +6221,10 @@ h1, h3, h4, h5, h6, h2 {
     display: none;
   }
 
+  .md\:aspect-\[21\/9\] {
+    aspect-ratio: 21 / 9;
+  }
+
   .md\:aspect-\[4\/5\] {
     aspect-ratio: 4 / 5;
   }
@@ -6352,6 +6380,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:pb-20 {
     padding-bottom: 5rem;
+  }
+
+  .md\:pb-24 {
+    padding-bottom: 6rem;
   }
 
   .md\:pt-0 {
@@ -6700,6 +6732,11 @@ h1, h3, h4, h5, h6, h2 {
     padding-bottom: 7rem;
   }
 
+  .lg\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
   .lg\:py-36 {
     padding-top: 9rem;
     padding-bottom: 9rem;
@@ -6711,6 +6748,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:pt-44 {
     padding-top: 11rem;
+  }
+
+  .lg\:pt-8 {
+    padding-top: 2rem;
   }
 
   .lg\:text-5xl {
