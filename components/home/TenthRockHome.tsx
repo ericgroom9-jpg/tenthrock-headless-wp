@@ -1311,97 +1311,80 @@ const Faq = () => {
   );
 };
 
-// One Location 2
+// One Location 2 - Matching Services Page Design
 const Location = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white" aria-labelledby="location-heading">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-left sm:text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-8 sm:mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              Locations
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary mb-2 tracking-tighter">Where To Find Us</h2>
-          <p className="text-lg text-primary/60">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.
+          <h2 id="location-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
+            Where to Find Us
+          </h2>
+          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+            Serving businesses nationwide with regional offices for local support.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-           <motion.div 
-             initial={{ opacity: 0, x: -20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
-             className="space-y-8"
-           >
-              <div className="flex gap-6">
-                 <MapPin className="w-8 h-8 text-secondary shrink-0" />
-                 <div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Office</h3>
-                    <p className="text-lg text-primary/70 mb-4">123 Sample St, Sydney NSW 2000 AU</p>
-                  </div>
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6 lg:space-y-8"
+          >
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <MapPin className="h-6 w-6 text-[#c5d520]" />
+                <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
               </div>
+              <p className="text-gray-600 ml-9">123 Sample St, Sydney NSW 2000 AU</p>
+              <Button variant="link" className="ml-9 p-0 h-auto text-[#042940] hover:text-[#c5d520]">
+                Get Directions <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
 
-              <div className="flex gap-6">
-                 <Phone className="w-8 h-8 text-secondary shrink-0" />
-                 <div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Phone</h3>
-                    <p className="text-lg text-primary/70">
-                      <a
-                        href="tel:+17275105454"
-                        className="underline underline-offset-4 decoration-primary/25 hover:decoration-primary/60 transition-colors"
-                        data-testid="link-phone"
-                      >
-                        (727) 510-5454
-                      </a>
-                    </p>
-                 </div>
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <Phone className="h-6 w-6 text-[#c5d520]" />
+                <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Phone</h3>
               </div>
+              <p className="text-gray-600 ml-9">Available 24/7 for emergencies</p>
+              <p className="text-[#042940] font-semibold ml-9">+1 (555) 000-0000</p>
+            </div>
 
-              <div className="flex gap-6">
-                 <Mail className="w-8 h-8 text-secondary shrink-0" />
-                 <div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Email</h3>
-                    <p className="text-lg text-primary/70">
-                      <a
-                        href="mailto:hello@tenthrock.com"
-                        className="underline underline-offset-4 decoration-primary/25 hover:decoration-primary/60 transition-colors"
-                        data-testid="link-email"
-                      >
-                        hello@tenthrock.com
-                      </a>
-                    </p>
-                 </div>
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <Clock className="h-6 w-6 text-[#c5d520]" />
+                <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Business Hours</h3>
               </div>
+              <p className="text-gray-600 ml-9">Monday-Friday: 9:00am – 4:30pm</p>
+            </div>
+          </motion.div>
 
-           </motion.div>
-
-           <motion.div 
-             initial={{ opacity: 0, x: 20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
-             className="h-[600px] overflow-visible relative bg-white"
-           >
-              {/* Map Video */}
-              <div className="w-full h-full relative overflow-hidden" data-testid="map-coverage">
-                <video
-                  src="/assets_export/videos/us-map-pins-loop.mp4"
-                  className="w-full h-full object-contain scale-110 bg-white"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </div>
-           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-2 relative aspect-video rounded-[5px] overflow-hidden bg-gray-100"
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/assets_export/videos/us-map-pins-loop.mp4" type="video/mp4" />
+            </video>
+          </motion.div>
         </div>
       </div>
     </section>
