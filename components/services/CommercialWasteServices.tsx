@@ -155,7 +155,6 @@ const faqs = [
 export default function CommercialWasteServices() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [activeService, setActiveService] = useState(0);
-  const [activeStep, setActiveStep] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -394,91 +393,43 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* How It Works Section */}
-        <section className="bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="process-heading">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="order-2 lg:order-1"
-              >
-                <div className="relative aspect-[4/3] lg:aspect-square rounded-[5px] overflow-hidden">
-                  <img 
-                    src={imgParkWater} 
-                    alt="How our process works"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-              </motion.div>
+        {/* How It Works Section - Matching Homepage Design */}
+        <section id="process" aria-labelledby="process-heading" className="py-16 md:py-24 bg-white relative overflow-hidden">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
+                Our Process
+              </div>
+              <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
+                How It Works
+              </h2>
+              <p className="text-lg text-[#042940]/60">
+                A simple, transparent process designed to get your problem solved fast.
+              </p>
+            </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="order-1 lg:order-2"
-              >
-                <h2 id="process-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940] tracking-tighter mb-8 lg:mb-12">
-                  How It Works
-                </h2>
-
-                <div className="space-y-4">
-                  {processSteps.map((step, index) => (
-                    <div
-                      key={step.number}
-                      className={`border-l-2 pl-4 sm:pl-6 py-3 cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-r-[5px] ${
-                        activeStep === index 
-                          ? "border-[#c5d520] bg-gray-50" 
-                          : "border-gray-200 hover:border-gray-400"
-                      }`}
-                      onClick={() => setActiveStep(index)}
-                      role="button"
-                      tabIndex={0}
-                      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setActiveStep(index)}
-                    >
-                      <div className="flex items-start gap-3 sm:gap-4">
-                        <span className="text-xl sm:text-2xl font-semibold text-[#042940]">{step.number}</span>
-                        <div className="flex-1">
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#042940]">{step.title}</h3>
-                          <AnimatePresence>
-                            {activeStep === index && (
-                              <motion.p
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: "auto" }}
-                                exit={{ opacity: 0, height: 0 }}
-                                className="text-gray-600 mt-2 text-sm sm:text-base"
-                              >
-                                {step.description}
-                              </motion.p>
-                            )}
-                          </AnimatePresence>
-                        </div>
-                      </div>
-                      {activeStep === index && (
-                        <div className="mt-3 h-1 bg-gray-200 rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: "60%" }}
-                            transition={{ duration: 0.5 }}
-                            className="h-full bg-[#042940]"
-                          />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-
-                <Button 
-                  size="lg"
-                  className="mt-8 bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto"
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+              {processSteps.map((step, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
                 >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </motion.div>
+                  <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
+                    {step.number}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#042940] mb-4 group-hover:text-[#c5d520] transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-[#042940]/70 leading-relaxed text-sm">
+                    {step.description}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
