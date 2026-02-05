@@ -625,7 +625,7 @@ function CommercialWasteServices() {
                                     className: "max-w-2xl",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                            className: "text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tighter mb-4 sm:mb-6",
+                                            className: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6",
                                             children: "Commercial Waste Services"
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/CommercialWasteServices.tsx",
@@ -1646,7 +1646,7 @@ function CommercialWasteServices() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                 id: "case-study-heading",
-                                                className: "text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940] tracking-tighter mb-6",
+                                                className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-6",
                                                 children: "Case Study Title"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/CommercialWasteServices.tsx",
@@ -1953,7 +1953,7 @@ function CommercialWasteServices() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                             id: "location-heading",
-                                            className: "text-3xl sm:text-4xl lg:text-5xl font-bold text-[#042940] tracking-tighter mb-4",
+                                            className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4",
                                             children: "Where to Find Us"
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/CommercialWasteServices.tsx",
