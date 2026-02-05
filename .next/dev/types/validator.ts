@@ -56,15 +56,6 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/blog/[slug]/page.tsx
-{
-  type __IsExpected<Specific extends AppPageConfig<"/blog/[slug]">> = Specific
-  const handler = {} as typeof import("../../../app/blog/[slug]/page.js")
-  type __Check = __IsExpected<typeof handler>
-  // @ts-ignore
-  type __Unused = __Check
-}
-
 // Validate ../../../app/blog/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/blog">> = Specific
@@ -92,61 +83,82 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
-// Validate ../../../app/services/centralized-programs/page.tsx
+// Validate ../../../app/style-guide/page.tsx
 {
-  type __IsExpected<Specific extends AppPageConfig<"/services/centralized-programs">> = Specific
-  const handler = {} as typeof import("../../../app/services/centralized-programs/page.js")
+  type __IsExpected<Specific extends AppPageConfig<"/style-guide">> = Specific
+  const handler = {} as typeof import("../../../app/style-guide/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../../app/services/commercial-waste/page.tsx
+// Validate ../../../app/llms-full.txt/route.ts
 {
-  type __IsExpected<Specific extends AppPageConfig<"/services/commercial-waste">> = Specific
-  const handler = {} as typeof import("../../../app/services/commercial-waste/page.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/llms-full.txt">> = Specific
+  const handler = {} as typeof import("../../../app/llms-full.txt/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../../app/services/dumpster-rentals/page.tsx
+// Validate ../../../app/llms.txt/route.ts
 {
-  type __IsExpected<Specific extends AppPageConfig<"/services/dumpster-rentals">> = Specific
-  const handler = {} as typeof import("../../../app/services/dumpster-rentals/page.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/llms.txt">> = Specific
+  const handler = {} as typeof import("../../../app/llms.txt/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../../app/services/emergency-waste-removal/page.tsx
+// Validate ../../../app/robots.txt/route.ts
 {
-  type __IsExpected<Specific extends AppPageConfig<"/services/emergency-waste-removal">> = Specific
-  const handler = {} as typeof import("../../../app/services/emergency-waste-removal/page.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/robots.txt">> = Specific
+  const handler = {} as typeof import("../../../app/robots.txt/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../../app/services/environmental-maintenance/page.tsx
+// Validate ../../../app/sitemap.xml/route.ts
 {
-  type __IsExpected<Specific extends AppPageConfig<"/services/environmental-maintenance">> = Specific
-  const handler = {} as typeof import("../../../app/services/environmental-maintenance/page.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/sitemap.xml">> = Specific
+  const handler = {} as typeof import("../../../app/sitemap.xml/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../../app/services/event-stadium/page.tsx
+// Validate ../../../app/sitemap_index.xml/route.ts
 {
-  type __IsExpected<Specific extends AppPageConfig<"/services/event-stadium">> = Specific
-  const handler = {} as typeof import("../../../app/services/event-stadium/page.js")
+  type __IsExpected<Specific extends RouteHandlerConfig<"/sitemap_index.xml">> = Specific
+  const handler = {} as typeof import("../../../app/sitemap_index.xml/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
 }
 
-// Validate ../../../app/services/store-decommissioning/page.tsx
+// Validate ../../../app/wp-sitemap.xml/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/wp-sitemap.xml">> = Specific
+  const handler = {} as typeof import("../../../app/wp-sitemap.xml/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+
+
+
+
+// Validate ../../../app/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
+  const handler = {} as typeof import("../../../app/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+/../app/services/store-decommissioning/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/services/store-decommissioning">> = Specific
   const handler = {} as typeof import("../../../app/services/store-decommissioning/page.js")

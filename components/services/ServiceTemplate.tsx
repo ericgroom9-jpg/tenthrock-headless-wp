@@ -788,13 +788,6 @@ export default function ServiceTemplate({
                     <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
                   </div>
                   <p className="text-gray-600 ml-9">123 Sample St, Sydney NSW 2000 AU</p>
-                  <Link 
-                    href="#"
-                    className="ml-9 inline-flex items-center min-h-[52px] text-[#042940] font-medium"
-                    data-testid="link-directions"
-                  >
-                    Get Directions <ChevronRight className="h-4 w-4 ml-1" />
-                  </Link>
                 </div>
 
                 <div>

@@ -1195,9 +1195,6 @@ const Location = () => {
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
               </div>
               <p className="text-gray-600 ml-9">123 Sample St, Sydney NSW 2000 AU</p>
-              <Button variant="link" className="ml-9 p-0 h-auto text-[#042940] hover:text-[#c5d520]">
-                Get Directions <ChevronRight className="h-4 w-4" />
-              </Button>
             </div>
 
             <div>
