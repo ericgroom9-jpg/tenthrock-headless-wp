@@ -9,8 +9,6 @@ import {
   CheckCircle2, 
   Clock, 
   MapPin, 
-  Menu, 
-  X,
   ChevronRight,
   ChevronDown,
   ChevronLeft,
@@ -27,8 +25,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import Navbar from "@/components/shared/Navbar";
+import Logo from "@/components/shared/Logo";
 
-const logoMain = "/images/logos/TenthRock-Logo.png";
 const logoWhite = "/images/logos/Green-White-Logo.png";
 
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
@@ -48,18 +47,6 @@ const imgParkWater = "/images/stock/floor-park.jpg";
 
 const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
 
-const Logo = ({ variant = "main", className = "" }: { variant?: "main" | "white"; className?: string }) => {
-  const logoSrc = variant === "white" ? logoWhite : logoMain;
-  return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <img 
-        src={logoSrc} 
-        alt="Tenth Rock Waste Solutions" 
-        className="h-8 md:h-10 w-auto object-contain" 
-      />
-    </div>
-  );
-};
 
 const services = [
   {
@@ -132,7 +119,6 @@ const faqs = [
 ];
 
 export default function CommercialWasteServices() {
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [activeService, setActiveService] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -142,93 +128,12 @@ export default function CommercialWasteServices() {
         Skip to main content
       </a>
 
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            <Link href="/" className="shrink-0">
-              <Logo variant="main" />
-            </Link>
-
-            <nav className="hidden lg:flex items-center gap-6">
-              <Link href="/services/commercial-waste" className="text-sm font-bold text-[#042940] hover:text-[#c5d520] transition-colors py-2">
-                Commercial Waste Services
-              </Link>
-              <Link href="/#emergency" className="text-sm font-bold text-[#042940] hover:text-[#c5d520] transition-colors py-2">
-                Emergency Waste Removal
-              </Link>
-              <Link href="/#sectors" className="text-sm font-bold text-[#042940] hover:text-[#c5d520] transition-colors py-2">
-                Who We Serve
-              </Link>
-              <Link href="/#process" className="text-sm font-bold text-[#042940] hover:text-[#c5d520] transition-colors py-2">
-                Our Process
-              </Link>
-              <Link href="/#about" className="text-sm font-bold text-[#042940] hover:text-[#c5d520] transition-colors py-2">
-                About Us
-              </Link>
-            </nav>
-
-            <div className="flex items-center gap-3">
-              <Button 
-                size="sm" 
-                className="hidden sm:flex bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
-                data-testid="button-nav-cta"
-              >
-                Get a Quote
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden min-h-[52px] min-w-[52px]"
-                onClick={() => setIsNavExpanded(!isNavExpanded)}
-                aria-label={isNavExpanded ? "Close menu" : "Open menu"}
-                data-testid="button-mobile-menu"
-              >
-                {isNavExpanded ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </div>
-          </div>
-
-          <AnimatePresence>
-            {isNavExpanded && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="lg:hidden overflow-hidden"
-              >
-                <div className="pt-4 pb-6 flex flex-col gap-2">
-                  <Link href="/services/commercial-waste" className="text-lg font-bold text-[#042940] py-3 px-2 hover:text-[#c5d520] hover:bg-gray-50 rounded-[5px] min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>
-                    Commercial Waste Services
-                  </Link>
-                  <Link href="/#emergency" className="text-lg font-bold text-[#042940] py-3 px-2 hover:text-[#c5d520] hover:bg-gray-50 rounded-[5px] min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>
-                    Emergency Waste Removal
-                  </Link>
-                  <Link href="/#sectors" className="text-lg font-bold text-[#042940] py-3 px-2 hover:text-[#c5d520] hover:bg-gray-50 rounded-[5px] min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>
-                    Who We Serve
-                  </Link>
-                  <Link href="/#process" className="text-lg font-bold text-[#042940] py-3 px-2 hover:text-[#c5d520] hover:bg-gray-50 rounded-[5px] min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>
-                    Our Process
-                  </Link>
-                  <Link href="/#about" className="text-lg font-bold text-[#042940] py-3 px-2 hover:text-[#c5d520] hover:bg-gray-50 rounded-[5px] min-h-[52px] flex items-center" onClick={() => setIsNavExpanded(false)}>
-                    About Us
-                  </Link>
-                  <div className="pt-4 mt-2 border-t border-gray-100">
-                    <Button className="w-full bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full" onClick={() => setIsNavExpanded(false)}>
-                      Get a Quote
-                    </Button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </header>
+      {/* Navigation - Use shared Navbar component */}
+      <Navbar variant="floating" />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Section */}
-        <section className="relative bg-[#042940] overflow-hidden">
+        {/* Hero Section - with top padding for floating navbar */}
+        <section className="relative bg-[#042940] overflow-hidden pt-24 md:pt-28">
           <div className="absolute inset-0">
             <img 
               src={imgServiceCentralizedProgram}

@@ -2813,6 +2813,10 @@ h1, h3, h4, h5, h6, h2 {
   background-color: #ffffff0d;
 }
 
+.bg-white\/95 {
+  background-color: #fffffff2;
+}
+
 .bg-yellow-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
@@ -2987,6 +2991,11 @@ h1, h3, h4, h5, h6, h2 {
   padding: 1px;
 }
 
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .px-1 {
   padding-left: .25rem;
   padding-right: .25rem;
@@ -3155,6 +3164,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .pt-1 {
   padding-top: .25rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .pt-3 {
@@ -3494,6 +3507,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-primary\/70 {
   color: hsl(var(--primary) / .7);
+}
+
+.text-primary\/80 {
+  color: hsl(var(--primary) / .8);
 }
 
 .text-red-600 {
@@ -5975,10 +5992,6 @@ h1, h3, h4, h5, h6, h2 {
     height: 2.5rem;
   }
 
-  .md\:h-20 {
-    height: 5rem;
-  }
-
   .md\:h-\[320px\] {
     height: 320px;
   }
@@ -6105,6 +6118,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:pt-0 {
     padding-top: 0;
+  }
+
+  .md\:pt-28 {
+    padding-top: 7rem;
   }
 
   .md\:text-4xl {
@@ -6264,14 +6281,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:row-span-2 {
     grid-row: span 2 / span 2;
-  }
-
-  .lg\:flex {
-    display: flex;
-  }
-
-  .lg\:hidden {
-    display: none;
   }
 
   .lg\:aspect-auto {
