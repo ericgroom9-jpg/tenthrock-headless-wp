@@ -171,7 +171,7 @@ const Hero = () => {
             Fast, Reliable Waste Solutions—Anywhere You Need Them
           </h1>
           
-          <p className="text-[18px] text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md" style={{ textWrap: "balance" }}>
+          <p className="text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md" style={{ textWrap: "balance" }}>
             Emergency pickups, dumpster rentals, and site cleanouts. We respond in hours — not days.
           </p>
           

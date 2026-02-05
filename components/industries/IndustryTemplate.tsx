@@ -69,7 +69,7 @@ export default function IndustryTemplate({
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 tracking-tighter leading-[1.1]">
                 {industryName}
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-xl leading-relaxed">
+              <p className="text-base text-white mb-6 sm:mb-8 max-w-xl leading-relaxed">
                 {heroDescription}
               </p>
 
