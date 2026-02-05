@@ -210,7 +210,7 @@ const Navbar = () => {
         </nav>
 
         {/* Right Side Actions */}
-        <div className="flex items-center gap-0">
+        <div className="flex items-center gap-3">
           <Button size="lg" variant="ghost" className="hidden lg:flex text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2">
             Login
           </Button>
