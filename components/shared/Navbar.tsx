@@ -21,12 +21,14 @@ const serviceLinks = [
 ];
 
 const sectorLinks = [
-  { label: "Retail & Big Box Stores", href: "/who-we-serve" },
-  { label: "Grocery & Supermarkets", href: "/who-we-serve" },
-  { label: "Restaurants & Food Service", href: "/who-we-serve" },
-  { label: "Hotels & Hospitality", href: "/who-we-serve" },
-  { label: "Healthcare Facilities", href: "/who-we-serve" },
-  { label: "Commercial Real Estate", href: "/who-we-serve" },
+  { label: "Educational Institutions", href: "/industries/educational" },
+  { label: "Stadiums & Events", href: "/industries/stadiums-events" },
+  { label: "Faith Based", href: "/industries/faith-based" },
+  { label: "Municipalities", href: "/industries/municipalities" },
+  { label: "Hospitality", href: "/industries/hospitality" },
+  { label: "Natural Disasters", href: "/industries/natural-disasters" },
+  { label: "Real Estate", href: "/industries/real-estate" },
+  { label: "Retail", href: "/industries/retail" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {

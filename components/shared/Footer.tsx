@@ -16,11 +16,22 @@ const serviceLinks = [
   { label: "Centralized Waste Program Management", href: "/services/centralized-programs" },
 ];
 
+const industryLinks = [
+  { label: "Educational", href: "/industries/educational" },
+  { label: "Stadiums & Events", href: "/industries/stadiums-events" },
+  { label: "Faith Based", href: "/industries/faith-based" },
+  { label: "Municipalities", href: "/industries/municipalities" },
+  { label: "Hospitality", href: "/industries/hospitality" },
+  { label: "Natural Disasters", href: "/industries/natural-disasters" },
+  { label: "Real Estate", href: "/industries/real-estate" },
+  { label: "Retail", href: "/industries/retail" },
+];
+
 export default function Footer() {
   return (
     <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white py-20 border-t border-white/5">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           
           {/* Brand Column */}
           <motion.div 
@@ -69,12 +80,31 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Company Column */}
+          {/* Industries Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h3 className="font-bold text-lg mb-6 text-white">Industries</h3>
+            <ul className="space-y-2 text-white/60">
+              {industryLinks.map((industry) => (
+                <li key={industry.href}>
+                  <Link href={industry.href} className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors">
+                    {industry.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Company Column */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
             <ul className="space-y-2 text-white/60">
@@ -91,7 +121,7 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="space-y-6"
           >
             <h3 className="font-bold text-lg text-white">Stay Updated</h3>

@@ -1,0 +1,387 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Star, ChevronDown, Phone, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
+import FaqSection from "@/components/shared/FaqSection";
+import LocationSection from "@/components/shared/LocationSection";
+
+interface BulletPoint {
+  title: string;
+  description: string;
+}
+
+interface ProcessStep {
+  title: string;
+  description: string;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface IndustryTemplateProps {
+  industryName: string;
+  heroImage: string;
+  heroDescription: string;
+  aboutTitle: string;
+  aboutImage: string;
+  bulletPoints: BulletPoint[];
+  processSteps: ProcessStep[];
+  processImage: string;
+  faqs?: FaqItem[];
+  ctaTitle?: string;
+  ctaDescription?: string;
+}
+
+export default function IndustryTemplate({
+  industryName,
+  heroImage,
+  heroDescription,
+  aboutTitle,
+  aboutImage,
+  bulletPoints,
+  processSteps,
+  processImage,
+  faqs,
+  ctaTitle = "Ready to Streamline Your Waste Management?",
+  ctaDescription = "Get in touch with our team today for a customized solution that fits your needs.",
+}: IndustryTemplateProps) {
+  const [activeBullet, setActiveBullet] = useState(0);
+  const [activeStep, setActiveStep] = useState(0);
+
+  return (
+    <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
+      <a href="#main-content" className="skip-link" data-testid="skip-link">
+        Skip to main content
+      </a>
+      <Navbar />
+
+      <main id="main-content">
+        {/* Hero Section */}
+        <section 
+          className="relative min-h-[50vh] sm:min-h-[55vh] md:min-h-[65vh] lg:min-h-[70vh] flex items-center overflow-hidden"
+          style={{
+            backgroundImage: `linear-gradient(to right, rgba(4, 41, 64, 0.9), rgba(4, 41, 64, 0.7)), url(${heroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 pt-24 sm:pt-28 md:pt-32 lg:pt-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl"
+            >
+              {/* Reviews Badge */}
+              <div className="flex flex-col items-start gap-2 mb-4 sm:mb-6">
+                <p className="text-white/80 text-xs sm:text-sm">Based on 300+ Reviews</p>
+                <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
+                  <div className="flex gap-0.5 sm:gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-[#c5d520] text-[#c5d520]" />
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <img src="/assets_export/logos/google-icon.svg" alt="Google" className="h-4 w-4" />
+                    <img src="/assets_export/logos/clutch-icon.svg" alt="Clutch" className="h-4 w-4" />
+                  </div>
+                </div>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 tracking-tighter leading-[1.1]">
+                {industryName}
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-xl leading-relaxed">
+                {heroDescription}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] shadow-lg w-full sm:w-auto"
+                  data-testid="button-hero-cta"
+                >
+                  Request a Quote
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white/30 text-white hover:bg-white/10 active:bg-white/10 rounded-full min-h-[52px] gap-2 w-full sm:w-auto"
+                  data-testid="button-hero-phone"
+                >
+                  <Phone className="w-5 h-5" />
+                  (888) 555-0123
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* About Industry Section */}
+        <section className="py-16 md:py-20 lg:py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+              {/* Left Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-medium text-[#042940] mb-8 md:mb-12 tracking-tighter leading-tight">
+                  {aboutTitle}
+                </h2>
+
+                <div className="space-y-0" role="region" aria-label="About services accordion">
+                  {bulletPoints.map((point, i) => (
+                    <div key={i}>
+                      <button
+                        onClick={() => setActiveBullet(activeBullet === i ? -1 : i)}
+                        className="w-full text-left py-4 sm:py-5 md:py-6 flex items-start gap-4 sm:gap-5 md:gap-6 group"
+                        data-testid={`bullet-${i}`}
+                        aria-expanded={activeBullet === i}
+                        aria-controls={`bullet-panel-${i}`}
+                        id={`bullet-button-${i}`}
+                      >
+                        <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#042940] shrink-0 w-6 sm:w-8" aria-hidden="true">
+                          {i + 1}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <h3 className={`text-lg sm:text-xl md:text-2xl font-semibold transition-colors duration-300 ${
+                            activeBullet === i ? "text-[#042940]" : "text-[#042940]"
+                          }`}>
+                            {point.title}
+                          </h3>
+                          <motion.div
+                            id={`bullet-panel-${i}`}
+                            role="region"
+                            aria-labelledby={`bullet-button-${i}`}
+                            initial={false}
+                            animate={{ 
+                              height: activeBullet === i ? "auto" : 0,
+                              opacity: activeBullet === i ? 1 : 0,
+                              marginTop: activeBullet === i ? 12 : 0
+                            }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <p className="text-[#042940]/80 leading-relaxed text-sm sm:text-base">
+                              {point.description}
+                            </p>
+                          </motion.div>
+                        </div>
+                      </button>
+                      {/* Progress bar */}
+                      <div className="h-0.5 bg-gray-200 ml-10 sm:ml-12 md:ml-14" aria-hidden="true">
+                        <motion.div
+                          className="h-full bg-[#042940]"
+                          initial={{ width: "0%" }}
+                          animate={{ width: activeBullet === i ? "60%" : "0%" }}
+                          transition={{ duration: 0.5 }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8 md:mt-10">
+                  <Button 
+                    size="lg" 
+                    className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] w-full sm:w-auto"
+                    data-testid="button-about-cta"
+                  >
+                    Get Started
+                  </Button>
+                  <button className="flex items-center justify-center sm:justify-start gap-2 text-[#042940] font-semibold hover:text-[#c5d520] transition-colors group w-full sm:w-auto py-3 sm:py-0">
+                    Learn More
+                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Right Image */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative order-first md:order-last"
+              >
+                <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[4/5] rounded-[5px] overflow-hidden shadow-2xl">
+                  <img 
+                    src={aboutImage} 
+                    alt={`${industryName} services`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section className="py-16 md:py-20 lg:py-24 bg-[#F9F9F6]">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
+              {/* Left Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative order-first"
+              >
+                <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[4/5] rounded-[5px] overflow-hidden shadow-2xl">
+                  <img 
+                    src={processImage} 
+                    alt="How it works"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Right Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-medium text-[#042940] mb-8 md:mb-12 tracking-tighter leading-tight">
+                  How It Works
+                </h2>
+
+                <div className="space-y-0" role="region" aria-label="How it works accordion">
+                  {processSteps.map((step, i) => (
+                    <div key={i}>
+                      <button
+                        onClick={() => setActiveStep(activeStep === i ? -1 : i)}
+                        className="w-full text-left py-4 sm:py-5 md:py-6 flex items-start gap-4 sm:gap-5 md:gap-6 group"
+                        data-testid={`step-${i}`}
+                        aria-expanded={activeStep === i}
+                        aria-controls={`step-panel-${i}`}
+                        id={`step-button-${i}`}
+                      >
+                        <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#042940] shrink-0 w-6 sm:w-8" aria-hidden="true">
+                          {i + 1}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <h3 className={`text-lg sm:text-xl md:text-2xl font-bold transition-colors duration-300 ${
+                            activeStep === i ? "text-[#042940]" : "text-[#042940]"
+                          }`}>
+                            {step.title}
+                          </h3>
+                          <motion.div
+                            id={`step-panel-${i}`}
+                            role="region"
+                            aria-labelledby={`step-button-${i}`}
+                            initial={false}
+                            animate={{ 
+                              height: activeStep === i ? "auto" : 0,
+                              opacity: activeStep === i ? 1 : 0,
+                              marginTop: activeStep === i ? 12 : 0
+                            }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <p className="text-[#042940]/80 leading-relaxed text-sm sm:text-base">
+                              {step.description}
+                            </p>
+                          </motion.div>
+                        </div>
+                      </button>
+                      {/* Progress bar */}
+                      <div className="h-0.5 bg-gray-300 ml-10 sm:ml-12 md:ml-14" aria-hidden="true">
+                        <motion.div
+                          className="h-full bg-[#042940]"
+                          initial={{ width: "0%" }}
+                          animate={{ width: activeStep === i ? "60%" : "0%" }}
+                          transition={{ duration: 0.5 }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-10">
+                  <Button 
+                    size="lg" 
+                    className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] w-full sm:w-auto"
+                    data-testid="button-process-cta"
+                  >
+                    Get Started
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-[#042940]/20 text-[#042940] hover:bg-[#042940]/5 active:bg-[#042940]/5 rounded-full min-h-[52px] gap-2 w-full sm:w-auto"
+                    data-testid="button-process-phone"
+                  >
+                    <Phone className="w-5 h-5" />
+                    (888) 555-0123
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        {faqs && faqs.length > 0 && <FaqSection faqs={faqs} />}
+
+        {/* Location Section */}
+        <LocationSection />
+
+        {/* Final CTA Banner */}
+        <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-[#042940] rounded-[5px] p-6 sm:p-8 md:p-12 lg:p-16 shadow-2xl"
+            >
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 md:gap-8">
+                <div className="max-w-2xl">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-3 md:mb-4 tracking-tighter leading-tight">
+                    {ctaTitle}
+                  </h2>
+                  <p className="text-white text-base sm:text-lg">
+                    {ctaDescription}
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 shrink-0 w-full lg:w-auto">
+                  <Button 
+                    size="lg" 
+                    className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] shadow-lg whitespace-nowrap w-full sm:w-auto"
+                    data-testid="button-final-cta"
+                  >
+                    Request a Quote
+                  </Button>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="border-white/30 text-white hover:bg-white/10 active:bg-white/10 rounded-full min-h-[52px] gap-2 whitespace-nowrap w-full sm:w-auto"
+                    data-testid="button-final-phone"
+                  >
+                    <Phone className="w-5 h-5" />
+                    (888) 555-0123
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
