@@ -1,13 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { 
   ArrowRight, 
   Phone, 
-  Star, 
-  ChevronLeft, 
-  ChevronRight, 
   ChevronDown,
   Shield,
   Zap,
@@ -19,31 +16,11 @@ import { Input } from "@/components/ui/input";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import FaqSection from "@/components/shared/FaqSection";
+import LogoReelSection from "@/components/shared/LogoReelSection";
+import TestimonialsSection from "@/components/shared/TestimonialsSection";
 
 const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
-const partnerLogos = [
-  { src: "/images/logos/7-eleven.png", alt: "7-Eleven" },
-  { src: "/images/logos/arbys.png", alt: "Arby's" },
-  { src: "/images/logos/best-buy.png", alt: "Best Buy" },
-  { src: "/images/logos/bonefish.png", alt: "Bonefish Grill" },
-  { src: "/images/logos/bp.png", alt: "BP" },
-  { src: "/images/logos/chipotle.png", alt: "Chipotle" },
-  { src: "/images/logos/circle-k.png", alt: "Circle K" },
-  { src: "/images/logos/dollar-general.png", alt: "Dollar General" },
-  { src: "/images/logos/doordash.png", alt: "DoorDash" },
-  { src: "/images/logos/dunkin.png", alt: "Dunkin'" },
-  { src: "/images/logos/five-below.png", alt: "Five Below" },
-  { src: "/images/logos/food-lion.png", alt: "Food Lion" },
-  { src: "/images/logos/gnc.png", alt: "GNC" },
-  { src: "/images/logos/goodyear.png", alt: "Goodyear" },
-  { src: "/images/logos/heb.png", alt: "H-E-B" },
-  { src: "/images/logos/kfc.png", alt: "KFC" },
-  { src: "/images/logos/kroger.png", alt: "Kroger" },
-  { src: "/images/logos/maggianos.png", alt: "Maggiano's" },
-  { src: "/images/logos/mcdonalds.png", alt: "McDonald's" },
-  { src: "/images/logos/red-lobster.png", alt: "Red Lobster" }
-];
 
 const vendorTestimonials = [
   {
@@ -157,11 +134,11 @@ export default function JoinOurNetworkPage() {
     <main>
       <Navbar variant="floating" />
       <HeroSection />
-      <LogoReel />
+      <LogoReelSection headline="Trusted by leading national brands we serve" testIdPrefix="join-logos" />
       <FormSection />
       <ValuesSection />
       <HowItWorksSection />
-      <TestimonialsSection />
+      <TestimonialsSection testimonials={vendorTestimonials} tagline="Vendor Stories" testIdPrefix="join-testimonials" />
       <FaqSection faqs={vendorFaqs} />
       <Footer />
     </main>
@@ -218,42 +195,6 @@ function HeroSection() {
   );
 }
 
-function LogoReel() {
-  return (
-    <section className="py-12 bg-white border-b border-primary/5 overflow-hidden" data-testid="section-join-logos">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-left sm:text-center mb-8">
-          <div className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70" data-testid="text-join-logo-headline">
-            Our Biggest Vendors We've Worked With
-          </div>
-        </div>
-      </div>
-
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative flex overflow-hidden group"
-      >
-        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
-          {partnerLogos.map((logo, i) => (
-            <div key={`logo-1-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
-              <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
-            </div>
-          ))}
-        </div>
-        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
-          {partnerLogos.map((logo, i) => (
-            <div key={`logo-2-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
-              <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </section>
-  );
-}
 
 function FormSection() {
   return (
@@ -542,111 +483,3 @@ function HowItWorksSection() {
   );
 }
 
-function TestimonialsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCount = 3;
-  const maxIndex = vendorTestimonials.length - visibleCount;
-
-  const next = () => setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
-  const prev = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
-
-  return (
-    <section className="py-16 md:py-24 bg-white overflow-hidden" data-testid="section-join-testimonials">
-      <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-left sm:text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-6 leading-tight" data-testid="text-join-testimonials-heading">
-            Hear From Our Vendor Clients
-          </h2>
-          <p className="text-lg text-[#042940]/60">
-            Real feedback from partners who have grown their business with us.
-          </p>
-        </motion.div>
-
-        <div className="relative">
-          <div className="overflow-hidden">
-            <motion.div 
-              className="flex gap-6 md:gap-8"
-              animate={{ x: `-${currentIndex * (100 / visibleCount + 2)}%` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
-              {vendorTestimonials.map((testimonial, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="min-w-[280px] sm:min-w-[340px] lg:min-w-[calc(33.333%-1.5rem)] shrink-0"
-                  data-testid={`testimonial-card-${i}`}
-                >
-                  <div className="border border-[#042940]/10 rounded-[5px] p-6 md:p-8 h-full flex flex-col">
-                    <div className="flex gap-1 mb-6">
-                      {[1, 2, 3, 4, 5].map(s => (
-                        <Star key={s} className="w-4 h-4 fill-[#c5d520] text-[#c5d520]" />
-                      ))}
-                    </div>
-                    <blockquote className="text-[#042940] text-base md:text-lg leading-relaxed mb-8 flex-1">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
-                        <img 
-                          src={testimonial.img} 
-                          alt={testimonial.author} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <div className="font-bold text-[#042940]">{testimonial.author}</div>
-                        <div className="text-sm text-[#042940]/60">{testimonial.role}, {testimonial.company}</div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          <div className="flex items-center justify-center gap-3 mt-10">
-            <button
-              onClick={prev}
-              disabled={currentIndex === 0}
-              className="w-12 h-12 rounded-full border border-[#042940]/20 flex items-center justify-center hover:bg-[#042940]/5 active:bg-[#042940]/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-w-[44px] min-h-[44px]"
-              aria-label="Previous testimonials"
-              data-testid="button-testimonial-prev"
-            >
-              <ChevronLeft className="w-5 h-5 text-[#042940]" />
-            </button>
-            <div className="flex gap-2">
-              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentIndex(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    i === currentIndex ? "bg-[#042940] w-6" : "bg-[#042940]/20"
-                  }`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              disabled={currentIndex === maxIndex}
-              className="w-12 h-12 rounded-full border border-[#042940]/20 flex items-center justify-center hover:bg-[#042940]/5 active:bg-[#042940]/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-w-[44px] min-h-[44px]"
-              aria-label="Next testimonials"
-              data-testid="button-testimonial-next"
-            >
-              <ChevronRight className="w-5 h-5 text-[#042940]" />
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}

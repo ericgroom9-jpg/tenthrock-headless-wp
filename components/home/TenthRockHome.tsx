@@ -20,7 +20,6 @@ import {
   Factory,
   Store,
   HardHat,
-  Star,
   ChevronDown,
   Mail,
   Instagram,
@@ -59,6 +58,8 @@ import ProcessSection from "@/components/shared/ProcessSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import CaseStudySection from "@/components/shared/CaseStudySection";
 import WhoWeHelpSection from "@/components/shared/WhoWeHelpSection";
+import LogoReelSection from "@/components/shared/LogoReelSection";
+import TestimonialsSection from "@/components/shared/TestimonialsSection";
 
 // Assets - Main Logos
 const logoMain = "/images/logos/TenthRock-Logo.png";
@@ -99,27 +100,30 @@ const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 // Hero video
 const heroVideo = "/videos/hero-background.mp4";
 
-// Partner Logos
-const logo7Eleven = "/images/logos/7-eleven.png";
-const logoArbys = "/images/logos/arbys.png";
-const logoBestBuy = "/images/logos/best-buy.png";
-const logoBonefish = "/images/logos/bonefish.png";
-const logoBp = "/images/logos/bp.png";
-const logoChipotle = "/images/logos/chipotle.png";
-const logoCircleK = "/images/logos/circle-k.png";
-const logoDollarGeneral = "/images/logos/dollar-general.png";
-const logoDoorDash = "/images/logos/doordash.png";
-const logoDunkin = "/images/logos/dunkin.png";
-const logoFiveBelow = "/images/logos/five-below.png";
-const logoFoodLion = "/images/logos/food-lion.png";
-const logoGNC = "/images/logos/gnc.png";
-const logoGoodyear = "/images/logos/goodyear.png";
-const logoHEB = "/images/logos/heb.png";
-const logoKFC = "/images/logos/kfc.png";
-const logoKroger = "/images/logos/kroger.png";
-const logoMaggianos = "/images/logos/maggianos.png";
-const logoMcDonalds = "/images/logos/mcdonalds.png";
-const logoRedLobster = "/images/logos/red-lobster.png";
+// Homepage testimonials
+const homeTestimonials = [
+  {
+    quote: "Tenth Rock transformed our waste management. We saved 30% in the first quarter alone.",
+    author: "Sarah Jenkins",
+    role: "Director of Operations",
+    company: "Retail Giant Co.",
+    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "The single point of contact is a game changer. No more chasing vendors across 15 states.",
+    author: "Michael Ross",
+    role: "Facility Manager",
+    company: "National Logistics Inc.",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "Finally, a partner that understands compliance. The audit trail features are exactly what we needed.",
+    author: "David Chen",
+    role: "Compliance Officer",
+    company: "BioTech Solutions",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
+  }
+];
 
 const Logo = ({ className = "", variant = "main" }: { className?: string, variant?: "main" | "white" }) => {
   const logoSrc = variant === "main" ? logoMain : logoWhite;
@@ -241,66 +245,6 @@ const SimpleNumbers = () => {
   );
 };
 
-// Logo Reel
-const LogoList = () => {
-  const logos = [
-    { src: logo7Eleven, alt: "7-Eleven" },
-    { src: logoArbys, alt: "Arby's" },
-    { src: logoBestBuy, alt: "Best Buy" },
-    { src: logoBonefish, alt: "Bonefish Grill" },
-    { src: logoBp, alt: "BP" },
-    { src: logoChipotle, alt: "Chipotle" },
-    { src: logoCircleK, alt: "Circle K" },
-    { src: logoDollarGeneral, alt: "Dollar General" },
-    { src: logoDoorDash, alt: "DoorDash" },
-    { src: logoDunkin, alt: "Dunkin'" },
-    { src: logoFiveBelow, alt: "Five Below" },
-    { src: logoFoodLion, alt: "Food Lion" },
-    { src: logoGNC, alt: "GNC" },
-    { src: logoGoodyear, alt: "Goodyear" },
-    { src: logoHEB, alt: "H-E-B" },
-    { src: logoKFC, alt: "KFC" },
-    { src: logoKroger, alt: "Kroger" },
-    { src: logoMaggianos, alt: "Maggiano's" },
-    { src: logoMcDonalds, alt: "McDonald's" },
-    { src: logoRedLobster, alt: "Red Lobster" }
-  ];
-
-  return (
-    <section className="py-12 bg-white border-b border-primary/5 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-left sm:text-center mb-8">
-          <div data-testid="text-logo-reel-headline" className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70">
-            Supporting these leading national brands
-          </div>
-        </div>
-      </div>
-
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative flex overflow-hidden group"
-      >
-        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
-           {logos.map((logo, i) => (
-             <div key={`logo-1-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
-               <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
-             </div>
-           ))}
-        </div>
-        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
-           {logos.map((logo, i) => (
-             <div key={`logo-2-${i}`} className="h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
-               <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
-             </div>
-           ))}
-        </div>
-      </motion.div>
-    </section>
-  );
-};
 
 // ServicesSection
 const ServicesSection = () => {
@@ -680,118 +624,6 @@ const Stats = () => {
   );
 };
 
-// Testimonial (Interactive Slider)
-const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const testimonials = [
-    {
-      quote: "Tenth Rock transformed our waste management. We saved 30% in the first quarter alone.",
-      author: "Sarah Jenkins",
-      role: "Director of Operations",
-      company: "Retail Giant Co.",
-      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
-    },
-    {
-      quote: "The single point of contact is a game changer. No more chasing vendors across 15 states.",
-      author: "Michael Ross",
-      role: "Facility Manager",
-      company: "National Logistics Inc.",
-      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
-    },
-    {
-      quote: "Finally, a partner that understands compliance. The audit trail features are exactly what we needed.",
-      author: "David Chen",
-      role: "Compliance Officer",
-      company: "BioTech Solutions",
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
-    }
-  ];
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  return (
-    <section className="py-16 md:py-24 bg-[#042940] text-white relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
-      
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-      
-      {/* Glow Effect */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#c5d520]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
-           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-bold text-sm backdrop-blur-md shadow-sm mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-              Client Stories
-           </div>
-
-           <div className="flex gap-1 mb-8">
-              {[1,2,3,4,5].map(i => <Star key={i} className="w-6 h-6 fill-[#c5d520] text-[#c5d520]" />)}
-           </div>
-           
-           <div className="relative min-h-[300px]">
-             <AnimatePresence mode="wait">
-               <motion.div
-                 key={currentIndex}
-                 initial={{ opacity: 0, y: 20 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 exit={{ opacity: 0, y: -20 }}
-                 transition={{ duration: 0.5 }}
-               >
-                 <blockquote className="text-3xl md:text-5xl font-bold leading-tight mb-10 tracking-tight">
-                   "{testimonials[currentIndex].quote}"
-                 </blockquote>
-                 
-                 <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
-                       <img src={testimonials[currentIndex].img} alt={testimonials[currentIndex].author} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                       <div className="font-bold text-xl text-white">{testimonials[currentIndex].author}</div>
-                       <div className="text-white/60 font-medium">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</div>
-                    </div>
-                 </div>
-               </motion.div>
-             </AnimatePresence>
-           </div>
-
-           {/* Controls */}
-           <div className="flex gap-4 pt-8">
-              <button 
-                onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 active:bg-white/10 text-white transition-all duration-300 min-w-[44px] min-h-[44px]"
-                aria-label="Previous testimonial"
-              >
-                <ArrowRight className="w-5 h-5 rotate-180" />
-              </button>
-              <button 
-                onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full bg-[#c5d520] text-[#042940] flex items-center justify-center hover:bg-[#d6d98b] active:bg-[#d6d98b] transition-all duration-300 shadow-lg md:hover:scale-110 active:scale-95 min-w-[44px] min-h-[44px]"
-                aria-label="Next testimonial"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
-           </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
 
 // FAQ (FAQ 1)
 const Faq = () => {
@@ -984,7 +816,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <main id="main-content" role="main">
-      <LogoList />
+      <LogoReelSection />
       <CommercialWasteServices />
       <WhoWeHelpSection />
       <CtaBannerSection />
@@ -992,7 +824,7 @@ export default function Home() {
       <CaseStudySection />
       <ReasonsSection />
       <StatsSection />
-      <Testimonials />
+      <TestimonialsSection testimonials={homeTestimonials} />
       <FaqSection />
       <LocationSection />
       <FinalCtaSection />
