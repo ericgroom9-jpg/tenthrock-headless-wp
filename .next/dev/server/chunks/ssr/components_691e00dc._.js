@@ -3676,14 +3676,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const imgIndustryEducational = "/images/stock/industry-educational.jpg";
-const imgIndustryStadiumsEvents = "/images/stock/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/stock/industry-faith-based.jpg";
-const imgIndustryMunicipalities = "/images/stock/industry-municipalities.jpg";
-const imgIndustryHospitality = "/images/stock/industry-hospitality.jpg";
-const imgIndustryNaturalDisasters = "/images/stock/industry-natural-disasters.jpg";
-const imgIndustryRealEstate = "/images/stock/industry-real-estate.jpg";
-const imgIndustryRetail = "/images/stock/industry-retail.jpg";
+const imgIndustryEducational = "/images/industries/industry-educational.jpg";
+const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
+const imgIndustryFaithBased = "/images/industries/industry-faith-based.jpg";
+const imgIndustryMunicipalities = "/images/industries/industry-municipalities.jpg";
+const imgIndustryHospitality = "/images/industries/industry-hospitality.jpg";
+const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
+const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
+const imgIndustryRetail = "/images/industries/industry-retail.jpg";
 const sectors = [
     {
         title: "Educational",
