@@ -1272,6 +1272,14 @@ h2 {
   z-index: 1;
 }
 
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
 .order-first {
   order: -9999;
 }
@@ -1583,6 +1591,10 @@ h2 {
 
 .h-\[320px\] {
   height: 320px;
+}
+
+.h-\[350px\] {
+  height: 350px;
 }
 
 .h-\[400px\] {
@@ -4684,6 +4696,12 @@ h2 {
   color: hsl(var(--sidebar-accent-foreground) / var(--tw-text-opacity, 1));
 }
 
+.active\:shadow-md:active {
+  --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;
 }
@@ -5711,6 +5729,14 @@ h2 {
     right: 3rem;
   }
 
+  .md\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .md\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .md\:mt-0 {
     margin-top: 0;
   }
@@ -5763,6 +5789,20 @@ h2 {
     justify-content: space-between;
   }
 
+  .md\:gap-12 {
+    gap: 3rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
+  }
+
+  .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+  }
+
   .md\:divide-x > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-x-reverse: 0;
     border-right-width: calc(1px * var(--tw-divide-x-reverse));
@@ -5783,6 +5823,10 @@ h2 {
     padding: 5rem;
   }
 
+  .md\:p-6 {
+    padding: 1.5rem;
+  }
+
   .md\:p-8 {
     padding: 2rem;
   }
@@ -5797,9 +5841,18 @@ h2 {
     padding-bottom: 4rem;
   }
 
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
   .md\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0;
   }
 
   .md\:text-4xl {
@@ -5834,6 +5887,12 @@ h2 {
   .md\:after\:hidden:after {
     content: var(--tw-content);
     display: none;
+  }
+
+  .md\:hover\:shadow-md:hover {
+    --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
   .peer[data-variant="inset"] ~ .md\:peer-data-\[variant\=inset\]\:m-2 {
@@ -5910,6 +5969,10 @@ h2 {
 
   .lg\:h-10 {
     height: 2.5rem;
+  }
+
+  .lg\:h-\[600px\] {
+    height: 600px;
   }
 
   .lg\:min-h-full {
@@ -6015,6 +6078,11 @@ h2 {
 
   .lg\:pl-8 {
     padding-left: 2rem;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .lg\:text-6xl {

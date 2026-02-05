@@ -345,22 +345,22 @@ const Counter = ({ from = 0, to, duration = 2, suffix = "", prefix = "" }: { fro
 // Simple Numbers 2
 const SimpleNumbers = () => {
   return (
-    <section aria-label="Company statistics" className="py-20 bg-white border-b border-primary/5">
+    <section aria-label="Company statistics" className="py-12 md:py-20 bg-white border-b border-primary/5">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <div className="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-primary/10 max-w-5xl mx-auto">
-           <div className="flex flex-col items-center text-center px-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-primary/10 max-w-5xl mx-auto">
+           <div className="flex flex-col items-center text-center px-4 md:px-8 pt-6 md:pt-0">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={48} duration={2.5} />
               </div>
               <div className="text-lg text-primary/60">States Serviced</div>
            </div>
-           <div className="flex flex-col items-center text-center px-8">
+           <div className="flex flex-col items-center text-center px-4 md:px-8 pt-6 md:pt-0">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={5} suffix="K+" duration={2.5} />
               </div>
               <div className="text-lg text-primary/60">Jobs Completed</div>
            </div>
-           <div className="flex flex-col items-center text-center px-8">
+           <div className="flex flex-col items-center text-center px-4 md:px-8 pt-6 md:pt-0">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={24} suffix="/7" duration={2.5} />
               </div>
@@ -477,14 +477,14 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-24 bg-[#F9F9F6]">
+    <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 max-w-2xl"
+          className="mb-10 md:mb-16 max-w-2xl"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -600,9 +600,9 @@ const WhoWeHelp = () => {
   ];
 
   return (
-    <section id="sectors" aria-labelledby="sectors-heading" className="py-24 bg-[#F9F9F6]">
+    <section id="sectors" aria-labelledby="sectors-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Industries
@@ -665,7 +665,7 @@ const CaseStudySection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-b border-primary/5">
+    <section className="py-16 md:py-24 bg-white border-b border-primary/5">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Images (order-2 on mobile, order-1 on lg) */}
@@ -714,11 +714,11 @@ const CaseStudySection = () => {
             <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">
               Case Study: <br/>Urban Redevelopment
             </h2>
-            <p className="text-lg text-primary/70 mb-12 leading-relaxed">
+            <p className="text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed">
               When a major metropolitan development needed a complete waste management overhaul for a 3-year project, they turned to Tenth Rock. We implemented a comprehensive diversion strategy that saved costs and exceeded sustainability goals.
             </p>
 
-            <div className="grid grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
               {stats.map((stat, i) => (
                 <div key={i}>
                   <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
@@ -767,9 +767,9 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
            {/* Left Image Side (order-2 on mobile) */}
            <motion.div 
              initial={{ opacity: 0, x: -20 }}
@@ -789,13 +789,13 @@ const WhyUs = () => {
              transition={{ duration: 0.8 }}
              className="flex flex-col justify-center order-1 lg:order-2"
            >
-             <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-12 tracking-tighter">
+             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] leading-tight mb-8 md:mb-12 tracking-tighter">
                Why You’ll Love Tenth Rock Solutions
              </h2>
              
-             <div className="space-y-6 mb-12">
+             <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
                {items.map((item, i) => (
-                 <div key={i} className="p-6 rounded-[5px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                 <div key={i} className="p-4 md:p-6 rounded-[5px] border border-gray-100 shadow-sm active:shadow-md md:hover:shadow-md transition-shadow">
                     <div className="flex items-start gap-4">
                        <div className="mt-1">
                           {item.icon}
@@ -828,7 +828,7 @@ const WhyUs = () => {
 };
 const CtaBanner = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
@@ -896,7 +896,7 @@ const Process = () => {
   ];
 
   return (
-    <section id="process" aria-labelledby="process-heading" className="py-24 bg-white relative overflow-hidden">
+    <section id="process" aria-labelledby="process-heading" className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -948,7 +948,7 @@ const Reasons = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#F8F8F8]">
+    <section className="py-16 md:py-24 bg-[#F8F8F8]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           {/* Left Sticky Content */}
@@ -1005,7 +1005,7 @@ const Reasons = () => {
 // Stats Section (Numbers and Media 1)
 const Stats = () => {
   return (
-    <section className="py-24 bg-[#FDFDFD]">
+    <section className="py-16 md:py-24 bg-[#FDFDFD]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="sticky top-32">
@@ -1122,7 +1122,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-[#042940] text-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#042940] text-white relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
       
@@ -1226,7 +1226,7 @@ const Faq = () => {
   ];
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-24 bg-[#F9F9F6] relative overflow-hidden">
+    <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       
@@ -1305,7 +1305,7 @@ const Faq = () => {
 // One Location 2
 const Location = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
