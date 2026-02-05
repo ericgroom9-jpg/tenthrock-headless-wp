@@ -421,7 +421,7 @@
   }
 
   .text-h2 {
-    font-family: var(--font-heading);
+    font-family: var(--font-inter);
     font-size: var(--h2-size-mobile);
     font-weight: var(--heading-weight);
     line-height: var(--h2-line-height);

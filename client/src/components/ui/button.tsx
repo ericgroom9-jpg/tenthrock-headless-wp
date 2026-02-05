@@ -5,25 +5,25 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-bold tracking-tight transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:scale-105 active:scale-95" +
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-bold tracking-tight focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0" +
   " hover-elevate active-elevate-2",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground border border-primary-border shadow-sm hover:bg-primary/90",
+          "bg-primary text-primary-foreground border border-primary-border shadow-sm",
         destructive:
-          "bg-destructive text-destructive-foreground border border-destructive-border shadow-sm hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground border border-destructive-border shadow-sm",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary: "border bg-secondary text-secondary-foreground border border-secondary-border hover:bg-secondary/80",
-        ghost: "border border-transparent hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "border [border-color:var(--button-outline)] shadow-xs active:shadow-none",
+        secondary: "border bg-secondary text-secondary-foreground border border-secondary-border",
+        ghost: "border border-transparent",
+        link: "text-primary underline-offset-4 hover:underline no-default-hover-elevate no-default-active-elevate",
       },
       size: {
-        default: "h-11 px-6 rounded-full",
-        sm: "h-9 rounded-full px-4 text-xs",
-        lg: "h-14 px-10 rounded-full text-sm uppercase font-extrabold tracking-wide",
+        default: "min-h-11 px-6 py-2 rounded-full",
+        sm: "min-h-9 rounded-full px-4 text-xs",
+        lg: "min-h-14 px-10 rounded-full text-sm uppercase font-extrabold tracking-wide",
         icon: "h-11 w-11 rounded-full",
       },
     },
