@@ -108,7 +108,7 @@ export default function LocationsPage() {
           </motion.div>
 
           {/* Cities Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {stateColumns.map((column, columnIndex) => (
               <motion.div
                 key={columnIndex}
