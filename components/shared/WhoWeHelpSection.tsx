@@ -10,7 +10,7 @@ const sectors = [
   { title: "Faith Based", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
   { title: "Municipalities", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
   { title: "Hospitality", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
-  { title: "Natural Disasters", img: "/images/industries/industry-natural-disasters.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
+  { title: "Natural Disasters", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
   { title: "Real Estate", img: "/images/industries/industry-real-estate.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
   { title: "Retail", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" }
 ];

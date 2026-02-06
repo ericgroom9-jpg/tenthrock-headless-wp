@@ -52,10 +52,10 @@ export default function NaturalDisastersPage() {
   return (
     <IndustryTemplate
       industryName="Natural Disasters"
-      heroImage="/assets_export/stock_images/industry-natural-disasters.jpg"
+      heroImage="/images/stock/industry-natural-disasters-storm.jpg"
       heroDescription="When disaster strikes, we're ready. Rapid-response debris removal and cleanup services that help communities recover and rebuild."
       aboutTitle="First Responders for Waste Recovery"
-      aboutImage="/assets_export/stock_images/industry-natural-disasters.jpg"
+      aboutImage="/images/stock/industry-natural-disasters-storm.jpg"
       bulletPoints={bulletPoints}
       faqs={faqs}
     />

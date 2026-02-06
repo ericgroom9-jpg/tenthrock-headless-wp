@@ -79,7 +79,7 @@ const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.j
 const imgIndustryFaithBased = "/images/stock/industry-faith-based.jpg";
 const imgIndustryMunicipalities = "/images/stock/clean-city.jpg";
 const imgIndustryHospitality = "/images/stock/industry-hospitality.jpg";
-const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
+const imgIndustryNaturalDisasters = "/images/stock/industry-natural-disasters-storm.jpg";
 const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
 const imgIndustryRetail = "/images/stock/hotel.jpg";
 
