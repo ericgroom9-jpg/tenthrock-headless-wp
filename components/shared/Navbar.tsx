@@ -34,6 +34,7 @@ const sectorLinks = [
 const aboutLinks = [
   { label: "About Us", href: "/about" },
   { label: "Join Our Network", href: "/join-our-network" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
@@ -51,7 +52,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
     }>
       <div className={`container mx-auto max-w-[92rem] ${isFloating ? "bg-white rounded-[5px] shadow-lg px-4 sm:px-6 py-3" : "px-0"}`}>
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="hover:opacity-90 transition-opacity shrink-0">
+          <Link href="/" className="hover:opacity-90 transition-opacity shrink-0" data-testid="link-nav-home">
             <Logo variant="main" />
           </Link>
 
@@ -59,7 +60,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
           <div className="flex items-center gap-2 xl:hidden">
             <Button 
               size="sm" 
-              className="bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4"
+              className="bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4"
               data-testid="button-mobile-cta"
             >
               Get a Quote
@@ -89,6 +90,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 <Link
                   href="/services/commercial-waste"
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+                  data-testid="link-nav-services"
                 >
                   Commercial Waste Services
                 </Link>
@@ -99,6 +101,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   onClick={() => setIsServicesOpen((v) => !v)}
                   className="p-1 hover:text-[#c5d520] transition-colors"
                   aria-label="Toggle services menu"
+                  data-testid="button-nav-services-toggle"
                 >
                   <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -139,7 +142,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               </AnimatePresence>
             </div>
 
-            <a href="/services/emergency-waste-removal" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Emergency Waste Removal</a>
+            <a href="/services/emergency-waste-removal" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2" data-testid="link-nav-emergency">Emergency Waste Removal</a>
             
             {/* Who We Serve Dropdown */}
             <div
@@ -154,6 +157,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 <a
                   href="/who-we-serve"
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+                  data-testid="link-nav-who-we-serve"
                 >
                   Who We Serve
                 </a>
@@ -164,6 +168,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   onClick={() => setIsSectorsOpen((v) => !v)}
                   className="p-1 hover:text-[#c5d520] transition-colors"
                   aria-label="Toggle sectors menu"
+                  data-testid="button-nav-sectors-toggle"
                 >
                   <ChevronDown className={`w-4 h-4 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -204,7 +209,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               </AnimatePresence>
             </div>
 
-            <a href="/our-process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Our Process</a>
+            <a href="/our-process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2" data-testid="link-nav-process">Our Process</a>
 
             {/* About Us Dropdown */}
             <div
@@ -219,6 +224,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 <a
                   href="/about"
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+                  data-testid="link-nav-about"
                 >
                   About Us
                 </a>
@@ -229,6 +235,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   onClick={() => setIsAboutOpen((v) => !v)}
                   className="p-1 hover:text-[#c5d520] transition-colors"
                   aria-label="Toggle about menu"
+                  data-testid="button-nav-about-toggle"
                 >
                   <ChevronDown className={`w-4 h-4 transition-transform ${isAboutOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -272,10 +279,10 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
 
           {/* Right Side Actions - desktop only */}
           <div className="hidden xl:flex items-center gap-3 shrink-0">
-            <Button size="lg" variant="ghost" className="text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap">
+            <Button size="lg" variant="ghost" className="text-primary font-extrabold transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-login">
               Login
             </Button>
-            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap">
+            <Button size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
               Get a Quote
             </Button>
           </div>
@@ -347,6 +354,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   href="/services/emergency-waste-removal" 
                   className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
                   onClick={() => setIsNavExpanded(false)}
+                  data-testid="link-mobile-emergency"
                 >
                   Emergency Waste Removal
                 </a>
@@ -405,6 +413,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   href="/our-process" 
                   className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
                   onClick={() => setIsNavExpanded(false)}
+                  data-testid="link-mobile-process"
                 >
                   Our Process
                 </a>
@@ -460,7 +469,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </div>
 
                 <div className="pt-3 mt-2 border-t border-gray-100">
-                  <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] mb-2">
+                  <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] mb-2" data-testid="button-mobile-login">
                     Login
                   </Button>
                 </div>

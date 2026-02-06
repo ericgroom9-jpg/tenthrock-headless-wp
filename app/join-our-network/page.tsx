@@ -102,6 +102,11 @@ const vendorProcessSteps = [
     num: "04",
     title: "Get Paid Reliably",
     desc: "Transparent invoicing and reliable bi-weekly payments deposited directly to your account."
+  },
+  {
+    num: "05",
+    title: "Grow Your Business",
+    desc: "As you build a track record, receive more jobs and expand into new service areas across the country."
   }
 ];
 
