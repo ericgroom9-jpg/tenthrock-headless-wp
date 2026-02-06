@@ -50,40 +50,40 @@ const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
 
 const services = [
   {
-    title: "Emergency Overflow",
-    desc: "Rapid response teams available 24/7 for unexpected waste emergencies and overflow situations.",
+    title: "Emergency & Overflow Waste Response",
+    desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can't wait. Built for retail, industrial, and multi-site emergencies.",
     img: imgServiceEmergencyOverflow,
-    features: ["24/7 Response", "Rapid Deployment", "Emergency Cleanup"],
+    features: ["24/7 Dispatch", "Overflow & Surge Capacity", "Nationwide Network"],
   },
   {
-    title: "Dumpster Rentals",
-    desc: "Flexible dumpster rental solutions for construction, renovation, and commercial cleanouts.",
-    img: imgServiceDumpsterRental,
-    features: ["Multiple Sizes", "Flexible Terms", "Quick Delivery"],
-  },
-  {
-    title: "Event & Stadium",
-    desc: "Comprehensive waste management for large-scale events, concerts, and sporting venues.",
-    img: imgServiceEventStadium,
-    features: ["Large Events", "Venue Support", "Post-Event Cleanup"],
-  },
-  {
-    title: "Maintenance Services",
-    desc: "Regular maintenance and cleaning services to keep your facilities spotless and compliant.",
-    img: imgServiceMaintenance,
-    features: ["Scheduled Service", "Compliance Ready", "Full Reporting"],
-  },
-  {
-    title: "Store Decommissioning",
-    desc: "Complete store closure and decommissioning services with responsible disposal practices.",
+    title: "Store Decommissioning & Remodel Support",
+    desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
     img: imgServiceStoreDecommissioning,
-    features: ["Full Removal", "Asset Recovery", "Eco-Friendly"],
+    features: ["Project Scheduling", "Site Cleanouts", "Multi-location Coordination"],
   },
   {
-    title: "Centralized Programs",
-    desc: "Enterprise-wide waste management programs for multi-location businesses.",
+    title: "Event & Stadium Waste Logistics",
+    desc: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
+    img: imgServiceEventStadium,
+    features: ["Venue Routing", "High-volume Support", "Diversion Planning"],
+  },
+  {
+    title: "Dumpster Rental & Temporary Containers",
+    desc: "Temporary containers and compactor solutions for projects and peaks. Transparent sizing, delivery windows, and swap schedules.",
+    img: imgServiceDumpsterRental,
+    features: ["Roll-offs & Front-load", "Fast Delivery", "Flexible Terms"],
+  },
+  {
+    title: "Centralized Waste Program Management",
+    desc: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
     img: imgServiceCentralizedProgram,
-    features: ["Multi-Location", "Single Invoice", "Dedicated Support"],
+    features: ["Standardized SLAs", "Spend Visibility", "Single Point of Contact"],
+  },
+  {
+    title: "Environmental & Compactor Maintenance Services",
+    desc: "Preventative maintenance and service for compactors and waste equipment, plus environmental support to keep sites compliant and running.",
+    img: imgServiceMaintenance,
+    features: ["PM Schedules", "On-site Repairs", "Compliance Support"],
   },
 ];
 
