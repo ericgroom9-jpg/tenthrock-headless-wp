@@ -52,10 +52,10 @@ export default function RealEstatePage() {
   return (
     <IndustryTemplate
       industryName="Real Estate"
-      heroImage="/assets_export/stock_images/industry-real-estate.jpg"
+      heroImage="/images/stock/industry-real-estate-balconies.jpg"
       heroDescription="Professional waste management that protects property values and keeps tenants satisfied. Reliable service for property managers and real estate portfolios."
       aboutTitle="Supporting Property Excellence"
-      aboutImage="/assets_export/stock_images/industry-real-estate.jpg"
+      aboutImage="/images/stock/industry-real-estate-balconies.jpg"
       bulletPoints={bulletPoints}
       faqs={faqs}
     />
