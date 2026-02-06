@@ -67,7 +67,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:pt-8"
             >
-              <div className="text-base md:text-lg text-primary/70 leading-relaxed space-y-6">
+              <div className="text-base text-primary/70 leading-relaxed space-y-6">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque.
                 </p>
@@ -215,7 +215,7 @@ export default function AboutPage() {
               >
                 IN THE COMMUNITY
               </h2>
-              <p className="text-base md:text-lg text-primary/70 leading-relaxed mb-8">
+              <p className="text-base text-primary/70 leading-relaxed mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
               </p>
               

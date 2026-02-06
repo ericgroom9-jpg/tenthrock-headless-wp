@@ -96,7 +96,7 @@ export default function LocationTemplatePage() {
               >
                 {locationName}
               </h1>
-              <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">
+              <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

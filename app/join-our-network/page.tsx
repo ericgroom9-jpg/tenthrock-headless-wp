@@ -184,7 +184,7 @@ function HeroSection() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
               JOIN OUR NETWORK
             </h1>
-            <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-md">
+            <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
               Partner with the fastest-growing commercial waste network in America. Grow your business with steady contracts, reliable payments, and dedicated support.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

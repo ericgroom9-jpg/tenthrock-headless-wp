@@ -45,11 +45,11 @@ function RequestAServiceSection() {
               Request A Service
             </h1>
             <div className="space-y-4 mb-12">
-              <p className="text-base sm:text-lg text-[#042940]/70 leading-relaxed">
+              <p className="text-base text-[#042940]/70 leading-relaxed">
                 If you are experiencing a trash emergency and need immediate assistance, please call us at{" "}
                 <a href="tel:7275105454" className="font-bold text-[#042940] hover:text-[#c5d520] transition-colors" data-testid="link-emergency-phone">727.510.5454</a>.
               </p>
-              <p className="text-base sm:text-lg text-[#042940]/70 leading-relaxed">
+              <p className="text-base text-[#042940]/70 leading-relaxed">
                 If you are interested in becoming a Preferred Vendor,{" "}
                 <a href="/join-our-network" className="font-bold text-[#042940] underline hover:text-[#c5d520] transition-colors" data-testid="link-vendor">visit here</a>!
               </p>
