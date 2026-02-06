@@ -44,7 +44,7 @@ function ContactSection() {
               </p>
             </div>
 
-            <div>
+            <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-[#042940] mb-6" data-testid="text-contact-subheading">
                 Contact
               </h2>
