@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
-  ArrowRight, 
   Phone, 
-  ChevronDown,
   Shield,
   Zap,
   Clock,
@@ -18,6 +15,7 @@ import Footer from "@/components/shared/Footer";
 import FaqSection from "@/components/shared/FaqSection";
 import LogoReelSection from "@/components/shared/LogoReelSection";
 import TestimonialsSection from "@/components/shared/TestimonialsSection";
+import ProcessSection from "@/components/shared/ProcessSection";
 
 const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
@@ -83,24 +81,24 @@ const vendorFaqs = [
   }
 ];
 
-const processSteps = [
+const vendorProcessSteps = [
   {
-    num: 1,
+    num: "01",
     title: "Get In Touch",
     desc: "Fill out the form or call us directly. Our vendor relations team will review your application and reach out within 24 hours."
   },
   {
-    num: 2,
+    num: "02",
     title: "We Dispatch Your Team",
     desc: "Once onboarded, you'll receive real-time job alerts matched to your service area, equipment, and availability."
   },
   {
-    num: 3,
+    num: "03",
     title: "We Execute The Job",
     desc: "Complete the job to our quality standards. Our team provides support every step of the way."
   },
   {
-    num: 4,
+    num: "04",
     title: "Get Paid Reliably",
     desc: "Transparent invoicing and reliable bi-weekly payments deposited directly to your account."
   }
@@ -137,7 +135,13 @@ export default function JoinOurNetworkPage() {
       <LogoReelSection headline="Trusted by leading national brands we serve" testIdPrefix="join-logos" />
       <FormSection />
       <ValuesSection />
-      <HowItWorksSection />
+      <ProcessSection 
+        tagline="Vendor Process"
+        heading="How It Works"
+        subtitle="A straightforward path from application to your first job. We make onboarding simple."
+        steps={vendorProcessSteps}
+        testIdPrefix="join-process"
+      />
       <TestimonialsSection testimonials={vendorTestimonials} tagline="Vendor Stories" testIdPrefix="join-testimonials" />
       <FaqSection faqs={vendorFaqs} />
       <Footer />
@@ -383,103 +387,4 @@ function ValuesSection() {
   );
 }
 
-function HowItWorksSection() {
-  const [activeStep, setActiveStep] = useState(0);
-
-  return (
-    <section className="py-16 md:py-24 bg-white" data-testid="section-join-how-it-works">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative aspect-[4/3] lg:aspect-auto lg:h-[640px] rounded-[5px] overflow-hidden order-2 lg:order-1"
-          >
-            <img 
-              src="/images/stock/service-commercial.jpg" 
-              alt="Commercial waste service team" 
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="order-1 lg:order-2"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-12 leading-tight" data-testid="text-join-how-heading">
-              How It Works
-            </h2>
-
-            <div className="space-y-0">
-              {processSteps.map((step, i) => (
-                <div key={i} data-testid={`step-${i}`}>
-                  <button
-                    onClick={() => setActiveStep(i)}
-                    className="w-full text-left py-6 flex gap-6 md:gap-8 items-start group"
-                    aria-expanded={activeStep === i}
-                  >
-                    <span className={`text-2xl md:text-3xl font-bold shrink-0 transition-colors duration-300 ${
-                      activeStep === i ? "text-[#042940]" : "text-[#042940]/30"
-                    }`}>
-                      {step.num}
-                    </span>
-                    <div className="flex-1">
-                      <h3 className={`text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight transition-colors duration-300 ${
-                        activeStep === i ? "text-[#042940]" : "text-[#042940]/40"
-                      }`}>
-                        {step.title}
-                      </h3>
-                      <div className={`transition-all duration-400 ease-in-out overflow-hidden ${
-                        activeStep === i ? "max-h-40 opacity-100 mt-3" : "max-h-0 opacity-0"
-                      }`}>
-                        <p className="text-[#042940]/60 leading-relaxed">
-                          {step.desc}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                  
-                  <div className="relative h-[2px] bg-[#042940]/10">
-                    {activeStep === i && (
-                      <motion.div 
-                        className="absolute left-0 top-0 h-full bg-[#042940]"
-                        initial={{ width: "0%" }}
-                        animate={{ width: "60%" }}
-                        transition={{ duration: 0.5 }}
-                      />
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
-              <Button 
-                size="lg"
-                className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
-                data-testid="button-join-cta"
-              >
-                Apply Today
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto border-[#042940]/20 text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
-                data-testid="button-join-phone"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                (123) 456 - 7890
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
