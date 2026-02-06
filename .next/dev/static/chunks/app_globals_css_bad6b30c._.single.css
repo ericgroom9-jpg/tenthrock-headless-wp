@@ -1835,6 +1835,10 @@ h1, h3, h4, h5, h6, h2 {
   width: 1px;
 }
 
+.w-\[280px\] {
+  width: 280px;
+}
+
 .w-\[320px\] {
   width: 320px;
 }

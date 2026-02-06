@@ -31,10 +31,17 @@ const sectorLinks = [
   { label: "Retail", href: "/industries/retail" },
 ];
 
+const aboutLinks = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Process", href: "/our-process" },
+  { label: "Join Our Network", href: "/join-our-network" },
+];
+
 export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSectorsOpen, setIsSectorsOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const isFloating = variant === "floating";
 
@@ -198,9 +205,68 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               </AnimatePresence>
             </div>
 
-            <a href="/our-process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Our Process</a>
-            <a href="/about" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">About Us</a>
-            <a href="/join-our-network" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2" data-testid="link-nav-join-network">Join Our Network</a>
+            {/* About Us Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsAboutOpen(true)}
+              onMouseLeave={() => setIsAboutOpen(false)}
+            >
+              <div
+                className="inline-flex items-center gap-1 min-h-[44px]"
+                data-testid="button-nav-about"
+              >
+                <a
+                  href="/about"
+                  className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+                >
+                  About Us
+                </a>
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={isAboutOpen}
+                  onClick={() => setIsAboutOpen((v) => !v)}
+                  className="p-1 hover:text-[#c5d520] transition-colors"
+                  aria-label="Toggle about menu"
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isAboutOpen ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+
+              <AnimatePresence>
+                {isAboutOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                    transition={{ duration: 0.16, ease: "easeOut" }}
+                    className="absolute left-0 top-[calc(100%+14px)] w-[280px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    role="menu"
+                    data-testid="menu-nav-about"
+                  >
+                    <div className="p-3">
+                      <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
+                        About
+                      </div>
+                      <div className="grid gap-1">
+                        {aboutLinks.map((item) => (
+                          <a
+                            key={item.label}
+                            href={item.href}
+                            data-testid={`link-nav-about-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
+                            onClick={() => setIsAboutOpen(false)}
+                          >
+                            <span className="pr-3">{item.label}</span>
+                            <ChevronRight className="w-4 h-4 text-primary/40" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           {/* Right Side Actions - desktop only */}
@@ -334,28 +400,55 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   </AnimatePresence>
                 </div>
 
-                <a 
-                  href="/our-process" 
-                  className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
-                  onClick={() => setIsNavExpanded(false)}
-                >
-                  Our Process
-                </a>
-                <a 
-                  href="/about" 
-                  className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
-                  onClick={() => setIsNavExpanded(false)}
-                >
-                  About Us
-                </a>
-                <a 
-                  href="/join-our-network" 
-                  className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
-                  onClick={() => setIsNavExpanded(false)}
-                  data-testid="link-mobile-join-network"
-                >
-                  Join Our Network
-                </a>
+                {/* About Us Accordion */}
+                <div>
+                  <div
+                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
+                    data-testid="button-mobile-about"
+                  >
+                    <a
+                      href="/about"
+                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      onClick={() => setIsNavExpanded(false)}
+                    >
+                      About Us
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setIsAboutOpen(!isAboutOpen)}
+                      aria-expanded={isAboutOpen}
+                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      aria-label="Toggle about submenu"
+                    >
+                      <ChevronDown className={`w-5 h-5 transition-transform ${isAboutOpen ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
+                  <AnimatePresence>
+                    {isAboutOpen && (
+                      <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 pb-2">
+                          {aboutLinks.map((item) => (
+                            <a
+                              key={item.label}
+                              href={item.href}
+                              className="block font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
+                              onClick={() => { setIsNavExpanded(false); setIsAboutOpen(false); }}
+                              data-testid={`link-mobile-about-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            >
+                              {item.label}
+                            </a>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
                 <div className="pt-3 mt-2 border-t border-gray-100">
                   <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] mb-2">
