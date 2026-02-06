@@ -5060,14 +5060,14 @@ const imgServiceMaintenance = "/images/stock/service-maintenance.jpg";
 const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
 const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.jpg";
 // Stock images for industries
-const imgIndustryEducational = "/images/stock/university.jpg";
-const imgIndustryStadiumsEvents = "/images/stock/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/stock/church.jpg";
-const imgIndustryMunicipalities = "/images/stock/clean-city.jpg";
-const imgIndustryHospitality = "/images/stock/industry-hospitality.jpg";
-const imgIndustryNaturalDisasters = "/images/stock/industry-natural-disasters.jpg";
-const imgIndustryRealEstate = "/images/stock/industry-real-estate.jpg";
-const imgIndustryRetail = "/images/stock/hotel.jpg";
+const imgIndustryEducational = "/assets_export/stock_images/harvard-university-cambridge-usa_1768502414325.jpg";
+const imgIndustryStadiumsEvents = "/assets_export/stock_images/industry-stadiums-events.jpg";
+const imgIndustryFaithBased = "/assets_export/stock_images/panoramic-view-church-building_1768502470001.jpg";
+const imgIndustryMunicipalities = "/assets_export/stock_images/clean_city_street.jpg";
+const imgIndustryHospitality = "/assets_export/stock_images/industry-hospitality.jpg";
+const imgIndustryNaturalDisasters = "/assets_export/stock_images/industry-natural-disasters.jpg";
+const imgIndustryRealEstate = "/assets_export/stock_images/industry-real-estate.jpg";
+const imgIndustryRetail = "/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg";
 // Decorative/Section-specific images
 const imgTruck = "/images/stock/white-truck.jpg";
 const imgCleanCity = "/images/stock/clean-city.jpg";
