@@ -76,9 +76,9 @@ const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.
 // Stock images for industries
 const imgIndustryEducational = "/images/stock/university.jpg";
 const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/stock/church.jpg";
+const imgIndustryFaithBased = "/images/stock/industry-faith-based.jpg";
 const imgIndustryMunicipalities = "/images/stock/clean-city.jpg";
-const imgIndustryHospitality = "/images/industries/industry-hospitality.jpg";
+const imgIndustryHospitality = "/images/stock/industry-hospitality.jpg";
 const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
 const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
 const imgIndustryRetail = "/images/stock/hotel.jpg";
