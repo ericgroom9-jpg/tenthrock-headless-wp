@@ -162,7 +162,7 @@ export default function CommercialWasteServices() {
                   className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full whitespace-nowrap"
                   data-testid="button-hero-cta"
                 >
-                  Get a Quote
+                  Request a Service
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 

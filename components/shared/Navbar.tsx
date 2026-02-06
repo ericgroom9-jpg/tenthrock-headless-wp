@@ -63,7 +63,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               className="bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4"
               data-testid="button-mobile-cta"
             >
-              Get a Quote
+              Request a Service
             </Button>
             <button 
               className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[52px] min-h-[52px] flex items-center justify-center"
@@ -283,7 +283,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               Login
             </Button>
             <Button size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
-              Get a Quote
+              Request a Service
             </Button>
           </div>
         </div>

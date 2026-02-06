@@ -279,7 +279,7 @@ function Navbar({ variant = "floating" }) {
                                     size: "sm",
                                     className: "bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4",
                                     "data-testid": "button-mobile-cta",
-                                    children: "Get a Quote"
+                                    children: "Request a Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
                                     lineNumber: 61,
@@ -770,7 +770,7 @@ function Navbar({ variant = "floating" }) {
                                     size: "lg",
                                     className: "bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap",
                                     "data-testid": "button-desktop-cta",
-                                    children: "Get a Quote"
+                                    children: "Request a Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
                                     lineNumber: 285,
