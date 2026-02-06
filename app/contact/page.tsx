@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import { Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
@@ -84,74 +82,130 @@ function ContactSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="border-t border-[#042940]/10 pt-12 lg:border-t-0 lg:pt-0 lg:pl-16 xl:pl-24 lg:border-l lg:border-[#042940]/10"
           >
-            <form className="space-y-6" data-testid="form-contact">
-              <div>
-                <label htmlFor="contact-name" className="block text-sm font-bold text-[#042940] mb-2">Name</label>
-                <Input
-                  id="contact-name"
-                  placeholder=""
-                  className="border-[#042940]/15 focus-visible:ring-[#c5d520]"
-                  data-testid="input-contact-name"
-                  required
-                />
+            <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
+              <div className="mb-6">
+                <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2" data-testid="text-form-heading">Request a Quote</h3>
+                <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
               </div>
+              <form className="space-y-5" data-testid="form-contact">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="contact-first-name" className="block text-sm font-medium text-[#042940] mb-2">
+                      First name
+                    </label>
+                    <Input
+                      id="contact-first-name"
+                      type="text"
+                      className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
+                      data-testid="input-contact-first-name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contact-last-name" className="block text-sm font-medium text-[#042940] mb-2">
+                      Last name
+                    </label>
+                    <Input
+                      id="contact-last-name"
+                      type="text"
+                      className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
+                      data-testid="input-contact-last-name"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label htmlFor="contact-email" className="block text-sm font-bold text-[#042940] mb-2">Email</label>
-                <Input
-                  id="contact-email"
-                  type="email"
-                  placeholder=""
-                  className="border-[#042940]/15 focus-visible:ring-[#c5d520]"
-                  data-testid="input-contact-email"
-                  required
-                />
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-[#042940] mb-2">
+                      Email
+                    </label>
+                    <Input
+                      id="contact-email"
+                      type="email"
+                      className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
+                      data-testid="input-contact-email"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contact-phone" className="block text-sm font-medium text-[#042940] mb-2">
+                      Phone number
+                    </label>
+                    <Input
+                      id="contact-phone"
+                      type="tel"
+                      className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
+                      data-testid="input-contact-phone"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label htmlFor="contact-phone" className="block text-sm font-bold text-[#042940] mb-2">+1 Phone Number</label>
-                <Input
-                  id="contact-phone"
-                  type="tel"
-                  placeholder=""
-                  className="border-[#042940]/15 focus-visible:ring-[#c5d520]"
-                  data-testid="input-contact-phone"
-                  required
-                />
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="contact-company" className="block text-sm font-medium text-[#042940] mb-2">
+                      Company
+                    </label>
+                    <Input
+                      id="contact-company"
+                      type="text"
+                      className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
+                      data-testid="input-contact-company"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contact-interest" className="block text-sm font-medium text-[#042940] mb-2">
+                      I'm interested in help with:
+                    </label>
+                    <select
+                      id="contact-interest"
+                      className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
+                      data-testid="select-contact-interest"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>Select one...</option>
+                      <option value="waste-removal">Waste Removal</option>
+                      <option value="dumpster-rental">Dumpster Rental</option>
+                      <option value="emergency">Emergency Services</option>
+                      <option value="decommissioning">Store Decommissioning</option>
+                      <option value="consulting">Waste Consulting</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
 
-              <div>
-                <label htmlFor="contact-message" className="block text-sm font-bold text-[#042940] mb-2">What can we help you with?</label>
-                <Textarea
-                  id="contact-message"
-                  rows={6}
-                  placeholder="Type your message..."
-                  className="border-[#042940]/15 focus-visible:ring-[#c5d520] resize-vertical"
-                  data-testid="input-contact-message"
-                />
-              </div>
+                <div>
+                  <label htmlFor="contact-message" className="block text-sm font-medium text-[#042940] mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="contact-message"
+                    rows={4}
+                    placeholder="Type your message..."
+                    className="w-full px-4 py-3 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none resize-none transition-colors"
+                    data-testid="textarea-contact-message"
+                  />
+                </div>
 
-              <div className="flex items-center gap-3" data-testid="label-contact-terms">
-                <Checkbox
-                  id="contact-terms"
-                  className="border-[#042940]/20 data-[state=checked]:bg-[#c5d520] data-[state=checked]:border-[#c5d520] data-[state=checked]:text-[#042940]"
-                  data-testid="input-contact-terms"
-                />
-                <label htmlFor="contact-terms" className="text-sm text-[#042940]/60 cursor-pointer">
-                  I accept the{" "}
-                  <a href="#" className="text-[#042940] underline font-bold" data-testid="link-terms">Terms</a>
-                </label>
-              </div>
-
-              <Button
-                type="submit"
-                size="lg"
-                className="bg-[#c5d520] text-[#042940] shadow-lg min-h-[52px] whitespace-nowrap font-bold"
-                data-testid="button-contact-submit"
-              >
-                Submit
-              </Button>
-            </form>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-[#042940]/10">
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]"
+                      data-testid="checkbox-contact-terms"
+                    />
+                    <span className="text-sm text-[#042940]/80">
+                      I accept the <a href="/terms" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors" data-testid="link-contact-terms">Terms</a>
+                    </span>
+                  </label>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+                    data-testid="button-contact-submit"
+                  >
+                    Submit Request
+                  </Button>
+                </div>
+              </form>
+            </div>
           </motion.div>
         </div>
       </div>

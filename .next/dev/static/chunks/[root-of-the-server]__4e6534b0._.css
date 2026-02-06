@@ -2673,10 +2673,6 @@ h1, h3, h4, h5, h6, h2 {
   border-color: #0429401a;
 }
 
-.border-\[\#042940\]\/15 {
-  border-color: #04294026;
-}
-
 .border-\[\#042940\]\/20 {
   border-color: #04294033;
 }
@@ -5526,11 +5522,6 @@ h1, h3, h4, h5, h6, h2 {
   flex-direction: column;
 }
 
-.data-\[state\=checked\]\:border-\[\#c5d520\][data-state="checked"] {
-  --tw-border-opacity: 1;
-  border-color: rgb(197 213 32 / var(--tw-border-opacity, 1));
-}
-
 .data-\[active\=true\]\:bg-sidebar-accent[data-active="true"] {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--sidebar-accent) / var(--tw-bg-opacity, 1));
@@ -5544,11 +5535,6 @@ h1, h3, h4, h5, h6, h2 {
 .data-\[state\=active\]\:bg-background[data-state="active"] {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--background) / var(--tw-bg-opacity, 1));
-}
-
-.data-\[state\=checked\]\:bg-\[\#c5d520\][data-state="checked"] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(197 213 32 / var(--tw-bg-opacity, 1));
 }
 
 .data-\[state\=checked\]\:bg-primary[data-state="checked"] {
@@ -5611,11 +5597,6 @@ h1, h3, h4, h5, h6, h2 {
 .data-\[state\=active\]\:text-foreground[data-state="active"] {
   --tw-text-opacity: 1;
   color: hsl(var(--foreground) / var(--tw-text-opacity, 1));
-}
-
-.data-\[state\=checked\]\:text-\[\#042940\][data-state="checked"] {
-  --tw-text-opacity: 1;
-  color: rgb(4 41 64 / var(--tw-text-opacity, 1));
 }
 
 .data-\[state\=checked\]\:text-primary-foreground[data-state="checked"] {
