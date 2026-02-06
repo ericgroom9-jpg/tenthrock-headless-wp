@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +19,13 @@ export default function ContactPage() {
 }
 
 function ContactSection() {
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/contact/thank-you");
+  };
+
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white" data-testid="section-contact">
       <div className="container mx-auto px-4 md:px-8">
@@ -87,7 +95,7 @@ function ContactSection() {
                 <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2" data-testid="text-form-heading">Request a Quote</h3>
                 <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
               </div>
-              <form className="space-y-5" data-testid="form-contact">
+              <form className="space-y-5" data-testid="form-contact" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="contact-first-name" className="block text-sm font-medium text-[#042940] mb-2">

@@ -6189,6 +6189,11 @@ h1, h3, h4, h5, h6, h2 {
     padding-bottom: 5rem;
   }
 
+  .sm\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
   .sm\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -6214,6 +6219,11 @@ h1, h3, h4, h5, h6, h2 {
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .sm\:text-base {
@@ -6439,6 +6449,11 @@ h1, h3, h4, h5, h6, h2 {
   .md\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .md\:py-40 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
   }
 
   .md\:py-6 {
@@ -6842,6 +6857,11 @@ h1, h3, h4, h5, h6, h2 {
     padding-bottom: 9rem;
   }
 
+  .lg\:py-48 {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
   .lg\:pl-16 {
     padding-left: 4rem;
   }
@@ -6877,6 +6897,11 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:text-6xl {
     font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
     line-height: 1;
   }
 }
