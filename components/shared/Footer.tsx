@@ -69,7 +69,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="font-bold text-lg mb-6 text-white">Services</h3>
-            <ul className="space-y-2 text-white/60">
+            <ul className="space-y-2 text-white/60 text-sm">
               {serviceLinks.map((service) => (
                 <li key={service.href}>
                   <Link href={service.href} className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid={`link-footer-service-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
@@ -88,7 +88,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="font-bold text-lg mb-6 text-white">Industries</h3>
-            <ul className="space-y-2 text-white/60">
+            <ul className="space-y-2 text-white/60 text-sm">
               {industryLinks.map((industry) => (
                 <li key={industry.href}>
                   <Link href={industry.href} className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid={`link-footer-industry-${industry.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
@@ -107,7 +107,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
-            <ul className="space-y-2 text-white/60">
+            <ul className="space-y-2 text-white/60 text-sm">
               <li><Link href="/about" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-about">About Us</Link></li>
               <li><Link href="/our-process" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-process">Our Process</Link></li>
               <li><Link href="/who-we-serve" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-who-we-serve">Who We Serve</Link></li>
