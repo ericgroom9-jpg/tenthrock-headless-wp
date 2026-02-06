@@ -63,7 +63,7 @@ export default function CaseStudySection() {
             transition={{ duration: 0.6 }}
             className="lg:pl-8 order-1 lg:order-2"
           >
-            <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">
+            <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">
               Case Study: <br/>Urban Redevelopment
             </h2>
             <p className="text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed">

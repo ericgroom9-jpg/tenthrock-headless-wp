@@ -39,7 +39,7 @@ function RequestAServiceSection() {
             className="lg:pr-16 xl:pr-24"
           >
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6"
               data-testid="text-request-heading"
             >
               Request A Service
@@ -57,7 +57,7 @@ function RequestAServiceSection() {
 
             <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
               <h2
-                className="text-xl md:text-2xl font-bold text-[#042940] mb-6"
+                className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight"
                 data-testid="text-request-contact-subheading"
               >
                 Contact

@@ -66,7 +66,7 @@ export default function IndustryTemplate({
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 tracking-tighter leading-[1.1]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 tracking-tighter leading-[1.05]">
                 {industryName}
               </h1>
               <p className="text-base text-white mb-6 sm:mb-8 max-w-xl leading-relaxed">
@@ -106,7 +106,7 @@ export default function IndustryTemplate({
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-medium text-[#042940] mb-8 md:mb-12 tracking-tighter leading-tight">
+                <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-8 md:mb-12 tracking-tighter leading-tight">
                   {aboutTitle}
                 </h2>
 

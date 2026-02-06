@@ -226,7 +226,7 @@ function FormSection() {
         >
           <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8 md:p-12">
             <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-2" data-testid="text-join-form-heading">
+              <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter leading-tight mb-2" data-testid="text-join-form-heading">
                 Personal + Company Information
               </h2>
               <p className="text-[#042940]/60">

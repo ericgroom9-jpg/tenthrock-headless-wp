@@ -31,7 +31,7 @@ function ThankYouSection() {
           className="flex flex-col items-center text-center max-w-2xl mx-auto"
         >
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#042940] leading-[1.1] mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6"
             data-testid="text-thank-you-heading"
           >
             Thank You.

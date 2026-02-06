@@ -19,7 +19,7 @@ export default function Blog() {
         <div className="container max-w-7xl mx-auto px-4">
           <div className="mb-12">
             <h1 
-              className="text-4xl md:text-5xl font-bold tracking-tight mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tighter leading-[1.05] mb-4"
               data-testid="text-page-title"
             >
               Blog

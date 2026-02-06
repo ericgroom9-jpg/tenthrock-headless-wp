@@ -505,7 +505,7 @@ export default function CommercialWasteServices() {
                 transition={{ duration: 0.6 }}
                 className="lg:pl-8 order-1 lg:order-2"
               >
-                <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter">
+                <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight">
                   Case Study Title
                 </h2>
                 <p className="text-lg text-[#042940]/70 mb-8 md:mb-12 leading-relaxed">
@@ -548,7 +548,7 @@ export default function CommercialWasteServices() {
                 <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
                 Common Questions
               </div>
-              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter">Frequently Asked Questions</h2>
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter leading-tight">Frequently Asked Questions</h2>
               <p className="text-lg text-[#042940]/60 max-w-2xl mx-auto">
                 Everything you need to know about our commercial waste services. Can't find the answer you're looking for? Reach out to our team.
               </p>
@@ -698,7 +698,7 @@ export default function CommercialWasteServices() {
               <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
                 <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2" />
                 
-                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
+                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-tight tracking-tighter">
                   Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
                 </h2>
                 <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">

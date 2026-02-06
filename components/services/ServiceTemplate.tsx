@@ -748,7 +748,7 @@ export default function ServiceTemplate({
                 transition={{ duration: 0.6 }}
                 className="lg:pl-8 order-1 lg:order-2"
               >
-                <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">
+                <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">
                   {caseStudy.title}
                 </h2>
                 <p className="text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed">
@@ -789,7 +789,7 @@ export default function ServiceTemplate({
                 <span className="w-2 h-2 rounded-full bg-secondary"></span>
                 Common Questions
               </div>
-              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">Frequently Asked Questions</h2>
               <p className="text-lg text-primary/60 max-w-2xl mx-auto">
                 Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
               </p>
@@ -940,7 +940,7 @@ export default function ServiceTemplate({
               <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
                 <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
                 
-                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
+                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-tight tracking-tighter">
                   Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
                 </h2>
                 <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">

@@ -51,7 +51,7 @@ export default function FaqSection({ faqs = defaultFaqs }: FaqSectionProps) {
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Common Questions
           </div>
-          <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">Frequently Asked Questions</h2>
           <p className="text-lg text-primary/60 max-w-2xl mx-auto">
             Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
           </p>

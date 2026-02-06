@@ -136,7 +136,7 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
         <div className="container max-w-4xl mx-auto px-4">
           <article>
             <h1 
-              className="text-3xl md:text-4xl font-bold mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tighter leading-[1.05] mb-8"
               data-testid="text-page-title"
             >
               {page.title}

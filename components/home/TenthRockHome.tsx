@@ -171,7 +171,7 @@ const Hero = () => {
             Nationwide Commercial Waste Solutions
           </div>
 
-          <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[5rem] font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg" style={{ textWrap: "balance" }}>
+          <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5" style={{ textWrap: "balance" }}>
             Fast, Reliable Waste Solutions—Anywhere You Need Them
           </h1>
           
@@ -440,7 +440,7 @@ const WhyUs = () => {
              transition={{ duration: 0.8 }}
              className="flex flex-col justify-center order-1 lg:order-2"
            >
-             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] leading-tight mb-8 md:mb-12 tracking-tighter">
+             <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-8 md:mb-12 tracking-tighter">
                Why You’ll Love Tenth Rock Solutions
              </h2>
              
@@ -663,7 +663,7 @@ const Faq = () => {
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               Common Questions
           </div>
-          <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">Frequently Asked Questions</h2>
           <p className="text-lg text-primary/60 max-w-2xl mx-auto">
             Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
           </p>

@@ -145,7 +145,7 @@ export default function LocationTemplatePage() {
                   >
                     <h2
                       id={idx === 0 ? "about-location-heading" : undefined}
-                      className="text-3xl md:text-4xl font-medium text-primary tracking-tighter text-left"
+                      className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight text-left"
                     >
                       {section.title}
                     </h2>

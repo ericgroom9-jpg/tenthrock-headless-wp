@@ -38,7 +38,7 @@ function ContactSection() {
             transition={{ duration: 0.6 }}
             className="lg:pr-16 xl:pr-24"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6" data-testid="text-contact-heading">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6" data-testid="text-contact-heading">
               Contact Us
             </h1>
             <div className="space-y-4 mb-12">
@@ -53,7 +53,7 @@ function ContactSection() {
             </div>
 
             <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#042940] mb-6" data-testid="text-contact-subheading">
+              <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight" data-testid="text-contact-subheading">
                 Contact
               </h2>
               <div className="space-y-5">

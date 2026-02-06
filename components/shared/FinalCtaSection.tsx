@@ -21,7 +21,7 @@ export default function FinalCtaSection() {
              <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
                 <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
                 
-                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
+                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-tight tracking-tighter">
                   Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
                 </h2>
                 <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">

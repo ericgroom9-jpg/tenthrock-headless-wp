@@ -2850,7 +2850,7 @@ function FaqSection({ faqs = defaultFaqs }) {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 id: "faq-heading",
-                                className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter",
+                                className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight",
                                 children: "Frequently Asked Questions"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
@@ -3655,7 +3655,7 @@ function FinalCtaSection() {
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter",
+                                className: "text-4xl md:text-5xl font-medium text-white mb-4 leading-tight tracking-tighter",
                                 children: [
                                     "Streamline Your ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3955,7 +3955,7 @@ function CaseStudySection() {
                         className: "lg:pl-8 order-1 lg:order-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter",
+                                className: "text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight",
                                 children: [
                                     "Case Study: ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
@@ -4231,7 +4231,7 @@ function WhoWeHelpSection() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             id: "sectors-heading",
-                            className: "text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter",
+                            className: "text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight",
                             children: "Who We Help"
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
@@ -5091,7 +5091,7 @@ const Hero = ()=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                             id: "hero-heading",
-                            className: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[5rem] font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg",
+                            className: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5",
                             style: {
                                 textWrap: "balance"
                             },
@@ -5757,7 +5757,7 @@ const WhyUs = ()=>{
                         className: "flex flex-col justify-center order-1 lg:order-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] leading-tight mb-8 md:mb-12 tracking-tighter",
+                                className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-8 md:mb-12 tracking-tighter",
                                 children: "Why You’ll Love Tenth Rock Solutions"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6448,7 +6448,7 @@ const Faq = ()=>{
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 id: "faq-heading",
-                                className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter",
+                                className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight",
                                 children: "Frequently Asked Questions"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",

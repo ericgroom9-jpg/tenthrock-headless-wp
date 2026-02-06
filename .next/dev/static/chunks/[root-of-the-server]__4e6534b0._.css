@@ -3611,10 +3611,6 @@ h1, h3, h4, h5, h6, h2 {
   line-height: 1.05;
 }
 
-.leading-\[1\.1\] {
-  line-height: 1.1;
-}
-
 .leading-none {
   line-height: 1;
 }
@@ -6371,16 +6367,6 @@ h1, h3, h4, h5, h6, h2 {
     line-height: 2rem;
   }
 
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -6667,10 +6653,6 @@ h1, h3, h4, h5, h6, h2 {
   .md\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .md\:text-\[2\.75rem\] {
-    font-size: 2.75rem;
   }
 
   .md\:text-lg {
@@ -7054,11 +7036,6 @@ h1, h3, h4, h5, h6, h2 {
     font-size: 3.75rem;
     line-height: 1;
   }
-
-  .lg\:text-7xl {
-    font-size: 4.5rem;
-    line-height: 1;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -7085,12 +7062,6 @@ h1, h3, h4, h5, h6, h2 {
   .xl\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32 xl\:text-\[5rem\] {
-    font-size: 5rem;
   }
 }
 

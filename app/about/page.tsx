@@ -54,7 +54,7 @@ export default function AboutPage() {
               </span>
               <h1 
                 id="our-story-heading"
-                className="text-4xl md:text-5xl lg:text-6xl font-medium text-primary leading-[1.1] tracking-tighter"
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-primary leading-[1.05] tracking-tighter"
               >
                 Tell the Story of How Your Company Came About
               </h1>
