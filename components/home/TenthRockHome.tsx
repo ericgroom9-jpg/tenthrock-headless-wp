@@ -74,14 +74,14 @@ const imgServiceStoreDecommissioning = "/images/stock/service-store-decommission
 const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.jpg";
 
 // Stock images for industries
-const imgIndustryEducational = "/images/industries/industry-educational.jpg";
+const imgIndustryEducational = "/images/stock/university.jpg";
 const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/industries/industry-faith-based.jpg";
-const imgIndustryMunicipalities = "/images/industries/industry-municipalities.jpg";
+const imgIndustryFaithBased = "/images/stock/church.jpg";
+const imgIndustryMunicipalities = "/images/stock/clean-city.jpg";
 const imgIndustryHospitality = "/images/industries/industry-hospitality.jpg";
 const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
 const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
-const imgIndustryRetail = "/images/industries/industry-retail.jpg";
+const imgIndustryRetail = "/images/stock/hotel.jpg";
 
 // Decorative/Section-specific images
 const imgTruck = "/images/stock/white-truck.jpg";

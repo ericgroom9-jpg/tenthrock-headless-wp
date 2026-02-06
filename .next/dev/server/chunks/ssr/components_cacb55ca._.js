@@ -4106,13 +4106,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 const sectors = [
     {
         title: "Educational",
-        img: "/images/industries/industry-educational.jpg",
+        img: "/images/stock/university.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$graduation$2d$cap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__GraduationCap$3e$__["GraduationCap"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 8,
-            columnNumber: 85
+            columnNumber: 70
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/educational"
     },
@@ -4130,25 +4130,25 @@ const sectors = [
     },
     {
         title: "Faith Based",
-        img: "/images/industries/industry-faith-based.jpg",
+        img: "/images/stock/church.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$heart$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Heart$3e$__["Heart"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 10,
-            columnNumber: 85
+            columnNumber: 66
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/faith-based"
     },
     {
         title: "Municipalities",
-        img: "/images/industries/industry-municipalities.jpg",
+        img: "/images/stock/clean-city.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$landmark$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Landmark$3e$__["Landmark"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 11,
-            columnNumber: 91
+            columnNumber: 73
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/municipalities"
     },
@@ -4190,13 +4190,13 @@ const sectors = [
     },
     {
         title: "Retail",
-        img: "/images/industries/industry-retail.jpg",
+        img: "/images/stock/hotel.jpg",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__["Store"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
             lineNumber: 15,
-            columnNumber: 75
+            columnNumber: 60
         }, ("TURBOPACK compile-time value", void 0)),
         href: "/industries/retail"
     }
@@ -4936,14 +4936,14 @@ const imgServiceMaintenance = "/images/stock/service-maintenance.jpg";
 const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
 const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.jpg";
 // Stock images for industries
-const imgIndustryEducational = "/images/industries/industry-educational.jpg";
+const imgIndustryEducational = "/images/stock/university.jpg";
 const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/industries/industry-faith-based.jpg";
-const imgIndustryMunicipalities = "/images/industries/industry-municipalities.jpg";
+const imgIndustryFaithBased = "/images/stock/church.jpg";
+const imgIndustryMunicipalities = "/images/stock/clean-city.jpg";
 const imgIndustryHospitality = "/images/industries/industry-hospitality.jpg";
 const imgIndustryNaturalDisasters = "/images/industries/industry-natural-disasters.jpg";
 const imgIndustryRealEstate = "/images/industries/industry-real-estate.jpg";
-const imgIndustryRetail = "/images/industries/industry-retail.jpg";
+const imgIndustryRetail = "/images/stock/hotel.jpg";
 // Decorative/Section-specific images
 const imgTruck = "/images/stock/white-truck.jpg";
 const imgCleanCity = "/images/stock/clean-city.jpg";

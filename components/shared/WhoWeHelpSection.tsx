@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
-  { title: "Educational", img: "/images/industries/industry-educational.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
+  { title: "Educational", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
   { title: "Stadiums & Events", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
-  { title: "Faith Based", img: "/images/industries/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
-  { title: "Municipalities", img: "/images/industries/industry-municipalities.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
+  { title: "Faith Based", img: "/images/stock/church.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
+  { title: "Municipalities", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
   { title: "Hospitality", img: "/images/industries/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
   { title: "Natural Disasters", img: "/images/industries/industry-natural-disasters.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
   { title: "Real Estate", img: "/images/industries/industry-real-estate.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
-  { title: "Retail", img: "/images/industries/industry-retail.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" }
+  { title: "Retail", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" }
 ];
 
 export default function WhoWeHelpSection() {
