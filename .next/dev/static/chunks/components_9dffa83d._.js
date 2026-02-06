@@ -2191,14 +2191,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 ;
 ;
 ;
-const features = [
+const defaultFeatures = [
     {
         title: "Dedicated Point of Contact",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$headset$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Headset$3e$__["Headset"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/ReasonsSection.tsx",
-            lineNumber: 8,
+            lineNumber: 24,
             columnNumber: 48
         }, ("TURBOPACK compile-time value", void 0)),
         desc: "One person to handle everything. No call centers, no runarounds, just answers."
@@ -2209,7 +2209,7 @@ const features = [
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/ReasonsSection.tsx",
-            lineNumber: 9,
+            lineNumber: 25,
             columnNumber: 42
         }, ("TURBOPACK compile-time value", void 0)),
         desc: "Visual confirmation for every job we complete, available instantly."
@@ -2220,7 +2220,7 @@ const features = [
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/ReasonsSection.tsx",
-            lineNumber: 10,
+            lineNumber: 26,
             columnNumber: 49
         }, ("TURBOPACK compile-time value", void 0)),
         desc: "We operate in every zip code across the country with vetted local partners."
@@ -2231,15 +2231,16 @@ const features = [
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/ReasonsSection.tsx",
-            lineNumber: 11,
+            lineNumber: 27,
             columnNumber: 48
         }, ("TURBOPACK compile-time value", void 0)),
         desc: "Volume pricing passed directly to your bottom line, typically saving 15-20%."
     }
 ];
-function ReasonsSection() {
+function ReasonsSection({ tagline = "Benefits", heading = "More Reasons You'll Love Us", subtitle = "We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.", buttonText = "Request a Service", features = defaultFeatures, testIdPrefix = "reasons" }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-16 md:py-24 bg-[#F8F8F8]",
+        "data-testid": `section-${testIdPrefix}`,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-4 md:px-8",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2270,50 +2271,52 @@ function ReasonsSection() {
                                             className: "w-2 h-2 rounded-full bg-secondary"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                            lineNumber: 28,
+                                            lineNumber: 50,
                                             columnNumber: 19
                                         }, this),
-                                        "Benefits"
+                                        tagline
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                    lineNumber: 27,
+                                    lineNumber: 49,
                                     columnNumber: 16
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter",
-                                    children: "More Reasons You'll Love Us"
+                                    "data-testid": `text-${testIdPrefix}-heading`,
+                                    children: heading
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                    lineNumber: 31,
+                                    lineNumber: 53,
                                     columnNumber: 16
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-primary/60 mb-8 leading-relaxed",
-                                    children: "We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts."
+                                    children: subtitle
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 56,
                                     columnNumber: 16
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                     size: "lg",
                                     className: "w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full",
-                                    children: "Request a Service"
+                                    "data-testid": `button-${testIdPrefix}-cta`,
+                                    children: buttonText
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 59,
                                     columnNumber: 16
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/ReasonsSection.tsx",
-                            lineNumber: 21,
+                            lineNumber: 43,
                             columnNumber: 14
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/shared/ReasonsSection.tsx",
-                        lineNumber: 20,
+                        lineNumber: 42,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2338,13 +2341,14 @@ function ReasonsSection() {
                                 viewport: {
                                     once: true
                                 },
+                                "data-testid": `${testIdPrefix}-card-${i}`,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "w-14 h-14 rounded-[5px] bg-[#F9F9F6] group-hover:bg-secondary group-hover:text-primary transition-colors duration-300 flex items-center justify-center text-primary mb-6",
                                         children: item.icon
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 77,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2352,7 +2356,7 @@ function ReasonsSection() {
                                         children: item.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 81,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2360,34 +2364,34 @@ function ReasonsSection() {
                                         children: item.desc
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, i, true, {
                                 fileName: "[project]/components/shared/ReasonsSection.tsx",
-                                lineNumber: 46,
+                                lineNumber: 67,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/shared/ReasonsSection.tsx",
-                        lineNumber: 44,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shared/ReasonsSection.tsx",
-                lineNumber: 18,
+                lineNumber: 41,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/shared/ReasonsSection.tsx",
-            lineNumber: 17,
+            lineNumber: 40,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/ReasonsSection.tsx",
-        lineNumber: 16,
+        lineNumber: 39,
         columnNumber: 5
     }, this);
 }

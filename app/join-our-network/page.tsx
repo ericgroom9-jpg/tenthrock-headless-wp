@@ -16,6 +16,7 @@ import FaqSection from "@/components/shared/FaqSection";
 import LogoReelSection from "@/components/shared/LogoReelSection";
 import TestimonialsSection from "@/components/shared/TestimonialsSection";
 import ProcessSection from "@/components/shared/ProcessSection";
+import ReasonsSection from "@/components/shared/ReasonsSection";
 
 const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
@@ -104,24 +105,24 @@ const vendorProcessSteps = [
   }
 ];
 
-const values = [
+const vendorFeatures = [
   {
-    icon: Zap,
+    icon: <Zap className="w-6 h-6" />,
     title: "Instant Job Alerts",
     desc: "Receive real-time notifications for jobs in your service area. Never miss an opportunity with our smart dispatch system."
   },
   {
-    icon: Shield,
+    icon: <Shield className="w-6 h-6" />,
     title: "Reliable Payments",
     desc: "Transparent billing and bi-weekly direct deposits. No chasing invoices or dealing with payment delays."
   },
   {
-    icon: Clock,
+    icon: <Clock className="w-6 h-6" />,
     title: "Flexible Scheduling",
     desc: "You control your availability. Accept jobs that fit your capacity and turn down the rest, no penalties."
   },
   {
-    icon: Users,
+    icon: <Users className="w-6 h-6" />,
     title: "Dedicated Support",
     desc: "Your vendor relations manager is one call away. We handle client relationships so you can focus on operations."
   }
@@ -134,7 +135,14 @@ export default function JoinOurNetworkPage() {
       <HeroSection />
       <LogoReelSection headline="Trusted by leading national brands we serve" testIdPrefix="join-logos" />
       <FormSection />
-      <ValuesSection />
+      <ReasonsSection 
+        tagline="Vendor Benefits"
+        heading="More Reasons You'll Love Us"
+        subtitle="We've built the tools and support system to help your waste hauling business grow faster and operate smoother."
+        buttonText="Apply Today"
+        features={vendorFeatures}
+        testIdPrefix="join-reasons"
+      />
       <ProcessSection 
         tagline="Vendor Process"
         heading="How It Works"
@@ -335,53 +343,6 @@ function FormSection() {
             </form>
           </div>
         </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function ValuesSection() {
-  return (
-    <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-join-values">
-      <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-left sm:text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-6 leading-tight" data-testid="text-join-values-heading">
-            More Reasons You'll Love Us
-          </h2>
-          <p className="text-lg text-[#042940]/60">
-            We've built the tools and support system to help your waste hauling business grow faster and operate smoother.
-          </p>
-        </motion.div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {values.map((value, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-left sm:text-center"
-              data-testid={`card-value-${i}`}
-            >
-              <div className="w-12 h-12 rounded-full bg-[#042940]/5 flex items-center justify-center mx-auto sm:mx-auto mb-6">
-                <value.icon className="w-5 h-5 text-[#042940]" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-4">
-                {value.title}
-              </h3>
-              <p className="text-[#042940]/60 leading-relaxed">
-                {value.desc}
-              </p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

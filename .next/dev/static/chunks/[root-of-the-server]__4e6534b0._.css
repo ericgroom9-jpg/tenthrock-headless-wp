@@ -6172,11 +6172,6 @@ h1, h3, h4, h5, h6, h2 {
     top: auto;
   }
 
-  .sm\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .sm\:mb-12 {
     margin-bottom: 3rem;
   }
