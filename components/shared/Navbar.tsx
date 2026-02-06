@@ -33,7 +33,6 @@ const sectorLinks = [
 
 const aboutLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Our Process", href: "/our-process" },
   { label: "Join Our Network", href: "/join-our-network" },
 ];
 
@@ -204,6 +203,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 )}
               </AnimatePresence>
             </div>
+
+            <a href="/our-process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2">Our Process</a>
 
             {/* About Us Dropdown */}
             <div
@@ -399,6 +400,14 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     )}
                   </AnimatePresence>
                 </div>
+
+                <a 
+                  href="/our-process" 
+                  className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
+                  onClick={() => setIsNavExpanded(false)}
+                >
+                  Our Process
+                </a>
 
                 {/* About Us Accordion */}
                 <div>
