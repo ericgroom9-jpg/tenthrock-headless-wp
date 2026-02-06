@@ -108,7 +108,7 @@ export default function LocationsPage() {
           </motion.div>
 
           {/* Cities Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 max-w-4xl mx-auto">
             {stateColumns.map((column, columnIndex) => (
               <motion.div
                 key={columnIndex}
@@ -116,7 +116,7 @@ export default function LocationsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: columnIndex * 0.1 }}
-                className={`space-y-3 sm:space-y-4 ${columnIndex < stateColumns.length - 1 ? 'lg:border-r lg:border-primary/10 lg:pr-6 xl:pr-8' : ''}`}
+                className={`space-y-3 sm:space-y-4 lg:px-6 ${columnIndex < stateColumns.length - 1 ? 'lg:border-r lg:border-primary/10' : ''}`}
               >
                 {column.map((state, stateIndex) => (
                   <a 

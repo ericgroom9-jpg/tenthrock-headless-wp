@@ -6860,10 +6860,6 @@ h1, h3, h4, h5, h6, h2 {
     padding-right: 4rem;
   }
 
-  .lg\:pr-6 {
-    padding-right: 1.5rem;
-  }
-
   .lg\:pt-0 {
     padding-top: 0;
   }
@@ -6902,10 +6898,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .xl\:pr-24 {
     padding-right: 6rem;
-  }
-
-  .xl\:pr-8 {
-    padding-right: 2rem;
   }
 
   .xl\:text-7xl {
