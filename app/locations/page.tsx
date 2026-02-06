@@ -54,7 +54,7 @@ export default function LocationsPage() {
           >
             <h1 
               id="locations-hero-heading"
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg whitespace-nowrap"
             >
               Whenever You Need Us
             </h1>

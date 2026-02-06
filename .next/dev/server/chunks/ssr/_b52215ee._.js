@@ -2083,7 +2083,7 @@ function CommercialWasteServices() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-xl",
+                                            className: "text-base text-white/80 mb-6 sm:mb-8 max-w-xl leading-relaxed",
                                             children: "Comprehensive waste management solutions for businesses of all sizes. From routine collection to emergency response, we handle it all."
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/CommercialWasteServices.tsx",
@@ -3110,7 +3110,7 @@ function CommercialWasteServices() {
                                         className: "lg:pl-8 order-1 lg:order-2",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter",
+                                                className: "text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight",
                                                 children: "Case Study Title"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/CommercialWasteServices.tsx",
@@ -3248,7 +3248,7 @@ function CommercialWasteServices() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                 id: "faq-heading",
-                                                className: "text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter",
+                                                className: "text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter leading-tight",
                                                 children: "Frequently Asked Questions"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/CommercialWasteServices.tsx",
@@ -3687,7 +3687,7 @@ function CommercialWasteServices() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter",
+                                                className: "text-4xl md:text-5xl font-medium text-white mb-4 leading-tight tracking-tighter",
                                                 children: [
                                                     "Streamline Your ",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
