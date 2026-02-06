@@ -59,11 +59,12 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
           {/* Mobile: CTA + Hamburger visible in top bar */}
           <div className="flex items-center gap-2 xl:hidden">
             <Button 
+              asChild
               size="sm" 
               className="bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4"
               data-testid="button-mobile-cta"
             >
-              Request a Service
+              <Link href="/request-a-service">Request a Service</Link>
             </Button>
             <button 
               className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[52px] min-h-[52px] flex items-center justify-center"
@@ -282,8 +283,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             <Button size="lg" variant="ghost" className="text-primary font-extrabold transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-login">
               Login
             </Button>
-            <Button size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
-              Request a Service
+            <Button asChild size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
+              <Link href="/request-a-service">Request a Service</Link>
             </Button>
           </div>
         </div>
