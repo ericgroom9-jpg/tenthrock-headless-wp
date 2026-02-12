@@ -120,29 +120,30 @@ export default function CommercialWasteServices() {
                  {services[activeService].items.map((item, idx) => {
                    const Icon = categoryIcons[activeService];
                    return (
-                     <div
+                     <Link
                        key={idx}
-                       className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-lg transition-shadow min-h-[320px] group"
+                       href={services[activeService].href}
+                       className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[320px] group cursor-pointer block ring-0 hover:ring-2 hover:ring-[#c5d520]/40"
                        data-testid={`card-service-feature-${activeService}-${idx}`}
                      >
                        <img
                          src={item.img}
                          alt={item.label}
-                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                        />
-                       <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/80 to-[#042940]/30"></div>
+                       <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/80 to-[#042940]/30 group-hover:via-[#042940]/70 group-hover:to-[#042940]/20 transition-all duration-300"></div>
                        <div className="relative z-10 p-6 flex flex-col justify-end h-full">
                          <div className="w-10 h-10 rounded-full bg-[#c5d520]/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 mb-4 border border-white/10">
                            <Icon className="w-5 h-5 text-[#c5d520]" />
                          </div>
-                         <h4 className="font-bold text-white text-base leading-snug mb-2">
+                         <h4 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-[#c5d520] transition-colors">
                            {item.label}
                          </h4>
                          <p className="text-white/75 text-sm leading-relaxed">
                            {item.desc}
                          </p>
                        </div>
-                     </div>
+                     </Link>
                    );
                  })}
                </motion.div>
