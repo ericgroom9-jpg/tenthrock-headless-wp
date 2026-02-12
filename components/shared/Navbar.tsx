@@ -158,11 +158,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-0 right-0 top-[80px] bg-[#042940] shadow-2xl z-50"
+                    className="fixed left-0 right-0 top-[80px] z-50 px-4 md:px-8"
                     role="menu"
                     data-testid="menu-nav-services"
                   >
-                    <div className="container mx-auto px-6 md:px-8 py-10">
+                    <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="grid grid-cols-4 gap-8">
                         {serviceCategories.map((cat, catIdx) => (
                           <div key={catIdx} className="space-y-3">
