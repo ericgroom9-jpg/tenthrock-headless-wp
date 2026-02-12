@@ -11,13 +11,39 @@ interface NavbarProps {
   variant?: "floating" | "sticky";
 }
 
-const serviceLinks = [
-  { label: "Emergency & Overflow Waste Response", href: "/services/emergency-waste-removal" },
-  { label: "Store Decommissioning & Remodel Support", href: "/services/store-decommissioning" },
-  { label: "Event & Stadium Waste Logistics", href: "/services/event-stadium" },
-  { label: "Dumpster Rental & Temporary Containers", href: "/services/dumpster-rentals" },
-  { label: "Centralized Waste Program Management", href: "/services/centralized-programs" },
-  { label: "Environmental & Compactor Maintenance Services", href: "/services/environmental-maintenance" },
+const serviceCategories = [
+  {
+    category: "Emergency Waste Response",
+    items: [
+      { label: "Site Stabilization", href: "/services/site-stabilization" },
+      { label: "Compliance Support", href: "/services/compliance-support" },
+      { label: "Brand Protection", href: "/services/brand-protection" },
+    ],
+  },
+  {
+    category: "Specialized Project Logistics",
+    items: [
+      { label: "Site Closures & Remodels", href: "/services/site-closures-remodels" },
+      { label: "Events & Stadiums", href: "/services/events-stadiums" },
+      { label: "Natural Disaster Mobilization", href: "/services/natural-disaster-mobilization" },
+    ],
+  },
+  {
+    category: "Dumpsters & Temporary Containers",
+    items: [
+      { label: "On-Demand Service", href: "/services/on-demand-service" },
+      { label: "Multiple Sizes & Types", href: "/services/multiple-sizes-types" },
+      { label: "Flexible Terms", href: "/services/flexible-terms" },
+    ],
+  },
+  {
+    category: "Centralized Waste Management",
+    items: [
+      { label: "Single Point of Contact", href: "/services/single-point-of-contact" },
+      { label: "Performance Tracking", href: "/services/performance-tracking" },
+      { label: "Spend Optimization", href: "/services/spend-optimization" },
+    ],
+  },
 ];
 
 const sectorLinks = [
@@ -132,26 +158,32 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.98 }}
                     transition={{ duration: 0.16, ease: "easeOut" }}
-                    className="absolute left-0 top-[calc(100%+14px)] w-[420px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+14px)] w-[560px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
                     role="menu"
                     data-testid="menu-nav-services"
                   >
-                    <div className="p-3">
-                      <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
-                        Services
-                      </div>
-                      <div className="grid gap-1">
-                        {serviceLinks.map((service) => (
-                          <Link
-                            key={service.label}
-                            href={service.href}
-                            data-testid={`link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                            className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            <span className="pr-3">{service.label}</span>
-                            <ChevronRight className="w-4 h-4 text-primary/40" />
-                          </Link>
+                    <div className="p-4">
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                        {serviceCategories.map((cat, catIdx) => (
+                          <div key={catIdx}>
+                            <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-2 pb-2">
+                              {cat.category}
+                            </div>
+                            <div className="grid gap-0.5">
+                              {cat.items.map((service) => (
+                                <Link
+                                  key={service.label}
+                                  href={service.href}
+                                  data-testid={`link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                  className="flex items-center justify-between rounded-[5px] px-2 py-2.5 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[40px]"
+                                  onClick={() => setIsServicesOpen(false)}
+                                >
+                                  <span>{service.label}</span>
+                                  <ChevronRight className="w-3.5 h-3.5 text-primary/30" />
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -160,8 +192,6 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               </AnimatePresence>
             </div>
 
-            <a href="/services/emergency-waste-removal" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2" data-testid="link-nav-emergency">Emergency Waste Removal</a>
-            
             {/* Who We Serve Dropdown */}
             <div
               className="relative"
@@ -429,17 +459,24 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-4 pb-2">
-                          {serviceLinks.map((service) => (
-                            <Link
-                              key={service.label}
-                              href={service.href}
-                              className="block font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
-                              onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
-                              data-testid={`link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                            >
-                              {service.label}
-                            </Link>
+                        <div className="pl-4 pb-2 space-y-3">
+                          {serviceCategories.map((cat, catIdx) => (
+                            <div key={catIdx}>
+                              <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 pb-1 pt-2">
+                                {cat.category}
+                              </div>
+                              {cat.items.map((service) => (
+                                <Link
+                                  key={service.label}
+                                  href={service.href}
+                                  className="font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
+                                  onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
+                                  data-testid={`link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                >
+                                  {service.label}
+                                </Link>
+                              ))}
+                            </div>
                           ))}
                         </div>
                       </motion.div>
@@ -447,15 +484,6 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   </AnimatePresence>
                 </div>
 
-                <a 
-                  href="/services/emergency-waste-removal" 
-                  className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
-                  onClick={() => setIsNavExpanded(false)}
-                  data-testid="link-mobile-emergency"
-                >
-                  Emergency Waste Removal
-                </a>
-                
                 {/* Who We Serve Accordion */}
                 <div>
                   <div
