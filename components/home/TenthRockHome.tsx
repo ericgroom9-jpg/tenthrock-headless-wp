@@ -98,7 +98,7 @@ const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
 // Hero video
-const heroVideo = "/videos/hero-background.mp4";
+const heroVideo = "/videos/hero-bg.mp4";
 
 // Homepage testimonials
 const homeTestimonials = [
