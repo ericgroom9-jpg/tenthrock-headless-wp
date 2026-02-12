@@ -119,7 +119,7 @@ export default function CommercialWasteServices() {
                      <Link
                        key={idx}
                        href={item.href}
-                       className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer block ring-0 hover:ring-2 hover:ring-[#c5d520]/40"
+                       className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[420px] group cursor-pointer block ring-0 hover:ring-2 hover:ring-[#c5d520]/40"
                        data-testid={`card-service-feature-${activeService}-${idx}`}
                      >
                        <img

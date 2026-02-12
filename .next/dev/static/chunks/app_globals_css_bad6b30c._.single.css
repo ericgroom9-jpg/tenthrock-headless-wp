@@ -1703,6 +1703,10 @@ h1, h3, h4, h5, h6, h2 {
   min-height: 40px;
 }
 
+.min-h-\[420px\] {
+  min-height: 420px;
+}
+
 .min-h-\[44px\] {
   min-height: 44px;
 }
