@@ -76,6 +76,7 @@ export default function CommercialWasteServices() {
              {services.map((service, i) => (
                <button
                  key={i}
+                 onMouseEnter={() => setActiveService(i)}
                  onClick={() => setActiveService(i)}
                  data-testid={`button-service-category-${i}`}
                  className={`text-left px-6 md:px-8 py-5 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${
