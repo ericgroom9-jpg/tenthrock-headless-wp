@@ -179,6 +179,45 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Associations Section */}
+      <section className="py-16 md:py-20 bg-[#F9F9F6]" aria-labelledby="associations-heading">
+        <div className="container mx-auto px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10 md:mb-14"
+          >
+            <h2 id="associations-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">
+              Associations
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20"
+          >
+            {[
+              { src: "/images/associations/swana.png", alt: "SWANA - Solid Waste Association of North America" },
+              { src: "/images/associations/nawbo.png", alt: "NAWBO - National Association of Women Business Owners" },
+              { src: "/images/associations/ifma.png", alt: "IFMA - International Facility Management Association" },
+              { src: "/images/associations/icsc.png", alt: "ICSC" },
+            ].map((logo, i) => (
+              <img
+                key={i}
+                src={logo.src}
+                alt={logo.alt}
+                className="h-12 md:h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                data-testid={`img-association-logo-${i}`}
+              />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* In The Community Section */}
       <section 
         className="py-16 md:py-24 lg:py-32 bg-white"

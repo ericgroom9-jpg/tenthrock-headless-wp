@@ -6451,6 +6451,10 @@ h1, h3, h4, h5, h6, h2 {
     margin-bottom: 3rem;
   }
 
+  .md\:mb-14 {
+    margin-bottom: 3.5rem;
+  }
+
   .md\:mb-16 {
     margin-bottom: 4rem;
   }
@@ -6493,6 +6497,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:h-10 {
     height: 2.5rem;
+  }
+
+  .md\:h-16 {
+    height: 4rem;
   }
 
   .md\:h-\[320px\] {
@@ -6545,6 +6553,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:gap-12 {
     gap: 3rem;
+  }
+
+  .md\:gap-16 {
+    gap: 4rem;
   }
 
   .md\:gap-6 {
