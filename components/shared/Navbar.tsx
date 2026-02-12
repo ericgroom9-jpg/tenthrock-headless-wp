@@ -154,20 +154,23 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               <AnimatePresence>
                 {isServicesOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                    transition={{ duration: 0.16, ease: "easeOut" }}
-                    className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+14px)] w-[560px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="fixed left-0 right-0 top-[80px] bg-[#042940] shadow-2xl z-50"
                     role="menu"
                     data-testid="menu-nav-services"
                   >
-                    <div className="p-4">
-                      <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                    <div className="container mx-auto px-6 md:px-8 py-10">
+                      <div className="grid grid-cols-4 gap-8">
                         {serviceCategories.map((cat, catIdx) => (
-                          <div key={catIdx}>
-                            <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-2 pb-2">
-                              {cat.category}
+                          <div key={catIdx} className="space-y-3">
+                            <div className="flex items-center gap-2 pb-2 border-b border-white/10">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
+                              <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                                {cat.category}
+                              </h3>
                             </div>
                             <div className="grid gap-0.5">
                               {cat.items.map((service) => (
@@ -175,11 +178,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                                   key={service.label}
                                   href={service.href}
                                   data-testid={`link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                  className="flex items-center justify-between rounded-[5px] px-2 py-2.5 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[40px]"
+                                  className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
                                   onClick={() => setIsServicesOpen(false)}
                                 >
+                                  <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
                                   <span>{service.label}</span>
-                                  <ChevronRight className="w-3.5 h-3.5 text-primary/30" />
                                 </Link>
                               ))}
                             </div>
