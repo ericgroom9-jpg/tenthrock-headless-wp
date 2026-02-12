@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Siren, Truck, Building2, ClipboardCheck } from "lucide-react";
+import { Siren, Truck, Building2, ClipboardCheck } from "lucide-react";
 
 const services = [
   {
@@ -75,7 +75,7 @@ export default function CommercialWasteServices() {
           </p>
         </motion.div>
         
-        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
            <div className="lg:col-span-4 flex flex-col space-y-[6px]">
              {services.map((service, i) => (
                <button
@@ -115,7 +115,7 @@ export default function CommercialWasteServices() {
                  animate={{ opacity: 1, y: 0 }}
                  exit={{ opacity: 0, y: -10 }}
                  transition={{ duration: 0.35 }}
-                 className="grid sm:grid-cols-3 gap-4"
+                 className="grid sm:grid-cols-3 gap-4 h-full"
                >
                  {services[activeService].items.map((item, idx) => {
                    const Icon = categoryIcons[activeService];
@@ -123,7 +123,7 @@ export default function CommercialWasteServices() {
                      <Link
                        key={idx}
                        href={services[activeService].href}
-                       className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[320px] group cursor-pointer block ring-0 hover:ring-2 hover:ring-[#c5d520]/40"
+                       className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer block ring-0 hover:ring-2 hover:ring-[#c5d520]/40"
                        data-testid={`card-service-feature-${activeService}-${idx}`}
                      >
                        <img
@@ -149,15 +149,6 @@ export default function CommercialWasteServices() {
                </motion.div>
              </AnimatePresence>
 
-             <div className="mt-6">
-               <Link
-                 href={services[activeService].href}
-                 className="inline-flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide text-sm hover:gap-3 transition-all"
-                 data-testid={`link-service-learn-more-${activeService}`}
-               >
-                 Learn More <ArrowRight className="w-4 h-4" />
-               </Link>
-             </div>
            </div>
         </div>
       </div>
