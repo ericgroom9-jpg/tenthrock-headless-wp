@@ -2010,6 +2010,10 @@ h1, h3, h4, h5, h6, h2 {
   width: 600px;
 }
 
+.w-\[640px\] {
+  width: 640px;
+}
+
 .w-\[var\(--sidebar-width\)\] {
   width: var(--sidebar-width);
 }
@@ -2360,6 +2364,10 @@ h1, h3, h4, h5, h6, h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -2446,6 +2454,11 @@ h1, h3, h4, h5, h6, h2 {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-x-2 {
+  -moz-column-gap: .5rem;
+  column-gap: .5rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -3405,6 +3418,11 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: 2rem;
 }
 
+.py-\[6px\] {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -3556,6 +3574,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-\[11px\] {
   font-size: 11px;
+}
+
+.text-\[13px\] {
+  font-size: 13px;
 }
 
 .text-base {

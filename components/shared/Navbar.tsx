@@ -31,6 +31,22 @@ const sectorLinks = [
   { label: "Retail", href: "/industries/retail" },
 ];
 
+const locationLinks = [
+  "Alabama", "Arizona", "Arkansas", "California", "Colorado",
+  "Connecticut", "Delaware", "Florida", "Georgia", "Idaho",
+  "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+  "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan",
+  "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
+  "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+  "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon",
+  "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+  "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+  "Washington", "West Virginia", "Wisconsin", "Wyoming"
+].map(state => ({
+  label: state,
+  href: `/locations/${state.toLowerCase().replace(/\s+/g, "-")}`,
+}));
+
 const aboutLinks = [
   { label: "About Us", href: "/about" },
   { label: "Join Our Network", href: "/join-our-network" },
@@ -41,6 +57,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isSectorsOpen, setIsSectorsOpen] = useState(false);
+  const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const isFloating = variant === "floating";
@@ -210,7 +227,86 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               </AnimatePresence>
             </div>
 
-            <a href="/our-process" className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2" data-testid="link-nav-process">Our Process</a>
+            {/* Locations Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsLocationsOpen(true)}
+              onMouseLeave={() => setIsLocationsOpen(false)}
+            >
+              <div
+                className="inline-flex items-center gap-1 min-h-[44px]"
+                data-testid="button-nav-locations"
+              >
+                <Link
+                  href="/locations"
+                  className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+                  data-testid="link-nav-locations"
+                >
+                  Locations
+                </Link>
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded={isLocationsOpen}
+                  onClick={() => setIsLocationsOpen((v) => !v)}
+                  className="p-1 hover:text-[#c5d520] transition-colors"
+                  aria-label="Toggle locations menu"
+                  data-testid="button-nav-locations-toggle"
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+
+              <AnimatePresence>
+                {isLocationsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                    transition={{ duration: 0.16, ease: "easeOut" }}
+                    className="absolute right-0 top-[calc(100%+14px)] w-[640px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    role="menu"
+                    data-testid="menu-nav-locations"
+                  >
+                    <div className="p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-2">
+                          Service Locations
+                        </div>
+                        <Link
+                          href="/locations"
+                          className="text-xs font-bold text-[#c5d520] hover:underline px-2"
+                          onClick={() => setIsLocationsOpen(false)}
+                          data-testid="link-nav-locations-view-all"
+                        >
+                          View All Locations
+                        </Link>
+                      </div>
+                      <div className="grid grid-cols-4 gap-x-2">
+                        {(() => {
+                          const colSize = Math.ceil(locationLinks.length / 4);
+                          return Array.from({ length: 4 }, (_, colIdx) => (
+                            <div key={colIdx} className="flex flex-col">
+                              {locationLinks.slice(colIdx * colSize, (colIdx + 1) * colSize).map((loc) => (
+                                <Link
+                                  key={loc.label}
+                                  href={loc.href}
+                                  data-testid={`link-nav-locations-${loc.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                  className="rounded-[5px] px-2 py-[6px] text-[13px] font-medium text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors truncate"
+                                  onClick={() => setIsLocationsOpen(false)}
+                                >
+                                  {loc.label}
+                                </Link>
+                              ))}
+                            </div>
+                          ));
+                        })()}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* About Us Dropdown */}
             <div
@@ -410,14 +506,55 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   </AnimatePresence>
                 </div>
 
-                <a 
-                  href="/our-process" 
-                  className="font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
-                  onClick={() => setIsNavExpanded(false)}
-                  data-testid="link-mobile-process"
-                >
-                  Our Process
-                </a>
+                {/* Locations Accordion */}
+                <div>
+                  <div
+                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
+                    data-testid="button-mobile-locations"
+                  >
+                    <Link
+                      href="/locations"
+                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      onClick={() => setIsNavExpanded(false)}
+                    >
+                      Locations
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setIsLocationsOpen(!isLocationsOpen)}
+                      aria-expanded={isLocationsOpen}
+                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      aria-label="Toggle locations submenu"
+                    >
+                      <ChevronDown className={`w-5 h-5 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
+                  <AnimatePresence>
+                    {isLocationsOpen && (
+                      <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pl-4 pb-2 grid grid-cols-2 gap-x-2">
+                          {locationLinks.map((loc) => (
+                            <Link
+                              key={loc.label}
+                              href={loc.href}
+                              className="block font-medium text-primary/80 py-2 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors text-sm"
+                              onClick={() => { setIsNavExpanded(false); setIsLocationsOpen(false); }}
+                              data-testid={`link-mobile-locations-${loc.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            >
+                              {loc.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
                 {/* About Us Accordion */}
                 <div>
