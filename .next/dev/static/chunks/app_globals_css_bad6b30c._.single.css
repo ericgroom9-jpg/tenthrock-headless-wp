@@ -1695,6 +1695,10 @@ h1, h3, h4, h5, h6, h2 {
   min-height: 300px;
 }
 
+.min-h-\[320px\] {
+  min-height: 320px;
+}
+
 .min-h-\[400px\] {
   min-height: 400px;
 }
@@ -2747,6 +2751,10 @@ h1, h3, h4, h5, h6, h2 {
   background-color: #c5d52026;
 }
 
+.bg-\[\#c5d520\]\/20 {
+  background-color: #c5d52033;
+}
+
 .bg-\[\#c5d520\]\/5 {
   background-color: #c5d5200d;
 }
@@ -3011,6 +3019,11 @@ h1, h3, h4, h5, h6, h2 {
   --tw-gradient-stops: var(--tw-gradient-from), #042940b3 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
+.via-\[\#042940\]\/80 {
+  --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #042940cc var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .via-\[\#042940\]\/90 {
   --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #042940e6 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -3034,6 +3047,10 @@ h1, h3, h4, h5, h6, h2 {
 .via-transparent {
   --tw-gradient-to: #0000 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-\[\#042940\]\/30 {
+  --tw-gradient-to: #0429404d var(--tw-gradient-to-position);
 }
 
 .to-\[\#042940\]\/40 {
@@ -3743,6 +3760,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-white\/70 {
   color: #ffffffb3;
+}
+
+.text-white\/75 {
+  color: #ffffffbf;
 }
 
 .text-white\/80 {

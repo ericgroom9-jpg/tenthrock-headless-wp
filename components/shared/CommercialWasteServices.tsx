@@ -8,12 +8,12 @@ import { ArrowRight, Siren, Truck, Building2, ClipboardCheck } from "lucide-reac
 const services = [
   {
     title: "Emergency Waste Response",
-    desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can't wait.",
+    desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can\u2019t wait.",
     href: "/services/emergency-waste-removal",
     items: [
-      { label: "Site Stabilization", desc: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours." },
-      { label: "Compliance Support", desc: "Stay ahead of local and federal waste regulations with our compliance-first approach." },
-      { label: "Brand Protection", desc: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible." },
+      { label: "Site Stabilization", desc: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours.", img: "/images/stock/service-emergency-overflow.jpg" },
+      { label: "Compliance Support", desc: "Stay ahead of local and federal waste regulations with our compliance-first approach.", img: "/images/stock/service-emergency.jpg" },
+      { label: "Brand Protection", desc: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible.", img: "/images/stock/clean-city.jpg" },
     ],
   },
   {
@@ -21,9 +21,9 @@ const services = [
     desc: "Coordinated waste logistics for complex projects, closures, events, and disaster response.",
     href: "/services/store-decommissioning",
     items: [
-      { label: "Site Closures & Remodels", desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps." },
-      { label: "Events & Stadiums", desc: "End-to-end waste plans for venues\u2014placement, swaps, post-event sweeps, and recycling." },
-      { label: "Natural Disaster Mobilization", desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide." },
+      { label: "Site Closures & Remodels", desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps.", img: "/images/stock/service-commercial.jpg" },
+      { label: "Events & Stadiums", desc: "End-to-end waste plans for venues\u2014placement, swaps, post-event sweeps, and recycling.", img: "/images/stock/service-event-stadium.jpg" },
+      { label: "Natural Disaster Mobilization", desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide.", img: "/images/stock/industry-natural-disasters-storm.jpg" },
     ],
   },
   {
@@ -31,9 +31,9 @@ const services = [
     desc: "Temporary containers and compactor solutions for projects and peaks.",
     href: "/services/dumpster-rentals",
     items: [
-      { label: "On-Demand Service", desc: "Same-day or next-day delivery for urgent container needs at any location." },
-      { label: "Multiple Sizes & Types", desc: "From 2-yard front-load to 40-yard roll-offs\u2014the right container for every job." },
-      { label: "Flexible Terms", desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget." },
+      { label: "On-Demand Service", desc: "Same-day or next-day delivery for urgent container needs at any location.", img: "/images/stock/service-dumpster-rental.jpg" },
+      { label: "Multiple Sizes & Types", desc: "From 2-yard front-load to 40-yard roll-offs\u2014the right container for every job.", img: "/images/stock/service-dumpster.jpg" },
+      { label: "Flexible Terms", desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget.", img: "/images/stock/service-maintenance.jpg" },
     ],
   },
   {
@@ -41,9 +41,9 @@ const services = [
     desc: "One partner to standardize vendors, pricing, and service levels across all your locations.",
     href: "/services/centralized-programs",
     items: [
-      { label: "Single Point of Contact", desc: "One dedicated account manager for all your locations\u2014simplifying communication." },
-      { label: "Performance Tracking", desc: "Real-time dashboards and reporting to monitor service levels across every site." },
-      { label: "Spend Optimization", desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend." },
+      { label: "Single Point of Contact", desc: "One dedicated account manager for all your locations\u2014simplifying communication.", img: "/images/stock/service-centralized-program.jpg" },
+      { label: "Performance Tracking", desc: "Real-time dashboards and reporting to monitor service levels across every site.", img: "/images/stock/hero-skyscrapers.jpg" },
+      { label: "Spend Optimization", desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend.", img: "/images/stock/city-nature.jpg" },
     ],
   },
 ];
@@ -122,18 +122,26 @@ export default function CommercialWasteServices() {
                    return (
                      <div
                        key={idx}
-                       className="bg-white rounded-[5px] border border-[#042940]/5 shadow-sm p-6 flex flex-col gap-4 hover:shadow-md transition-shadow"
+                       className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-lg transition-shadow min-h-[320px] group"
                        data-testid={`card-service-feature-${activeService}-${idx}`}
                      >
-                       <div className="w-10 h-10 rounded-full bg-[#c5d520]/15 flex items-center justify-center flex-shrink-0">
-                         <Icon className="w-5 h-5 text-[#c5d520]" />
+                       <img
+                         src={item.img}
+                         alt={item.label}
+                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+                       />
+                       <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/80 to-[#042940]/30"></div>
+                       <div className="relative z-10 p-6 flex flex-col justify-end h-full">
+                         <div className="w-10 h-10 rounded-full bg-[#c5d520]/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 mb-4 border border-white/10">
+                           <Icon className="w-5 h-5 text-[#c5d520]" />
+                         </div>
+                         <h4 className="font-bold text-white text-base leading-snug mb-2">
+                           {item.label}
+                         </h4>
+                         <p className="text-white/75 text-sm leading-relaxed">
+                           {item.desc}
+                         </p>
                        </div>
-                       <h4 className="font-bold text-[#042940] text-base leading-snug">
-                         {item.label}
-                       </h4>
-                       <p className="text-[#042940]/60 text-sm leading-relaxed">
-                         {item.desc}
-                       </p>
                      </div>
                    );
                  })}
