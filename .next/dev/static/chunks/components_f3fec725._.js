@@ -263,6 +263,59 @@ const sectorLinks = [
         href: "/industries/retail"
     }
 ];
+const locationLinks = [
+    "Alabama",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming"
+].map((state)=>({
+        label: state,
+        href: `/locations/${state.toLowerCase().replace(/\s+/g, "-")}`
+    }));
 const aboutLinks = [
     {
         label: "About Us",
@@ -282,6 +335,7 @@ function Navbar({ variant = "floating" }) {
     const [isNavExpanded, setIsNavExpanded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isServicesOpen, setIsServicesOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isSectorsOpen, setIsSectorsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isLocationsOpen, setIsLocationsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isAboutOpen, setIsAboutOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const isFloating = variant === "floating";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
@@ -300,12 +354,12 @@ function Navbar({ variant = "floating" }) {
                                 variant: "main"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                lineNumber: 56,
+                                lineNumber: 73,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 55,
+                            lineNumber: 72,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -321,12 +375,12 @@ function Navbar({ variant = "floating" }) {
                                         children: "Request a Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 84,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 78,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -339,24 +393,24 @@ function Navbar({ variant = "floating" }) {
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 93,
                                         columnNumber: 32
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 76,
+                                        lineNumber: 93,
                                         columnNumber: 60
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 69,
+                                    lineNumber: 86,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 60,
+                            lineNumber: 77,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -378,7 +432,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Commercial Waste Services"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 91,
+                                                    lineNumber: 108,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -393,18 +447,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 107,
+                                                        lineNumber: 124,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 98,
+                                                    lineNumber: 115,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 87,
+                                            lineNumber: 104,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -439,7 +493,7 @@ function Navbar({ variant = "floating" }) {
                                                             children: "Services"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 140,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -455,47 +509,47 @@ function Navbar({ variant = "floating" }) {
                                                                             children: service.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 135,
+                                                                            lineNumber: 152,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                                             className: "w-4 h-4 text-primary/40"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 136,
+                                                                            lineNumber: 153,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, service.label, true, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 128,
+                                                                    lineNumber: 145,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 126,
+                                                            lineNumber: 143,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 122,
+                                                    lineNumber: 139,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 130,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 128,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 99,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -505,7 +559,7 @@ function Navbar({ variant = "floating" }) {
                                     children: "Emergency Waste Removal"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 163,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -524,7 +578,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Who We Serve"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 158,
+                                                    lineNumber: 175,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -539,18 +593,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-4 h-4 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 191,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 182,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 171,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -585,7 +639,7 @@ function Navbar({ variant = "floating" }) {
                                                             children: "Industries"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 190,
+                                                            lineNumber: 207,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -601,57 +655,199 @@ function Navbar({ variant = "floating" }) {
                                                                             children: sector.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 202,
+                                                                            lineNumber: 219,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                                             className: "w-4 h-4 text-primary/40"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 203,
+                                                                            lineNumber: 220,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, sector.label, true, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 195,
+                                                                    lineNumber: 212,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 193,
+                                                            lineNumber: 210,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 189,
+                                                    lineNumber: 206,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 197,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 178,
+                                            lineNumber: 195,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 149,
+                                    lineNumber: 166,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "/our-process",
-                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:outline-none transition-colors py-2",
-                                    "data-testid": "link-nav-process",
-                                    children: "Our Process"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative",
+                                    onMouseEnter: ()=>setIsLocationsOpen(true),
+                                    onMouseLeave: ()=>setIsLocationsOpen(false),
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "inline-flex items-center gap-1 min-h-[44px]",
+                                            "data-testid": "button-nav-locations",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    href: "/locations",
+                                                    className: "text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors",
+                                                    "data-testid": "link-nav-locations",
+                                                    children: "Locations"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                    lineNumber: 240,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    "aria-haspopup": "menu",
+                                                    "aria-expanded": isLocationsOpen,
+                                                    onClick: ()=>setIsLocationsOpen((v)=>!v),
+                                                    className: "p-1 hover:text-[#c5d520] transition-colors",
+                                                    "aria-label": "Toggle locations menu",
+                                                    "data-testid": "button-nav-locations-toggle",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
+                                                        className: `w-4 h-4 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/shared/Navbar.tsx",
+                                                        lineNumber: 256,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                    lineNumber: 247,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                            lineNumber: 236,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                            children: isLocationsOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                initial: {
+                                                    opacity: 0,
+                                                    y: 8,
+                                                    scale: 0.98
+                                                },
+                                                animate: {
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    scale: 1
+                                                },
+                                                exit: {
+                                                    opacity: 0,
+                                                    y: 8,
+                                                    scale: 0.98
+                                                },
+                                                transition: {
+                                                    duration: 0.16,
+                                                    ease: "easeOut"
+                                                },
+                                                className: "absolute right-0 top-[calc(100%+14px)] w-[640px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden",
+                                                role: "menu",
+                                                "data-testid": "menu-nav-locations",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "p-4",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center justify-between mb-3",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-2",
+                                                                    children: "Service Locations"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                                    lineNumber: 273,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                    href: "/locations",
+                                                                    className: "text-xs font-bold text-[#c5d520] hover:underline px-2",
+                                                                    onClick: ()=>setIsLocationsOpen(false),
+                                                                    "data-testid": "link-nav-locations-view-all",
+                                                                    children: "View All Locations"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                                    lineNumber: 276,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                                            lineNumber: 272,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "grid grid-cols-4 gap-x-2",
+                                                            children: (()=>{
+                                                                const colSize = Math.ceil(locationLinks.length / 4);
+                                                                return Array.from({
+                                                                    length: 4
+                                                                }, (_, colIdx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex flex-col",
+                                                                        children: locationLinks.slice(colIdx * colSize, (colIdx + 1) * colSize).map((loc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                                href: loc.href,
+                                                                                "data-testid": `link-nav-locations-${loc.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+                                                                                className: "rounded-[5px] px-2 py-[6px] text-[13px] font-medium text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors truncate",
+                                                                                onClick: ()=>setIsLocationsOpen(false),
+                                                                                children: loc.label
+                                                                            }, loc.label, false, {
+                                                                                fileName: "[project]/components/shared/Navbar.tsx",
+                                                                                lineNumber: 291,
+                                                                                columnNumber: 33
+                                                                            }, this))
+                                                                    }, colIdx, false, {
+                                                                        fileName: "[project]/components/shared/Navbar.tsx",
+                                                                        lineNumber: 289,
+                                                                        columnNumber: 29
+                                                                    }, this));
+                                                            })()
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                                            lineNumber: 285,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                    lineNumber: 271,
+                                                    columnNumber: 21
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/shared/Navbar.tsx",
+                                                lineNumber: 262,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                            lineNumber: 260,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 231,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -670,7 +866,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "About Us"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 225,
+                                                    lineNumber: 321,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -685,18 +881,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-4 h-4 transition-transform ${isAboutOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 241,
+                                                        lineNumber: 337,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 232,
+                                                    lineNumber: 328,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 317,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -731,7 +927,7 @@ function Navbar({ variant = "floating" }) {
                                                             children: "About"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 257,
+                                                            lineNumber: 353,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -747,53 +943,53 @@ function Navbar({ variant = "floating" }) {
                                                                             children: item.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 269,
+                                                                            lineNumber: 365,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                                             className: "w-4 h-4 text-primary/40"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 270,
+                                                                            lineNumber: 366,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, item.label, true, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 262,
+                                                                    lineNumber: 358,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 260,
+                                                            lineNumber: 356,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 256,
+                                                    lineNumber: 352,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 247,
+                                                lineNumber: 343,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 245,
+                                            lineNumber: 341,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 216,
+                                    lineNumber: 312,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 81,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -807,7 +1003,7 @@ function Navbar({ variant = "floating" }) {
                                     children: "Login"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 283,
+                                    lineNumber: 379,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -820,24 +1016,24 @@ function Navbar({ variant = "floating" }) {
                                         children: "Request a Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 287,
+                                        lineNumber: 383,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 286,
+                                    lineNumber: 382,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 282,
+                            lineNumber: 378,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/Navbar.tsx",
-                    lineNumber: 54,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -876,7 +1072,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Commercial Waste Services"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 310,
+                                                    lineNumber: 406,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -889,18 +1085,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 324,
+                                                        lineNumber: 420,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 317,
+                                                    lineNumber: 413,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 306,
+                                            lineNumber: 402,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -931,28 +1127,28 @@ function Navbar({ variant = "floating" }) {
                                                             children: service.label
                                                         }, service.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 338,
+                                                            lineNumber: 434,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 336,
+                                                    lineNumber: 432,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 329,
+                                                lineNumber: 425,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 327,
+                                            lineNumber: 423,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 305,
+                                    lineNumber: 401,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -963,7 +1159,7 @@ function Navbar({ variant = "floating" }) {
                                     children: "Emergency Waste Removal"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 354,
+                                    lineNumber: 450,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -979,7 +1175,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Who We Serve"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 369,
+                                                    lineNumber: 465,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -992,18 +1188,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 383,
+                                                        lineNumber: 479,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 376,
+                                                    lineNumber: 472,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 365,
+                                            lineNumber: 461,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1034,39 +1230,120 @@ function Navbar({ variant = "floating" }) {
                                                             children: sector.label
                                                         }, sector.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 397,
+                                                            lineNumber: 493,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 395,
+                                                    lineNumber: 491,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 388,
+                                                lineNumber: 484,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 386,
+                                            lineNumber: 482,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 364,
+                                    lineNumber: 460,
                                     columnNumber: 17
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "/our-process",
-                                    className: "font-bold text-primary py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] transition-colors min-h-[52px] flex items-center",
-                                    onClick: ()=>setIsNavExpanded(false),
-                                    "data-testid": "link-mobile-process",
-                                    children: "Our Process"
-                                }, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]",
+                                            "data-testid": "button-mobile-locations",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    href: "/locations",
+                                                    className: "font-bold text-primary hover:text-[#c5d520] transition-colors flex-1",
+                                                    onClick: ()=>setIsNavExpanded(false),
+                                                    children: "Locations"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                    lineNumber: 515,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>setIsLocationsOpen(!isLocationsOpen),
+                                                    "aria-expanded": isLocationsOpen,
+                                                    className: "p-2 hover:text-[#c5d520] transition-colors",
+                                                    "aria-label": "Toggle locations submenu",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
+                                                        className: `w-5 h-5 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/shared/Navbar.tsx",
+                                                        lineNumber: 529,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                    lineNumber: 522,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                            lineNumber: 511,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                                            children: isLocationsOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                initial: {
+                                                    height: 0
+                                                },
+                                                animate: {
+                                                    height: "auto"
+                                                },
+                                                exit: {
+                                                    height: 0
+                                                },
+                                                transition: {
+                                                    duration: 0.2
+                                                },
+                                                className: "overflow-hidden",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "pl-4 pb-2 grid grid-cols-2 gap-x-2",
+                                                    children: locationLinks.map((loc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                            href: loc.href,
+                                                            className: "block font-medium text-primary/80 py-2 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors text-sm",
+                                                            onClick: ()=>{
+                                                                setIsNavExpanded(false);
+                                                                setIsLocationsOpen(false);
+                                                            },
+                                                            "data-testid": `link-mobile-locations-${loc.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+                                                            children: loc.label
+                                                        }, loc.label, false, {
+                                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                                            lineNumber: 543,
+                                                            columnNumber: 29
+                                                        }, this))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                    lineNumber: 541,
+                                                    columnNumber: 25
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/shared/Navbar.tsx",
+                                                lineNumber: 534,
+                                                columnNumber: 23
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                            lineNumber: 532,
+                                            columnNumber: 19
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 413,
+                                    lineNumber: 510,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1082,7 +1359,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "About Us"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 428,
+                                                    lineNumber: 565,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1095,18 +1372,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isAboutOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 442,
+                                                        lineNumber: 579,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 435,
+                                                    lineNumber: 572,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 424,
+                                            lineNumber: 561,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1137,28 +1414,28 @@ function Navbar({ variant = "floating" }) {
                                                             children: item.label
                                                         }, item.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 456,
+                                                            lineNumber: 593,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 454,
+                                                    lineNumber: 591,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 447,
+                                                lineNumber: 584,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 445,
+                                            lineNumber: 582,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 423,
+                                    lineNumber: 560,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1170,43 +1447,43 @@ function Navbar({ variant = "floating" }) {
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 473,
+                                        lineNumber: 610,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 472,
+                                    lineNumber: 609,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 303,
+                            lineNumber: 399,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/shared/Navbar.tsx",
-                        lineNumber: 295,
+                        lineNumber: 391,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/shared/Navbar.tsx",
-                    lineNumber: 293,
+                    lineNumber: 389,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/shared/Navbar.tsx",
-            lineNumber: 53,
+            lineNumber: 70,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/Navbar.tsx",
-        lineNumber: 49,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
-_s(Navbar, "J+ieZG+JyP/XsQ3mIyuJx5G7O2k=");
+_s(Navbar, "txrMH3lSoqNsMZJ4mKUWTQFAkzc=");
 _c = Navbar;
 var _c;
 __turbopack_context__.k.register(_c, "Navbar");
@@ -2302,10 +2579,6 @@ const logoWhite = "/images/logos/Green-White-Logo.png";
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
 const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
 const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
-const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
-const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
-const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
-const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/floor-park.jpg";
 const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
@@ -2375,30 +2648,7 @@ const defaultStats = [
         description: "First-time resolution rate for all requests."
     }
 ];
-const defaultCaseStudy = {
-    title: "Case Study Title",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-    image: imgCaseStudyMain,
-    stats: [
-        {
-            value: "32%",
-            label: "Cost reduction achieved"
-        },
-        {
-            value: "32%",
-            label: "Time saved on logistics"
-        },
-        {
-            value: "32%",
-            label: "Waste diverted from landfill"
-        },
-        {
-            value: "32%",
-            label: "Carbon footprint reduced"
-        }
-    ]
-};
-function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServiceDumpsterRental, subServices, processSteps = defaultProcessSteps, faqs = defaultFaqs, stats = defaultStats, caseStudy = defaultCaseStudy }) {
+function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServiceDumpsterRental, subServices, processSteps = defaultProcessSteps, faqs = defaultFaqs, stats = defaultStats }) {
     _s();
     const [activeStep, setActiveStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [openItem, setOpenItem] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("item-0");
@@ -2414,14 +2664,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                 children: "Skip to main content"
             }, void 0, false, {
                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                lineNumber: 137,
+                lineNumber: 114,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Navbar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                 variant: "floating"
             }, void 0, false, {
                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                lineNumber: 141,
+                lineNumber: 118,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -2441,20 +2691,20 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                         "aria-hidden": "true"
                                     }, void 0, false, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 147,
+                                        lineNumber: 124,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70"
                                     }, void 0, false, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 130,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 146,
+                                lineNumber: 123,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2479,7 +2729,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: serviceName
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 162,
+                                                lineNumber: 139,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2487,7 +2737,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: serviceDescription
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 142,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2500,7 +2750,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Request a Service"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 169,
+                                                        lineNumber: 146,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2513,42 +2763,42 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 className: "mr-2 h-5 w-5"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 182,
+                                                                lineNumber: 159,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "(123) 456 - 7890"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 176,
+                                                        lineNumber: 153,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 168,
+                                                lineNumber: 145,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 157,
+                                        lineNumber: 134,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 133,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 155,
+                                lineNumber: 132,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 145,
+                        lineNumber: 122,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2587,7 +2837,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: "About Service"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 209,
+                                                                lineNumber: 186,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2596,18 +2846,18 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     className: `w-5 h-5 transition-transform ${openAccordion === "about" ? "text-[#042940] -rotate-45" : "text-white group-hover:text-[#042940]"}`
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 215,
+                                                                    lineNumber: 192,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 210,
+                                                                lineNumber: 187,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 204,
+                                                        lineNumber: 181,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -2651,30 +2901,30 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                                 d: "M5 13l4 4L19 7"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                                lineNumber: 236,
+                                                                                                lineNumber: 213,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 235,
+                                                                                            lineNumber: 212,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 234,
+                                                                                        lineNumber: 211,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Benefit or Differentiator"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 239,
+                                                                                        lineNumber: 216,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 233,
+                                                                                lineNumber: 210,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2694,30 +2944,30 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                                 d: "M5 13l4 4L19 7"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                                lineNumber: 244,
+                                                                                                lineNumber: 221,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 243,
+                                                                                            lineNumber: 220,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 242,
+                                                                                        lineNumber: 219,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Benefit or Differentiator"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 247,
+                                                                                        lineNumber: 224,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 241,
+                                                                                lineNumber: 218,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2737,36 +2987,36 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                                 d: "M5 13l4 4L19 7"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                                lineNumber: 252,
+                                                                                                lineNumber: 229,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 251,
+                                                                                            lineNumber: 228,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 250,
+                                                                                        lineNumber: 227,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Benefit or Differentiator"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 255,
+                                                                                        lineNumber: 232,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 249,
+                                                                                lineNumber: 226,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 232,
+                                                                        lineNumber: 209,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2774,29 +3024,29 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 258,
+                                                                        lineNumber: 235,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 231,
+                                                                lineNumber: 208,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 224,
+                                                            lineNumber: 201,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 199,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 180,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2812,7 +3062,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: "How Service Works"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 274,
+                                                                lineNumber: 251,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2821,18 +3071,18 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     className: `w-5 h-5 transition-transform ${openAccordion === "how" ? "text-[#042940] -rotate-45" : "text-white group-hover:text-[#042940]"}`
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 280,
+                                                                    lineNumber: 257,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 275,
+                                                                lineNumber: 252,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 269,
+                                                        lineNumber: 246,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -2861,7 +3111,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "Our streamlined process ensures efficient service delivery from initial contact to completion. We handle all the logistics so you can focus on your business."
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 297,
+                                                                        lineNumber: 274,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2877,25 +3127,25 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                             children: "1"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 303,
+                                                                                            lineNumber: 280,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 302,
+                                                                                        lineNumber: 279,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Request a quote online or by phone"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 305,
+                                                                                        lineNumber: 282,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 301,
+                                                                                lineNumber: 278,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2908,25 +3158,25 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                             children: "2"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 309,
+                                                                                            lineNumber: 286,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 308,
+                                                                                        lineNumber: 285,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "We schedule pickup at your convenience"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 311,
+                                                                                        lineNumber: 288,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 307,
+                                                                                lineNumber: 284,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2939,53 +3189,53 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                             children: "3"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 315,
+                                                                                            lineNumber: 292,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 314,
+                                                                                        lineNumber: 291,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Professional team handles removal"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 317,
+                                                                                        lineNumber: 294,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 313,
+                                                                                lineNumber: 290,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 300,
+                                                                        lineNumber: 277,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 296,
+                                                                lineNumber: 273,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 289,
+                                                            lineNumber: 266,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 264,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 268,
+                                                lineNumber: 245,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3000,7 +3250,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: "Other Services"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 333,
+                                                                lineNumber: 310,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3009,18 +3259,18 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     className: `w-5 h-5 transition-transform ${openAccordion === "other" ? "text-[#042940] -rotate-45" : "text-white group-hover:text-[#042940]"}`
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 339,
+                                                                    lineNumber: 316,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 334,
+                                                                lineNumber: 311,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 328,
+                                                        lineNumber: 305,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -3049,7 +3299,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "Explore our full range of waste management and commercial services designed to meet your business needs."
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 356,
+                                                                        lineNumber: 333,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -3072,30 +3322,30 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                                 d: "M5 13l4 4L19 7"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                                lineNumber: 363,
+                                                                                                lineNumber: 340,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 362,
+                                                                                            lineNumber: 339,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 361,
+                                                                                        lineNumber: 338,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Dumpster Rental"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 366,
+                                                                                        lineNumber: 343,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 360,
+                                                                                lineNumber: 337,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -3115,30 +3365,30 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                                 d: "M5 13l4 4L19 7"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                                lineNumber: 371,
+                                                                                                lineNumber: 348,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 370,
+                                                                                            lineNumber: 347,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 369,
+                                                                                        lineNumber: 346,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Emergency & Overflow Services"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 374,
+                                                                                        lineNumber: 351,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 368,
+                                                                                lineNumber: 345,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -3158,64 +3408,64 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                                 d: "M5 13l4 4L19 7"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                                lineNumber: 379,
+                                                                                                lineNumber: 356,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                            lineNumber: 378,
+                                                                                            lineNumber: 355,
                                                                                             columnNumber: 33
                                                                                         }, this)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 377,
+                                                                                        lineNumber: 354,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: "Store Decommissioning"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                        lineNumber: 382,
+                                                                                        lineNumber: 359,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 376,
+                                                                                lineNumber: 353,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 359,
+                                                                        lineNumber: 336,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 355,
+                                                                lineNumber: 332,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 348,
+                                                            lineNumber: 325,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 346,
+                                                        lineNumber: 323,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 327,
+                                                lineNumber: 304,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 173,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3241,7 +3491,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Request a Quote"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 400,
+                                                        lineNumber: 377,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3249,13 +3499,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Fill out the form below and we'll get back to you shortly."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 401,
+                                                        lineNumber: 378,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 399,
+                                                lineNumber: 376,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -3272,7 +3522,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "First name"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 406,
+                                                                        lineNumber: 383,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3282,13 +3532,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         "data-testid": "input-first-name"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 409,
+                                                                        lineNumber: 386,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 405,
+                                                                lineNumber: 382,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3299,7 +3549,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "Last name"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 417,
+                                                                        lineNumber: 394,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3309,19 +3559,19 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         "data-testid": "input-last-name"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 420,
+                                                                        lineNumber: 397,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 416,
+                                                                lineNumber: 393,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 404,
+                                                        lineNumber: 381,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3335,7 +3585,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "Email"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 431,
+                                                                        lineNumber: 408,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3345,13 +3595,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         "data-testid": "input-email"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 434,
+                                                                        lineNumber: 411,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 430,
+                                                                lineNumber: 407,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3362,7 +3612,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "Phone number"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 442,
+                                                                        lineNumber: 419,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3372,19 +3622,19 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         "data-testid": "input-phone"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 445,
+                                                                        lineNumber: 422,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 441,
+                                                                lineNumber: 418,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 429,
+                                                        lineNumber: 406,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3398,7 +3648,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "Company"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 456,
+                                                                        lineNumber: 433,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3408,13 +3658,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         "data-testid": "input-company"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 459,
+                                                                        lineNumber: 436,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 455,
+                                                                lineNumber: 432,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3425,7 +3675,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         children: "I'm interested in help with:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 467,
+                                                                        lineNumber: 444,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -3440,7 +3690,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                 children: "Select one..."
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 476,
+                                                                                lineNumber: 453,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3448,7 +3698,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                 children: "Waste Removal"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 477,
+                                                                                lineNumber: 454,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3456,7 +3706,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                 children: "Dumpster Rental"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 478,
+                                                                                lineNumber: 455,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3464,7 +3714,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                 children: "Emergency Services"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 479,
+                                                                                lineNumber: 456,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3472,7 +3722,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                 children: "Waste Consulting"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 480,
+                                                                                lineNumber: 457,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3480,25 +3730,25 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                 children: "Other"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 481,
+                                                                                lineNumber: 458,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 470,
+                                                                        lineNumber: 447,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 466,
+                                                                lineNumber: 443,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 454,
+                                                        lineNumber: 431,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3509,7 +3759,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: "Message"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 487,
+                                                                lineNumber: 464,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -3520,13 +3770,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 "data-testid": "textarea-message"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 490,
+                                                                lineNumber: 467,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 486,
+                                                        lineNumber: 463,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3541,7 +3791,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         "data-testid": "checkbox-terms"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 501,
+                                                                        lineNumber: 478,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3554,19 +3804,19 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                 children: "Terms"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                                lineNumber: 507,
+                                                                                lineNumber: 484,
                                                                                 columnNumber: 38
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 506,
+                                                                        lineNumber: 483,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 500,
+                                                                lineNumber: 477,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3577,46 +3827,46 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: "Submit Request"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 510,
+                                                                lineNumber: 487,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 499,
+                                                        lineNumber: 476,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 403,
+                                                lineNumber: 380,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 393,
+                                        lineNumber: 370,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 194,
+                                lineNumber: 171,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                            lineNumber: 193,
+                            lineNumber: 170,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 192,
+                        lineNumber: 169,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$CommercialWasteServices$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 526,
+                        lineNumber: 503,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3636,14 +3886,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     className: "w-2 h-2 rounded-full bg-[#c5d520]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 533,
+                                                    lineNumber: 510,
                                                     columnNumber: 17
                                                 }, this),
                                                 "Our Process"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 532,
+                                            lineNumber: 509,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3652,7 +3902,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                             children: "How It Works"
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 536,
+                                            lineNumber: 513,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3660,13 +3910,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                             children: "A simple, transparent process designed to get your problem solved fast."
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 539,
+                                            lineNumber: 516,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                    lineNumber: 531,
+                                    lineNumber: 508,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3694,7 +3944,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     children: step.num
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 554,
+                                                    lineNumber: 531,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3702,7 +3952,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     children: step.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 557,
+                                                    lineNumber: 534,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3710,29 +3960,29 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     children: step.desc
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 560,
+                                                    lineNumber: 537,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 546,
+                                            lineNumber: 523,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                    lineNumber: 544,
+                                    lineNumber: 521,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                            lineNumber: 530,
+                            lineNumber: 507,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 529,
+                        lineNumber: 506,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3765,7 +4015,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 580,
+                                        lineNumber: 557,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3776,14 +4026,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 588,
+                                        lineNumber: 565,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none"
                                     }, void 0, false, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 596,
+                                        lineNumber: 573,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3796,14 +4046,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         className: "w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 600,
+                                                        lineNumber: 577,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Service Availability"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 599,
+                                                lineNumber: 576,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3815,13 +4065,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Your Area."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 605,
+                                                        lineNumber: 582,
                                                         columnNumber: 39
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 604,
+                                                lineNumber: 581,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3829,7 +4079,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: "Enter your zip code below to instantly see if our network of local vendors covers your location."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 607,
+                                                lineNumber: 584,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3840,7 +4090,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         className: "bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 612,
+                                                        lineNumber: 589,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3849,35 +4099,35 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Check Now"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 616,
+                                                        lineNumber: 593,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 611,
+                                                lineNumber: 588,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 598,
+                                        lineNumber: 575,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 572,
+                                lineNumber: 549,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                            lineNumber: 571,
+                            lineNumber: 548,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 570,
+                        lineNumber: 547,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3912,14 +4162,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             className: "w-2 h-2 rounded-full bg-secondary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 637,
+                                                            lineNumber: 614,
                                                             columnNumber: 21
                                                         }, this),
                                                         "Key Metrics"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 636,
+                                                    lineNumber: 613,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3927,7 +4177,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     children: "Why Clients Call Us Again and Again."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 640,
+                                                    lineNumber: 617,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3935,7 +4185,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla."
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 643,
+                                                    lineNumber: 620,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3947,7 +4197,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             children: "Request a Service"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 647,
+                                                            lineNumber: 624,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3959,31 +4209,31 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     className: "w-5 h-5 text-secondary"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 651,
+                                                                    lineNumber: 628,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 " (888) 555-0123"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 650,
+                                                            lineNumber: 627,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 646,
+                                                    lineNumber: 623,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 630,
+                                            lineNumber: 607,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 629,
+                                        lineNumber: 606,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4012,7 +4262,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Case / Stat Here"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 665,
+                                                        lineNumber: 642,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4020,14 +4270,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "30%"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 666,
+                                                        lineNumber: 643,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                                         className: "bg-primary/10 mb-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 667,
+                                                        lineNumber: 644,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4035,13 +4285,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 668,
+                                                        lineNumber: 645,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 658,
+                                                lineNumber: 635,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4070,12 +4320,12 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             alt: "Stats Visual"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 679,
+                                                            lineNumber: 656,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 678,
+                                                        lineNumber: 655,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4083,7 +4333,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Case / Stat Here"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 681,
+                                                        lineNumber: 658,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4091,14 +4341,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "70K"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 682,
+                                                        lineNumber: 659,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                                         className: "bg-primary/10 mb-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 683,
+                                                        lineNumber: 660,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4106,13 +4356,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 684,
+                                                        lineNumber: 661,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 671,
+                                                lineNumber: 648,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4138,7 +4388,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Case / Stat Here"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 694,
+                                                        lineNumber: 671,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4146,14 +4396,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "80%"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 695,
+                                                        lineNumber: 672,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                                         className: "bg-primary/10 mb-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 696,
+                                                        lineNumber: 673,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4161,235 +4411,35 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 697,
+                                                        lineNumber: 674,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 687,
+                                                lineNumber: 664,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 657,
+                                        lineNumber: 634,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 628,
+                                lineNumber: 605,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                            lineNumber: 627,
+                            lineNumber: 604,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 626,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                        className: "py-16 md:py-24 bg-white border-b border-primary/5",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "container mx-auto px-4 md:px-8",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "grid lg:grid-cols-2 gap-12 items-center",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "space-y-4 order-2 lg:order-1",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                initial: {
-                                                    opacity: 0,
-                                                    scale: 0.95
-                                                },
-                                                whileInView: {
-                                                    opacity: 1,
-                                                    scale: 1
-                                                },
-                                                viewport: {
-                                                    once: true
-                                                },
-                                                transition: {
-                                                    duration: 0.6
-                                                },
-                                                className: "rounded-[5px] overflow-hidden h-[400px]",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                    src: caseStudy.image,
-                                                    alt: "Case Study Main",
-                                                    className: "w-full h-full object-cover md:hover:scale-105 transition-transform duration-700"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 717,
-                                                    columnNumber: 19
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 710,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "grid grid-cols-3 gap-4",
-                                                children: [
-                                                    imgCaseStudyThumb1,
-                                                    imgCaseStudyThumb2,
-                                                    imgCaseStudyThumb3
-                                                ].map((img, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                        initial: {
-                                                            opacity: 0,
-                                                            y: 20
-                                                        },
-                                                        whileInView: {
-                                                            opacity: 1,
-                                                            y: 0
-                                                        },
-                                                        viewport: {
-                                                            once: true
-                                                        },
-                                                        transition: {
-                                                            duration: 0.4,
-                                                            delay: 0.2 + i * 0.1
-                                                        },
-                                                        className: "rounded-[5px] overflow-hidden aspect-square",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                            src: img,
-                                                            alt: `Case Study Detail ${i + 1}`,
-                                                            className: "w-full h-full object-cover md:hover:scale-110 transition-transform duration-500"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 733,
-                                                            columnNumber: 23
-                                                        }, this)
-                                                    }, i, false, {
-                                                        fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 725,
-                                                        columnNumber: 21
-                                                    }, this))
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 723,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 709,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                        initial: {
-                                            opacity: 0,
-                                            x: 20
-                                        },
-                                        whileInView: {
-                                            opacity: 1,
-                                            x: 0
-                                        },
-                                        viewport: {
-                                            once: true
-                                        },
-                                        transition: {
-                                            duration: 0.6
-                                        },
-                                        className: "lg:pl-8 order-1 lg:order-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight",
-                                                children: caseStudy.title
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 751,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed",
-                                                children: caseStudy.description
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 754,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12",
-                                                children: caseStudy.stats.map((stat, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-4xl font-extrabold text-[#c5d520] mb-1",
-                                                                children: stat.value
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 761,
-                                                                columnNumber: 23
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-sm font-bold text-primary uppercase tracking-wide",
-                                                                children: stat.label
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 762,
-                                                                columnNumber: 23
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "h-1 w-12 bg-primary/10 mt-3"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 763,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        ]
-                                                    }, i, true, {
-                                                        fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 760,
-                                                        columnNumber: 21
-                                                    }, this))
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 758,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                                                size: "lg",
-                                                className: "bg-primary text-white min-h-[52px] rounded-full",
-                                                "data-testid": "button-case-study-cta",
-                                                children: [
-                                                    "Read Full Case Study",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                        className: "ml-2 h-5 w-5"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 774,
-                                                        columnNumber: 19
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 768,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 744,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 707,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/components/services/ServiceTemplate.tsx",
-                            lineNumber: 706,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 705,
+                        lineNumber: 603,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4401,7 +4451,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                 className: "absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"
                             }, void 0, false, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 784,
+                                lineNumber: 685,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4417,14 +4467,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         className: "w-2 h-2 rounded-full bg-secondary"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 789,
+                                                        lineNumber: 690,
                                                         columnNumber: 17
                                                     }, this),
                                                     "Common Questions"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 788,
+                                                lineNumber: 689,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4433,7 +4483,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: "Frequently Asked Questions"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 792,
+                                                lineNumber: 693,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4441,13 +4491,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 793,
+                                                lineNumber: 694,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 787,
+                                        lineNumber: 688,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4480,7 +4530,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     children: faq.question
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 816,
+                                                                    lineNumber: 717,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4489,18 +4539,18 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                         className: `w-5 h-5 transition-colors duration-300 ${openItem === `item-${i}` ? "text-[#042940]" : "text-primary"}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                        lineNumber: 826,
+                                                                        lineNumber: 727,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 821,
+                                                                    lineNumber: 722,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 815,
+                                                            lineNumber: 716,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4512,33 +4562,33 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     children: faq.answer
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 837,
+                                                                    lineNumber: 738,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 836,
+                                                                lineNumber: 737,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 831,
+                                                            lineNumber: 732,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 807,
+                                                    lineNumber: 708,
                                                     columnNumber: 19
                                                 }, this)
                                             }, i, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 800,
+                                                lineNumber: 701,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 798,
+                                        lineNumber: 699,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4549,7 +4599,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: "Still Have Questions?"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 848,
+                                                lineNumber: 749,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4558,25 +4608,25 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: "Contact Us"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 849,
+                                                lineNumber: 750,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 847,
+                                        lineNumber: 748,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 786,
+                                lineNumber: 687,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 782,
+                        lineNumber: 683,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4608,7 +4658,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                             children: "Where to Find Us"
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 866,
+                                            lineNumber: 767,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4616,13 +4666,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                             children: "Serving businesses nationwide with regional offices for local support."
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 869,
+                                            lineNumber: 770,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                    lineNumber: 859,
+                                    lineNumber: 760,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4654,7 +4704,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     className: "h-6 w-6 text-[#c5d520]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 884,
+                                                                    lineNumber: 785,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4662,13 +4712,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     children: "Office"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 885,
+                                                                    lineNumber: 786,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 883,
+                                                            lineNumber: 784,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4676,13 +4726,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             children: "123 Sample St, Sydney NSW 2000 AU"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 887,
+                                                            lineNumber: 788,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 882,
+                                                    lineNumber: 783,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4694,7 +4744,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     className: "h-6 w-6 text-[#c5d520]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 892,
+                                                                    lineNumber: 793,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4702,13 +4752,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     children: "Phone"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 893,
+                                                                    lineNumber: 794,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 891,
+                                                            lineNumber: 792,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4716,7 +4766,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             children: "Available 24/7 for emergencies"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 895,
+                                                            lineNumber: 796,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4724,13 +4774,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             children: "+1 (555) 000-0000"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 896,
+                                                            lineNumber: 797,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 890,
+                                                    lineNumber: 791,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4742,7 +4792,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     className: "h-6 w-6 text-[#c5d520]"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 901,
+                                                                    lineNumber: 802,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4750,13 +4800,13 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                     children: "Email"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                    lineNumber: 902,
+                                                                    lineNumber: 803,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 900,
+                                                            lineNumber: 801,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4764,19 +4814,19 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             children: "hello@tenthrock.com"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 904,
+                                                            lineNumber: 805,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 899,
+                                                    lineNumber: 800,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 875,
+                                            lineNumber: 776,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4806,34 +4856,34 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     type: "video/mp4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 922,
+                                                    lineNumber: 823,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 915,
+                                                lineNumber: 816,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                            lineNumber: 908,
+                                            lineNumber: 809,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                    lineNumber: 874,
+                                    lineNumber: 775,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                            lineNumber: 858,
+                            lineNumber: 759,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 857,
+                        lineNumber: 758,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4864,7 +4914,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 className: "absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 941,
+                                                lineNumber: 842,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4876,14 +4926,14 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         children: "Waste Management"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                        lineNumber: 944,
+                                                        lineNumber: 845,
                                                         columnNumber: 35
                                                     }, this),
                                                     " Today"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 943,
+                                                lineNumber: 844,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4891,7 +4941,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 children: "Join thousands of businesses optimizing their disposal costs and sustainability with Tenth Rock. One partner, zero headaches."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 946,
+                                                lineNumber: 847,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4902,18 +4952,18 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     children: "Request a Service"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 951,
+                                                    lineNumber: 852,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 950,
+                                                lineNumber: 851,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 940,
+                                        lineNumber: 841,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4925,21 +4975,21 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 className: "absolute inset-0 w-full h-full object-cover object-center lg:object-right"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 959,
+                                                lineNumber: 860,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 960,
+                                                lineNumber: 861,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 961,
+                                                lineNumber: 862,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4968,12 +5018,12 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 className: "w-6 h-6"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 973,
+                                                                lineNumber: 874,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 972,
+                                                            lineNumber: 873,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4982,62 +5032,62 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: "(888) 555-0123"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                                lineNumber: 976,
+                                                                lineNumber: 877,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                            lineNumber: 975,
+                                                            lineNumber: 876,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                    lineNumber: 971,
+                                                    lineNumber: 872,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                                lineNumber: 964,
+                                                lineNumber: 865,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                        lineNumber: 958,
+                                        lineNumber: 859,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                                lineNumber: 932,
+                                lineNumber: 833,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/services/ServiceTemplate.tsx",
-                            lineNumber: 931,
+                            lineNumber: 832,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/services/ServiceTemplate.tsx",
-                        lineNumber: 930,
+                        lineNumber: 831,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                lineNumber: 143,
+                lineNumber: 120,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/services/ServiceTemplate.tsx",
-                lineNumber: 987,
+                lineNumber: 888,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/services/ServiceTemplate.tsx",
-        lineNumber: 136,
+        lineNumber: 113,
         columnNumber: 5
     }, this);
 }

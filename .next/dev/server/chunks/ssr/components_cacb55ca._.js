@@ -1435,81 +1435,103 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript) <export default as ArrowRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/siren.js [app-ssr] (ecmascript) <export default as Siren>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/truck.js [app-ssr] (ecmascript) <export default as Truck>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript) <export default as Building2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clipboard-check.js [app-ssr] (ecmascript) <export default as ClipboardCheck>");
 "use client";
 ;
 ;
 ;
 ;
-const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
-const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
-const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
-const imgServiceMaintenance = "/images/stock/service-maintenance.jpg";
-const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
-const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.jpg";
+;
 const services = [
     {
-        title: "Emergency & Overflow Waste Response",
-        desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can't wait. Built for retail, industrial, and multi-site emergencies.",
-        img: imgServiceEmergencyOverflow,
-        features: [
-            "24/7 Dispatch",
-            "Overflow & Surge Capacity",
-            "Nationwide Network"
+        title: "Emergency Waste Response",
+        desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can't wait.",
+        href: "/services/emergency-waste-removal",
+        items: [
+            {
+                label: "Site Stabilization",
+                desc: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours."
+            },
+            {
+                label: "Compliance Support",
+                desc: "Stay ahead of local and federal waste regulations with our compliance-first approach."
+            },
+            {
+                label: "Brand Protection",
+                desc: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible."
+            }
         ]
     },
     {
-        title: "Store Decommissioning & Remodel Support",
-        desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
-        img: imgServiceStoreDecommissioning,
-        features: [
-            "Project Scheduling",
-            "Site Cleanouts",
-            "Multi-location Coordination"
+        title: "Specialized Project Logistics",
+        desc: "Coordinated waste logistics for complex projects, closures, events, and disaster response.",
+        href: "/services/store-decommissioning",
+        items: [
+            {
+                label: "Site Closures & Remodels",
+                desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps."
+            },
+            {
+                label: "Events & Stadiums",
+                desc: "End-to-end waste plans for venues\u2014placement, swaps, post-event sweeps, and recycling."
+            },
+            {
+                label: "Natural Disaster Mobilization",
+                desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide."
+            }
         ]
     },
     {
-        title: "Event & Stadium Waste Logistics",
-        desc: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
-        img: imgServiceEventStadium,
-        features: [
-            "Venue Routing",
-            "High-volume Support",
-            "Diversion Planning"
+        title: "Dumpsters & Temporary Containers",
+        desc: "Temporary containers and compactor solutions for projects and peaks.",
+        href: "/services/dumpster-rentals",
+        items: [
+            {
+                label: "On-Demand Service",
+                desc: "Same-day or next-day delivery for urgent container needs at any location."
+            },
+            {
+                label: "Multiple Sizes & Types",
+                desc: "From 2-yard front-load to 40-yard roll-offs\u2014the right container for every job."
+            },
+            {
+                label: "Flexible Terms",
+                desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget."
+            }
         ]
     },
     {
-        title: "Dumpster Rental & Temporary Containers",
-        desc: "Temporary containers and compactor solutions for projects and peaks. Transparent sizing, delivery windows, and swap schedules.",
-        img: imgServiceDumpsterRental,
-        features: [
-            "Roll-offs & Front-load",
-            "Fast Delivery",
-            "Flexible Terms"
-        ]
-    },
-    {
-        title: "Centralized Waste Program Management",
-        desc: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
-        img: imgServiceCentralizedProgram,
-        features: [
-            "Standardized SLAs",
-            "Spend Visibility",
-            "Single Point of Contact"
-        ]
-    },
-    {
-        title: "Environmental & Compactor Maintenance Services",
-        desc: "Preventative maintenance and service for compactors and waste equipment, plus environmental support to keep sites compliant and running.",
-        img: imgServiceMaintenance,
-        features: [
-            "PM Schedules",
-            "On-site Repairs",
-            "Compliance Support"
+        title: "Centralized Waste Management",
+        desc: "One partner to standardize vendors, pricing, and service levels across all your locations.",
+        href: "/services/centralized-programs",
+        items: [
+            {
+                label: "Single Point of Contact",
+                desc: "One dedicated account manager for all your locations\u2014simplifying communication."
+            },
+            {
+                label: "Performance Tracking",
+                desc: "Real-time dashboards and reporting to monitor service levels across every site."
+            },
+            {
+                label: "Spend Optimization",
+                desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend."
+            }
         ]
     }
+];
+const categoryIcons = [
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__["Siren"],
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"],
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"],
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__["ClipboardCheck"]
 ];
 function CommercialWasteServices() {
     const [activeService, setActiveService] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
@@ -1578,32 +1600,31 @@ function CommercialWasteServices() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid lg:grid-cols-12 gap-8 items-stretch",
+                    className: "grid lg:grid-cols-12 gap-6 lg:gap-8 items-start",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "lg:col-span-4 flex flex-col space-y-[6px]",
                             children: services.map((service, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>setActiveService(i),
-                                    onMouseEnter: ()=>setActiveService(i),
-                                    className: `text-left px-6 md:px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${activeService === i ? "bg-white shadow-lg text-[#042940] border border-[#042940]/5" : "text-[#042940]/40 hover:text-[#042940] active:text-[#042940] hover:bg-white/50 active:bg-white/50"}`,
-                                    "data-testid": `button-service-${i}`,
+                                    "data-testid": `button-service-category-${i}`,
+                                    className: `text-left px-6 md:px-8 py-5 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${activeService === i ? "bg-white shadow-lg text-[#042940] border border-[#042940]/5" : "text-[#042940]/40 hover:text-[#042940] active:text-[#042940] hover:bg-white/50 active:bg-white/50"}`,
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "relative z-10 flex items-center justify-between",
+                                            className: "relative z-10 flex items-center justify-between gap-3",
                                             children: [
                                                 service.title,
                                                 activeService === i && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].span, {
                                                     layoutId: "services-active-indicator",
-                                                    className: "w-2 h-2 rounded-full bg-[#c5d520]"
+                                                    className: "w-2 h-2 rounded-full bg-[#c5d520] flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                    lineNumber: 96,
+                                                    lineNumber: 94,
                                                     columnNumber: 22
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                            lineNumber: 93,
+                                            lineNumber: 91,
                                             columnNumber: 18
                                         }, this),
                                         activeService === i && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1620,158 +1641,125 @@ function CommercialWasteServices() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                            lineNumber: 100,
+                                            lineNumber: 98,
                                             columnNumber: 20
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 81,
                                     columnNumber: 16
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                            lineNumber: 80,
+                            lineNumber: 79,
                             columnNumber: 12
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "lg:col-span-8 cursor-pointer h-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-[5px]",
-                            role: "button",
-                            tabIndex: 0,
-                            "aria-label": "View service details",
-                            onClick: ()=>console.log('Navigate to service details'),
-                            onKeyDown: (e)=>(e.key === 'Enter' || e.key === ' ') && console.log('Navigate to service details'),
-                            "data-testid": "button-service-details",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                            className: "lg:col-span-8",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                                     mode: "wait",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                                         initial: {
                                             opacity: 0,
-                                            scale: 1.05
+                                            y: 10
                                         },
                                         animate: {
                                             opacity: 1,
-                                            scale: 1
+                                            y: 0
                                         },
                                         exit: {
-                                            opacity: 0
+                                            opacity: 0,
+                                            y: -10
                                         },
                                         transition: {
-                                            duration: 0.5
+                                            duration: 0.35
                                         },
-                                        className: "absolute inset-0",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: services[activeService].img,
-                                                alt: services[activeService].title,
-                                                className: "w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                lineNumber: 124,
-                                                columnNumber: 20
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/70 md:via-[#042940]/60 to-transparent opacity-95 md:opacity-90"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                lineNumber: 129,
-                                                columnNumber: 20
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "absolute inset-0 p-6 md:p-12 flex flex-col justify-end",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                                    initial: {
-                                                        opacity: 0,
-                                                        y: 20
-                                                    },
-                                                    animate: {
-                                                        opacity: 1,
-                                                        y: 0
-                                                    },
-                                                    transition: {
-                                                        delay: 0.2
-                                                    },
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight",
-                                                            children: services[activeService].title
+                                        className: "grid sm:grid-cols-3 gap-4",
+                                        children: services[activeService].items.map((item, idx)=>{
+                                            const Icon = categoryIcons[activeService];
+                                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "bg-white rounded-[5px] border border-[#042940]/5 shadow-sm p-6 flex flex-col gap-4 hover:shadow-md transition-shadow",
+                                                "data-testid": `card-service-feature-${activeService}-${idx}`,
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "w-10 h-10 rounded-full bg-[#c5d520]/15 flex items-center justify-center flex-shrink-0",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                            className: "w-5 h-5 text-[#c5d520]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                            lineNumber: 137,
-                                                            columnNumber: 24
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-white/90 text-xl leading-relaxed max-w-2xl font-medium mb-8",
-                                                            children: services[activeService].desc
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                            lineNumber: 140,
-                                                            columnNumber: 24
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex flex-wrap gap-4 mb-8",
-                                                            children: services[activeService].features.map((feature, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white text-sm font-bold border border-white/10 hover:bg-white/20 transition-colors",
-                                                                    children: feature
-                                                                }, idx, false, {
-                                                                    fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                                    lineNumber: 146,
-                                                                    columnNumber: 28
-                                                                }, this))
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                            lineNumber: 144,
-                                                            columnNumber: 24
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide group-hover:gap-4 transition-all",
-                                                            children: [
-                                                                "Learn More ",
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                                    className: "w-5 h-5"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                                    lineNumber: 153,
-                                                                    columnNumber: 37
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                            lineNumber: 152,
-                                                            columnNumber: 24
+                                                            lineNumber: 129,
+                                                            columnNumber: 26
                                                         }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                    lineNumber: 132,
-                                                    columnNumber: 22
-                                                }, this)
-                                            }, void 0, false, {
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/shared/CommercialWasteServices.tsx",
+                                                        lineNumber: 128,
+                                                        columnNumber: 24
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                        className: "font-bold text-[#042940] text-base leading-snug",
+                                                        children: item.label
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/shared/CommercialWasteServices.tsx",
+                                                        lineNumber: 131,
+                                                        columnNumber: 24
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-[#042940]/60 text-sm leading-relaxed",
+                                                        children: item.desc
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/shared/CommercialWasteServices.tsx",
+                                                        lineNumber: 134,
+                                                        columnNumber: 24
+                                                    }, this)
+                                                ]
+                                            }, idx, true, {
                                                 fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                lineNumber: 131,
-                                                columnNumber: 20
-                                            }, this)
-                                        ]
-                                    }, activeService, true, {
+                                                lineNumber: 123,
+                                                columnNumber: 22
+                                            }, this);
+                                        })
+                                    }, activeService, false, {
                                         fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                        lineNumber: 116,
-                                        columnNumber: 18
+                                        lineNumber: 112,
+                                        columnNumber: 16
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                    lineNumber: 115,
-                                    columnNumber: 16
+                                    lineNumber: 111,
+                                    columnNumber: 14
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-6",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        href: services[activeService].href,
+                                        className: "inline-flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide text-sm hover:gap-3 transition-all",
+                                        "data-testid": `link-service-learn-more-${activeService}`,
+                                        children: [
+                                            "Learn More ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                className: "w-4 h-4"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/shared/CommercialWasteServices.tsx",
+                                                lineNumber: 149,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/shared/CommercialWasteServices.tsx",
+                                        lineNumber: 144,
+                                        columnNumber: 16
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/shared/CommercialWasteServices.tsx",
+                                    lineNumber: 143,
+                                    columnNumber: 14
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                lineNumber: 114,
-                                columnNumber: 14
-                            }, this)
-                        }, void 0, false, {
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                            lineNumber: 113,
+                            lineNumber: 110,
                             columnNumber: 12
                         }, this)
                     ]
