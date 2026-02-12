@@ -137,7 +137,7 @@ export default function Footer() {
                 className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6"
                 data-testid="input-footer-newsletter"
               />
-              <Button size="lg" className="bg-[#c5d520] text-[#042940] min-h-[52px]" data-testid="button-footer-newsletter">
+              <Button size="lg" className="bg-[#c5d520] text-[#042940] min-h-[52px] no-default-hover-elevate no-default-active-elevate hover:bg-[#d4e232] active:bg-[#b3c11c]" data-testid="button-footer-newsletter">
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </div>
