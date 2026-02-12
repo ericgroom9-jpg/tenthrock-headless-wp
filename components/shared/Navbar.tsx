@@ -158,7 +158,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-0 right-0 top-[80px] z-50 px-4 md:px-8"
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
                     role="menu"
                     data-testid="menu-nav-services"
                   >
