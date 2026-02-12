@@ -27,10 +27,6 @@ const logoWhite = "/images/logos/Green-White-Logo.png";
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
 const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
 const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
-const imgCaseStudyMain = "/images/stock/case-study-main.jpg";
-const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
-const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
-const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/floor-park.jpg";
 const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
@@ -60,12 +56,6 @@ interface ServiceTemplateProps {
     value: string;
     description: string;
   }[];
-  caseStudy?: {
-    title: string;
-    description: string;
-    image: string;
-    stats: { value: string; label: string }[];
-  };
 }
 
 const defaultProcessSteps = [
@@ -105,18 +95,6 @@ const defaultStats = [
   { label: "SATISFACTION", value: "80%", description: "First-time resolution rate for all requests." },
 ];
 
-const defaultCaseStudy = {
-  title: "Case Study Title",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-  image: imgCaseStudyMain,
-  stats: [
-    { value: "32%", label: "Cost reduction achieved" },
-    { value: "32%", label: "Time saved on logistics" },
-    { value: "32%", label: "Waste diverted from landfill" },
-    { value: "32%", label: "Carbon footprint reduced" },
-  ],
-};
-
 export default function ServiceTemplate({
   serviceName,
   serviceDescription,
@@ -125,7 +103,6 @@ export default function ServiceTemplate({
   processSteps = defaultProcessSteps,
   faqs = defaultFaqs,
   stats = defaultStats,
-  caseStudy = defaultCaseStudy,
 }: ServiceTemplateProps) {
   const [activeStep, setActiveStep] = useState(0);
   const [openItem, setOpenItem] = useState("item-0");
@@ -701,82 +678,6 @@ export default function ServiceTemplate({
           </div>
         </section>
 
-        {/* Case Study Section - Matching Homepage Design Exactly */}
-        <section className="py-16 md:py-24 bg-white border-b border-primary/5">
-          <div className="container mx-auto px-4 md:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Column - Images (order-2 on mobile, order-1 on lg) */}
-              <div className="space-y-4 order-2 lg:order-1">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="rounded-[5px] overflow-hidden h-[400px]"
-                >
-                  <img 
-                    src={caseStudy.image} 
-                    alt="Case Study Main" 
-                    className="w-full h-full object-cover md:hover:scale-105 transition-transform duration-700" 
-                  />
-                </motion.div>
-                <div className="grid grid-cols-3 gap-4">
-                  {[imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3].map((img, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                      className="rounded-[5px] overflow-hidden aspect-square"
-                    >
-                      <img 
-                        src={img} 
-                        alt={`Case Study Detail ${i + 1}`} 
-                        className="w-full h-full object-cover md:hover:scale-110 transition-transform duration-500" 
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column - Content (order-1 on mobile, order-2 on lg) */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="lg:pl-8 order-1 lg:order-2"
-              >
-                <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">
-                  {caseStudy.title}
-                </h2>
-                <p className="text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed">
-                  {caseStudy.description}
-                </p>
-
-                <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
-                  {caseStudy.stats.map((stat, i) => (
-                    <div key={i}>
-                      <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
-                      <div className="text-sm font-bold text-primary uppercase tracking-wide">{stat.label}</div>
-                      <div className="h-1 w-12 bg-primary/10 mt-3"></div>
-                    </div>
-                  ))}
-                </div>
-
-                <Button 
-                  size="lg" 
-                  className="bg-primary text-white min-h-[52px] rounded-full"
-                  data-testid="button-case-study-cta"
-                >
-                  Read Full Case Study
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section - Matching Homepage Design Exactly */}
         <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
