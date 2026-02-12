@@ -236,6 +236,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/services/brand-protection/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/brand-protection">> = Specific
+  const handler = {} as typeof import("../../../app/services/brand-protection/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/services/centralized-programs/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/services/centralized-programs">> = Specific
@@ -249,6 +258,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/services/commercial-waste">> = Specific
   const handler = {} as typeof import("../../../app/services/commercial-waste/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/compliance-support/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/compliance-support">> = Specific
+  const handler = {} as typeof import("../../../app/services/compliance-support/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -285,6 +303,96 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/services/event-stadium">> = Specific
   const handler = {} as typeof import("../../../app/services/event-stadium/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/events-stadiums/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/events-stadiums">> = Specific
+  const handler = {} as typeof import("../../../app/services/events-stadiums/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/flexible-terms/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/flexible-terms">> = Specific
+  const handler = {} as typeof import("../../../app/services/flexible-terms/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/multiple-sizes-types/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/multiple-sizes-types">> = Specific
+  const handler = {} as typeof import("../../../app/services/multiple-sizes-types/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/natural-disaster-mobilization/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/natural-disaster-mobilization">> = Specific
+  const handler = {} as typeof import("../../../app/services/natural-disaster-mobilization/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/on-demand-service/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/on-demand-service">> = Specific
+  const handler = {} as typeof import("../../../app/services/on-demand-service/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/performance-tracking/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/performance-tracking">> = Specific
+  const handler = {} as typeof import("../../../app/services/performance-tracking/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/single-point-of-contact/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/single-point-of-contact">> = Specific
+  const handler = {} as typeof import("../../../app/services/single-point-of-contact/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/site-closures-remodels/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/site-closures-remodels">> = Specific
+  const handler = {} as typeof import("../../../app/services/site-closures-remodels/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/site-stabilization/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/site-stabilization">> = Specific
+  const handler = {} as typeof import("../../../app/services/site-stabilization/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/services/spend-optimization/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/services/spend-optimization">> = Specific
+  const handler = {} as typeof import("../../../app/services/spend-optimization/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

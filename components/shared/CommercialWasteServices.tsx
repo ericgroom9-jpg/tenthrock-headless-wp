@@ -9,41 +9,37 @@ const services = [
   {
     title: "Emergency Waste Response",
     desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can\u2019t wait.",
-    href: "/services/emergency-waste-removal",
     items: [
-      { label: "Site Stabilization", desc: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours.", img: "/images/stock/service-emergency-overflow.jpg" },
-      { label: "Compliance Support", desc: "Stay ahead of local and federal waste regulations with our compliance-first approach.", img: "/images/stock/service-emergency.jpg" },
-      { label: "Brand Protection", desc: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible.", img: "/images/stock/clean-city.jpg" },
+      { label: "Site Stabilization", desc: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours.", img: "/images/stock/service-emergency-overflow.jpg", href: "/services/site-stabilization" },
+      { label: "Compliance Support", desc: "Stay ahead of local and federal waste regulations with our compliance-first approach.", img: "/images/stock/service-emergency.jpg", href: "/services/compliance-support" },
+      { label: "Brand Protection", desc: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible.", img: "/images/stock/clean-city.jpg", href: "/services/brand-protection" },
     ],
   },
   {
     title: "Specialized Project Logistics",
     desc: "Coordinated waste logistics for complex projects, closures, events, and disaster response.",
-    href: "/services/store-decommissioning",
     items: [
-      { label: "Site Closures & Remodels", desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps.", img: "/images/stock/service-commercial.jpg" },
-      { label: "Events & Stadiums", desc: "End-to-end waste plans for venues\u2014placement, swaps, post-event sweeps, and recycling.", img: "/images/stock/service-event-stadium.jpg" },
-      { label: "Natural Disaster Mobilization", desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide.", img: "/images/stock/industry-natural-disasters-storm.jpg" },
+      { label: "Site Closures & Remodels", desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps.", img: "/images/stock/service-commercial.jpg", href: "/services/site-closures-remodels" },
+      { label: "Events & Stadiums", desc: "End-to-end waste plans for venues\u2014placement, swaps, post-event sweeps, and recycling.", img: "/images/stock/service-event-stadium.jpg", href: "/services/events-stadiums" },
+      { label: "Natural Disaster Mobilization", desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide.", img: "/images/stock/industry-natural-disasters-storm.jpg", href: "/services/natural-disaster-mobilization" },
     ],
   },
   {
     title: "Dumpsters & Temporary Containers",
     desc: "Temporary containers and compactor solutions for projects and peaks.",
-    href: "/services/dumpster-rentals",
     items: [
-      { label: "On-Demand Service", desc: "Same-day or next-day delivery for urgent container needs at any location.", img: "/images/stock/service-dumpster-rental.jpg" },
-      { label: "Multiple Sizes & Types", desc: "From 2-yard front-load to 40-yard roll-offs\u2014the right container for every job.", img: "/images/stock/service-dumpster.jpg" },
-      { label: "Flexible Terms", desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget.", img: "/images/stock/service-maintenance.jpg" },
+      { label: "On-Demand Service", desc: "Same-day or next-day delivery for urgent container needs at any location.", img: "/images/stock/service-dumpster-rental.jpg", href: "/services/on-demand-service" },
+      { label: "Multiple Sizes & Types", desc: "From 2-yard front-load to 40-yard roll-offs\u2014the right container for every job.", img: "/images/stock/service-dumpster.jpg", href: "/services/multiple-sizes-types" },
+      { label: "Flexible Terms", desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget.", img: "/images/stock/service-maintenance.jpg", href: "/services/flexible-terms" },
     ],
   },
   {
     title: "Centralized Waste Management",
     desc: "One partner to standardize vendors, pricing, and service levels across all your locations.",
-    href: "/services/centralized-programs",
     items: [
-      { label: "Single Point of Contact", desc: "One dedicated account manager for all your locations\u2014simplifying communication.", img: "/images/stock/service-centralized-program.jpg" },
-      { label: "Performance Tracking", desc: "Real-time dashboards and reporting to monitor service levels across every site.", img: "/images/stock/hero-skyscrapers.jpg" },
-      { label: "Spend Optimization", desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend.", img: "/images/stock/city-nature.jpg" },
+      { label: "Single Point of Contact", desc: "One dedicated account manager for all your locations\u2014simplifying communication.", img: "/images/stock/service-centralized-program.jpg", href: "/services/single-point-of-contact" },
+      { label: "Performance Tracking", desc: "Real-time dashboards and reporting to monitor service levels across every site.", img: "/images/stock/hero-skyscrapers.jpg", href: "/services/performance-tracking" },
+      { label: "Spend Optimization", desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend.", img: "/images/stock/city-nature.jpg", href: "/services/spend-optimization" },
     ],
   },
 ];
@@ -122,7 +118,7 @@ export default function CommercialWasteServices() {
                    return (
                      <Link
                        key={idx}
-                       href={services[activeService].href}
+                       href={item.href}
                        className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer block ring-0 hover:ring-2 hover:ring-[#c5d520]/40"
                        data-testid={`card-service-feature-${activeService}-${idx}`}
                      >
