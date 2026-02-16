@@ -6183,6 +6183,14 @@ h1, h3, h4, h5, h6, h2 {
     aspect-ratio: 4 / 3;
   }
 
+  .sm\:h-12 {
+    height: 3rem;
+  }
+
+  .sm\:h-24 {
+    height: 6rem;
+  }
+
   .sm\:h-6 {
     height: 1.5rem;
   }
@@ -6193,6 +6201,14 @@ h1, h3, h4, h5, h6, h2 {
 
   .sm\:min-h-\[55vh\] {
     min-height: 55vh;
+  }
+
+  .sm\:w-12 {
+    width: 3rem;
+  }
+
+  .sm\:w-24 {
+    width: 6rem;
   }
 
   .sm\:w-6 {
@@ -6330,6 +6346,11 @@ h1, h3, h4, h5, h6, h2 {
   .sm\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .sm\:py-28 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 
   .sm\:py-32 {
