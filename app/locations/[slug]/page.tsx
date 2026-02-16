@@ -331,7 +331,7 @@ export default function LocationTemplatePage() {
                       className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]"
                     />
                     <span className="text-sm text-[#042940]/80">
-                      I accept the <a href="/terms" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors">Terms</a>
+                      I accept the <a href="/privacy-policy" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors" data-testid="link-location-privacy-policy">Privacy Policy</a>
                     </span>
                   </label>
                   <Button

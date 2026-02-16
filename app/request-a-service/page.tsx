@@ -181,7 +181,7 @@ function RequestAServiceSection() {
                       data-testid="checkbox-request-terms"
                     />
                     <span className="text-sm text-[#042940]/80">
-                      I accept the <a href="/terms" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors" data-testid="link-request-terms">Terms</a>
+                      I accept the <a href="/privacy-policy" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors" data-testid="link-request-privacy-policy">Privacy Policy</a>
                     </span>
                   </label>
                   <Button

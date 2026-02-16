@@ -330,9 +330,7 @@ function FormSection() {
                   <input type="checkbox" className="mt-1 rounded border-[#042940]/20 text-[#c5d520] focus:ring-[#c5d520]" data-testid="input-terms" />
                   <span className="text-sm text-[#042940]/60">
                     I accept the{" "}
-                    <a href="#" className="text-[#042940] underline font-bold hover:text-[#c5d520] transition-colors">Terms</a>
-                    {" "}and{" "}
-                    <a href="#" className="text-[#042940] underline font-bold hover:text-[#c5d520] transition-colors">Privacy Policy</a>
+                    <a href="/privacy-policy" className="text-[#042940] underline font-bold hover:text-[#c5d520] transition-colors" data-testid="link-join-privacy-policy">Privacy Policy</a>
                   </span>
                 </label>
                 <Button 

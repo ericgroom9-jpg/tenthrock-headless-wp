@@ -2986,10 +2986,10 @@ function RequestAServiceSection() {
                                                             children: [
                                                                 "I accept the ",
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                    href: "/terms",
+                                                                    href: "/privacy-policy",
                                                                     className: "text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors",
-                                                                    "data-testid": "link-request-terms",
-                                                                    children: "Terms"
+                                                                    "data-testid": "link-request-privacy-policy",
+                                                                    children: "Privacy Policy"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/request-a-service/page.tsx",
                                                                     lineNumber: 184,

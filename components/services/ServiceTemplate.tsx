@@ -481,7 +481,7 @@ export default function ServiceTemplate({
                         data-testid="checkbox-terms"
                       />
                       <span className="text-sm text-[#042940]/80">
-                        I accept the <a href="/terms" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors">Terms</a>
+                        I accept the <a href="/privacy-policy" className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors" data-testid="link-service-privacy-policy">Privacy Policy</a>
                       </span>
                     </label>
                     <Button 
