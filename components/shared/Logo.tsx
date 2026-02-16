@@ -16,7 +16,7 @@ export default function Logo({ className = "", variant = "main" }: LogoProps) {
       <img 
         src={logoSrc} 
         alt="Tenth Rock Waste Solutions" 
-        className="h-8 md:h-10 w-auto object-contain" 
+        className="h-8 md:h-10 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-none object-contain" 
       />
     </div>
   );

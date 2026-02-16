@@ -1952,6 +1952,10 @@ h1, h3, h4, h5, h6, h2 {
   max-width: 1200px;
 }
 
+.max-w-\[160px\] {
+  max-width: 160px;
+}
+
 .max-w-\[200px\] {
   max-width: 200px;
 }
@@ -6209,6 +6213,10 @@ h1, h3, h4, h5, h6, h2 {
     width: auto;
   }
 
+  .sm\:max-w-\[200px\] {
+    max-width: 200px;
+  }
+
   .sm\:max-w-none {
     max-width: none;
   }
@@ -6485,6 +6493,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:max-w-\[420px\] {
     max-width: 420px;
+  }
+
+  .md\:max-w-none {
+    max-width: none;
   }
 
   .md\:grid-cols-2 {
