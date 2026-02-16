@@ -12,7 +12,7 @@ export default function LocationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 sm:mb-12"
+          className="text-left sm:text-center mb-8 sm:mb-12"
         >
           <h2 id="location-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
             Where to Find Us

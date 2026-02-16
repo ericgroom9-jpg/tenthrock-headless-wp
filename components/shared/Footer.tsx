@@ -45,17 +45,17 @@ export default function Footer() {
             <p className="text-white/60 leading-relaxed max-w-xs">
               Redefining commercial waste management with speed, transparency, and reliability across all 50 states.
             </p>
-            <div className="flex gap-4">
-              <a href="#" aria-label="LinkedIn" data-testid="link-social-linkedin" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+            <div className="flex gap-3">
+              <a href="#" aria-label="LinkedIn" data-testid="link-social-linkedin" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="Twitter" data-testid="link-social-twitter" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+              <a href="#" aria-label="Twitter" data-testid="link-social-twitter" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="Instagram" data-testid="link-social-instagram" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+              <a href="#" aria-label="Instagram" data-testid="link-social-instagram" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" aria-label="Facebook" data-testid="link-social-facebook" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+              <a href="#" aria-label="Facebook" data-testid="link-social-facebook" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
@@ -69,10 +69,10 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="font-bold text-lg mb-6 text-white">Services</h3>
-            <ul className="space-y-2 text-white/60 text-sm">
+            <ul className="space-y-1 text-white/60 text-sm">
               {serviceLinks.map((service) => (
                 <li key={service.href}>
-                  <Link href={service.href} className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid={`link-footer-service-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <Link href={service.href} className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid={`link-footer-service-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
                     {service.label}
                   </Link>
                 </li>
@@ -88,10 +88,10 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="font-bold text-lg mb-6 text-white">Industries</h3>
-            <ul className="space-y-2 text-white/60 text-sm">
+            <ul className="space-y-1 text-white/60 text-sm">
               {industryLinks.map((industry) => (
                 <li key={industry.href}>
-                  <Link href={industry.href} className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid={`link-footer-industry-${industry.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <Link href={industry.href} className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid={`link-footer-industry-${industry.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
                     {industry.label}
                   </Link>
                 </li>
@@ -107,16 +107,16 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
-            <ul className="space-y-2 text-white/60 text-sm">
-              <li><Link href="/about" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-about">About Us</Link></li>
-              <li><Link href="/our-process" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-process">Our Process</Link></li>
-              <li><Link href="/who-we-serve" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-who-we-serve">Who We Serve</Link></li>
-              <li><Link href="/locations" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-locations">Locations</Link></li>
-              <li><Link href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-success-stories">Success Stories</Link></li>
-              <li><Link href="/join-our-network" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-join-network">Join Our Network</Link></li>
-              <li><Link href="/faq" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-faq">FAQ</Link></li>
-              <li><Link href="/contact" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-contact">Contact</Link></li>
-              <li><Link href="/request-a-service" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-request-service">Request a Service</Link></li>
+            <ul className="space-y-1 text-white/60 text-sm">
+              <li><Link href="/about" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-about">About Us</Link></li>
+              <li><Link href="/our-process" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-process">Our Process</Link></li>
+              <li><Link href="/who-we-serve" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-who-we-serve">Who We Serve</Link></li>
+              <li><Link href="/locations" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-locations">Locations</Link></li>
+              <li><Link href="#" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-success-stories">Success Stories</Link></li>
+              <li><Link href="/join-our-network" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-join-network">Join Our Network</Link></li>
+              <li><Link href="/faq" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-faq">FAQ</Link></li>
+              <li><Link href="/contact" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-contact">Contact</Link></li>
+              <li><Link href="/request-a-service" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-request-service">Request a Service</Link></li>
             </ul>
           </motion.div>
 
@@ -153,11 +153,11 @@ export default function Footer() {
         
         <Separator className="bg-white/10 mb-8" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
           <p>© 2026 Tenth Rock Solutions. All rights reserved.</p>
-          <div className="flex gap-8 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors" data-testid="link-footer-privacy">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="hover:text-white transition-colors" data-testid="link-footer-terms">Terms of Service</Link>
+          <div className="flex gap-6 mt-2 md:mt-0">
+            <Link href="/privacy-policy" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-privacy">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-terms">Terms of Service</Link>
           </div>
         </div>
       </div>

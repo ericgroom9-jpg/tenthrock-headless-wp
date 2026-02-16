@@ -94,7 +94,7 @@ export default function LocationsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12 md:mb-16"
+            className="text-left sm:text-center mb-12 md:mb-16"
           >
             <h2 
               id="areas-heading"
@@ -102,7 +102,7 @@ export default function LocationsPage() {
             >
               Nationwide Coverage. Local Support.
             </h2>
-            <p className="text-base md:text-lg text-primary/70 max-w-lg mx-auto">
+            <p className="text-base md:text-lg text-primary/70 max-w-lg sm:mx-auto">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p>
           </motion.div>

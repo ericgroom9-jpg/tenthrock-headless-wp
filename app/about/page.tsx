@@ -187,7 +187,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10 md:mb-14"
+            className="text-left sm:text-center mb-10 md:mb-14"
           >
             <h2 id="associations-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">
               Associations

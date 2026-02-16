@@ -752,12 +752,12 @@ export default function ServiceTemplate({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center mb-8 sm:mb-12"
+              className="text-left sm:text-center mb-8 sm:mb-12"
             >
               <h2 id="location-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
                 Where to Find Us
               </h2>
-              <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+              <p className="text-gray-600 text-base sm:text-lg max-w-2xl sm:mx-auto">
                 Serving businesses nationwide with regional offices for local support.
               </p>
             </motion.div>

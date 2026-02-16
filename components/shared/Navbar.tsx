@@ -111,7 +111,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               <Link href="/request-a-service">Request a Service</Link>
             </Button>
             <button 
-              className="p-2 text-primary rounded-[5px] transition-colors flex items-center justify-center"
+              className="p-3 text-primary rounded-[5px] transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
               onClick={() => setIsNavExpanded(!isNavExpanded)}
               aria-expanded={isNavExpanded}
               aria-label="Toggle navigation menu"
@@ -437,19 +437,19 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="xl:hidden overflow-hidden mt-4"
+              className="xl:hidden overflow-hidden border-t border-gray-100 mt-3"
               aria-label="Mobile navigation"
             >
-              <div className="flex flex-col gap-1 pb-4">
+              <div className="flex flex-col pb-4 max-h-[calc(100vh-120px)] overflow-y-auto overscroll-contain">
                 {/* Services Accordion */}
-                <div>
+                <div className="border-b border-gray-100">
                   <div
-                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
+                    className="flex items-center justify-between w-full py-3 px-4 min-h-[52px]"
                     data-testid="button-mobile-services"
                   >
                     <Link
                       href="/services/commercial-waste"
-                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
                       Commercial Waste Services
@@ -458,7 +458,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       type="button"
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
                       aria-expanded={isServicesOpen}
-                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      className="p-3 -mr-1 hover:text-[#c5d520] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                       aria-label="Toggle services submenu"
                     >
                       <ChevronDown className={`w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
@@ -473,17 +473,17 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-4 pb-2 space-y-3">
+                        <div className="pl-4 pb-3 space-y-2">
                           {serviceCategories.map((cat, catIdx) => (
                             <div key={catIdx}>
-                              <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 pb-1 pt-2">
+                              <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-4 pb-1 pt-3">
                                 {cat.category}
                               </div>
                               {cat.items.map((service) => (
                                 <Link
                                   key={service.label}
                                   href={service.href}
-                                  className="font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
+                                  className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
                                   onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
                                   data-testid={`link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                                 >
@@ -499,14 +499,14 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </div>
 
                 {/* Who We Serve Accordion */}
-                <div>
+                <div className="border-b border-gray-100">
                   <div
-                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
+                    className="flex items-center justify-between w-full py-3 px-4 min-h-[52px]"
                     data-testid="button-mobile-sectors"
                   >
                     <a
                       href="/who-we-serve"
-                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
                       Who We Serve
@@ -515,7 +515,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       type="button"
                       onClick={() => setIsSectorsOpen(!isSectorsOpen)}
                       aria-expanded={isSectorsOpen}
-                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      className="p-3 -mr-1 hover:text-[#c5d520] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                       aria-label="Toggle sectors submenu"
                     >
                       <ChevronDown className={`w-5 h-5 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`} />
@@ -530,12 +530,12 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-4 pb-2">
+                        <div className="pl-4 pb-3">
                           {sectorLinks.map((sector) => (
                             <a
                               key={sector.label}
                               href={sector.href}
-                              className="block font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
+                              className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
                               onClick={() => { setIsNavExpanded(false); setIsSectorsOpen(false); }}
                               data-testid={`link-mobile-sectors-${sector.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                             >
@@ -549,14 +549,14 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </div>
 
                 {/* Locations Accordion */}
-                <div>
+                <div className="border-b border-gray-100">
                   <div
-                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
+                    className="flex items-center justify-between w-full py-3 px-4 min-h-[52px]"
                     data-testid="button-mobile-locations"
                   >
                     <Link
                       href="/locations"
-                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
                       Locations
@@ -565,7 +565,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       type="button"
                       onClick={() => setIsLocationsOpen(!isLocationsOpen)}
                       aria-expanded={isLocationsOpen}
-                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      className="p-3 -mr-1 hover:text-[#c5d520] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                       aria-label="Toggle locations submenu"
                     >
                       <ChevronDown className={`w-5 h-5 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`} />
@@ -580,12 +580,12 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-4 pb-2 grid grid-cols-2 gap-x-2">
+                        <div className="pl-4 pb-3 grid grid-cols-2 gap-x-2">
                           {locationLinks.map((loc) => (
                             <Link
                               key={loc.label}
                               href={loc.href}
-                              className="block font-medium text-primary/80 py-2 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors text-sm"
+                              className="font-medium text-primary/80 py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors text-sm min-h-[44px] flex items-center"
                               onClick={() => { setIsNavExpanded(false); setIsLocationsOpen(false); }}
                               data-testid={`link-mobile-locations-${loc.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                             >
@@ -599,14 +599,14 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </div>
 
                 {/* About Us Accordion */}
-                <div>
+                <div className="border-b border-gray-100">
                   <div
-                    className="flex items-center justify-between w-full py-4 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] transition-colors min-h-[52px]"
+                    className="flex items-center justify-between w-full py-3 px-4 min-h-[52px]"
                     data-testid="button-mobile-about"
                   >
                     <a
                       href="/about"
-                      className="font-bold text-primary hover:text-[#c5d520] transition-colors flex-1"
+                      className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
                       About Us
@@ -615,7 +615,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       type="button"
                       onClick={() => setIsAboutOpen(!isAboutOpen)}
                       aria-expanded={isAboutOpen}
-                      className="p-2 hover:text-[#c5d520] transition-colors"
+                      className="p-3 -mr-1 hover:text-[#c5d520] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                       aria-label="Toggle about submenu"
                     >
                       <ChevronDown className={`w-5 h-5 transition-transform ${isAboutOpen ? "rotate-180" : ""}`} />
@@ -630,12 +630,12 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-4 pb-2">
+                        <div className="pl-4 pb-3">
                           {aboutLinks.map((item) => (
                             <a
                               key={item.label}
                               href={item.href}
-                              className="block font-medium text-primary/80 py-3 px-3 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[52px] flex items-center"
+                              className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
                               onClick={() => { setIsNavExpanded(false); setIsAboutOpen(false); }}
                               data-testid={`link-mobile-about-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                             >
@@ -648,8 +648,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   </AnimatePresence>
                 </div>
 
-                <div className="pt-3 mt-2 border-t border-gray-100">
-                  <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] mb-2" data-testid="button-mobile-login">
+                <div className="pt-4 px-4">
+                  <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px]" data-testid="button-mobile-login">
                     Login
                   </Button>
                 </div>
