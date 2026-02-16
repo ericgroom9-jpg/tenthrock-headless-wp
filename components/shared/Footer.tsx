@@ -156,8 +156,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
           <p>© 2026 Tenth Rock Solutions. All rights reserved.</p>
           <div className="flex gap-8 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-white transition-colors" data-testid="link-footer-privacy">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors" data-testid="link-footer-terms">Terms of Service</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors" data-testid="link-footer-privacy">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors" data-testid="link-footer-terms">Terms of Service</Link>
           </div>
         </div>
       </div>
