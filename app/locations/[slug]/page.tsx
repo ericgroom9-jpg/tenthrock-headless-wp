@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { PhoneInput } from "@/components/ui/phone-input";
@@ -47,6 +47,7 @@ function formatSlug(slug: string): string {
 
 export default function LocationTemplatePage() {
   const params = useParams();
+  const router = useRouter();
   const slug = (params?.slug as string) || "new-york";
   const locationName = formatSlug(slug);
 
@@ -210,6 +211,7 @@ export default function LocationTemplatePage() {
                 className="space-y-5"
                 onSubmit={(e) => {
                   e.preventDefault();
+                  router.push("/book-a-call");
                 }}
                 data-testid="form-location-quote"
               >
