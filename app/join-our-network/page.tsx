@@ -9,8 +9,6 @@ import {
   Users
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { PhoneInput } from "@/components/ui/phone-input";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import FaqSection from "@/components/shared/FaqSection";
@@ -225,124 +223,15 @@ function FormSection() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8 md:p-12">
-            <div className="mb-8">
-              <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter leading-tight mb-2" data-testid="text-join-form-heading">
-                Personal + Company Information
-              </h2>
-              <p className="text-[#042940]/60">
-                Tell us about your business and we'll get you started.
-              </p>
-            </div>
-
-            <form className="space-y-6" data-testid="form-join-network">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-bold text-[#042940] mb-2">First Name *</label>
-                  <Input 
-                    id="firstName"
-                    placeholder="First Name" 
-                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
-                    data-testid="input-first-name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-bold text-[#042940] mb-2">Last Name *</label>
-                  <Input 
-                    id="lastName"
-                    placeholder="Last Name" 
-                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
-                    data-testid="input-last-name"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-[#042940] mb-2">Email *</label>
-                  <Input 
-                    id="email"
-                    type="email"
-                    placeholder="you@company.com" 
-                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
-                    data-testid="input-email"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-bold text-[#042940] mb-2">Phone *</label>
-                  <PhoneInput
-                    id="phone"
-                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
-                    data-testid="input-phone"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="companyName" className="block text-sm font-bold text-[#042940] mb-2">Company Name *</label>
-                <Input 
-                  id="companyName"
-                  placeholder="Your Company Name" 
-                  className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
-                  data-testid="input-company"
-                  required
-                />
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="serviceArea" className="block text-sm font-bold text-[#042940] mb-2">Service Area / State(s)</label>
-                  <Input 
-                    id="serviceArea"
-                    placeholder="e.g. Texas, Oklahoma" 
-                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
-                    data-testid="input-service-area"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="fleetSize" className="block text-sm font-bold text-[#042940] mb-2">Fleet Size</label>
-                  <Input 
-                    id="fleetSize"
-                    placeholder="Number of trucks" 
-                    className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
-                    data-testid="input-fleet-size"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-bold text-[#042940] mb-2">Additional Information</label>
-                <textarea 
-                  id="message"
-                  rows={4}
-                  placeholder="Tell us about your services, equipment, and capabilities..."
-                  className="w-full rounded-md border border-[#042940]/10 px-3 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 resize-none"
-                  data-testid="input-message"
-                />
-              </div>
-
-              <div className="border-t border-[#042940]/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <label className="flex items-start gap-3 cursor-pointer" data-testid="label-terms">
-                  <input type="checkbox" className="mt-1 rounded border-[#042940]/20 text-[#c5d520] focus:ring-[#c5d520]" data-testid="input-terms" />
-                  <span className="text-sm text-[#042940]/60">
-                    I accept the{" "}
-                    <a href="/privacy-policy" className="text-[#042940] underline font-bold hover:text-[#c5d520] transition-colors" data-testid="link-join-privacy-policy">Privacy Policy</a>
-                  </span>
-                </label>
-                <Button 
-                  type="submit"
-                  size="lg"
-                  className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] rounded-full px-10 shadow-lg hover:shadow-[0_0_40px_rgba(197,213,32,0.3)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap font-bold"
-                  data-testid="button-submit-form"
-                >
-                  Submit Application
-                </Button>
-              </div>
-            </form>
+          <div className="rounded-[5px] overflow-hidden shadow-xl border border-[#042940]/5" data-testid="join-form-iframe-container">
+            <iframe
+              src="https://vendor-onboarding-hub.lovable.app"
+              title="Vendor Onboarding Form"
+              className="w-full border-0"
+              style={{ minHeight: "1200px" }}
+              allow="clipboard-write"
+              data-testid="iframe-vendor-onboarding"
+            />
           </div>
         </motion.div>
       </div>

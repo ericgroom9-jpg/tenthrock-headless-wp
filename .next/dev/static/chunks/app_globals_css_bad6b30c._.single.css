@@ -4863,12 +4863,6 @@ h1, h3, h4, h5, h6, h2 {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:shadow-\[0_0_40px_rgba\(197\,213\,32\,0\.3\)\]:hover {
-  --tw-shadow: 0 0 40px #c5d5204d;
-  --tw-shadow-colored: 0 0 40px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .hover\:shadow-\[0_0_50px_rgba\(197\,213\,32\,0\.5\)\]:hover {
   --tw-shadow: 0 0 50px #c5d52080;
   --tw-shadow-colored: 0 0 50px var(--tw-shadow-color);
