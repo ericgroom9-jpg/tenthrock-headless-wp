@@ -1253,6 +1253,10 @@ h1, h3, h4, h5, h6, h2 {
   z-index: 20;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1280,6 +1284,11 @@ h1, h3, h4, h5, h6, h2 {
 .-mx-1 {
   margin-left: -.25rem;
   margin-right: -.25rem;
+}
+
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .mx-2 {
@@ -2407,6 +2416,10 @@ h1, h3, h4, h5, h6, h2 {
   overflow: hidden;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -3005,6 +3018,11 @@ h1, h3, h4, h5, h6, h2 {
   --tw-gradient-stops: var(--tw-gradient-from), #04294033 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
+.via-\[\#042940\]\/30 {
+  --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #0429404d var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
 .via-\[\#042940\]\/40 {
   --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #04294066 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -3251,6 +3269,11 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: .5rem;
 }
 
+.py-2\.5 {
+  padding-top: .625rem;
+  padding-bottom: .625rem;
+}
+
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -3300,6 +3323,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .pb-2 {
   padding-bottom: .5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .pb-3 {
@@ -3834,6 +3861,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .opacity-20 {
   opacity: .2;
+}
+
+.opacity-40 {
+  opacity: .4;
 }
 
 .opacity-50 {
@@ -6363,6 +6394,11 @@ h1, h3, h4, h5, h6, h2 {
     order: 9999;
   }
 
+  .md\:mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .md\:mb-12 {
     margin-bottom: 3rem;
   }
@@ -6389,6 +6425,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .md\:mt-20 {
+    margin-top: 5rem;
   }
 
   .md\:block {
@@ -6463,6 +6503,10 @@ h1, h3, h4, h5, h6, h2 {
     align-items: flex-end;
   }
 
+  .md\:justify-center {
+    justify-content: center;
+  }
+
   .md\:justify-between {
     justify-content: space-between;
   }
@@ -6473,6 +6517,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:gap-16 {
     gap: 4rem;
+  }
+
+  .md\:gap-3 {
+    gap: .75rem;
   }
 
   .md\:gap-6 {
@@ -6543,6 +6591,11 @@ h1, h3, h4, h5, h6, h2 {
     padding: 2rem;
   }
 
+  .md\:px-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -6583,6 +6636,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:pb-24 {
     padding-bottom: 6rem;
+  }
+
+  .md\:pb-28 {
+    padding-bottom: 7rem;
   }
 
   .md\:pt-0 {
@@ -6972,6 +7029,10 @@ h1, h3, h4, h5, h6, h2 {
   .lg\:py-48 {
     padding-top: 12rem;
     padding-bottom: 12rem;
+  }
+
+  .lg\:pb-32 {
+    padding-bottom: 8rem;
   }
 
   .lg\:pl-16 {

@@ -76,6 +76,7 @@ const locationLinks = [
 const aboutLinks = [
   { label: "About Us", href: "/about" },
   { label: "Join Our Network", href: "/join-our-network" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
 ];
 

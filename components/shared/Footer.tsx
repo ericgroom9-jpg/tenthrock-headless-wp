@@ -114,6 +114,7 @@ export default function Footer() {
               <li><Link href="/locations" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-locations">Locations</Link></li>
               <li><Link href="#" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-success-stories">Success Stories</Link></li>
               <li><Link href="/join-our-network" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-join-network">Join Our Network</Link></li>
+              <li><Link href="/faq" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-faq">FAQ</Link></li>
               <li><Link href="/contact" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-contact">Contact</Link></li>
               <li><Link href="/request-a-service" className="block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors" data-testid="link-footer-request-service">Request a Service</Link></li>
             </ul>
