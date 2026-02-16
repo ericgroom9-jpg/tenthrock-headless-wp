@@ -1,4 +1,4 @@
 {
-  "/join-our-network/page": "app/join-our-network/page.js",
+  "/page": "app/page.js",
   "/request-a-service/page": "app/request-a-service/page.js"
 }
