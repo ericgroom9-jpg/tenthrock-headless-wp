@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { 
   ArrowRight, 
@@ -104,10 +105,16 @@ export default function ServiceTemplate({
   faqs = defaultFaqs,
   stats = defaultStats,
 }: ServiceTemplateProps) {
+  const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
   const [openItem, setOpenItem] = useState("item-0");
   const [activeService, setActiveService] = useState(0);
   const [openAccordion, setOpenAccordion] = useState<string | null>("about");
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/book-a-call");
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -144,11 +151,12 @@ export default function ServiceTemplate({
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button 
+                    asChild
                     size="lg"
                     className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
                     data-testid="button-hero-cta"
                   >
-                    Request a Service
+                    <Link href="/request-a-service">Request a Service</Link>
                   </Button>
                   <Button 
                     size="lg"
@@ -377,7 +385,7 @@ export default function ServiceTemplate({
                   <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
                   <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
                 </div>
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={handleFormSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-[#042940] mb-2">
@@ -621,8 +629,8 @@ export default function ServiceTemplate({
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
-                    <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
-                      Request a Service
+                    <Button asChild size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
+                      <Link href="/request-a-service">Request a Service</Link>
                     </Button>
                     <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
                       <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
@@ -831,8 +839,8 @@ export default function ServiceTemplate({
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap">
-                    Request a Service
+                  <Button asChild size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap">
+                    <Link href="/request-a-service">Request a Service</Link>
                   </Button>
                 </div>
               </div>
