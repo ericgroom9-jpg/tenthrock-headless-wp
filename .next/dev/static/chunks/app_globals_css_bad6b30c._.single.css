@@ -6156,6 +6156,11 @@ h1, h3, h4, h5, h6, h2 {
     top: auto;
   }
 
+  .sm\:mx-0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .sm\:mb-12 {
     margin-bottom: 3rem;
   }
@@ -6202,6 +6207,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .sm\:w-auto {
     width: auto;
+  }
+
+  .sm\:max-w-none {
+    max-width: none;
   }
 
   .sm\:max-w-sm {
