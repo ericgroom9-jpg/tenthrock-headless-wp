@@ -1,6 +1,5 @@
 {
   "/[slug]/page": "app/[slug]/page.js",
-  "/privacy-policy/page": "app/privacy-policy/page.js",
-  "/request-a-service/page": "app/request-a-service/page.js",
-  "/services/waste-removal/page": "app/services/waste-removal/page.js"
+  "/services/waste-removal/page": "app/services/waste-removal/page.js",
+  "/terms-of-service/page": "app/terms-of-service/page.js"
 }
