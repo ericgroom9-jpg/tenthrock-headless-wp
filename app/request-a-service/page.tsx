@@ -24,7 +24,7 @@ function RequestAServiceSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/contact/thank-you");
+    router.push("/book-a-call");
   };
 
   return (

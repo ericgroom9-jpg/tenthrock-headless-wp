@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
@@ -65,6 +67,23 @@ function BookACallSection() {
               <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#042940]/50 text-center px-6">
                 Calendar Embed
               </p>
+            </div>
+
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-[#042940]/70" data-testid="text-book-call-skip-note">
+                Already booked or prefer to skip?
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+                data-testid="button-book-call-continue"
+              >
+                <Link href="/thank-you">
+                  Continue
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
             </div>
           </motion.div>
 
