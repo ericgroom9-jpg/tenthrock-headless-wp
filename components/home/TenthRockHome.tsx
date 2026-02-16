@@ -549,8 +549,8 @@ const Stats = () => {
   return (
     <section className="py-16 md:py-24 bg-[#FDFDFD]">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="sticky top-32">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="lg:sticky lg:top-32">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -579,26 +579,14 @@ const Stats = () => {
           </div>
 
           <div className="grid gap-8">
-             <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: 0.1 }}
-               className="border border-primary/10 p-8 rounded-[5px] bg-white"
-             >
+             <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                 <Separator className="bg-primary/10 mb-4" />
                 <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-             </motion.div>
+             </div>
              
-             <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: 0.2 }}
-               className="border border-primary/10 p-8 rounded-[5px] bg-white"
-             >
+             <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                 <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
                   <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
                 </div>
@@ -606,20 +594,14 @@ const Stats = () => {
                 <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
                 <Separator className="bg-primary/10 mb-4" />
                 <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-             </motion.div>
+             </div>
 
-             <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: 0.3 }}
-               className="border border-primary/10 p-8 rounded-[5px] bg-white"
-             >
+             <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
                 <Separator className="bg-primary/10 mb-4" />
                 <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-             </motion.div>
+             </div>
           </div>
         </div>
       </div>
