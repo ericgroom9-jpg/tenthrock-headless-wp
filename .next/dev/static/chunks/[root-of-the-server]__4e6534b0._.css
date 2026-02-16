@@ -2337,6 +2337,10 @@ h1, h3, h4, h5, h6, h2 {
   resize: none;
 }
 
+.list-disc {
+  list-style-type: disc;
+}
+
 .list-none {
   list-style-type: none;
 }
@@ -3510,6 +3514,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .pl-4 {
   padding-left: 1rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
 }
 
 .pl-8 {
