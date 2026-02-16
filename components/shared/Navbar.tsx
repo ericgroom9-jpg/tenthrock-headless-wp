@@ -124,7 +124,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
           <nav className="hidden xl:flex items-center gap-6 flex-1 justify-center">
             <div
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseEnter={() => { setIsServicesOpen(true); setIsSectorsOpen(false); setIsLocationsOpen(false); setIsAboutOpen(false); }}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <div
@@ -198,7 +198,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             {/* Who We Serve Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setIsSectorsOpen(true)}
+              onMouseEnter={() => { setIsSectorsOpen(true); setIsServicesOpen(false); setIsLocationsOpen(false); setIsAboutOpen(false); }}
               onMouseLeave={() => setIsSectorsOpen(false)}
             >
               <div
@@ -228,29 +228,32 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               <AnimatePresence>
                 {isSectorsOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                    transition={{ duration: 0.16, ease: "easeOut" }}
-                    className="absolute left-0 top-[calc(100%+14px)] w-[320px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
                     role="menu"
                     data-testid="menu-nav-sectors"
                   >
-                    <div className="p-3">
-                      <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
-                        Industries
+                    <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
+                      <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
+                        <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                          Industries We Serve
+                        </h3>
                       </div>
-                      <div className="grid gap-1">
+                      <div className="grid grid-cols-4 gap-x-8 gap-y-1">
                         {sectorLinks.map((sector) => (
                           <a
                             key={sector.label}
                             href={sector.href}
                             data-testid={`link-nav-sectors-${sector.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                            className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
+                            className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
                             onClick={() => setIsSectorsOpen(false)}
                           >
-                            <span className="pr-3">{sector.label}</span>
-                            <ChevronRight className="w-4 h-4 text-primary/40" />
+                            <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
+                            <span>{sector.label}</span>
                           </a>
                         ))}
                       </div>
@@ -263,7 +266,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             {/* Locations Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setIsLocationsOpen(true)}
+              onMouseEnter={() => { setIsLocationsOpen(true); setIsServicesOpen(false); setIsSectorsOpen(false); setIsAboutOpen(false); }}
               onMouseLeave={() => setIsLocationsOpen(false)}
             >
               <div
@@ -293,42 +296,46 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               <AnimatePresence>
                 {isLocationsOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                    transition={{ duration: 0.16, ease: "easeOut" }}
-                    className="absolute right-0 top-[calc(100%+14px)] w-[640px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
                     role="menu"
                     data-testid="menu-nav-locations"
                   >
-                    <div className="p-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-2">
-                          Service Locations
+                    <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
+                      <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
+                          <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                            Service Locations
+                          </h3>
                         </div>
                         <Link
                           href="/locations"
-                          className="text-xs font-bold text-[#c5d520] hover:underline px-2"
+                          className="text-xs font-bold text-[#c5d520] hover:text-[#c5d520]/80 transition-colors"
                           onClick={() => setIsLocationsOpen(false)}
                           data-testid="link-nav-locations-view-all"
                         >
                           View All Locations
                         </Link>
                       </div>
-                      <div className="grid grid-cols-4 gap-x-2">
+                      <div className="grid grid-cols-4 gap-x-8">
                         {(() => {
                           const colSize = Math.ceil(locationLinks.length / 4);
                           return Array.from({ length: 4 }, (_, colIdx) => (
-                            <div key={colIdx} className="flex flex-col">
+                            <div key={colIdx} className="flex flex-col gap-0.5">
                               {locationLinks.slice(colIdx * colSize, (colIdx + 1) * colSize).map((loc) => (
                                 <Link
                                   key={loc.label}
                                   href={loc.href}
                                   data-testid={`link-nav-locations-${loc.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                  className="rounded-[5px] px-2 py-[6px] text-[13px] font-medium text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors truncate"
+                                  className="group flex items-center gap-3 rounded-[5px] px-3 py-2 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors"
                                   onClick={() => setIsLocationsOpen(false)}
                                 >
-                                  {loc.label}
+                                  <ChevronRight className="w-3 h-3 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
+                                  <span>{loc.label}</span>
                                 </Link>
                               ))}
                             </div>
@@ -344,7 +351,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             {/* About Us Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setIsAboutOpen(true)}
+              onMouseEnter={() => { setIsAboutOpen(true); setIsServicesOpen(false); setIsSectorsOpen(false); setIsLocationsOpen(false); }}
               onMouseLeave={() => setIsAboutOpen(false)}
             >
               <div
@@ -374,29 +381,32 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               <AnimatePresence>
                 {isAboutOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                    transition={{ duration: 0.16, ease: "easeOut" }}
-                    className="absolute left-0 top-[calc(100%+14px)] w-[280px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18, ease: "easeOut" }}
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
                     role="menu"
                     data-testid="menu-nav-about"
                   >
-                    <div className="p-3">
-                      <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
-                        About
+                    <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
+                      <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
+                        <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                          About Tenth Rock
+                        </h3>
                       </div>
-                      <div className="grid gap-1">
+                      <div className="grid grid-cols-4 gap-x-8 gap-y-1">
                         {aboutLinks.map((item) => (
                           <a
                             key={item.label}
                             href={item.href}
                             data-testid={`link-nav-about-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                            className="flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]"
+                            className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
                             onClick={() => setIsAboutOpen(false)}
                           >
-                            <span className="pr-3">{item.label}</span>
-                            <ChevronRight className="w-4 h-4 text-primary/40" />
+                            <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
+                            <span>{item.label}</span>
                           </a>
                         ))}
                       </div>
