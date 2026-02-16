@@ -158,7 +158,6 @@ export default function Footer() {
           <div className="flex gap-8 mt-4 md:mt-0">
             <Link href="#" className="hover:text-white transition-colors" data-testid="link-footer-privacy">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors" data-testid="link-footer-terms">Terms of Service</Link>
-            <Link href="#" className="hover:text-white transition-colors" data-testid="link-footer-cookies">Cookie Settings</Link>
           </div>
         </div>
       </div>
