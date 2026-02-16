@@ -28,6 +28,7 @@ import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import Logo from "@/components/shared/Logo";
+import SharedCommercialWasteServices from "@/components/shared/CommercialWasteServices";
 
 const logoWhite = "/images/logos/Green-White-Logo.png";
 
@@ -120,7 +121,6 @@ const faqs = [
 ];
 
 export default function CommercialWasteServices() {
-  const [activeService, setActiveService] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -180,111 +180,7 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Services Section - Matching Homepage Design */}
-        <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
-          <div className="container mx-auto px-4 md:px-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="mb-10 md:mb-16 max-w-2xl"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
-                Our Services
-              </div>
-              <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-4 tracking-tighter">
-                Commercial Waste Services
-              </h2>
-              <p className="text-lg text-[#042940]/60">
-                Comprehensive solutions for businesses of all sizes, available nationwide.
-              </p>
-            </motion.div>
-            
-            <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-              <div className="lg:col-span-4 flex flex-col space-y-[6px]">
-                {services.map((service, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveService(i)}
-                    onMouseEnter={() => setActiveService(i)}
-                    className={`text-left px-6 md:px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${
-                      activeService === i 
-                        ? "bg-white shadow-lg text-[#042940] border border-[#042940]/5" 
-                        : "text-[#042940]/40 hover:text-[#042940] active:text-[#042940] hover:bg-white/50 active:bg-white/50"
-                    }`}
-                  >
-                    <span className="relative z-10 flex items-center justify-between">
-                      {service.title}
-                      {activeService === i && (
-                        <motion.span layoutId="active-indicator" className="w-2 h-2 rounded-full bg-[#c5d520]" />
-                      )}
-                    </span>
-                    {activeService === i && (
-                      <motion.div
-                        layoutId="active-bg"
-                        className="absolute left-0 top-0 bottom-0 w-1 bg-[#c5d520]"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      />
-                    )}
-                  </button>
-                ))}
-              </div>
-
-              <div className="lg:col-span-8 cursor-pointer h-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-[5px]" role="button" tabIndex={0} aria-label="View service details" onClick={() => console.log('Navigate to service details')} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && console.log('Navigate to service details')}>
-                <div className="relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeService}
-                      initial={{ opacity: 0, scale: 1.05 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      className="absolute inset-0"
-                    >
-                      <img 
-                        src={services[activeService].img} 
-                        alt={services[activeService].title} 
-                        className="w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105" 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/70 md:via-[#042940]/60 to-transparent opacity-95 md:opacity-90" />
-                      
-                      <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end">
-                        <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.2 }}
-                        >
-                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">
-                            {services[activeService].title}
-                          </h3>
-                          <p className="text-white/90 text-xl leading-relaxed max-w-2xl font-medium mb-8">
-                            {services[activeService].desc}
-                          </p>
-                          
-                          <div className="flex flex-wrap gap-4 mb-8">
-                            {services[activeService].features.map((feature, idx) => (
-                              <span key={idx} className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white text-sm font-bold border border-white/10 hover:bg-white/20 transition-colors">
-                                {feature}
-                              </span>
-                            ))}
-                          </div>
-
-                          <div className="flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide group-hover:gap-4 transition-all">
-                            Learn More <ArrowRight className="w-5 h-5" />
-                          </div>
-                        </motion.div>
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <SharedCommercialWasteServices />
 
         {/* How It Works Section - Matching Homepage Design */}
         <section id="process" aria-labelledby="process-heading" className="py-16 md:py-24 bg-white relative overflow-hidden">
