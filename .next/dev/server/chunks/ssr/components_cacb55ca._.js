@@ -494,7 +494,7 @@ function Navbar({ variant = "floating" }) {
                                                                                 lineNumber: 171,
                                                                                 columnNumber: 31
                                                                             }, this),
-                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80",
                                                                                 children: cat.category
                                                                             }, void 0, false, {
@@ -657,7 +657,7 @@ function Navbar({ variant = "floating" }) {
                                                                     lineNumber: 242,
                                                                     columnNumber: 25
                                                                 }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80",
                                                                     children: "Industries We Serve"
                                                                 }, void 0, false, {
@@ -813,7 +813,7 @@ function Navbar({ variant = "floating" }) {
                                                                             lineNumber: 311,
                                                                             columnNumber: 27
                                                                         }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                             className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80",
                                                                             children: "Service Locations"
                                                                         }, void 0, false, {
@@ -995,7 +995,7 @@ function Navbar({ variant = "floating" }) {
                                                                     lineNumber: 395,
                                                                     columnNumber: 25
                                                                 }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80",
                                                                     children: "About Tenth Rock"
                                                                 }, void 0, false, {
@@ -1746,7 +1746,7 @@ function CommercialWasteServices() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg text-[#042940]/60",
+                            className: "text-lg text-[#042940]/70",
                             children: "Comprehensive solutions for businesses of all sizes, available nationwide."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
@@ -1877,7 +1877,7 @@ function CommercialWasteServices() {
                                                             lineNumber: 133,
                                                             columnNumber: 26
                                                         }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                             className: "font-bold text-white text-base leading-snug mb-2 group-hover:text-[#c5d520] transition-colors",
                                                             children: item.label
                                                         }, void 0, false, {
@@ -2762,7 +2762,7 @@ function ReasonsSection({ tagline = "Benefits", heading = "More Reasons You'll L
                                     columnNumber: 16
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-lg text-primary/60 mb-8 leading-relaxed",
+                                    className: "text-lg text-primary/70 mb-8 leading-relaxed",
                                     children: subtitle
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/ReasonsSection.tsx",
@@ -2831,7 +2831,7 @@ function ReasonsSection({ tagline = "Benefits", heading = "More Reasons You'll L
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60 leading-relaxed group-hover:text-primary/80 transition-colors duration-300",
+                                        className: "text-primary/70 leading-relaxed group-hover:text-primary/80 transition-colors duration-300",
                                         children: item.desc
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/ReasonsSection.tsx",
@@ -2938,7 +2938,7 @@ function StatsSection() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-lg text-primary/60 mb-8",
+                                    className: "text-lg text-primary/70 mb-8",
                                     children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla."
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/StatsSection.tsx",
@@ -3023,7 +3023,7 @@ function StatsSection() {
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60",
+                                        className: "text-primary/70",
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
@@ -3079,7 +3079,7 @@ function StatsSection() {
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60",
+                                        className: "text-primary/70",
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
@@ -3119,7 +3119,7 @@ function StatsSection() {
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60",
+                                        className: "text-primary/70",
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
@@ -3243,7 +3243,7 @@ function FaqSection({ faqs = defaultFaqs }) {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg text-primary/60 max-w-2xl mx-auto",
+                                className: "text-lg text-primary/70 max-w-2xl mx-auto",
                                 children: "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team."
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
@@ -3352,7 +3352,7 @@ function FaqSection({ faqs = defaultFaqs }) {
                         className: "mt-16 text-left sm:text-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-primary/60 mb-4 font-medium",
+                                className: "text-primary/70 mb-4 font-medium",
                                 children: "Still Have Questions?"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
@@ -3908,7 +3908,7 @@ function ProcessSection({ tagline = "Our Process", heading = "How It Works", sub
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg text-[#042940]/60",
+                            className: "text-lg text-[#042940]/70",
                             children: subtitle
                         }, void 0, false, {
                             fileName: "[project]/components/shared/ProcessSection.tsx",
@@ -4624,7 +4624,7 @@ function WhoWeHelpSection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg text-primary/60",
+                            className: "text-lg text-primary/70",
                             children: "From local businesses to enterprise operations, we serve industries that demand reliability."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
@@ -5622,7 +5622,7 @@ const SimpleNumbers = ()=>{
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-lg text-primary/60",
+                                className: "text-lg text-primary/70",
                                 children: "States Serviced"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -5655,7 +5655,7 @@ const SimpleNumbers = ()=>{
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-lg text-primary/60",
+                                className: "text-lg text-primary/70",
                                 children: "Jobs Completed"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -5688,7 +5688,7 @@ const SimpleNumbers = ()=>{
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-lg text-primary/60",
+                                className: "text-lg text-primary/70",
                                 children: "Emergency Support"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -5856,7 +5856,7 @@ const ServicesSection = ()=>{
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg text-primary/60",
+                            className: "text-lg text-primary/70",
                             children: "Comprehensive solutions for businesses of all sizes, available nationwide."
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -5967,7 +5967,7 @@ const ServicesSection = ()=>{
                                                         lineNumber: 374,
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0)),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                         className: "font-bold text-primary text-base leading-snug",
                                                         children: item.label
                                                     }, void 0, false, {
@@ -5976,7 +5976,7 @@ const ServicesSection = ()=>{
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-primary/60 text-sm leading-relaxed",
+                                                        className: "text-primary/70 text-sm leading-relaxed",
                                                         children: item.desc
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6345,7 +6345,7 @@ const Reasons = ()=>{
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-lg text-primary/60 mb-8 leading-relaxed",
+                                    className: "text-lg text-primary/70 mb-8 leading-relaxed",
                                     children: "We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts."
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6412,7 +6412,7 @@ const Reasons = ()=>{
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60 leading-relaxed group-hover:text-primary/80 transition-colors duration-300",
+                                        className: "text-primary/70 leading-relaxed group-hover:text-primary/80 transition-colors duration-300",
                                         children: item.desc
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6500,7 +6500,7 @@ const Stats = ()=>{
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-lg text-primary/60 mb-8",
+                                    className: "text-lg text-primary/70 mb-8",
                                     children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla."
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6585,7 +6585,7 @@ const Stats = ()=>{
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60",
+                                        className: "text-primary/70",
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6641,7 +6641,7 @@ const Stats = ()=>{
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60",
+                                        className: "text-primary/70",
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6681,7 +6681,7 @@ const Stats = ()=>{
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-primary/60",
+                                        className: "text-primary/70",
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6787,7 +6787,7 @@ const Faq = ()=>{
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-lg text-primary/60 max-w-2xl mx-auto",
+                                className: "text-lg text-primary/70 max-w-2xl mx-auto",
                                 children: "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team."
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -6895,7 +6895,7 @@ const Faq = ()=>{
                         className: "mt-16 text-left sm:text-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-primary/60 mb-4 font-medium",
+                                className: "text-primary/70 mb-4 font-medium",
                                 children: "Still Have Questions?"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",

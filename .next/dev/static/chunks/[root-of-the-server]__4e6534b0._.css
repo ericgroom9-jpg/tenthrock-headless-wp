@@ -3911,10 +3911,6 @@ h1, h3, h4, h5, h6, h2 {
   color: hsl(var(--primary) / .5);
 }
 
-.text-primary\/60 {
-  color: hsl(var(--primary) / .6);
-}
-
 .text-primary\/70 {
   color: hsl(var(--primary) / .7);
 }
