@@ -78,7 +78,6 @@ const aboutLinks = [
   { label: "Join Our Network", href: "/join-our-network" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Book a Call", href: "/book-a-call" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
