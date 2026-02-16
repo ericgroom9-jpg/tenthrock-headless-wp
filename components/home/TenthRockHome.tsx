@@ -150,10 +150,12 @@ const Hero = () => {
           loop 
           muted 
           playsInline
+          preload="auto"
+          disablePictureInPicture
+          disableRemotePlayback
           className="w-full h-full object-cover opacity-80"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+          src={heroVideo}
+        />
         <div className="absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/20 md:via-transparent to-[#042940]/40 md:to-[#042940]/30"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
