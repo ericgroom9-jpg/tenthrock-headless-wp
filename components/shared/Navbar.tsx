@@ -476,7 +476,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         <div className="pl-4 pb-3 space-y-2">
                           {serviceCategories.map((cat, catIdx) => (
                             <div key={catIdx}>
-                              <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/70 px-4 pb-1 pt-3">
+                              <div className="text-xs font-extrabold tracking-[0.15em] uppercase text-primary/70 px-4 pb-1 pt-4">
                                 {cat.category}
                               </div>
                               {cat.items.map((service) => (
@@ -648,9 +648,17 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   </AnimatePresence>
                 </div>
 
-                <div className="pt-4 px-4">
+                <div className="pt-4 px-4 space-y-3">
                   <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px]" data-testid="button-mobile-login">
                     Login
+                  </Button>
+                  <Button 
+                    asChild 
+                    size="lg" 
+                    className="w-full bg-[#c5d520] text-[#042940] font-bold min-h-[52px] whitespace-nowrap rounded-full"
+                    data-testid="button-mobile-menu-cta"
+                  >
+                    <Link href="/request-a-service" onClick={() => setIsNavExpanded(false)}>Request a Service</Link>
                   </Button>
                 </div>
               </div>

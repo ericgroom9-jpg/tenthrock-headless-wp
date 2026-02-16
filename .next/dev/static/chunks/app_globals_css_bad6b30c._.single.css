@@ -3576,6 +3576,10 @@ h1, h3, h4, h5, h6, h2 {
   line-height: 1.25;
 }
 
+.tracking-\[0\.15em\] {
+  letter-spacing: .15em;
+}
+
 .tracking-\[0\.18em\] {
   letter-spacing: .18em;
 }
@@ -3609,8 +3613,8 @@ h1, h3, h4, h5, h6, h2 {
   color: rgb(4 41 64 / var(--tw-text-opacity, 1));
 }
 
-.text-\[\#042940\]\/40 {
-  color: #04294066;
+.text-\[\#042940\]\/60 {
+  color: #04294099;
 }
 
 .text-\[\#042940\]\/70 {

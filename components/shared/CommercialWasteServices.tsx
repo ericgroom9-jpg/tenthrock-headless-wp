@@ -82,7 +82,7 @@ export default function CommercialWasteServices() {
                  className={`text-left px-6 md:px-8 py-5 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${
                    activeService === i 
                      ? "bg-white shadow-lg text-[#042940] border border-[#042940]/5" 
-                     : "text-[#042940]/40 hover:text-[#042940] active:text-[#042940] hover:bg-white/50 active:bg-white/50"
+                     : "text-[#042940]/60 hover:text-[#042940] active:text-[#042940] hover:bg-white/50 active:bg-white/50"
                  }`}
                >
                  <span className="relative z-10 flex items-center justify-between gap-3">

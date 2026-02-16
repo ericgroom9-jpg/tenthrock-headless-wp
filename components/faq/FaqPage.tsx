@@ -164,7 +164,7 @@ export default function FaqPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/30 to-transparent"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 text-left sm:text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -179,7 +179,7 @@ export default function FaqPage() {
               Frequently Asked{" "}
               <span className="text-[#c5d520]">Questions</span>
             </h1>
-            <p className="text-base text-white/70 max-w-2xl mx-auto leading-relaxed" data-testid="text-faq-description">
+            <p className="text-base text-white/70 max-w-2xl sm:mx-auto leading-relaxed" data-testid="text-faq-description">
               Find answers to common questions about our waste management services, pricing, sustainability initiatives, and more.
             </p>
           </motion.div>
@@ -199,7 +199,7 @@ export default function FaqPage() {
                 aria-controls={`faq-panel-${cat.id}`}
                 onClick={() => handleCategoryChange(cat.id)}
                 data-testid={`button-faq-category-${cat.id}`}
-                className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shrink-0 focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 outline-none ${
+                className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shrink-0 focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 outline-none min-h-[44px] ${
                   activeCategory === cat.id
                     ? "bg-[#042940] text-white shadow-md"
                     : "bg-gray-100 text-[#042940]/70"
@@ -226,12 +226,12 @@ export default function FaqPage() {
             aria-labelledby={`tab-faq-${activeCategory}`}
           >
             {/* Section Header */}
-            <div className="text-center mb-12 md:mb-16">
+            <div className="text-left sm:text-center mb-12 md:mb-16">
               <h2 id="faq-section-heading" className="text-4xl md:text-5xl font-medium tracking-tighter leading-tight text-[#042940] mb-4" data-testid="text-faq-section-heading">
                 {currentCategory.label}{" "}
                 <span className="text-[#c5d520]">FAQs</span>
               </h2>
-              <p className="text-[#042940]/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed" data-testid="text-faq-section-description">
+              <p className="text-[#042940]/70 text-base md:text-lg max-w-2xl sm:mx-auto leading-relaxed" data-testid="text-faq-section-description">
                 {currentCategory.description}
               </p>
             </div>
