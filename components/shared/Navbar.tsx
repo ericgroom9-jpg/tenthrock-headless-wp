@@ -101,17 +101,17 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
           </Link>
 
           {/* Mobile: CTA + Hamburger visible in top bar */}
-          <div className="flex items-center gap-2 xl:hidden">
+          <div className="flex items-center gap-2 xl:hidden shrink-0">
             <Button 
               asChild
               size="sm" 
-              className="bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4"
+              className="bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap rounded-full px-3 sm:px-4"
               data-testid="button-mobile-cta"
             >
               <Link href="/request-a-service">Request a Service</Link>
             </Button>
             <button 
-              className="p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[52px] min-h-[52px] flex items-center justify-center"
+              className="p-2 text-primary rounded-[5px] transition-colors flex items-center justify-center"
               onClick={() => setIsNavExpanded(!isNavExpanded)}
               aria-expanded={isNavExpanded}
               aria-label="Toggle navigation menu"
