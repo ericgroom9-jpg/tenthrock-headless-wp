@@ -26,7 +26,7 @@ export default function StatsSection() {
               <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
                 Why Clients Call Us Again and Again.
               </h2>
-              <p className="text-lg text-primary/60 mb-8">
+              <p className="text-lg text-primary/70 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
@@ -45,7 +45,7 @@ export default function StatsSection() {
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
              </div>
              
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
@@ -55,14 +55,14 @@ export default function StatsSection() {
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
              </div>
 
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
              </div>
           </div>
         </div>

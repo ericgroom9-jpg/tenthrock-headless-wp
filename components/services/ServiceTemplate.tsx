@@ -192,7 +192,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-about-service"
                   >
-                    <h3 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">About Service</h3>
+                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">About Service</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "about" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -257,7 +257,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-how-service-works"
                   >
-                    <h3 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">How Service Works</h3>
+                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">How Service Works</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "how" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -316,7 +316,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-other-services"
                   >
-                    <h3 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">Other Services</h3>
+                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">Other Services</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "other" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -383,8 +383,8 @@ export default function ServiceTemplate({
                 className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8 lg:-mt-32 relative z-10"
               >
                 <div className="mb-6">
-                  <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
-                  <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
+                  <h2 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h2>
+                  <p className="text-[#042940]/70 text-sm">Fill out the form below and we'll get back to you shortly.</p>
                 </div>
                 <form className="space-y-5" onSubmit={handleFormSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -521,7 +521,7 @@ export default function ServiceTemplate({
               <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
                 How It Works
               </h2>
-              <p className="text-lg text-[#042940]/60">
+              <p className="text-lg text-[#042940]/70">
                 A simple, transparent process designed to get your problem solved fast.
               </p>
             </div>
@@ -625,7 +625,7 @@ export default function ServiceTemplate({
                   <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
                     Why Clients Call Us Again and Again.
                   </h2>
-                  <p className="text-lg text-primary/60 mb-8">
+                  <p className="text-lg text-primary/70 mb-8">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
@@ -644,7 +644,7 @@ export default function ServiceTemplate({
                   <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
                 
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
@@ -654,14 +654,14 @@ export default function ServiceTemplate({
                   <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
 
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                   <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
               </div>
             </div>
@@ -681,7 +681,7 @@ export default function ServiceTemplate({
                 Common Questions
               </div>
               <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">Frequently Asked Questions</h2>
-              <p className="text-lg text-primary/60 max-w-2xl mx-auto">
+              <p className="text-lg text-primary/70 max-w-2xl mx-auto">
                 Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
               </p>
             </div>
@@ -736,7 +736,7 @@ export default function ServiceTemplate({
             </div>
             
             <div className="mt-16 text-left sm:text-center">
-              <p className="text-primary/60 mb-4 font-medium">Still Have Questions?</p>
+              <p className="text-primary/70 mb-4 font-medium">Still Have Questions?</p>
               <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap">
                 Contact Us
               </Button>

@@ -227,19 +227,19 @@ const SimpleNumbers = () => {
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={48} duration={2.5} />
               </div>
-              <div className="text-lg text-primary/60">States Serviced</div>
+              <div className="text-lg text-primary/70">States Serviced</div>
            </div>
            <div className="flex flex-col items-center text-center px-4 md:px-8 pt-6 md:pt-0">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={5} suffix="K+" duration={2.5} />
               </div>
-              <div className="text-lg text-primary/60">Jobs Completed</div>
+              <div className="text-lg text-primary/70">Jobs Completed</div>
            </div>
            <div className="flex flex-col items-center text-center px-4 md:px-8 pt-6 md:pt-0">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={24} suffix="/7" duration={2.5} />
               </div>
-              <div className="text-lg text-primary/60">Emergency Support</div>
+              <div className="text-lg text-primary/70">Emergency Support</div>
            </div>
         </div>
       </div>
@@ -314,7 +314,7 @@ const ServicesSection = () => {
           <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-primary leading-tight mb-4 tracking-tighter">
             Commercial Waste Services
           </h2>
-          <p className="text-lg text-primary/60">
+          <p className="text-lg text-primary/70">
             Comprehensive solutions for businesses of all sizes, available nationwide.
           </p>
         </motion.div>
@@ -374,10 +374,10 @@ const ServicesSection = () => {
                        <div className="w-10 h-10 rounded-full bg-[#c5d520]/15 flex items-center justify-center flex-shrink-0">
                          <Icon className="w-5 h-5 text-[#c5d520]" />
                        </div>
-                       <h4 className="font-bold text-primary text-base leading-snug">
+                       <h3 className="font-bold text-primary text-base leading-snug">
                          {item.label}
-                       </h4>
-                       <p className="text-primary/60 text-sm leading-relaxed">
+                       </h3>
+                       <p className="text-primary/70 text-sm leading-relaxed">
                          {item.desc}
                        </p>
                      </div>
@@ -508,7 +508,7 @@ const Reasons = () => {
                <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
                  More Reasons You’ll Love Us
                </h2>
-               <p className="text-lg text-primary/60 mb-8 leading-relaxed">
+               <p className="text-lg text-primary/70 mb-8 leading-relaxed">
                  We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.
                </p>
                <Button size="lg" className="w-full sm:w-auto bg-secondary text-primary hover:bg-secondary/90 min-h-[52px] whitespace-nowrap">
@@ -534,7 +534,7 @@ const Reasons = () => {
                 </div>
                 
                 <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
-                <p className="text-primary/60 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
+                <p className="text-primary/70 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -564,7 +564,7 @@ const Stats = () => {
               <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
                 Why Clients Call Us Again and Again.
               </h2>
-              <p className="text-lg text-primary/60 mb-8">
+              <p className="text-lg text-primary/70 mb-8">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
@@ -583,7 +583,7 @@ const Stats = () => {
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
              </div>
              
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
@@ -593,14 +593,14 @@ const Stats = () => {
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
              </div>
 
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
              </div>
           </div>
         </div>
@@ -649,7 +649,7 @@ const Faq = () => {
               Common Questions
           </div>
           <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">Frequently Asked Questions</h2>
-          <p className="text-lg text-primary/60 max-w-2xl mx-auto">
+          <p className="text-lg text-primary/70 max-w-2xl mx-auto">
             Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
           </p>
         </div>
@@ -704,7 +704,7 @@ const Faq = () => {
         </div>
         
         <div className="mt-16 text-left sm:text-center">
-           <p className="text-primary/60 mb-4 font-medium">Still Have Questions?</p>
+           <p className="text-primary/70 mb-4 font-medium">Still Have Questions?</p>
            <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap">
               Contact Us
            </Button>

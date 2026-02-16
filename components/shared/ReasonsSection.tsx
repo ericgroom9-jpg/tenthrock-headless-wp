@@ -53,7 +53,7 @@ export default function ReasonsSection({
                <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter" data-testid={`text-${testIdPrefix}-heading`}>
                  {heading}
                </h2>
-               <p className="text-lg text-primary/60 mb-8 leading-relaxed">
+               <p className="text-lg text-primary/70 mb-8 leading-relaxed">
                  {subtitle}
                </p>
                <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full" data-testid={`button-${testIdPrefix}-cta`}>
@@ -79,7 +79,7 @@ export default function ReasonsSection({
                 </div>
                 
                 <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
-                <p className="text-primary/60 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
+                <p className="text-primary/70 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
               </motion.div>
             ))}
           </div>

@@ -42,7 +42,7 @@ export default function ProcessSection({
           <h2 id={`${testIdPrefix}-heading`} className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
             {heading}
           </h2>
-          <p className="text-lg text-[#042940]/60">
+          <p className="text-lg text-[#042940]/70">
             {subtitle}
           </p>
         </div>

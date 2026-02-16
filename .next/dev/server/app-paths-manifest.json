@@ -1,6 +1,4 @@
 {
-  "/[slug]/page": "app/[slug]/page.js",
   "/services/site-stabilization/page": "app/services/site-stabilization/page.js",
-  "/services/waste-removal/page": "app/services/waste-removal/page.js",
   "/terms-of-service/page": "app/terms-of-service/page.js"
 }

@@ -231,7 +231,7 @@ export default function FaqPage() {
                 {currentCategory.label}{" "}
                 <span className="text-[#c5d520]">FAQs</span>
               </h2>
-              <p className="text-[#042940]/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed" data-testid="text-faq-section-description">
+              <p className="text-[#042940]/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed" data-testid="text-faq-section-description">
                 {currentCategory.description}
               </p>
             </div>
@@ -308,7 +308,7 @@ export default function FaqPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-center mt-16 md:mt-20"
           >
-            <p className="text-[#042940]/60 mb-4 font-medium" data-testid="text-faq-still-questions">
+            <p className="text-[#042940]/70 mb-4 font-medium" data-testid="text-faq-still-questions">
               Still have questions?
             </p>
             <Link href="/contact" data-testid="link-faq-contact-us">

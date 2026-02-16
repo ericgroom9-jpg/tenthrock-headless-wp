@@ -94,7 +94,7 @@ function ContactSection() {
             <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
               <div className="mb-6">
                 <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2" data-testid="text-form-heading">Request a Quote</h3>
-                <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
+                <p className="text-[#042940]/70 text-sm">Fill out the form below and we'll get back to you shortly.</p>
               </div>
               <form className="space-y-5" data-testid="form-contact" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -169,9 +169,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                           <div key={catIdx} className="space-y-3">
                             <div className="flex items-center gap-2 pb-2 border-b border-white/10">
                               <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
-                              <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                              <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
                                 {cat.category}
-                              </h3>
+                              </span>
                             </div>
                             <div className="grid gap-0.5">
                               {cat.items.map((service) => (
@@ -240,9 +240,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
-                        <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                        <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
                           Industries We Serve
-                        </h3>
+                        </span>
                       </div>
                       <div className="grid grid-cols-4 gap-x-8 gap-y-1">
                         {sectorLinks.map((sector) => (
@@ -309,9 +309,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
                         <div className="flex items-center gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
-                          <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                          <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
                             Service Locations
-                          </h3>
+                          </span>
                         </div>
                         <Link
                           href="/locations"
@@ -393,9 +393,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
-                        <h3 className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
+                        <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
                           About Tenth Rock
-                        </h3>
+                        </span>
                       </div>
                       <div className="grid grid-cols-4 gap-x-8 gap-y-1">
                         {aboutLinks.map((item) => (

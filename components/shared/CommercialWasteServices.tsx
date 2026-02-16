@@ -66,7 +66,7 @@ export default function CommercialWasteServices() {
           <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-4 tracking-tighter">
             Commercial Waste Services
           </h2>
-          <p className="text-lg text-[#042940]/60">
+          <p className="text-lg text-[#042940]/70">
             Comprehensive solutions for businesses of all sizes, available nationwide.
           </p>
         </motion.div>
@@ -133,9 +133,9 @@ export default function CommercialWasteServices() {
                          <div className="w-10 h-10 rounded-full bg-[#c5d520]/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 mb-4 border border-white/10">
                            <Icon className="w-5 h-5 text-[#c5d520]" />
                          </div>
-                         <h4 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-[#c5d520] transition-colors">
+                         <h3 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-[#c5d520] transition-colors">
                            {item.label}
-                         </h4>
+                         </h3>
                          <p className="text-white/75 text-sm leading-relaxed">
                            {item.desc}
                          </p>

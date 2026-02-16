@@ -25,7 +25,7 @@ export default function WhoWeHelpSection() {
               Industries
           </div>
           <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">Who We Help</h2>
-          <p className="text-lg text-primary/60">
+          <p className="text-lg text-primary/70">
             From local businesses to enterprise operations, we serve industries that demand reliability.
           </p>
         </div>

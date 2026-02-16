@@ -193,7 +193,7 @@ export default function CommercialWasteServices() {
               <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
                 How It Works
               </h2>
-              <p className="text-lg text-[#042940]/60">
+              <p className="text-lg text-[#042940]/70">
                 A simple, transparent process designed to get your problem solved fast.
               </p>
             </div>
@@ -295,7 +295,7 @@ export default function CommercialWasteServices() {
                   <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
                     Why Clients Call Us Again and Again.
                   </h2>
-                  <p className="text-lg text-[#042940]/60 mb-8">
+                  <p className="text-lg text-[#042940]/70 mb-8">
                     We've built our reputation on reliability, efficiency, and exceptional customer service. Our clients trust us to handle their waste management needs because we consistently deliver results.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
@@ -314,7 +314,7 @@ export default function CommercialWasteServices() {
                   <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">30%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/60">Average cost savings for our clients</p>
+                  <p className="text-[#042940]/70">Average cost savings for our clients</p>
                 </div>
                 
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
@@ -324,14 +324,14 @@ export default function CommercialWasteServices() {
                   <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">70K</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/60">Tons of waste processed annually</p>
+                  <p className="text-[#042940]/70">Tons of waste processed annually</p>
                 </div>
 
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
                   <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">80%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/60">Waste diverted from landfills</p>
+                  <p className="text-[#042940]/70">Waste diverted from landfills</p>
                 </div>
               </div>
             </div>
@@ -427,7 +427,7 @@ export default function CommercialWasteServices() {
                 Common Questions
               </div>
               <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter leading-tight">Frequently Asked Questions</h2>
-              <p className="text-lg text-[#042940]/60 max-w-2xl mx-auto">
+              <p className="text-lg text-[#042940]/70 max-w-2xl mx-auto">
                 Everything you need to know about our commercial waste services. Can't find the answer you're looking for? Reach out to our team.
               </p>
             </div>
@@ -482,7 +482,7 @@ export default function CommercialWasteServices() {
             </div>
             
             <div className="mt-16 text-left sm:text-center">
-              <p className="text-[#042940]/60 mb-4 font-medium">Still Have Questions?</p>
+              <p className="text-[#042940]/70 mb-4 font-medium">Still Have Questions?</p>
               <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full">
                 Contact Us
               </Button>

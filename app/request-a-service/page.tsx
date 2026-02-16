@@ -102,7 +102,7 @@ function RequestAServiceSection() {
                 <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2" data-testid="text-request-form-heading">
                   Request a Service
                 </h3>
-                <p className="text-[#042940]/60 text-sm">Fill out the form below and we'll get back to you shortly.</p>
+                <p className="text-[#042940]/70 text-sm">Fill out the form below and we'll get back to you shortly.</p>
               </div>
               <form className="space-y-5" data-testid="form-request-service" onSubmit={handleSubmit}>
                 <div>
