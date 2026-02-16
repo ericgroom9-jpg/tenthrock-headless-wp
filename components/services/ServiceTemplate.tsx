@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -427,9 +428,8 @@ export default function ServiceTemplate({
                       <label htmlFor="phone" className="block text-sm font-medium text-[#042940] mb-2">
                         Phone number
                       </label>
-                      <Input 
+                      <PhoneInput 
                         id="phone"
-                        type="tel"
                         className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-phone"
                       />
