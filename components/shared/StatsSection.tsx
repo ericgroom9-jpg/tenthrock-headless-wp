@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -49,8 +50,8 @@ export default function StatsSection() {
              </div>
              
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                  <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
+                <div className="relative h-64 w-full rounded-[5px] overflow-hidden mb-8">
+                  <Image src={imgParkWater} alt="Stats Visual" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" loading="lazy" />
                 </div>
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">70K</div>

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -154,11 +155,14 @@ export default function FaqPage() {
       {/* Hero Section */}
       <section aria-labelledby="faq-hero-heading" className="relative pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-44 lg:pb-32 overflow-hidden bg-[#042940]">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/stock/clean-city-hero.jpg"
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-cover opacity-40"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-40"
+            priority
           />
           <div className="absolute inset-0 bg-[#042940]/70"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/30 to-transparent"></div>

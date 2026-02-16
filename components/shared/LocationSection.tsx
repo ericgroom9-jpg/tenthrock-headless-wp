@@ -68,6 +68,7 @@ export default function LocationSection() {
               loop
               muted
               playsInline
+              preload="metadata"
               className="absolute inset-0 w-full h-full object-cover"
             >
               <source src="/assets_export/videos/us-map-pins-loop.mp4" type="video/mp4" />

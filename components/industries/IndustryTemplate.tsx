@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -185,11 +186,14 @@ export default function IndustryTemplate({
                 transition={{ duration: 0.6 }}
                 className="relative order-first md:order-last"
               >
-                <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[4/5] rounded-[5px] overflow-hidden shadow-2xl">
-                  <img 
+                <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[4/5] rounded-[5px] overflow-hidden shadow-2xl relative">
+                  <Image 
                     src={aboutImage} 
                     alt={`${industryName} services`}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
@@ -41,10 +42,13 @@ export default function WhoWeHelpSection() {
                 viewport={{ once: true }}
                 data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <img 
+                <Image 
                   src={sector.img} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-110" 
                   alt={sector.title} 
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 md:group-hover:scale-110" 
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 group-hover:bg-[#042940]/60 group-active:bg-[#042940]/60 transition-colors duration-300"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90"></div>

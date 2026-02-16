@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { 
   ArrowRight, 
@@ -136,11 +137,14 @@ export default function CommercialWasteServices() {
         {/* Hero Section - with top padding for floating navbar */}
         <section className="relative bg-[#042940] overflow-hidden pt-24 md:pt-28">
           <div className="absolute inset-0">
-            <img 
+            <Image 
               src={imgServiceCentralizedProgram}
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
               aria-hidden="true"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/90 to-[#042940]/60" />
           </div>
@@ -318,8 +322,8 @@ export default function CommercialWasteServices() {
                 </div>
                 
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                    <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
+                  <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
+                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Stats Visual" loading="lazy" />
                   </div>
                   <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">70K</div>
@@ -348,12 +352,15 @@ export default function CommercialWasteServices() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="rounded-[5px] overflow-hidden h-[400px]"
+                  className="rounded-[5px] overflow-hidden h-[400px] relative"
                 >
-                  <img 
+                  <Image 
                     src={imgCaseStudyMain} 
                     alt="Case Study Main" 
-                    className="w-full h-full object-cover md:hover:scale-105 transition-transform duration-700" 
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover md:hover:scale-105 transition-transform duration-700" 
+                    loading="lazy"
                   />
                 </motion.div>
                 <div className="grid grid-cols-3 gap-4">
@@ -364,12 +371,15 @@ export default function CommercialWasteServices() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                      className="rounded-[5px] overflow-hidden aspect-square"
+                      className="rounded-[5px] overflow-hidden aspect-square relative"
                     >
-                      <img 
+                      <Image 
                         src={img} 
                         alt={`Case Study Detail ${i + 1}`} 
-                        className="w-full h-full object-cover md:hover:scale-110 transition-transform duration-500" 
+                        fill
+                        sizes="(max-width: 1024px) 33vw, 16vw"
+                        className="object-cover md:hover:scale-110 transition-transform duration-500" 
+                        loading="lazy"
                       />
                     </motion.div>
                   ))}
@@ -595,7 +605,7 @@ export default function CommercialWasteServices() {
               </div>
 
               <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <img src={imgCyclist} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover object-center lg:object-right" />
+                <Image src={imgCyclist} alt="Ready to start" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
                 <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent" />
                 

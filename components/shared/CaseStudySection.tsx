@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -27,12 +28,15 @@ export default function CaseStudySection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="rounded-[5px] overflow-hidden h-[400px]"
+              className="relative rounded-[5px] overflow-hidden h-[400px]"
             >
-              <img 
+              <Image 
                 src={imgCaseStudyMain} 
                 alt="Case Study Main" 
-                className="w-full h-full object-cover md:hover:scale-105 transition-transform duration-700" 
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover" 
+                loading="lazy"
               />
             </motion.div>
             <div className="grid grid-cols-3 gap-4">
@@ -43,12 +47,15 @@ export default function CaseStudySection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                  className="rounded-[5px] overflow-hidden aspect-square"
+                  className="relative rounded-[5px] overflow-hidden aspect-square"
                 >
-                  <img 
+                  <Image 
                     src={img} 
                     alt={`Case Study Detail ${i + 1}`} 
-                    className="w-full h-full object-cover md:hover:scale-110 transition-transform duration-500" 
+                    fill
+                    sizes="(max-width: 1024px) 33vw, 16vw"
+                    className="object-cover" 
+                    loading="lazy"
                   />
                 </motion.div>
               ))}

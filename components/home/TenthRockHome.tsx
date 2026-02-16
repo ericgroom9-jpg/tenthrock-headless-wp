@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { 
   ArrowRight, 
@@ -47,19 +49,32 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/shared/Navbar";
-import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import Footer from "@/components/shared/Footer";
-import ReasonsSection from "@/components/shared/ReasonsSection";
-import StatsSection from "@/components/shared/StatsSection";
-import FaqSection from "@/components/shared/FaqSection";
-import LocationSection from "@/components/shared/LocationSection";
-import CtaBannerSection from "@/components/shared/CtaBannerSection";
-import ProcessSection from "@/components/shared/ProcessSection";
-import FinalCtaSection from "@/components/shared/FinalCtaSection";
-import CaseStudySection from "@/components/shared/CaseStudySection";
-import WhoWeHelpSection from "@/components/shared/WhoWeHelpSection";
 import LogoReelSection from "@/components/shared/LogoReelSection";
-import TestimonialsSection from "@/components/shared/TestimonialsSection";
+
+const SectionSkeleton = () => (
+  <div className="py-16 md:py-24 animate-pulse">
+    <div className="container mx-auto px-4 md:px-8">
+      <div className="h-8 bg-gray-200 rounded w-1/3 mb-4" />
+      <div className="h-4 bg-gray-100 rounded w-2/3 mb-8" />
+      <div className="grid md:grid-cols-3 gap-6">
+        {[1,2,3].map(i => <div key={i} className="h-48 bg-gray-100 rounded-[5px]" />)}
+      </div>
+    </div>
+  </div>
+);
+
+const CommercialWasteServices = dynamic(() => import("@/components/shared/CommercialWasteServices"), { ssr: true, loading: () => <SectionSkeleton /> });
+const ReasonsSection = dynamic(() => import("@/components/shared/ReasonsSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const StatsSection = dynamic(() => import("@/components/shared/StatsSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const FaqSection = dynamic(() => import("@/components/shared/FaqSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const LocationSection = dynamic(() => import("@/components/shared/LocationSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const CtaBannerSection = dynamic(() => import("@/components/shared/CtaBannerSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const ProcessSection = dynamic(() => import("@/components/shared/ProcessSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const CaseStudySection = dynamic(() => import("@/components/shared/CaseStudySection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const WhoWeHelpSection = dynamic(() => import("@/components/shared/WhoWeHelpSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const TestimonialsSection = dynamic(() => import("@/components/shared/TestimonialsSection"), { ssr: true, loading: () => <SectionSkeleton /> });
 
 // Assets - Main Logos
 const logoMain = "/images/logos/TenthRock-Logo.png";
@@ -130,10 +145,13 @@ const Logo = ({ className = "", variant = "main" }: { className?: string, varian
   
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <img 
+      <Image 
         src={logoSrc} 
         alt="Tenth Rock Waste Solutions" 
+        width={160}
+        height={40}
         className="h-8 md:h-10 w-auto object-contain" 
+        priority
       />
     </div>
   );
@@ -150,7 +168,7 @@ const Hero = () => {
           loop 
           muted 
           playsInline
-          preload="auto"
+          preload="metadata"
           disablePictureInPicture
           disableRemotePlayback
           className="w-full h-full object-cover opacity-80"
@@ -433,7 +451,7 @@ const WhyUs = () => {
              transition={{ duration: 0.8 }}
              className="h-[350px] lg:h-[600px] relative rounded-[5px] overflow-hidden order-2 lg:order-1"
            >
-              <img src={imgTruck} alt="Tenth Rock Operations" className="absolute inset-0 w-full h-full object-cover" />
+              <Image src={imgTruck} alt="Tenth Rock Operations" fill sizes="100vw" className="object-cover" loading="lazy" />
            </motion.div>
            
            {/* Right Content Side (order-1 on mobile) */}
@@ -588,8 +606,8 @@ const Stats = () => {
              </div>
              
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                  <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
+                <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
+                  <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Stats Visual" loading="lazy" />
                 </div>
                 <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">70K</div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
@@ -75,7 +76,7 @@ export default function TestimonialsSection({
                  
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
-                    <img src={testimonials[currentIndex].img} alt={testimonials[currentIndex].author} className="w-full h-full object-cover" />
+                    <Image src={testimonials[currentIndex].img} alt={testimonials[currentIndex].author} width={64} height={64} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
                     <div className="font-bold text-xl text-white" data-testid={`text-${testIdPrefix}-author`}>{testimonials[currentIndex].author}</div>

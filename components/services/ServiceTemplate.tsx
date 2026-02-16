@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { 
@@ -129,11 +130,14 @@ export default function ServiceTemplate({
         {/* Hero Section with Background Image */}
         <section className="relative bg-[#042940] pt-24 md:pt-28 overflow-hidden">
           <div className="absolute inset-0">
-            <img 
+            <Image 
               src={heroImage}
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
               aria-hidden="true"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
           </div>
@@ -648,8 +652,8 @@ export default function ServiceTemplate({
                 </div>
                 
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                  <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                    <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
+                  <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
+                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Stats Visual" loading="lazy" />
                   </div>
                   <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
@@ -851,7 +855,7 @@ export default function ServiceTemplate({
 
               {/* Image Side */}
               <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <img src={imgCyclist} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover object-center lg:object-right" />
+                <Image src={imgCyclist} alt="Ready to start" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
                 <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 
