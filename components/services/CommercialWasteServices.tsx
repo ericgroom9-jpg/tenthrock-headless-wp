@@ -280,8 +280,8 @@ export default function CommercialWasteServices() {
         {/* Stats Section - Matching Homepage Design */}
         <section className="py-16 md:py-24 bg-[#FDFDFD]">
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="sticky top-32">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              <div className="lg:sticky lg:top-32">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -298,11 +298,11 @@ export default function CommercialWasteServices() {
                   <p className="text-lg text-[#042940]/60 mb-8">
                     We've built our reputation on reliability, efficiency, and exceptional customer service. Our clients trust us to handle their waste management needs because we consistently deliver results.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap">
+                  <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
+                    <Button size="lg" className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full">
                       Request a Service
                     </Button>
-                    <Button size="lg" variant="ghost" className="w-full sm:w-auto text-[#042940] hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap">
+                    <Button size="lg" variant="ghost" className="w-full sm:w-auto text-[#042940] hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
                       <Phone className="w-5 h-5 text-[#c5d520]" /> (888) 555-0123
                     </Button>
                   </div>
@@ -310,26 +310,14 @@ export default function CommercialWasteServices() {
               </div>
 
               <div className="grid gap-8">
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="border border-[#042940]/10 p-8 rounded-[5px] bg-white"
-                >
+                <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
                   <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">30%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
                   <p className="text-[#042940]/60">Average cost savings for our clients</p>
-                </motion.div>
+                </div>
                 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="border border-[#042940]/10 p-8 rounded-[5px] bg-white"
-                >
+                <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
                   <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
                     <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
                   </div>
@@ -337,20 +325,14 @@ export default function CommercialWasteServices() {
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">70K</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
                   <p className="text-[#042940]/60">Tons of waste processed annually</p>
-                </motion.div>
+                </div>
 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="border border-[#042940]/10 p-8 rounded-[5px] bg-white"
-                >
+                <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
                   <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">80%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
                   <p className="text-[#042940]/60">Waste diverted from landfills</p>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>

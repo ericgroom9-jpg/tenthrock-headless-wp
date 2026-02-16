@@ -602,8 +602,8 @@ export default function ServiceTemplate({
         {/* Stats Section - Matching Homepage Design Exactly */}
         <section className="py-16 md:py-24 bg-[#FDFDFD]">
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div className="sticky top-32">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              <div className="lg:sticky lg:top-32">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -620,11 +620,11 @@ export default function ServiceTemplate({
                   <p className="text-lg text-primary/60 mb-8">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap">
+                  <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
+                    <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
                       Request a Service
                     </Button>
-                    <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap">
+                    <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
                       <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
                     </Button>
                   </div>
@@ -632,26 +632,14 @@ export default function ServiceTemplate({
               </div>
 
               <div className="grid gap-8">
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="border border-primary/10 p-8 rounded-[5px] bg-white"
-                >
+                <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                   <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                   <Separator className="bg-primary/10 mb-4" />
                   <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </motion.div>
+                </div>
                 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="border border-primary/10 p-8 rounded-[5px] bg-white"
-                >
+                <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                   <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
                     <img src={imgParkWater} className="w-full h-full object-cover" alt="Stats Visual" />
                   </div>
@@ -659,20 +647,14 @@ export default function ServiceTemplate({
                   <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
                   <Separator className="bg-primary/10 mb-4" />
                   <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </motion.div>
+                </div>
 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="border border-primary/10 p-8 rounded-[5px] bg-white"
-                >
+                <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                   <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
                   <Separator className="bg-primary/10 mb-4" />
                   <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
