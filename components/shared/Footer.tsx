@@ -68,7 +68,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="font-bold text-lg mb-6 text-white">Services</h3>
+            <p className="font-bold text-lg mb-6 text-white">Services</p>
             <ul className="space-y-1 text-white/60 text-sm">
               {serviceLinks.map((service) => (
                 <li key={service.href}>
@@ -87,7 +87,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="font-bold text-lg mb-6 text-white">Industries</h3>
+            <p className="font-bold text-lg mb-6 text-white">Industries</p>
             <ul className="space-y-1 text-white/60 text-sm">
               {industryLinks.map((industry) => (
                 <li key={industry.href}>
@@ -106,7 +106,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h3 className="font-bold text-lg mb-6 text-white">Company</h3>
+            <p className="font-bold text-lg mb-6 text-white">Company</p>
             <ul className="space-y-1 text-white/60 text-sm">
               <li><Link href="/about" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-about">About Us</Link></li>
               <li><Link href="/our-process" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-process">Our Process</Link></li>
@@ -128,7 +128,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="space-y-6"
           >
-            <h3 className="font-bold text-lg text-white">Stay Updated</h3>
+            <p className="font-bold text-lg text-white">Stay Updated</p>
             <p className="text-white/60">
               Get the latest industry insights and compliance updates.
             </p>
@@ -153,7 +153,7 @@ export default function Footer() {
         
         <Separator className="bg-white/10 mb-8" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
           <p>© 2026 Tenth Rock Solutions. All rights reserved.</p>
           <div className="flex gap-6 mt-2 md:mt-0">
             <Link href="/privacy-policy" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-privacy">Privacy Policy</Link>

@@ -3613,10 +3613,6 @@ h1, h3, h4, h5, h6, h2 {
   color: #04294066;
 }
 
-.text-\[\#042940\]\/50 {
-  color: #04294080;
-}
-
 .text-\[\#042940\]\/70 {
   color: #042940b3;
 }
@@ -3764,12 +3760,8 @@ h1, h3, h4, h5, h6, h2 {
   color: hsl(var(--primary-foreground) / var(--tw-text-opacity, 1));
 }
 
-.text-primary\/40 {
-  color: hsl(var(--primary) / .4);
-}
-
-.text-primary\/50 {
-  color: hsl(var(--primary) / .5);
+.text-primary\/60 {
+  color: hsl(var(--primary) / .6);
 }
 
 .text-primary\/70 {
@@ -3812,10 +3804,6 @@ h1, h3, h4, h5, h6, h2 {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-white\/40 {
-  color: #fff6;
 }
 
 .text-white\/60 {

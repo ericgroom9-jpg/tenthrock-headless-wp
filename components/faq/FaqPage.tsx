@@ -255,11 +255,11 @@ export default function FaqPage() {
                           ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]"
                           : "bg-white border-transparent shadow-sm"
                       }`}
-                      onClick={() => setOpenItem(isOpen ? "" : `item-${i}`)}
                     >
                       <button
                         id={`faq-trigger-${activeCategory}-${i}`}
                         className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-[5px]"
+                        onClick={() => setOpenItem(isOpen ? "" : `item-${i}`)}
                         data-testid={`button-faq-item-${activeCategory}-${i}`}
                         aria-expanded={isOpen}
                         aria-controls={`faq-answer-${activeCategory}-${i}`}

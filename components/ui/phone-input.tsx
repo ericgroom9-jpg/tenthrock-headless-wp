@@ -51,7 +51,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
 
     return (
       <div className="relative">
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#042940]/50 text-sm font-medium select-none pointer-events-none">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#042940]/70 text-sm font-medium select-none pointer-events-none">
           +1
         </span>
         <Input

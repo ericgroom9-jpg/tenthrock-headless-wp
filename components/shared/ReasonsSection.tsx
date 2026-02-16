@@ -36,7 +36,7 @@ export default function ReasonsSection({
   testIdPrefix = "reasons",
 }: ReasonsSectionProps) {
   return (
-    <section className="py-16 md:py-24 bg-[#F8F8F8]" data-testid={`section-${testIdPrefix}`}>
+    <section className="py-16 md:py-24 bg-[#F8F8F8]" aria-label="Reasons to choose us" data-testid={`section-${testIdPrefix}`}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-32">

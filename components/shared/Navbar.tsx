@@ -476,7 +476,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         <div className="pl-4 pb-3 space-y-2">
                           {serviceCategories.map((cat, catIdx) => (
                             <div key={catIdx}>
-                              <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-4 pb-1 pt-3">
+                              <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/70 px-4 pb-1 pt-3">
                                 {cat.category}
                               </div>
                               {cat.items.map((service) => (

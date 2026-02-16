@@ -64,7 +64,7 @@ function BookACallSection() {
             data-testid="calendar-embed-container"
           >
             <div className="bg-[#f5f5f5] rounded-[5px] w-full min-h-[480px] sm:min-h-[520px] lg:min-h-[560px] flex items-center justify-center">
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#042940]/50 text-center px-6">
+              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#042940]/70 text-center px-6">
                 Calendar Embed
               </p>
             </div>

@@ -17,7 +17,7 @@ const stats = [
 
 export default function CaseStudySection() {
   return (
-    <section className="py-16 md:py-24 bg-white border-b border-primary/5">
+    <section className="py-16 md:py-24 bg-white border-b border-primary/5" aria-label="Case studies">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Images (order-2 on mobile, order-1 on lg) */}
@@ -84,12 +84,14 @@ export default function CaseStudySection() {
               <button 
                 className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary active:bg-primary hover:text-white active:text-white text-primary transition-all duration-300 shadow-sm hover:shadow-lg active:shadow-lg min-w-[44px] min-h-[44px]"
                 aria-label="Previous case study"
+                data-testid="button-case-study-prev"
               >
                 <ArrowRight className="w-5 h-5 rotate-180" />
               </button>
               <button 
                 className="w-14 h-14 rounded-full bg-[#042940] text-white flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] hover:text-[#042940] active:text-[#042940] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
                 aria-label="Next case study"
+                data-testid="button-case-study-next"
               >
                 <ArrowRight className="w-5 h-5" />
               </button>

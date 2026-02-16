@@ -701,9 +701,13 @@ export default function ServiceTemplate({
                         ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
                         : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
                     }`}
-                    onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
                   >
-                    <button className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none">
+                    <button 
+                      className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
+                      onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
+                      aria-expanded={openItem === `item-${i}`}
+                      data-testid={`button-faq-${i}`}
+                    >
                       <span className={`text-xl font-bold transition-colors duration-300 ${
                         openItem === `item-${i}` ? "text-white" : "text-primary"
                       }`}>

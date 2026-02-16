@@ -330,8 +330,9 @@ const ServicesSection = () => {
                  className={`text-left px-6 md:px-8 py-5 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group min-h-[52px] ${
                    activeService === i 
                      ? "bg-white shadow-lg text-primary border border-primary/5" 
-                     : "text-primary/40 hover:text-primary active:text-primary hover:bg-white/50 active:bg-white/50"
+                     : "text-primary/60 hover:text-primary active:text-primary hover:bg-white/50 active:bg-white/50"
                  }`}
+                 aria-pressed={activeService === i}
                >
                  <span className="relative z-10 flex items-center justify-between gap-3">
                    {service.title}
@@ -421,7 +422,7 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white" aria-label="About Tenth Rock">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
            {/* Left Image Side (order-2 on mobile) */}
@@ -490,7 +491,7 @@ const Reasons = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-[#F8F8F8]">
+    <section className="py-16 md:py-24 bg-[#F8F8F8]" aria-label="Reasons to choose Tenth Rock">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           {/* Left Sticky Content */}
@@ -547,7 +548,7 @@ const Reasons = () => {
 // Stats Section (Numbers and Media 1)
 const Stats = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#FDFDFD]">
+    <section className="py-16 md:py-24 bg-[#FDFDFD]" aria-label="Key metrics">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-32">
@@ -669,9 +670,13 @@ const Faq = () => {
                     ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
                     : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
                 }`}
-                onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
               >
-                <button className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none">
+                <button 
+                  className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
+                  onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
+                  aria-expanded={openItem === `item-${i}`}
+                  data-testid={`button-faq-${i}`}
+                >
                   <span className={`text-xl font-bold transition-colors duration-300 ${
                     openItem === `item-${i}` ? "text-white" : "text-primary"
                   }`}>

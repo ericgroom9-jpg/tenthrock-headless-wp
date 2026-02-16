@@ -447,9 +447,13 @@ export default function CommercialWasteServices() {
                         ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
                         : "bg-white border-transparent hover:border-[#042940]/10 shadow-sm hover:shadow-md"
                     }`}
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   >
-                    <button className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none min-h-[52px]">
+                    <button 
+                      className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none min-h-[52px]"
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      aria-expanded={openFaq === i}
+                      data-testid={`button-faq-${i}`}
+                    >
                       <span className={`text-xl font-bold transition-colors duration-300 ${
                         openFaq === i ? "text-white" : "text-[#042940]"
                       }`}>

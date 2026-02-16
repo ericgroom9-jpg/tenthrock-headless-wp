@@ -36,7 +36,7 @@ export default function TestimonialsSection({
   };
 
   return (
-    <section className="py-16 md:py-24 bg-[#042940] text-white relative overflow-hidden" data-testid={`section-${testIdPrefix}`}>
+    <section className="py-16 md:py-24 bg-[#042940] text-white relative overflow-hidden" aria-label="Client testimonials" data-testid={`section-${testIdPrefix}`}>
       <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
       
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -79,7 +79,7 @@ export default function TestimonialsSection({
                   </div>
                   <div>
                     <div className="font-bold text-xl text-white" data-testid={`text-${testIdPrefix}-author`}>{testimonials[currentIndex].author}</div>
-                    <div className="text-white/60 font-medium">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</div>
+                    <div className="text-white/70 font-medium">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</div>
                   </div>
                 </div>
               </motion.div>

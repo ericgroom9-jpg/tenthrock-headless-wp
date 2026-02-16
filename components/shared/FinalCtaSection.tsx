@@ -8,7 +8,7 @@ const imgCyclist = "/images/stock/cyclist.jpg";
 
 export default function FinalCtaSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" aria-label="Get started with waste management">
        <div className="container mx-auto px-4 md:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
