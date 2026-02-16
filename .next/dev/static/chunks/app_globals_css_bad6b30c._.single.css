@@ -3336,6 +3336,10 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: 2rem;
 }
 
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
 .pl-2\.5 {
   padding-left: .625rem;
 }
@@ -3570,6 +3574,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-\[\#042940\]\/40 {
   color: #04294066;
+}
+
+.text-\[\#042940\]\/50 {
+  color: #04294080;
 }
 
 .text-\[\#042940\]\/60 {

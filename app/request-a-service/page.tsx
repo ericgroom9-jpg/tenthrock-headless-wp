@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PhoneInput } from "@/components/ui/phone-input";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
@@ -132,9 +133,8 @@ function RequestAServiceSection() {
                   <label htmlFor="request-phone" className="block text-sm font-medium text-[#042940] mb-2">
                     +1 Phone Number
                   </label>
-                  <Input
+                  <PhoneInput
                     id="request-phone"
-                    type="tel"
                     className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                     data-testid="input-request-phone"
                   />

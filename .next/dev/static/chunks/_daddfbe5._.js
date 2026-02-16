@@ -179,7 +179,7 @@ function Logo({ className = "", variant = "main" }) {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
             src: logoSrc,
             alt: "Tenth Rock Waste Solutions",
-            className: "h-8 md:h-10 w-auto object-contain"
+            className: "h-8 md:h-10 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-none object-contain"
         }, void 0, false, {
             fileName: "[project]/components/shared/Logo.tsx",
             lineNumber: 16,
@@ -392,6 +392,10 @@ const aboutLinks = [
         href: "/join-our-network"
     },
     {
+        label: "FAQ",
+        href: "/faq"
+    },
+    {
         label: "Contact Us",
         href: "/contact"
     }
@@ -407,10 +411,10 @@ function Navbar({ variant = "floating" }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
         className: isFloating ? "fixed top-6 left-0 right-0 z-50 px-4 md:px-8" : "sticky top-0 z-50 px-4 md:px-8 py-3 bg-white/95 backdrop-blur-sm",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: `container mx-auto max-w-[92rem] ${isFloating ? "bg-white rounded-[5px] shadow-lg px-4 sm:px-6 py-3" : "px-0"}`,
+            className: `container mx-auto max-w-[92rem] ${isFloating ? "bg-white rounded-[5px] shadow-lg px-3 sm:px-6 py-3" : "px-0"}`,
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between gap-4",
+                    className: "flex items-center justify-between gap-2 sm:gap-4",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: "/",
@@ -420,37 +424,37 @@ function Navbar({ variant = "floating" }) {
                                 variant: "main"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                lineNumber: 99,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 98,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-2 xl:hidden",
+                            className: "flex items-center gap-2 xl:hidden shrink-0",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                     asChild: true,
                                     size: "sm",
-                                    className: "bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap min-h-[52px] px-4",
+                                    className: "bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap rounded-full px-3 sm:px-4",
                                     "data-testid": "button-mobile-cta",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/request-a-service",
                                         children: "Request a Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 111,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 105,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                    className: "p-3 text-primary rounded-[5px] hover:bg-gray-100 active:bg-gray-100 transition-colors min-w-[52px] min-h-[52px] flex items-center justify-center",
+                                    className: "p-2 text-primary rounded-[5px] transition-colors flex items-center justify-center",
                                     onClick: ()=>setIsNavExpanded(!isNavExpanded),
                                     "aria-expanded": isNavExpanded,
                                     "aria-label": "Toggle navigation menu",
@@ -459,24 +463,24 @@ function Navbar({ variant = "floating" }) {
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 120,
                                         columnNumber: 32
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 120,
                                         columnNumber: 60
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 113,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 103,
+                            lineNumber: 104,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -484,7 +488,12 @@ function Navbar({ variant = "floating" }) {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative",
-                                    onMouseEnter: ()=>setIsServicesOpen(true),
+                                    onMouseEnter: ()=>{
+                                        setIsServicesOpen(true);
+                                        setIsSectorsOpen(false);
+                                        setIsLocationsOpen(false);
+                                        setIsAboutOpen(false);
+                                    },
                                     onMouseLeave: ()=>setIsServicesOpen(false),
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -498,7 +507,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Commercial Waste Services"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 134,
+                                                    lineNumber: 135,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -513,18 +522,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 150,
+                                                        lineNumber: 151,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 141,
+                                                    lineNumber: 142,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 131,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -562,7 +571,7 @@ function Navbar({ variant = "floating" }) {
                                                                                 className: "w-1.5 h-1.5 rounded-full bg-[#c5d520]"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                                                lineNumber: 170,
+                                                                                lineNumber: 171,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -570,13 +579,13 @@ function Navbar({ variant = "floating" }) {
                                                                                 children: cat.category
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                                                lineNumber: 171,
+                                                                                lineNumber: 172,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                                        lineNumber: 169,
+                                                                        lineNumber: 170,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -591,62 +600,67 @@ function Navbar({ variant = "floating" }) {
                                                                                         className: "w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                                                        lineNumber: 184,
+                                                                                        lineNumber: 185,
                                                                                         columnNumber: 35
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                         children: service.label
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                                                        lineNumber: 185,
+                                                                                        lineNumber: 186,
                                                                                         columnNumber: 35
                                                                                     }, this)
                                                                                 ]
                                                                             }, service.label, true, {
                                                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                                                lineNumber: 177,
+                                                                                lineNumber: 178,
                                                                                 columnNumber: 33
                                                                             }, this))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                                        lineNumber: 175,
+                                                                        lineNumber: 176,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, catIdx, true, {
                                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                                lineNumber: 168,
+                                                                lineNumber: 169,
                                                                 columnNumber: 27
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 167,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 166,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 156,
+                                                lineNumber: 157,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 155,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 125,
+                                    lineNumber: 126,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative",
-                                    onMouseEnter: ()=>setIsSectorsOpen(true),
+                                    onMouseEnter: ()=>{
+                                        setIsSectorsOpen(true);
+                                        setIsServicesOpen(false);
+                                        setIsLocationsOpen(false);
+                                        setIsAboutOpen(false);
+                                    },
                                     onMouseLeave: ()=>setIsSectorsOpen(false),
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -660,7 +674,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Who We Serve"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 208,
+                                                    lineNumber: 209,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -675,114 +689,131 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-4 h-4 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 224,
+                                                        lineNumber: 225,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 215,
+                                                    lineNumber: 216,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 205,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                                             children: isSectorsOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                                 initial: {
                                                     opacity: 0,
-                                                    y: 8,
-                                                    scale: 0.98
+                                                    y: 8
                                                 },
                                                 animate: {
                                                     opacity: 1,
-                                                    y: 0,
-                                                    scale: 1
+                                                    y: 0
                                                 },
                                                 exit: {
                                                     opacity: 0,
-                                                    y: 8,
-                                                    scale: 0.98
+                                                    y: 8
                                                 },
                                                 transition: {
-                                                    duration: 0.16,
+                                                    duration: 0.18,
                                                     ease: "easeOut"
                                                 },
-                                                className: "absolute left-0 top-[calc(100%+14px)] w-[320px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden",
+                                                className: "fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8",
                                                 role: "menu",
                                                 "data-testid": "menu-nav-sectors",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "p-3",
+                                                    className: "container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2",
-                                                            children: "Industries"
-                                                        }, void 0, false, {
+                                                            className: "flex items-center gap-2 pb-4 mb-6 border-b border-white/10",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "w-1.5 h-1.5 rounded-full bg-[#c5d520]"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                                    lineNumber: 242,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                    className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80",
+                                                                    children: "Industries We Serve"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                                    lineNumber: 243,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 240,
+                                                            lineNumber: 241,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid gap-1",
+                                                            className: "grid grid-cols-4 gap-x-8 gap-y-1",
                                                             children: sectorLinks.map((sector)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                     href: sector.href,
                                                                     "data-testid": `link-nav-sectors-${sector.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-                                                                    className: "flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]",
+                                                                    className: "group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]",
                                                                     onClick: ()=>setIsSectorsOpen(false),
                                                                     children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                                                            className: "w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                                                            lineNumber: 256,
+                                                                            columnNumber: 29
+                                                                        }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                            className: "pr-3",
                                                                             children: sector.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 252,
-                                                                            columnNumber: 29
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                                                            className: "w-4 h-4 text-primary/40"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 253,
+                                                                            lineNumber: 257,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, sector.label, true, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 245,
+                                                                    lineNumber: 249,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 243,
+                                                            lineNumber: 247,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 239,
+                                                    lineNumber: 240,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 230,
+                                                lineNumber: 231,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 228,
+                                            lineNumber: 229,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 199,
+                                    lineNumber: 200,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative",
-                                    onMouseEnter: ()=>setIsLocationsOpen(true),
+                                    onMouseEnter: ()=>{
+                                        setIsLocationsOpen(true);
+                                        setIsServicesOpen(false);
+                                        setIsSectorsOpen(false);
+                                        setIsAboutOpen(false);
+                                    },
                                     onMouseLeave: ()=>setIsLocationsOpen(false),
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -796,7 +827,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Locations"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 273,
+                                                    lineNumber: 277,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -811,130 +842,163 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-4 h-4 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 289,
+                                                        lineNumber: 293,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 280,
+                                                    lineNumber: 284,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 269,
+                                            lineNumber: 273,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                                             children: isLocationsOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                                 initial: {
                                                     opacity: 0,
-                                                    y: 8,
-                                                    scale: 0.98
+                                                    y: 8
                                                 },
                                                 animate: {
                                                     opacity: 1,
-                                                    y: 0,
-                                                    scale: 1
+                                                    y: 0
                                                 },
                                                 exit: {
                                                     opacity: 0,
-                                                    y: 8,
-                                                    scale: 0.98
+                                                    y: 8
                                                 },
                                                 transition: {
-                                                    duration: 0.16,
+                                                    duration: 0.18,
                                                     ease: "easeOut"
                                                 },
-                                                className: "absolute right-0 top-[calc(100%+14px)] w-[640px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden",
+                                                className: "fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8",
                                                 role: "menu",
                                                 "data-testid": "menu-nav-locations",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "p-4",
+                                                    className: "container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center justify-between mb-3",
+                                                            className: "flex items-center justify-between pb-4 mb-6 border-b border-white/10",
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-2",
-                                                                    children: "Service Locations"
-                                                                }, void 0, false, {
+                                                                    className: "flex items-center gap-2",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "w-1.5 h-1.5 rounded-full bg-[#c5d520]"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                                                            lineNumber: 311,
+                                                                            columnNumber: 27
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                            className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80",
+                                                                            children: "Service Locations"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                                                            lineNumber: 312,
+                                                                            columnNumber: 27
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 306,
+                                                                    lineNumber: 310,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                     href: "/locations",
-                                                                    className: "text-xs font-bold text-[#c5d520] hover:underline px-2",
+                                                                    className: "text-xs font-bold text-[#c5d520] hover:text-[#c5d520]/80 transition-colors",
                                                                     onClick: ()=>setIsLocationsOpen(false),
                                                                     "data-testid": "link-nav-locations-view-all",
                                                                     children: "View All Locations"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 309,
+                                                                    lineNumber: 316,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 305,
+                                                            lineNumber: 309,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid grid-cols-4 gap-x-2",
+                                                            className: "grid grid-cols-4 gap-x-8",
                                                             children: (()=>{
                                                                 const colSize = Math.ceil(locationLinks.length / 4);
                                                                 return Array.from({
                                                                     length: 4
                                                                 }, (_, colIdx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                        className: "flex flex-col",
+                                                                        className: "flex flex-col gap-0.5",
                                                                         children: locationLinks.slice(colIdx * colSize, (colIdx + 1) * colSize).map((loc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                                 href: loc.href,
                                                                                 "data-testid": `link-nav-locations-${loc.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-                                                                                className: "rounded-[5px] px-2 py-[6px] text-[13px] font-medium text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors truncate",
+                                                                                className: "group flex items-center gap-3 rounded-[5px] px-3 py-2 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors",
                                                                                 onClick: ()=>setIsLocationsOpen(false),
-                                                                                children: loc.label
-                                                                            }, loc.label, false, {
+                                                                                children: [
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                                                                        className: "w-3 h-3 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0"
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/shared/Navbar.tsx",
+                                                                                        lineNumber: 338,
+                                                                                        columnNumber: 35
+                                                                                    }, this),
+                                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                        children: loc.label
+                                                                                    }, void 0, false, {
+                                                                                        fileName: "[project]/components/shared/Navbar.tsx",
+                                                                                        lineNumber: 339,
+                                                                                        columnNumber: 35
+                                                                                    }, this)
+                                                                                ]
+                                                                            }, loc.label, true, {
                                                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                                                lineNumber: 324,
+                                                                                lineNumber: 331,
                                                                                 columnNumber: 33
                                                                             }, this))
                                                                     }, colIdx, false, {
                                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                                        lineNumber: 322,
+                                                                        lineNumber: 329,
                                                                         columnNumber: 29
                                                                     }, this));
                                                             })()
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 318,
+                                                            lineNumber: 325,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 304,
+                                                    lineNumber: 308,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 295,
+                                                lineNumber: 299,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 293,
+                                            lineNumber: 297,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 264,
+                                    lineNumber: 268,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative",
-                                    onMouseEnter: ()=>setIsAboutOpen(true),
+                                    onMouseEnter: ()=>{
+                                        setIsAboutOpen(true);
+                                        setIsServicesOpen(false);
+                                        setIsSectorsOpen(false);
+                                        setIsLocationsOpen(false);
+                                    },
                                     onMouseLeave: ()=>setIsAboutOpen(false),
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -948,7 +1012,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "About Us"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 354,
+                                                    lineNumber: 362,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -963,115 +1027,127 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-4 h-4 transition-transform ${isAboutOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 370,
+                                                        lineNumber: 378,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 361,
+                                                    lineNumber: 369,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 350,
+                                            lineNumber: 358,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
                                             children: isAboutOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                                                 initial: {
                                                     opacity: 0,
-                                                    y: 8,
-                                                    scale: 0.98
+                                                    y: 8
                                                 },
                                                 animate: {
                                                     opacity: 1,
-                                                    y: 0,
-                                                    scale: 1
+                                                    y: 0
                                                 },
                                                 exit: {
                                                     opacity: 0,
-                                                    y: 8,
-                                                    scale: 0.98
+                                                    y: 8
                                                 },
                                                 transition: {
-                                                    duration: 0.16,
+                                                    duration: 0.18,
                                                     ease: "easeOut"
                                                 },
-                                                className: "absolute left-0 top-[calc(100%+14px)] w-[280px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden",
+                                                className: "fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8",
                                                 role: "menu",
                                                 "data-testid": "menu-nav-about",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "p-3",
+                                                    className: "container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2",
-                                                            children: "About"
-                                                        }, void 0, false, {
+                                                            className: "flex items-center gap-2 pb-4 mb-6 border-b border-white/10",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "w-1.5 h-1.5 rounded-full bg-[#c5d520]"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                                    lineNumber: 395,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                    className: "text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80",
+                                                                    children: "About Tenth Rock"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/shared/Navbar.tsx",
+                                                                    lineNumber: 396,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 386,
+                                                            lineNumber: 394,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid gap-1",
+                                                            className: "grid grid-cols-4 gap-x-8 gap-y-1",
                                                             children: aboutLinks.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                     href: item.href,
                                                                     "data-testid": `link-nav-about-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-                                                                    className: "flex items-center justify-between rounded-[5px] px-3 py-3 text-sm font-bold text-primary hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#042940] active:text-[#042940] transition-colors min-h-[44px]",
+                                                                    className: "group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]",
                                                                     onClick: ()=>setIsAboutOpen(false),
                                                                     children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                                                                            className: "w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/shared/Navbar.tsx",
+                                                                            lineNumber: 409,
+                                                                            columnNumber: 29
+                                                                        }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                            className: "pr-3",
                                                                             children: item.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 398,
-                                                                            columnNumber: 29
-                                                                        }, this),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
-                                                                            className: "w-4 h-4 text-primary/40"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/shared/Navbar.tsx",
-                                                                            lineNumber: 399,
+                                                                            lineNumber: 410,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, item.label, true, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 391,
+                                                                    lineNumber: 402,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 389,
+                                                            lineNumber: 400,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 385,
+                                                    lineNumber: 393,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 376,
+                                                lineNumber: 384,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 374,
+                                            lineNumber: 382,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 345,
+                                    lineNumber: 353,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 124,
+                            lineNumber: 125,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1085,7 +1161,7 @@ function Navbar({ variant = "floating" }) {
                                     children: "Login"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 412,
+                                    lineNumber: 423,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1098,24 +1174,24 @@ function Navbar({ variant = "floating" }) {
                                         children: "Request a Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 416,
+                                        lineNumber: 427,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 415,
+                                    lineNumber: 426,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 411,
+                            lineNumber: 422,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/Navbar.tsx",
-                    lineNumber: 97,
+                    lineNumber: 98,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1154,7 +1230,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Commercial Waste Services"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 439,
+                                                    lineNumber: 450,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1167,18 +1243,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 453,
+                                                        lineNumber: 464,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 446,
+                                                    lineNumber: 457,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 435,
+                                            lineNumber: 446,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1205,7 +1281,7 @@ function Navbar({ variant = "floating" }) {
                                                                     children: cat.category
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                                    lineNumber: 468,
+                                                                    lineNumber: 479,
                                                                     columnNumber: 31
                                                                 }, this),
                                                                 cat.items.map((service)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1219,34 +1295,34 @@ function Navbar({ variant = "floating" }) {
                                                                         children: service.label
                                                                     }, service.label, false, {
                                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                                        lineNumber: 472,
+                                                                        lineNumber: 483,
                                                                         columnNumber: 33
                                                                     }, this))
                                                             ]
                                                         }, catIdx, true, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 467,
+                                                            lineNumber: 478,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 465,
+                                                    lineNumber: 476,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 458,
+                                                lineNumber: 469,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 456,
+                                            lineNumber: 467,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 434,
+                                    lineNumber: 445,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1262,7 +1338,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Who We Serve"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 496,
+                                                    lineNumber: 507,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1275,18 +1351,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 510,
+                                                        lineNumber: 521,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 503,
+                                                    lineNumber: 514,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 492,
+                                            lineNumber: 503,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1317,28 +1393,28 @@ function Navbar({ variant = "floating" }) {
                                                             children: sector.label
                                                         }, sector.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 524,
+                                                            lineNumber: 535,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 522,
+                                                    lineNumber: 533,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 515,
+                                                lineNumber: 526,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 513,
+                                            lineNumber: 524,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 491,
+                                    lineNumber: 502,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1354,7 +1430,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "Locations"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 546,
+                                                    lineNumber: 557,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1367,18 +1443,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 560,
+                                                        lineNumber: 571,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 553,
+                                                    lineNumber: 564,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 542,
+                                            lineNumber: 553,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1409,28 +1485,28 @@ function Navbar({ variant = "floating" }) {
                                                             children: loc.label
                                                         }, loc.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 574,
+                                                            lineNumber: 585,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 572,
+                                                    lineNumber: 583,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 565,
+                                                lineNumber: 576,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 563,
+                                            lineNumber: 574,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 541,
+                                    lineNumber: 552,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1446,7 +1522,7 @@ function Navbar({ variant = "floating" }) {
                                                     children: "About Us"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 596,
+                                                    lineNumber: 607,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1459,18 +1535,18 @@ function Navbar({ variant = "floating" }) {
                                                         className: `w-5 h-5 transition-transform ${isAboutOpen ? "rotate-180" : ""}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                                        lineNumber: 610,
+                                                        lineNumber: 621,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 603,
+                                                    lineNumber: 614,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 592,
+                                            lineNumber: 603,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1501,28 +1577,28 @@ function Navbar({ variant = "floating" }) {
                                                             children: item.label
                                                         }, item.label, false, {
                                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                                            lineNumber: 624,
+                                                            lineNumber: 635,
                                                             columnNumber: 29
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                                    lineNumber: 622,
+                                                    lineNumber: 633,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
-                                                lineNumber: 615,
+                                                lineNumber: 626,
                                                 columnNumber: 23
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Navbar.tsx",
-                                            lineNumber: 613,
+                                            lineNumber: 624,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 591,
+                                    lineNumber: 602,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1534,39 +1610,39 @@ function Navbar({ variant = "floating" }) {
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
-                                        lineNumber: 641,
+                                        lineNumber: 652,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Navbar.tsx",
-                                    lineNumber: 640,
+                                    lineNumber: 651,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Navbar.tsx",
-                            lineNumber: 432,
+                            lineNumber: 443,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/shared/Navbar.tsx",
-                        lineNumber: 424,
+                        lineNumber: 435,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/shared/Navbar.tsx",
-                    lineNumber: 422,
+                    lineNumber: 433,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/shared/Navbar.tsx",
-            lineNumber: 96,
+            lineNumber: 97,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/Navbar.tsx",
-        lineNumber: 92,
+        lineNumber: 93,
         columnNumber: 5
     }, this);
 }
@@ -2094,10 +2170,10 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/contact",
+                                                href: "/faq",
                                                 className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
-                                                "data-testid": "link-footer-contact",
-                                                children: "Contact"
+                                                "data-testid": "link-footer-faq",
+                                                children: "FAQ"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Footer.tsx",
                                                 lineNumber: 117,
@@ -2110,10 +2186,10 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/request-a-service",
+                                                href: "/contact",
                                                 className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
-                                                "data-testid": "link-footer-request-service",
-                                                children: "Request a Service"
+                                                "data-testid": "link-footer-contact",
+                                                children: "Contact"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Footer.tsx",
                                                 lineNumber: 118,
@@ -2122,6 +2198,22 @@ function Footer() {
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Footer.tsx",
                                             lineNumber: 118,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/request-a-service",
+                                                className: "block py-2 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors",
+                                                "data-testid": "link-footer-request-service",
+                                                children: "Request a Service"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/shared/Footer.tsx",
+                                                lineNumber: 119,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/shared/Footer.tsx",
+                                            lineNumber: 119,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -2159,7 +2251,7 @@ function Footer() {
                                     children: "Stay Updated"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Footer.tsx",
-                                    lineNumber: 130,
+                                    lineNumber: 131,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2167,7 +2259,7 @@ function Footer() {
                                     children: "Get the latest industry insights and compliance updates."
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Footer.tsx",
-                                    lineNumber: 131,
+                                    lineNumber: 132,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2179,7 +2271,7 @@ function Footer() {
                                             "data-testid": "input-footer-newsletter"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Footer.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 136,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2190,18 +2282,18 @@ function Footer() {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Footer.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 142,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Footer.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 141,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Footer.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 135,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2212,7 +2304,7 @@ function Footer() {
                                             children: "Need Immediate Help?"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Footer.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 146,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2222,19 +2314,19 @@ function Footer() {
                                             children: "(888) 555-0123"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Footer.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 147,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/Footer.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 145,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Footer.tsx",
-                            lineNumber: 123,
+                            lineNumber: 124,
                             columnNumber: 11
                         }, this)
                     ]
@@ -2247,7 +2339,7 @@ function Footer() {
                     className: "bg-white/10 mb-8"
                 }, void 0, false, {
                     fileName: "[project]/components/shared/Footer.tsx",
-                    lineNumber: 153,
+                    lineNumber: 154,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2257,7 +2349,7 @@ function Footer() {
                             children: "© 2026 Tenth Rock Solutions. All rights reserved."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/Footer.tsx",
-                            lineNumber: 156,
+                            lineNumber: 157,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2270,7 +2362,7 @@ function Footer() {
                                     children: "Privacy Policy"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Footer.tsx",
-                                    lineNumber: 158,
+                                    lineNumber: 159,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2280,7 +2372,7 @@ function Footer() {
                                     children: "Terms of Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Footer.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 160,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -2290,19 +2382,19 @@ function Footer() {
                                     children: "Cookie Settings"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Footer.tsx",
-                                    lineNumber: 160,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/Footer.tsx",
-                            lineNumber: 157,
+                            lineNumber: 158,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/Footer.tsx",
-                    lineNumber: 155,
+                    lineNumber: 156,
                     columnNumber: 9
                 }, this)
             ]
@@ -2349,10 +2441,10 @@ function StatsSection() {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-4 md:px-8",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid lg:grid-cols-2 gap-16 items-start",
+                className: "grid lg:grid-cols-2 gap-12 lg:gap-16 items-start",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "sticky top-32",
+                        className: "lg:sticky lg:top-32",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                             initial: {
                                 opacity: 0,
@@ -2403,7 +2495,7 @@ function StatsSection() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex flex-col sm:flex-row gap-4",
+                                    className: "flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             size: "lg",
@@ -2417,7 +2509,7 @@ function StatsSection() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             size: "lg",
                                             variant: "ghost",
-                                            className: "w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap",
+                                            className: "w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
                                                     className: "w-5 h-5 text-secondary"
@@ -2453,22 +2545,7 @@ function StatsSection() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid gap-8",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                initial: {
-                                    opacity: 0,
-                                    y: 20
-                                },
-                                whileInView: {
-                                    opacity: 1,
-                                    y: 0
-                                },
-                                viewport: {
-                                    once: true
-                                },
-                                transition: {
-                                    duration: 0.5,
-                                    delay: 0.1
-                                },
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "border border-primary/10 p-8 rounded-[5px] bg-white",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2476,7 +2553,7 @@ function StatsSection() {
                                         children: "Case / Stat Here"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 45,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2484,14 +2561,14 @@ function StatsSection() {
                                         children: "30%"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 46,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "bg-primary/10 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 47,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2499,7 +2576,7 @@ function StatsSection() {
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 48,
                                         columnNumber: 17
                                     }, this)
                                 ]
@@ -2508,22 +2585,7 @@ function StatsSection() {
                                 lineNumber: 44,
                                 columnNumber: 14
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                initial: {
-                                    opacity: 0,
-                                    y: 20
-                                },
-                                whileInView: {
-                                    opacity: 1,
-                                    y: 0
-                                },
-                                viewport: {
-                                    once: true
-                                },
-                                transition: {
-                                    duration: 0.5,
-                                    delay: 0.2
-                                },
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "border border-primary/10 p-8 rounded-[5px] bg-white",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2534,12 +2596,12 @@ function StatsSection() {
                                             alt: "Stats Visual"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/StatsSection.tsx",
-                                            lineNumber: 65,
+                                            lineNumber: 53,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 52,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2547,7 +2609,7 @@ function StatsSection() {
                                         children: "Case / Stat Here"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 55,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2555,14 +2617,14 @@ function StatsSection() {
                                         children: "70K"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 56,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "bg-primary/10 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 69,
+                                        lineNumber: 57,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2570,31 +2632,16 @@ function StatsSection() {
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 58,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/StatsSection.tsx",
-                                lineNumber: 57,
+                                lineNumber: 51,
                                 columnNumber: 14
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                                initial: {
-                                    opacity: 0,
-                                    y: 20
-                                },
-                                whileInView: {
-                                    opacity: 1,
-                                    y: 0
-                                },
-                                viewport: {
-                                    once: true
-                                },
-                                transition: {
-                                    duration: 0.5,
-                                    delay: 0.3
-                                },
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "border border-primary/10 p-8 rounded-[5px] bg-white",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2602,7 +2649,7 @@ function StatsSection() {
                                         children: "Case / Stat Here"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 62,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2610,14 +2657,14 @@ function StatsSection() {
                                         children: "80%"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 63,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "bg-primary/10 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 64,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2625,13 +2672,13 @@ function StatsSection() {
                                         children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 65,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/StatsSection.tsx",
-                                lineNumber: 73,
+                                lineNumber: 61,
                                 columnNumber: 14
                             }, this)
                         ]

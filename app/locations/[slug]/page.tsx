@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { Phone, Check, ArrowUpRight, ArrowDown } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -259,12 +260,11 @@ export default function LocationTemplatePage() {
                     <label htmlFor="phone" className="block text-sm font-medium text-[#042940] mb-2">
                       Phone number
                     </label>
-                    <input
-                      type="tel"
+                    <PhoneInput
                       id="phone"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
+                      onChange={(value) => handleInputChange("phone", value)}
+                      className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                       data-testid="input-phone"
                     />
                   </div>

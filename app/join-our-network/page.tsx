@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PhoneInput } from "@/components/ui/phone-input";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import FaqSection from "@/components/shared/FaqSection";
@@ -272,10 +273,8 @@ function FormSection() {
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-bold text-[#042940] mb-2">Phone *</label>
-                  <Input 
+                  <PhoneInput
                     id="phone"
-                    type="tel"
-                    placeholder="(555) 000-0000" 
                     className="h-12 border-[#042940]/10 focus-visible:ring-[#c5d520]" 
                     data-testid="input-phone"
                     required
