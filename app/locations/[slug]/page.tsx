@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { PhoneInput } from "@/components/ui/phone-input";
-import { Phone, Check, ArrowUpRight, ArrowDown } from "lucide-react";
+import { Phone, Check, ArrowUpRight, ArrowDown, MapPin } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
@@ -15,6 +15,7 @@ import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import ProcessSection from "@/components/shared/ProcessSection";
+import { getStateData, getStateName } from "@/lib/data/state-cities";
 
 const imgPlaceholder = "/images/stock/service-centralized-program.jpg";
 const imgInfoBlock = "/images/stock/service-dumpster-rental.jpg";
@@ -50,6 +51,7 @@ export default function LocationTemplatePage() {
   const router = useRouter();
   const slug = (params?.slug as string) || "new-york";
   const locationName = formatSlug(slug);
+  const stateData = getStateData(slug);
 
   const [openAccordion, setOpenAccordion] = useState<number>(0);
   const [formData, setFormData] = useState({
@@ -415,6 +417,94 @@ export default function LocationTemplatePage() {
 
       {/* CTA Banner (same as homepage) */}
       <CtaBannerSection />
+
+      {/* Cities We Serve Section */}
+      {stateData && (
+        <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="cities-we-serve-heading" data-testid="section-cities-we-serve">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Left — State Map Visual */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:sticky lg:top-32"
+              >
+                <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square max-w-md mx-auto lg:mx-0 shadow-2xl" data-testid="map-state-visual" role="img" aria-label={`Service coverage map for ${locationName}`}>
+                  <div className="absolute inset-0 opacity-20" aria-hidden="true" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#c5d520]/10 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
+                  <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
+                    <div className="w-20 h-20 rounded-full bg-[#c5d520]/20 border-2 border-[#c5d520]/40 flex items-center justify-center mb-6" aria-hidden="true">
+                      <MapPin className="w-10 h-10 text-[#c5d520]" />
+                    </div>
+                    <span className="text-7xl md:text-8xl font-bold text-white/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none" aria-hidden="true">
+                      {stateData.abbreviation}
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-medium text-white mb-3 tracking-tighter" data-testid="text-state-name">
+                      {locationName}
+                    </h3>
+                    <p className="text-white/70 text-sm mb-6 max-w-xs">
+                      Serving {stateData.cities.length}+ cities across {locationName} with local vendor networks and dedicated support.
+                    </p>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c5d520]/10 border border-[#c5d520]/30 text-[#c5d520] font-bold text-sm" data-testid="text-cities-count">
+                      <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse" aria-hidden="true"></span>
+                      {stateData.cities.length} Cities Covered
+                    </div>
+                  </div>
+                </figure>
+              </motion.div>
+
+              {/* Right — Cities List */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-cities-we-serve">
+                  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                  Service Areas
+                </div>
+                <h2 id="cities-we-serve-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-4 leading-tight tracking-tighter" data-testid="heading-cities-we-serve">
+                  Cities We Serve in {locationName}
+                </h2>
+                <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-10" data-testid="text-cities-description">
+                  Our network of vetted local vendors ensures fast, reliable waste management services across {locationName}. Select a city below to learn more about coverage in your area.
+                </p>
+
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0 list-none p-0 m-0" role="list" aria-label={`Cities served in ${locationName}`} data-testid="list-cities">
+                  {stateData.cities.map((city, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 py-3 border-b border-[#042940]/5"
+                      data-testid={`city-item-${i}`}
+                    >
+                      <div className="w-5 h-5 rounded-full bg-[#c5d520]/20 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                        <svg className="w-3 h-3 text-[#c5d520]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-[#042940] font-medium text-sm md:text-base" data-testid={`text-city-name-${i}`}>{city}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-10 pt-8 border-t border-[#042940]/10">
+                  <p className="text-[#042940]/60 text-sm mb-4">Don't see your city? We likely still serve your area.</p>
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold min-h-[52px] rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+                    data-testid="button-cities-contact"
+                  >
+                    Check Your Area
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Case Study (same as homepage) */}
       <CaseStudySection />
