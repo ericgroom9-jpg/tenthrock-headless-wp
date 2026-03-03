@@ -1,6 +1,12 @@
 import Script from 'next/script';
 import { storage } from '@/lib/storage';
 
+function isValidScript(content: string | null): content is string {
+  if (!content || !content.trim()) return false;
+  const trimmed = content.trim();
+  return trimmed.includes('<script') || trimmed.includes('(') || trimmed.includes(';') || trimmed.includes('=');
+}
+
 export async function GlobalScripts() {
   let headScripts: string | null = null;
   let bodyScripts: string | null = null;
@@ -20,14 +26,14 @@ export async function GlobalScripts() {
 
   return (
     <>
-      {headScripts && (
+      {isValidScript(headScripts) && (
         <Script
           id="global-head-scripts"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: headScripts }}
         />
       )}
-      {bodyScripts && (
+      {isValidScript(bodyScripts) && (
         <Script
           id="global-body-scripts"
           strategy="lazyOnload"
