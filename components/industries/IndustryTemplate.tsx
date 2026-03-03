@@ -22,6 +22,15 @@ interface FaqItem {
   answer: string;
 }
 
+interface ParagraphSection {
+  badge: string;
+  heading: string;
+  body: string;
+  image?: string;
+  imageAlt?: string;
+  bulletPoints?: string[];
+}
+
 interface IndustryTemplateProps {
   industryName: string;
   heroImage: string;
@@ -30,7 +39,52 @@ interface IndustryTemplateProps {
   aboutImage: string;
   bulletPoints: BulletPoint[];
   faqs?: FaqItem[];
+  paragraphSection1?: ParagraphSection;
+  paragraphSection2?: ParagraphSection;
+  paragraphSection3?: ParagraphSection;
 }
+
+const defaultParagraphSection1: ParagraphSection = {
+  badge: "Industry Expertise",
+  heading: "Tailored Solutions for Your Industry",
+  body: "Every industry has unique waste challenges. From compliance requirements to volume fluctuations, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean and compliant — without disrupting the work that matters most to your business.",
+  image: "/images/stock/service-dumpster-rental.jpg",
+  imageAlt: "Industry-specific waste management solutions",
+  bulletPoints: [
+    "Custom programs designed around your operational schedule",
+    "Industry-specific compliance and documentation",
+    "Dedicated account manager with sector expertise",
+    "Flexible service scaling for seasonal demands",
+  ],
+};
+
+const defaultParagraphSection2: ParagraphSection = {
+  badge: "Operational Excellence",
+  heading: "One Partner, Complete Coverage",
+  body: "Managing waste across multiple locations shouldn't mean managing multiple vendors. Tenth Rock consolidates your waste operations under a single point of contact, giving you consistent service standards, unified reporting, and predictable costs. Our national network of vetted local vendors means you get the responsiveness of a local provider with the accountability of an enterprise partner.",
+  image: "/images/stock/service-emergency-overflow.jpg",
+  imageAlt: "Nationwide waste management coverage",
+  bulletPoints: [
+    "Single point of contact for all locations",
+    "Unified billing and centralized reporting",
+    "Vetted local vendors across 48 states",
+    "Real-time service tracking and documentation",
+  ],
+};
+
+const defaultParagraphSection3: ParagraphSection = {
+  badge: "Sustainability Focus",
+  heading: "Environmental Responsibility Built In",
+  body: "Sustainability isn't an add-on — it's built into every program we design. We work with certified recycling and processing partners to maximize waste diversion, reduce landfill dependency, and provide the detailed reporting your stakeholders expect. From waste audits to diversion tracking, we give you the tools to make measurable environmental progress while controlling costs.",
+  image: "/images/stock/floor-park.jpg",
+  imageAlt: "Sustainable waste management practices",
+  bulletPoints: [
+    "Waste diversion and recycling optimization",
+    "Detailed ESG and sustainability reporting",
+    "Certified processing and disposal partners",
+    "Waste audit and reduction consulting",
+  ],
+};
 
 export default function IndustryTemplate({
   industryName,
@@ -40,6 +94,9 @@ export default function IndustryTemplate({
   aboutImage,
   bulletPoints,
   faqs,
+  paragraphSection1 = defaultParagraphSection1,
+  paragraphSection2 = defaultParagraphSection2,
+  paragraphSection3 = defaultParagraphSection3,
 }: IndustryTemplateProps) {
   const [activeBullet, setActiveBullet] = useState(0);
 
@@ -201,11 +258,205 @@ export default function IndustryTemplate({
           </div>
         </section>
 
+        {/* Paragraph Section 1 — Text Left, Image Right */}
+        <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="order-2 lg:order-1"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-1">
+                  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                  {paragraphSection1.badge}
+                </div>
+                <h2 id="industry-paragraph-1-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-1">
+                  {paragraphSection1.heading}
+                </h2>
+                <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-1-body">
+                  {paragraphSection1.body}
+                </p>
+                {paragraphSection1.bulletPoints && paragraphSection1.bulletPoints.length > 0 && (
+                  <ul className="space-y-3 mb-8">
+                    {paragraphSection1.bulletPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[#042940]">
+                        <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-[#042940]/80" data-testid={`text-industry-p1-bullet-${i}`}>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full"
+                  data-testid="button-industry-paragraph-1-cta"
+                >
+                  Learn More
+                </Button>
+              </motion.div>
+              {paragraphSection1.image && (
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="order-1 lg:order-2 relative rounded-[5px] overflow-hidden aspect-[4/3]"
+                >
+                  <Image 
+                    src={paragraphSection1.image} 
+                    alt={paragraphSection1.imageAlt || ""} 
+                    fill 
+                    sizes="(max-width: 1024px) 100vw, 50vw" 
+                    className="object-cover" 
+                    loading="lazy" 
+                  />
+                </motion.div>
+              )}
+            </div>
+          </div>
+        </section>
+
         {/* How It Works Section - Uses shared ProcessSection */}
         <ProcessSection />
 
+        {/* Paragraph Section 2 — Image Left, Text Right */}
+        <section className="py-16 md:py-24 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {paragraphSection2.image && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative rounded-[5px] overflow-hidden aspect-[4/3]"
+                >
+                  <Image 
+                    src={paragraphSection2.image} 
+                    alt={paragraphSection2.imageAlt || ""} 
+                    fill 
+                    sizes="(max-width: 1024px) 100vw, 50vw" 
+                    className="object-cover" 
+                    loading="lazy" 
+                  />
+                </motion.div>
+              )}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-2">
+                  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                  {paragraphSection2.badge}
+                </div>
+                <h2 id="industry-paragraph-2-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-2">
+                  {paragraphSection2.heading}
+                </h2>
+                <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-2-body">
+                  {paragraphSection2.body}
+                </p>
+                {paragraphSection2.bulletPoints && paragraphSection2.bulletPoints.length > 0 && (
+                  <ul className="space-y-3 mb-8">
+                    {paragraphSection2.bulletPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[#042940]">
+                        <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-[#042940]/80" data-testid={`text-industry-p2-bullet-${i}`}>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+                  data-testid="button-industry-paragraph-2-cta"
+                >
+                  Get Started
+                </Button>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         {faqs && faqs.length > 0 && <FaqSection faqs={faqs} />}
+
+        {/* Paragraph Section 3 — Text Left, Image Right (alternating) */}
+        <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="order-2 lg:order-1"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-3">
+                  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                  {paragraphSection3.badge}
+                </div>
+                <h2 id="industry-paragraph-3-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-3">
+                  {paragraphSection3.heading}
+                </h2>
+                <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-3-body">
+                  {paragraphSection3.body}
+                </p>
+                {paragraphSection3.bulletPoints && paragraphSection3.bulletPoints.length > 0 && (
+                  <ul className="space-y-3 mb-8">
+                    {paragraphSection3.bulletPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[#042940]">
+                        <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-[#042940]/80" data-testid={`text-industry-p3-bullet-${i}`}>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full"
+                  data-testid="button-industry-paragraph-3-cta"
+                >
+                  Contact Us
+                </Button>
+              </motion.div>
+              {paragraphSection3.image && (
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="order-1 lg:order-2 relative rounded-[5px] overflow-hidden aspect-[4/3]"
+                >
+                  <Image 
+                    src={paragraphSection3.image} 
+                    alt={paragraphSection3.imageAlt || ""} 
+                    fill 
+                    sizes="(max-width: 1024px) 100vw, 50vw" 
+                    className="object-cover" 
+                    loading="lazy" 
+                  />
+                </motion.div>
+              )}
+            </div>
+          </div>
+        </section>
 
         {/* Location Section */}
         <LocationSection />
