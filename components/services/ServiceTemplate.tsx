@@ -34,6 +34,15 @@ const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/floor-park.jpg";
 const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
 
+interface ParagraphSection {
+  badge: string;
+  heading: string;
+  body: string;
+  image?: string;
+  imageAlt?: string;
+  bulletPoints?: string[];
+}
+
 interface ServiceTemplateProps {
   serviceName: string;
   serviceDescription: string;
@@ -59,6 +68,8 @@ interface ServiceTemplateProps {
     value: string;
     description: string;
   }[];
+  paragraphSection1?: ParagraphSection;
+  paragraphSection2?: ParagraphSection;
 }
 
 const defaultProcessSteps = [
@@ -98,6 +109,34 @@ const defaultStats = [
   { label: "SATISFACTION", value: "80%", description: "First-time resolution rate for all requests." },
 ];
 
+const defaultParagraphSection1: ParagraphSection = {
+  badge: "Why It Matters",
+  heading: "Built for the Demands of Modern Business",
+  body: "Today's commercial environments generate waste at an unprecedented pace. Whether you manage a single storefront or hundreds of locations, having a reliable waste partner is no longer optional — it's a competitive advantage. At Tenth Rock, we combine local vendor expertise with enterprise-scale coordination so your operations never miss a beat. Our approach eliminates the fragmented vendor relationships that drain your team's time and budget, replacing them with a single, accountable point of contact.",
+  image: imgServiceDumpsterRental,
+  imageAlt: "Commercial waste management operations",
+  bulletPoints: [
+    "Reduce waste management overhead by up to 30%",
+    "Eliminate multi-vendor coordination headaches",
+    "Real-time reporting and compliance documentation",
+    "Scalable solutions that grow with your business",
+  ],
+};
+
+const defaultParagraphSection2: ParagraphSection = {
+  badge: "Our Commitment",
+  heading: "Sustainability Without Compromise",
+  body: "Environmental responsibility and operational efficiency aren't mutually exclusive. Our waste diversion programs help businesses meet sustainability goals without sacrificing service quality or increasing costs. We partner with certified recycling and processing facilities across the country to maximize diversion rates while maintaining the reliability your operations depend on. Every ton diverted from landfills is tracked, documented, and reported — giving your team the data needed for ESG reporting and regulatory compliance.",
+  image: imgParkWater,
+  imageAlt: "Sustainable waste management practices",
+  bulletPoints: [
+    "Certified waste diversion and recycling programs",
+    "Detailed sustainability reporting for ESG compliance",
+    "Partnerships with local processing facilities",
+    "Zero-waste consultation available for qualifying clients",
+  ],
+};
+
 export default function ServiceTemplate({
   serviceName,
   serviceDescription,
@@ -106,6 +145,8 @@ export default function ServiceTemplate({
   processSteps = defaultProcessSteps,
   faqs = defaultFaqs,
   stats = defaultStats,
+  paragraphSection1 = defaultParagraphSection1,
+  paragraphSection2 = defaultParagraphSection2,
 }: ServiceTemplateProps) {
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
@@ -511,6 +552,72 @@ export default function ServiceTemplate({
           </div>
         </section>
 
+        {/* Paragraph Section 1 */}
+        <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="order-2 lg:order-1"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-1">
+                  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                  {paragraphSection1.badge}
+                </div>
+                <h2 id="paragraph-section-1-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-paragraph-1">
+                  {paragraphSection1.heading}
+                </h2>
+                <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-paragraph-1-body">
+                  {paragraphSection1.body}
+                </p>
+                {paragraphSection1.bulletPoints && paragraphSection1.bulletPoints.length > 0 && (
+                  <ul className="space-y-3 mb-8">
+                    {paragraphSection1.bulletPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[#042940]">
+                        <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-[#042940]/80" data-testid={`text-paragraph-1-bullet-${i}`}>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full"
+                  data-testid="button-paragraph-1-cta"
+                >
+                  <Link href="/request-a-service">Learn More</Link>
+                </Button>
+              </motion.div>
+              {paragraphSection1.image && (
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="order-1 lg:order-2 relative rounded-[5px] overflow-hidden aspect-[4/3]"
+                >
+                  <Image 
+                    src={paragraphSection1.image} 
+                    alt={paragraphSection1.imageAlt || ""} 
+                    fill 
+                    sizes="(max-width: 1024px) 100vw, 50vw" 
+                    className="object-cover" 
+                    loading="lazy" 
+                  />
+                </motion.div>
+              )}
+            </div>
+          </div>
+        </section>
+
         {/* Commercial Waste Services - Shared Component */}
         <CommercialWasteServices />
 
@@ -551,6 +658,71 @@ export default function ServiceTemplate({
                   </p>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Paragraph Section 2 */}
+        <section className="py-16 md:py-24 bg-white" aria-labelledby="paragraph-section-2-heading" data-testid="section-paragraph-2">
+          <div className="container mx-auto px-4 md:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {paragraphSection2.image && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative rounded-[5px] overflow-hidden aspect-[4/3]"
+                >
+                  <Image 
+                    src={paragraphSection2.image} 
+                    alt={paragraphSection2.imageAlt || ""} 
+                    fill 
+                    sizes="(max-width: 1024px) 100vw, 50vw" 
+                    className="object-cover" 
+                    loading="lazy" 
+                  />
+                </motion.div>
+              )}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-2">
+                  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                  {paragraphSection2.badge}
+                </div>
+                <h2 id="paragraph-section-2-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-paragraph-2">
+                  {paragraphSection2.heading}
+                </h2>
+                <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-paragraph-2-body">
+                  {paragraphSection2.body}
+                </p>
+                {paragraphSection2.bulletPoints && paragraphSection2.bulletPoints.length > 0 && (
+                  <ul className="space-y-3 mb-8">
+                    {paragraphSection2.bulletPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[#042940]">
+                        <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-[#042940]/80" data-testid={`text-paragraph-2-bullet-${i}`}>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+                  data-testid="button-paragraph-2-cta"
+                >
+                  <Link href="/request-a-service">Get Started</Link>
+                </Button>
+              </motion.div>
             </div>
           </div>
         </section>
