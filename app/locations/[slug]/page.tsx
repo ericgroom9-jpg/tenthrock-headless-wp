@@ -16,6 +16,7 @@ import LocationSection from "@/components/shared/LocationSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import ProcessSection from "@/components/shared/ProcessSection";
 import { getStateData, getStateName } from "@/lib/data/state-cities";
+import { stateOutlines } from "@/lib/data/state-outlines";
 
 const imgPlaceholder = "/images/stock/service-centralized-program.jpg";
 const imgInfoBlock = "/images/stock/service-dumpster-rental.jpg";
@@ -433,6 +434,28 @@ export default function LocationTemplatePage() {
               >
                 <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square max-w-md mx-auto lg:mx-0 shadow-2xl" data-testid="map-state-visual" role="img" aria-label={`Service coverage map for ${locationName}`}>
                   <div className="absolute inset-0 opacity-20" aria-hidden="true" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+                  {stateOutlines[slug] && (
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none"
+                      viewBox={stateOutlines[slug].viewBox}
+                      preserveAspectRatio="xMidYMid meet"
+                      aria-hidden="true"
+                    >
+                      <defs>
+                        <linearGradient id="stateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#c5d520" stopOpacity="0.15" />
+                          <stop offset="100%" stopColor="#c5d520" stopOpacity="0.05" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d={stateOutlines[slug].path}
+                        fill="url(#stateGradient)"
+                        stroke="#c5d520"
+                        strokeWidth="1.5"
+                        strokeOpacity="0.25"
+                      />
+                    </svg>
+                  )}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#c5d520]/10 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
                   <div className="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
                     <div className="w-20 h-20 rounded-full bg-[#c5d520]/20 border-2 border-[#c5d520]/40 flex items-center justify-center mb-6" aria-hidden="true">
