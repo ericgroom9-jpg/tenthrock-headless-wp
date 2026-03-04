@@ -1,9 +1,7 @@
+import { execSync } from "child_process";
 import { build as esbuild } from "esbuild";
-import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
+import { readFile } from "fs/promises";
 
-// server deps to bundle to reduce openat(2) syscalls
-// which helps cold start times
 const allowlist = [
   "@google/generative-ai",
   "@neondatabase/serverless",
@@ -33,12 +31,10 @@ const allowlist = [
 ];
 
 async function buildAll() {
-  await rm("dist", { recursive: true, force: true });
+  console.log("building Next.js app...");
+  execSync("npx next build", { stdio: "inherit" });
 
-  console.log("building client...");
-  await viteBuild();
-
-  console.log("building server...");
+  console.log("building server wrapper...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
   const allDeps = [
     ...Object.keys(pkg.dependencies || {}),
