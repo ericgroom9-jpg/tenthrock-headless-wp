@@ -9,7 +9,9 @@ export async function GET() {
     const result: Record<string, string> = {};
     
     for (const setting of settings) {
-      result[setting.key] = setting.value;
+      if (setting.value !== null) {
+        result[setting.key] = setting.value;
+      }
     }
     
     return NextResponse.json(result);

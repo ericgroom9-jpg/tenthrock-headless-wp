@@ -1,0 +1,3 @@
+{
+  "/api/wordpress/sync/route": "app/api/wordpress/sync/route.js"
+}

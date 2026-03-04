@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { PostCard } from './PostCard';
 import { Skeleton } from '@/components/ui/skeleton';
 import { AlertCircle } from 'lucide-react';
-import type { Post } from '@shared/schema';
+import type { Post } from '@/shared/schema';
 
 interface PostListProps {
   featured?: boolean;

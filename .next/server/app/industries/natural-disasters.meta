@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/industries/layout,_N_T_/industries/natural-disasters/layout,_N_T_/industries/natural-disasters/page,_N_T_/industries/natural-disasters"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/industries/natural-disasters/__PAGE__",
+    "/industries/natural-disasters",
+    "/industries",
+    "/_index",
+    "/_head"
+  ]
+}

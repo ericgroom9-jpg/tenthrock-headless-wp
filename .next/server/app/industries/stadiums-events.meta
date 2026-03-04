@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/industries/layout,_N_T_/industries/stadiums-events/layout,_N_T_/industries/stadiums-events/page,_N_T_/industries/stadiums-events"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/industries/stadiums-events/__PAGE__",
+    "/industries/stadiums-events",
+    "/industries",
+    "/_index",
+    "/_head"
+  ]
+}

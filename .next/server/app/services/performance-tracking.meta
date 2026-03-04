@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/services/layout,_N_T_/services/performance-tracking/layout,_N_T_/services/performance-tracking/page,_N_T_/services/performance-tracking"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/services/performance-tracking/__PAGE__",
+    "/services/performance-tracking",
+    "/services",
+    "/_index",
+    "/_head"
+  ]
+}
