@@ -388,30 +388,21 @@ export default function ServiceTemplate({
                             Explore our full range of waste management and commercial services designed to meet your business needs.
                           </p>
                           <ul className="space-y-3">
-                            <li className="flex items-center gap-3 text-[#042940]">
+                            {[
+                              { label: "Waste Removal", href: "/services/waste-removal" },
+                              { label: "Pressure Washing", href: "/services/pressure-washing" },
+                              { label: "Dumpster Rental", href: "/services/dumpster-rental" },
+                              { label: "Hauling Services", href: "/services/hauling-services" },
+                            ].map((s) => (
+                            <li key={s.label} className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
                                 <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                               </div>
-                              <span>Dumpster Rental</span>
+                              <Link href={s.href} className="hover:text-[#c5d520] transition-colors" data-testid={`link-other-service-${s.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>{s.label}</Link>
                             </li>
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <span>Emergency & Overflow Services</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <span>Store Decommissioning</span>
-                            </li>
+                            ))}
                           </ul>
                         </div>
                       </motion.div>
@@ -505,9 +496,9 @@ export default function ServiceTemplate({
                       >
                         <option value="" disabled>Select one...</option>
                         <option value="waste-removal">Waste Removal</option>
+                        <option value="pressure-washing">Pressure Washing</option>
                         <option value="dumpster-rental">Dumpster Rental</option>
-                        <option value="emergency">Emergency Services</option>
-                        <option value="consulting">Waste Consulting</option>
+                        <option value="hauling-services">Hauling Services</option>
                         <option value="other">Other</option>
                       </select>
                     </div>

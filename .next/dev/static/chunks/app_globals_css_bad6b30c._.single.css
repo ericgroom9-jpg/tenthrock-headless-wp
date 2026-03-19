@@ -3361,10 +3361,6 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: 2rem;
 }
 
-.pb-1 {
-  padding-bottom: .25rem;
-}
-
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -3606,10 +3602,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .leading-tight {
   line-height: 1.25;
-}
-
-.tracking-\[0\.15em\] {
-  letter-spacing: .15em;
 }
 
 .tracking-\[0\.18em\] {

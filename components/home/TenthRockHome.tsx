@@ -272,48 +272,48 @@ const ServicesSection = () => {
 
   const services = [
     {
-      title: "Emergency Waste Response",
-      desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can’t wait.",
-      href: "/services/emergency-waste-removal",
+      title: "Waste Removal",
+      desc: "Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties nationwide.",
+      href: "/services/waste-removal",
       items: [
-        { label: "Site Stabilization", desc: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours." },
-        { label: "Compliance Support", desc: "Stay ahead of local and federal waste regulations with our compliance-first approach." },
-        { label: "Brand Protection", desc: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible." },
+        { label: "Emergency Disposal", desc: "24/7 rapid-response teams for urgent waste situations at any commercial location." },
+        { label: "Bulk Waste Removal", desc: "Large-scale cleanouts for damaged, discontinued, or unsellable products and materials." },
+        { label: "Illegal Dumping Cleanup", desc: "Fast removal of mattresses, furniture, and construction debris from parking lots and properties." },
       ],
     },
     {
-      title: "Specialized Project Logistics",
-      desc: "Coordinated waste logistics for complex projects, closures, events, and disaster response.",
-      href: "/services/store-decommissioning",
+      title: "Pressure Washing",
+      desc: "Commercial pressure washing for storefronts, stadiums, compactor pads, and post-waste cleanup.",
+      href: "/services/pressure-washing",
       items: [
-        { label: "Site Closures & Remodels", desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps." },
-        { label: "Events & Stadiums", desc: "End-to-end waste plans for venues: placement, swaps, post-event sweeps, and recycling." },
-        { label: "Natural Disaster Mobilization", desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide." },
+        { label: "Storefront Cleaning", desc: "Restore curb appeal with professional pressure washing for entrances, sidewalks, and facades." },
+        { label: "Compactor Pad Cleaning", desc: "Odor and grime removal for compactor areas, loading docks, and waste staging zones." },
+        { label: "Post-Waste Cleanup", desc: "Deep cleaning after waste removal to leave your site spotless and ready for business." },
       ],
     },
     {
-      title: "Dumpsters & Temporary Containers",
-      desc: "Temporary containers and compactor solutions for projects and peaks.",
-      href: "/services/dumpster-rentals",
+      title: "Dumpster Rental",
+      desc: "Roll-off dumpsters in 10, 20, 30, and 40-yard sizes with flat-rate pricing and prompt delivery.",
+      href: "/services/dumpster-rental",
       items: [
-        { label: "On-Demand Service", desc: "Same-day or next-day delivery for urgent container needs at any location." },
-        { label: "Multiple Sizes & Types", desc: "From 2-yard front-load to 40-yard roll-offs, the right container for every job." },
-        { label: "Flexible Terms", desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget." },
+        { label: "Multiple Sizes", desc: "10, 20, 30, and 40-yard roll-off containers matched to your specific project needs." },
+        { label: "Flat-Rate Pricing", desc: "Transparent, all-inclusive pricing with no hidden fees or surprise charges." },
+        { label: "Prompt Delivery", desc: "Same-day or next-day delivery for construction projects, remodels, and cleanouts." },
       ],
     },
     {
-      title: "Centralized Waste Management",
-      desc: "One partner to standardize vendors, pricing, and service levels across all your locations.",
-      href: "/services/centralized-programs",
+      title: "Hauling Services",
+      desc: "Compactor transport, bulk hauling, and specialty waste logistics with nationwide reach.",
+      href: "/services/hauling-services",
       items: [
-        { label: "Single Point of Contact", desc: "One dedicated account manager for all your locations, simplifying communication." },
-        { label: "Performance Tracking", desc: "Real-time dashboards and reporting to monitor service levels across every site." },
-        { label: "Spend Optimization", desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend." },
+        { label: "Compactor Transport", desc: "Safe, compliant transport of compactors and heavy waste equipment to any location." },
+        { label: "Bulk Hauling", desc: "High-volume hauling for large-scale commercial projects and multi-site operations." },
+        { label: "Nationwide Logistics", desc: "Scalable hauling solutions coordinated across 48 states through our vendor network." },
       ],
     },
   ];
 
-  const categoryIcons = [Siren, Truck, Building2, ClipboardCheck];
+  const categoryIcons = [Truck, Building2, Siren, ClipboardCheck];
 
   return (
     <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">

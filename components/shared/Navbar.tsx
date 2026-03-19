@@ -11,39 +11,11 @@ interface NavbarProps {
   variant?: "floating" | "sticky";
 }
 
-const serviceCategories = [
-  {
-    category: "Emergency Waste Response",
-    items: [
-      { label: "Site Stabilization", href: "/services/site-stabilization" },
-      { label: "Compliance Support", href: "/services/compliance-support" },
-      { label: "Brand Protection", href: "/services/brand-protection" },
-    ],
-  },
-  {
-    category: "Specialized Project Logistics",
-    items: [
-      { label: "Site Closures & Remodels", href: "/services/site-closures-remodels" },
-      { label: "Events & Stadiums", href: "/services/events-stadiums" },
-      { label: "Natural Disaster Mobilization", href: "/services/natural-disaster-mobilization" },
-    ],
-  },
-  {
-    category: "Dumpsters & Temporary Containers",
-    items: [
-      { label: "On-Demand Service", href: "/services/on-demand-service" },
-      { label: "Multiple Sizes & Types", href: "/services/multiple-sizes-types" },
-      { label: "Flexible Terms", href: "/services/flexible-terms" },
-    ],
-  },
-  {
-    category: "Centralized Waste Management",
-    items: [
-      { label: "Single Point of Contact", href: "/services/single-point-of-contact" },
-      { label: "Performance Tracking", href: "/services/performance-tracking" },
-      { label: "Spend Optimization", href: "/services/spend-optimization" },
-    ],
-  },
+const serviceLinks = [
+  { label: "Waste Removal", href: "/services/waste-removal" },
+  { label: "Pressure Washing", href: "/services/pressure-washing" },
+  { label: "Dumpster Rental", href: "/services/dumpster-rental" },
+  { label: "Hauling Services", href: "/services/hauling-services" },
 ];
 
 const sectorLinks = [
@@ -165,29 +137,17 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   >
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="grid grid-cols-4 gap-8">
-                        {serviceCategories.map((cat, catIdx) => (
-                          <div key={catIdx} className="space-y-3">
-                            <div className="flex items-center gap-2 pb-2 border-b border-white/10">
-                              <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
-                              <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
-                                {cat.category}
-                              </span>
-                            </div>
-                            <div className="grid gap-0.5">
-                              {cat.items.map((service) => (
-                                <Link
-                                  key={service.label}
-                                  href={service.href}
-                                  data-testid={`link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                  className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
-                                  onClick={() => setIsServicesOpen(false)}
-                                >
-                                  <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
-                                  <span>{service.label}</span>
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
+                        {serviceLinks.map((service) => (
+                          <Link
+                            key={service.label}
+                            href={service.href}
+                            data-testid={`link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
+                            onClick={() => setIsServicesOpen(false)}
+                          >
+                            <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
+                            <span>{service.label}</span>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -474,23 +434,16 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         className="overflow-hidden"
                       >
                         <div className="pl-4 pb-3 space-y-2">
-                          {serviceCategories.map((cat, catIdx) => (
-                            <div key={catIdx}>
-                              <div className="text-xs font-extrabold tracking-[0.15em] uppercase text-primary/70 px-4 pb-1 pt-4">
-                                {cat.category}
-                              </div>
-                              {cat.items.map((service) => (
-                                <Link
-                                  key={service.label}
-                                  href={service.href}
-                                  className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
-                                  onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
-                                  data-testid={`link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                >
-                                  {service.label}
-                                </Link>
-                              ))}
-                            </div>
+                          {serviceLinks.map((service) => (
+                            <Link
+                              key={service.label}
+                              href={service.href}
+                              className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
+                              onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
+                              data-testid={`link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                            >
+                              {service.label}
+                            </Link>
                           ))}
                         </div>
                       </motion.div>

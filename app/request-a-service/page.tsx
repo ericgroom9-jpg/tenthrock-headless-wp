@@ -152,10 +152,9 @@ function RequestAServiceSection() {
                   >
                     <option value="" disabled>Select one...</option>
                     <option value="waste-removal">Waste Removal</option>
+                    <option value="pressure-washing">Pressure Washing</option>
                     <option value="dumpster-rental">Dumpster Rental</option>
-                    <option value="emergency">Emergency Services</option>
-                    <option value="decommissioning">Store Decommissioning</option>
-                    <option value="consulting">Waste Consulting</option>
+                    <option value="hauling-services">Hauling Services</option>
                     <option value="other">Other</option>
                   </select>
                 </div>

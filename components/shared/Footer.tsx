@@ -9,11 +9,10 @@ import { Separator } from "@/components/ui/separator";
 import Logo from "@/components/shared/Logo";
 
 const serviceLinks = [
-  { label: "Emergency & Overflow Waste Response", href: "/services/emergency-waste-removal" },
-  { label: "Store Decommissioning & Remodel Support", href: "/services/store-decommissioning" },
-  { label: "Event & Stadium Waste Logistics", href: "/services/event-stadium" },
-  { label: "Dumpster Rental & Temporary Containers", href: "/services/dumpster-rentals" },
-  { label: "Centralized Waste Program Management", href: "/services/centralized-programs" },
+  { label: "Waste Removal", href: "/services/waste-removal" },
+  { label: "Pressure Washing", href: "/services/pressure-washing" },
+  { label: "Dumpster Rental", href: "/services/dumpster-rental" },
+  { label: "Hauling Services", href: "/services/hauling-services" },
 ];
 
 const industryLinks = [

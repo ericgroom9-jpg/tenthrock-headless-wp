@@ -53,40 +53,28 @@ const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
 
 const services = [
   {
-    title: "Emergency & Overflow Waste Response",
-    desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can't wait. Built for retail, industrial, and multi-site emergencies.",
+    title: "Waste Removal",
+    desc: "Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties nationwide.",
     img: imgServiceEmergencyOverflow,
-    features: ["24/7 Dispatch", "Overflow & Surge Capacity", "Nationwide Network"],
+    features: ["24/7 Dispatch", "Bulk Cleanouts", "Nationwide Network"],
   },
   {
-    title: "Store Decommissioning & Remodel Support",
-    desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps without disrupting day-to-day operations.",
+    title: "Pressure Washing",
+    desc: "Commercial pressure washing for storefronts, stadiums, compactor pads, and post-waste cleanup.",
     img: imgServiceStoreDecommissioning,
-    features: ["Project Scheduling", "Site Cleanouts", "Multi-location Coordination"],
+    features: ["Storefront Cleaning", "Compactor Pads", "Post-Waste Cleanup"],
   },
   {
-    title: "Event & Stadium Waste Logistics",
-    desc: "End-to-end waste plans for venues and large events: placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
-    img: imgServiceEventStadium,
-    features: ["Venue Routing", "High-volume Support", "Diversion Planning"],
-  },
-  {
-    title: "Dumpster Rental & Temporary Containers",
-    desc: "Temporary containers and compactor solutions for projects and peaks. Transparent sizing, delivery windows, and swap schedules.",
+    title: "Dumpster Rental",
+    desc: "Roll-off dumpsters in 10, 20, 30, and 40-yard sizes with flat-rate pricing and prompt delivery.",
     img: imgServiceDumpsterRental,
-    features: ["Roll-offs & Front-load", "Fast Delivery", "Flexible Terms"],
+    features: ["10 to 40-Yard Sizes", "Flat-Rate Pricing", "Same-Day Delivery"],
   },
   {
-    title: "Centralized Waste Program Management",
-    desc: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations, improving control and visibility.",
+    title: "Hauling Services",
+    desc: "Compactor transport, bulk hauling, and specialty waste logistics with nationwide reach.",
     img: imgServiceCentralizedProgram,
-    features: ["Standardized SLAs", "Spend Visibility", "Single Point of Contact"],
-  },
-  {
-    title: "Environmental & Compactor Maintenance Services",
-    desc: "Preventative maintenance and service for compactors and waste equipment, plus environmental support to keep sites compliant and running.",
-    img: imgServiceMaintenance,
-    features: ["PM Schedules", "On-site Repairs", "Compliance Support"],
+    features: ["Compactor Transport", "Bulk Hauling", "48-State Coverage"],
   },
 ];
 

@@ -3,10 +3,10 @@ import TenthRockHome from '@/components/home/TenthRockHome';
 
 export const metadata: Metadata = {
   title: 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
-  description: 'Leading commercial waste management solutions across 48 states. Dumpster rental, emergency overflow, event services, and centralized waste programs for businesses.',
+  description: 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
   openGraph: {
     title: 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
-    description: 'Leading commercial waste management solutions across 48 states. Dumpster rental, emergency overflow, event services, and centralized waste programs for businesses.',
+    description: 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
     type: 'website',
   },
 };

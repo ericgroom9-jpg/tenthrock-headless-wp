@@ -23,106 +23,106 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 const services = [
     {
-        title: "Emergency Waste Response",
-        desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can\u2019t wait.",
+        title: "Waste Removal",
+        desc: "Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties nationwide.",
         items: [
             {
-                label: "Site Stabilization",
-                desc: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours.",
+                label: "Emergency Disposal",
+                desc: "24/7 rapid-response teams for urgent waste situations at any commercial location.",
                 img: "/images/stock/service-emergency-overflow.jpg",
-                href: "/services/site-stabilization"
+                href: "/services/waste-removal"
             },
             {
-                label: "Compliance Support",
-                desc: "Stay ahead of local and federal waste regulations with our compliance-first approach.",
+                label: "Bulk Waste Removal",
+                desc: "Large-scale cleanouts for damaged, discontinued, or unsellable products and materials.",
                 img: "/images/stock/service-emergency.jpg",
-                href: "/services/compliance-support"
+                href: "/services/waste-removal"
             },
             {
-                label: "Brand Protection",
-                desc: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible.",
+                label: "Illegal Dumping Cleanup",
+                desc: "Fast removal of mattresses, furniture, and construction debris from parking lots and properties.",
                 img: "/images/stock/clean-city.jpg",
-                href: "/services/brand-protection"
+                href: "/services/waste-removal"
             }
         ]
     },
     {
-        title: "Specialized Project Logistics",
-        desc: "Coordinated waste logistics for complex projects, closures, events, and disaster response.",
+        title: "Pressure Washing",
+        desc: "Commercial pressure washing for storefronts, stadiums, compactor pads, and post-waste cleanup.",
         items: [
             {
-                label: "Site Closures & Remodels",
-                desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps.",
+                label: "Storefront Cleaning",
+                desc: "Restore curb appeal with professional pressure washing for entrances, sidewalks, and facades.",
                 img: "/images/stock/service-commercial.jpg",
-                href: "/services/site-closures-remodels"
+                href: "/services/pressure-washing"
             },
             {
-                label: "Events & Stadiums",
-                desc: "End-to-end waste plans for venues\u2014placement, swaps, post-event sweeps, and recycling.",
+                label: "Compactor Pad Cleaning",
+                desc: "Odor and grime removal for compactor areas, loading docks, and waste staging zones.",
                 img: "/images/stock/service-event-stadium.jpg",
-                href: "/services/events-stadiums"
+                href: "/services/pressure-washing"
             },
             {
-                label: "Natural Disaster Mobilization",
-                desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide.",
-                img: "/images/stock/industry-natural-disasters-storm.jpg",
-                href: "/services/natural-disaster-mobilization"
-            }
-        ]
-    },
-    {
-        title: "Dumpsters & Temporary Containers",
-        desc: "Temporary containers and compactor solutions for projects and peaks.",
-        items: [
-            {
-                label: "On-Demand Service",
-                desc: "Same-day or next-day delivery for urgent container needs at any location.",
-                img: "/images/stock/service-dumpster-rental.jpg",
-                href: "/services/on-demand-service"
-            },
-            {
-                label: "Multiple Sizes & Types",
-                desc: "From 2-yard front-load to 40-yard roll-offs\u2014the right container for every job.",
-                img: "/images/stock/service-dumpster.jpg",
-                href: "/services/multiple-sizes-types"
-            },
-            {
-                label: "Flexible Terms",
-                desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget.",
+                label: "Post-Waste Cleanup",
+                desc: "Deep cleaning after waste removal to leave your site spotless and ready for business.",
                 img: "/images/stock/service-maintenance.jpg",
-                href: "/services/flexible-terms"
+                href: "/services/pressure-washing"
             }
         ]
     },
     {
-        title: "Centralized Waste Management",
-        desc: "One partner to standardize vendors, pricing, and service levels across all your locations.",
+        title: "Dumpster Rental",
+        desc: "Roll-off dumpsters in 10, 20, 30, and 40-yard sizes with flat-rate pricing and prompt delivery.",
         items: [
             {
-                label: "Single Point of Contact",
-                desc: "One dedicated account manager for all your locations\u2014simplifying communication.",
+                label: "Multiple Sizes",
+                desc: "10, 20, 30, and 40-yard roll-off containers matched to your specific project needs.",
+                img: "/images/stock/service-dumpster-rental.jpg",
+                href: "/services/dumpster-rental"
+            },
+            {
+                label: "Flat-Rate Pricing",
+                desc: "Transparent, all-inclusive pricing with no hidden fees or surprise charges.",
+                img: "/images/stock/service-dumpster.jpg",
+                href: "/services/dumpster-rental"
+            },
+            {
+                label: "Prompt Delivery",
+                desc: "Same-day or next-day delivery for construction projects, remodels, and cleanouts.",
                 img: "/images/stock/service-centralized-program.jpg",
-                href: "/services/single-point-of-contact"
-            },
+                href: "/services/dumpster-rental"
+            }
+        ]
+    },
+    {
+        title: "Hauling Services",
+        desc: "Compactor transport, bulk hauling, and specialty waste logistics with nationwide reach.",
+        items: [
             {
-                label: "Performance Tracking",
-                desc: "Real-time dashboards and reporting to monitor service levels across every site.",
+                label: "Compactor Transport",
+                desc: "Safe, compliant transport of compactors and heavy waste equipment to any location.",
                 img: "/images/stock/hero-skyscrapers.jpg",
-                href: "/services/performance-tracking"
+                href: "/services/hauling-services"
             },
             {
-                label: "Spend Optimization",
-                desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend.",
+                label: "Bulk Hauling",
+                desc: "High-volume hauling for large-scale commercial projects and multi-site operations.",
                 img: "/images/stock/city-nature.jpg",
-                href: "/services/spend-optimization"
+                href: "/services/hauling-services"
+            },
+            {
+                label: "Nationwide Logistics",
+                desc: "Scalable hauling solutions coordinated across 48 states through our vendor network.",
+                img: "/images/stock/service-commercial.jpg",
+                href: "/services/hauling-services"
             }
         ]
     }
 ];
 const categoryIcons = [
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__["Siren"],
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"],
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"],
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__["Siren"],
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__["ClipboardCheck"]
 ];
 function CommercialWasteServices() {

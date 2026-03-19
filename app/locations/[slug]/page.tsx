@@ -301,12 +301,10 @@ export default function LocationTemplatePage() {
                       data-testid="select-interest"
                     >
                       <option value="" disabled>Select one...</option>
-                      <option value="emergency">Emergency Waste Removal</option>
-                      <option value="dumpster">Dumpster Rental</option>
-                      <option value="decommission">Store Decommissioning</option>
-                      <option value="event">Event Waste Logistics</option>
-                      <option value="centralized">Centralized Program</option>
-                      <option value="maintenance">Compactor Maintenance</option>
+                      <option value="waste-removal">Waste Removal</option>
+                      <option value="pressure-washing">Pressure Washing</option>
+                      <option value="dumpster-rental">Dumpster Rental</option>
+                      <option value="hauling-services">Hauling Services</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
