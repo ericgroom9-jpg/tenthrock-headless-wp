@@ -17,11 +17,11 @@ interface ProcessSectionProps {
 }
 
 const defaultSteps: ProcessStep[] = [
-  { num: "01", title: "You Request Service", desc: "Call us or book online. We are ready 24/7 to handle your waste needs immediately." },
-  { num: "02", title: "We Dispatch Your Team", desc: "Local crews are deployed within hours, not days, ensuring your project stays on schedule." },
-  { num: "03", title: "We Execute The Job", desc: "Professional removal, haulage, and site clearing with full safety compliance." },
-  { num: "04", title: "Documentation Provided", desc: "We provide full digital documentation and audit trails for every job completed." },
-  { num: "05", title: "Satisfaction Guaranteed", desc: "We ensure your site is spotless and follow up to confirm you are 100% satisfied with our service." },
+  { num: "01", title: "Call Us", desc: "When your business faces a waste crisis, call us. Our team of experts is on standby, ready to help 24/7." },
+  { num: "02", title: "Your Team is Assembled", desc: "You get a dedicated project manager as your single point of contact who will assess the situation, coordinate resources, and keep you informed every step of the way." },
+  { num: "03", title: "Get a Quote", desc: "Your project manager provides a prompt, no-obligation quote. No hidden fees or unexpected charges, just a single flat rate for the entire project." },
+  { num: "04", title: "Sit Back and Relax", desc: "Once you give the green light, our team springs into action. Your project manager stays on call with real-time updates whenever you need them." },
+  { num: "05", title: "Problem Solved", desc: "We resolve your waste issue quickly and efficiently so you can avoid costly fines, downtime, and negative attention. Your business stays on track." },
 ];
 
 export default function ProcessSection({
