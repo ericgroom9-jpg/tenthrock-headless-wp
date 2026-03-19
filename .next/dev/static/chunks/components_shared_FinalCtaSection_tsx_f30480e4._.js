@@ -72,7 +72,7 @@ function FinalCtaSection() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed",
-                                children: "Join thousands of businesses optimizing their disposal costs and sustainability with Tenth Rock. One partner, zero headaches."
+                                children: "One call. One partner. Every location covered. Stop juggling vendors and start getting reliable service at a lower cost."
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
                                 lineNumber: 28,
@@ -166,7 +166,7 @@ function FinalCtaSection() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-[#c5d520] text-xl font-bold",
-                                                children: "(888) 555-0123"
+                                                children: "727.510.5454"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
                                                 lineNumber: 58,

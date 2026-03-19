@@ -29,11 +29,11 @@ const faqCategories: FaqCategory[] = [
     faqs: [
       {
         question: "What is Tenth Rock Solutions?",
-        answer: "Tenth Rock Solutions is a nationwide commercial waste management company that provides centralized waste services across all 50 states. We simplify waste management for multi-location businesses through a single point of contact, consolidated billing, and transparent performance tracking."
+        answer: "Tenth Rock Solutions is a nationwide commercial waste management company that provides centralized waste services across 48 states. We simplify waste management for multi-location businesses through a single point of contact, consolidated billing, and transparent performance tracking."
       },
       {
         question: "What areas do you service?",
-        answer: "We provide waste management services across all 50 states. Our extensive network of vetted hauler partners ensures consistent, reliable coverage whether your locations are in major metropolitan areas or rural communities."
+        answer: "We provide waste management services across 48 states. Our extensive network of vetted hauler partners ensures consistent, reliable coverage whether your locations are in major metropolitan areas or rural communities."
       },
       {
         question: "How quickly can you arrange a pickup?",

@@ -201,7 +201,7 @@ function HeroSection() {
                 data-testid="button-join-hero-phone"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                (123) 456 - 7890
+                727.510.5454
               </Button>
             </div>
           </motion.div>

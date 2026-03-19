@@ -1754,7 +1754,7 @@ function Footer() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-white/60 leading-relaxed max-w-xs",
-                                    children: "Redefining commercial waste management with speed, transparency, and reliability across all 50 states."
+                                    children: "Redefining commercial waste management with speed, transparency, and reliability across 48 states."
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Footer.tsx",
                                     lineNumber: 45,
@@ -2215,10 +2215,10 @@ function Footer() {
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "tel:8885550123",
+                                            href: "tel:7275105454",
                                             className: "text-xl font-bold text-[#c5d520] hover:underline",
                                             "data-testid": "link-footer-phone",
-                                            children: "(888) 555-0123"
+                                            children: "727.510.5454"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/Footer.tsx",
                                             lineNumber: 147,
@@ -3959,7 +3959,7 @@ const Stats = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-primary/70 mb-8",
-                                    children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla."
+                                    children: "Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations."
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
                                     lineNumber: 586,
@@ -3989,7 +3989,7 @@ const Stats = ()=>{
                                                     lineNumber: 594,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
-                                                " (888) 555-0123"
+                                                " 727.510.5454"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4021,7 +4021,7 @@ const Stats = ()=>{
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "font-semibold text-xl text-primary mb-4",
-                                        children: "Case / Stat Here"
+                                        children: "Average Cost Savings"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 602,
@@ -4044,7 +4044,7 @@ const Stats = ()=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        children: "Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 605,
@@ -4066,7 +4066,7 @@ const Stats = ()=>{
                                             fill: true,
                                             sizes: "(max-width: 1024px) 100vw, 50vw",
                                             className: "object-cover",
-                                            alt: "Stats Visual",
+                                            alt: "Tenth Rock nationwide waste operations",
                                             loading: "lazy"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
@@ -4080,7 +4080,7 @@ const Stats = ()=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "font-semibold text-xl text-primary mb-4",
-                                        children: "Case / Stat Here"
+                                        children: "Locations Managed"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 612,
@@ -4088,7 +4088,7 @@ const Stats = ()=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-7xl font-extrabold text-primary mb-4",
-                                        children: "70K"
+                                        children: "5K+"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 613,
@@ -4103,7 +4103,7 @@ const Stats = ()=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        children: "Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 615,
@@ -4120,7 +4120,7 @@ const Stats = ()=>{
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "font-semibold text-xl text-primary mb-4",
-                                        children: "Case / Stat Here"
+                                        children: "On-Time Service Rate"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 619,
@@ -4128,7 +4128,7 @@ const Stats = ()=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-7xl font-extrabold text-primary mb-4",
-                                        children: "80%"
+                                        children: "98%"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 620,
@@ -4143,7 +4143,7 @@ const Stats = ()=>{
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        children: "Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 622,

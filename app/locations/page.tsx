@@ -59,7 +59,7 @@ export default function LocationsPage() {
               Whenever You Need Us
             </h1>
             <p className="text-base text-white/90 mb-8 max-w-xl leading-relaxed font-normal tracking-tight drop-shadow-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+              Tenth Rock operates in 48 states with local crews ready for emergency pickups, scheduled service, and project-based waste removal.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
@@ -76,7 +76,7 @@ export default function LocationsPage() {
                 data-testid="button-locations-phone"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                (888) 555-0123
+                727.510.5454
               </Button>
             </div>
           </motion.div>
@@ -103,7 +103,7 @@ export default function LocationsPage() {
               Nationwide Coverage. Local Support.
             </h2>
             <p className="text-base md:text-lg text-primary/70 max-w-lg sm:mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Select a state to see available services and local coverage in your area.
             </p>
           </motion.div>
 

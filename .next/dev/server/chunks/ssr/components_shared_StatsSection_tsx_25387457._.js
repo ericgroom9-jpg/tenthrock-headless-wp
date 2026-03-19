@@ -74,7 +74,7 @@ function StatsSection() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-primary/70 mb-8",
-                                    children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla."
+                                    children: "Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations."
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/StatsSection.tsx",
                                     lineNumber: 30,
@@ -104,7 +104,7 @@ function StatsSection() {
                                                     lineNumber: 38,
                                                     columnNumber: 20
                                                 }, this),
-                                                " (888) 555-0123"
+                                                " 727.510.5454"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/StatsSection.tsx",
@@ -136,7 +136,7 @@ function StatsSection() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "font-semibold text-xl text-primary mb-4",
-                                        children: "Case / Stat Here"
+                                        children: "Average Cost Savings"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 46,
@@ -159,7 +159,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        children: "Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 49,
@@ -178,7 +178,7 @@ function StatsSection() {
                                         className: "relative h-64 w-full rounded-[5px] overflow-hidden mb-8",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                             src: imgParkWater,
-                                            alt: "Stats Visual",
+                                            alt: "Tenth Rock nationwide waste operations",
                                             fill: true,
                                             sizes: "(max-width: 1024px) 100vw, 50vw",
                                             className: "object-cover",
@@ -195,7 +195,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "font-semibold text-xl text-primary mb-4",
-                                        children: "Case / Stat Here"
+                                        children: "Locations Managed"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 56,
@@ -203,7 +203,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-7xl font-extrabold text-primary mb-4",
-                                        children: "70K"
+                                        children: "5K+"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 57,
@@ -218,7 +218,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        children: "Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 59,
@@ -235,7 +235,7 @@ function StatsSection() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "font-semibold text-xl text-primary mb-4",
-                                        children: "Case / Stat Here"
+                                        children: "On-Time Service Rate"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 63,
@@ -243,7 +243,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-7xl font-extrabold text-primary mb-4",
-                                        children: "80%"
+                                        children: "98%"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 64,
@@ -258,7 +258,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                        children: "Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 66,

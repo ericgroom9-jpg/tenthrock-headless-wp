@@ -104,9 +104,9 @@ const defaultFaqs = [
 ];
 
 const defaultStats = [
-  { label: "RESPONSE TIME", value: "30%", description: "Faster than industry average response times." },
-  { label: "CLIENTS SERVED", value: "70K+", description: "Happy commercial clients nationwide." },
-  { label: "SATISFACTION", value: "80%", description: "First-time resolution rate for all requests." },
+  { label: "RESPONSE TIME", value: "2-4hr", description: "Average on-site arrival for emergency waste calls." },
+  { label: "LOCATIONS MANAGED", value: "5K+", description: "Commercial sites serviced across 48 states." },
+  { label: "ON-TIME RATE", value: "98%", description: "Dispatched crews arrive when promised, every time." },
 ];
 
 const defaultParagraphSection1: ParagraphSection = {
@@ -211,7 +211,7 @@ export default function ServiceTemplate({
                     data-testid="button-hero-phone"
                   >
                     <Phone className="mr-2 h-5 w-5" />
-                    (123) 456 - 7890
+                    727.510.5454
                   </Button>
                 </div>
               </motion.div>
@@ -267,7 +267,7 @@ export default function ServiceTemplate({
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                               </div>
-                              <span>Benefit or Differentiator</span>
+                              <span>Nationwide coverage with local vendor expertise</span>
                             </li>
                             <li className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
@@ -275,7 +275,7 @@ export default function ServiceTemplate({
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                               </div>
-                              <span>Benefit or Differentiator</span>
+                              <span>Nationwide coverage with local vendor expertise</span>
                             </li>
                             <li className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
@@ -283,11 +283,11 @@ export default function ServiceTemplate({
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                 </svg>
                               </div>
-                              <span>Benefit or Differentiator</span>
+                              <span>Nationwide coverage with local vendor expertise</span>
                             </li>
                           </ul>
                           <p className="text-[#042940]/70 leading-relaxed">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            Our local crews handle everything from emergency overflow pickups to scheduled dumpster service. We coordinate directly with vetted vendors in your area so you get fast, reliable waste removal without managing multiple hauler relationships.
                           </p>
                         </div>
                       </motion.div>
@@ -802,14 +802,14 @@ export default function ServiceTemplate({
                     Why Clients Call Us Again and Again.
                   </h2>
                   <p className="text-lg text-primary/70 mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+                    Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                     <Button asChild size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
                       <Link href="/request-a-service">Request a Service</Link>
                     </Button>
                     <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
-                      <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
+                      <Phone className="w-5 h-5 text-secondary" /> 727.510.5454
                     </Button>
                   </div>
                 </motion.div>
@@ -817,27 +817,27 @@ export default function ServiceTemplate({
 
               <div className="grid gap-8">
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                  <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+                  <div className="font-semibold text-xl text-primary mb-4">Average Cost Savings</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-primary/70">Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization.</p>
                 </div>
                 
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                   <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
-                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Stats Visual" loading="lazy" />
+                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Tenth Rock nationwide waste operations" loading="lazy" />
                   </div>
-                  <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
-                  <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
+                  <div className="font-semibold text-xl text-primary mb-4">Locations Managed</div>
+                  <div className="text-7xl font-extrabold text-primary mb-4">5K+</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-primary/70">Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service.</p>
                 </div>
 
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                  <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
-                  <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
+                  <div className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</div>
+                  <div className="text-7xl font-extrabold text-primary mb-4">98%</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen.</p>
                 </div>
               </div>
             </div>
@@ -955,7 +955,7 @@ export default function ServiceTemplate({
                     <MapPin className="h-6 w-6 text-[#c5d520]" />
                     <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
                   </div>
-                  <p className="text-gray-600 ml-9">123 Sample St, Sydney NSW 2000 AU</p>
+                  <p className="text-gray-600 ml-9">Tampa Bay, FL (Headquarters)</p>
                 </div>
 
                 <div>
@@ -964,7 +964,7 @@ export default function ServiceTemplate({
                     <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Phone</h3>
                   </div>
                   <p className="text-gray-600 ml-9">Available 24/7 for emergencies</p>
-                  <p className="text-[#042940] font-semibold ml-9">+1 (555) 000-0000</p>
+                  <p className="text-[#042940] font-semibold ml-9">727.510.5454</p>
                 </div>
 
                 <div>
@@ -1044,7 +1044,7 @@ export default function ServiceTemplate({
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <div className="text-[#c5d520] text-xl font-bold">(888) 555-0123</div>
+                      <div className="text-[#c5d520] text-xl font-bold">727.510.5454</div>
                     </div>
                   </div>
                 </motion.div>

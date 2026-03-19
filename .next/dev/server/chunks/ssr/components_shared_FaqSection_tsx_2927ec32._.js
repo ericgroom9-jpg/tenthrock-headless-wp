@@ -24,7 +24,7 @@ const defaultFaqs = [
     },
     {
         question: "Do You Service Multiple Locations Nationwide?",
-        answer: "Yes, we operate in all 50 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
+        answer: "Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
     },
     {
         question: "What Types of Waste Do You Handle?",

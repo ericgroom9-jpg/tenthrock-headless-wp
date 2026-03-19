@@ -177,7 +177,7 @@ export default function CommercialWasteServices() {
                   data-testid="button-hero-phone"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  (123) 456-7890
+                  727.510.5454
                 </Button>
               </div>
             </motion.div>
@@ -307,7 +307,7 @@ export default function CommercialWasteServices() {
                       Request a Service
                     </Button>
                     <Button size="lg" variant="ghost" className="w-full sm:w-auto text-[#042940] hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
-                      <Phone className="w-5 h-5 text-[#c5d520]" /> (888) 555-0123
+                      <Phone className="w-5 h-5 text-[#c5d520]" /> 727.510.5454
                     </Button>
                   </div>
                 </motion.div>
@@ -315,27 +315,27 @@ export default function CommercialWasteServices() {
 
               <div className="grid gap-8">
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
+                  <div className="font-semibold text-xl text-[#042940] mb-4">Average Cost Savings</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">30%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/70">Average cost savings for our clients</p>
+                  <p className="text-[#042940]/70">Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization.</p>
                 </div>
                 
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
                   <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
-                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Stats Visual" loading="lazy" />
+                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Tenth Rock nationwide waste operations" loading="lazy" />
                   </div>
-                  <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
-                  <div className="text-7xl font-extrabold text-[#042940] mb-4">70K</div>
+                  <div className="font-semibold text-xl text-[#042940] mb-4">Locations Managed</div>
+                  <div className="text-7xl font-extrabold text-[#042940] mb-4">5K+</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/70">Tons of waste processed annually</p>
+                  <p className="text-[#042940]/70">Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service.</p>
                 </div>
 
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <div className="font-semibold text-xl text-[#042940] mb-4">Case / Stat Here</div>
-                  <div className="text-7xl font-extrabold text-[#042940] mb-4">80%</div>
+                  <div className="font-semibold text-xl text-[#042940] mb-4">On-Time Service Rate</div>
+                  <div className="text-7xl font-extrabold text-[#042940] mb-4">98%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/70">Waste diverted from landfills</p>
+                  <p className="text-[#042940]/70">Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen.</p>
                 </div>
               </div>
             </div>
@@ -394,18 +394,18 @@ export default function CommercialWasteServices() {
                 className="lg:pl-8 order-1 lg:order-2"
               >
                 <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight">
-                  Case Study Title
+                  Case Study: <br/>National Retail Rollout
                 </h2>
                 <p className="text-lg text-[#042940]/70 mb-8 md:mb-12 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.
+                  A 200-location retail chain needed to consolidate 47 separate hauler contracts into one managed program. Tenth Rock onboarded all sites in 90 days, standardized service levels, and cut their total waste spend by a third.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
                   {[
-                    { value: "32%", label: "Reduction in waste costs" },
-                    { value: "32%", label: "Improvement in efficiency" },
-                    { value: "32%", label: "Increase in recycling" },
-                    { value: "32%", label: "Customer satisfaction" },
+                    { value: "32%", label: "Cost Reduction" },
+                    { value: "98%", label: "On-Time Pickups" },
+                    { value: "90", label: "Day Onboarding" },
+                    { value: "0", label: "Compliance Issues" },
                   ].map((stat, i) => (
                     <div key={i}>
                       <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
@@ -535,7 +535,7 @@ export default function CommercialWasteServices() {
                     <MapPin className="h-6 w-6 text-[#c5d520]" />
                     <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
                   </div>
-                  <p className="text-gray-600 ml-9">123 Sample St, Sydney NSW 2000 AU</p>
+                  <p className="text-gray-600 ml-9">Tampa Bay, FL (Headquarters)</p>
                 </div>
 
                 <div>
@@ -544,7 +544,7 @@ export default function CommercialWasteServices() {
                     <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Phone</h3>
                   </div>
                   <p className="text-gray-600 ml-9">Available 24/7 for emergencies</p>
-                  <p className="text-[#042940] font-semibold ml-9">+1 (555) 000-0000</p>
+                  <p className="text-[#042940] font-semibold ml-9">727.510.5454</p>
                 </div>
 
                 <div>
@@ -621,7 +621,7 @@ export default function CommercialWasteServices() {
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <div className="text-[#c5d520] text-xl font-bold">(888) 555-0123</div>
+                      <div className="text-[#c5d520] text-xl font-bold">727.510.5454</div>
                     </div>
                   </div>
                 </motion.div>

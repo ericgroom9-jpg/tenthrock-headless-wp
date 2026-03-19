@@ -29,7 +29,7 @@ const aboutAccordions = [
       "Dedicated account manager for your region",
     ],
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Our local crews are fully licensed, insured, and trained to handle commercial waste for businesses of all sizes. From emergency overflow pickups to scheduled dumpster service, we deliver fast, reliable waste solutions backed by our nationwide infrastructure.",
   },
   {
     title: "History in Location",
@@ -102,7 +102,7 @@ export default function LocationTemplatePage() {
                 {locationName}
               </h1>
               <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                On-demand waste removal, dumpster rentals, and managed programs for businesses across the region. Local crews, nationwide support.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
@@ -119,7 +119,7 @@ export default function LocationTemplatePage() {
                   data-testid="button-location-phone"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  (888) 555-0123
+                  727.510.5454
                 </Button>
               </div>
             </motion.div>
@@ -368,10 +368,10 @@ export default function LocationTemplatePage() {
                 id="info-block-heading"
                 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"
               >
-                Another Informational Block
+                Why Local Businesses Choose Us
               </h2>
               <p className="text-primary/70 leading-relaxed mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                Managing waste across multiple locations means dealing with different haulers, inconsistent pricing, and service gaps. Tenth Rock eliminates all of that. We vet and manage local vendors so you get reliable pickups, transparent invoicing, and one number to call when something goes wrong. Whether you need a one-time cleanout or ongoing scheduled service, our team handles the coordination so yours doesn't have to.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
@@ -379,7 +379,7 @@ export default function LocationTemplatePage() {
                   className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
                   data-testid="button-info-cta"
                 >
-                  Call to Action
+                  Get a Quote
                 </Button>
                 <Button
                   size="lg"
@@ -388,7 +388,7 @@ export default function LocationTemplatePage() {
                   data-testid="button-info-phone"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  (123) 456 - 7890
+                  727.510.5454
                 </Button>
               </div>
             </motion.div>

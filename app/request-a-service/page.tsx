@@ -64,17 +64,17 @@ function RequestAServiceSection() {
                 Contact
               </h2>
               <div className="space-y-5">
-                <a href="tel:1234567890" className="flex items-center gap-4 group" data-testid="link-request-phone">
+                <a href="tel:7275105454" className="flex items-center gap-4 group" data-testid="link-request-phone">
                   <div className="w-10 h-10 rounded-full bg-[#042940]/5 flex items-center justify-center shrink-0 group-hover:bg-[#c5d520]/20 transition-colors">
                     <Phone className="w-[18px] h-[18px] text-[#042940]" />
                   </div>
-                  <span className="text-[#042940]/70 group-hover:text-[#042940] transition-colors">(123) 456-7890</span>
+                  <span className="text-[#042940]/70 group-hover:text-[#042940] transition-colors">727.510.5454</span>
                 </a>
-                <a href="mailto:info@domain.com" className="flex items-center gap-4 group" data-testid="link-request-email">
+                <a href="mailto:hello@tenthrock.com" className="flex items-center gap-4 group" data-testid="link-request-email">
                   <div className="w-10 h-10 rounded-full bg-[#042940]/5 flex items-center justify-center shrink-0 group-hover:bg-[#c5d520]/20 transition-colors">
                     <Mail className="w-[18px] h-[18px] text-[#042940]" />
                   </div>
-                  <span className="text-[#042940]/70 group-hover:text-[#042940] transition-colors">info@domain.com</span>
+                  <span className="text-[#042940]/70 group-hover:text-[#042940] transition-colors">hello@tenthrock.com</span>
                 </a>
                 <div className="flex items-start gap-4" data-testid="text-request-hours">
                   <div className="w-10 h-10 rounded-full bg-[#042940]/5 flex items-center justify-center shrink-0 mt-0.5">

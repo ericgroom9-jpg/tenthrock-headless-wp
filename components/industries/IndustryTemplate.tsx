@@ -146,7 +146,7 @@ export default function IndustryTemplate({
                   data-testid="button-hero-phone"
                 >
                   <Phone className="w-5 h-5" />
-                  (888) 555-0123
+                  727.510.5454
                 </Button>
               </div>
             </motion.div>

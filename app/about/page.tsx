@@ -56,7 +56,7 @@ export default function AboutPage() {
                 id="our-story-heading"
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-primary leading-[1.05] tracking-tighter"
               >
-                Tell the Story of How Your Company Came About
+                Built From the Ground Up to Fix a Broken Industry
               </h1>
             </motion.div>
             
@@ -69,13 +69,13 @@ export default function AboutPage() {
             >
               <div className="text-base text-primary/70 leading-relaxed space-y-6">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis. Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque.
+                  Tenth Rock started because commercial waste management was — and still is — fundamentally broken. Businesses with multiple locations were stuck managing dozens of local haulers, inconsistent service levels, and invoices that never matched what was agreed upon.
                 </p>
                 <p>
-                  Sit turpis pretium eget maecenas. Vestibulum dolor mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod risus rhoncus. Elementum ullamcorper nec, habitasse vulputate. Eget dictum quis est sed egestas tellus, a lectus.
+                  We built a nationwide network of vetted, local waste vendors and layered a single management platform on top. The result: one point of contact, one invoice, and consistent service at every location — whether you have 5 sites or 500.
                 </p>
                 <p>
-                  Sed elementum, sed dolor purus dolor dui. Ut dictum nulla pulvinar vulputate sit sagittis in eleifend dignissim. Natoque mauris cras molestie velit. Maecenas eget adipiscing quisque viverra lectus arcu, tincidunt ultrices pellentesque.
+                  Today, Tenth Rock manages waste operations for retailers, property managers, event venues, and municipalities across 48 states. We handle the logistics so our clients can focus on running their business, not chasing down missed pickups.
                 </p>
               </div>
             </motion.div>
@@ -255,7 +255,7 @@ export default function AboutPage() {
                 IN THE COMMUNITY
               </h2>
               <p className="text-base text-primary/70 leading-relaxed mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                We believe reliable waste management shouldn't stop at the dumpster. Tenth Rock partners with local organizations, sponsors community cleanup events, and works with municipalities to improve waste infrastructure in underserved areas. When our haulers are on the road, they're part of the community — not just passing through.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -273,7 +273,7 @@ export default function AboutPage() {
                   data-testid="button-community-phone"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  (888) 555-0123
+                  727.510.5454
                 </Button>
               </div>
             </motion.div>

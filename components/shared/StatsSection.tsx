@@ -28,14 +28,14 @@ export default function StatsSection() {
                 Why Clients Call Us Again and Again.
               </h2>
               <p className="text-lg text-primary/70 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+                Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
                   Request a Service
                 </Button>
                 <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
-                   <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
+                   <Phone className="w-5 h-5 text-secondary" /> 727.510.5454
                 </Button>
               </div>
             </motion.div>
@@ -43,27 +43,27 @@ export default function StatsSection() {
 
           <div className="grid gap-8">
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+                <div className="font-semibold text-xl text-primary mb-4">Average Cost Savings</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization.</p>
              </div>
              
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                 <div className="relative h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                  <Image src={imgParkWater} alt="Stats Visual" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" loading="lazy" />
+                  <Image src={imgParkWater} alt="Tenth Rock nationwide waste operations" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" loading="lazy" />
                 </div>
-                <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
-                <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
+                <div className="font-semibold text-xl text-primary mb-4">Locations Managed</div>
+                <div className="text-7xl font-extrabold text-primary mb-4">5K+</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service.</p>
              </div>
 
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
-                <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
+                <div className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</div>
+                <div className="text-7xl font-extrabold text-primary mb-4">98%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen.</p>
              </div>
           </div>
         </div>

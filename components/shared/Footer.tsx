@@ -43,7 +43,7 @@ export default function Footer() {
           >
             <Logo variant="white" />
             <p className="text-white/60 leading-relaxed max-w-xs">
-              Redefining commercial waste management with speed, transparency, and reliability across all 50 states.
+              Redefining commercial waste management with speed, transparency, and reliability across 48 states.
             </p>
             <div className="flex gap-3">
               <a href="#" aria-label="LinkedIn" data-testid="link-social-linkedin" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
@@ -144,8 +144,8 @@ export default function Footer() {
             </div>
             <div className="pt-4 border-t border-white/10 mt-6">
               <p className="text-sm font-bold text-white mb-2">Need Immediate Help?</p>
-              <a href="tel:8885550123" className="text-xl font-bold text-[#c5d520] hover:underline" data-testid="link-footer-phone">
-                (888) 555-0123
+              <a href="tel:7275105454" className="text-xl font-bold text-[#c5d520] hover:underline" data-testid="link-footer-phone">
+                727.510.5454
               </a>
             </div>
           </motion.div>

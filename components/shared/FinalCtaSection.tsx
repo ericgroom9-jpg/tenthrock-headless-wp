@@ -26,7 +26,7 @@ export default function FinalCtaSection() {
                   Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
                 </h2>
                 <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">
-                   Join thousands of businesses optimizing their disposal costs and sustainability with Tenth Rock. One partner, zero headaches.
+                   One call. One partner. Every location covered. Stop juggling vendors and start getting reliable service at a lower cost.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -55,7 +55,7 @@ export default function FinalCtaSection() {
                          <Phone className="w-6 h-6" />
                       </div>
                       <div>
-                         <div className="text-[#c5d520] text-xl font-bold">(888) 555-0123</div>
+                         <div className="text-[#c5d520] text-xl font-bold">727.510.5454</div>
                       </div>
                    </div>
                 </motion.div>
