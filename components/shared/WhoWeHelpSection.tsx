@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
-  { title: "Retail", desc: "Fast cleanup to ensure your business runs smoothly.", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
-  { title: "Stadiums & Events", desc: "Effective waste management for unforgettable events.", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
-  { title: "Faith Based", desc: "Reliable cleanup for you and your community.", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
-  { title: "Real Estate", desc: "Tailored waste solutions to protect your investment.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
-  { title: "Natural Disasters", desc: "Compassionate cleanup to help communities recover.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
-  { title: "Hospitality", desc: "Spotless spaces for exceptional guest experience.", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
-  { title: "Educational", desc: "Keeping campuses clean and distraction-free.", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
-  { title: "Municipalities", desc: "Creative solutions for keeping communities clean.", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
+  { title: "Retail", desc: "Fast cleanup to ensure your business runs smoothly", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
+  { title: "Stadiums & Events", desc: "Effective waste management for unforgettable events", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
+  { title: "Faith Based", desc: "Reliable cleanup for you and your community", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
+  { title: "Real Estate", desc: "Tailored waste solutions to protect your investment", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
+  { title: "Natural Disasters", desc: "Compassionate cleanup to help communities recover", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
+  { title: "Hospitality", desc: "Spotless spaces for exceptional guest experience", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
+  { title: "Educational", desc: "Keeping campuses clean and distraction-free", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
+  { title: "Municipalities", desc: "Creative solutions for keeping communities clean", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
 ];
 
 export default function WhoWeHelpSection() {
