@@ -193,8 +193,8 @@ const serviceLinks = [
 ];
 const sectorLinks = [
     {
-        label: "Educational Institutions",
-        href: "/industries/educational"
+        label: "Retail",
+        href: "/industries/retail"
     },
     {
         label: "Stadiums & Events",
@@ -205,24 +205,24 @@ const sectorLinks = [
         href: "/industries/faith-based"
     },
     {
-        label: "Municipalities",
-        href: "/industries/municipalities"
-    },
-    {
-        label: "Hospitality",
-        href: "/industries/hospitality"
+        label: "Real Estate",
+        href: "/industries/real-estate"
     },
     {
         label: "Natural Disasters",
         href: "/industries/natural-disasters"
     },
     {
-        label: "Real Estate",
-        href: "/industries/real-estate"
+        label: "Hospitality",
+        href: "/industries/hospitality"
     },
     {
-        label: "Retail",
-        href: "/industries/retail"
+        label: "Educational",
+        href: "/industries/educational"
+    },
+    {
+        label: "Municipalities",
+        href: "/industries/municipalities"
     }
 ];
 const locationLinks = [
@@ -1603,8 +1603,8 @@ const serviceLinks = [
 ];
 const industryLinks = [
     {
-        label: "Educational",
-        href: "/industries/educational"
+        label: "Retail",
+        href: "/industries/retail"
     },
     {
         label: "Stadiums & Events",
@@ -1615,24 +1615,24 @@ const industryLinks = [
         href: "/industries/faith-based"
     },
     {
-        label: "Municipalities",
-        href: "/industries/municipalities"
-    },
-    {
-        label: "Hospitality",
-        href: "/industries/hospitality"
+        label: "Real Estate",
+        href: "/industries/real-estate"
     },
     {
         label: "Natural Disasters",
         href: "/industries/natural-disasters"
     },
     {
-        label: "Real Estate",
-        href: "/industries/real-estate"
+        label: "Hospitality",
+        href: "/industries/hospitality"
     },
     {
-        label: "Retail",
-        href: "/industries/retail"
+        label: "Educational",
+        href: "/industries/educational"
+    },
+    {
+        label: "Municipalities",
+        href: "/industries/municipalities"
     }
 ];
 function Footer() {

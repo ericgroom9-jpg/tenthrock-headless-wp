@@ -16,14 +16,14 @@ const serviceLinks = [
 ];
 
 const industryLinks = [
-  { label: "Educational", href: "/industries/educational" },
+  { label: "Retail", href: "/industries/retail" },
   { label: "Stadiums & Events", href: "/industries/stadiums-events" },
   { label: "Faith Based", href: "/industries/faith-based" },
-  { label: "Municipalities", href: "/industries/municipalities" },
-  { label: "Hospitality", href: "/industries/hospitality" },
-  { label: "Natural Disasters", href: "/industries/natural-disasters" },
   { label: "Real Estate", href: "/industries/real-estate" },
-  { label: "Retail", href: "/industries/retail" },
+  { label: "Natural Disasters", href: "/industries/natural-disasters" },
+  { label: "Hospitality", href: "/industries/hospitality" },
+  { label: "Educational", href: "/industries/educational" },
+  { label: "Municipalities", href: "/industries/municipalities" },
 ];
 
 export default function Footer() {

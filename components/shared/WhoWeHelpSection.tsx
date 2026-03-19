@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
-  { title: "Educational", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
-  { title: "Stadiums & Events", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
-  { title: "Faith Based", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
-  { title: "Municipalities", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
-  { title: "Hospitality", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
-  { title: "Natural Disasters", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
-  { title: "Real Estate", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
-  { title: "Retail", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" }
+  { title: "Retail", desc: "Fast cleanup to ensure your business runs smoothly.", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
+  { title: "Stadiums & Events", desc: "Effective waste management for unforgettable events.", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
+  { title: "Faith Based", desc: "Reliable cleanup for you and your community.", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
+  { title: "Real Estate", desc: "Tailored waste solutions to protect your investment.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
+  { title: "Natural Disasters", desc: "Compassionate cleanup to help communities recover.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
+  { title: "Hospitality", desc: "Spotless spaces for exceptional guest experience.", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
+  { title: "Educational", desc: "Keeping campuses clean and distraction-free.", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
+  { title: "Municipalities", desc: "Creative solutions for keeping communities clean.", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
 ];
 
 export default function WhoWeHelpSection() {
@@ -60,7 +60,7 @@ export default function WhoWeHelpSection() {
                       </div>
                       <h3 className="text-white font-bold text-xl leading-tight mb-2">{sector.title}</h3>
                       <p className="text-white text-sm mt-2">
-                        Tailored solutions for {sector.title}.
+                        {sector.desc}
                       </p>
                       <div className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-4 group-hover:translate-x-1 transition-transform duration-200">
                          Learn More <ArrowRight className="w-4 h-4" />
