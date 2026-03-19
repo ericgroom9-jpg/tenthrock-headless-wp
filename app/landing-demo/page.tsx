@@ -243,7 +243,7 @@ export default function LandingDemoPage() {
         <span className="inline-flex items-center gap-2">
           <span className="inline-block w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
           <span className="font-medium text-amber-800 dark:text-amber-200">Demo Mode</span>
-          <span className="text-amber-700 dark:text-amber-300">— This page shows sample content. Connect WordPress to use real data.</span>
+          <span className="text-amber-700 dark:text-amber-300">This page shows sample content. Connect WordPress to use real data.</span>
         </span>
       </div>
       <LandingPageRenderer data={demoData} isPreview={false} />

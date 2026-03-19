@@ -52,7 +52,7 @@ function BookACallSection() {
 
             <p className="text-base text-[#042940]/90 leading-relaxed max-w-lg" data-testid="text-book-call-description">
               Schedule a quick call with one of our waste management consultants. We'll learn about your
-              specific needs and put together a customized plan that saves you time and money — with no
+              specific needs and put together a customized plan that saves you time and money, with no
               obligation.
             </p>
           </motion.div>

@@ -28,7 +28,7 @@ export default function StatsSection() {
                 Why Clients Call Us Again and Again.
               </h2>
               <p className="text-lg text-primary/70 mb-8">
-                Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations.
+                Numbers tell the story. Our clients stick with us because we deliver measurable results: lower costs, faster response, and fewer headaches managing waste across multiple locations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
@@ -63,7 +63,7 @@ export default function StatsSection() {
                 <div className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">98%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen.</p>
+                <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen.</p>
              </div>
           </div>
         </div>

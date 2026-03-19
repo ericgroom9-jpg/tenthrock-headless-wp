@@ -60,13 +60,13 @@ const services = [
   },
   {
     title: "Store Decommissioning & Remodel Support",
-    desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
+    desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps without disrupting day-to-day operations.",
     img: imgServiceStoreDecommissioning,
     features: ["Project Scheduling", "Site Cleanouts", "Multi-location Coordination"],
   },
   {
     title: "Event & Stadium Waste Logistics",
-    desc: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
+    desc: "End-to-end waste plans for venues and large events: placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
     img: imgServiceEventStadium,
     features: ["Venue Routing", "High-volume Support", "Diversion Planning"],
   },
@@ -78,7 +78,7 @@ const services = [
   },
   {
     title: "Centralized Waste Program Management",
-    desc: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
+    desc: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations, improving control and visibility.",
     img: imgServiceCentralizedProgram,
     features: ["Standardized SLAs", "Spend Visibility", "Single Point of Contact"],
   },
@@ -335,7 +335,7 @@ export default function CommercialWasteServices() {
                   <div className="font-semibold text-xl text-[#042940] mb-4">On-Time Service Rate</div>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">98%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/70">Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen.</p>
+                  <p className="text-[#042940]/70">Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen.</p>
                 </div>
               </div>
             </div>

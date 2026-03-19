@@ -95,7 +95,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         question: "What is centralized waste management?",
-        answer: "Centralized waste management means having a single partner handle all waste-related services across all your locations. This includes vendor management, performance tracking, billing consolidation, and compliance monitoring — all through one dedicated account manager."
+        answer: "Centralized waste management means having a single partner handle all waste-related services across all your locations. This includes vendor management, performance tracking, billing consolidation, and compliance monitoring, all through one dedicated account manager."
       },
       {
         question: "Can you help with store closures and remodels?",

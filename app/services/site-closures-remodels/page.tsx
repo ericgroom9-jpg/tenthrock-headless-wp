@@ -4,7 +4,7 @@ export default function SiteClosuresRemodelsPage() {
   return (
     <ServiceTemplate
       serviceName="Site Closures & Remodels"
-      serviceDescription="Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations."
+      serviceDescription="Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps without disrupting day-to-day operations."
       heroImage="/images/stock/service-commercial.jpg"
     />
   );

@@ -14,14 +14,14 @@ const subServices = [
   },
   {
     title: "Store Decommissioning & Remodel Support",
-    description: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
+    description: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps without disrupting day-to-day operations.",
     image: imgServiceDumpsterRental,
     link: "/services/store-decommissioning",
     features: ["Project Scheduling", "Site Cleanouts", "Multi-location Coordination"],
   },
   {
     title: "Event & Stadium Waste Logistics",
-    description: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
+    description: "End-to-end waste plans for venues and large events: placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
     image: imgServiceEventStadium,
     link: "/services/event-stadium",
     features: ["Venue Routing", "High-volume Support", "Diversion Planning"],
@@ -35,7 +35,7 @@ const subServices = [
   },
   {
     title: "Centralized Waste Program Management",
-    description: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
+    description: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations, improving control and visibility.",
     image: imgServiceEmergencyOverflow,
     link: "/services/centralized-programs",
     features: ["Standardized SLAs", "Spend Visibility", "Single Point of Contact"],

@@ -47,7 +47,7 @@ interface IndustryTemplateProps {
 const defaultParagraphSection1: ParagraphSection = {
   badge: "Industry Expertise",
   heading: "Tailored Solutions for Your Industry",
-  body: "Every industry has unique waste challenges. From compliance requirements to volume fluctuations, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean and compliant — without disrupting the work that matters most to your business.",
+  body: "Every industry has unique waste challenges. From compliance requirements to volume fluctuations, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean and compliant without disrupting the work that matters most to your business.",
   image: "/images/stock/service-dumpster-rental.jpg",
   imageAlt: "Industry-specific waste management solutions",
   bulletPoints: [
@@ -75,7 +75,7 @@ const defaultParagraphSection2: ParagraphSection = {
 const defaultParagraphSection3: ParagraphSection = {
   badge: "Sustainability Focus",
   heading: "Environmental Responsibility Built In",
-  body: "Sustainability isn't an add-on — it's built into every program we design. We work with certified recycling and processing partners to maximize waste diversion, reduce landfill dependency, and provide the detailed reporting your stakeholders expect. From waste audits to diversion tracking, we give you the tools to make measurable environmental progress while controlling costs.",
+  body: "Sustainability isn't an add-on. It's built into every program we design. We work with certified recycling and processing partners to maximize waste diversion, reduce landfill dependency, and provide the detailed reporting your stakeholders expect. From waste audits to diversion tracking, we give you the tools to make measurable environmental progress while controlling costs.",
   image: "/images/stock/floor-park.jpg",
   imageAlt: "Sustainable waste management practices",
   bulletPoints: [
@@ -258,7 +258,7 @@ export default function IndustryTemplate({
           </div>
         </section>
 
-        {/* Paragraph Section 1 — Text Left, Image Right */}
+        {/* Paragraph Section 1 - Text Left, Image Right */}
         <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -326,7 +326,7 @@ export default function IndustryTemplate({
         {/* How It Works Section - Uses shared ProcessSection */}
         <ProcessSection />
 
-        {/* Paragraph Section 2 — Image Left, Text Right */}
+        {/* Paragraph Section 2 - Image Left, Text Right */}
         <section className="py-16 md:py-24 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -393,7 +393,7 @@ export default function IndustryTemplate({
         {/* FAQ Section */}
         {faqs && faqs.length > 0 && <FaqSection faqs={faqs} />}
 
-        {/* Paragraph Section 3 — Text Left, Image Right (alternating) */}
+        {/* Paragraph Section 3 - Text Left, Image Right (alternating) */}
         <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

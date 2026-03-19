@@ -112,7 +112,7 @@ const defaultStats = [
 const defaultParagraphSection1: ParagraphSection = {
   badge: "Why It Matters",
   heading: "Built for the Demands of Modern Business",
-  body: "Today's commercial environments generate waste at an unprecedented pace. Whether you manage a single storefront or hundreds of locations, having a reliable waste partner is no longer optional — it's a competitive advantage. At Tenth Rock, we combine local vendor expertise with enterprise-scale coordination so your operations never miss a beat. Our approach eliminates the fragmented vendor relationships that drain your team's time and budget, replacing them with a single, accountable point of contact.",
+  body: "Today's commercial environments generate waste at an unprecedented pace. Whether you manage a single storefront or hundreds of locations, having a reliable waste partner is no longer optional. It's a competitive advantage. At Tenth Rock, we combine local vendor expertise with enterprise-scale coordination so your operations never miss a beat. Our approach eliminates the fragmented vendor relationships that drain your team's time and budget, replacing them with a single, accountable point of contact.",
   image: imgServiceDumpsterRental,
   imageAlt: "Commercial waste management operations",
   bulletPoints: [
@@ -126,7 +126,7 @@ const defaultParagraphSection1: ParagraphSection = {
 const defaultParagraphSection2: ParagraphSection = {
   badge: "Our Commitment",
   heading: "Sustainability Without Compromise",
-  body: "Environmental responsibility and operational efficiency aren't mutually exclusive. Our waste diversion programs help businesses meet sustainability goals without sacrificing service quality or increasing costs. We partner with certified recycling and processing facilities across the country to maximize diversion rates while maintaining the reliability your operations depend on. Every ton diverted from landfills is tracked, documented, and reported — giving your team the data needed for ESG reporting and regulatory compliance.",
+  body: "Environmental responsibility and operational efficiency aren't mutually exclusive. Our waste diversion programs help businesses meet sustainability goals without sacrificing service quality or increasing costs. We partner with certified recycling and processing facilities across the country to maximize diversion rates while maintaining the reliability your operations depend on. Every ton diverted from landfills is tracked, documented, and reported, giving your team the data needed for ESG reporting and regulatory compliance.",
   image: imgParkWater,
   imageAlt: "Sustainable waste management practices",
   bulletPoints: [
@@ -802,7 +802,7 @@ export default function ServiceTemplate({
                     Why Clients Call Us Again and Again.
                   </h2>
                   <p className="text-lg text-primary/70 mb-8">
-                    Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations.
+                    Numbers tell the story. Our clients stick with us because we deliver measurable results: lower costs, faster response, and fewer headaches managing waste across multiple locations.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                     <Button asChild size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
@@ -837,7 +837,7 @@ export default function ServiceTemplate({
                   <div className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</div>
                   <div className="text-7xl font-extrabold text-primary mb-4">98%</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen.</p>
+                  <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen.</p>
                 </div>
               </div>
             </div>

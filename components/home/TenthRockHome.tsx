@@ -192,11 +192,11 @@ const Hero = () => {
           </div>
 
           <h1 id="hero-heading" className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5" style={{ textWrap: "balance" }}>
-            Fast, Reliable Waste Solutions—Anywhere You Need Them
+            Fast, Reliable Waste Solutions, Anywhere You Need Them
           </h1>
           
           <p className="text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md" style={{ textWrap: "balance" }}>
-            Emergency pickups, dumpster rentals, and site cleanouts. We respond in hours — not days.
+            Emergency pickups, dumpster rentals, and site cleanouts. We respond in hours, not days.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full">
@@ -287,7 +287,7 @@ const ServicesSection = () => {
       href: "/services/store-decommissioning",
       items: [
         { label: "Site Closures & Remodels", desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels and fixture swaps." },
-        { label: "Events & Stadiums", desc: "End-to-end waste plans for venues—placement, swaps, post-event sweeps, and recycling." },
+        { label: "Events & Stadiums", desc: "End-to-end waste plans for venues: placement, swaps, post-event sweeps, and recycling." },
         { label: "Natural Disaster Mobilization", desc: "Emergency mobilization of haulers and equipment to disaster-affected areas nationwide." },
       ],
     },
@@ -297,7 +297,7 @@ const ServicesSection = () => {
       href: "/services/dumpster-rentals",
       items: [
         { label: "On-Demand Service", desc: "Same-day or next-day delivery for urgent container needs at any location." },
-        { label: "Multiple Sizes & Types", desc: "From 2-yard front-load to 40-yard roll-offs—the right container for every job." },
+        { label: "Multiple Sizes & Types", desc: "From 2-yard front-load to 40-yard roll-offs, the right container for every job." },
         { label: "Flexible Terms", desc: "Short-term rentals, long-term contracts, or project-based agreements that fit your budget." },
       ],
     },
@@ -306,7 +306,7 @@ const ServicesSection = () => {
       desc: "One partner to standardize vendors, pricing, and service levels across all your locations.",
       href: "/services/centralized-programs",
       items: [
-        { label: "Single Point of Contact", desc: "One dedicated account manager for all your locations—simplifying communication." },
+        { label: "Single Point of Contact", desc: "One dedicated account manager for all your locations, simplifying communication." },
         { label: "Performance Tracking", desc: "Real-time dashboards and reporting to monitor service levels across every site." },
         { label: "Spend Optimization", desc: "Consolidate vendors and negotiate better rates to reduce your total waste spend." },
       ],
@@ -584,7 +584,7 @@ const Stats = () => {
                 Why Clients Call Us Again and Again.
               </h2>
               <p className="text-lg text-primary/70 mb-8">
-                Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations.
+                Numbers tell the story. Our clients stick with us because we deliver measurable results: lower costs, faster response, and fewer headaches managing waste across multiple locations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
@@ -619,7 +619,7 @@ const Stats = () => {
                 <div className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">98%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen.</p>
+                <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen.</p>
              </div>
           </div>
         </div>

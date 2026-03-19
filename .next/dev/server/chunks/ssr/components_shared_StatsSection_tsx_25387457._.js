@@ -74,7 +74,7 @@ function StatsSection() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-lg text-primary/70 mb-8",
-                                    children: "Numbers tell the story. Our clients stick with us because we deliver measurable results — lower costs, faster response, and fewer headaches managing waste across multiple locations."
+                                    children: "Numbers tell the story. Our clients stick with us because we deliver measurable results: lower costs, faster response, and fewer headaches managing waste across multiple locations."
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/StatsSection.tsx",
                                     lineNumber: 30,
@@ -258,7 +258,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Our dispatched crews arrive when promised. Missed pickups cost you money — we don't let that happen."
+                                        children: "Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 66,

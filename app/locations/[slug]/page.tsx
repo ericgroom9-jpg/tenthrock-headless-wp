@@ -424,7 +424,7 @@ export default function LocationTemplatePage() {
         <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="cities-we-serve-heading" data-testid="section-cities-we-serve">
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Left — State Map Visual */}
+              {/* Left - State Map Visual */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -478,7 +478,7 @@ export default function LocationTemplatePage() {
                 </figure>
               </motion.div>
 
-              {/* Right — Cities List */}
+              {/* Right - Cities List */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
