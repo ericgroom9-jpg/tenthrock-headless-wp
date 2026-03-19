@@ -2943,7 +2943,7 @@ const Hero = ()=>{
                             style: {
                                 textWrap: "balance"
                             },
-                            children: "Emergency pickups, dumpster rentals, and site cleanouts. We respond in hours, not days."
+                            children: "Emergency pickups, dumpster rentals, and site cleanouts. 24/7 dispatch and emergency response."
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
                             lineNumber: 198,

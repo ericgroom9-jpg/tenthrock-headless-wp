@@ -196,7 +196,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md" style={{ textWrap: "balance" }}>
-            Emergency pickups, dumpster rentals, and site cleanouts. 24/7 dispatch, 2-4 hour emergency response.
+            Emergency pickups, dumpster rentals, and site cleanouts. 24/7 dispatch and emergency response.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full">
