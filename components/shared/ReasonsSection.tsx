@@ -23,14 +23,14 @@ interface ReasonsSectionProps {
 const defaultFeatures: ReasonFeature[] = [
   { title: "Dedicated Point of Contact", icon: <Headset className="w-6 h-6" />, desc: "One person to handle everything. No call centers, no runarounds, just answers." },
   { title: "Job Completion Proof", icon: <CheckCircle2 className="w-6 h-6" />, desc: "Visual confirmation for every job we complete, available instantly." },
-  { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "We operate in every zip code across the country with vetted local partners." },
-  { title: "Price Savings Just for You", icon: <Truck className="w-6 h-6" />, desc: "Volume pricing passed directly to your bottom line, typically saving 15-20%." }
+  { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner." },
+  { title: "Real Cost Savings", icon: <Truck className="w-6 h-6" />, desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service." }
 ];
 
 export default function ReasonsSection({
   tagline = "Benefits",
   heading = "More Reasons You'll Love Us",
-  subtitle = "We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.",
+  subtitle = "We rebuilt waste management from the ground up to serve businesses with multiple locations. No hidden fees, no confusing contracts, no missed pickups.",
   buttonText = "Request a Service",
   features = defaultFeatures,
   testIdPrefix = "reasons",

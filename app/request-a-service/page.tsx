@@ -81,9 +81,9 @@ function RequestAServiceSection() {
                     <Clock className="w-[18px] h-[18px] text-[#042940]" />
                   </div>
                   <div className="text-[#042940]/70 leading-relaxed">
-                    <p>Monday - Friday: 7am - 6pm PST</p>
-                    <p>Saturday: 7am - 3pm PST</p>
-                    <p>Sunday: 9am - 5pm PST</p>
+                    <p>Monday - Friday: 7am - 6pm ET</p>
+                    <p>Saturday: 7am - 3pm ET</p>
+                    <p>Sunday: 9am - 5pm ET</p>
                   </div>
                 </div>
               </div>

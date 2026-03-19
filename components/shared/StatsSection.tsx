@@ -46,7 +46,7 @@ export default function StatsSection() {
                 <div className="font-semibold text-xl text-primary mb-4">Average Cost Savings</div>
                 <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/70">Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization.</p>
+                <p className="text-primary/70">Clients typically cut waste spend by up to 30% through vendor consolidation, rate negotiation, and right-sized service frequencies.</p>
              </div>
              
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">

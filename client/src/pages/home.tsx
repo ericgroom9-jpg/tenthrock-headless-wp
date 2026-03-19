@@ -320,7 +320,7 @@ const SimpleNumbers = () => {
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={5} suffix="K+" duration={2.5} />
               </div>
-              <div className="text-lg text-primary/60">Jobs Completed</div>
+              <div className="text-lg text-primary/60">Locations Managed</div>
            </div>
            <div className="flex flex-col items-center text-center px-8">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
@@ -893,8 +893,8 @@ const Reasons = () => {
   const features = [
     { title: "Dedicated Point of Contact", icon: <Headset className="w-6 h-6" />, desc: "One person to handle everything. No call centers, no runarounds, just answers." },
     { title: "Job Completion Proof", icon: <CheckCircle2 className="w-6 h-6" />, desc: "Visual confirmation for every job we complete, available instantly." },
-    { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "We operate in every zip code across the country with vetted local partners." },
-    { title: "Price Savings Just for You", icon: <Truck className="w-6 h-6" />, desc: "Volume pricing passed directly to your bottom line, typically saving 15-20%." }
+    { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner." },
+    { title: "Real Cost Savings", icon: <Truck className="w-6 h-6" />, desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service." }
   ];
 
   return (
@@ -1155,11 +1155,11 @@ const Faq = () => {
   const faqs = [
     {
       question: "How Quickly Can You Arrange a Pickup?",
-      answer: "We specialize in rapid response. For emergency requests, we can often be on-site within hours. For standard scheduled services, we can typically start within 24-48 hours of account setup."
+      answer: "For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night."
     },
     {
       question: "Do You Service Multiple Locations Nationwide?",
-      answer: "Yes, we operate in all 50 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
+      answer: "Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
     },
     {
       question: "What Types of Waste Do You Handle?",
@@ -1417,7 +1417,7 @@ const Footer = () => {
           >
             <Logo variant="white" />
             <p className="text-white/60 leading-relaxed max-w-xs">
-              Redefining commercial waste management with speed, transparency, and reliability across all 50 states.
+              Redefining commercial waste management with speed, transparency, and reliability across 48 states.
             </p>
             <div className="flex gap-4">
                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">

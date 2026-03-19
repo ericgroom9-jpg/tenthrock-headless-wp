@@ -10,10 +10,10 @@ const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
 const stats = [
-  { value: "32%", label: "Cost Reduction" },
-  { value: "98%", label: "Recycling Rate" },
-  { value: "12hr", label: "Response Time" },
-  { value: "0", label: "Compliance Issues" }
+  { value: "30%", label: "Cost Savings" },
+  { value: "200+", label: "Locations Covered" },
+  { value: "4hr", label: "Avg. Response Time" },
+  { value: "0", label: "Missed Pickups" }
 ];
 
 export default function CaseStudySection() {
@@ -71,10 +71,10 @@ export default function CaseStudySection() {
             className="lg:pl-8 order-1 lg:order-2"
           >
             <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">
-              Case Study: <br/>Urban Redevelopment
+              Case Study: <br/>National Retail Rollout
             </h2>
             <p className="text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed">
-              When a major metropolitan development needed a complete waste management overhaul for a 3-year project, they turned to Tenth Rock. We implemented a comprehensive diversion strategy that saved costs and exceeded sustainability goals.
+              A national retail chain with 200+ locations was managing waste through dozens of local haulers, each with different pricing, schedules, and service levels. Tenth Rock consolidated every location under a single program, cut costs by 30%, and eliminated missed pickups within 90 days.
             </p>
 
             <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">

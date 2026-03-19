@@ -118,24 +118,24 @@ const heroVideo = "/videos/hero-bg.mp4";
 // Homepage testimonials
 const homeTestimonials = [
   {
-    quote: "Tenth Rock transformed our waste management. We saved 30% in the first quarter alone.",
+    quote: "We cut waste spend by 30% in 90 days. One invoice, one contact, 200 locations handled.",
     author: "Sarah Jenkins",
     role: "Director of Operations",
-    company: "Retail Giant Co.",
+    company: "National Retail Chain",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
   },
   {
-    quote: "The single point of contact is a game changer. No more chasing vendors across 15 states.",
+    quote: "No more chasing haulers across 15 states. Tenth Rock picks up the phone and the problem is solved.",
     author: "Michael Ross",
     role: "Facility Manager",
-    company: "National Logistics Inc.",
+    company: "Multi-Site Property Group",
     img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
   },
   {
-    quote: "Finally, a partner that understands compliance. The audit trail features are exactly what we needed.",
+    quote: "They showed up same-day after a storm knocked out our compactor. That kind of response is why we stay.",
     author: "David Chen",
-    role: "Compliance Officer",
-    company: "BioTech Solutions",
+    role: "Regional VP",
+    company: "Hospitality Management Co.",
     img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
   }
 ];
@@ -251,7 +251,7 @@ const SimpleNumbers = () => {
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
                  <Counter to={5} suffix="K+" duration={2.5} />
               </div>
-              <div className="text-lg text-primary/70">Jobs Completed</div>
+              <div className="text-lg text-primary/70">Locations Managed</div>
            </div>
            <div className="flex flex-col items-center text-center px-4 md:px-8 pt-6 md:pt-0">
               <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
@@ -429,12 +429,12 @@ const WhyUs = () => {
   const items = [
     { 
       title: "Speed You Can Count On", 
-      content: "We leverage our nationwide network to ensure rapid deployment and timely pickups, minimizing downtime for your operations.",
+      content: "Emergency pickups within hours, scheduled service within 24-48 hours. Our 24/7 dispatch center means your call is never waiting until Monday.",
       icon: <Clock className="w-5 h-5 text-[#c5d520]" />
     },
     { 
       title: "Nationwide, Local Execution", 
-      content: "One contract, one point of contact, but serviced by local experts who know the regulations and requirements of your specific area.",
+      content: "One contract, one point of contact, serviced by vetted local crews who know the regulations and disposal requirements in your area.",
       icon: <MapPin className="w-5 h-5 text-[#c5d520]" />
     }
   ];
@@ -504,8 +504,8 @@ const Reasons = () => {
   const features = [
     { title: "Dedicated Point of Contact", icon: <Headset className="w-6 h-6" />, desc: "One person to handle everything. No call centers, no runarounds, just answers." },
     { title: "Job Completion Proof", icon: <CheckCircle2 className="w-6 h-6" />, desc: "Visual confirmation for every job we complete, available instantly." },
-    { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "We operate in every zip code across the country with vetted local partners." },
-    { title: "Price Savings Just for You", icon: <Truck className="w-6 h-6" />, desc: "Volume pricing passed directly to your bottom line, typically saving 15-20%." }
+    { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner." },
+    { title: "Real Cost Savings", icon: <Truck className="w-6 h-6" />, desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service." }
   ];
 
   return (
@@ -636,11 +636,11 @@ const Faq = () => {
   const faqs = [
     {
       question: "How Quickly Can You Arrange a Pickup?",
-      answer: "We specialize in rapid response. For emergency requests, we can often be on-site within hours. For standard scheduled services, we can typically start within 24-48 hours of account setup."
+      answer: "For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night."
     },
     {
       question: "Do You Service Multiple Locations Nationwide?",
-      answer: "Yes, we operate in all 50 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
+      answer: "Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
     },
     {
       question: "What Types of Waste Do You Handle?",
@@ -770,7 +770,7 @@ const Location = () => {
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
               </div>
-              <p className="text-gray-600 ml-9">123 Sample St, Sydney NSW 2000 AU</p>
+              <p className="text-gray-600 ml-9">Headquarters: Tampa Bay, FL</p>
             </div>
 
             <div>
@@ -779,7 +779,7 @@ const Location = () => {
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Phone</h3>
               </div>
               <p className="text-gray-600 ml-9">Available 24/7 for emergencies</p>
-              <p className="text-[#042940] font-semibold ml-9">+1 (555) 000-0000</p>
+              <p className="text-[#042940] font-semibold ml-9">727.510.5454</p>
             </div>
 
             <div>

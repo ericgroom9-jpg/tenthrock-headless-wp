@@ -159,7 +159,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization."
+                                        children: "Clients typically cut waste spend by up to 30% through vendor consolidation, rate negotiation, and right-sized service frequencies."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 49,

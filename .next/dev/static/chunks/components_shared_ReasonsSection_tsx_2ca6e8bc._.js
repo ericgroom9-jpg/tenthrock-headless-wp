@@ -50,21 +50,21 @@ const defaultFeatures = [
             lineNumber: 26,
             columnNumber: 49
         }, ("TURBOPACK compile-time value", void 0)),
-        desc: "We operate in every zip code across the country with vetted local partners."
+        desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner."
     },
     {
-        title: "Price Savings Just for You",
+        title: "Real Cost Savings",
         icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"], {
             className: "w-6 h-6"
         }, void 0, false, {
             fileName: "[project]/components/shared/ReasonsSection.tsx",
             lineNumber: 27,
-            columnNumber: 48
+            columnNumber: 39
         }, ("TURBOPACK compile-time value", void 0)),
-        desc: "Volume pricing passed directly to your bottom line, typically saving 15-20%."
+        desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service."
     }
 ];
-function ReasonsSection({ tagline = "Benefits", heading = "More Reasons You'll Love Us", subtitle = "We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.", buttonText = "Request a Service", features = defaultFeatures, testIdPrefix = "reasons" }) {
+function ReasonsSection({ tagline = "Benefits", heading = "More Reasons You'll Love Us", subtitle = "We rebuilt waste management from the ground up to serve businesses with multiple locations. No hidden fees, no confusing contracts, no missed pickups.", buttonText = "Request a Service", features = defaultFeatures, testIdPrefix = "reasons" }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-16 md:py-24 bg-[#F8F8F8]",
         "aria-label": "Reasons to choose us",

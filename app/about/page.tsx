@@ -19,7 +19,7 @@ const imgCommunity = "/images/stock/cyclist.jpg";
 const coreValues = [
   {
     title: "Reliability You Can Count On",
-    description: "We show up when we say we will, every time. Our nationwide network ensures consistent service quality across all 50 states."
+    description: "We show up when we say we will, every time. Our nationwide network ensures consistent service quality across 48 states."
   },
   {
     title: "Transparent Pricing",
@@ -148,7 +148,7 @@ export default function AboutPage() {
                   data-testid="button-schedule-demo"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
-                  Schedule Demo
+                  Book a Call
                 </Button>
                 <Button 
                   size="lg" 
@@ -156,7 +156,7 @@ export default function AboutPage() {
                   className="w-full sm:w-auto border-primary text-primary rounded-full font-bold"
                   data-testid="button-more-solutions"
                 >
-                  More Solutions
+                  View Our Services
                 </Button>
               </div>
             </motion.div>

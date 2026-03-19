@@ -26,7 +26,7 @@ export default function FinalCtaSection() {
                   Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
                 </h2>
                 <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">
-                   One call. One partner. Every location covered. Stop juggling vendors and start getting reliable service at a lower cost.
+                   One call. One partner. Every location covered. Stop juggling haulers and start saving up to 30% on waste spend.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">

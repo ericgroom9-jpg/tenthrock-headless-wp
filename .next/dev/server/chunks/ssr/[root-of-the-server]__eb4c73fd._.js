@@ -2051,7 +2051,7 @@ function Footer() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-white/60",
-                                    children: "Get the latest industry insights and compliance updates."
+                                    children: "Get service updates, industry news, and waste management tips for multi-location businesses."
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/Footer.tsx",
                                     lineNumber: 131,
@@ -2687,24 +2687,24 @@ const heroVideo = "/videos/hero-bg.mp4";
 // Homepage testimonials
 const homeTestimonials = [
     {
-        quote: "Tenth Rock transformed our waste management. We saved 30% in the first quarter alone.",
+        quote: "We cut waste spend by 30% in 90 days. One invoice, one contact, 200 locations handled.",
         author: "Sarah Jenkins",
         role: "Director of Operations",
-        company: "Retail Giant Co.",
+        company: "National Retail Chain",
         img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
     },
     {
-        quote: "The single point of contact is a game changer. No more chasing vendors across 15 states.",
+        quote: "No more chasing haulers across 15 states. Tenth Rock picks up the phone and the problem is solved.",
         author: "Michael Ross",
         role: "Facility Manager",
-        company: "National Logistics Inc.",
+        company: "Multi-Site Property Group",
         img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
     },
     {
-        quote: "Finally, a partner that understands compliance. The audit trail features are exactly what we needed.",
+        quote: "They showed up same-day after a storm knocked out our compactor. That kind of response is why we stay.",
         author: "David Chen",
-        role: "Compliance Officer",
-        company: "BioTech Solutions",
+        role: "Regional VP",
+        company: "Hospitality Management Co.",
         img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
     }
 ];
@@ -2995,7 +2995,7 @@ const SimpleNumbers = ()=>{
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-lg text-primary/70",
-                                children: "Jobs Completed"
+                                children: "Locations Managed"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
                                 lineNumber: 254,
@@ -3397,7 +3397,7 @@ const WhyUs = ()=>{
     const items = [
         {
             title: "Speed You Can Count On",
-            content: "We leverage our nationwide network to ensure rapid deployment and timely pickups, minimizing downtime for your operations.",
+            content: "Emergency pickups within hours, scheduled service within 24-48 hours. Our 24/7 dispatch center means your call is never waiting until Monday.",
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
                 className: "w-5 h-5 text-[#c5d520]"
             }, void 0, false, {
@@ -3408,7 +3408,7 @@ const WhyUs = ()=>{
         },
         {
             title: "Nationwide, Local Execution",
-            content: "One contract, one point of contact, but serviced by local experts who know the regulations and requirements of your specific area.",
+            content: "One contract, one point of contact, serviced by vetted local crews who know the regulations and disposal requirements in your area.",
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
                 className: "w-5 h-5 text-[#c5d520]"
             }, void 0, false, {
@@ -3624,18 +3624,18 @@ const Reasons = ()=>{
                 lineNumber: 507,
                 columnNumber: 51
             }, ("TURBOPACK compile-time value", void 0)),
-            desc: "We operate in every zip code across the country with vetted local partners."
+            desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner."
         },
         {
-            title: "Price Savings Just for You",
+            title: "Real Cost Savings",
             icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"], {
                 className: "w-6 h-6"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
                 lineNumber: 508,
-                columnNumber: 50
+                columnNumber: 41
             }, ("TURBOPACK compile-time value", void 0)),
-            desc: "Volume pricing passed directly to your bottom line, typically saving 15-20%."
+            desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service."
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4072,11 +4072,11 @@ const Faq = ()=>{
     const faqs = [
         {
             question: "How Quickly Can You Arrange a Pickup?",
-            answer: "We specialize in rapid response. For emergency requests, we can often be on-site within hours. For standard scheduled services, we can typically start within 24-48 hours of account setup."
+            answer: "For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night."
         },
         {
             question: "Do You Service Multiple Locations Nationwide?",
-            answer: "Yes, we operate in all 50 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
+            answer: "Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
         },
         {
             question: "What Types of Waste Do You Handle?",
@@ -4377,7 +4377,7 @@ const Location = ()=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-gray-600 ml-9",
-                                            children: "123 Sample St, Sydney NSW 2000 AU"
+                                            children: "Headquarters: Tampa Bay, FL"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
                                             lineNumber: 773,
@@ -4425,7 +4425,7 @@ const Location = ()=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-[#042940] font-semibold ml-9",
-                                            children: "+1 (555) 000-0000"
+                                            children: "727.510.5454"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
                                             lineNumber: 782,

@@ -124,13 +124,13 @@ export default function StyleGuide() {
                 <div>
                   <span className="text-small text-muted-foreground block mb-2">Body Large - text-body-lg</span>
                   <p className="text-body-lg" data-testid="typography-body-lg">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Tenth Rock manages commercial waste operations for multi-location businesses across 48 states, delivering reliable service with transparent pricing.
                   </p>
                 </div>
                 <div>
                   <span className="text-small text-muted-foreground block mb-2">Body - text-body</span>
                   <p className="text-body" data-testid="typography-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                    Our nationwide network of vetted local vendors means you get fast, reliable waste removal without managing multiple hauler relationships. One call, one invoice, every location covered.
                   </p>
                 </div>
                 <div>

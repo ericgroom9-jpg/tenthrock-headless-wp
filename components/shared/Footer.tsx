@@ -129,7 +129,7 @@ export default function Footer() {
           >
             <p className="font-bold text-lg text-white">Stay Updated</p>
             <p className="text-white/60">
-              Get the latest industry insights and compliance updates.
+              Get service updates, industry news, and waste management tips for multi-location businesses.
             </p>
             <div className="flex gap-2">
               <Input 

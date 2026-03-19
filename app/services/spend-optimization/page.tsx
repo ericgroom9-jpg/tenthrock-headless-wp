@@ -4,7 +4,7 @@ export default function SpendOptimizationPage() {
   return (
     <ServiceTemplate
       serviceName="Spend Optimization"
-      serviceDescription="Consolidate vendors and negotiate better rates to reduce your total waste spend. Our procurement expertise saves clients an average of 20-30% on waste costs."
+      serviceDescription="Consolidate vendors and negotiate better rates to reduce your total waste spend. Our procurement expertise saves clients up to 30% on waste costs."
       heroImage="/images/stock/city-nature.jpg"
     />
   );

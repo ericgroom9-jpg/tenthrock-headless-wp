@@ -17,10 +17,10 @@ interface ProcessSectionProps {
 }
 
 const defaultSteps: ProcessStep[] = [
-  { num: "01", title: "Call Us", desc: "When your business faces a waste crisis, call us. Our team of experts is on standby, ready to help 24/7." },
-  { num: "02", title: "Your Team is Assembled", desc: "You get a dedicated project manager as your single point of contact who will assess the situation, coordinate resources, and keep you informed every step of the way." },
-  { num: "03", title: "Get a Quote", desc: "Your project manager provides a prompt, no-obligation quote. No hidden fees or unexpected charges, just a single flat rate for the entire project." },
-  { num: "04", title: "Sit Back and Relax", desc: "Once you give the green light, our team springs into action. Your project manager stays on call with real-time updates whenever you need them." },
+  { num: "01", title: "You Call Us", desc: "When your business faces a waste crisis, call us. Our team of experts is on standby, ready to help 24/7." },
+  { num: "02", title: "We Assemble Your Team", desc: "You get a dedicated project manager as your single point of contact who will assess the situation, coordinate resources, and keep you informed every step of the way." },
+  { num: "03", title: "We Quote the Job", desc: "Your project manager provides a prompt, no-obligation quote. No hidden fees or unexpected charges, just a single flat rate for the entire project." },
+  { num: "04", title: "We Handle the Rest", desc: "Once you give the green light, our team springs into action. Your project manager stays on call with real-time updates whenever you need them." },
   { num: "05", title: "Problem Solved", desc: "We resolve your waste issue quickly and efficiently so you can avoid costly fines, downtime, and negative attention. Your business stays on track." },
 ];
 

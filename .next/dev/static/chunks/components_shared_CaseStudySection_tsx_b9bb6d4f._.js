@@ -21,20 +21,20 @@ const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 const stats = [
     {
-        value: "32%",
-        label: "Cost Reduction"
+        value: "30%",
+        label: "Cost Savings"
     },
     {
-        value: "98%",
-        label: "Recycling Rate"
+        value: "200+",
+        label: "Locations Covered"
     },
     {
-        value: "12hr",
-        label: "Response Time"
+        value: "4hr",
+        label: "Avg. Response Time"
     },
     {
         value: "0",
-        label: "Compliance Issues"
+        label: "Missed Pickups"
     }
 ];
 function CaseStudySection() {
@@ -159,7 +159,7 @@ function CaseStudySection() {
                                         lineNumber: 74,
                                         columnNumber: 27
                                     }, this),
-                                    "Urban Redevelopment"
+                                    "National Retail Rollout"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
@@ -168,7 +168,7 @@ function CaseStudySection() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed",
-                                children: "When a major metropolitan development needed a complete waste management overhaul for a 3-year project, they turned to Tenth Rock. We implemented a comprehensive diversion strategy that saved costs and exceeded sustainability goals."
+                                children: "A national retail chain with 200+ locations was managing waste through dozens of local haulers, each with different pricing, schedules, and service levels. Tenth Rock consolidated every location under a single program, cut costs by 30%, and eliminated missed pickups within 90 days."
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
                                 lineNumber: 76,

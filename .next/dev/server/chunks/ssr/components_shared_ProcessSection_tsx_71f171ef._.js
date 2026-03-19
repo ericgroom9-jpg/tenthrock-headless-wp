@@ -14,22 +14,22 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 const defaultSteps = [
     {
         num: "01",
-        title: "Call Us",
+        title: "You Call Us",
         desc: "When your business faces a waste crisis, call us. Our team of experts is on standby, ready to help 24/7."
     },
     {
         num: "02",
-        title: "Your Team is Assembled",
+        title: "We Assemble Your Team",
         desc: "You get a dedicated project manager as your single point of contact who will assess the situation, coordinate resources, and keep you informed every step of the way."
     },
     {
         num: "03",
-        title: "Get a Quote",
+        title: "We Quote the Job",
         desc: "Your project manager provides a prompt, no-obligation quote. No hidden fees or unexpected charges, just a single flat rate for the entire project."
     },
     {
         num: "04",
-        title: "Sit Back and Relax",
+        title: "We Handle the Rest",
         desc: "Once you give the green light, our team springs into action. Your project manager stays on call with real-time updates whenever you need them."
     },
     {

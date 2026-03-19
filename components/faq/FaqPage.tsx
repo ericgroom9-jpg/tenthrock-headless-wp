@@ -37,7 +37,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         question: "How quickly can you arrange a pickup?",
-        answer: "For emergency requests, we can often be on-site within hours. For standard scheduled services, we can typically start within 24-48 hours of account setup. Our rapid response capability is one of our core differentiators."
+        answer: "For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night."
       },
       {
         question: "What types of waste do you handle?",
@@ -64,7 +64,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         question: "Can you help reduce our waste management costs?",
-        answer: "Absolutely. On average, our clients see 15-30% savings on waste management costs. We achieve this through competitive bidding, right-sizing containers, optimizing pickup frequencies, and identifying recycling rebate opportunities."
+        answer: "Absolutely. Clients typically save up to 30% on waste management costs. We achieve this through vendor consolidation, rate negotiation, right-sizing containers, optimizing pickup frequencies, and identifying recycling rebate opportunities."
       },
       {
         question: "Do you offer consolidated billing?",

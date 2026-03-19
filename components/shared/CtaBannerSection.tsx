@@ -41,7 +41,7 @@ export default function CtaBannerSection() {
              </div>
              
              <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6 tracking-tighter">
-               Check If We Service <span className="text-[#c5d520]">Your Area.</span>
+               Check If We Service <span className="text-[#c5d520]">Your Area</span>
              </h2>
              <p className="text-xl text-white/70 font-medium leading-relaxed max-w-xl mb-10">
                Enter your zip code below to instantly see if our network of local vendors covers your location.

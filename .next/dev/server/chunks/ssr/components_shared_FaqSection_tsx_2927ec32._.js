@@ -20,7 +20,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 const defaultFaqs = [
     {
         question: "How Quickly Can You Arrange a Pickup?",
-        answer: "We specialize in rapid response. For emergency requests, we can often be on-site within hours. For standard scheduled services, we can typically start within 24-48 hours of account setup."
+        answer: "For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night."
     },
     {
         question: "Do You Service Multiple Locations Nationwide?",
