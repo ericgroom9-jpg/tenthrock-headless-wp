@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, ArrowUpRight } from "lucide-react";
+import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -222,16 +223,13 @@ export default function IndustryTemplate({
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8 md:mt-10">
                   <Button 
+                    asChild
                     size="lg" 
                     className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] w-full sm:w-auto"
                     data-testid="button-about-cta"
                   >
-                    Request A Service
+                    <Link href="/request-a-service">Request A Service</Link>
                   </Button>
-                  <button className="flex items-center justify-center sm:justify-start gap-2 text-[#042940] font-semibold hover:text-[#c5d520] transition-colors group w-full sm:w-auto py-3 sm:py-0">
-                    Learn More
-                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </button>
                 </div>
               </motion.div>
 
@@ -294,11 +292,12 @@ export default function IndustryTemplate({
                   </ul>
                 )}
                 <Button 
+                  asChild
                   size="lg" 
-                  className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full"
+                  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
                   data-testid="button-industry-paragraph-1-cta"
                 >
-                  Learn More
+                  <Link href="/request-a-service">Request A Service</Link>
                 </Button>
               </motion.div>
               {paragraphSection1.image && (
@@ -429,11 +428,12 @@ export default function IndustryTemplate({
                   </ul>
                 )}
                 <Button 
+                  asChild
                   size="lg" 
-                  className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full"
+                  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
                   data-testid="button-industry-paragraph-3-cta"
                 >
-                  Contact Us
+                  <Link href="/request-a-service">Request A Service</Link>
                 </Button>
               </motion.div>
               {paragraphSection3.image && (
