@@ -512,16 +512,6 @@ export default function LocationTemplatePage() {
                   ))}
                 </ul>
 
-                <div className="mt-10 pt-8 border-t border-[#042940]/10">
-                  <p className="text-[#042940]/60 text-sm mb-4">Don't see your city? We likely still serve your area.</p>
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold min-h-[52px] rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
-                    data-testid="button-cities-contact"
-                  >
-                    Check Your Area
-                  </Button>
-                </div>
               </motion.div>
             </div>
           </div>
