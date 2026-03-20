@@ -608,7 +608,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   <Button 
                     asChild 
                     size="lg" 
-                    className="w-full bg-[#c5d520] text-[#042940] font-bold min-h-[52px] whitespace-nowrap rounded-full"
+                    className="w-full bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
                     data-testid="button-mobile-menu-cta"
                   >
                     <Link href="/request-a-service" onClick={() => setIsNavExpanded(false)}>Request A Service</Link>
