@@ -393,7 +393,7 @@ export default function ServiceTemplate({
                               { label: "Pressure Washing", href: "/services/pressure-washing" },
                               { label: "Dumpster Rental", href: "/services/dumpster-rental" },
                               { label: "Hauling Services", href: "/services/hauling-services" },
-                            ].map((s) => (
+                            ].filter((s) => s.label !== serviceName).map((s) => (
                             <li key={s.label} className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
                                 <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">

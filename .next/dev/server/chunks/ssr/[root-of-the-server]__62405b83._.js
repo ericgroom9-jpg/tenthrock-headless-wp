@@ -63,10 +63,10 @@ const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
 const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
 const subServices = [
     {
-        title: "Emergency & Overflow Waste Response",
-        description: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can't wait. Built for retail, industrial, and multi-site emergencies.",
+        title: "Emergency Waste Disposal",
+        description: "24/7 rapid-response teams deployed within hours for urgent waste situations. Overflow pickups, surge capacity, and site stabilization for retail, industrial, and multi-site emergencies.",
         image: imgServiceEmergencyOverflow,
-        link: "/services/emergency-waste-removal",
+        link: "/services/waste-removal",
         features: [
             "24/7 Dispatch",
             "Overflow & Surge Capacity",
@@ -74,76 +74,43 @@ const subServices = [
         ]
     },
     {
-        title: "Store Decommissioning & Remodel Support",
-        description: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
+        title: "Bulk Waste Removal",
+        description: "Large-scale cleanouts for damaged, discontinued, or unsellable products and materials. Coordinated haul schedules for remodels, closures, and fixture swaps.",
         image: imgServiceDumpsterRental,
-        link: "/services/store-decommissioning",
+        link: "/services/waste-removal",
         features: [
-            "Project Scheduling",
             "Site Cleanouts",
-            "Multi-location Coordination"
+            "Multi-location Coordination",
+            "Project Scheduling"
         ]
     },
     {
-        title: "Event & Stadium Waste Logistics",
-        description: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
+        title: "Illegal Dumping Cleanup",
+        description: "Fast removal of mattresses, furniture, construction debris, and unauthorized waste from parking lots, loading docks, and commercial properties.",
         image: imgServiceEventStadium,
-        link: "/services/event-stadium",
+        link: "/services/waste-removal",
         features: [
-            "Venue Routing",
-            "High-volume Support",
-            "Diversion Planning"
-        ]
-    },
-    {
-        title: "Dumpster Rental & Temporary Containers",
-        description: "Temporary containers and compactor solutions for projects and peaks. Transparent sizing, delivery windows, and swap schedules.",
-        image: imgServiceDumpsterRental,
-        link: "/services/dumpster-rentals",
-        features: [
-            "Roll-offs & Front-load",
-            "Fast Delivery",
-            "Flexible Terms"
-        ]
-    },
-    {
-        title: "Centralized Waste Program Management",
-        description: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
-        image: imgServiceEmergencyOverflow,
-        link: "/services/centralized-programs",
-        features: [
-            "Standardized SLAs",
-            "Spend Visibility",
-            "Single Point of Contact"
-        ]
-    },
-    {
-        title: "Environmental & Compactor Maintenance Services",
-        description: "Preventative maintenance and service for compactors and waste equipment, plus environmental support to keep sites compliant and running.",
-        image: imgServiceEventStadium,
-        link: "/services/environmental-maintenance",
-        features: [
-            "PM Schedules",
-            "On-site Repairs",
-            "Compliance Support"
+            "Same-Day Response",
+            "Before & After Documentation",
+            "Recurring Prevention Plans"
         ]
     }
 ];
 function WasteRemovalPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Waste Removal",
-        serviceDescription: "Complete waste removal services for commercial properties of all sizes. From routine collection to emergency response, we handle it all.",
+        serviceDescription: "Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties across 48 states. One call, fast dispatch, complete documentation.",
         heroImage: imgServiceEmergencyOverflow,
         subServices: subServices
     }, void 0, false, {
         fileName: "[project]/app/services/waste-removal/page.tsx",
-        lineNumber: 54,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
 const metadata = {
     title: "Waste Removal Services | Tenth Rock",
-    description: "Professional waste removal services for commercial properties. 24/7 availability, nationwide coverage, and guaranteed satisfaction."
+    description: "Commercial waste removal with 24/7 dispatch. Emergency disposal, bulk cleanouts, and illegal dumping cleanup across 48 states. Call 727.510.5454."
 };
 }),
 "[project]/app/services/waste-removal/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {
