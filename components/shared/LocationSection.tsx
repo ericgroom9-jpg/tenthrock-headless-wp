@@ -35,7 +35,7 @@ export default function LocationSection() {
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
               </div>
-              <p className="text-gray-600 ml-9">Headquarters: Tampa Bay, FL</p>
+              <p className="text-gray-600 ml-9">140 Island Way Ste.159, Clearwater Beach, FL 33767</p>
             </div>
 
             <div>

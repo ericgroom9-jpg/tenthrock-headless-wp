@@ -30,7 +30,7 @@ const defaultSteps = [
     {
         num: "04",
         title: "Crews Are Dispatched",
-        desc: "Local vendors are deployed to your site. Your project manager coordinates every detail and sends real-time updates until the job is done."
+        desc: "Our team is deployed to your site. Your project manager coordinates every detail and sends real-time updates until the job is done."
     },
     {
         num: "05",
