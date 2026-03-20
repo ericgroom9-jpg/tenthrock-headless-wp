@@ -70,6 +70,8 @@ interface ServiceTemplateProps {
   }[];
   paragraphSection1?: ParagraphSection;
   paragraphSection2?: ParagraphSection;
+  aboutBullets?: string[];
+  aboutDescription?: string;
 }
 
 const defaultProcessSteps = [
@@ -147,6 +149,12 @@ export default function ServiceTemplate({
   stats = defaultStats,
   paragraphSection1 = defaultParagraphSection1,
   paragraphSection2 = defaultParagraphSection2,
+  aboutBullets = [
+    "Nationwide coverage with local vendor expertise",
+    "24/7 emergency dispatch and rapid response",
+    "One point of contact, one invoice, zero hassle",
+  ],
+  aboutDescription = "Our local crews handle everything from emergency overflow pickups to scheduled dumpster service. We coordinate directly with vetted vendors in your area so you get fast, reliable waste removal without managing multiple hauler relationships.",
 }: ServiceTemplateProps) {
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
@@ -237,7 +245,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-about-service"
                   >
-                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">About Service</h2>
+                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">About {serviceName}</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "about" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -261,33 +269,19 @@ export default function ServiceTemplate({
                       >
                         <div className="pb-8">
                           <ul className="space-y-3 mb-6">
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <span>Nationwide coverage with local vendor expertise</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <span>24/7 emergency dispatch and rapid response</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                </svg>
-                              </div>
-                              <span>One point of contact, one invoice, zero hassle</span>
-                            </li>
+                            {aboutBullets.map((bullet, bIdx) => (
+                              <li key={bIdx} className="flex items-center gap-3 text-[#042940]">
+                                <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
+                                  <svg className="w-3.5 h-3.5 text-[#042940]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                  </svg>
+                                </div>
+                                <span>{bullet}</span>
+                              </li>
+                            ))}
                           </ul>
                           <p className="text-[#042940]/70 leading-relaxed">
-                            Our local crews handle everything from emergency overflow pickups to scheduled dumpster service. We coordinate directly with vetted vendors in your area so you get fast, reliable waste removal without managing multiple hauler relationships.
+                            {aboutDescription}
                           </p>
                         </div>
                       </motion.div>
