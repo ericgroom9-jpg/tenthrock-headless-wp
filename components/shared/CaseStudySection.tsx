@@ -32,7 +32,7 @@ export default function CaseStudySection() {
             >
               <Image 
                 src={imgCaseStudyMain} 
-                alt="Case Study Main" 
+                alt="National retail chain waste management rollout by Tenth Rock" 
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover" 
@@ -51,7 +51,7 @@ export default function CaseStudySection() {
                 >
                   <Image 
                     src={img} 
-                    alt={`Case Study Detail ${i + 1}`} 
+                    alt={`Retail waste management operations detail ${i + 1}`} 
                     fill
                     sizes="(max-width: 1024px) 33vw, 16vw"
                     className="object-cover" 

@@ -38,7 +38,7 @@ export default function FinalCtaSection() {
 
              {/* Image Side */}
              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <Image src={imgCyclist} alt="Ready to start" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
+                <Image src={imgCyclist} alt="Tenth Rock service crew ready to dispatch" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
                 <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 

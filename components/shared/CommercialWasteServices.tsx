@@ -67,7 +67,7 @@ export default function CommercialWasteServices() {
             Commercial Waste Services
           </h2>
           <p className="text-lg text-[#042940]/70">
-            Comprehensive solutions for businesses of all sizes, available nationwide.
+            Four core services. One point of contact. Dispatched across 48 states.
           </p>
         </motion.div>
         

@@ -46,10 +46,10 @@ interface IndustryTemplateProps {
 
 const defaultParagraphSection1: ParagraphSection = {
   badge: "Industry Expertise",
-  heading: "Tailored Solutions for Your Industry",
-  body: "Every industry has unique waste challenges. From compliance requirements to volume fluctuations, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean and compliant without disrupting the work that matters most to your business.",
+  heading: "Programs Built Around How You Operate",
+  body: "Every industry has unique waste challenges. From compliance requirements to volume fluctuations, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean and compliant without disrupting the work that matters most.",
   image: "/images/stock/service-dumpster-rental.jpg",
-  imageAlt: "Industry-specific waste management solutions",
+  imageAlt: "Tenth Rock crew managing waste at a commercial facility",
   bulletPoints: [
     "Custom programs designed around your operational schedule",
     "Industry-specific compliance and documentation",
@@ -63,7 +63,7 @@ const defaultParagraphSection2: ParagraphSection = {
   heading: "One Partner, Complete Coverage",
   body: "Managing waste across multiple locations shouldn't mean managing multiple vendors. Tenth Rock consolidates your waste operations under a single point of contact, giving you consistent service standards, unified reporting, and predictable costs. Our national network of vetted local vendors means you get the responsiveness of a local provider with the accountability of an enterprise partner.",
   image: "/images/stock/service-emergency-overflow.jpg",
-  imageAlt: "Nationwide waste management coverage",
+  imageAlt: "Tenth Rock coordinating multi-location waste services",
   bulletPoints: [
     "Single point of contact for all locations",
     "Unified billing and centralized reporting",
@@ -77,7 +77,7 @@ const defaultParagraphSection3: ParagraphSection = {
   heading: "Environmental Responsibility Built In",
   body: "Sustainability isn't an add-on. It's built into every program we design. We work with certified recycling and processing partners to maximize waste diversion, reduce landfill dependency, and provide the detailed reporting your stakeholders expect. From waste audits to diversion tracking, we give you the tools to make measurable environmental progress while controlling costs.",
   image: "/images/stock/floor-park.jpg",
-  imageAlt: "Sustainable waste management practices",
+  imageAlt: "Recycling and waste diversion at a Tenth Rock partner facility",
   bulletPoints: [
     "Waste diversion and recycling optimization",
     "Detailed ESG and sustainability reporting",
@@ -226,7 +226,7 @@ export default function IndustryTemplate({
                     className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] w-full sm:w-auto"
                     data-testid="button-about-cta"
                   >
-                    Get Started
+                    Request a Service
                   </Button>
                   <button className="flex items-center justify-center sm:justify-start gap-2 text-[#042940] font-semibold hover:text-[#c5d520] transition-colors group w-full sm:w-auto py-3 sm:py-0">
                     Learn More
@@ -383,7 +383,7 @@ export default function IndustryTemplate({
                   className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
                   data-testid="button-industry-paragraph-2-cta"
                 >
-                  Get Started
+                  Request a Service
                 </Button>
               </motion.div>
             </div>

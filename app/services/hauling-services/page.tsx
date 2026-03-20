@@ -35,6 +35,12 @@ export default function HaulingServicesPage() {
       serviceDescription="Compactor transport, bulk hauling, and specialty waste logistics with nationwide reach. Licensed carriers, real-time tracking, and coordinated multi-site operations."
       heroImage={imgHeroSkyscrapers}
       subServices={subServices}
+      aboutBullets={[
+        "Compactor transport with licensed, insured carriers",
+        "Bulk hauling for large-scale cleanouts and multi-site projects",
+        "Specialty waste logistics coordinated across 48 states",
+      ]}
+      aboutDescription="Moving heavy equipment and high-volume waste takes more than a truck. We coordinate licensed carriers, handle permitting, and track every shipment in real time. Whether you need a compactor relocated, a bulk debris haul for a remodel, or an ongoing logistics program across multiple sites, our team manages the details so your operations stay on schedule."
     />
   );
 }

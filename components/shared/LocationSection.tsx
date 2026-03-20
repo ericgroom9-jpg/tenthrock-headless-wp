@@ -18,7 +18,7 @@ export default function LocationSection() {
             Where to Find Us
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-            Serving businesses nationwide with regional offices for local support.
+            Headquartered in Clearwater Beach, FL. Dispatching crews across 48 states, 24/7.
           </p>
         </motion.div>
 

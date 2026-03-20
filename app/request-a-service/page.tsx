@@ -43,7 +43,7 @@ function RequestAServiceSection() {
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6"
               data-testid="text-request-heading"
             >
-              Request A Service
+              Request a Service
             </h1>
             <div className="space-y-4 mb-12">
               <p className="text-base text-[#042940]/70 leading-relaxed">

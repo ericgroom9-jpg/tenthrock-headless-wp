@@ -2203,6 +2203,10 @@ h1, h3, h4, h5, h6, h2 {
   max-width: none;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
 .max-w-xl {
   max-width: 36rem;
 }
@@ -3790,6 +3794,10 @@ h1, h3, h4, h5, h6, h2 {
 .text-\[\#042940\] {
   --tw-text-opacity: 1;
   color: rgb(4 41 64 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#042940\]\/50 {
+  color: #04294080;
 }
 
 .text-\[\#042940\]\/60 {
@@ -6585,11 +6593,6 @@ h1, h3, h4, h5, h6, h2 {
     line-height: 2rem;
   }
 
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -7294,11 +7297,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:pt-8 {
     padding-top: 2rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .lg\:text-5xl {

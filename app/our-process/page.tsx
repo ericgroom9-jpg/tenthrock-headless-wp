@@ -53,7 +53,7 @@ export default function OurProcessPage() {
               Our Process
             </h1>
             <p className="text-base text-white/90 mb-6 sm:mb-8 max-w-xl leading-relaxed">
-              A transparent, efficient approach to waste management. From first contact to final cleanup, we handle everything with precision and speed.
+              Five steps from first call to job complete. No middlemen, no runarounds, no surprises. Here's exactly how every Tenth Rock project runs.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
@@ -61,7 +61,7 @@ export default function OurProcessPage() {
                 className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold"
                 data-testid="button-hero-primary"
               >
-                Get Started
+                Request a Service
               </Button>
               <Button 
                 size="lg" 

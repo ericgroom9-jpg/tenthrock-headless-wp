@@ -171,7 +171,7 @@ export default function AboutPage() {
             >
               <img 
                 src={imgAtOurCore} 
-                alt="Our core values" 
+                alt="Tenth Rock team members collaborating on waste management solutions" 
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -235,7 +235,7 @@ export default function AboutPage() {
             >
               <img 
                 src={imgCommunity} 
-                alt="In the community" 
+                alt="Tenth Rock team participating in a local community cleanup event" 
                 className="w-full h-full object-cover"
               />
             </motion.div>

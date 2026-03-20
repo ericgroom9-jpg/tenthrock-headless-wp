@@ -85,23 +85,23 @@ const defaultProcessSteps = [
 const defaultFaqs = [
   {
     question: "What types of commercial waste do you handle?",
-    answer: "We handle all types of commercial waste including general refuse, recyclables, construction debris, hazardous materials (with proper certification), and specialized industry waste streams.",
+    answer: "General trash, recyclables, construction debris, bulk cleanouts, compactor loads, and e-waste. We also coordinate certified hazmat disposal through licensed partners when needed.",
   },
   {
     question: "How quickly can you respond to an emergency?",
-    answer: "Our emergency response team is available 24/7 and can typically arrive on-site within 2-4 hours for urgent situations in our service areas.",
+    answer: "Our dispatch center is staffed 24/7. For emergencies, crews are typically on-site within 2-4 hours. For scheduled service, we start within 24-48 hours of account setup.",
   },
   {
-    question: "Do you provide documentation for compliance?",
-    answer: "Yes, we provide comprehensive documentation including waste manifests, certificates of destruction, recycling reports, and compliance documentation for regulatory requirements.",
+    question: "Do you provide documentation for every job?",
+    answer: "Yes. Every completed job includes before-and-after photos, weight tickets when applicable, and a single consolidated invoice. We also provide waste manifests and diversion reports for compliance and ESG reporting.",
   },
   {
     question: "What areas do you service?",
-    answer: "We provide nationwide coverage with regional hubs strategically located to serve major metropolitan areas and surrounding regions efficiently.",
+    answer: "We operate across 48 states through a vetted network of local haulers. Whether your locations are in major metros or rural markets, we have crews who can reach them.",
   },
   {
-    question: "Can you handle multi-location contracts?",
-    answer: "Absolutely. We specialize in enterprise-wide waste management programs and can coordinate services across multiple locations with centralized reporting and billing.",
+    question: "Can you manage waste across hundreds of locations?",
+    answer: "That's what we're built for. Multi-location businesses get one point of contact, one invoice, and consistent service at every site. We currently manage 5,000+ commercial locations nationwide.",
   },
 ];
 
@@ -320,26 +320,26 @@ export default function ServiceTemplate({
                       >
                         <div className="pb-8">
                           <p className="text-[#042940]/70 leading-relaxed mb-4">
-                            Our streamlined process ensures efficient service delivery from initial contact to completion. We handle all the logistics so you can focus on your business.
+                            You call, we handle it. No middlemen, no back-and-forth, no guesswork. Here's how every job runs:
                           </p>
                           <ul className="space-y-3">
                             <li className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
                                 <span className="text-xs font-bold text-[#042940]">1</span>
                               </div>
-                              <span>Request a quote online or by phone</span>
+                              <span>Call 727.510.5454 or submit a request online. We respond within the hour.</span>
                             </li>
                             <li className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
                                 <span className="text-xs font-bold text-[#042940]">2</span>
                               </div>
-                              <span>We schedule pickup at your convenience</span>
+                              <span>Your project manager scopes the job, assigns a local crew, and sends you a flat-rate quote.</span>
                             </li>
                             <li className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
                                 <span className="text-xs font-bold text-[#042940]">3</span>
                               </div>
-                              <span>Professional team handles removal</span>
+                              <span>Crews arrive on schedule. You get real-time updates and photo documentation when the job is done.</span>
                             </li>
                           </ul>
                         </div>
@@ -379,7 +379,7 @@ export default function ServiceTemplate({
                       >
                         <div className="pb-8">
                           <p className="text-[#042940]/70 leading-relaxed mb-4">
-                            Explore our full range of waste management and commercial services designed to meet your business needs.
+                            Need more than one service? Most of our clients use multiple offerings. Here's what else we do:
                           </p>
                           <ul className="space-y-3">
                             {[
@@ -705,7 +705,7 @@ export default function ServiceTemplate({
                   className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
                   data-testid="button-paragraph-2-cta"
                 >
-                  <Link href="/request-a-service">Get Started</Link>
+                  <Link href="/request-a-service">Request a Service</Link>
                 </Button>
               </motion.div>
             </div>
@@ -1012,7 +1012,7 @@ export default function ServiceTemplate({
 
               {/* Image Side */}
               <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <Image src={imgCyclist} alt="Ready to start" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
+                <Image src={imgCyclist} alt="Tenth Rock service crew ready to dispatch" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
                 <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 

@@ -2901,7 +2901,7 @@ const Hero = ()=>{
                                     className: "w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full",
                                     "aria-label": "Request a waste removal service",
                                     "data-testid": "button-hero-cta",
-                                    children: "Request A Service"
+                                    children: "Request a Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
                                     lineNumber: 203,
@@ -3268,7 +3268,7 @@ const ServicesSection = ()=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-primary/70",
-                            children: "Comprehensive solutions for businesses of all sizes, available nationwide."
+                            children: "Four core services. One point of contact. Dispatched across 48 states."
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
                             lineNumber: 335,
@@ -3620,7 +3620,7 @@ const WhyUs = ()=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                         size: "lg",
                                         className: "w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full",
-                                        children: "Get Started"
+                                        children: "Request a Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 488,
@@ -3630,7 +3630,7 @@ const WhyUs = ()=>{
                                         size: "lg",
                                         variant: "outline",
                                         className: "w-full sm:w-auto border-[#042940] text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white min-h-[52px] whitespace-nowrap rounded-full",
-                                        children: "Read More"
+                                        children: "View Our Services"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 491,

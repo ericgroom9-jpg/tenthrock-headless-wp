@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
-  { title: "Retail", desc: "Fast cleanup to ensure your business runs smoothly.", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
-  { title: "Stadiums & Events", desc: "Effective waste management for unforgettable events.", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
-  { title: "Faith Based", desc: "Reliable cleanup for you and your community.", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
-  { title: "Real Estate", desc: "Tailored waste solutions to protect your investment.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
-  { title: "Natural Disasters", desc: "Compassionate cleanup to help communities recover.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
-  { title: "Hospitality", desc: "Spotless spaces for exceptional guest experience.", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
-  { title: "Educational", desc: "Keeping campuses clean and distraction-free.", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
-  { title: "Municipalities", desc: "Creative solutions for keeping communities clean.", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
+  { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/hotel.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
+  { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
+  { title: "Faith Based", desc: "Scheduled and on-demand waste service for churches, campuses, and community event cleanup.", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
+  { title: "Real Estate", desc: "Tenant turnover cleanouts, construction debris removal, and ongoing service for managed properties.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
+  { title: "Natural Disasters", desc: "Rapid debris removal, emergency roll-offs, and storm damage cleanup deployed within hours.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
+  { title: "Hospitality", desc: "Daily waste pickup, grease trap service, and pressure washing to keep guest-facing areas spotless.", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
+  { title: "Educational", desc: "Campus-wide waste programs, recycling coordination, and event cleanup for schools and universities.", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
+  { title: "Municipalities", desc: "Illegal dumping cleanup, public space maintenance, and disaster response for local governments.", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
 ];
 
 export default function WhoWeHelpSection() {
@@ -27,7 +27,7 @@ export default function WhoWeHelpSection() {
           </div>
           <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">Who We Help</h2>
           <p className="text-lg text-primary/70">
-            From local businesses to enterprise operations, we serve industries that demand reliability.
+            From single-site operators to national chains, we serve industries that can't afford missed pickups or slow response times.
           </p>
         </div>
         
