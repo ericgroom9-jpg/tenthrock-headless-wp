@@ -111,7 +111,7 @@ export default function LocationTemplatePage() {
                   className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
                   data-testid="button-location-cta"
                 >
-                  Request a Service
+                  Request A Service
                 </Button>
                 <Button
                   size="lg"

@@ -322,7 +322,7 @@ function Navbar({ variant = "floating" }) {
                                     "data-testid": "button-mobile-cta",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/request-a-service",
-                                        children: "Request a Service"
+                                        children: "Request A Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
                                         lineNumber: 83,
@@ -1011,7 +1011,7 @@ function Navbar({ variant = "floating" }) {
                                     "data-testid": "button-desktop-cta",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/request-a-service",
-                                        children: "Request a Service"
+                                        children: "Request A Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
                                         lineNumber: 387,
@@ -1450,7 +1450,7 @@ function Navbar({ variant = "floating" }) {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 href: "/request-a-service",
                                                 onClick: ()=>setIsNavExpanded(false),
-                                                children: "Request a Service"
+                                                children: "Request A Service"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
                                                 lineNumber: 614,
@@ -2000,7 +2000,7 @@ function Footer() {
                                                 href: "/request-a-service",
                                                 className: "block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center",
                                                 "data-testid": "link-footer-request-service",
-                                                children: "Request a Service"
+                                                children: "Request A Service"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Footer.tsx",
                                                 lineNumber: 118,
@@ -2845,7 +2845,7 @@ const Hero = ()=>{
                                     className: "w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full",
                                     "aria-label": "Request a waste removal service",
                                     "data-testid": "button-hero-cta",
-                                    children: "Request a Service"
+                                    children: "Request A Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
                                     lineNumber: 203,
@@ -3545,7 +3545,7 @@ const WhyUs = ()=>{
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                         size: "lg",
                                         className: "w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full",
-                                        children: "Request a Service"
+                                        children: "Request A Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
                                         lineNumber: 488,
@@ -3700,7 +3700,7 @@ const Reasons = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                     size: "lg",
                                     className: "w-full sm:w-auto bg-secondary text-primary hover:bg-secondary/90 min-h-[52px] whitespace-nowrap",
-                                    children: "Request a Service"
+                                    children: "Request A Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
                                     lineNumber: 533,
@@ -3859,7 +3859,7 @@ const Stats = ()=>{
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                             size: "lg",
                                             className: "w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full",
-                                            children: "Request a Service"
+                                            children: "Request A Service"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
                                             lineNumber: 590,

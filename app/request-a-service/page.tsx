@@ -43,7 +43,7 @@ function RequestAServiceSection() {
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6"
               data-testid="text-request-heading"
             >
-              Request a Service
+              Request A Service
             </h1>
             <div className="space-y-4 mb-12">
               <p className="text-base text-[#042940]/70 leading-relaxed">
@@ -100,7 +100,7 @@ function RequestAServiceSection() {
             <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
               <div className="mb-6">
                 <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2" data-testid="text-request-form-heading">
-                  Request a Service
+                  Request A Service
                 </h3>
                 <p className="text-[#042940]/70 text-sm">Fill out the form below and we'll get back to you shortly.</p>
               </div>

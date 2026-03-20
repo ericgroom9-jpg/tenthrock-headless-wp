@@ -226,7 +226,7 @@ export default function IndustryTemplate({
                     className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] font-bold rounded-full min-h-[52px] w-full sm:w-auto"
                     data-testid="button-about-cta"
                   >
-                    Request a Service
+                    Request A Service
                   </Button>
                   <button className="flex items-center justify-center sm:justify-start gap-2 text-[#042940] font-semibold hover:text-[#c5d520] transition-colors group w-full sm:w-auto py-3 sm:py-0">
                     Learn More
@@ -383,7 +383,7 @@ export default function IndustryTemplate({
                   className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
                   data-testid="button-industry-paragraph-2-cta"
                 >
-                  Request a Service
+                  Request A Service
                 </Button>
               </motion.div>
             </div>

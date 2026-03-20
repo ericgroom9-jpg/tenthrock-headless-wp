@@ -61,7 +61,7 @@ export default function OurProcessPage() {
                 className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold"
                 data-testid="button-hero-primary"
               >
-                Request a Service
+                Request A Service
               </Button>
               <Button 
                 size="lg" 

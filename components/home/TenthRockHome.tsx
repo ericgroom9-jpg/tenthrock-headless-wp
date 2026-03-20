@@ -201,7 +201,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full">
             <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" aria-label="Request a waste removal service" data-testid="button-hero-cta">
-              Request a Service
+              Request A Service
             </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
               See How It Works
@@ -486,7 +486,7 @@ const WhyUs = () => {
 
              <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full">
-                  Request a Service
+                  Request A Service
                 </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto border-[#042940] text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white min-h-[52px] whitespace-nowrap rounded-full">
                   View Our Services
@@ -531,7 +531,7 @@ const Reasons = () => {
                  We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.
                </p>
                <Button size="lg" className="w-full sm:w-auto bg-secondary text-primary hover:bg-secondary/90 min-h-[52px] whitespace-nowrap">
-                  Request a Service
+                  Request A Service
                </Button>
              </motion.div>
           </div>
@@ -588,7 +588,7 @@ const Stats = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
-                  Request a Service
+                  Request A Service
                 </Button>
                 <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
                    <Phone className="w-5 h-5 text-secondary" /> 727.510.5454

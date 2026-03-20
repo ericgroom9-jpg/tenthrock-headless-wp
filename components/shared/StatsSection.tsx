@@ -32,7 +32,7 @@ export default function StatsSection() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
-                  Request a Service
+                  Request A Service
                 </Button>
                 <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
                    <Phone className="w-5 h-5 text-secondary" /> 727.510.5454

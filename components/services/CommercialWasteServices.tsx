@@ -155,7 +155,7 @@ export default function CommercialWasteServices() {
                   className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full whitespace-nowrap"
                   data-testid="button-hero-cta"
                 >
-                  Request a Service
+                  Request A Service
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
@@ -292,7 +292,7 @@ export default function CommercialWasteServices() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                     <Button size="lg" className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full">
-                      Request a Service
+                      Request A Service
                     </Button>
                     <Button size="lg" variant="ghost" className="w-full sm:w-auto text-[#042940] hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full">
                       <Phone className="w-5 h-5 text-[#c5d520]" /> 727.510.5454
@@ -587,7 +587,7 @@ export default function CommercialWasteServices() {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full">
-                    Request a Service
+                    Request A Service
                   </Button>
                 </div>
               </div>

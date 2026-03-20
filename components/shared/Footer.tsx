@@ -115,7 +115,7 @@ export default function Footer() {
               <li><Link href="/join-our-network" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-join-network">Join Our Network</Link></li>
               <li><Link href="/faq" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-faq">FAQ</Link></li>
               <li><Link href="/contact" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-contact">Contact</Link></li>
-              <li><Link href="/request-a-service" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-request-service">Request a Service</Link></li>
+              <li><Link href="/request-a-service" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-request-service">Request A Service</Link></li>
             </ul>
           </motion.div>
 

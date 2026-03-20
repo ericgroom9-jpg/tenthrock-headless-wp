@@ -80,7 +80,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               className="bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap rounded-full px-3 sm:px-4"
               data-testid="button-mobile-cta"
             >
-              <Link href="/request-a-service">Request a Service</Link>
+              <Link href="/request-a-service">Request A Service</Link>
             </Button>
             <button 
               className="p-3 text-primary rounded-[5px] transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
@@ -384,7 +384,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               Login
             </Button>
             <Button asChild size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
-              <Link href="/request-a-service">Request a Service</Link>
+              <Link href="/request-a-service">Request A Service</Link>
             </Button>
           </div>
         </div>
@@ -611,7 +611,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     className="w-full bg-[#c5d520] text-[#042940] font-bold min-h-[52px] whitespace-nowrap rounded-full"
                     data-testid="button-mobile-menu-cta"
                   >
-                    <Link href="/request-a-service" onClick={() => setIsNavExpanded(false)}>Request a Service</Link>
+                    <Link href="/request-a-service" onClick={() => setIsNavExpanded(false)}>Request A Service</Link>
                   </Button>
                 </div>
               </div>
