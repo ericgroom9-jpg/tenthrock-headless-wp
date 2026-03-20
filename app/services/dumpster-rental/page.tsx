@@ -35,6 +35,12 @@ export default function DumpsterRentalPage() {
       serviceDescription="Roll-off dumpsters in 10, 20, 30, and 40-yard sizes with flat-rate pricing. Same-day or next-day delivery for construction, renovation, and commercial cleanouts."
       heroImage={imgServiceDumpsterRental}
       subServices={subServices}
+      aboutBullets={[
+        "10, 20, 30, and 40-yard roll-off containers",
+        "Same-day or next-day delivery in most markets",
+        "Flat-rate pricing with no hidden fees or overage surprises",
+      ]}
+      aboutDescription="Whether it's a remodel, a store closure, or an ongoing commercial need, we match the right container to your project and get it on-site fast. Our network of local haulers delivers and picks up on your schedule. You get one flat rate, one invoice, and one number to call if anything changes."
     />
   );
 }

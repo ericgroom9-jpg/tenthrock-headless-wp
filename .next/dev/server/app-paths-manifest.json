@@ -1,3 +1,6 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/services/dumpster-rental/page": "app/services/dumpster-rental/page.js",
+  "/services/pressure-washing/page": "app/services/pressure-washing/page.js",
+  "/services/waste-removal/page": "app/services/waste-removal/page.js"
 }

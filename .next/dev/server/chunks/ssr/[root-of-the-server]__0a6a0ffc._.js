@@ -101,7 +101,13 @@ function PressureWashingPage() {
         serviceName: "Pressure Washing",
         serviceDescription: "Commercial pressure washing for storefronts, stadiums, compactor pads, and post-waste cleanup. Nationwide service through our vetted vendor network.",
         heroImage: imgServiceCommercial,
-        subServices: subServices
+        subServices: subServices,
+        aboutBullets: [
+            "Storefronts, sidewalks, facades, and parking areas",
+            "Compactor pads, loading docks, and waste staging zones",
+            "Post-waste cleanup and surface restoration"
+        ],
+        aboutDescription: "Dirty exteriors cost you customers. Our pressure washing crews handle storefronts, compactor pads, loading docks, and post-waste site cleanup for commercial properties across 48 states. One call schedules the job. We coordinate local crews, confirm completion with photos, and send a single invoice."
     }, void 0, false, {
         fileName: "[project]/app/services/pressure-washing/page.tsx",
         lineNumber: 33,
