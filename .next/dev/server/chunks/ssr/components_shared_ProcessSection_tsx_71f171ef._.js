@@ -15,30 +15,30 @@ const defaultSteps = [
     {
         num: "01",
         title: "You Call Us",
-        desc: "When your business faces a waste crisis, call us. Our team of experts is on standby, ready to help 24/7."
+        desc: "One number. A real person picks up. Tell us what you need and we start working on it immediately. 24/7, no phone trees."
     },
     {
         num: "02",
-        title: "We Assemble Your Team",
-        desc: "You get a dedicated project manager as your single point of contact who will assess the situation, coordinate resources, and keep you informed every step of the way."
+        title: "We Scope the Job",
+        desc: "A dedicated project manager is assigned to your account. They assess the situation, identify the right local crew, and build a plan."
     },
     {
         num: "03",
-        title: "We Quote the Job",
-        desc: "Your project manager provides a prompt, no-obligation quote. No hidden fees or unexpected charges, just a single flat rate for the entire project."
+        title: "You Get a Flat Rate",
+        desc: "One price, upfront, in writing. No hourly surprises, no fuel surcharges, no hidden line items. You approve it before anything moves."
     },
     {
         num: "04",
-        title: "We Handle the Rest",
-        desc: "Once you give the green light, our team springs into action. Your project manager stays on call with real-time updates whenever you need them."
+        title: "Crews Are Dispatched",
+        desc: "Local vendors are deployed to your site. Your project manager coordinates every detail and sends real-time updates until the job is done."
     },
     {
         num: "05",
         title: "Problem Solved",
-        desc: "We resolve your waste issue quickly and efficiently so you can avoid costly fines, downtime, and negative attention. Your business stays on track."
+        desc: "Waste is removed, the site is clean, and you get photo documentation confirming completion. One invoice. Done."
     }
 ];
-function ProcessSection({ tagline = "Our Process", heading = "How It Works", subtitle = "A simple, transparent process designed to get your problem solved fast.", steps = defaultSteps, testIdPrefix = "process" }) {
+function ProcessSection({ tagline = "Our Process", heading = "How It Works", subtitle = "From first call to job complete, here's exactly what happens.", steps = defaultSteps, testIdPrefix = "process" }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "process",
         "aria-labelledby": `${testIdPrefix}-heading`,

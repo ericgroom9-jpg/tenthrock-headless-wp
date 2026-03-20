@@ -73,11 +73,11 @@ interface ServiceTemplateProps {
 }
 
 const defaultProcessSteps = [
-  { num: "01", title: "You Call Us", desc: "When your business faces a waste crisis, call us. Our team of experts is on standby, ready to help 24/7." },
-  { num: "02", title: "We Assemble Your Team", desc: "You get a dedicated project manager as your single point of contact who will assess the situation, coordinate resources, and keep you informed every step of the way." },
-  { num: "03", title: "We Quote the Job", desc: "Your project manager provides a prompt, no-obligation quote. No hidden fees or unexpected charges, just a single flat rate for the entire project." },
-  { num: "04", title: "We Handle the Rest", desc: "Once you give the green light, our team springs into action. Your project manager stays on call with real-time updates whenever you need them." },
-  { num: "05", title: "Problem Solved", desc: "We resolve your waste issue quickly and efficiently so you can avoid costly fines, downtime, and negative attention. Your business stays on track." },
+  { num: "01", title: "You Call Us", desc: "One number. A real person picks up. Tell us what you need and we start working on it immediately. 24/7, no phone trees." },
+  { num: "02", title: "We Scope the Job", desc: "A dedicated project manager is assigned to your account. They assess the situation, identify the right local crew, and build a plan." },
+  { num: "03", title: "You Get a Flat Rate", desc: "One price, upfront, in writing. No hourly surprises, no fuel surcharges, no hidden line items. You approve it before anything moves." },
+  { num: "04", title: "Crews Are Dispatched", desc: "Local vendors are deployed to your site. Your project manager coordinates every detail and sends real-time updates until the job is done." },
+  { num: "05", title: "Problem Solved", desc: "Waste is removed, the site is clean, and you get photo documentation confirming completion. One invoice. Done." },
 ];
 
 const defaultFaqs = [
