@@ -475,7 +475,7 @@ function Navbar({ variant = "floating" }) {
                                     "data-testid": "button-mobile-cta",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/request-a-service",
-                                        children: "Request a Service"
+                                        children: "Request A Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
                                         lineNumber: 83,
@@ -1164,7 +1164,7 @@ function Navbar({ variant = "floating" }) {
                                     "data-testid": "button-desktop-cta",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/request-a-service",
-                                        children: "Request a Service"
+                                        children: "Request A Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/Navbar.tsx",
                                         lineNumber: 387,
@@ -1603,7 +1603,7 @@ function Navbar({ variant = "floating" }) {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                 href: "/request-a-service",
                                                 onClick: ()=>setIsNavExpanded(false),
-                                                children: "Request a Service"
+                                                children: "Request A Service"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Navbar.tsx",
                                                 lineNumber: 614,
@@ -2131,7 +2131,7 @@ function Footer() {
                                                 href: "/request-a-service",
                                                 className: "block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center",
                                                 "data-testid": "link-footer-request-service",
-                                                children: "Request a Service"
+                                                children: "Request A Service"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/Footer.tsx",
                                                 lineNumber: 118,
@@ -2514,7 +2514,7 @@ function CommercialWasteServices() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-[#042940]/70",
-                            children: "Comprehensive solutions for businesses of all sizes, available nationwide."
+                            children: "Four core services. One point of contact. Dispatched across 48 states."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
                             lineNumber: 69,
@@ -2793,23 +2793,23 @@ const defaultProcessSteps = [
 const defaultFaqs = [
     {
         question: "What types of commercial waste do you handle?",
-        answer: "We handle all types of commercial waste including general refuse, recyclables, construction debris, hazardous materials (with proper certification), and specialized industry waste streams."
+        answer: "General trash, recyclables, construction debris, bulk cleanouts, compactor loads, and e-waste. We also coordinate certified hazmat disposal through licensed partners when needed."
     },
     {
         question: "How quickly can you respond to an emergency?",
-        answer: "Our emergency response team is available 24/7 and can typically arrive on-site within 2-4 hours for urgent situations in our service areas."
+        answer: "Our dispatch center is staffed 24/7. For emergencies, crews are typically on-site within 2-4 hours. For scheduled service, we start within 24-48 hours of account setup."
     },
     {
-        question: "Do you provide documentation for compliance?",
-        answer: "Yes, we provide comprehensive documentation including waste manifests, certificates of destruction, recycling reports, and compliance documentation for regulatory requirements."
+        question: "Do you provide documentation for every job?",
+        answer: "Yes. Every completed job includes before-and-after photos, weight tickets when applicable, and a single consolidated invoice. We also provide waste manifests and diversion reports for compliance and ESG reporting."
     },
     {
         question: "What areas do you service?",
-        answer: "We provide nationwide coverage with regional hubs strategically located to serve major metropolitan areas and surrounding regions efficiently."
+        answer: "We operate across 48 states through a vetted network of local haulers. Whether your locations are in major metros or rural markets, we have crews who can reach them."
     },
     {
-        question: "Can you handle multi-location contracts?",
-        answer: "Absolutely. We specialize in enterprise-wide waste management programs and can coordinate services across multiple locations with centralized reporting and billing."
+        question: "Can you manage waste across hundreds of locations?",
+        answer: "That's what we're built for. Multi-location businesses get one point of contact, one invoice, and consistent service at every site. We currently manage 5,000+ commercial locations nationwide."
     }
 ];
 const defaultStats = [
@@ -2969,7 +2969,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                         "data-testid": "button-hero-cta",
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                             href: "/request-a-service",
-                                                            children: "Request a Service"
+                                                            children: "Request A Service"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                             lineNumber: 213,
@@ -3250,7 +3250,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-[#042940]/70 leading-relaxed mb-4",
-                                                                        children: "Our streamlined process ensures efficient service delivery from initial contact to completion. We handle all the logistics so you can focus on your business."
+                                                                        children: "You call, we handle it. No middlemen, no back-and-forth, no guesswork. Here's how every job runs:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                                         lineNumber: 322,
@@ -3278,7 +3278,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                        children: "Request a quote online or by phone"
+                                                                                        children: "Call 727.510.5454 or submit a request online. We respond within the hour."
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                                                         lineNumber: 330,
@@ -3309,7 +3309,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                        children: "We schedule pickup at your convenience"
+                                                                                        children: "Your project manager scopes the job, assigns a local crew, and sends you a flat-rate quote."
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                                                         lineNumber: 336,
@@ -3340,7 +3340,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                                        children: "Professional team handles removal"
+                                                                                        children: "Crews arrive on schedule. You get real-time updates and photo documentation when the job is done."
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                                                         lineNumber: 342,
@@ -3438,7 +3438,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-[#042940]/70 leading-relaxed mb-4",
-                                                                        children: "Explore our full range of waste management and commercial services designed to meet your business needs."
+                                                                        children: "Need more than one service? Most of our clients use multiple offerings. Here's what else we do:"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                                         lineNumber: 381,
@@ -4404,7 +4404,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                 "data-testid": "button-paragraph-2-cta",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                     href: "/request-a-service",
-                                                    children: "Get Started"
+                                                    children: "Request A Service"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                     lineNumber: 708,
@@ -4649,7 +4649,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                             className: "w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full",
                                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                                 href: "/request-a-service",
-                                                                children: "Request a Service"
+                                                                children: "Request A Service"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                                 lineNumber: 794,
@@ -5372,7 +5372,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                                     className: "w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                         href: "/request-a-service",
-                                                        children: "Request a Service"
+                                                        children: "Request A Service"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/services/ServiceTemplate.tsx",
                                                         lineNumber: 1008,
@@ -5399,7 +5399,7 @@ function ServiceTemplate({ serviceName, serviceDescription, heroImage = imgServi
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                 src: imgCyclist,
-                                                alt: "Ready to start",
+                                                alt: "Tenth Rock service crew ready to dispatch",
                                                 fill: true,
                                                 sizes: "(max-width: 1024px) 100vw, 50vw",
                                                 className: "object-cover object-center lg:object-right",

@@ -77,7 +77,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             <Button 
               asChild
               size="sm" 
-              className="bg-[#c5d520] text-[#042940] font-bold text-xs whitespace-nowrap rounded-full px-3 sm:px-4"
+              className="bg-[#c5d520] text-[#042940] font-bold text-sm whitespace-nowrap rounded-full px-3 sm:px-4"
               data-testid="button-mobile-cta"
             >
               <Link href="/request-a-service">Request A Service</Link>
