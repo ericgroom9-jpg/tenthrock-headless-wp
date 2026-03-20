@@ -17,27 +17,10 @@ import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import ProcessSection from "@/components/shared/ProcessSection";
 import { getStateData, getStateName } from "@/lib/data/state-cities";
 import { stateOutlines } from "@/lib/data/state-outlines";
+import { getStateLocationContent } from "@/lib/data/state-location-content";
 
 const imgPlaceholder = "/images/stock/service-centralized-program.jpg";
 const imgInfoBlock = "/images/stock/service-dumpster-rental.jpg";
-const aboutAccordions = [
-  {
-    title: "About Location",
-    benefits: [
-      "Fully licensed and insured local crews",
-      "Same-day emergency response available",
-      "Dedicated account manager for your region",
-    ],
-    description:
-      "Our local crews are fully licensed, insured, and trained to handle commercial waste for businesses of all sizes. From emergency overflow pickups to scheduled dumpster service, we deliver fast, reliable waste solutions backed by our nationwide infrastructure.",
-  },
-  {
-    title: "History in Location",
-    benefits: [],
-    description:
-      "Our operations in this area date back over a decade. We've served hundreds of commercial clients and have deep relationships with local waste facilities, ensuring efficient routing and competitive pricing for your business.",
-  },
-];
 
 
 function formatSlug(slug: string): string {
@@ -53,6 +36,24 @@ export default function LocationTemplatePage() {
   const slug = (params?.slug as string) || "new-york";
   const locationName = formatSlug(slug);
   const stateData = getStateData(slug);
+  const stateContent = getStateLocationContent(slug);
+
+  const aboutAccordions = [
+    {
+      title: `About ${locationName} Waste Solutions`,
+      benefits: stateContent?.bullets || [
+        "Emergency waste removal for local businesses",
+        "Rapid response for compactor failures and waste overflow",
+        "Perishable inventory disposal and bulk debris removal",
+      ],
+      description: stateContent?.aboutDesc || "Our local crews are fully licensed, insured, and trained to handle commercial waste for businesses of all sizes. From emergency overflow pickups to scheduled dumpster service, we deliver fast, reliable waste solutions backed by our nationwide infrastructure.",
+    },
+    {
+      title: `Trusted by ${locationName} Businesses`,
+      benefits: [],
+      description: stateContent?.trustedDesc || "Our operations in this area date back over a decade. We've served hundreds of commercial clients and have deep relationships with local waste facilities, ensuring efficient routing and competitive pricing for your business.",
+    },
+  ];
 
   const [openAccordion, setOpenAccordion] = useState<number>(0);
   const [formData, setFormData] = useState({
@@ -99,10 +100,10 @@ export default function LocationTemplatePage() {
                 id="location-hero-heading"
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px]"
               >
-                {locationName}
+                Commercial Waste Services in {locationName}
               </h1>
               <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
-                On-demand waste removal, dumpster rentals, and managed programs for businesses across the region. Local crews, nationwide support.
+                {stateContent?.subtitle || "On-demand waste removal, dumpster rentals, and managed programs for businesses across the region. Local crews, nationwide support."}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
@@ -366,10 +367,10 @@ export default function LocationTemplatePage() {
                 id="info-block-heading"
                 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"
               >
-                Why Local Businesses Choose Us
+                {stateContent?.thirdHeading || "Why Local Businesses Choose Us"}
               </h2>
               <p className="text-primary/70 leading-relaxed mb-8">
-                Managing waste across multiple locations means dealing with different haulers, inconsistent pricing, and service gaps. Tenth Rock eliminates all of that. We vet and manage local vendors so you get reliable pickups, transparent invoicing, and one number to call when something goes wrong. Whether you need a one-time cleanout or ongoing scheduled service, our team handles the coordination so yours doesn't have to.
+                {stateContent?.thirdDesc || "Managing waste across multiple locations means dealing with different haulers, inconsistent pricing, and service gaps. Tenth Rock eliminates all of that. We vet and manage local vendors so you get reliable pickups, transparent invoicing, and one number to call when something goes wrong. Whether you need a one-time cleanout or ongoing scheduled service, our team handles the coordination so yours doesn't have to."}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
@@ -530,8 +531,8 @@ export default function LocationTemplatePage() {
       {/* Case Study (same as homepage) */}
       <CaseStudySection />
 
-      {/* FAQ (same as homepage) */}
-      <FaqSection />
+      {/* FAQ */}
+      <FaqSection faqs={stateContent?.faqs} />
 
       {/* Where to Find Us (same as homepage) */}
       <LocationSection />
