@@ -3796,6 +3796,10 @@ h1, h3, h4, h5, h6, h2 {
   color: hsl(var(--primary-foreground) / var(--tw-text-opacity, 1));
 }
 
+.text-primary\/40 {
+  color: hsl(var(--primary) / .4);
+}
+
 .text-primary\/60 {
   color: hsl(var(--primary) / .6);
 }
