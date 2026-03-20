@@ -15,7 +15,7 @@ const defaultSteps = [
     {
         num: "01",
         title: "You Call Us",
-        desc: "One number. A real person picks up. Tell us what you need and we start working on it immediately. 24/7, no phone trees."
+        desc: "Our experts are on standby 24/7 to solve it immediately."
     },
     {
         num: "02",

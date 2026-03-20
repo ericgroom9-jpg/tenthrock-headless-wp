@@ -76,7 +76,7 @@ const defaultProcessSteps = [
   { num: "01", title: "You Call Us", desc: "Our experts are on standby 24/7 to solve it immediately." },
   { num: "02", title: "We Scope the Job", desc: "A dedicated project manager is assigned to your account. They assess the situation, identify the right local crew, and build a plan." },
   { num: "03", title: "You Get a Flat Rate", desc: "One price, upfront, in writing. No hourly surprises, no fuel surcharges, no hidden line items. You approve it before anything moves." },
-  { num: "04", title: "Crews Are Dispatched", desc: "Local vendors are deployed to your site. Your project manager coordinates every detail and sends real-time updates until the job is done." },
+  { num: "04", title: "Crews Are Dispatched", desc: "Our team is deployed to your site. Your project manager coordinates every detail and sends real-time updates until the job is done." },
   { num: "05", title: "Problem Solved", desc: "Waste is removed, the site is clean, and you get photo documentation confirming completion. One invoice. Done." },
 ];
 
