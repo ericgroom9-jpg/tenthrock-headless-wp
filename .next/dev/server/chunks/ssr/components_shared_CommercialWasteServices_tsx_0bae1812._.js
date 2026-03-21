@@ -12,9 +12,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/siren.js [app-ssr] (ecmascript) <export default as Siren>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/truck.js [app-ssr] (ecmascript) <export default as Truck>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/building-2.js [app-ssr] (ecmascript) <export default as Building2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/clipboard-check.js [app-ssr] (ecmascript) <export default as ClipboardCheck>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$hard$2d$hat$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__HardHat$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/hard-hat.js [app-ssr] (ecmascript) <export default as HardHat>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$container$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Container$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/container.js [app-ssr] (ecmascript) <export default as Container>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$line$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LineChart$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chart-line.js [app-ssr] (ecmascript) <export default as LineChart>");
 "use client";
 ;
 ;
@@ -23,107 +23,107 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 const services = [
     {
-        title: "Waste Removal",
-        desc: "Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties nationwide.",
+        title: "Emergency Waste Removal",
+        desc: "24/7 rapid response for product spoilage, overflow crises, and unplanned cleanouts at commercial locations nationwide.",
         items: [
             {
-                label: "Emergency Disposal",
-                desc: "24/7 rapid-response teams for urgent waste situations at any commercial location.",
+                label: "Emergency Product & Perishable Removal",
+                desc: "Rapid removal of expired, recalled, or temperature-compromised product. Speed, compliance, and documentation handled.",
                 img: "/images/stock/service-emergency-overflow.jpg",
-                href: "/services/waste-removal"
+                href: "/services/emergency-product-removal"
             },
             {
-                label: "Bulk Waste Removal",
-                desc: "Large-scale cleanouts for damaged, discontinued, or unsellable products and materials.",
+                label: "Temporary Capacity & Site Stabilization",
+                desc: "Surge dumpsters, hauling crews, and overflow support deployed fast when your site exceeds normal waste limits.",
                 img: "/images/stock/service-emergency.jpg",
-                href: "/services/waste-removal"
+                href: "/services/site-stabilization"
             },
             {
-                label: "Illegal Dumping Cleanup",
-                desc: "Fast removal of mattresses, furniture, and construction debris from parking lots and properties.",
+                label: "Unplanned Cleanouts & Debris Removal",
+                desc: "Tenant abandonment, sudden closures, illegal dumping. Fast mobilization, minimal disruption, bulk debris cleared.",
                 img: "/images/stock/clean-city.jpg",
-                href: "/services/waste-removal"
+                href: "/services/unplanned-cleanouts"
             }
         ]
     },
     {
-        title: "Pressure Washing",
-        desc: "Commercial pressure washing for storefronts, stadiums, compactor pads, and post-waste cleanup.",
+        title: "Specialized Project Logistics",
+        desc: "End-to-end waste coordination for closures, remodels, events, and disaster mobilization across multiple sites.",
         items: [
             {
-                label: "Storefront Cleaning",
-                desc: "Restore curb appeal with professional pressure washing for entrances, sidewalks, and facades.",
+                label: "Site Closures & Remodels",
+                desc: "Full-scope waste coordination for store closures, remodels, decommissions, and multi-site transitions.",
                 img: "/images/stock/service-commercial.jpg",
-                href: "/services/pressure-washing"
+                href: "/services/site-closures-remodels"
             },
             {
-                label: "Compactor Pad Cleaning",
-                desc: "Odor and grime removal for compactor areas, loading docks, and waste staging zones.",
+                label: "Events & Stadiums",
+                desc: "Waste planning and execution for stadiums, fairs, festivals, and high-volume temporary activations.",
                 img: "/images/stock/service-event-stadium.jpg",
-                href: "/services/pressure-washing"
+                href: "/services/events-stadiums"
             },
             {
-                label: "Post-Waste Cleanup",
-                desc: "Deep cleaning after waste removal to leave your site spotless and ready for business.",
+                label: "Natural Disaster Mobilization",
+                desc: "Rapid multi-site mobilization for debris removal, damaged product disposal, and container deployment after storms.",
                 img: "/images/stock/service-maintenance.jpg",
-                href: "/services/pressure-washing"
+                href: "/services/natural-disaster-mobilization"
             }
         ]
     },
     {
-        title: "Dumpster Rental",
-        desc: "Roll-off dumpsters in 10, 20, 30, and 40-yard sizes with flat-rate pricing and prompt delivery.",
+        title: "Dumpsters & Temporary Containers",
+        desc: "Commercial-grade roll-off containers deployed quickly for projects, cleanouts, overflow, and recycling needs.",
         items: [
+            {
+                label: "On-Demand Service",
+                desc: "Short-term roll-off and open-top containers deployed fast for commercial projects, cleanouts, and overflow.",
+                img: "/images/stock/service-dumpster-rental.jpg",
+                href: "/services/on-demand-service"
+            },
             {
                 label: "Multiple Sizes",
-                desc: "10, 20, 30, and 40-yard roll-off containers matched to your specific project needs.",
-                img: "/images/stock/service-dumpster-rental.jpg",
-                href: "/services/dumpster-rental"
-            },
-            {
-                label: "Flat-Rate Pricing",
-                desc: "Transparent, all-inclusive pricing with no hidden fees or surprise charges.",
+                desc: "Commercial-grade open-top roll-off containers in various sizes to match different project scopes.",
                 img: "/images/stock/service-dumpster.jpg",
-                href: "/services/dumpster-rental"
+                href: "/services/multiple-sizes"
             },
             {
-                label: "Prompt Delivery",
-                desc: "Same-day or next-day delivery for construction projects, remodels, and cleanouts.",
+                label: "Recycling & Specialty Containers",
+                desc: "Specialized containers for cardboard, metals, and recyclable materials tied to projects or temporary capacity.",
                 img: "/images/stock/service-centralized-program.jpg",
-                href: "/services/dumpster-rental"
+                href: "/services/recycling-specialty-containers"
             }
         ]
     },
     {
-        title: "Hauling Services",
-        desc: "Compactor transport, bulk hauling, and specialty waste logistics with nationwide reach.",
+        title: "Waste Operations Advisory",
+        desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
         items: [
             {
-                label: "Compactor Transport",
-                desc: "Safe, compliant transport of compactors and heavy waste equipment to any location.",
+                label: "Waste Program Assessments & Roadmaps",
+                desc: "Operational audits of existing waste programs, vendor structures, and cost drivers with optimization plans.",
                 img: "/images/stock/hero-skyscrapers.jpg",
-                href: "/services/hauling-services"
+                href: "/services/waste-program-assessments"
             },
             {
-                label: "Bulk Hauling",
-                desc: "High-volume hauling for large-scale commercial projects and multi-site operations.",
+                label: "Standards, SOPs & Vendor Training",
+                desc: "Standardized processes, escalation protocols, and vendor performance guidelines to prevent costly errors.",
                 img: "/images/stock/city-nature.jpg",
-                href: "/services/hauling-services"
+                href: "/services/standards-sops-training"
             },
             {
-                label: "Nationwide Logistics",
-                desc: "Scalable hauling solutions coordinated across 48 states through our vendor network.",
+                label: "Ongoing Advisory & Program Implementation",
+                desc: "Retained advisory for program rollout, vendor oversight, and portfolio-wide execution strategy.",
                 img: "/images/stock/service-commercial.jpg",
-                href: "/services/hauling-services"
+                href: "/services/ongoing-advisory"
             }
         ]
     }
 ];
 const categoryIcons = [
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$truck$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Truck$3e$__["Truck"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"],
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__["Siren"],
-    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clipboard$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ClipboardCheck$3e$__["ClipboardCheck"]
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$hard$2d$hat$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__HardHat$3e$__["HardHat"],
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$container$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Container$3e$__["Container"],
+    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$line$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__LineChart$3e$__["LineChart"]
 ];
 function CommercialWasteServices() {
     const [activeService, setActiveService] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
@@ -179,7 +179,7 @@ function CommercialWasteServices() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-[#042940]/70",
-                            children: "Four core services. One point of contact. Dispatched across 48 states."
+                            children: "Four core capabilities. One point of contact. Dispatched across 48 states."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
                             lineNumber: 69,

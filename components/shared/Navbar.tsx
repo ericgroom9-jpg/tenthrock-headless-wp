@@ -12,10 +12,10 @@ interface NavbarProps {
 }
 
 const serviceLinks = [
-  { label: "Waste Removal", href: "/services/waste-removal" },
-  { label: "Pressure Washing", href: "/services/pressure-washing" },
-  { label: "Dumpster Rental", href: "/services/dumpster-rental" },
-  { label: "Hauling Services", href: "/services/hauling-services" },
+  { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
+  { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
+  { label: "Dumpsters & Temporary Containers", href: "/services/dumpsters-containers" },
+  { label: "Waste Operations Advisory", href: "/services/waste-operations-advisory" },
 ];
 
 const sectorLinks = [

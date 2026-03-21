@@ -169,10 +169,10 @@ function ContactSection() {
                       defaultValue=""
                     >
                       <option value="" disabled>Select one...</option>
-                      <option value="waste-removal">Waste Removal</option>
-                      <option value="pressure-washing">Pressure Washing</option>
-                      <option value="dumpster-rental">Dumpster Rental</option>
-                      <option value="hauling-services">Hauling Services</option>
+                      <option value="emergency-waste-removal">Emergency Waste Removal</option>
+                      <option value="specialized-project-logistics">Specialized Project Logistics</option>
+                      <option value="dumpsters-containers">Dumpsters & Temporary Containers</option>
+                      <option value="waste-operations-advisory">Waste Operations Advisory</option>
                       <option value="other">Other</option>
                     </select>
                   </div>

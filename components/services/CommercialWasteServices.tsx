@@ -53,28 +53,28 @@ const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
 
 const services = [
   {
-    title: "Waste Removal",
-    desc: "Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties nationwide.",
+    title: "Emergency Waste Removal",
+    desc: "24/7 rapid response for product spoilage, overflow crises, and unplanned cleanouts at commercial locations nationwide.",
     img: imgServiceEmergencyOverflow,
-    features: ["24/7 Dispatch", "Bulk Cleanouts", "Nationwide Network"],
+    features: ["Product & Perishable Removal", "Site Stabilization", "Unplanned Cleanouts"],
   },
   {
-    title: "Pressure Washing",
-    desc: "Commercial pressure washing for storefronts, stadiums, compactor pads, and post-waste cleanup.",
+    title: "Specialized Project Logistics",
+    desc: "End-to-end waste coordination for closures, remodels, events, and disaster mobilization across multiple sites.",
     img: imgServiceStoreDecommissioning,
-    features: ["Storefront Cleaning", "Compactor Pads", "Post-Waste Cleanup"],
+    features: ["Site Closures & Remodels", "Events & Stadiums", "Disaster Mobilization"],
   },
   {
-    title: "Dumpster Rental",
-    desc: "Roll-off dumpsters in 10, 20, 30, and 40-yard sizes with flat-rate pricing and prompt delivery.",
+    title: "Dumpsters & Temporary Containers",
+    desc: "Commercial-grade roll-off containers deployed quickly for projects, cleanouts, overflow, and recycling needs.",
     img: imgServiceDumpsterRental,
-    features: ["10 to 40-Yard Sizes", "Flat-Rate Pricing", "Same-Day Delivery"],
+    features: ["On-Demand Service", "Multiple Sizes", "Recycling & Specialty"],
   },
   {
-    title: "Hauling Services",
-    desc: "Compactor transport, bulk hauling, and specialty waste logistics with nationwide reach.",
+    title: "Waste Operations Advisory",
+    desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
     img: imgServiceCentralizedProgram,
-    features: ["Compactor Transport", "Bulk Hauling", "48-State Coverage"],
+    features: ["Assessments & Roadmaps", "SOPs & Vendor Training", "Ongoing Advisory"],
   },
 ];
 
@@ -147,7 +147,7 @@ export default function CommercialWasteServices() {
                 Commercial Waste Services
               </h1>
               <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-xl leading-relaxed">
-                Comprehensive waste management solutions for businesses of all sizes. From routine collection to emergency response, we handle it all.
+                Emergency response, project logistics, container rentals, and waste program advisory for multi-location operators. One point of contact, 48 states.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 

@@ -49,6 +49,24 @@ The system is built on a Next.js 16 App Router frontend with TypeScript, utilizi
   - **Module Location:** All landing builder code is isolated in `modules/landing-builder/` to prevent accidental modification during frontend updates.
   - **Style Guide Integration:** All blocks use Tailwind CSS and the global style guide variables, ensuring landing pages stay on-brand.
 
+**Service Categories (4 categories, 3 subcategories each):**
+1. **Emergency Waste Removal** (`/services/emergency-waste-removal`)
+   - Emergency Product & Perishable Removal (`/services/emergency-product-removal`)
+   - Temporary Capacity & Site Stabilization (`/services/site-stabilization`)
+   - Unplanned Cleanouts & Debris Removal (`/services/unplanned-cleanouts`)
+2. **Specialized Project Logistics** (`/services/specialized-project-logistics`)
+   - Site Closures & Remodels (`/services/site-closures-remodels`)
+   - Events & Stadiums (`/services/events-stadiums`)
+   - Natural Disaster Mobilization (`/services/natural-disaster-mobilization`)
+3. **Dumpsters & Temporary Containers** (`/services/dumpsters-containers`)
+   - On-Demand Service (`/services/on-demand-service`)
+   - Multiple Sizes (`/services/multiple-sizes`)
+   - Recycling & Specialty Containers (`/services/recycling-specialty-containers`)
+4. **Waste Operations Advisory & Enablement** (`/services/waste-operations-advisory`)
+   - Waste Program Assessments & Roadmaps (`/services/waste-program-assessments`)
+   - Standards, SOPs & Vendor Training (`/services/standards-sops-training`)
+   - Ongoing Advisory & Program Implementation (`/services/ongoing-advisory`)
+
 **Core Features:**
 - Full taxonomy support (categories and tags) for posts.
 - SEO-friendly URL structure and meta-data handling.

@@ -4,13 +4,13 @@ export default function OnDemandServicePage() {
   return (
     <ServiceTemplate
       serviceName="On-Demand Service"
-      serviceDescription="Same-day or next-day delivery for urgent container needs at any location. No long-term commitments required. Just reliable, fast service when you need it."
+      serviceDescription="Short-term roll-off and open-top container rentals deployed quickly for commercial projects, cleanouts, and overflow needs. Supports both emergency and planned services with no long-term commitments required."
       heroImage="/images/stock/service-dumpster-rental.jpg"
     />
   );
 }
 
 export const metadata = {
-  title: "On-Demand Service | Tenth Rock",
-  description: "Same-day or next-day delivery for urgent container needs at any location.",
+  title: "On-Demand Container Service | Tenth Rock",
+  description: "Short-term roll-off and open-top container rentals deployed fast for commercial projects, cleanouts, and overflow. No long-term commitments.",
 };

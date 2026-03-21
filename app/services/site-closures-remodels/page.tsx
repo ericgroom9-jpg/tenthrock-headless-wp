@@ -4,7 +4,7 @@ export default function SiteClosuresRemodelsPage() {
   return (
     <ServiceTemplate
       serviceName="Site Closures & Remodels"
-      serviceDescription="Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps without disrupting day-to-day operations."
+      serviceDescription="End-to-end waste coordination for store closures, remodels, decommissions, and multi-site transitions. We source vendors, schedule logistics, handle documentation, and deliver close-out reporting. This is our number one focus."
       heroImage="/images/stock/service-commercial.jpg"
     />
   );
@@ -12,5 +12,5 @@ export default function SiteClosuresRemodelsPage() {
 
 export const metadata = {
   title: "Site Closures & Remodels | Tenth Rock",
-  description: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps.",
+  description: "End-to-end waste coordination for store closures, remodels, decommissions, and multi-site transitions. Vendor sourcing, scheduling, documentation, and close-out reporting.",
 };

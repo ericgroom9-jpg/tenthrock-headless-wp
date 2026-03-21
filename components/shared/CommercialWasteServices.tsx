@@ -3,48 +3,48 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Siren, Truck, Building2, ClipboardCheck } from "lucide-react";
+import { Siren, HardHat, Container, LineChart } from "lucide-react";
 
 const services = [
   {
-    title: "Waste Removal",
-    desc: "Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties nationwide.",
+    title: "Emergency Waste Removal",
+    desc: "24/7 rapid response for product spoilage, overflow crises, and unplanned cleanouts at commercial locations nationwide.",
     items: [
-      { label: "Emergency Disposal", desc: "24/7 rapid-response teams for urgent waste situations at any commercial location.", img: "/images/stock/service-emergency-overflow.jpg", href: "/services/waste-removal" },
-      { label: "Bulk Waste Removal", desc: "Large-scale cleanouts for damaged, discontinued, or unsellable products and materials.", img: "/images/stock/service-emergency.jpg", href: "/services/waste-removal" },
-      { label: "Illegal Dumping Cleanup", desc: "Fast removal of mattresses, furniture, and construction debris from parking lots and properties.", img: "/images/stock/clean-city.jpg", href: "/services/waste-removal" },
+      { label: "Emergency Product & Perishable Removal", desc: "Rapid removal of expired, recalled, or temperature-compromised product. Speed, compliance, and documentation handled.", img: "/images/stock/service-emergency-overflow.jpg", href: "/services/emergency-product-removal" },
+      { label: "Temporary Capacity & Site Stabilization", desc: "Surge dumpsters, hauling crews, and overflow support deployed fast when your site exceeds normal waste limits.", img: "/images/stock/service-emergency.jpg", href: "/services/site-stabilization" },
+      { label: "Unplanned Cleanouts & Debris Removal", desc: "Tenant abandonment, sudden closures, illegal dumping. Fast mobilization, minimal disruption, bulk debris cleared.", img: "/images/stock/clean-city.jpg", href: "/services/unplanned-cleanouts" },
     ],
   },
   {
-    title: "Pressure Washing",
-    desc: "Commercial pressure washing for storefronts, stadiums, compactor pads, and post-waste cleanup.",
+    title: "Specialized Project Logistics",
+    desc: "End-to-end waste coordination for closures, remodels, events, and disaster mobilization across multiple sites.",
     items: [
-      { label: "Storefront Cleaning", desc: "Restore curb appeal with professional pressure washing for entrances, sidewalks, and facades.", img: "/images/stock/service-commercial.jpg", href: "/services/pressure-washing" },
-      { label: "Compactor Pad Cleaning", desc: "Odor and grime removal for compactor areas, loading docks, and waste staging zones.", img: "/images/stock/service-event-stadium.jpg", href: "/services/pressure-washing" },
-      { label: "Post-Waste Cleanup", desc: "Deep cleaning after waste removal to leave your site spotless and ready for business.", img: "/images/stock/service-maintenance.jpg", href: "/services/pressure-washing" },
+      { label: "Site Closures & Remodels", desc: "Full-scope waste coordination for store closures, remodels, decommissions, and multi-site transitions.", img: "/images/stock/service-commercial.jpg", href: "/services/site-closures-remodels" },
+      { label: "Events & Stadiums", desc: "Waste planning and execution for stadiums, fairs, festivals, and high-volume temporary activations.", img: "/images/stock/service-event-stadium.jpg", href: "/services/events-stadiums" },
+      { label: "Natural Disaster Mobilization", desc: "Rapid multi-site mobilization for debris removal, damaged product disposal, and container deployment after storms.", img: "/images/stock/service-maintenance.jpg", href: "/services/natural-disaster-mobilization" },
     ],
   },
   {
-    title: "Dumpster Rental",
-    desc: "Roll-off dumpsters in 10, 20, 30, and 40-yard sizes with flat-rate pricing and prompt delivery.",
+    title: "Dumpsters & Temporary Containers",
+    desc: "Commercial-grade roll-off containers deployed quickly for projects, cleanouts, overflow, and recycling needs.",
     items: [
-      { label: "Multiple Sizes", desc: "10, 20, 30, and 40-yard roll-off containers matched to your specific project needs.", img: "/images/stock/service-dumpster-rental.jpg", href: "/services/dumpster-rental" },
-      { label: "Flat-Rate Pricing", desc: "Transparent, all-inclusive pricing with no hidden fees or surprise charges.", img: "/images/stock/service-dumpster.jpg", href: "/services/dumpster-rental" },
-      { label: "Prompt Delivery", desc: "Same-day or next-day delivery for construction projects, remodels, and cleanouts.", img: "/images/stock/service-centralized-program.jpg", href: "/services/dumpster-rental" },
+      { label: "On-Demand Service", desc: "Short-term roll-off and open-top containers deployed fast for commercial projects, cleanouts, and overflow.", img: "/images/stock/service-dumpster-rental.jpg", href: "/services/on-demand-service" },
+      { label: "Multiple Sizes", desc: "Commercial-grade open-top roll-off containers in various sizes to match different project scopes.", img: "/images/stock/service-dumpster.jpg", href: "/services/multiple-sizes" },
+      { label: "Recycling & Specialty Containers", desc: "Specialized containers for cardboard, metals, and recyclable materials tied to projects or temporary capacity.", img: "/images/stock/service-centralized-program.jpg", href: "/services/recycling-specialty-containers" },
     ],
   },
   {
-    title: "Hauling Services",
-    desc: "Compactor transport, bulk hauling, and specialty waste logistics with nationwide reach.",
+    title: "Waste Operations Advisory",
+    desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
     items: [
-      { label: "Compactor Transport", desc: "Safe, compliant transport of compactors and heavy waste equipment to any location.", img: "/images/stock/hero-skyscrapers.jpg", href: "/services/hauling-services" },
-      { label: "Bulk Hauling", desc: "High-volume hauling for large-scale commercial projects and multi-site operations.", img: "/images/stock/city-nature.jpg", href: "/services/hauling-services" },
-      { label: "Nationwide Logistics", desc: "Scalable hauling solutions coordinated across 48 states through our vendor network.", img: "/images/stock/service-commercial.jpg", href: "/services/hauling-services" },
+      { label: "Waste Program Assessments & Roadmaps", desc: "Operational audits of existing waste programs, vendor structures, and cost drivers with optimization plans.", img: "/images/stock/hero-skyscrapers.jpg", href: "/services/waste-program-assessments" },
+      { label: "Standards, SOPs & Vendor Training", desc: "Standardized processes, escalation protocols, and vendor performance guidelines to prevent costly errors.", img: "/images/stock/city-nature.jpg", href: "/services/standards-sops-training" },
+      { label: "Ongoing Advisory & Program Implementation", desc: "Retained advisory for program rollout, vendor oversight, and portfolio-wide execution strategy.", img: "/images/stock/service-commercial.jpg", href: "/services/ongoing-advisory" },
     ],
   },
 ];
 
-const categoryIcons = [Truck, Building2, Siren, ClipboardCheck];
+const categoryIcons = [Siren, HardHat, Container, LineChart];
 
 export default function CommercialWasteServices() {
   const [activeService, setActiveService] = useState(0);
@@ -67,7 +67,7 @@ export default function CommercialWasteServices() {
             Commercial Waste Services
           </h2>
           <p className="text-lg text-[#042940]/70">
-            Four core services. One point of contact. Dispatched across 48 states.
+            Four core capabilities. One point of contact. Dispatched across 48 states.
           </p>
         </motion.div>
         

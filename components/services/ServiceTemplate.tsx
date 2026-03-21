@@ -383,10 +383,10 @@ export default function ServiceTemplate({
                           </p>
                           <ul className="space-y-3">
                             {[
-                              { label: "Waste Removal", href: "/services/waste-removal" },
-                              { label: "Pressure Washing", href: "/services/pressure-washing" },
-                              { label: "Dumpster Rental", href: "/services/dumpster-rental" },
-                              { label: "Hauling Services", href: "/services/hauling-services" },
+                              { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
+                              { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
+                              { label: "Dumpsters & Temporary Containers", href: "/services/dumpsters-containers" },
+                              { label: "Waste Operations Advisory", href: "/services/waste-operations-advisory" },
                             ].filter((s) => s.label !== serviceName).map((s) => (
                             <li key={s.label} className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
@@ -489,10 +489,10 @@ export default function ServiceTemplate({
                         defaultValue=""
                       >
                         <option value="" disabled>Select one...</option>
-                        <option value="waste-removal">Waste Removal</option>
-                        <option value="pressure-washing">Pressure Washing</option>
-                        <option value="dumpster-rental">Dumpster Rental</option>
-                        <option value="hauling-services">Hauling Services</option>
+                        <option value="emergency-waste-removal">Emergency Waste Removal</option>
+                        <option value="specialized-project-logistics">Specialized Project Logistics</option>
+                        <option value="dumpsters-containers">Dumpsters & Temporary Containers</option>
+                        <option value="waste-operations-advisory">Waste Operations Advisory</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
