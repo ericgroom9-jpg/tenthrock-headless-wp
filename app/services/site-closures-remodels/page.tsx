@@ -4,13 +4,13 @@ export default function SiteClosuresRemodelsPage() {
   return (
     <ServiceTemplate
       serviceName="Site Closures & Remodels"
-      serviceDescription="End-to-end waste coordination for store closures, remodels, decommissions, and multi-site transitions. We source vendors, schedule logistics, handle documentation, and deliver close-out reporting. This is our number one focus."
+      serviceDescription="Site decommissioning, post-construction cleanout, store closings, and retail remodel waste management. We handle portfolio-wide site turnover, commercial cleanout, commercial closeout, retail portfolio decommissioning, and D&D (Deactivation and Demolition) with vendor sourcing, scheduling, and close-out reporting."
       heroImage="/images/stock/service-commercial.jpg"
     />
   );
 }
 
 export const metadata = {
-  title: "Site Closures & Remodels | Tenth Rock",
-  description: "End-to-end waste coordination for store closures, remodels, decommissions, and multi-site transitions. Vendor sourcing, scheduling, documentation, and close-out reporting.",
+  title: "Site Closures & Remodels | Site Decommissioning & Store Closings | Tenth Rock",
+  description: "Site decommissioning, post-construction cleanout, store closings, and retail remodel waste management. Portfolio-wide site turnover, commercial closeout, and D&D across 48 states.",
 };

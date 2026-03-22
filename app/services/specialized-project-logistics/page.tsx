@@ -4,22 +4,22 @@ export default function SpecializedProjectLogisticsPage() {
   return (
     <ServiceTemplate
       serviceName="Specialized Project Logistics"
-      serviceDescription="End-to-end waste coordination for store closures, remodels, events, and disaster mobilization across multiple sites. Structured project work with vendor sourcing, scheduling logistics, documentation, and close-out reporting."
+      serviceDescription="End-to-end waste coordination for site decommissioning, post-construction cleanout, event waste logistics, and storm debris removal across multiple sites. Vendor sourcing, scheduling, documentation, and close-out reporting included."
       heroImage="/images/stock/service-commercial.jpg"
       subServices={[
         {
           title: "Site Closures & Remodels",
-          description: "Full-scope waste coordination for store closures, remodels, decommissions, and multi-site transitions. Vendor sourcing, scheduling, documentation, and close-out reporting included.",
+          description: "Site decommissioning, post-construction cleanout, store closings, and retail remodel waste management. Portfolio-wide site turnover, commercial cleanout, and D&D (Deactivation and Demolition) handled start to finish with vendor sourcing and close-out reporting.",
           href: "/services/site-closures-remodels",
         },
         {
           title: "Events & Stadiums",
-          description: "Waste planning and execution for stadiums, fairs, festivals, and temporary activations. Coordination, contingency planning, and rapid response during live events.",
+          description: "Event waste logistics and stadium waste coordination for multi-day event waste support. Event waste management for fairs, festivals, and temporary activations managed on tight timelines with contingency planning and rapid response.",
           href: "/services/events-stadiums",
         },
         {
           title: "Natural Disaster Mobilization",
-          description: "Rapid multi-site mobilization following hurricanes, floods, storms, and other disasters. Debris removal, damaged product disposal, temporary container deployment, and regional coordination.",
+          description: "Storm debris removal, hurricane debris cleanup, and emergency debris removal with rapid response. Emergency dumpster rental, emergency roll-off rental, and emergency open-top dumpsters deployed for multi-site recovery support and post-storm waste management.",
           href: "/services/natural-disaster-mobilization",
         },
       ]}
@@ -28,6 +28,6 @@ export default function SpecializedProjectLogisticsPage() {
 }
 
 export const metadata = {
-  title: "Specialized Project Logistics | Tenth Rock",
-  description: "End-to-end waste coordination for site closures, remodels, events, and disaster mobilization. Structured project work across multiple sites nationwide.",
+  title: "Specialized Project Logistics | Site Decommissioning & Event Waste | Tenth Rock",
+  description: "End-to-end waste coordination for site decommissioning, post-construction cleanout, event waste logistics, and storm debris removal. Portfolio-wide site turnover and commercial cleanout across 48 states.",
 };

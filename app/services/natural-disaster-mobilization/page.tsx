@@ -4,13 +4,13 @@ export default function NaturalDisasterMobilizationPage() {
   return (
     <ServiceTemplate
       serviceName="Natural Disaster Mobilization"
-      serviceDescription="Rapid multi-site mobilization following hurricanes, floods, storms, and other disasters. We handle debris removal, damaged product disposal, temporary container deployment, and coordination across affected regions."
+      serviceDescription="Rapid response debris removal for hurricanes, floods, and storms. We deploy emergency dumpster rental, emergency roll-off rental, and emergency open-top dumpsters across affected regions for multi-site recovery support and post-storm waste management. Storm debris removal and hurricane debris cleanup coordinated at scale."
       heroImage="/images/stock/industry-natural-disasters-storm.jpg"
     />
   );
 }
 
 export const metadata = {
-  title: "Natural Disaster Mobilization | Tenth Rock",
-  description: "Rapid multi-site mobilization for debris removal, product disposal, and container deployment after hurricanes, floods, and storms. Nationwide coordination across affected regions.",
+  title: "Natural Disaster Mobilization | Storm Debris Removal & Hurricane Cleanup | Tenth Rock",
+  description: "Storm debris removal, hurricane debris cleanup, and rapid response debris removal. Emergency dumpster rental and emergency roll-off rental for multi-site recovery support and post-storm waste management.",
 };

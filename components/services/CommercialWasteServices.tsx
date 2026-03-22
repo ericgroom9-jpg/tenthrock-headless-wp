@@ -54,25 +54,25 @@ const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4";
 const services = [
   {
     title: "Emergency Waste Removal",
-    desc: "24/7 rapid response for product spoilage, overflow crises, and unplanned cleanouts at commercial locations nationwide.",
+    desc: "Same-day junk removal and emergency waste management for spoiled product, overflowing dumpsters, and urgent commercial site cleanouts across 48 states.",
     img: imgServiceEmergencyOverflow,
     features: ["Product & Perishable Removal", "Site Stabilization", "Unplanned Cleanouts"],
   },
   {
     title: "Specialized Project Logistics",
-    desc: "End-to-end waste coordination for closures, remodels, events, and disaster mobilization across multiple sites.",
+    desc: "End-to-end waste coordination for site decommissioning, commercial cleanouts, event waste logistics, and storm debris removal across multiple sites.",
     img: imgServiceStoreDecommissioning,
     features: ["Site Closures & Remodels", "Events & Stadiums", "Disaster Mobilization"],
   },
   {
     title: "Dumpsters & Temporary Containers",
-    desc: "Commercial-grade roll-off containers deployed quickly for projects, cleanouts, overflow, and recycling needs.",
+    desc: "Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow needs.",
     img: imgServiceDumpsterRental,
     features: ["On-Demand Service", "Multiple Sizes", "Recycling & Specialty"],
   },
   {
     title: "Waste Operations Advisory & Enablement",
-    desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
+    desc: "Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management.",
     img: imgServiceCentralizedProgram,
     features: ["Assessments & Roadmaps", "SOPs & Vendor Training", "Ongoing Advisory"],
   },

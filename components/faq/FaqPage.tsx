@@ -117,12 +117,12 @@ const faqCategories: FaqCategory[] = [
         answer: "Yes, we offer comprehensive recycling programs for cardboard, plastics, metals, organics, and more. We work with certified recycling partners and provide detailed reporting on your recycling volumes and diversion rates."
       },
       {
-        question: "Can you help us achieve zero-waste goals?",
-        answer: "We partner with businesses on their zero-waste journey by conducting waste audits, implementing targeted diversion programs, and providing the data and reporting needed to track progress toward zero-waste certifications."
+        question: "Can you help us improve landfill diversion rates?",
+        answer: "We partner with businesses to improve landfill diversion through operational waste audits, targeted source-separated recycling programs, and the data and reporting needed to track measurable progress across your portfolio."
       },
       {
-        question: "What kind of sustainability reporting do you offer?",
-        answer: "We provide comprehensive sustainability dashboards that include waste diversion rates, recycling volumes, CO2 offset calculations, and trend analysis. Reports can be generated monthly, quarterly, or annually to support your ESG reporting needs."
+        question: "What kind of waste program reporting do you offer?",
+        answer: "We provide portfolio-wide dashboards that include waste diversion rates, recycling volumes, cost-control metrics, and trend analysis. Reports can be generated monthly, quarterly, or annually to support your operational reporting needs."
       },
       {
         question: "Do you handle composting services?",

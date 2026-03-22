@@ -4,22 +4,22 @@ export default function DumpstersContainersPage() {
   return (
     <ServiceTemplate
       serviceName="Dumpsters & Temporary Containers"
-      serviceDescription="Commercial-grade roll-off containers deployed quickly for projects, cleanouts, overflow, and recycling needs. Short-term and project-based rentals with fast delivery and pickup across 48 states."
+      serviceDescription="Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow. We offer 20 yard, 30 yard, and 40 yard roll-off containers with same-day swaps and emergency roll-off service across 48 states."
       heroImage="/images/stock/service-dumpster-rental.jpg"
       subServices={[
         {
           title: "On-Demand Service",
-          description: "Short-term roll-off and open-top container rentals deployed quickly for commercial projects, cleanouts, and overflow. Supports both emergency and planned services with no long-term commitments.",
+          description: "Same-day dumpster rental and emergency roll-off service for commercial projects, cleanouts, and overflow. Temporary dumpster deployment with same-day swaps, no long-term commitments, and emergency dumpster rental available around the clock.",
           href: "/services/on-demand-service",
         },
         {
           title: "Multiple Sizes",
-          description: "Commercial-grade open-top roll-off containers in various sizes to support different project scopes. Clear differentiation from permanent front-load services.",
+          description: "20 yard dumpster rental, 30 yard roll-off, 30 yard open-top, and 40 yard roll-off containers matched to your project scope. Commercial-grade 20 yard rolloff and 30 yard dumpster rental for every size job.",
           href: "/services/multiple-sizes",
         },
         {
           title: "Recycling & Specialty Containers",
-          description: "Specialized containers for cardboard, metals, and recyclable materials tied to projects or temporary capacity needs. Commercial only, not residential.",
+          description: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support, specialty waste containers, temporary recycling capacity, and C&D (Construction Debris) solutions.",
           href: "/services/recycling-specialty-containers",
         },
       ]}
@@ -28,6 +28,6 @@ export default function DumpstersContainersPage() {
 }
 
 export const metadata = {
-  title: "Dumpsters & Temporary Containers | Tenth Rock",
-  description: "Commercial-grade roll-off containers for projects, cleanouts, overflow, and recycling. Fast deployment and pickup across 48 states.",
+  title: "Dumpsters & Temporary Containers | Same-Day Roll-Off Dumpster Rental | Tenth Rock",
+  description: "Same-day dumpster rental with roll-off dumpsters and open-top dumpsters in 20, 30, and 40 yard sizes. Emergency roll-off service and commercial recycling containers across 48 states.",
 };

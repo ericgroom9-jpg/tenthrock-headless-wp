@@ -58,21 +58,37 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/services/ServiceTemplate.tsx [app-rsc] (ecmascript)");
 ;
 ;
-const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
 function EmergencyWasteRemovalPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-        serviceName: "Emergency & Overflow Response",
-        serviceDescription: "24/7 rapid response for unexpected waste emergencies and overflow situations. Our teams are deployed within hours, not days.",
-        heroImage: imgServiceEmergencyOverflow
+        serviceName: "Emergency Waste Removal",
+        serviceDescription: "24/7 rapid response for product spoilage, overflow crises, and unplanned cleanouts at commercial locations. We deploy crews within hours, not days.",
+        heroImage: "/images/stock/service-emergency-overflow.jpg",
+        subServices: [
+            {
+                title: "Emergency Product & Perishable Removal",
+                description: "Rapid removal of expired, unsellable, recalled, or temperature-compromised product. Covers food spoilage, refrigerated failure events, health-code risks, and urgent bulk disposal.",
+                href: "/services/emergency-product-removal"
+            },
+            {
+                title: "Temporary Capacity & Site Stabilization",
+                description: "Deployment of temporary dumpsters, hauling crews, or surge capacity when sites exceed normal waste limits. Compactor failures, overflow situations, peak seasons, and vendor service gaps.",
+                href: "/services/site-stabilization"
+            },
+            {
+                title: "Unplanned Cleanouts & Debris Removal",
+                description: "Unexpected cleanouts caused by tenant abandonment, sudden closures, illegal dumping, or operational transitions. Bulk debris, fixtures, shelving, and mixed commercial waste cleared fast.",
+                href: "/services/unplanned-cleanouts"
+            }
+        ]
     }, void 0, false, {
         fileName: "[project]/app/services/emergency-waste-removal/page.tsx",
-        lineNumber: 7,
+        lineNumber: 5,
         columnNumber: 5
     }, this);
 }
 const metadata = {
-    title: "Emergency Waste Removal | Tenth Rock",
-    description: "24/7 emergency waste removal services. Rapid response teams available for urgent situations with nationwide coverage."
+    title: "Emergency Waste Removal | 24/7 Rapid Response | Tenth Rock",
+    description: "24/7 emergency waste removal for product spoilage, overflow crises, and unplanned cleanouts at commercial locations. Crews deployed within hours across 48 states."
 };
 }),
 "[project]/app/services/emergency-waste-removal/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {

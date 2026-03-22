@@ -4,22 +4,22 @@ export default function EmergencyWasteRemovalPage() {
   return (
     <ServiceTemplate
       serviceName="Emergency Waste Removal"
-      serviceDescription="24/7 rapid response for product spoilage, overflow crises, and unplanned cleanouts at commercial locations. We deploy crews within hours, not days."
+      serviceDescription="Same-day junk removal and emergency waste management for commercial locations. We handle spoiled product disposal, overflowing dumpsters, damaged inventory disposal, and urgent bulk waste removal with after-hours waste removal available 24/7 across 48 states."
       heroImage="/images/stock/service-emergency-overflow.jpg"
       subServices={[
         {
           title: "Emergency Product & Perishable Removal",
-          description: "Rapid removal of expired, unsellable, recalled, or temperature-compromised product. Covers food spoilage, refrigerated failure events, health-code risks, and urgent bulk disposal.",
+          description: "Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. Unsellable product disposal and damaged inventory disposal handled with speed and compliance documentation.",
           href: "/services/emergency-product-removal",
         },
         {
           title: "Temporary Capacity & Site Stabilization",
-          description: "Deployment of temporary dumpsters, hauling crews, or surge capacity when sites exceed normal waste limits. Compactor failures, overflow situations, peak seasons, and vendor service gaps.",
+          description: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal. We deploy temporary capacity for missed pickups, waste overflow situations, and broken compactor emergencies to stabilize your site fast.",
           href: "/services/site-stabilization",
         },
         {
           title: "Unplanned Cleanouts & Debris Removal",
-          description: "Unexpected cleanouts caused by tenant abandonment, sudden closures, illegal dumping, or operational transitions. Bulk debris, fixtures, shelving, and mixed commercial waste cleared fast.",
+          description: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, emergency site cleanout situations, and code violation cleanup support. Large-scale waste clearing with fast mobilization and minimal disruption.",
           href: "/services/unplanned-cleanouts",
         },
       ]}
@@ -28,6 +28,6 @@ export default function EmergencyWasteRemovalPage() {
 }
 
 export const metadata = {
-  title: "Emergency Waste Removal | 24/7 Rapid Response | Tenth Rock",
-  description: "24/7 emergency waste removal for product spoilage, overflow crises, and unplanned cleanouts at commercial locations. Crews deployed within hours across 48 states.",
+  title: "Emergency Waste Removal | Same-Day Junk Removal | Tenth Rock",
+  description: "Same-day emergency waste management for spoiled product disposal, overflowing dumpsters, and commercial site cleanouts. After-hours waste removal, damaged inventory disposal, and urgent bulk pickup across 48 states.",
 };

@@ -4,13 +4,13 @@ export default function EventsStadiumsPage() {
   return (
     <ServiceTemplate
       serviceName="Events & Stadiums"
-      serviceDescription="Waste planning and execution for high-volume, high-visibility environments. Stadiums, fairs, festivals, and temporary activations require coordination, contingency planning, and rapid response during live events."
+      serviceDescription="Event waste logistics and stadium waste coordination for high-volume, high-visibility environments. Event waste management and multi-day event waste support for stadiums, fairs, festivals, and temporary activations with coordination, contingency planning, and rapid response during live events."
       heroImage="/images/stock/service-event-stadium.jpg"
     />
   );
 }
 
 export const metadata = {
-  title: "Events & Stadiums Waste Services | Tenth Rock",
-  description: "Waste planning and execution for stadiums, fairs, festivals, and temporary activations. Coordination, contingency planning, and rapid response during live events.",
+  title: "Events & Stadiums | Event Waste Logistics & Stadium Waste Coordination | Tenth Rock",
+  description: "Event waste logistics and stadium waste coordination for multi-day event waste support. Event waste management for stadiums, fairs, festivals, and temporary activations nationwide.",
 };

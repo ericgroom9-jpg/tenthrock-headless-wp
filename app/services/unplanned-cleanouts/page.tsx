@@ -4,13 +4,13 @@ export default function UnplannedCleanutsPage() {
   return (
     <ServiceTemplate
       serviceName="Unplanned Cleanouts & Debris Removal"
-      serviceDescription="Unexpected cleanouts caused by tenant abandonment, sudden closures, illegal dumping, or operational transitions. We clear bulk debris, fixtures, shelving, and mixed commercial waste with fast mobilization and minimal disruption."
+      serviceDescription="Commercial site cleanout and bulk debris removal for foreclosure cleanouts, emergency site cleanout situations, code violation cleanup support, and large-scale waste clearing. Bulk pickup for unexpected cleanouts with fast mobilization and minimal disruption to your operations."
       heroImage="/images/stock/clean-city.jpg"
     />
   );
 }
 
 export const metadata = {
-  title: "Unplanned Cleanouts & Debris Removal | Tenth Rock",
-  description: "Fast commercial cleanouts for tenant abandonment, sudden closures, and illegal dumping. Bulk debris, fixtures, and mixed waste cleared with minimal disruption across 48 states.",
+  title: "Unplanned Cleanouts & Debris Removal | Commercial Site Cleanout | Tenth Rock",
+  description: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, code violation cleanup support, and emergency site cleanout situations. Large-scale waste clearing across 48 states.",
 };

@@ -4,13 +4,13 @@ export default function WasteProgramAssessmentsPage() {
   return (
     <ServiceTemplate
       serviceName="Waste Program Assessments & Roadmaps"
-      serviceDescription="Operational audits of existing waste programs, vendor structures, workflows, and cost drivers. We deliver optimization plans, risk mitigation strategies, and portfolio-wide recommendations that drive measurable cost reduction."
+      serviceDescription="Portfolio-wide waste strategy starting with an operational waste audit of your existing programs, vendor structures, workflows, and cost drivers. We deliver a multi-site waste roadmap with cost-control optimization plans and actionable recommendations that drive measurable cost reduction across your portfolio."
       heroImage="/images/stock/hero-skyscrapers.jpg"
     />
   );
 }
 
 export const metadata = {
-  title: "Waste Program Assessments & Roadmaps | Tenth Rock",
-  description: "Operational audits of waste programs, vendor structures, and cost drivers. Optimization plans and portfolio-wide recommendations for multi-location operators.",
+  title: "Waste Program Assessments & Roadmaps | Portfolio-Wide Waste Strategy | Tenth Rock",
+  description: "Portfolio-wide waste strategy and operational waste audit with cost-control waste optimization. Multi-site waste roadmap and portfolio-wide recommendations for multi-location operators.",
 };

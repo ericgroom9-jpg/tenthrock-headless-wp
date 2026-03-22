@@ -31,12 +31,12 @@ const faqs = [
     answer: "We maintain emergency response teams and equipment staged in strategic locations. For predicted events like hurricanes, we pre-position resources. For sudden disasters, we typically mobilize within 24-48 hours."
   },
   {
-    question: "Do you handle hazardous materials from disasters?",
-    answer: "Yes, we're equipped to handle household hazardous waste, construction debris with asbestos concerns, and other regulated materials that commonly appear in disaster cleanup. All disposal follows proper regulatory protocols."
+    question: "What types of storm debris do you remove?",
+    answer: "We handle construction debris, damaged product, waterlogged inventory, and mixed commercial waste that commonly appears after hurricanes, floods, and storms. All disposal follows proper regulatory protocols."
   },
   {
-    question: "Can you help with FEMA reimbursement documentation?",
-    answer: "Absolutely. We provide detailed documentation of all work performed, including load tickets, tonnage reports, GPS tracking, and photo documentation that meets FEMA eligibility requirements."
+    question: "Do you provide documentation for insurance and reimbursement?",
+    answer: "Yes. We provide detailed documentation of all work performed, including load tickets, tonnage reports, GPS tracking, and photo documentation that supports insurance claims and reimbursement eligibility."
   },
   {
     question: "What types of disasters do you respond to?",

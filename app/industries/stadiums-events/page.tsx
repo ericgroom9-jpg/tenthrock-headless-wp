@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "Do you handle specialty waste from events?",
-    answer: "Yes, we manage all event waste streams including food waste, cooking oil, cardboard from vendors, and specialty items. We also coordinate hazardous waste disposal for pyrotechnics and other special effects materials."
+    answer: "Yes, we manage all event waste streams including food waste, cooking oil, cardboard from vendors, and specialty items. We coordinate disposal for all event-related waste materials through our vendor network."
   },
   {
     question: "Can you provide waste diversion reporting for sustainability goals?",
