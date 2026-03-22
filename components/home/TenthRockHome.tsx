@@ -304,7 +304,7 @@ const ServicesSection = () => {
       ],
     },
     {
-      title: "Waste Operations Advisory",
+      title: "Waste Operations Advisory & Enablement",
       desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
       href: "/services/waste-operations-advisory",
       items: [

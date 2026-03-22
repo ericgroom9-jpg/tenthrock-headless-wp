@@ -12,7 +12,7 @@ const serviceLinks = [
   { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
   { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
   { label: "Dumpsters & Temporary Containers", href: "/services/dumpsters-containers" },
-  { label: "Waste Operations Advisory", href: "/services/waste-operations-advisory" },
+  { label: "Waste Operations Advisory & Enablement", href: "/services/waste-operations-advisory" },
 ];
 
 const industryLinks = [

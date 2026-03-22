@@ -3,7 +3,7 @@ import ServiceTemplate from "@/components/services/ServiceTemplate";
 export default function WasteOperationsAdvisoryPage() {
   return (
     <ServiceTemplate
-      serviceName="Waste Operations Advisory"
+      serviceName="Waste Operations Advisory & Enablement"
       serviceDescription="Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs. We position as a strategic partner, not just a service provider."
       heroImage="/images/stock/hero-skyscrapers.jpg"
       subServices={[

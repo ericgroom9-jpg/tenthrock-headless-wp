@@ -187,7 +187,7 @@ const serviceLinks = [
         href: "/services/dumpsters-containers"
     },
     {
-        label: "Waste Operations Advisory",
+        label: "Waste Operations Advisory & Enablement",
         href: "/services/waste-operations-advisory"
     }
 ];
@@ -1597,7 +1597,7 @@ const serviceLinks = [
         href: "/services/dumpsters-containers"
     },
     {
-        label: "Waste Operations Advisory",
+        label: "Waste Operations Advisory & Enablement",
         href: "/services/waste-operations-advisory"
     }
 ];
@@ -3192,7 +3192,7 @@ const ServicesSection = ()=>{
             ]
         },
         {
-            title: "Waste Operations Advisory",
+            title: "Waste Operations Advisory & Enablement",
             desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
             href: "/services/waste-operations-advisory",
             items: [

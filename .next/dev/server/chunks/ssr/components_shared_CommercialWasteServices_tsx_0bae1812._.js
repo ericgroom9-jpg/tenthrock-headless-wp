@@ -95,7 +95,7 @@ const services = [
         ]
     },
     {
-        title: "Waste Operations Advisory",
+        title: "Waste Operations Advisory & Enablement",
         desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
         items: [
             {

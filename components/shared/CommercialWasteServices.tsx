@@ -34,7 +34,7 @@ const services = [
     ],
   },
   {
-    title: "Waste Operations Advisory",
+    title: "Waste Operations Advisory & Enablement",
     desc: "Operational audits, standardized processes, and retained advisory support for portfolio-wide waste programs.",
     items: [
       { label: "Waste Program Assessments & Roadmaps", desc: "Operational audits of existing waste programs, vendor structures, and cost drivers with optimization plans.", img: "/images/stock/hero-skyscrapers.jpg", href: "/services/waste-program-assessments" },
