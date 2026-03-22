@@ -381,19 +381,23 @@ export default function CommercialWasteServices() {
                 transition={{ duration: 0.6 }}
                 className="lg:pl-8 order-1 lg:order-2"
               >
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5d520]/10 text-[#042940] font-bold text-xs uppercase tracking-wider mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></span>
+                  Speed
+                </div>
                 <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight">
-                  Case Study: <br/>National Retail Rollout
+                  Starbucks <br/><span className="text-3xl md:text-4xl">Missed Pickup, Same-Day Stabilization</span>
                 </h2>
                 <p className="text-lg text-[#042940]/70 mb-8 md:mb-12 leading-relaxed">
-                  A 200-location retail chain needed to consolidate 47 separate hauler contracts into one managed program. Tenth Rock onboarded all sites in 90 days, standardized service levels, and cut their total waste spend by a third.
+                  A missed pickup at a Starbucks location sent waste overflowing into the backroom mid-operation, creating immediate compliance risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a local crew on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
                   {[
-                    { value: "32%", label: "Cost Reduction" },
-                    { value: "98%", label: "On-Time Pickups" },
-                    { value: "90", label: "Day Onboarding" },
-                    { value: "0", label: "Compliance Issues" },
+                    { value: "10 min", label: "Response Time" },
+                    { value: "4 hrs", label: "Total Stabilization" },
+                    { value: "0", label: "Customer Impact" },
+                    { value: "1", label: "Call to Resolution" },
                   ].map((stat, i) => (
                     <div key={i}>
                       <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
@@ -406,8 +410,9 @@ export default function CommercialWasteServices() {
                 <Button 
                   size="lg"
                   className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto"
+                  asChild
                 >
-                  View Full Case Study
+                  <a href="/request-a-service">Request A Service</a>
                 </Button>
               </motion.div>
             </div>
