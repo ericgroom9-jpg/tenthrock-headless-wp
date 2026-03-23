@@ -6,6 +6,13 @@ export default function SpecializedProjectLogisticsPage() {
       serviceName="Specialized Project Logistics"
       serviceDescription="End-to-end waste coordination for site decommissioning, post-construction cleanout, event waste logistics, and storm debris removal across multiple sites. Vendor sourcing, scheduling, documentation, and close-out reporting included."
       heroImage="/images/stock/service-commercial.jpg"
+      aboutBullets={[
+        "Site decommissioning and post-construction cleanout coordination",
+        "Event waste logistics for stadiums, fairs, and festivals",
+        "Storm debris removal and disaster mobilization",
+        "Multi-site project management with close-out reporting",
+      ]}
+      aboutDescription="Structured project work requires structured waste coordination. Whether you are closing stores, managing a remodel, running a multi-day event, or recovering from a natural disaster, Tenth Rock coordinates vendor sourcing, hauling logistics, container deployment, and documentation across every site. Your dedicated project manager handles every moving part so your team can focus on the project itself."
       subServices={[
         {
           title: "Site Closures & Remodels",

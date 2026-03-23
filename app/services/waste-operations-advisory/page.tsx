@@ -6,6 +6,13 @@ export default function WasteOperationsAdvisoryPage() {
       serviceName="Waste Operations Advisory & Enablement"
       serviceDescription="Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management. Designed to give multi-site operators structured control, accountability, and long-term waste management consistency."
       heroImage="/images/stock/hero-skyscrapers.jpg"
+      aboutBullets={[
+        "Hands-on program rollout and portfolio-wide execution management",
+        "Vendor training, oversight, and performance optimization",
+        "Structured control and accountability for multi-site operators",
+        "Long-term waste management consistency across your portfolio",
+      ]}
+      aboutDescription="Most waste problems are not about the waste itself. They are about inconsistent execution, undertrained vendors, and a lack of visibility across locations. Tenth Rock provides retained waste management advisory that goes beyond audits and reports. We embed in your operations to manage program rollout, train vendors on-site, enforce performance standards, and deliver portfolio-wide execution management that produces measurable, sustained results."
       subServices={[
         {
           title: "Waste Program Assessments & Roadmaps",

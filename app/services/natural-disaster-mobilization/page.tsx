@@ -6,6 +6,13 @@ export default function NaturalDisasterMobilizationPage() {
       serviceName="Natural Disaster Mobilization"
       serviceDescription="Rapid response debris removal for hurricanes, floods, and storms. We deploy emergency dumpster rental, emergency roll-off rental, and emergency open-top dumpsters across affected regions for multi-site recovery support and post-storm waste management. Storm debris removal and hurricane debris cleanup coordinated at scale."
       heroImage="/images/stock/industry-natural-disasters-storm.jpg"
+      aboutBullets={[
+        "Storm debris removal and hurricane debris cleanup",
+        "Emergency dumpster rental and emergency roll-off rental",
+        "Emergency open-top dumpsters deployed across affected regions",
+        "Multi-site recovery support and post-storm waste management",
+      ]}
+      aboutDescription="When storms hit, local providers sell out fast. Tenth Rock activates its nationwide network to source emergency dumpster rental and emergency roll-off rental from out-of-state markets when local inventory is unavailable. We coordinate rapid response debris removal, emergency open-top dumpsters, and hauling logistics across affected regions so your locations can recover without waiting for containers that aren't coming."
     />
   );
 }

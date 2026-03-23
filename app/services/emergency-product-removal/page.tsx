@@ -6,6 +6,13 @@ export default function EmergencyProductRemovalPage() {
       serviceName="Emergency Product & Perishable Removal"
       serviceDescription="Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. We handle damaged inventory disposal, unsellable product disposal, and after-hours waste removal with speed, compliance, and full documentation."
       heroImage="/images/stock/service-emergency-overflow.jpg"
+      aboutBullets={[
+        "Rapid removal of temperature-compromised and spoiled product",
+        "Cold storage failure and refrigeration failure event response",
+        "Damaged and unsellable inventory disposed with compliance documentation",
+        "After-hours and weekend perishable bulk pickup available",
+      ]}
+      aboutDescription="When refrigeration fails or product is compromised, every hour increases health code risk, odor issues, and pest exposure. Tenth Rock mobilizes perishable bulk pickup crews to remove spoiled product, damaged inventory, and unsellable goods fast. We coordinate disposal logistics, provide full documentation for insurance and compliance, and deliver a single invoice for the entire job."
     />
   );
 }

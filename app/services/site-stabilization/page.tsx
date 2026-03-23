@@ -6,6 +6,13 @@ export default function SiteStabilizationPage() {
       serviceName="Temporary Capacity & Site Stabilization"
       serviceDescription="Compactor failure response and urgent bulk waste removal for commercial sites dealing with broken compactors, missed pickups, waste overflow, overflowing dumpsters, and illegal dumping. We deploy temporary capacity to stabilize operations fast and prevent further disruption."
       heroImage="/images/stock/service-emergency-overflow.jpg"
+      aboutBullets={[
+        "Broken compactor and compactor failure response",
+        "Overflowing dumpster and waste overflow stabilization",
+        "Temporary containers deployed for missed pickups and service gaps",
+        "Illegal dumping cleanup and urgent bulk waste removal",
+      ]}
+      aboutDescription="When your compactor breaks down, your hauler misses a pickup, or waste is overflowing into customer-facing areas, you need temporary capacity deployed fast. Tenth Rock dispatches stabilization crews and temporary containers to your site to stop the problem from getting worse, then coordinates with vendors to restore normal service. We handle broken compactors, overflowing dumpsters, peak-season overflow, and illegal dumping situations."
     />
   );
 }

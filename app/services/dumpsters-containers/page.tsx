@@ -6,6 +6,13 @@ export default function DumpstersContainersPage() {
       serviceName="Dumpsters & Temporary Containers"
       serviceDescription="Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow. We offer 20 yard, 30 yard, and 40 yard roll-off containers with same-day swaps and emergency roll-off service across 48 states."
       heroImage="/images/stock/service-dumpster-rental.jpg"
+      aboutBullets={[
+        "Same-day dumpster rental with same-day swaps available",
+        "Roll-off dumpsters and open-top dumpsters in 20, 30, and 40 yard sizes",
+        "Emergency dumpster rental and emergency roll-off service",
+        "Commercial recycling dumpsters and specialty containers",
+      ]}
+      aboutDescription="Whether you need a temporary dumpster for a weekend cleanout or a fleet of roll-off containers for a multi-site project, Tenth Rock delivers same-day dumpster rental across 48 states. We source containers through our nationwide vendor network, so when local providers are out of inventory, we pull from neighboring markets. No long-term commitments, no surge pricing, and same-day swaps when your container fills up."
       subServices={[
         {
           title: "On-Demand Service",

@@ -61,22 +61,29 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function EmergencyWasteRemovalPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Emergency Waste Removal",
-        serviceDescription: "24/7 rapid response for product spoilage, overflow crises, and unplanned cleanouts at commercial locations. We deploy crews within hours, not days.",
+        serviceDescription: "Same-day junk removal and emergency waste management for commercial locations. We handle spoiled product disposal, overflowing dumpsters, damaged inventory disposal, and urgent bulk waste removal with after-hours waste removal available 24/7 across 48 states.",
         heroImage: "/images/stock/service-emergency-overflow.jpg",
+        aboutBullets: [
+            "Same-day and after-hours waste removal for urgent situations",
+            "Spoiled product disposal, compactor failures, and overflow crises",
+            "Crews dispatched within hours, not days",
+            "Full documentation and compliance reporting included"
+        ],
+        aboutDescription: "When waste becomes an emergency, you need a partner who picks up the phone and deploys crews fast. Tenth Rock provides 24/7 emergency waste management for commercial locations dealing with spoiled product, refrigeration failures, overflowing dumpsters, broken compactors, and unplanned cleanouts. One call gets your dedicated project manager on the line, a crew dispatched to your site, and the problem resolved with full photo documentation and a single invoice.",
         subServices: [
             {
                 title: "Emergency Product & Perishable Removal",
-                description: "Rapid removal of expired, unsellable, recalled, or temperature-compromised product. Covers food spoilage, refrigerated failure events, health-code risks, and urgent bulk disposal.",
+                description: "Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. Unsellable product disposal and damaged inventory disposal handled with speed and compliance documentation.",
                 href: "/services/emergency-product-removal"
             },
             {
                 title: "Temporary Capacity & Site Stabilization",
-                description: "Deployment of temporary dumpsters, hauling crews, or surge capacity when sites exceed normal waste limits. Compactor failures, overflow situations, peak seasons, and vendor service gaps.",
+                description: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal. We deploy temporary capacity for missed pickups, waste overflow situations, and broken compactor emergencies to stabilize your site fast.",
                 href: "/services/site-stabilization"
             },
             {
                 title: "Unplanned Cleanouts & Debris Removal",
-                description: "Unexpected cleanouts caused by tenant abandonment, sudden closures, illegal dumping, or operational transitions. Bulk debris, fixtures, shelving, and mixed commercial waste cleared fast.",
+                description: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, emergency site cleanout situations, and code violation cleanup support. Large-scale waste clearing with fast mobilization and minimal disruption.",
                 href: "/services/unplanned-cleanouts"
             }
         ]
@@ -87,8 +94,8 @@ function EmergencyWasteRemovalPage() {
     }, this);
 }
 const metadata = {
-    title: "Emergency Waste Removal | 24/7 Rapid Response | Tenth Rock",
-    description: "24/7 emergency waste removal for product spoilage, overflow crises, and unplanned cleanouts at commercial locations. Crews deployed within hours across 48 states."
+    title: "Emergency Waste Removal | Same-Day Junk Removal | Tenth Rock",
+    description: "Same-day emergency waste management for spoiled product disposal, overflowing dumpsters, and commercial site cleanouts. After-hours waste removal, damaged inventory disposal, and urgent bulk pickup across 48 states."
 };
 }),
 "[project]/app/services/emergency-waste-removal/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {
