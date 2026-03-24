@@ -11,11 +11,43 @@ interface NavbarProps {
   variant?: "floating" | "sticky";
 }
 
-const serviceLinks = [
-  { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
-  { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
-  { label: "Dumpsters & Temporary Containers", href: "/services/dumpsters-containers" },
-  { label: "Waste Operations Advisory & Enablement", href: "/services/waste-operations-advisory" },
+const serviceCategories = [
+  {
+    label: "Emergency Waste Removal",
+    href: "/services/emergency-waste-removal",
+    subServices: [
+      { label: "Emergency Product & Perishable Removal", href: "/services/emergency-product-removal" },
+      { label: "Temporary Capacity & Site Stabilization", href: "/services/site-stabilization" },
+      { label: "Unplanned Cleanouts & Debris Removal", href: "/services/unplanned-cleanouts" },
+    ],
+  },
+  {
+    label: "Specialized Project Logistics",
+    href: "/services/specialized-project-logistics",
+    subServices: [
+      { label: "Site Closures & Remodels", href: "/services/site-closures-remodels" },
+      { label: "Events & Stadiums", href: "/services/events-stadiums" },
+      { label: "Natural Disaster Mobilization", href: "/services/natural-disaster-mobilization" },
+    ],
+  },
+  {
+    label: "Dumpsters & Temporary Containers",
+    href: "/services/dumpsters-containers",
+    subServices: [
+      { label: "On-Demand Service", href: "/services/on-demand-service" },
+      { label: "Multiple Sizes", href: "/services/multiple-sizes" },
+      { label: "Recycling & Specialty Containers", href: "/services/recycling-specialty-containers" },
+    ],
+  },
+  {
+    label: "Waste Operations Advisory & Enablement",
+    href: "/services/waste-operations-advisory",
+    subServices: [
+      { label: "Waste Program Assessments & Roadmaps", href: "/services/waste-program-assessments" },
+      { label: "Standards, SOPs & Vendor Training", href: "/services/standards-sops-training" },
+      { label: "Ongoing Advisory & Program Implementation", href: "/services/ongoing-advisory" },
+    ],
+  },
 ];
 
 const sectorLinks = [
@@ -137,17 +169,29 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   >
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="grid grid-cols-4 gap-8">
-                        {serviceLinks.map((service) => (
-                          <Link
-                            key={service.label}
-                            href={service.href}
-                            data-testid={`link-nav-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                            className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-semibold text-white/80 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
-                            onClick={() => setIsServicesOpen(false)}
-                          >
-                            <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
-                            <span>{service.label}</span>
-                          </Link>
+                        {serviceCategories.map((category) => (
+                          <div key={category.label} className="space-y-1">
+                            <Link
+                              href={category.href}
+                              data-testid={`link-nav-services-${category.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                              className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-bold text-white hover:text-[#c5d520] hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
+                              onClick={() => setIsServicesOpen(false)}
+                            >
+                              <ChevronRight className="w-3.5 h-3.5 text-[#c5d520] flex-shrink-0" />
+                              <span>{category.label}</span>
+                            </Link>
+                            {category.subServices.map((sub) => (
+                              <Link
+                                key={sub.label}
+                                href={sub.href}
+                                data-testid={`link-nav-services-${sub.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                className="group flex items-center gap-3 rounded-[5px] pl-7 pr-3 py-2 text-sm text-white/60 hover:text-white hover:bg-white/5 active:bg-white/5 transition-colors min-h-[40px]"
+                                onClick={() => setIsServicesOpen(false)}
+                              >
+                                <span>{sub.label}</span>
+                              </Link>
+                            ))}
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -433,17 +477,29 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="pl-4 pb-3 space-y-2">
-                          {serviceLinks.map((service) => (
-                            <Link
-                              key={service.label}
-                              href={service.href}
-                              className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
-                              onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
-                              data-testid={`link-mobile-services-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                            >
-                              {service.label}
-                            </Link>
+                        <div className="pl-4 pb-3 space-y-1">
+                          {serviceCategories.map((category) => (
+                            <div key={category.label}>
+                              <Link
+                                href={category.href}
+                                className="font-bold text-primary text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
+                                onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
+                                data-testid={`link-mobile-services-${category.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                              >
+                                {category.label}
+                              </Link>
+                              {category.subServices.map((sub) => (
+                                <Link
+                                  key={sub.label}
+                                  href={sub.href}
+                                  className="font-medium text-primary/60 text-[14px] py-2.5 pl-8 pr-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] flex items-center"
+                                  onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
+                                  data-testid={`link-mobile-services-${sub.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                >
+                                  {sub.label}
+                                </Link>
+                              ))}
+                            </div>
                           ))}
                         </div>
                       </motion.div>

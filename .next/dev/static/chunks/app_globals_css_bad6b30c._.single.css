@@ -1728,6 +1728,10 @@ h1, h3, h4, h5, h6, h2 {
   min-height: 400px;
 }
 
+.min-h-\[40px\] {
+  min-height: 40px;
+}
+
 .min-h-\[420px\] {
   min-height: 420px;
 }
@@ -3417,6 +3421,10 @@ h1, h3, h4, h5, h6, h2 {
   padding-left: 1.5rem;
 }
 
+.pl-7 {
+  padding-left: 1.75rem;
+}
+
 .pl-8 {
   padding-left: 2rem;
 }
@@ -3431,6 +3439,14 @@ h1, h3, h4, h5, h6, h2 {
 
 .pr-2\.5 {
   padding-right: .625rem;
+}
+
+.pr-3 {
+  padding-right: .75rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .pr-8 {
@@ -3524,6 +3540,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .text-\[11px\] {
   font-size: 11px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
 }
 
 .text-\[15px\] {
