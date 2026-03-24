@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Siren, HardHat, Container, LineChart } from "lucide-react";
+import { Siren, HardHat, Container, LineChart, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -139,6 +139,12 @@ export default function CommercialWasteServices() {
                          <p className="text-white/75 text-sm leading-relaxed">
                            {item.desc}
                          </p>
+                         <span
+                           className="inline-flex items-center gap-2 mt-4 text-sm font-bold text-[#c5d520] opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                           aria-hidden="true"
+                         >
+                           Learn More <ArrowRight className="w-4 h-4" />
+                         </span>
                        </div>
                      </Link>
                    );
