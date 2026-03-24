@@ -1,135 +1,53 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
   Phone, 
-  Shield,
   Zap,
+  Shield,
   Clock,
-  Users
+  Users,
+  ArrowRight,
+  CheckCircle2,
+  MapPin,
+  Truck,
+  Mail
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import FaqSection from "@/components/shared/FaqSection";
 import LogoReelSection from "@/components/shared/LogoReelSection";
-import TestimonialsSection from "@/components/shared/TestimonialsSection";
-import ProcessSection from "@/components/shared/ProcessSection";
-import ReasonsSection from "@/components/shared/ReasonsSection";
 
 const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
-
-const vendorTestimonials = [
-  {
-    quote: "Partnering with Tenth Rock gave our business a steady stream of contracts across multiple states. The onboarding was seamless.",
-    author: "James Hartley",
-    role: "Owner",
-    company: "Hartley Waste Services",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
-  },
-  {
-    quote: "Their dispatch system is top-notch. We get job alerts instantly and the payment process is reliable and transparent.",
-    author: "Maria Gonzalez",
-    role: "Operations Manager",
-    company: "Southwest Hauling Co.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
-  },
-  {
-    quote: "Joining the Tenth Rock network was the best business decision we made. Volume is up 40% and growing every quarter.",
-    author: "Robert Chen",
-    role: "VP of Business Development",
-    company: "Pacific Disposal Group",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
-  },
-  {
-    quote: "The support team is incredible. Any issue we've had was resolved within the hour. True partners in every sense.",
-    author: "Lisa Thompson",
-    role: "Fleet Manager",
-    company: "Greenway Environmental",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200"
-  },
-  {
-    quote: "We've expanded into three new states since joining. Tenth Rock handles the client relationships so we can focus on operations.",
-    author: "David Park",
-    role: "CEO",
-    company: "Atlas Waste Solutions",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
-  }
-];
-
-const vendorFaqs = [
-  {
-    question: "What are the requirements to join the network?",
-    answer: "We look for licensed, insured waste hauling companies with reliable equipment and a track record of professional service. You'll need valid business insurance, proper licensing for your service area, and the capacity to handle commercial-scale jobs."
-  },
-  {
-    question: "How quickly can I start receiving jobs?",
-    answer: "Once your application is approved and onboarding is complete, you can start receiving job alerts within 48 hours. The onboarding process typically takes 3-5 business days depending on documentation review."
-  },
-  {
-    question: "How does payment work?",
-    answer: "We offer transparent, reliable payment terms. Invoices are processed bi-weekly with direct deposit. You'll have full visibility into all completed jobs and payments through our vendor portal."
-  },
-  {
-    question: "Can I choose which jobs to accept?",
-    answer: "Yes. You receive job alerts based on your service area, equipment capabilities, and availability preferences. You have full control over which jobs you accept or decline."
-  },
-  {
-    question: "Is there a fee to join the network?",
-    answer: "There is no upfront fee to join our vendor network. We operate on a partnership model where we handle client acquisition, billing, and account management while you focus on service delivery."
-  }
-];
-
-const vendorProcessSteps = [
-  {
-    num: "01",
-    title: "Get In Touch",
-    desc: "Fill out the form or call us directly. Our vendor relations team will review your application and reach out within 24 hours."
-  },
-  {
-    num: "02",
-    title: "We Dispatch Your Team",
-    desc: "Once onboarded, you'll receive real-time job alerts matched to your service area, equipment, and availability."
-  },
-  {
-    num: "03",
-    title: "We Execute The Job",
-    desc: "Complete the job to our quality standards. Our team provides support every step of the way."
-  },
-  {
-    num: "04",
-    title: "Get Paid Reliably",
-    desc: "Transparent invoicing and reliable bi-weekly payments deposited directly to your account."
-  },
-  {
-    num: "05",
-    title: "Grow Your Business",
-    desc: "As you build a track record, receive more jobs and expand into new service areas across the country."
-  }
-];
-
-const vendorFeatures = [
+const networkBenefits = [
   {
     icon: <Zap className="w-6 h-6" />,
-    title: "Instant Job Alerts",
-    desc: "Receive real-time notifications for jobs in your service area. Never miss an opportunity with our smart dispatch system."
+    title: "Steady Job Volume",
+    desc: "We bring the clients. You bring the trucks. Our national client base means consistent work flowing to your crew."
   },
   {
     icon: <Shield className="w-6 h-6" />,
     title: "Reliable Payments",
-    desc: "Transparent billing and bi-weekly direct deposits. No chasing invoices or dealing with payment delays."
+    desc: "Transparent billing and bi-weekly direct deposits. No chasing invoices or wondering when you will get paid."
   },
   {
     icon: <Clock className="w-6 h-6" />,
     title: "Flexible Scheduling",
-    desc: "You control your availability. Accept jobs that fit your capacity and turn down the rest, no penalties."
+    desc: "Accept jobs that fit your capacity. Decline the rest. No penalties, no minimum commitments."
   },
   {
     icon: <Users className="w-6 h-6" />,
     title: "Dedicated Support",
-    desc: "Your vendor relations manager is one call away. We handle client relationships so you can focus on operations."
+    desc: "Your vendor relations manager handles client communication so you can focus on getting the job done."
   }
+];
+
+const networkStats = [
+  { value: "48", label: "States Covered" },
+  { value: "5K+", label: "Locations Managed" },
+  { value: "24/7", label: "Dispatch Center" },
 ];
 
 export default function JoinOurNetworkPage() {
@@ -138,24 +56,9 @@ export default function JoinOurNetworkPage() {
       <Navbar variant="floating" />
       <HeroSection />
       <LogoReelSection headline="Trusted by leading national brands we serve" testIdPrefix="join-logos" />
-      <FormSection />
-      <ReasonsSection 
-        tagline="Vendor Benefits"
-        heading="More Reasons You'll Love Us"
-        subtitle="We've built the tools and support system to help your waste hauling business grow faster and operate smoother."
-        buttonText="Apply Today"
-        features={vendorFeatures}
-        testIdPrefix="join-reasons"
-      />
-      <ProcessSection 
-        tagline="Vendor Process"
-        heading="How It Works"
-        subtitle="A straightforward path from application to your first job. We make onboarding simple."
-        steps={vendorProcessSteps}
-        testIdPrefix="join-process"
-      />
-      <TestimonialsSection testimonials={vendorTestimonials} tagline="Vendor Stories" testIdPrefix="join-testimonials" />
-      <FaqSection faqs={vendorFaqs} />
+      <WhyJoinSection />
+      <NetworkStatsSection />
+      <EmailCaptureSection />
       <Footer />
     </main>
   );
@@ -181,23 +84,25 @@ function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
-              JOIN OUR NETWORK
+              Join the Tenth Rock Vendor Network
             </h1>
-            <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
-              Partner with the fastest-growing commercial waste network in America. Grow your business with steady contracts, reliable payments, and dedicated support.
+            <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-lg leading-relaxed">
+              We partner with waste haulers, roll-off operators, and junk removal crews across 48 states. If you have the trucks and the drive, we have the work.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
                 size="lg"
-                className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
                 data-testid="button-join-hero-cta"
+                onClick={() => document.getElementById("email-capture")?.scrollIntoView({ behavior: "smooth" })}
               >
-                Apply to Join
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
+                className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
                 data-testid="button-join-hero-phone"
               >
                 <Phone className="w-4 h-4 mr-2" />
@@ -211,32 +116,203 @@ function HeroSection() {
   );
 }
 
-
-function FormSection() {
+function WhyJoinSection() {
   return (
-    <section className="py-16 md:py-24 bg-white" data-testid="section-join-form">
+    <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-join-benefits">
+      <div className="container mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mb-12 md:mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+            Vendor Benefits
+          </div>
+          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
+            Why Haulers Partner With Us
+          </h2>
+          <p className="text-lg text-[#042940]/70">
+            We handle client relationships, billing, and job coordination. You focus on running your trucks and growing your operation.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {networkBenefits.map((benefit, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-transparent hover:border-[#c5d520]/20 active:border-[#c5d520]/20 hover:shadow-xl active:shadow-xl transition-all duration-300"
+              data-testid={`card-join-benefit-${i}`}
+            >
+              <div className="w-14 h-14 rounded-[5px] bg-[#F9F9F6] group-hover:bg-[#c5d520] group-hover:text-[#042940] transition-colors duration-300 flex items-center justify-center text-[#042940] mb-6">
+                {benefit.icon}
+              </div>
+              <h3 className="text-xl font-bold text-[#042940] mb-3">{benefit.title}</h3>
+              <p className="text-[#042940]/70 leading-relaxed">{benefit.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NetworkStatsSection() {
+  return (
+    <section className="py-16 md:py-20 bg-[#042940]" data-testid="section-join-stats">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight tracking-tighter mb-6">
+              A Growing Network Built on Performance
+            </h2>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#c5d520] mt-0.5 flex-shrink-0" />
+                <p className="text-white/80">Vetted vendor partners across 48 states providing local service with national accountability.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#c5d520] mt-0.5 flex-shrink-0" />
+                <p className="text-white/80">Commercial waste, roll-off hauling, junk removal, and specialty disposal jobs dispatched daily.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-[#c5d520] mt-0.5 flex-shrink-0" />
+                <p className="text-white/80">Expanding into new markets every month. Early partners in underserved areas get first priority on incoming work.</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid grid-cols-3 gap-4"
+          >
+            {networkStats.map((stat, i) => (
+              <div key={i} className="text-center p-6 rounded-[5px] bg-white/5 border border-white/10" data-testid={`stat-join-${i}`}>
+                <div className="text-4xl md:text-5xl font-extrabold text-[#c5d520] mb-2">{stat.value}</div>
+                <div className="text-sm text-white/60 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EmailCaptureSection() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    if (!email || !email.includes("@") || !email.includes(".")) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/vendor-interest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || "Something went wrong. Please try again.");
+    }
+  };
+
+  return (
+    <section id="email-capture" className="py-16 md:py-24 bg-white" data-testid="section-join-email">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-2xl mx-auto text-center"
         >
-          <div className="rounded-[5px] overflow-hidden shadow-xl border border-[#042940]/5" data-testid="join-form-iframe-container">
-            <iframe
-              src="https://vendor-onboarding-hub.lovable.app"
-              title="Vendor Onboarding Form"
-              className="w-full border-0"
-              style={{ minHeight: "1200px" }}
-              allow="clipboard-write"
-              data-testid="iframe-vendor-onboarding"
-            />
-          </div>
+          {submitted ? (
+            <div className="py-12" data-testid="join-email-success">
+              <div className="w-16 h-16 rounded-full bg-[#c5d520]/20 flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="w-8 h-8 text-[#c5d520]" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
+                Check Your Inbox
+              </h2>
+              <p className="text-lg text-[#042940]/70 max-w-md mx-auto">
+                We sent the vendor onboarding link to <strong className="text-[#042940]">{email}</strong>. Follow the link to complete your application and start receiving jobs.
+              </p>
+            </div>
+          ) : (
+            <>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9F9F6] border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+                Get Started
+              </div>
+              <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
+                Ready to Join?
+              </h2>
+              <p className="text-lg text-[#042940]/70 mb-8 max-w-lg mx-auto">
+                Enter your email below and we will send you the vendor onboarding form. It takes about 10 minutes to complete.
+              </p>
+              <form onSubmit={handleSubmit} className="max-w-md mx-auto" data-testid="form-join-email">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="relative flex-1">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#042940]/40 pointer-events-none" />
+                    <input
+                      type="email"
+                      placeholder="Your business email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full pl-12 pr-4 py-4 rounded-full border border-[#042940]/20 text-[#042940] placeholder:text-[#042940]/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-base"
+                      required
+                      data-testid="input-join-email"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full px-8"
+                    data-testid="button-join-submit"
+                  >
+                    Send Me the Form
+                  </Button>
+                </div>
+                {error && (
+                  <p className="text-red-600 text-sm mt-3" data-testid="text-join-email-error">{error}</p>
+                )}
+                <p className="text-sm text-[#042940]/50 mt-4">
+                  No spam. We will only send you the onboarding link.
+                </p>
+              </form>
+            </>
+          )}
         </motion.div>
       </div>
     </section>
   );
 }
-
-
