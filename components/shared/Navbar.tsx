@@ -171,15 +171,13 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       <div className="grid grid-cols-4 gap-8">
                         {serviceCategories.map((category) => (
                           <div key={category.label} className="space-y-1">
-                            <Link
-                              href={category.href}
-                              data-testid={`link-nav-services-${category.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                              className="group flex items-center gap-3 rounded-[5px] px-3 py-3 text-sm font-bold text-white hover:text-[#c5d520] hover:bg-white/5 active:bg-white/5 transition-colors min-h-[44px]"
-                              onClick={() => setIsServicesOpen(false)}
+                            <div
+                              className="flex items-center gap-3 px-3 py-3 text-sm font-bold text-white min-h-[44px]"
+                              data-testid={`label-nav-services-${category.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                             >
                               <ChevronRight className="w-3.5 h-3.5 text-[#c5d520] flex-shrink-0" />
                               <span>{category.label}</span>
-                            </Link>
+                            </div>
                             {category.subServices.map((sub) => (
                               <Link
                                 key={sub.label}
@@ -480,14 +478,12 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         <div className="pl-4 pb-3 space-y-1">
                           {serviceCategories.map((category) => (
                             <div key={category.label}>
-                              <Link
-                                href={category.href}
-                                className="font-bold text-primary text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
-                                onClick={() => { setIsNavExpanded(false); setIsServicesOpen(false); }}
-                                data-testid={`link-mobile-services-${category.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                              <div
+                                className="font-bold text-primary text-[15px] py-3 px-4 min-h-[48px] flex items-center"
+                                data-testid={`label-mobile-services-${category.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                               >
                                 {category.label}
-                              </Link>
+                              </div>
                               {category.subServices.map((sub) => (
                                 <Link
                                   key={sub.label}
