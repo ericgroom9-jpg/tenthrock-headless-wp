@@ -12,7 +12,7 @@ export default function MultipleSizesPage() {
         "40 yard roll-off for large-scale construction debris and demolition",
         "Right-sized containers matched to your specific project scope",
       ]}
-      aboutDescription="Picking the wrong container size costs you money. Too small and you need a second haul. Too large and you are paying for air. Tenth Rock matches the right roll-off container to your job, from 20 yard dumpster rental for smaller cleanouts to 30 yard roll-off containers for mid-range projects and 40 yard roll-off for large-scale construction debris. All containers are commercial-grade open-top dumpsters built for heavy loads."
+      aboutDescription="Tenth Rock differentiates from permanent front-load services by offering flexible, large-scale hauling solutions. We manage the logistics of selecting and scheduling container sizes to optimize site space and project budgets."
     />
   );
 }
