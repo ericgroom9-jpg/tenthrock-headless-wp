@@ -12,7 +12,7 @@ export default function NaturalDisasterMobilizationPage() {
         "Emergency open-top dumpsters deployed across affected regions",
         "Multi-site recovery support and post-storm waste management",
       ]}
-      aboutDescription="When storms hit, local providers sell out fast. Tenth Rock activates its nationwide network to source emergency dumpster rental and emergency roll-off rental from out-of-state markets when local inventory is unavailable. We coordinate rapid response debris removal, emergency open-top dumpsters, and hauling logistics across affected regions so your locations can recover without waiting for containers that aren't coming."
+      aboutDescription="Tenth Rock serves as the central command for insurance-driven recovery and corporate business continuity. We deploy temporary containers and hauling crews to storm-prone corridors, ensuring seamless coordination between recovery teams and regional facilities managers."
     />
   );
 }
