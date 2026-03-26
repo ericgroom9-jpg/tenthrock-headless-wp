@@ -61,8 +61,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function SiteClosuresRemodelsPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Site Closures & Remodels",
-        serviceDescription: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
-        heroImage: "/images/stock/service-commercial.jpg"
+        serviceDescription: "Site decommissioning, post-construction cleanout, store closings, and retail remodel waste management. We handle portfolio-wide site turnover, commercial cleanout, commercial closeout, retail portfolio decommissioning, and D&D (Deactivation and Demolition) with vendor sourcing, scheduling, and close-out reporting.",
+        heroImage: "/images/stock/service-commercial.jpg",
+        aboutBullets: [
+            "Store closings and site decommissioning managed end-to-end",
+            "Post-construction cleanout and retail remodel waste management",
+            "Portfolio-wide site turnover with D&D coordination",
+            "Commercial closeout with vendor sourcing and close-out reporting"
+        ],
+        aboutDescription: "Closing a store, decommissioning a facility, or completing a remodel generates waste that falls between vendors. Tenth Rock coordinates labor crews, hauling, dumpster deployment, and minor demolition to deliver broom-clean locations ready for turnover. We manage portfolio-wide site closures and retail remodel waste across multiple states with one point of contact and one invoice."
     }, void 0, false, {
         fileName: "[project]/app/services/site-closures-remodels/page.tsx",
         lineNumber: 5,
@@ -70,8 +77,8 @@ function SiteClosuresRemodelsPage() {
     }, this);
 }
 const metadata = {
-    title: "Site Closures & Remodels | Tenth Rock",
-    description: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps."
+    title: "Site Closures & Remodels | Site Decommissioning & Store Closings | Tenth Rock",
+    description: "Site decommissioning, post-construction cleanout, store closings, and retail remodel waste management. Portfolio-wide site turnover, commercial closeout, and D&D across 48 states."
 };
 }),
 "[project]/app/services/site-closures-remodels/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {

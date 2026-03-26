@@ -12,7 +12,7 @@ export default function EmergencyProductRemovalPage() {
         "Damaged and unsellable inventory disposed with compliance documentation",
         "After-hours and weekend perishable bulk pickup available",
       ]}
-      aboutDescription="Refrigeration failure creates immediate health and pest risks. Tenth Rock provides rapid removal, insurance-ready documentation, and a single invoice for the entire job."
+      aboutDescription="Refrigeration failure creates immediate health and pest risks that require documented, compliant disposal. Tenth Rock provides specialized logistics to stabilize your site and secure insurance-ready reporting for the entire loss."
     />
   );
 }
