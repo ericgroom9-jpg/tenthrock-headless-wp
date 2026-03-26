@@ -4,7 +4,7 @@ export default function MultipleSizesPage() {
   return (
     <ServiceTemplate
       serviceName="Multiple Sizes"
-      serviceDescription="Commercial-grade open-top dumpsters in 20 yard, 30 yard, and 40 yard roll-off sizes, matched to your project scope. From a 20 yard rolloff for tight-space cleanouts to a 30 yard open-top for mid-range projects and a 40 yard roll-off for large-scale construction debris, we deliver the right container for the job."
+      serviceDescription="Access a full range of commercial-grade open-top roll-off containers tailored to your specific project scope. Specialized teams ensure the right equipment is deployed for temporary construction, cleanouts, and high-volume debris."
       heroImage="/images/stock/service-dumpster.jpg"
       aboutBullets={[
         "20 yard dumpster rental for tight-space cleanouts and small projects",
