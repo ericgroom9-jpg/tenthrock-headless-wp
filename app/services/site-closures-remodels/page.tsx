@@ -12,7 +12,7 @@ export default function SiteClosuresRemodelsPage() {
         "Portfolio-wide site turnover with D&D coordination",
         "Commercial closeout with vendor sourcing and close-out reporting",
       ]}
-      aboutDescription="Closing a store, decommissioning a facility, or completing a remodel generates waste that falls between vendors. Tenth Rock coordinates labor crews, hauling, dumpster deployment, and minor demolition to deliver broom-clean locations ready for turnover. We manage portfolio-wide site closures and retail remodel waste across multiple states with one point of contact and one invoice."
+      aboutDescription="Streamline waste coordination for store decommissions, multi-site transitions, and large-scale remodel projects. Specialized teams manage the entire removal process to ensure on-time project completion and accurate close-out reporting."
     />
   );
 }
