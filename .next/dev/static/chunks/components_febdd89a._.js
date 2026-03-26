@@ -2460,7 +2460,7 @@ const services = [
         items: [
             {
                 label: "Emergency Product & Perishable Removal",
-                desc: "Rapid removal of spoiled or damaged inventory from cold storage or refrigeration failures. We ensure compliant, documented disposal with 24/7 speed.",
+                desc: "Perishable bulk pickup and spoiled product disposal after cold storage failure or refrigeration failure events. After-hours waste removal available 24/7.",
                 img: "/images/stock/service-emergency-overflow.jpg",
                 href: "/services/emergency-product-removal"
             },

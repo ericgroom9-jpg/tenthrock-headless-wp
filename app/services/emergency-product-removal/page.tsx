@@ -4,7 +4,7 @@ export default function EmergencyProductRemovalPage() {
   return (
     <ServiceTemplate
       serviceName="Emergency Product & Perishable Removal"
-      serviceDescription="Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. We handle damaged inventory disposal, unsellable product disposal, and after-hours waste removal with speed, compliance, and full documentation."
+      serviceDescription="Refrigeration failure creates health risks and pests fast. Tenth Rock mobilizes crews to remove spoiled inventory immediately with full documentation for insurance and compliance."
       heroImage="/images/stock/service-emergency-overflow.jpg"
       aboutBullets={[
         "Rapid removal of temperature-compromised and spoiled product",
