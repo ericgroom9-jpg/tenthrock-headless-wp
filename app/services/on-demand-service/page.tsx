@@ -4,7 +4,7 @@ export default function OnDemandServicePage() {
   return (
     <ServiceTemplate
       serviceName="On-Demand Service"
-      serviceDescription="Same-day dumpster rental and emergency dumpster rental for commercial projects, cleanouts, and overflow. Roll-off dumpsters and open-top dumpsters deployed fast with same-day swaps, emergency roll-off service, and temporary dumpster options. No long-term commitments required."
+      serviceDescription="Deploy short-term roll-off and open-top containers for commercial projects, cleanouts, and overflow needs. Specialized teams coordinate emergency and planned rentals to keep your site clear and operational."
       heroImage="/images/stock/service-dumpster-rental.jpg"
       aboutBullets={[
         "Same-day dumpster rental with no long-term contracts",
