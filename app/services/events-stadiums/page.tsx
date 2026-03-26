@@ -12,7 +12,7 @@ export default function EventsStadiumsPage() {
         "Maintain site safety and aesthetic standards for attendees and stakeholders.",
         "Access 24/7 support to manage waste overflows during peak event hours.",
       ]}
-      aboutDescription="High-traffic events generate unpredictable waste volumes on tight timelines. Tenth Rock provides event waste logistics and stadium waste coordination that scales with your crowd size. We handle pre-event container staging, real-time waste removal during live events, and post-event cleanup. Multi-day event waste support includes contingency planning for weather delays, extended run times, and surge capacity."
+      aboutDescription="Tenth Rock handles the behind-the-scenes waste infrastructure for multi-day events and large-scale fairgrounds. We provide real-time coordination and vendor management to prevent overflows and ensure seamless site restoration after the crowd leaves."
     />
   );
 }
