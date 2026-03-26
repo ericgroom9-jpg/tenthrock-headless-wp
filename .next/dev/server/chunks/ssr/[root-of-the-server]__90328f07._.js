@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function EmergencyProductRemovalPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Emergency Product & Perishable Removal",
-        serviceDescription: "Refrigeration failure creates health risks and pests fast. Tenth Rock mobilizes crews to remove spoiled inventory immediately with full documentation for insurance and compliance.",
+        serviceDescription: "Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. We handle damaged inventory disposal, unsellable product disposal, and after-hours waste removal with speed, compliance, and full documentation.",
         heroImage: "/images/stock/service-emergency-overflow.jpg",
         aboutBullets: [
             "Rapid removal of temperature-compromised and spoiled product",
