@@ -61,15 +61,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function UnplannedCleanutsPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Unplanned Cleanouts & Debris Removal",
-        serviceDescription: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, emergency site cleanout situations, code violation cleanup support, and large-scale waste clearing. Bulk pickup for unexpected cleanouts with fast mobilization and minimal disruption to your operations.",
+        serviceDescription: "Rapidly clear commercial sites and bulk debris from foreclosures or code violations. Deploy specialized crews for unexpected cleanouts with minimal operational disruption.",
         heroImage: "/images/stock/clean-city.jpg",
         aboutBullets: [
-            "Commercial site cleanout for tenant abandonment and sudden closures",
-            "Foreclosure cleanouts and code violation cleanup support",
-            "Bulk debris removal including fixtures, shelving, and mixed waste",
-            "Large-scale waste clearing with fast mobilization"
+            "Deploy professional crews for immediate removal of bulk debris and abandoned fixtures.",
+            "Resolve illegal dumping and tenant transitions with minimal operational disruption.",
+            "Secure fast site recovery to avoid municipal fines and safety hazards.",
+            "Utilize a single point of contact for nationwide on-demand service."
         ],
-        aboutDescription: "Unexpected cleanouts happen without warning. A tenant abandons a space, a store closes suddenly, or code enforcement flags an overloaded site. Tenth Rock deploys crews for commercial site cleanout and bulk debris removal on short notice. We handle foreclosure cleanouts, emergency site cleanout situations, and code violation cleanup support. Fixtures, shelving, signage, and mixed commercial waste are cleared fast so your property is ready for turnover."
+        aboutDescription: "Tenth Rock deploys crews on short notice to clear abandoned spaces or code violations. Rapidly remove fixtures and debris to ensure fast property turnover."
     }, void 0, false, {
         fileName: "[project]/app/services/unplanned-cleanouts/page.tsx",
         lineNumber: 5,

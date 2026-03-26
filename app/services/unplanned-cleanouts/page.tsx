@@ -12,7 +12,7 @@ export default function UnplannedCleanutsPage() {
         "Secure fast site recovery to avoid municipal fines and safety hazards.",
         "Utilize a single point of contact for nationwide on-demand service.",
       ]}
-      aboutDescription="Unexpected cleanouts happen without warning. A tenant abandons a space, a store closes suddenly, or code enforcement flags an overloaded site. Tenth Rock deploys crews for commercial site cleanout and bulk debris removal on short notice. We handle foreclosure cleanouts, emergency site cleanout situations, and code violation cleanup support. Fixtures, shelving, signage, and mixed commercial waste are cleared fast so your property is ready for turnover."
+      aboutDescription="Tenth Rock deploys crews on short notice to clear abandoned spaces or code violations. Rapidly remove fixtures and debris to ensure fast property turnover."
     />
   );
 }
