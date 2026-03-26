@@ -12,7 +12,7 @@ export default function EmergencyProductRemovalPage() {
         "Damaged and unsellable inventory disposed with compliance documentation",
         "After-hours and weekend perishable bulk pickup available",
       ]}
-      aboutDescription="When refrigeration fails or product is compromised, every hour increases health code risk, odor issues, and pest exposure. Tenth Rock mobilizes perishable bulk pickup crews to remove spoiled product, damaged inventory, and unsellable goods fast. We coordinate disposal logistics, provide full documentation for insurance and compliance, and deliver a single invoice for the entire job."
+      aboutDescription="Refrigeration failure creates immediate health and pest risks. Tenth Rock provides rapid removal, insurance-ready documentation, and a single invoice for the entire job."
     />
   );
 }
