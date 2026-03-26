@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function NaturalDisasterMobilizationPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Natural Disaster Mobilization",
-        serviceDescription: "Rapid response debris removal for hurricanes, floods, and storms. We deploy emergency dumpster rental, emergency roll-off rental, and emergency open-top dumpsters across affected regions for multi-site recovery support and post-storm waste management. Storm debris removal and hurricane debris cleanup coordinated at scale.",
+        serviceDescription: "Rapidly mobilize multi-site waste recovery following hurricanes, floods, and severe storms. Specialized teams coordinate debris removal and damaged product disposal to restore safety and operations across affected regions.",
         heroImage: "/images/stock/industry-natural-disasters-storm.jpg",
         aboutBullets: [
             "Storm debris removal and hurricane debris cleanup",
@@ -69,7 +69,7 @@ function NaturalDisasterMobilizationPage() {
             "Emergency open-top dumpsters deployed across affected regions",
             "Multi-site recovery support and post-storm waste management"
         ],
-        aboutDescription: "When storms hit, local providers sell out fast. Tenth Rock activates its nationwide network to source emergency dumpster rental and emergency roll-off rental from out-of-state markets when local inventory is unavailable. We coordinate rapid response debris removal, emergency open-top dumpsters, and hauling logistics across affected regions so your locations can recover without waiting for containers that aren't coming."
+        aboutDescription: "Tenth Rock serves as the central command for insurance-driven recovery and corporate business continuity. We deploy temporary containers and hauling crews to storm-prone corridors, ensuring seamless coordination between recovery teams and regional facilities managers."
     }, void 0, false, {
         fileName: "[project]/app/services/natural-disaster-mobilization/page.tsx",
         lineNumber: 5,
