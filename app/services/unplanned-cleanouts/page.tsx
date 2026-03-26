@@ -4,7 +4,7 @@ export default function UnplannedCleanutsPage() {
   return (
     <ServiceTemplate
       serviceName="Unplanned Cleanouts & Debris Removal"
-      serviceDescription="Commercial site cleanout and bulk debris removal for foreclosure cleanouts, emergency site cleanout situations, code violation cleanup support, and large-scale waste clearing. Bulk pickup for unexpected cleanouts with fast mobilization and minimal disruption to your operations."
+      serviceDescription="Rapidly clear commercial sites and bulk debris from foreclosures or code violations. Deploy specialized crews for unexpected cleanouts with minimal operational disruption."
       heroImage="/images/stock/clean-city.jpg"
       aboutBullets={[
         "Commercial site cleanout for tenant abandonment and sudden closures",

@@ -1,4 +1,5 @@
 {
   "/page": "app/page.js",
-  "/services/site-stabilization/page": "app/services/site-stabilization/page.js"
+  "/services/site-stabilization/page": "app/services/site-stabilization/page.js",
+  "/services/unplanned-cleanouts/page": "app/services/unplanned-cleanouts/page.js"
 }

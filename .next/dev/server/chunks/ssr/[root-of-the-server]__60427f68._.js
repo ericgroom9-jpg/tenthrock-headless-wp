@@ -64,10 +64,10 @@ function SiteStabilizationPage() {
         serviceDescription: "We provide rapid compactor failure response and bulk waste removal to stabilize operations fast. Our crews deploy temporary capacity to eliminate overflows and prevent further disruption.",
         heroImage: "/images/stock/service-emergency-overflow.jpg",
         aboutBullets: [
-            "Broken compactor and compactor failure response",
-            "Overflowing dumpster and waste overflow stabilization",
-            "Temporary containers deployed for missed pickups and service gaps",
-            "Illegal dumping cleanup and urgent bulk waste removal"
+            "Deploy temporary dumpsters and crews for peak season or vendor gaps.",
+            "Access immediate hauling for compactors and unexpected overflows.",
+            "Secure fast site stabilization to avoid city fines and safety hazards.",
+            "Utilize a single point of contact for nationwide on-demand service."
         ],
         aboutDescription: "We provide rapid compactor response and bulk removal to stabilize your site. Our crews deploy temporary capacity to eliminate overflows and restore your operations immediately."
     }, void 0, false, {
