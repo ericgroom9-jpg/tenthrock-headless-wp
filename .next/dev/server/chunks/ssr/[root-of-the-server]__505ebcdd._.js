@@ -2901,7 +2901,7 @@ const defaultStats = [
 const defaultParagraphSection1 = {
     badge: "Why It Matters",
     heading: "Built for the Demands of Modern Business",
-    body: "Today's commercial environments generate waste at an unprecedented pace. Whether you manage a single storefront or hundreds of locations, having a reliable waste partner is no longer optional. It's a competitive advantage. At Tenth Rock, we combine local vendor expertise with enterprise-scale coordination so your operations never miss a beat. Our approach eliminates the fragmented vendor relationships that drain your team's time and budget, replacing them with a single, accountable point of contact.",
+    body: "Managing waste across hundreds of locations is a competitive advantage, not a chore. Tenth Rock replaces fragmented vendors with a single, accountable partner to save your team time and budget.",
     image: imgServiceDumpsterRental,
     imageAlt: "Commercial waste management operations",
     bulletPoints: [

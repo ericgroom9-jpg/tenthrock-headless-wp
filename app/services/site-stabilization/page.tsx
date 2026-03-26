@@ -4,7 +4,7 @@ export default function SiteStabilizationPage() {
   return (
     <ServiceTemplate
       serviceName="Temporary Capacity & Site Stabilization"
-      serviceDescription="Compactor failure response and urgent bulk waste removal for commercial sites dealing with broken compactors, missed pickups, waste overflow, overflowing dumpsters, and illegal dumping. We deploy temporary capacity to stabilize operations fast and prevent further disruption."
+      serviceDescription="We provide rapid compactor failure response and bulk waste removal to stabilize operations fast. Our crews deploy temporary capacity to eliminate overflows and prevent further disruption."
       heroImage="/images/stock/service-emergency-overflow.jpg"
       aboutBullets={[
         "Broken compactor and compactor failure response",
