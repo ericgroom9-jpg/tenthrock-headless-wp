@@ -12,7 +12,7 @@ export default function UnplannedCleanutsPage() {
         "Secure fast site recovery to avoid municipal fines and safety hazards.",
         "Utilize a single point of contact for nationwide on-demand service.",
       ]}
-      aboutDescription="Tenth Rock deploys crews on short notice to clear abandoned spaces or code violations. Rapidly remove fixtures and debris to ensure fast property turnover."
+      aboutDescription="Tenth Rock clears abandoned spaces and resolves code violations to ensure rapid property turnover and site safety. Specialized crews manage the entire removal process for facilities managers and real estate investors facing sudden tenant departures or illegal dumping."
     />
   );
 }
