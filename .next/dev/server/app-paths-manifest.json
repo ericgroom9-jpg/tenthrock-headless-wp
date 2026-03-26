@@ -3,5 +3,6 @@
   "/page": "app/page.js",
   "/services/commercial-waste/page": "app/services/commercial-waste/page.js",
   "/services/events-stadiums/page": "app/services/events-stadiums/page.js",
+  "/services/natural-disaster-mobilization/page": "app/services/natural-disaster-mobilization/page.js",
   "/services/site-closures-remodels/page": "app/services/site-closures-remodels/page.js"
 }

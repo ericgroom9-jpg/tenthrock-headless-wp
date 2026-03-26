@@ -4,7 +4,7 @@ export default function NaturalDisasterMobilizationPage() {
   return (
     <ServiceTemplate
       serviceName="Natural Disaster Mobilization"
-      serviceDescription="Rapid response debris removal for hurricanes, floods, and storms. We deploy emergency dumpster rental, emergency roll-off rental, and emergency open-top dumpsters across affected regions for multi-site recovery support and post-storm waste management. Storm debris removal and hurricane debris cleanup coordinated at scale."
+      serviceDescription="Rapidly mobilize multi-site waste recovery following hurricanes, floods, and severe storms. Specialized teams coordinate debris removal and damaged product disposal to restore safety and operations across affected regions."
       heroImage="/images/stock/industry-natural-disasters-storm.jpg"
       aboutBullets={[
         "Storm debris removal and hurricane debris cleanup",
