@@ -60,9 +60,16 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 ;
 function SiteStabilizationPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-        serviceName: "Site Stabilization",
-        serviceDescription: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours. Our emergency crews are on call 24/7 to handle any overflow situation.",
-        heroImage: "/images/stock/service-emergency-overflow.jpg"
+        serviceName: "Temporary Capacity & Site Stabilization",
+        serviceDescription: "Compactor failure response and urgent bulk waste removal for commercial sites dealing with broken compactors, missed pickups, waste overflow, overflowing dumpsters, and illegal dumping. We deploy temporary capacity to stabilize operations fast and prevent further disruption.",
+        heroImage: "/images/stock/service-emergency-overflow.jpg",
+        aboutBullets: [
+            "Broken compactor and compactor failure response",
+            "Overflowing dumpster and waste overflow stabilization",
+            "Temporary containers deployed for missed pickups and service gaps",
+            "Illegal dumping cleanup and urgent bulk waste removal"
+        ],
+        aboutDescription: "When your compactor breaks down, your hauler misses a pickup, or waste is overflowing into customer-facing areas, you need temporary capacity deployed fast. Tenth Rock dispatches stabilization crews and temporary containers to your site to stop the problem from getting worse, then coordinates with vendors to restore normal service. We handle broken compactors, overflowing dumpsters, peak-season overflow, and illegal dumping situations."
     }, void 0, false, {
         fileName: "[project]/app/services/site-stabilization/page.tsx",
         lineNumber: 5,
@@ -70,8 +77,8 @@ function SiteStabilizationPage() {
     }, this);
 }
 const metadata = {
-    title: "Site Stabilization | Tenth Rock",
-    description: "Fast deployment teams to stabilize overflowing sites and restore normal operations within hours."
+    title: "Temporary Capacity & Site Stabilization | Compactor Failure Response | Tenth Rock",
+    description: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal for commercial sites. Fast deployment for missed pickups, waste overflow, and broken compactor emergencies across 48 states."
 };
 }),
 "[project]/app/services/site-stabilization/page.tsx [app-rsc] (ecmascript, Next.js Server Component)", ((__turbopack_context__) => {

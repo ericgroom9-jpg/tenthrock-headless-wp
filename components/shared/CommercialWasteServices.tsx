@@ -10,7 +10,7 @@ const services = [
     title: "Emergency Waste Removal",
     desc: "Same-day junk removal and emergency waste management for spoiled product, overflowing dumpsters, and urgent commercial site cleanouts across 48 states.",
     items: [
-      { label: "Emergency Product & Perishable Removal", desc: "Perishable bulk pickup and spoiled product disposal after cold storage failure or refrigeration failure events. After-hours waste removal available 24/7.", img: "/images/stock/service-emergency-overflow.jpg", href: "/services/emergency-product-removal" },
+      { label: "Emergency Product & Perishable Removal", desc: "Rapid removal of spoiled or damaged inventory from cold storage or refrigeration failures. We ensure compliant, documented disposal with 24/7 speed.", img: "/images/stock/service-emergency-overflow.jpg", href: "/services/emergency-product-removal" },
       { label: "Temporary Capacity & Site Stabilization", desc: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal when missed pickups or waste overflow disrupts your operations.", img: "/images/stock/service-emergency.jpg", href: "/services/site-stabilization" },
       { label: "Unplanned Cleanouts & Debris Removal", desc: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, code violation cleanup support, and emergency site cleanout situations.", img: "/images/stock/clean-city.jpg", href: "/services/unplanned-cleanouts" },
     ],
