@@ -4,7 +4,7 @@ export default function SiteClosuresRemodelsPage() {
   return (
     <ServiceTemplate
       serviceName="Site Closures & Remodels"
-      serviceDescription="Site decommissioning, post-construction cleanout, store closings, and retail remodel waste management. We handle portfolio-wide site turnover, commercial cleanout, commercial closeout, retail portfolio decommissioning, and D&D (Deactivation and Demolition) with vendor sourcing, scheduling, and close-out reporting."
+      serviceDescription="Manage end-to-end waste coordination for portfolio-wide transitions, store closings, and post-construction cleanouts. Coordinate all vendor sourcing and D&D logistics to ensure accurate close-out reporting."
       heroImage="/images/stock/service-commercial.jpg"
       aboutBullets={[
         "Source specialized vendors and schedule logistics for complex asset recovery.",
