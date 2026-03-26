@@ -7,10 +7,10 @@ export default function UnplannedCleanutsPage() {
       serviceDescription="Rapidly clear commercial sites and bulk debris from foreclosures or code violations. Deploy specialized crews for unexpected cleanouts with minimal operational disruption."
       heroImage="/images/stock/clean-city.jpg"
       aboutBullets={[
-        "Commercial site cleanout for tenant abandonment and sudden closures",
-        "Foreclosure cleanouts and code violation cleanup support",
-        "Bulk debris removal including fixtures, shelving, and mixed waste",
-        "Large-scale waste clearing with fast mobilization",
+        "Deploy professional crews for immediate removal of bulk debris and abandoned fixtures.",
+        "Resolve illegal dumping and tenant transitions with minimal operational disruption.",
+        "Secure fast site recovery to avoid municipal fines and safety hazards.",
+        "Utilize a single point of contact for nationwide on-demand service.",
       ]}
       aboutDescription="Unexpected cleanouts happen without warning. A tenant abandons a space, a store closes suddenly, or code enforcement flags an overloaded site. Tenth Rock deploys crews for commercial site cleanout and bulk debris removal on short notice. We handle foreclosure cleanouts, emergency site cleanout situations, and code violation cleanup support. Fixtures, shelving, signage, and mixed commercial waste are cleared fast so your property is ready for turnover."
     />
