@@ -12,7 +12,7 @@ export default function OnDemandServicePage() {
         "Same-day swaps when your container fills up",
         "Temporary dumpster deployment for short-term projects",
       ]}
-      aboutDescription="You need a dumpster today, not next week. Tenth Rock provides same-day dumpster rental and emergency roll-off service for commercial projects, cleanouts, and overflow situations. When your container fills up, we arrange same-day swaps so your project keeps moving. No long-term commitments, no minimum terms. Just a temporary dumpster when and where you need it."
+      aboutDescription="Tenth Rock provides rapid container mobilization for general contractors and facilities managers. We manage the entire rental lifecycle from sourcing and scheduling to final haul-off to eliminate project delays."
     />
   );
 }

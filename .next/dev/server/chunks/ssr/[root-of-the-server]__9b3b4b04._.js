@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function OnDemandServicePage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "On-Demand Service",
-        serviceDescription: "Same-day dumpster rental and emergency dumpster rental for commercial projects, cleanouts, and overflow. Roll-off dumpsters and open-top dumpsters deployed fast with same-day swaps, emergency roll-off service, and temporary dumpster options. No long-term commitments required.",
+        serviceDescription: "Deploy short-term roll-off and open-top containers for commercial projects, cleanouts, and overflow needs. Specialized teams coordinate emergency and planned rentals to keep your site clear and operational.",
         heroImage: "/images/stock/service-dumpster-rental.jpg",
         aboutBullets: [
             "Same-day dumpster rental with no long-term contracts",
@@ -69,7 +69,7 @@ function OnDemandServicePage() {
             "Same-day swaps when your container fills up",
             "Temporary dumpster deployment for short-term projects"
         ],
-        aboutDescription: "You need a dumpster today, not next week. Tenth Rock provides same-day dumpster rental and emergency roll-off service for commercial projects, cleanouts, and overflow situations. When your container fills up, we arrange same-day swaps so your project keeps moving. No long-term commitments, no minimum terms. Just a temporary dumpster when and where you need it."
+        aboutDescription: "Tenth Rock provides rapid container mobilization for general contractors and facilities managers. We manage the entire rental lifecycle from sourcing and scheduling to final haul-off to eliminate project delays."
     }, void 0, false, {
         fileName: "[project]/app/services/on-demand-service/page.tsx",
         lineNumber: 5,
