@@ -7,10 +7,10 @@ export default function OnDemandServicePage() {
       serviceDescription="Deploy short-term roll-off and open-top containers for commercial projects, cleanouts, and overflow needs. Specialized teams coordinate emergency and planned rentals to keep your site clear and operational."
       heroImage="/images/stock/service-dumpster-rental.jpg"
       aboutBullets={[
-        "Same-day dumpster rental with no long-term contracts",
-        "Emergency dumpster rental and emergency roll-off service",
-        "Same-day swaps when your container fills up",
-        "Temporary dumpster deployment for short-term projects",
+        "Access high-capacity containers for roofing, remodeling, and construction debris.",
+        "Secure emergency roll-off deployment for unexpected waste overflows and cleanouts.",
+        "Utilize a single point of contact for nationwide temporary waste logistics.",
+        "Receive consolidated invoicing and service documentation for all project sites.",
       ]}
       aboutDescription="Tenth Rock provides rapid container mobilization for general contractors and facilities managers. We manage the entire rental lifecycle from sourcing and scheduling to final haul-off to eliminate project delays."
     />
