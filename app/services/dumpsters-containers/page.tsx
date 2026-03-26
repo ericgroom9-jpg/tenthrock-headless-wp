@@ -4,7 +4,7 @@ export default function DumpstersContainersPage() {
   return (
     <ServiceTemplate
       serviceName="Dumpsters & Temporary Containers"
-      serviceDescription="Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow. We offer 20 yard, 30 yard, and 40 yard roll-off containers with same-day swaps and emergency roll-off service across 48 states."
+      serviceDescription="Deploy short-term roll-off and open-top containers for commercial projects, cleanouts, and overflow needs. Specialized teams coordinate emergency and planned rentals to keep your site clear and operational."
       heroImage="/images/stock/service-dumpster-rental.jpg"
       aboutBullets={[
         "Same-day dumpster rental with same-day swaps available",
