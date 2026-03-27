@@ -206,7 +206,7 @@ export default function CaseStudySection() {
                   {study.title} <br />
                   <span className="text-3xl md:text-4xl">{study.subtitle}</span>
                 </h2>
-                <p className="text-lg text-primary/70 mb-8 md:mb-12 leading-relaxed">
+                <p className="text-base text-primary/70 mb-8 md:mb-12 leading-relaxed">
                   {study.description}
                 </p>
 
