@@ -12,7 +12,7 @@ export default function EventsStadiumsPage() {
         "Maintain site safety and aesthetic standards for attendees and stakeholders.",
         "Access 24/7 support to manage waste overflows during peak event hours.",
       ]}
-      aboutDescription="Tenth Rock handles the behind-the-scenes waste infrastructure for multi-day events and large-scale fairgrounds. We provide real-time coordination and vendor management to prevent overflows and ensure seamless site restoration after the crowd leaves."
+      aboutDescription="Tenth Rock delivers event waste management and multi-day event waste support. We manage the intense logistics of emergency junk removal to ensure seamless operations and attendee safety."
     />
   );
 }
