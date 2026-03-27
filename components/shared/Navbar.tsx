@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/shared/Logo";
@@ -90,6 +90,26 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
 
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearCloseTimer = useCallback(() => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  }, []);
+
+  const delayedClose = useCallback((setter: (v: boolean) => void) => {
+    clearCloseTimer();
+    closeTimerRef.current = setTimeout(() => setter(false), 150);
+  }, [clearCloseTimer]);
+
+  const openDropdown = useCallback((setter: (v: boolean) => void, closers: ((v: boolean) => void)[]) => {
+    clearCloseTimer();
+    setter(true);
+    closers.forEach(c => c(false));
+  }, [clearCloseTimer]);
+
   const isFloating = variant === "floating";
 
   return (
@@ -128,8 +148,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
           <nav className="hidden xl:flex items-center gap-6 flex-1 justify-center">
             <div
               className="relative"
-              onMouseEnter={() => { setIsServicesOpen(true); setIsSectorsOpen(false); setIsLocationsOpen(false); setIsAboutOpen(false); }}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={() => openDropdown(setIsServicesOpen, [setIsSectorsOpen, setIsLocationsOpen, setIsAboutOpen])}
+              onMouseLeave={() => delayedClose(setIsServicesOpen)}
             >
               <div
                 className="inline-flex items-center gap-1 min-h-[44px]"
@@ -161,6 +181,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-services"
+                    onMouseEnter={clearCloseTimer}
+                    onMouseLeave={() => delayedClose(setIsServicesOpen)}
                   >
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="grid grid-cols-4 gap-8">
@@ -196,8 +218,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             {/* Who We Serve Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => { setIsSectorsOpen(true); setIsServicesOpen(false); setIsLocationsOpen(false); setIsAboutOpen(false); }}
-              onMouseLeave={() => setIsSectorsOpen(false)}
+              onMouseEnter={() => openDropdown(setIsSectorsOpen, [setIsServicesOpen, setIsLocationsOpen, setIsAboutOpen])}
+              onMouseLeave={() => delayedClose(setIsSectorsOpen)}
             >
               <div
                 className="inline-flex items-center gap-1 min-h-[44px]"
@@ -229,6 +251,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-sectors"
+                    onMouseEnter={clearCloseTimer}
+                    onMouseLeave={() => delayedClose(setIsSectorsOpen)}
                   >
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
@@ -260,8 +284,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             {/* Locations Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => { setIsLocationsOpen(true); setIsServicesOpen(false); setIsSectorsOpen(false); setIsAboutOpen(false); }}
-              onMouseLeave={() => setIsLocationsOpen(false)}
+              onMouseEnter={() => openDropdown(setIsLocationsOpen, [setIsServicesOpen, setIsSectorsOpen, setIsAboutOpen])}
+              onMouseLeave={() => delayedClose(setIsLocationsOpen)}
             >
               <div
                 className="inline-flex items-center gap-1 min-h-[44px]"
@@ -293,6 +317,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-locations"
+                    onMouseEnter={clearCloseTimer}
+                    onMouseLeave={() => delayedClose(setIsLocationsOpen)}
                   >
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
@@ -341,8 +367,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             {/* About Us Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => { setIsAboutOpen(true); setIsServicesOpen(false); setIsSectorsOpen(false); setIsLocationsOpen(false); }}
-              onMouseLeave={() => setIsAboutOpen(false)}
+              onMouseEnter={() => openDropdown(setIsAboutOpen, [setIsServicesOpen, setIsSectorsOpen, setIsLocationsOpen])}
+              onMouseLeave={() => delayedClose(setIsAboutOpen)}
             >
               <div
                 className="inline-flex items-center gap-1 min-h-[44px]"
@@ -374,6 +400,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-about"
+                    onMouseEnter={clearCloseTimer}
+                    onMouseLeave={() => delayedClose(setIsAboutOpen)}
                   >
                     <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
                       <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
