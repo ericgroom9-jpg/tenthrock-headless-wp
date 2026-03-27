@@ -7,10 +7,10 @@ export default function WasteProgramAssessmentsPage() {
       serviceDescription="Conduct an operational waste audit of existing programs, vendor structures, and cost drivers. Specialized teams deliver cost-control waste optimization plans and risk mitigation strategies to streamline management across your entire footprint."
       heroImage="/images/stock/hero-skyscrapers.jpg"
       aboutBullets={[
-        "Operational waste audit of vendor structures, workflows, and cost drivers",
-        "Portfolio-wide waste strategy with prioritized action items",
-        "Multi-site waste roadmap for phased implementation",
-        "Cost-control optimization plans that produce measurable savings",
+        "Analyze vendor contracts and service frequencies to identify immediate savings.",
+        "Develop customized optimization plans for multi-location retail and hospitality.",
+        "Secure risk mitigation strategies to ensure long-term regulatory compliance.",
+        "Receive detailed portfolio-wide recommendations for procurement and financial teams.",
       ]}
       aboutDescription="Tenth Rock provides a high-level multi-site waste roadmap for private equity firms and corporate facilities leaders. We identify inefficiencies in your current workflows to build a portfolio-wide waste strategy focused on immediate savings and operational excellence."
     />

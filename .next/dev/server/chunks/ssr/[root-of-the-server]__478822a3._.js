@@ -69,7 +69,7 @@ function WasteProgramAssessmentsPage() {
             "Multi-site waste roadmap for phased implementation",
             "Cost-control optimization plans that produce measurable savings"
         ],
-        aboutDescription: "You cannot optimize what you have not measured. Tenth Rock conducts operational waste audits across your portfolio to map vendor structures, service frequencies, cost drivers, and compliance gaps. The output is a multi-site waste roadmap with a prioritized list of cost-control optimization opportunities, recommended vendor changes, and a phased implementation plan designed to produce measurable cost reduction."
+        aboutDescription: "Tenth Rock provides a high-level multi-site waste roadmap for private equity firms and corporate facilities leaders. We identify inefficiencies in your current workflows to build a portfolio-wide waste strategy focused on immediate savings and operational excellence."
     }, void 0, false, {
         fileName: "[project]/app/services/waste-program-assessments/page.tsx",
         lineNumber: 5,
