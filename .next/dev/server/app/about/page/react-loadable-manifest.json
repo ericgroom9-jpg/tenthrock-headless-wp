@@ -1,1 +1,37 @@
-{}
+{
+  "[project]/components/shared/FinalCtaSection.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/shared/FinalCtaSection.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_shared_FinalCtaSection_tsx_f30480e4._.js",
+      "static/chunks/components_shared_FinalCtaSection_tsx_db80e2fb._.js"
+    ]
+  },
+  "[project]/components/shared/LocationSection.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/shared/LocationSection.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_fb05265a._.js",
+      "static/chunks/components_shared_LocationSection_tsx_db80e2fb._.js"
+    ]
+  },
+  "[project]/components/shared/FaqSection.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/shared/FaqSection.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_shared_FaqSection_tsx_6d7f292c._.js",
+      "static/chunks/components_shared_FaqSection_tsx_db80e2fb._.js"
+    ]
+  },
+  "[project]/components/shared/CaseStudySection.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/shared/CaseStudySection.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_shared_CaseStudySection_tsx_b9bb6d4f._.js",
+      "static/chunks/components_shared_CaseStudySection_tsx_db80e2fb._.js"
+    ]
+  },
+  "[project]/components/shared/StatsSection.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/components/shared/StatsSection.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/components_shared_StatsSection_tsx_3c9e5af7._.js",
+      "static/chunks/components_shared_StatsSection_tsx_db80e2fb._.js"
+    ]
+  }
+}

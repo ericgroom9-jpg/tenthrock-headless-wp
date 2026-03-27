@@ -1644,6 +1644,10 @@ h1, h3, h4, h5, h6, h2 {
   height: 280px;
 }
 
+.h-\[2px\] {
+  height: 2px;
+}
+
 .h-\[300px\] {
   height: 300px;
 }
@@ -1846,6 +1850,14 @@ h1, h3, h4, h5, h6, h2 {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-44 {
+  width: 11rem;
+}
+
+.w-48 {
+  width: 12rem;
 }
 
 .w-5 {
@@ -4563,6 +4575,52 @@ h1, h3, h4, h5, h6, h2 {
   }
 }
 
+@keyframes loadingLogoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(.85);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loadingBarFill {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loadingBarShow {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-logo-reveal {
+  animation: .5s ease-out forwards loadingLogoReveal;
+}
+
+.loading-bar-container {
+  opacity: 0;
+  animation: .3s ease-out .4s forwards loadingBarShow;
+}
+
+.loading-bar-fill {
+  width: 0;
+  animation: 1.4s ease-in-out .5s forwards loadingBarFill;
+}
+
 .animate-marquee {
   animation: 60s linear infinite marquee;
 }
@@ -6589,6 +6647,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:min-h-\[70vh\] {
     min-height: 70vh;
+  }
+
+  .md\:w-56 {
+    width: 14rem;
   }
 
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
