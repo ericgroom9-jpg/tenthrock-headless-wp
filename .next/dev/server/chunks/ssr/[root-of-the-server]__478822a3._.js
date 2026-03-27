@@ -64,10 +64,10 @@ function WasteProgramAssessmentsPage() {
         serviceDescription: "Implement a portfolio-wide waste strategy through comprehensive operational waste audits. Specialized teams provide emergency waste management oversight to evaluate vendor structures and cost drivers across your entire portfolio.",
         heroImage: "/images/stock/hero-skyscrapers.jpg",
         aboutBullets: [
-            "Analyze vendor contracts and service frequencies to identify immediate savings.",
-            "Develop customized optimization plans for multi-location retail and hospitality.",
-            "Secure risk mitigation strategies to ensure long-term regulatory compliance.",
-            "Receive detailed portfolio-wide recommendations for procurement and financial teams."
+            "Conduct an operational waste audit to identify hidden expenses.",
+            "Secure a multi-site waste roadmap for long-term scalability.",
+            "Develop a portfolio-wide waste strategy for procurement.",
+            "Implement emergency waste management for risk mitigation."
         ],
         aboutDescription: "Tenth Rock delivers cost-control waste optimization and emergency junk removal planning. We create a multi-site waste roadmap providing actionable recommendations for financial efficiency and reliability."
     }, void 0, false, {
