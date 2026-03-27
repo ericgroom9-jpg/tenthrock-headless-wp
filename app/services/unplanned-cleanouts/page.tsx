@@ -12,7 +12,7 @@ export default function UnplannedCleanutsPage() {
         "Secure fast site recovery to avoid municipal fines and safety hazards.",
         "Utilize a single point of contact for nationwide on-demand service.",
       ]}
-      aboutDescription="Tenth Rock clears abandoned spaces and resolves code violations to ensure rapid property turnover and site safety. Specialized crews manage the entire removal process for facilities managers and real estate investors facing sudden tenant departures or illegal dumping."
+      aboutDescription="Tenth Rock provides emergency waste management and code violation cleanup support. We deliver same-day junk removal for large-scale waste clearing with minimal operational disruption."
     />
   );
 }
