@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,11 +33,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_2fr] gap-12 lg:gap-10 mb-16">
           
           {/* Brand Column */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <FadeIn
             className="space-y-8"
           >
             <Logo variant="white" />
@@ -58,14 +54,10 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
-          </motion.div>
+          </FadeIn>
           
           {/* Services Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <FadeIn
           >
             <p className="font-bold text-lg mb-6 text-white">Services</p>
             <ul className="space-y-1 text-white/60 text-sm">
@@ -77,14 +69,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </FadeIn>
 
           {/* Industries Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <FadeIn
           >
             <p className="font-bold text-lg mb-6 text-white">Industries</p>
             <ul className="space-y-1 text-white/60 text-sm">
@@ -96,14 +84,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </FadeIn>
 
           {/* Company Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+          <FadeIn
           >
             <p className="font-bold text-lg mb-6 text-white">Company</p>
             <ul className="space-y-1 text-white/60 text-sm">
@@ -117,14 +101,10 @@ export default function Footer() {
               <li><Link href="/contact" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-contact">Contact</Link></li>
               <li><Link href="/request-a-service" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-request-service">Request A Service</Link></li>
             </ul>
-          </motion.div>
+          </FadeIn>
 
           {/* Newsletter/Contact Column */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+          <FadeIn
             className="space-y-6"
           >
             <p className="font-bold text-lg text-white">Stay Updated</p>
@@ -147,7 +127,7 @@ export default function Footer() {
                 727.510.5454
               </a>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
         
         <Separator className="bg-white/10 mb-8" />

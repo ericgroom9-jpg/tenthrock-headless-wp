@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,11 +11,7 @@ export default function FinalCtaSection() {
   return (
     <section className="py-16 bg-white" aria-label="Get started with waste management">
        <div className="container mx-auto px-4 md:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <FadeIn
             className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
           >
              {/* Content Side */}
@@ -43,11 +39,7 @@ export default function FinalCtaSection() {
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 
              {/* Floating Stat Card */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.4 }}
+                <FadeIn
                   className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform md:hover:scale-105 transition-transform duration-300"
                 >
                    <div className="flex items-center gap-4">
@@ -58,9 +50,9 @@ export default function FinalCtaSection() {
                          <div className="text-[#c5d520] text-xl font-bold">727.510.5454</div>
                       </div>
                    </div>
-                </motion.div>
+                </FadeIn>
              </div>
-          </motion.div>
+          </FadeIn>
        </div>
     </section>
   );

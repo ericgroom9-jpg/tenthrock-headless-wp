@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 
 interface ProcessStep {
   num: string;
@@ -49,12 +49,8 @@ export default function ProcessSection({
 
         <div className={`grid md:grid-cols-2 ${steps.length === 5 ? "lg:grid-cols-5" : steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-5"} gap-3`}>
           {steps.map((step, i) => (
-            <motion.div 
+            <FadeIn 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
               data-testid={`${testIdPrefix}-step-${i}`}
             >
@@ -67,7 +63,7 @@ export default function ProcessSection({
               <p className="text-[#042940]/70 leading-relaxed text-sm">
                 {step.desc}
               </p>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import FadeIn from "@/components/shared/FadeIn";
 import { Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,10 +33,7 @@ function RequestAServiceSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 items-start">
 
           {/* Left Column - Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
             className="lg:pr-16 xl:pr-24"
           >
             <h1
@@ -88,13 +85,10 @@ function RequestAServiceSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right Column - Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+          <FadeIn
             className="border-t border-[#042940]/10 pt-12 lg:border-t-0 lg:pt-0 lg:pl-16 xl:pl-24 lg:border-l lg:border-[#042940]/10"
           >
             <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
@@ -194,7 +188,7 @@ function RequestAServiceSection() {
                 </div>
               </form>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

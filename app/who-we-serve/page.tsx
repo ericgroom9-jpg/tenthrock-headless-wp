@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -20,16 +19,12 @@ import WhoWeHelpSection from "@/components/shared/WhoWeHelpSection";
 const imgHero = "/images/stock/hero-skyscrapers.jpg";
 
 export default function WhoWeServePage() {
-  const heroRef = useRef(null);
-  const heroInView = useInView(heroRef, { once: true });
-
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
       <section 
-        ref={heroRef}
         className="relative bg-[#042940] overflow-hidden"
       >
         <div 
@@ -39,10 +34,7 @@ export default function WhoWeServePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
         
         <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+          <FadeIn
             className="max-w-2xl"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
@@ -70,7 +62,7 @@ export default function WhoWeServePage() {
                 727.510.5454
               </Button>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { Siren, HardHat, Container, LineChart, ArrowRight } from "lucide-react";
 
 const services = [
@@ -52,11 +52,7 @@ export default function CommercialWasteServices() {
   return (
     <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="mb-10 md:mb-16 max-w-2xl"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -69,7 +65,7 @@ export default function CommercialWasteServices() {
           <p className="text-lg text-[#042940]/70">
             Four core capabilities. One point of contact. Dispatched across 48 states.
           </p>
-        </motion.div>
+        </FadeIn>
         
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
            <div className="lg:col-span-4 flex flex-col space-y-[6px]">
@@ -88,16 +84,12 @@ export default function CommercialWasteServices() {
                  <span className="relative z-10 flex items-center justify-between gap-3">
                    {service.title}
                    {activeService === i && (
-                     <motion.span layoutId="services-active-indicator" className="w-2 h-2 rounded-full bg-[#c5d520] flex-shrink-0" />
+                     <FadeIn as="span" className="w-2 h-2 rounded-full bg-[#c5d520] flex-shrink-0" />
                    )}
                  </span>
                  {activeService === i && (
-                   <motion.div
-                     layoutId="services-active-bg"
+                   <FadeIn
                      className="absolute left-0 top-0 bottom-0 w-1 bg-[#c5d520]"
-                     initial={{ opacity: 0 }}
-                     animate={{ opacity: 1 }}
-                     exit={{ opacity: 0 }}
                    />
                  )}
                </button>
@@ -105,13 +97,9 @@ export default function CommercialWasteServices() {
            </div>
 
            <div className="lg:col-span-8">
-             <AnimatePresence mode="wait">
-               <motion.div
+             
+               <FadeIn
                  key={activeService}
-                 initial={{ opacity: 0, y: 10 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 exit={{ opacity: 0, y: -10 }}
-                 transition={{ duration: 0.35 }}
                  className="grid sm:grid-cols-3 gap-4 h-full"
                >
                  {services[activeService].items.map((item, idx) => {
@@ -149,8 +137,8 @@ export default function CommercialWasteServices() {
                      </Link>
                    );
                  })}
-               </motion.div>
-             </AnimatePresence>
+               </FadeIn>
+             
 
            </div>
         </div>

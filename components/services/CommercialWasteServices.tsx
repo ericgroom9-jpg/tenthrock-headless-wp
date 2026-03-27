@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { 
   ArrowRight, 
   Phone, 
@@ -137,10 +137,7 @@ export default function CommercialWasteServices() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/90 to-[#042940]/60" />
           </div>
           <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="max-w-2xl"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
@@ -168,7 +165,7 @@ export default function CommercialWasteServices() {
                   727.510.5454
                 </Button>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
 
@@ -192,12 +189,8 @@ export default function CommercialWasteServices() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
               {processSteps.map((step, i) => (
-                <motion.div 
+                <FadeIn 
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
@@ -209,7 +202,7 @@ export default function CommercialWasteServices() {
                   <p className="text-[#042940]/70 leading-relaxed text-sm">
                     {step.desc}
                   </p>
-                </motion.div>
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -218,11 +211,7 @@ export default function CommercialWasteServices() {
         {/* Check If We Service Your Area - Matching Homepage Design */}
         <section className="py-16 md:py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-8 relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+            <FadeIn
               className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"
             >
               <div 
@@ -265,7 +254,7 @@ export default function CommercialWasteServices() {
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
 
@@ -274,11 +263,7 @@ export default function CommercialWasteServices() {
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div className="lg:sticky lg:top-32">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                <FadeIn
                 >
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
                     <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
@@ -298,7 +283,7 @@ export default function CommercialWasteServices() {
                       <Phone className="w-5 h-5 text-[#c5d520]" /> 727.510.5454
                     </Button>
                   </div>
-                </motion.div>
+                </FadeIn>
               </div>
 
               <div className="grid gap-8">
@@ -335,11 +320,7 @@ export default function CommercialWasteServices() {
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-4 order-2 lg:order-1">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                <FadeIn
                   className="rounded-[5px] overflow-hidden h-[400px] relative"
                 >
                   <Image 
@@ -350,15 +331,11 @@ export default function CommercialWasteServices() {
                     className="object-cover md:hover:scale-105 transition-transform duration-700" 
                     loading="lazy"
                   />
-                </motion.div>
+                </FadeIn>
                 <div className="grid grid-cols-3 gap-4">
                   {[imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3].map((img, i) => (
-                    <motion.div
+                    <FadeIn
                       key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
                       className="rounded-[5px] overflow-hidden aspect-square relative"
                     >
                       <Image 
@@ -369,16 +346,12 @@ export default function CommercialWasteServices() {
                         className="object-cover md:hover:scale-110 transition-transform duration-500" 
                         loading="lazy"
                       />
-                    </motion.div>
+                    </FadeIn>
                   ))}
                 </div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
                 className="lg:pl-8 order-1 lg:order-2"
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5d520]/10 text-[#042940] font-bold text-xs uppercase tracking-wider mb-4">
@@ -414,7 +387,7 @@ export default function CommercialWasteServices() {
                 >
                   <a href="/request-a-service">Request A Service</a>
                 </Button>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -437,12 +410,8 @@ export default function CommercialWasteServices() {
 
             <div className="grid gap-4">
               {faqs.map((faq, i) => (
-                <motion.div
+                <FadeIn
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  viewport={{ once: true }}
                 >
                   <div 
                     className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
@@ -484,7 +453,7 @@ export default function CommercialWasteServices() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </FadeIn>
               ))}
             </div>
             
@@ -500,11 +469,7 @@ export default function CommercialWasteServices() {
         {/* Location Section */}
         <section className="bg-white py-12 sm:py-16 lg:py-20" aria-labelledby="location-heading">
           <div className="container mx-auto px-4 md:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+            <FadeIn
               className="text-left sm:text-center mb-8 sm:mb-12"
             >
               <h2 id="location-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
@@ -513,14 +478,10 @@ export default function CommercialWasteServices() {
               <p className="text-gray-600 text-base sm:text-lg max-w-2xl sm:mx-auto">
                 Serving businesses nationwide with regional offices for local support.
               </p>
-            </motion.div>
+            </FadeIn>
 
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+              <FadeIn
                 className="space-y-6 lg:space-y-8"
               >
                 <div>
@@ -547,13 +508,9 @@ export default function CommercialWasteServices() {
                   </div>
                   <p className="text-gray-600 ml-9">hello@tenthrock.com</p>
                 </div>
-              </motion.div>
+              </FadeIn>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+              <FadeIn
                 className="lg:col-span-2 relative aspect-video rounded-[5px] overflow-hidden bg-gray-100"
               >
                 <video
@@ -565,7 +522,7 @@ export default function CommercialWasteServices() {
                 >
                   <source src={usMapVideo} type="video/mp4" />
                 </video>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -573,11 +530,7 @@ export default function CommercialWasteServices() {
         {/* Final CTA - Matching Homepage Design */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+            <FadeIn
               className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
             >
               <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
@@ -602,11 +555,7 @@ export default function CommercialWasteServices() {
                 <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent" />
                 
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.4 }}
+                <FadeIn
                   className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform md:hover:scale-105 transition-transform duration-300"
                 >
                   <div className="flex items-center gap-4">
@@ -617,9 +566,9 @@ export default function CommercialWasteServices() {
                       <div className="text-[#c5d520] text-xl font-bold">727.510.5454</div>
                     </div>
                   </div>
-                </motion.div>
+                </FadeIn>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
       </main>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { 
   ArrowRight, 
   Phone, 
@@ -192,10 +192,7 @@ export default function ServiceTemplate({
           </div>
           <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
             <div className="max-w-2xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px] whitespace-pre-line">
                   {serviceName}
@@ -222,7 +219,7 @@ export default function ServiceTemplate({
                     727.510.5454
                   </Button>
                 </div>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -232,11 +229,7 @@ export default function ServiceTemplate({
           <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-10 pb-12 md:pb-16">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               {/* Left - About Service */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
               >
                 {/* About Service - Accordion Item */}
                 <div className="border-b border-[#042940]/10">
@@ -258,13 +251,9 @@ export default function ServiceTemplate({
                       }`} />
                     </div>
                   </button>
-                  <AnimatePresence>
+                  
                     {openAccordion === "about" && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                      <FadeIn
                         className="overflow-hidden"
                       >
                         <div className="pb-8">
@@ -284,9 +273,9 @@ export default function ServiceTemplate({
                             {aboutDescription}
                           </p>
                         </div>
-                      </motion.div>
+                      </FadeIn>
                     )}
-                  </AnimatePresence>
+                  
                 </div>
 
                 {/* How Service Works - Accordion Item */}
@@ -309,13 +298,9 @@ export default function ServiceTemplate({
                       }`} />
                     </div>
                   </button>
-                  <AnimatePresence>
+                  
                     {openAccordion === "how" && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                      <FadeIn
                         className="overflow-hidden"
                       >
                         <div className="pb-8">
@@ -343,9 +328,9 @@ export default function ServiceTemplate({
                             </li>
                           </ul>
                         </div>
-                      </motion.div>
+                      </FadeIn>
                     )}
-                  </AnimatePresence>
+                  
                 </div>
 
                 {/* Other Services - Accordion Item */}
@@ -368,13 +353,9 @@ export default function ServiceTemplate({
                       }`} />
                     </div>
                   </button>
-                  <AnimatePresence>
+                  
                     {openAccordion === "other" && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                      <FadeIn
                         className="overflow-hidden"
                       >
                         <div className="pb-8">
@@ -399,17 +380,14 @@ export default function ServiceTemplate({
                             ))}
                           </ul>
                         </div>
-                      </motion.div>
+                      </FadeIn>
                     )}
-                  </AnimatePresence>
+                  
                 </div>
-              </motion.div>
+              </FadeIn>
 
               {/* Right - Contact Form */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              <FadeIn
                 className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8 lg:-mt-32 relative z-10"
               >
                 <div className="mb-6">
@@ -532,7 +510,7 @@ export default function ServiceTemplate({
                     </Button>
                   </div>
                 </form>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -541,11 +519,7 @@ export default function ServiceTemplate({
         <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
                 className="order-2 lg:order-1"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-1">
@@ -580,13 +554,9 @@ export default function ServiceTemplate({
                 >
                   <Link href="/request-a-service">Request A Service</Link>
                 </Button>
-              </motion.div>
+              </FadeIn>
               {paragraphSection1.image && (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
+                <FadeIn
                   className="order-1 lg:order-2 relative rounded-[5px] overflow-hidden aspect-[4/3]"
                 >
                   <Image 
@@ -597,7 +567,7 @@ export default function ServiceTemplate({
                     className="object-cover" 
                     loading="lazy" 
                   />
-                </motion.div>
+                </FadeIn>
               )}
             </div>
           </div>
@@ -624,12 +594,8 @@ export default function ServiceTemplate({
 
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
               {processSteps.map((step, i) => (
-                <motion.div 
+                <FadeIn 
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
@@ -641,7 +607,7 @@ export default function ServiceTemplate({
                   <p className="text-[#042940]/70 leading-relaxed text-sm">
                     {step.desc}
                   </p>
-                </motion.div>
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -652,11 +618,7 @@ export default function ServiceTemplate({
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {paragraphSection2.image && (
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                <FadeIn
                   className="relative rounded-[5px] overflow-hidden aspect-[4/3]"
                 >
                   <Image 
@@ -667,13 +629,9 @@ export default function ServiceTemplate({
                     className="object-cover" 
                     loading="lazy" 
                   />
-                </motion.div>
+                </FadeIn>
               )}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              <FadeIn
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-2">
                   <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
@@ -707,7 +665,7 @@ export default function ServiceTemplate({
                 >
                   <Link href="/request-a-service">Request A Service</Link>
                 </Button>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -715,11 +673,7 @@ export default function ServiceTemplate({
         {/* Zipcode Checker Section - Matching Homepage Design Exactly */}
         <section className="py-16 md:py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-8 relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+            <FadeIn
               className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"
             >
               {/* Background Grid & Glow */}
@@ -764,7 +718,7 @@ export default function ServiceTemplate({
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
 
@@ -773,11 +727,7 @@ export default function ServiceTemplate({
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               <div className="lg:sticky lg:top-32">
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                <FadeIn
                 >
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
                     <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -797,7 +747,7 @@ export default function ServiceTemplate({
                       <Phone className="w-5 h-5 text-secondary" /> 727.510.5454
                     </Button>
                   </div>
-                </motion.div>
+                </FadeIn>
               </div>
 
               <div className="grid gap-8">
@@ -849,12 +799,8 @@ export default function ServiceTemplate({
 
             <div className="grid gap-4">
               {faqs.map((faq, i) => (
-                <motion.div
+                <FadeIn
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  viewport={{ once: true }}
                 >
                   <div 
                     className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
@@ -896,7 +842,7 @@ export default function ServiceTemplate({
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </FadeIn>
               ))}
             </div>
             
@@ -912,11 +858,7 @@ export default function ServiceTemplate({
         {/* Location Section */}
         <section className="py-16 md:py-24 bg-white" aria-labelledby="location-heading">
           <div className="container mx-auto px-4 md:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+            <FadeIn
               className="text-left sm:text-center mb-8 sm:mb-12"
             >
               <h2 id="location-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
@@ -925,14 +867,10 @@ export default function ServiceTemplate({
               <p className="text-gray-600 text-base sm:text-lg max-w-2xl sm:mx-auto">
                 Serving businesses nationwide with regional offices for local support.
               </p>
-            </motion.div>
+            </FadeIn>
 
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+              <FadeIn
                 className="space-y-6 lg:space-y-8"
               >
                 <div>
@@ -959,13 +897,9 @@ export default function ServiceTemplate({
                   </div>
                   <p className="text-gray-600 ml-9">hello@tenthrock.com</p>
                 </div>
-              </motion.div>
+              </FadeIn>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+              <FadeIn
                 className="lg:col-span-2 relative aspect-video rounded-[5px] overflow-hidden bg-gray-100"
               >
                 <video
@@ -977,7 +911,7 @@ export default function ServiceTemplate({
                 >
                   <source src={usMapVideo} type="video/mp4" />
                 </video>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -985,11 +919,7 @@ export default function ServiceTemplate({
         {/* Final CTA Banner */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 md:px-8">
-            <motion.div 
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+            <FadeIn
               className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
             >
               {/* Content Side */}
@@ -1017,11 +947,7 @@ export default function ServiceTemplate({
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 
                 {/* Floating Stat Card */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.4 }}
+                <FadeIn
                   className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform md:hover:scale-105 transition-transform duration-300"
                 >
                   <div className="flex items-center gap-4">
@@ -1032,9 +958,9 @@ export default function ServiceTemplate({
                       <div className="text-[#c5d520] text-xl font-bold">727.510.5454</div>
                     </div>
                   </div>
-                </motion.div>
+                </FadeIn>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
       </main>

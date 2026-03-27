@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -14,11 +14,7 @@ export default function StatsSection() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-32">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
                   <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -38,7 +34,7 @@ export default function StatsSection() {
                    <Phone className="w-5 h-5 text-secondary" /> 727.510.5454
                 </Button>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
 
           <div className="grid gap-8">

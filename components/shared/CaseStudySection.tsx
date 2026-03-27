@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight } from "lucide-react";
 
 interface CaseStudy {
@@ -157,13 +157,9 @@ export default function CaseStudySection() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 order-2 lg:order-1">
-            <AnimatePresence mode="wait">
-              <motion.div
+            
+              <FadeIn
                 key={`main-${currentIndex}`}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
                 className="relative rounded-[5px] overflow-hidden h-[400px]"
               >
                 <Image
@@ -174,17 +170,13 @@ export default function CaseStudySection() {
                   className="object-cover"
                   loading="lazy"
                 />
-              </motion.div>
-            </AnimatePresence>
+              </FadeIn>
+            
             <div className="grid grid-cols-3 gap-4">
-              <AnimatePresence mode="wait">
+              
                 {study.thumbImages.map((img, i) => (
-                  <motion.div
+                  <FadeIn
                     key={`thumb-${currentIndex}-${i}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ duration: 0.3, delay: i * 0.08 }}
                     className="relative rounded-[5px] overflow-hidden aspect-square"
                   >
                     <Image
@@ -195,20 +187,16 @@ export default function CaseStudySection() {
                       className="object-cover"
                       loading="lazy"
                     />
-                  </motion.div>
+                  </FadeIn>
                 ))}
-              </AnimatePresence>
+              
             </div>
           </div>
 
           <div className="lg:pl-8 order-1 lg:order-2">
-            <AnimatePresence mode="wait">
-              <motion.div
+            
+              <FadeIn
                 key={`content-${currentIndex}`}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5d520]/10 text-[#042940] font-bold text-xs uppercase tracking-wider mb-4" data-testid="badge-case-study-tag">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></span>
@@ -231,8 +219,8 @@ export default function CaseStudySection() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </FadeIn>
+            
 
             <div className="flex items-center gap-4">
               <button

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, Star } from "lucide-react";
 
 export interface Testimonial {
@@ -45,11 +45,7 @@ export default function TestimonialsSection({
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#c5d520]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="max-w-4xl mx-auto"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-bold text-sm backdrop-blur-md shadow-sm mb-8">
@@ -62,13 +58,9 @@ export default function TestimonialsSection({
           </div>
            
           <div className="relative min-h-[300px]">
-            <AnimatePresence mode="wait">
-              <motion.div
+            
+              <FadeIn
                 key={currentIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
               >
                 <blockquote className="text-3xl md:text-5xl font-bold leading-tight mb-10 tracking-tight" data-testid={`text-${testIdPrefix}-quote`}>
                   &ldquo;{testimonials[currentIndex].quote}&rdquo;
@@ -83,8 +75,8 @@ export default function TestimonialsSection({
                     <div className="text-white/70 font-medium">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</div>
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </FadeIn>
+            
           </div>
 
           <div className="flex gap-4 pt-8">
@@ -105,7 +97,7 @@ export default function TestimonialsSection({
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

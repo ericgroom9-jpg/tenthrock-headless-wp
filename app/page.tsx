@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import TenthRockHome from '@/components/home/TenthRockHome';
+import HomeClient from '@/components/home/HomeClient';
 
 export const metadata: Metadata = {
   title: 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
@@ -12,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <TenthRockHome />;
+  return <HomeClient />;
 }

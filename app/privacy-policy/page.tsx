@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
+import FadeIn from "@/components/shared/FadeIn";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
@@ -19,11 +19,7 @@ function PrivacyPolicySection() {
   return (
     <section className="py-16 sm:py-20 lg:py-28 bg-white" data-testid="section-privacy-policy">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <FadeIn>
           <h1
             className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6"
             data-testid="text-privacy-heading"
@@ -190,7 +186,7 @@ function PrivacyPolicySection() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

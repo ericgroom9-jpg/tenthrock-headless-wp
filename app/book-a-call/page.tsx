@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import FadeIn from "@/components/shared/FadeIn";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -29,10 +29,7 @@ function BookACallSection() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
           >
             <h1
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-8"
@@ -55,12 +52,9 @@ function BookACallSection() {
               specific needs and put together a customized plan that saves you time and money, with no
               obligation.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+          <FadeIn
             data-testid="calendar-embed-container"
           >
             <div className="bg-[#f5f5f5] rounded-[5px] w-full min-h-[480px] sm:min-h-[520px] lg:min-h-[560px] flex flex-col items-center justify-center px-6 text-center">
@@ -91,7 +85,7 @@ function BookACallSection() {
                 </Link>
               </Button>
             </div>
-          </motion.div>
+          </FadeIn>
 
         </div>
       </div>

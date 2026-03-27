@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -169,10 +169,7 @@ export default function FaqPage() {
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-left sm:text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+          <FadeIn
             className="max-w-3xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-6" data-testid="text-faq-tagline">
@@ -186,7 +183,7 @@ export default function FaqPage() {
             <p className="text-base text-white/70 max-w-2xl sm:mx-auto leading-relaxed" data-testid="text-faq-description">
               Find answers to common questions about our waste management services, pricing, sustainability initiatives, and more.
             </p>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
@@ -219,11 +216,8 @@ export default function FaqPage() {
       {/* FAQ Content */}
       <section ref={accordionRef} aria-labelledby="faq-section-heading" className="py-16 md:py-24 lg:py-28 bg-[#F9F9F6]">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div
+          <FadeIn
             key={activeCategory}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
             className="max-w-3xl mx-auto"
             id={`faq-panel-${activeCategory}`}
             role="tabpanel"
@@ -246,12 +240,8 @@ export default function FaqPage() {
                 const isOpen = openItem === `item-${i}`;
 
                 return (
-                  <motion.div
+                  <FadeIn
                     key={`${activeCategory}-${i}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                    viewport={{ once: true }}
                   >
                     <div
                       className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
@@ -298,18 +288,14 @@ export default function FaqPage() {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </FadeIn>
                 );
               })}
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Contact CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <FadeIn
             className="text-center mt-16 md:mt-20"
           >
             <p className="text-[#042940]/70 mb-4 font-medium" data-testid="text-faq-still-questions">
@@ -325,7 +311,7 @@ export default function FaqPage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 

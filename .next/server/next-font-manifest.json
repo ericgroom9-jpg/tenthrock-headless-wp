@@ -116,7 +116,19 @@
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/app/services/dumpster-rental/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/app/services/dumpster-rentals/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/dumpsters-containers/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/emergency-product-removal/page": [
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
@@ -140,7 +152,15 @@
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/app/services/hauling-services/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/app/services/multiple-sizes-types/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/multiple-sizes/page": [
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
@@ -152,7 +172,19 @@
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/app/services/ongoing-advisory/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/app/services/performance-tracking/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/pressure-washing/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/recycling-specialty-containers/page": [
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
@@ -168,11 +200,31 @@
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/app/services/specialized-project-logistics/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/app/services/spend-optimization/page": [
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/app/services/standards-sops-training/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/app/services/store-decommissioning/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/unplanned-cleanouts/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/waste-operations-advisory/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/services/waste-program-assessments/page": [
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
@@ -189,6 +241,10 @@
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
     "[project]/app/thank-you/page": [
+      "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/vendor-onboarding/page": [
       "static/media/a343f882a40d2cc9-s.p.71e1367e.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 
 const partnerLogos = [
   { src: "/images/logos/7-eleven.png", alt: "7-Eleven" },
@@ -45,11 +45,7 @@ export default function LogoReelSection({
         </div>
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+      <FadeIn
         className="relative flex overflow-hidden group"
       >
         <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
@@ -66,7 +62,7 @@ export default function LogoReelSection({
             </div>
           ))}
         </div>
-      </motion.div>
+      </FadeIn>
     </section>
   );
 }

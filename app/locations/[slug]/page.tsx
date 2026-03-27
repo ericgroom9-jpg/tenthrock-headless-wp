@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useParams, useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import FadeIn from "@/components/shared/FadeIn";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Phone, Check, ArrowUpRight, ArrowDown, MapPin } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
@@ -97,10 +97,7 @@ export default function LocationTemplatePage() {
         </div>
         <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
           <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
             >
               <h1
                 id="location-hero-heading"
@@ -129,7 +126,7 @@ export default function LocationTemplatePage() {
                   727.510.5454
                 </Button>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -139,11 +136,7 @@ export default function LocationTemplatePage() {
         <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-10 pb-12 md:pb-16">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - About Location Accordions */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="space-y-0"
             >
               {aboutAccordions.map((section, idx) => (
@@ -176,14 +169,10 @@ export default function LocationTemplatePage() {
                     </div>
                   </button>
 
-                  <AnimatePresence initial={false}>
-                    {openAccordion === idx && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                  {openAccordion === idx && (
+                      <div
                         className="overflow-hidden"
+                        style={{ animation: "fadeIn 0.3s ease-out" }}
                       >
                         <div className="pt-4 pb-2 space-y-5">
                           {section.benefits.length > 0 && (
@@ -198,19 +187,14 @@ export default function LocationTemplatePage() {
                           )}
                           <p className="text-primary/70 leading-relaxed">{section.description}</p>
                         </div>
-                      </motion.div>
+                      </div>
                     )}
-                  </AnimatePresence>
                 </div>
               ))}
-            </motion.div>
+            </FadeIn>
 
             {/* Right Column - Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8 lg:-mt-32 relative z-10"
             >
               <div className="mb-6">
@@ -354,7 +338,7 @@ export default function LocationTemplatePage() {
                   </Button>
                 </div>
               </form>
-            </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -363,11 +347,7 @@ export default function LocationTemplatePage() {
       <section className="py-16 md:py-24 bg-white overflow-hidden" aria-labelledby="info-block-heading">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
             >
               <h2
                 id="info-block-heading"
@@ -396,13 +376,9 @@ export default function LocationTemplatePage() {
                   727.510.5454
                 </Button>
               </div>
-            </motion.div>
+            </FadeIn>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="relative rounded-[5px] overflow-hidden h-[350px] md:h-[480px] lg:h-[640px]"
             >
               <Image
@@ -413,7 +389,7 @@ export default function LocationTemplatePage() {
                 className="object-cover"
                 loading="lazy"
               />
-            </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -433,11 +409,7 @@ export default function LocationTemplatePage() {
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
               {/* Left - State Map Visual */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
                 className="lg:sticky lg:top-32"
               >
                 <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square max-w-md mx-auto lg:mx-0 shadow-2xl" data-testid="map-state-visual" role="img" aria-label={`Service coverage map for ${locationName}`}>
@@ -484,14 +456,10 @@ export default function LocationTemplatePage() {
                     </div>
                   </div>
                 </figure>
-              </motion.div>
+              </FadeIn>
 
               {/* Right - Cities List */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              <FadeIn
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-cities-we-serve">
                   <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
@@ -521,7 +489,7 @@ export default function LocationTemplatePage() {
                   ))}
                 </ul>
 
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>

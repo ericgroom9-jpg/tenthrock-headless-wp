@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import FadeIn from "@/components/shared/FadeIn";
 
 export default function ContactThankYouPage() {
   return (
@@ -24,10 +24,7 @@ function ThankYouSection() {
       data-testid="section-thank-you"
     >
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="flex flex-col items-center text-center max-w-2xl mx-auto"
         >
           <h1
@@ -60,13 +57,13 @@ function ThankYouSection() {
               className="w-full sm:w-auto border-[#042940] text-[#042940] font-bold"
               data-testid="button-thank-you-phone"
             >
-              <a href="tel:1234567890">
+              <a href="tel:7275105454">
                 <Phone className="w-4 h-4 mr-2" />
-                (123) 456 - 7890
+                727.510.5454
               </a>
             </Button>
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
@@ -34,12 +34,8 @@ export default function WhoWeHelpSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {sectors.map((sector, i) => (
             <Link href={sector.href} key={i}>
-              <motion.div 
+              <FadeIn 
                 className="group relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                viewport={{ once: true }}
                 data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <Image 
@@ -67,7 +63,7 @@ export default function WhoWeHelpSection() {
                       </div>
                    </div>
                 </div>
-              </motion.div>
+              </FadeIn>
             </Link>
           ))}
         </div>

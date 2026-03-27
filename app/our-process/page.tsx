@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -46,10 +46,7 @@ export default function OurProcessPage() {
         
         {/* Content */}
         <div className="container mx-auto px-4 md:px-8 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-16 md:pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+          <FadeIn
             className="max-w-2xl"
           >
             <h1 
@@ -79,7 +76,7 @@ export default function OurProcessPage() {
                 727.510.5454
               </Button>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 

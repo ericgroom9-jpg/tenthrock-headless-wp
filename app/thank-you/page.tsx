@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import FadeIn from "@/components/shared/FadeIn";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -28,11 +28,7 @@ function ThankYouSection() {
     <section className="py-20 sm:py-28 lg:py-36 bg-white" data-testid="section-thank-you">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-2xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8"
+          <FadeIn className="mb-8"
           >
             <div
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#c5d520]/15 flex items-center justify-center mx-auto"
@@ -40,13 +36,9 @@ function ThankYouSection() {
             >
               <CheckCircle2 className="w-10 h-10 sm:w-12 sm:h-12 text-[#c5d520]" aria-hidden="true" />
             </div>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
+          <FadeIn>
             <h1
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6"
               data-testid="text-thank-you-heading"
@@ -59,13 +51,9 @@ function ThankYouSection() {
             >
               Your request has been received. We're excited to help streamline your waste management.
             </p>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-left mb-12"
+          <FadeIn className="text-left mb-12"
           >
             <h2
               className="text-xl sm:text-2xl font-bold text-[#042940] mb-6 text-center"
@@ -86,13 +74,9 @@ function ThankYouSection() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center max-w-md sm:max-w-none mx-auto"
+          <FadeIn className="flex flex-col sm:flex-row gap-4 justify-center max-w-md sm:max-w-none mx-auto"
           >
             <Button
               asChild
@@ -116,7 +100,7 @@ function ThankYouSection() {
                 Explore Our Services
               </Link>
             </Button>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

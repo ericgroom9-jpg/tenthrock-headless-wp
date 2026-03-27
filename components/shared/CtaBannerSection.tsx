@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -8,11 +8,7 @@ export default function CtaBannerSection() {
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden" aria-label="Check service availability">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <FadeIn
           className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"
         >
            {/* Background Grid & Glow */}
@@ -58,7 +54,7 @@ export default function CtaBannerSection() {
                </Button>
              </div>
            </div>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

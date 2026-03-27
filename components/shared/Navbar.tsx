@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/shared/Logo";
@@ -156,14 +155,10 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </button>
               </div>
 
-              <AnimatePresence>
+              
                 {isServicesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
+                  <div
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-services"
                   >
@@ -193,9 +188,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         ))}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
+              
             </div>
 
             {/* Who We Serve Dropdown */}
@@ -228,14 +223,10 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </button>
               </div>
 
-              <AnimatePresence>
+              
                 {isSectorsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
+                  <div
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-sectors"
                   >
@@ -261,9 +252,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         ))}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
+              
             </div>
 
             {/* Locations Dropdown */}
@@ -296,14 +287,10 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </button>
               </div>
 
-              <AnimatePresence>
+              
                 {isLocationsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
+                  <div
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-locations"
                   >
@@ -346,9 +333,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         })()}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
+              
             </div>
 
             {/* About Us Dropdown */}
@@ -381,14 +368,10 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </button>
               </div>
 
-              <AnimatePresence>
+              
                 {isAboutOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18, ease: "easeOut" }}
-                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8"
+                  <div
+                    className="fixed left-0 right-0 top-[96px] z-50 px-4 md:px-8" style={{animation:"fadeIn 0.18s ease-out"}}
                     role="menu"
                     data-testid="menu-nav-about"
                   >
@@ -414,9 +397,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                         ))}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
+              
             </div>
           </nav>
 
@@ -432,13 +415,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
         </div>
 
         {/* Mobile Accordion Menu */}
-        <AnimatePresence>
+        
           {isNavExpanded && (
-            <motion.nav
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
+            <nav
               className="xl:hidden overflow-hidden border-t border-gray-100 mt-3"
               aria-label="Mobile navigation"
             >
@@ -466,13 +445,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       <ChevronDown className={`w-5 h-5 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
                     </button>
                   </div>
-                  <AnimatePresence>
+                  
                     {isServicesOpen && (
-                      <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: "auto" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.2 }}
+                      <div
                         className="overflow-hidden"
                       >
                         <div className="pl-4 pb-3 space-y-1">
@@ -498,9 +473,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                             </div>
                           ))}
                         </div>
-                      </motion.div>
+                      </div>
                     )}
-                  </AnimatePresence>
+                  
                 </div>
 
                 {/* Who We Serve Accordion */}
@@ -526,13 +501,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       <ChevronDown className={`w-5 h-5 transition-transform ${isSectorsOpen ? "rotate-180" : ""}`} />
                     </button>
                   </div>
-                  <AnimatePresence>
+                  
                     {isSectorsOpen && (
-                      <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: "auto" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.2 }}
+                      <div
                         className="overflow-hidden"
                       >
                         <div className="pl-4 pb-3">
@@ -548,9 +519,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                             </a>
                           ))}
                         </div>
-                      </motion.div>
+                      </div>
                     )}
-                  </AnimatePresence>
+                  
                 </div>
 
                 {/* Locations Accordion */}
@@ -576,13 +547,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       <ChevronDown className={`w-5 h-5 transition-transform ${isLocationsOpen ? "rotate-180" : ""}`} />
                     </button>
                   </div>
-                  <AnimatePresence>
+                  
                     {isLocationsOpen && (
-                      <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: "auto" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.2 }}
+                      <div
                         className="overflow-hidden"
                       >
                         <div className="pl-4 pb-3 grid grid-cols-2 gap-x-2">
@@ -598,9 +565,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                             </Link>
                           ))}
                         </div>
-                      </motion.div>
+                      </div>
                     )}
-                  </AnimatePresence>
+                  
                 </div>
 
                 {/* About Us Accordion */}
@@ -626,13 +593,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       <ChevronDown className={`w-5 h-5 transition-transform ${isAboutOpen ? "rotate-180" : ""}`} />
                     </button>
                   </div>
-                  <AnimatePresence>
+                  
                     {isAboutOpen && (
-                      <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: "auto" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.2 }}
+                      <div
                         className="overflow-hidden"
                       >
                         <div className="pl-4 pb-3">
@@ -648,9 +611,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                             </a>
                           ))}
                         </div>
-                      </motion.div>
+                      </div>
                     )}
-                  </AnimatePresence>
+                  
                 </div>
 
                 <div className="pt-4 px-4 space-y-3">
@@ -667,9 +630,9 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   </Button>
                 </div>
               </div>
-            </motion.nav>
+            </nav>
           )}
-        </AnimatePresence>
+        
       </div>
     </header>
   );

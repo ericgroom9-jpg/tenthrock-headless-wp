@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -119,10 +119,7 @@ export default function IndustryTemplate({
           }}
         >
           <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="max-w-3xl"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-4 sm:mb-6 tracking-tighter leading-[1.05]">
@@ -150,7 +147,7 @@ export default function IndustryTemplate({
                   727.510.5454
                 </Button>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </section>
 
@@ -159,11 +156,7 @@ export default function IndustryTemplate({
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
               {/* Left Content */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
               >
                 <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-8 md:mb-12 tracking-tighter leading-tight">
                   {aboutTitle}
@@ -189,32 +182,22 @@ export default function IndustryTemplate({
                           }`}>
                             {point.title}
                           </h3>
-                          <motion.div
+                          <FadeIn
                             id={`bullet-panel-${i}`}
                             role="region"
                             aria-labelledby={`bullet-button-${i}`}
-                            initial={false}
-                            animate={{ 
-                              height: activeBullet === i ? "auto" : 0,
-                              opacity: activeBullet === i ? 1 : 0,
-                              marginTop: activeBullet === i ? 12 : 0
-                            }}
-                            transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
                             <p className="text-[#042940]/80 leading-relaxed text-sm sm:text-base">
                               {point.description}
                             </p>
-                          </motion.div>
+                          </FadeIn>
                         </div>
                       </button>
                       {/* Progress bar */}
                       <div className="h-0.5 bg-gray-200 ml-10 sm:ml-12 md:ml-14" aria-hidden="true">
-                        <motion.div
+                        <FadeIn
                           className="h-full bg-[#042940]"
-                          initial={{ width: "0%" }}
-                          animate={{ width: activeBullet === i ? "60%" : "0%" }}
-                          transition={{ duration: 0.5 }}
                         />
                       </div>
                     </div>
@@ -231,14 +214,10 @@ export default function IndustryTemplate({
                     <Link href="/request-a-service">Request A Service</Link>
                   </Button>
                 </div>
-              </motion.div>
+              </FadeIn>
 
               {/* Right Image */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
                 className="relative order-first md:order-last"
               >
                 <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[4/5] rounded-[5px] overflow-hidden shadow-2xl relative">
@@ -251,7 +230,7 @@ export default function IndustryTemplate({
                     loading="lazy"
                   />
                 </div>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -260,11 +239,7 @@ export default function IndustryTemplate({
         <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
                 className="order-2 lg:order-1"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-1">
@@ -299,13 +274,9 @@ export default function IndustryTemplate({
                 >
                   <Link href="/request-a-service">Request A Service</Link>
                 </Button>
-              </motion.div>
+              </FadeIn>
               {paragraphSection1.image && (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
+                <FadeIn
                   className="order-1 lg:order-2 relative rounded-[5px] overflow-hidden aspect-[4/3]"
                 >
                   <Image 
@@ -316,7 +287,7 @@ export default function IndustryTemplate({
                     className="object-cover" 
                     loading="lazy" 
                   />
-                </motion.div>
+                </FadeIn>
               )}
             </div>
           </div>
@@ -330,11 +301,7 @@ export default function IndustryTemplate({
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {paragraphSection2.image && (
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                <FadeIn
                   className="relative rounded-[5px] overflow-hidden aspect-[4/3]"
                 >
                   <Image 
@@ -345,13 +312,9 @@ export default function IndustryTemplate({
                     className="object-cover" 
                     loading="lazy" 
                   />
-                </motion.div>
+                </FadeIn>
               )}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+              <FadeIn
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-2">
                   <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
@@ -384,7 +347,7 @@ export default function IndustryTemplate({
                 >
                   Request A Service
                 </Button>
-              </motion.div>
+              </FadeIn>
             </div>
           </div>
         </section>
@@ -396,11 +359,7 @@ export default function IndustryTemplate({
         <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
           <div className="container mx-auto px-4 sm:px-6 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+              <FadeIn
                 className="order-2 lg:order-1"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-3">
@@ -435,13 +394,9 @@ export default function IndustryTemplate({
                 >
                   <Link href="/request-a-service">Request A Service</Link>
                 </Button>
-              </motion.div>
+              </FadeIn>
               {paragraphSection3.image && (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
+                <FadeIn
                   className="order-1 lg:order-2 relative rounded-[5px] overflow-hidden aspect-[4/3]"
                 >
                   <Image 
@@ -452,7 +407,7 @@ export default function IndustryTemplate({
                     className="object-cover" 
                     loading="lazy" 
                   />
-                </motion.div>
+                </FadeIn>
               )}
             </div>
           </div>

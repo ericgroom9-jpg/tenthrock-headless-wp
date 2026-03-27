@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -59,12 +59,8 @@ export default function FaqSection({ faqs = defaultFaqs }: FaqSectionProps) {
 
         <div className="grid gap-4">
           {faqs.map((faq, i) => (
-            <motion.div
+            <FadeIn
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              viewport={{ once: true }}
             >
               <div 
                 className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
@@ -106,7 +102,7 @@ export default function FaqSection({ faqs = defaultFaqs }: FaqSectionProps) {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
         

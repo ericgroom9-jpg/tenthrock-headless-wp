@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -110,10 +110,7 @@ function HeroSection() {
       </div>
       <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
         <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
               Vendor Onboarding
@@ -140,7 +137,7 @@ function HeroSection() {
                 727.510.5454
               </Button>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -151,11 +148,7 @@ function ProcessStepsSection() {
   return (
     <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-onboard-process">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="max-w-2xl mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -165,16 +158,12 @@ function ProcessStepsSection() {
           <h2 className="text-3xl md:text-4xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
             From Application to First Job
           </h2>
-        </motion.div>
+        </FadeIn>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {processSteps.map((step, i) => (
-            <motion.div
+            <FadeIn
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-[#042940]/5"
               data-testid={`card-onboard-step-${i}`}
             >
@@ -183,7 +172,7 @@ function ProcessStepsSection() {
               </div>
               <h3 className="text-lg font-bold text-[#042940] mb-2">{step.title}</h3>
               <p className="text-[#042940]/70 text-sm leading-relaxed">{step.desc}</p>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -195,11 +184,7 @@ function FormSection() {
   return (
     <section id="onboarding-form" className="py-16 md:py-24 bg-white" data-testid="section-onboard-form">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="text-center mb-12"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9F9F6] border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -212,13 +197,9 @@ function FormSection() {
           <p className="text-lg text-[#042940]/70 max-w-lg mx-auto">
             Fill out the form below with your company information, service capabilities, and documentation. Our team will review and respond within 3-5 business days.
           </p>
-        </motion.div>
+        </FadeIn>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="max-w-4xl mx-auto"
         >
           <div className="rounded-[5px] overflow-hidden shadow-xl border border-[#042940]/5" data-testid="onboard-form-iframe-container">
@@ -231,7 +212,7 @@ function FormSection() {
               data-testid="iframe-vendor-onboarding"
             />
           </div>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

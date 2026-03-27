@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import FadeIn from "@/components/shared/FadeIn";
 import { Phone, CheckSquare } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -46,10 +46,7 @@ export default function LocationsPage() {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#042940]/90 to-[#042940]/70" />
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
             className="max-w-2xl"
           >
             <h1 
@@ -79,7 +76,7 @@ export default function LocationsPage() {
                 727.510.5454
               </Button>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
@@ -89,11 +86,7 @@ export default function LocationsPage() {
         aria-labelledby="areas-heading"
       >
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
             className="text-left sm:text-center mb-12 md:mb-16"
           >
             <h2 
@@ -105,17 +98,13 @@ export default function LocationsPage() {
             <p className="text-base md:text-lg text-primary/70 max-w-lg sm:mx-auto">
               Select a state to see available services and local coverage in your area.
             </p>
-          </motion.div>
+          </FadeIn>
 
           {/* Cities Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 max-w-4xl mx-auto">
             {stateColumns.map((column, columnIndex) => (
-              <motion.div
+              <FadeIn
                 key={columnIndex}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: columnIndex * 0.1 }}
                 className={`space-y-3 sm:space-y-4 lg:px-6 ${columnIndex < stateColumns.length - 1 ? 'lg:border-r lg:border-primary/10' : ''}`}
               >
                 {column.map((state, stateIndex) => (
@@ -129,7 +118,7 @@ export default function LocationsPage() {
                     <span className="font-bold text-primary text-sm sm:text-base group-hover:text-[#c5d520] hover:text-[#c5d520] transition-colors">{state}</span>
                   </a>
                 ))}
-              </motion.div>
+              </FadeIn>
             ))}
           </div>
         </div>

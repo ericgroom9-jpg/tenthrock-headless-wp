@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import FadeIn from "@/components/shared/FadeIn";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Calendar, ArrowRight } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
@@ -47,10 +47,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-start mb-12 md:mb-16">
             {/* Left Column - Title */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
             >
               <span className="inline-block text-sm font-bold text-[#c5d520] uppercase tracking-wider mb-4">
                 Our Story
@@ -61,13 +58,10 @@ export default function AboutPage() {
               >
                 Built From the Ground Up to Fix a Broken Industry
               </h1>
-            </motion.div>
+            </FadeIn>
             
             {/* Right Column - Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <FadeIn
               className="lg:pt-8"
             >
               <div className="text-base text-primary/70 leading-relaxed space-y-6">
@@ -81,14 +75,11 @@ export default function AboutPage() {
                   Today, Tenth Rock manages waste operations for retailers, property managers, event venues, and municipalities across 48 states. We handle the logistics so our clients can focus on running their business, not chasing down missed pickups.
                 </p>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
           
           {/* Full Width Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+          <FadeIn
             className="relative rounded-[5px] overflow-hidden aspect-[16/9] md:aspect-[21/9]"
           >
             <Image 
@@ -99,7 +90,7 @@ export default function AboutPage() {
               className="object-cover"
               priority
             />
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
@@ -111,11 +102,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
             >
               <h2 
                 id="core-heading"
@@ -165,14 +152,10 @@ export default function AboutPage() {
                   View Our Services
                 </Button>
               </div>
-            </motion.div>
+            </FadeIn>
             
             {/* Right Column - Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square"
             >
               <Image 
@@ -183,7 +166,7 @@ export default function AboutPage() {
                 className="object-cover"
                 loading="lazy"
               />
-            </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -191,22 +174,14 @@ export default function AboutPage() {
       {/* Associations Section */}
       <section className="py-16 md:py-20 bg-[#F9F9F6]" aria-labelledby="associations-heading">
         <div className="container mx-auto px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
             className="text-left sm:text-center mb-10 md:mb-14"
           >
             <h2 id="associations-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">
               Associations
             </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+          </FadeIn>
+          <FadeIn
             className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20"
           >
             {[
@@ -226,7 +201,7 @@ export default function AboutPage() {
                 data-testid={`img-association-logo-${i}`}
               />
             ))}
-          </motion.div>
+          </FadeIn>
         </div>
       </section>
 
@@ -238,11 +213,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column - Image (order-2 on mobile, order-1 on lg) */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square order-2 lg:order-1"
             >
               <Image 
@@ -253,14 +224,10 @@ export default function AboutPage() {
                 className="object-cover"
                 loading="lazy"
               />
-            </motion.div>
+            </FadeIn>
             
             {/* Right Column - Content (order-1 on mobile, order-2 on lg) */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            <FadeIn
               className="order-1 lg:order-2"
             >
               <h2 
@@ -291,7 +258,7 @@ export default function AboutPage() {
                   727.510.5454
                 </Button>
               </div>
-            </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>

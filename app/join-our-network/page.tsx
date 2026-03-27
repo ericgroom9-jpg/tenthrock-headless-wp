@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { 
   Phone, 
   Zap,
@@ -82,10 +82,7 @@ function HeroSection() {
       </div>
       <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
         <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
               Join the Tenth Rock Vendor Network
@@ -113,7 +110,7 @@ function HeroSection() {
                 727.510.5454
               </Button>
             </div>
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -124,11 +121,7 @@ function WhyJoinSection() {
   return (
     <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-join-benefits">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="max-w-2xl mb-12 md:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -141,16 +134,12 @@ function WhyJoinSection() {
           <p className="text-lg text-[#042940]/70">
             We handle client relationships, billing, and job coordination. You focus on running your trucks and growing your operation.
           </p>
-        </motion.div>
+        </FadeIn>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {networkBenefits.map((benefit, i) => (
-            <motion.div
+            <FadeIn
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-transparent hover:border-[#c5d520]/20 active:border-[#c5d520]/20 hover:shadow-xl active:shadow-xl transition-all duration-300"
               data-testid={`card-join-benefit-${i}`}
             >
@@ -159,7 +148,7 @@ function WhyJoinSection() {
               </div>
               <h3 className="text-xl font-bold text-[#042940] mb-3">{benefit.title}</h3>
               <p className="text-[#042940]/70 leading-relaxed">{benefit.desc}</p>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -172,11 +161,7 @@ function NetworkStatsSection() {
     <section className="py-16 md:py-20 bg-[#042940]" data-testid="section-join-stats">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
           >
             <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight tracking-tighter mb-6">
               A Growing Network Built on Performance
@@ -195,13 +180,9 @@ function NetworkStatsSection() {
                 <p className="text-white/80">Expanding into new markets every month. Early partners in underserved areas get first priority on incoming work.</p>
               </div>
             </div>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <FadeIn
             className="grid grid-cols-3 gap-4"
           >
             {networkStats.map((stat, i) => (
@@ -210,7 +191,7 @@ function NetworkStatsSection() {
                 <div className="text-sm text-white/60 font-medium">{stat.label}</div>
               </div>
             ))}
-          </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -252,11 +233,7 @@ function EmailCaptureSection() {
   return (
     <section id="email-capture" className="py-16 md:py-24 bg-white" data-testid="section-join-email">
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <FadeIn
           className="max-w-2xl mx-auto text-center"
         >
           {submitted ? (
@@ -315,7 +292,7 @@ function EmailCaptureSection() {
               </form>
             </>
           )}
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import FadeIn from "@/components/shared/FadeIn";
 import { Headset, CheckCircle2, MapPin, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { ReactNode } from "react";
@@ -40,11 +40,7 @@ export default function ReasonsSection({
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-             <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.6 }}
+             <FadeIn
              >
                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
                   <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -59,19 +55,14 @@ export default function ReasonsSection({
                <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full" data-testid={`button-${testIdPrefix}-cta`}>
                   {buttonText}
                </Button>
-             </motion.div>
+             </FadeIn>
           </div>
 
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
             {features.map((item, i) => (
-              <motion.div 
+              <FadeIn 
                 key={i} 
                 className="group bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-transparent hover:border-secondary/20 active:border-secondary/20 hover:shadow-xl active:shadow-xl transition-all duration-300"
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
                 data-testid={`${testIdPrefix}-card-${i}`}
               >
                 <div className="w-14 h-14 rounded-[5px] bg-[#F9F9F6] group-hover:bg-secondary group-hover:text-primary transition-colors duration-300 flex items-center justify-center text-primary mb-6">
@@ -80,7 +71,7 @@ export default function ReasonsSection({
                 
                 <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
                 <p className="text-primary/70 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
-              </motion.div>
+              </FadeIn>
             ))}
           </div>
         </div>
