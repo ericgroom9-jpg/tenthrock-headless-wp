@@ -34,7 +34,7 @@ export default function WhoWeHelpSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {sectors.map((sector, i) => (
             <Link href={sector.href} key={i}>
-              <FadeIn 
+              <div 
                 className="industry-card relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
                 data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
@@ -63,7 +63,7 @@ export default function WhoWeHelpSection() {
                       </div>
                    </div>
                 </div>
-              </FadeIn>
+              </div>
             </Link>
           ))}
         </div>
