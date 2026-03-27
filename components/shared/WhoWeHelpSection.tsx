@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
@@ -17,63 +16,33 @@ const sectors = [
 ];
 
 function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: number }) {
-  const [hovered, setHovered] = useState(false);
-
   return (
     <Link href={sector.href}>
       <div
-        className="relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-shadow duration-300"
+        className="ind-card group relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-shadow duration-300"
         data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onFocus={() => setHovered(true)}
-        onBlur={() => setHovered(false)}
       >
         <Image
           src={sector.img}
           alt={sector.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover transition-transform duration-700"
-          style={{ transform: hovered ? "scale(1.1)" : "scale(1)" }}
+          className="object-cover transition-transform duration-700 group-hover:scale-110 group-focus-within:scale-110"
           loading="lazy"
         />
-        <div className="absolute inset-0 transition-colors duration-300" style={{ backgroundColor: hovered ? "rgba(4,41,64,0.6)" : "rgba(4,41,64,0.82)" }} />
+        <div className="absolute inset-0 bg-[rgba(4,41,64,0.82)] transition-colors duration-300 group-hover:bg-[rgba(4,41,64,0.6)] group-focus-within:bg-[rgba(4,41,64,0.6)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90" />
 
         <div className="absolute inset-0 p-6 flex flex-col justify-end">
           <div>
-            <div
-              className="w-12 h-12 rounded-full backdrop-blur-md flex items-center justify-center mb-4 transition-colors duration-300"
-              style={{
-                backgroundColor: hovered ? "#c5d520" : "rgba(255,255,255,0.1)",
-                color: hovered ? "#042940" : "#ffffff",
-              }}
-            >
+            <div className="ind-card-icon w-12 h-12 rounded-full backdrop-blur-md flex items-center justify-center mb-4 transition-colors duration-300 bg-white/10 text-white group-hover:bg-[#c5d520] group-hover:text-[#042940] group-focus-within:bg-[#c5d520] group-focus-within:text-[#042940]">
               {sector.icon}
             </div>
             <h3 className="text-white font-bold text-xl leading-tight">{sector.title}</h3>
-            <p
-              className="text-white/90 text-sm mt-2"
-              style={{
-                maxHeight: hovered ? "6rem" : "0",
-                opacity: hovered ? 1 : 0,
-                overflow: "hidden",
-                transition: "max-height 0.3s ease-out, opacity 0.3s ease-out",
-              }}
-            >
+            <p className="ind-card-body text-white/90 text-sm mt-2">
               {sector.desc}
             </p>
-            <div
-              className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3"
-              style={{
-                maxHeight: hovered ? "2rem" : "0",
-                opacity: hovered ? 1 : 0,
-                overflow: "hidden",
-                transition: "max-height 0.3s ease-out, opacity 0.3s ease-out",
-                transform: hovered ? "translateX(4px)" : "translateX(0)",
-              }}
-            >
+            <div className="ind-card-cta flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3">
               Learn More <ArrowRight className="w-4 h-4" />
             </div>
           </div>

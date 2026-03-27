@@ -3018,6 +3018,10 @@ h1, h3, h4, h5, h6, h2 {
   background-color: var(--color-bg);
 }
 
+.bg-\[rgba\(4\,41\,64\,0\.82\)\] {
+  background-color: #042940d1;
+}
+
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--accent) / var(--tw-bg-opacity, 1));
@@ -4796,6 +4800,34 @@ h1, h3, h4, h5, h6, h2 {
   }
 }
 
+.ind-card .ind-card-body {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height .3s ease-out, opacity .3s ease-out;
+  overflow: hidden;
+}
+
+.ind-card:hover .ind-card-body, .ind-card:focus-within .ind-card-body {
+  opacity: 1;
+  max-height: 8rem;
+}
+
+.ind-card .ind-card-cta {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height .3s ease-out, opacity .3s ease-out, transform .2s ease-out;
+  overflow: hidden;
+}
+
+.ind-card:hover .ind-card-cta, .ind-card:focus-within .ind-card-cta {
+  opacity: 1;
+  max-height: 2rem;
+}
+
+.ind-card:hover .ind-card-cta {
+  transform: translateX(4px);
+}
+
 @keyframes heroFadeUp {
   0% {
     opacity: 0;
@@ -5558,6 +5590,26 @@ h1, h3, h4, h5, h6, h2 {
   opacity: .5;
 }
 
+.group:focus-within .group-focus-within\:scale-110 {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:focus-within .group-focus-within\:bg-\[\#c5d520\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(197 213 32 / var(--tw-bg-opacity, 1));
+}
+
+.group:focus-within .group-focus-within\:bg-\[rgba\(4\,41\,64\,0\.6\)\] {
+  background-color: #04294099;
+}
+
+.group:focus-within .group-focus-within\:text-\[\#042940\] {
+  --tw-text-opacity: 1;
+  color: rgb(4 41 64 / var(--tw-text-opacity, 1));
+}
+
 .group\/menu-item:focus-within .group-focus-within\/menu-item\:opacity-100 {
   opacity: 1;
 }
@@ -5599,6 +5651,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .group:hover .group-hover\:bg-\[\#c5d520\]\/20 {
   background-color: #c5d52033;
+}
+
+.group:hover .group-hover\:bg-\[rgba\(4\,41\,64\,0\.6\)\] {
+  background-color: #04294099;
 }
 
 .group:hover .group-hover\:bg-primary\/10 {

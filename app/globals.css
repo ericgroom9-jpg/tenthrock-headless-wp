@@ -336,6 +336,32 @@
 }
 
 
+.ind-card .ind-card-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+.ind-card:hover .ind-card-body,
+.ind-card:focus-within .ind-card-body {
+  max-height: 8rem;
+  opacity: 1;
+}
+.ind-card .ind-card-cta {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.2s ease-out;
+}
+.ind-card:hover .ind-card-cta,
+.ind-card:focus-within .ind-card-cta {
+  max-height: 2rem;
+  opacity: 1;
+}
+.ind-card:hover .ind-card-cta {
+  transform: translateX(4px);
+}
+
 @keyframes heroFadeUp {
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
