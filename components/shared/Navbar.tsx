@@ -160,7 +160,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
                   data-testid="link-nav-services"
                 >
-                  Commercial Waste Services
+                  Waste Management Services
                 </Link>
                 <button
                   type="button"
@@ -461,7 +461,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                       className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
-                      Commercial Waste Services
+                      Waste Management Services
                     </Link>
                     <button
                       type="button"
