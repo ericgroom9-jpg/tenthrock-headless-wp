@@ -4,7 +4,7 @@ export default function RecyclingSpecialtyContainersPage() {
   return (
     <ServiceTemplate
       serviceName="Recycling & Specialty Containers"
-      serviceDescription="Access commercial-grade recycling containers for cardboard, metals, and industrial materials. Specialized teams coordinate equipment deployment for temporary projects, facility cleanouts, and high-volume capacity needs."
+      serviceDescription="Deploy emergency waste management for high-volume commercial recycling dumpster and scrap needs. Specialized teams provide emergency roll-off service for cardboard & baler overflow support during capacity surges."
       heroImage="/images/stock/service-centralized-program.jpg"
       aboutBullets={[
         "Deploy large-scale recycling containers for cardboard and metal scrap.",
