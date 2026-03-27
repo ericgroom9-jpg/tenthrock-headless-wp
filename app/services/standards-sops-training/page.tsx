@@ -4,7 +4,7 @@ export default function StandardsSopsTrainingPage() {
   return (
     <ServiceTemplate
       serviceName="Standards, SOPs & Vendor Training"
-      serviceDescription="Waste management SOP development, multi-site vendor training framework, vendor performance protocols, and site-level execution standards. Designed to prevent costly execution errors and inconsistencies across your portfolio with structured escalation procedures and documentation systems."
+      serviceDescription="Implement site-level execution standards and waste management SOP development for consistent operations. Specialized teams create vendor performance protocols to prevent execution errors and service inconsistencies."
       heroImage="/images/stock/city-nature.jpg"
       aboutBullets={[
         "Waste management SOP development for site-level consistency",
