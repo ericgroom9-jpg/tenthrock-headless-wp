@@ -17,17 +17,20 @@ export default function EmergencyWasteRemovalPage() {
         {
           title: "Emergency Product & Perishable Removal",
           description: "Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. Unsellable product disposal and damaged inventory disposal handled with speed and compliance documentation.",
-          href: "/services/emergency-product-removal",
+          image: "/images/stock/service-emergency.jpg",
+          link: "/services/emergency-product-removal",
         },
         {
           title: "Temporary Capacity & Site Stabilization",
           description: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal. We deploy temporary capacity for missed pickups, waste overflow situations, and broken compactor emergencies to stabilize your site fast.",
-          href: "/services/site-stabilization",
+          image: "/images/stock/service-dumpster.jpg",
+          link: "/services/site-stabilization",
         },
         {
           title: "Unplanned Cleanouts & Debris Removal",
           description: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, emergency site cleanout situations, and code violation cleanup support. Large-scale waste clearing with fast mobilization and minimal disruption.",
-          href: "/services/unplanned-cleanouts",
+          image: "/images/stock/service-commercial.jpg",
+          link: "/services/unplanned-cleanouts",
         },
       ]}
     />

@@ -196,9 +196,7 @@ export default function IndustryTemplate({
                       </button>
                       {/* Progress bar */}
                       <div className="h-0.5 bg-gray-200 ml-10 sm:ml-12 md:ml-14" aria-hidden="true">
-                        <FadeIn
-                          className="h-full bg-[#042940]"
-                        />
+                        <div className="h-full bg-[#042940]" />
                       </div>
                     </div>
                   ))}

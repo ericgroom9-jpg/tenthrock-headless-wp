@@ -17,17 +17,20 @@ export default function WasteOperationsAdvisoryPage() {
         {
           title: "Waste Program Assessments & Roadmaps",
           description: "Portfolio-wide waste strategy and operational waste audit of existing programs, vendor structures, workflows, and cost drivers. Deliverables include a multi-site waste roadmap, cost-control waste optimization plans, and portfolio-wide recommendations that drive measurable cost reduction.",
-          href: "/services/waste-program-assessments",
+          image: "/images/stock/service-centralized-program.jpg",
+          link: "/services/waste-program-assessments",
         },
         {
           title: "Standards, SOPs & Vendor Training",
           description: "Waste management SOP development and multi-site vendor training framework covering vendor performance protocols, site-level execution standards, escalation procedures, and documentation systems designed to prevent costly execution errors and inconsistencies.",
-          href: "/services/standards-sops-training",
+          image: "/images/stock/service-maintenance.jpg",
+          link: "/services/standards-sops-training",
         },
         {
           title: "Ongoing Advisory & Program Implementation",
           description: "Waste workflow optimization and multi-site waste execution strategy. Ongoing waste program optimization with waste management oversight services, operational waste risk mitigation, and retained advisory support embedded in your waste operations.",
-          href: "/services/ongoing-advisory",
+          image: "/images/stock/service-commercial.jpg",
+          link: "/services/ongoing-advisory",
         },
       ]}
     />

@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 
 interface FadeInProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   delay?: number;
   duration?: number;
@@ -11,9 +11,10 @@ interface FadeInProps {
   distance?: number;
   once?: boolean;
   threshold?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: "div" | "section" | "span" | "p" | "h1" | "h2" | "h3" | "h4" | "li" | "ul" | "article" | "aside" | "main" | "header" | "footer" | "nav";
   style?: React.CSSProperties;
   id?: string;
+  role?: string;
   "data-testid"?: string;
   "aria-label"?: string;
   "aria-labelledby"?: string;

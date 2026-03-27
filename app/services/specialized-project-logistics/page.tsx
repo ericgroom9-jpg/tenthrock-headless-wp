@@ -17,17 +17,20 @@ export default function SpecializedProjectLogisticsPage() {
         {
           title: "Site Closures & Remodels",
           description: "Site decommissioning, post-construction cleanout, store closings, and retail remodel waste management. Portfolio-wide site turnover, commercial cleanout, and D&D (Deactivation and Demolition) handled start to finish with vendor sourcing and close-out reporting.",
-          href: "/services/site-closures-remodels",
+          image: "/images/stock/service-commercial.jpg",
+          link: "/services/site-closures-remodels",
         },
         {
           title: "Events & Stadiums",
           description: "Event waste logistics and stadium waste coordination for multi-day event waste support. Event waste management for fairs, festivals, and temporary activations managed on tight timelines with contingency planning and rapid response.",
-          href: "/services/events-stadiums",
+          image: "/images/stock/service-event-stadium.jpg",
+          link: "/services/events-stadiums",
         },
         {
           title: "Natural Disaster Mobilization",
           description: "Storm debris removal, hurricane debris cleanup, and emergency debris removal with rapid response. Emergency dumpster rental, emergency roll-off rental, and emergency open-top dumpsters deployed for multi-site recovery support and post-storm waste management.",
-          href: "/services/natural-disaster-mobilization",
+          image: "/images/stock/industry-natural-disasters-storm.jpg",
+          link: "/services/natural-disaster-mobilization",
         },
       ]}
     />
