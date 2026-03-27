@@ -141,7 +141,7 @@ export default function CommercialWasteServices() {
               className="max-w-2xl"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
-                Commercial Waste Services
+                Waste Management Services
               </h1>
               <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-xl leading-relaxed">
                 Emergency response, project logistics, container rentals, and waste program advisory for multi-location operators. One point of contact, 48 states.

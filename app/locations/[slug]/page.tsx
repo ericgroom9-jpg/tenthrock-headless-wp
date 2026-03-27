@@ -103,7 +103,7 @@ export default function LocationTemplatePage() {
                 id="location-hero-heading"
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px]"
               >
-                Commercial Waste Services in {locationName}
+                Waste Management Services in {locationName}
               </h1>
               <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
                 {stateContent?.subtitle || "On-demand waste removal, dumpster rentals, and managed programs for businesses across the region. Local crews, nationwide support."}

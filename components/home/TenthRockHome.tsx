@@ -388,7 +388,7 @@ const ServicesSection = () => {
               Our Services
           </div>
           <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-primary leading-tight mb-4 tracking-tighter">
-            Commercial Waste Services
+            Waste Management Services
           </h2>
           <p className="text-lg text-primary/70">
             Four core services. One point of contact. Dispatched across 48 states.
