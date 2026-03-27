@@ -69,7 +69,7 @@ function EmergencyProductRemovalPage() {
             "Damaged and unsellable inventory disposed with compliance documentation",
             "After-hours and weekend perishable bulk pickup available"
         ],
-        aboutDescription: "Refrigeration failure creates immediate health and pest risks that require documented, compliant disposal. Tenth Rock provides specialized logistics to stabilize your site and secure insurance-ready reporting for the entire loss."
+        aboutDescription: "Tenth Rock provides spoiled product disposal and after-hours waste removal for urgent needs. We deliver the documentation required for perishable inventory loss disposal and insurance claims."
     }, void 0, false, {
         fileName: "[project]/app/services/emergency-product-removal/page.tsx",
         lineNumber: 5,
