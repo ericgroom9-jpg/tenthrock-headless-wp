@@ -203,20 +203,15 @@ const LoadingScreen = () => {
   );
 };
 
-const Hero = () => {
-  const stagger = 0.15;
-  const baseDelay = (LOADER_TOTAL_MS / 1000) + 0.1;
+const HERO_BASE_DELAY = `${(LOADER_TOTAL_MS / 1000) + 0.1}s`;
+const HERO_STAGGER = 0.15;
 
+const Hero = () => {
   return (
     <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <motion.div
-          className="w-full h-full"
-          initial={{ scale: 1.15 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 2.0, delay: LOADER_TOTAL_MS / 1000, ease: "easeOut" }}
-        >
+        <div className="w-full h-full hero-video-zoom">
           <video 
             autoPlay 
             loop 
@@ -228,7 +223,7 @@ const Hero = () => {
             className="w-full h-full object-cover opacity-80"
             src={heroVideo}
           />
-        </motion.div>
+        </div>
         <div className="absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/20 md:via-transparent to-[#042940]/40 md:to-[#042940]/30"></div>
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
@@ -236,42 +231,32 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">
         <div className="max-w-5xl mx-auto text-left sm:text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: baseDelay, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8"
+          <div
+            className="hero-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8"
+            style={{ animationDelay: HERO_BASE_DELAY }}
           >
             <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
             Nationwide Commercial Waste Solutions
-          </motion.div>
+          </div>
 
-          <motion.h1
+          <h1
             id="hero-heading"
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5"
-            style={{ textWrap: "balance" }}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: baseDelay + stagger, ease: "easeOut" }}
+            className="hero-fade-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5"
+            style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER}s` }}
           >
             Fast, Reliable Waste Solutions, Anywhere You Need Them
-          </motion.h1>
+          </h1>
           
-          <motion.p
-            className="text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md"
-            style={{ textWrap: "balance" }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: baseDelay + stagger * 2, ease: "easeOut" }}
+          <p
+            className="hero-fade-up text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md"
+            style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 2}s` }}
           >
             Emergency pickups, dumpster rentals, and site cleanouts. 24/7 dispatch and emergency response.
-          </motion.p>
+          </p>
           
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: baseDelay + stagger * 3, ease: "easeOut" }}
+          <div
+            className="hero-fade-up flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full"
+            style={{ animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 3}s` }}
           >
             <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" aria-label="Request a waste removal service" data-testid="button-hero-cta">
               Request A Service
@@ -279,7 +264,7 @@ const Hero = () => {
             <Button size="lg" variant="outline" className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
               See How It Works
             </Button>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -2897,9 +2897,9 @@ const LoadingScreen = ()=>{
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
+const HERO_BASE_DELAY = `${LOADER_TOTAL_MS / 1000 + 0.1}s`;
+const HERO_STAGGER = 0.15;
 const Hero = ()=>{
-    const stagger = 0.15;
-    const baseDelay = LOADER_TOTAL_MS / 1000 + 0.1;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         "aria-labelledby": "hero-heading",
         className: "relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]",
@@ -2907,19 +2907,8 @@ const Hero = ()=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 z-0",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        className: "w-full h-full",
-                        initial: {
-                            scale: 1.15
-                        },
-                        animate: {
-                            scale: 1
-                        },
-                        transition: {
-                            duration: 2.0,
-                            delay: LOADER_TOTAL_MS / 1000,
-                            ease: "easeOut"
-                        },
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-full h-full hero-video-zoom",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
                             autoPlay: true,
                             loop: true,
@@ -2932,7 +2921,7 @@ const Hero = ()=>{
                             src: heroVideo
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 220,
+                            lineNumber: 215,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
@@ -2944,21 +2933,21 @@ const Hero = ()=>{
                         className: "absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 232,
+                        lineNumber: 227,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/20 md:via-transparent to-[#042940]/40 md:to-[#042940]/30"
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 233,
+                        lineNumber: 228,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 234,
+                        lineNumber: 229,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
@@ -2972,101 +2961,55 @@ const Hero = ()=>{
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "max-w-5xl mx-auto text-left sm:text-center",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            initial: {
-                                opacity: 0,
-                                y: 20,
-                                scale: 0.95
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "hero-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8",
+                            style: {
+                                animationDelay: HERO_BASE_DELAY
                             },
-                            animate: {
-                                opacity: 1,
-                                y: 0,
-                                scale: 1
-                            },
-                            transition: {
-                                duration: 0.6,
-                                delay: baseDelay,
-                                ease: "easeOut"
-                            },
-                            className: "inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 245,
+                                    lineNumber: 238,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "Nationwide Commercial Waste Solutions"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 239,
+                            lineNumber: 234,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h1, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                             id: "hero-heading",
-                            className: "text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5",
+                            className: "hero-fade-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5",
                             style: {
-                                textWrap: "balance"
-                            },
-                            initial: {
-                                opacity: 0,
-                                y: 40
-                            },
-                            animate: {
-                                opacity: 1,
-                                y: 0
-                            },
-                            transition: {
-                                duration: 0.7,
-                                delay: baseDelay + stagger,
-                                ease: "easeOut"
+                                textWrap: "balance",
+                                animationDelay: `${LOADER_TOTAL_MS / 1000 + 0.1 + HERO_STAGGER}s`
                             },
                             children: "Fast, Reliable Waste Solutions, Anywhere You Need Them"
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 249,
+                            lineNumber: 242,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
-                            className: "text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "hero-fade-up text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md",
                             style: {
-                                textWrap: "balance"
-                            },
-                            initial: {
-                                opacity: 0,
-                                y: 30
-                            },
-                            animate: {
-                                opacity: 1,
-                                y: 0
-                            },
-                            transition: {
-                                duration: 0.6,
-                                delay: baseDelay + stagger * 2,
-                                ease: "easeOut"
+                                textWrap: "balance",
+                                animationDelay: `${LOADER_TOTAL_MS / 1000 + 0.1 + HERO_STAGGER * 2}s`
                             },
                             children: "Emergency pickups, dumpster rentals, and site cleanouts. 24/7 dispatch and emergency response."
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 260,
+                            lineNumber: 250,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                            className: "flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full",
-                            initial: {
-                                opacity: 0,
-                                y: 30
-                            },
-                            animate: {
-                                opacity: 1,
-                                y: 0
-                            },
-                            transition: {
-                                duration: 0.6,
-                                delay: baseDelay + stagger * 3,
-                                ease: "easeOut"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "hero-fade-up flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full",
+                            style: {
+                                animationDelay: `${LOADER_TOTAL_MS / 1000 + 0.1 + HERO_STAGGER * 3}s`
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3077,7 +3020,7 @@ const Hero = ()=>{
                                     children: "Request A Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 276,
+                                    lineNumber: 261,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3092,24 +3035,24 @@ const Hero = ()=>{
                                     children: "See How It Works"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 279,
+                                    lineNumber: 264,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 270,
+                            lineNumber: 257,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                    lineNumber: 238,
+                    lineNumber: 233,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 237,
+                lineNumber: 232,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -3150,14 +3093,14 @@ const Counter = ({ from = 0, to, duration = 2, suffix = "", prefix = "" })=>{
                 children: rounded
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 305,
+                lineNumber: 290,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             suffix
         ]
     }, void 0, true, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 303,
+        lineNumber: 288,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3181,12 +3124,12 @@ const SimpleNumbers = ()=>{
                                     duration: 2.5
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 319,
+                                    lineNumber: 304,
                                     columnNumber: 18
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 318,
+                                lineNumber: 303,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3194,13 +3137,13 @@ const SimpleNumbers = ()=>{
                                 children: "States Serviced"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 321,
+                                lineNumber: 306,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 317,
+                        lineNumber: 302,
                         columnNumber: 12
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3214,12 +3157,12 @@ const SimpleNumbers = ()=>{
                                     duration: 2.5
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 325,
+                                    lineNumber: 310,
                                     columnNumber: 18
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 324,
+                                lineNumber: 309,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3227,13 +3170,13 @@ const SimpleNumbers = ()=>{
                                 children: "Locations Managed"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 327,
+                                lineNumber: 312,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 323,
+                        lineNumber: 308,
                         columnNumber: 12
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3247,12 +3190,12 @@ const SimpleNumbers = ()=>{
                                     duration: 2.5
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 331,
+                                    lineNumber: 316,
                                     columnNumber: 18
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 330,
+                                lineNumber: 315,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3260,29 +3203,29 @@ const SimpleNumbers = ()=>{
                                 children: "Emergency Support"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 333,
+                                lineNumber: 318,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 329,
+                        lineNumber: 314,
                         columnNumber: 12
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 316,
+                lineNumber: 301,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/components/home/TenthRockHome.tsx",
-            lineNumber: 315,
+            lineNumber: 300,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 314,
+        lineNumber: 299,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3404,14 +3347,14 @@ const ServicesSection = ()=>{
                                     className: "w-2 h-2 rounded-full bg-secondary"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 402,
+                                    lineNumber: 387,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "Our Services"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 401,
+                            lineNumber: 386,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3420,7 +3363,7 @@ const ServicesSection = ()=>{
                             children: "Commercial Waste Services"
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 405,
+                            lineNumber: 390,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3428,13 +3371,13 @@ const ServicesSection = ()=>{
                             children: "Four core services. One point of contact. Dispatched across 48 states."
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 408,
+                            lineNumber: 393,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                    lineNumber: 394,
+                    lineNumber: 379,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3457,13 +3400,13 @@ const ServicesSection = ()=>{
                                                     className: "w-2 h-2 rounded-full bg-[#c5d520] flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 431,
+                                                    lineNumber: 416,
                                                     columnNumber: 22
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 428,
+                                            lineNumber: 413,
                                             columnNumber: 18
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         activeService === i && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3480,18 +3423,18 @@ const ServicesSection = ()=>{
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 435,
+                                            lineNumber: 420,
                                             columnNumber: 20
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 417,
+                                    lineNumber: 402,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)))
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 415,
+                            lineNumber: 400,
                             columnNumber: 12
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3528,12 +3471,12 @@ const ServicesSection = ()=>{
                                                             className: "w-5 h-5 text-[#c5d520]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                            lineNumber: 467,
+                                                            lineNumber: 452,
                                                             columnNumber: 26
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                        lineNumber: 466,
+                                                        lineNumber: 451,
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3541,7 +3484,7 @@ const ServicesSection = ()=>{
                                                         children: item.label
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                        lineNumber: 469,
+                                                        lineNumber: 454,
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3549,24 +3492,24 @@ const ServicesSection = ()=>{
                                                         children: item.desc
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                        lineNumber: 472,
+                                                        lineNumber: 457,
                                                         columnNumber: 24
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, idx, true, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                lineNumber: 461,
+                                                lineNumber: 446,
                                                 columnNumber: 22
                                             }, ("TURBOPACK compile-time value", void 0));
                                         })
                                     }, activeService, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 450,
+                                        lineNumber: 435,
                                         columnNumber: 16
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 449,
+                                    lineNumber: 434,
                                     columnNumber: 14
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3581,41 +3524,41 @@ const ServicesSection = ()=>{
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                lineNumber: 487,
+                                                lineNumber: 472,
                                                 columnNumber: 29
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 482,
+                                        lineNumber: 467,
                                         columnNumber: 16
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 481,
+                                    lineNumber: 466,
                                     columnNumber: 14
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 448,
+                            lineNumber: 433,
                             columnNumber: 12
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                    lineNumber: 413,
+                    lineNumber: 398,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/components/home/TenthRockHome.tsx",
-            lineNumber: 393,
+            lineNumber: 378,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 392,
+        lineNumber: 377,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3631,7 +3574,7 @@ const WhyUs = ()=>{
                 className: "w-5 h-5 text-[#c5d520]"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 506,
+                lineNumber: 491,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         },
@@ -3642,7 +3585,7 @@ const WhyUs = ()=>{
                 className: "w-5 h-5 text-[#c5d520]"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 511,
+                lineNumber: 496,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         }
@@ -3680,12 +3623,12 @@ const WhyUs = ()=>{
                             loading: "lazy"
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 527,
+                            lineNumber: 512,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 520,
+                        lineNumber: 505,
                         columnNumber: 12
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -3710,7 +3653,7 @@ const WhyUs = ()=>{
                                 children: "Why You’ll Love Tenth Rock Solutions"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 538,
+                                lineNumber: 523,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3725,7 +3668,7 @@ const WhyUs = ()=>{
                                                     children: item.icon
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 546,
+                                                    lineNumber: 531,
                                                     columnNumber: 24
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3735,7 +3678,7 @@ const WhyUs = ()=>{
                                                             children: item.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                            lineNumber: 550,
+                                                            lineNumber: 535,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3743,29 +3686,29 @@ const WhyUs = ()=>{
                                                             children: item.content
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                            lineNumber: 551,
+                                                            lineNumber: 536,
                                                             columnNumber: 27
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 549,
+                                                    lineNumber: 534,
                                                     columnNumber: 24
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 545,
+                                            lineNumber: 530,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, i, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 544,
+                                        lineNumber: 529,
                                         columnNumber: 18
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 542,
+                                lineNumber: 527,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3777,7 +3720,7 @@ const WhyUs = ()=>{
                                         children: "Request A Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 561,
+                                        lineNumber: 546,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3787,35 +3730,35 @@ const WhyUs = ()=>{
                                         children: "View Our Services"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 564,
+                                        lineNumber: 549,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 560,
+                                lineNumber: 545,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 531,
+                        lineNumber: 516,
                         columnNumber: 12
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 518,
+                lineNumber: 503,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/components/home/TenthRockHome.tsx",
-            lineNumber: 517,
+            lineNumber: 502,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 516,
+        lineNumber: 501,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3828,7 +3771,7 @@ const Reasons = ()=>{
                 className: "w-6 h-6"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 578,
+                lineNumber: 563,
                 columnNumber: 50
             }, ("TURBOPACK compile-time value", void 0)),
             desc: "One person to handle everything. No call centers, no runarounds, just answers."
@@ -3839,7 +3782,7 @@ const Reasons = ()=>{
                 className: "w-6 h-6"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 579,
+                lineNumber: 564,
                 columnNumber: 44
             }, ("TURBOPACK compile-time value", void 0)),
             desc: "Visual confirmation for every job we complete, available instantly."
@@ -3850,7 +3793,7 @@ const Reasons = ()=>{
                 className: "w-6 h-6"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 580,
+                lineNumber: 565,
                 columnNumber: 51
             }, ("TURBOPACK compile-time value", void 0)),
             desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner."
@@ -3861,7 +3804,7 @@ const Reasons = ()=>{
                 className: "w-6 h-6"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 581,
+                lineNumber: 566,
                 columnNumber: 41
             }, ("TURBOPACK compile-time value", void 0)),
             desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service."
@@ -3900,14 +3843,14 @@ const Reasons = ()=>{
                                             className: "w-2 h-2 rounded-full bg-secondary"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 597,
+                                            lineNumber: 582,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Benefits"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 596,
+                                    lineNumber: 581,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -3915,7 +3858,7 @@ const Reasons = ()=>{
                                     children: "More Reasons You’ll Love Us"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 600,
+                                    lineNumber: 585,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3923,7 +3866,7 @@ const Reasons = ()=>{
                                     children: "We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts."
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 603,
+                                    lineNumber: 588,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3932,18 +3875,18 @@ const Reasons = ()=>{
                                     children: "Request A Service"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 606,
+                                    lineNumber: 591,
                                     columnNumber: 16
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 590,
+                            lineNumber: 575,
                             columnNumber: 14
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 589,
+                        lineNumber: 574,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3974,7 +3917,7 @@ const Reasons = ()=>{
                                         children: item.icon
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 624,
+                                        lineNumber: 609,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3982,7 +3925,7 @@ const Reasons = ()=>{
                                         children: item.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 628,
+                                        lineNumber: 613,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3990,34 +3933,34 @@ const Reasons = ()=>{
                                         children: item.desc
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 629,
+                                        lineNumber: 614,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, i, true, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 615,
+                                lineNumber: 600,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 613,
+                        lineNumber: 598,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 587,
+                lineNumber: 572,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/components/home/TenthRockHome.tsx",
-            lineNumber: 586,
+            lineNumber: 571,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 585,
+        lineNumber: 570,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -4056,14 +3999,14 @@ const Stats = ()=>{
                                             className: "w-2 h-2 rounded-full bg-secondary"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 653,
+                                            lineNumber: 638,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         "Key Metrics"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 652,
+                                    lineNumber: 637,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4071,7 +4014,7 @@ const Stats = ()=>{
                                     children: "Why Clients Call Us Again and Again."
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 656,
+                                    lineNumber: 641,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4079,7 +4022,7 @@ const Stats = ()=>{
                                     children: "Numbers tell the story. Our clients stick with us because we deliver measurable results: lower costs, faster response, and fewer headaches managing waste across multiple locations."
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 659,
+                                    lineNumber: 644,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4091,7 +4034,7 @@ const Stats = ()=>{
                                             children: "Request A Service"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 663,
+                                            lineNumber: 648,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -4103,31 +4046,31 @@ const Stats = ()=>{
                                                     className: "w-5 h-5 text-secondary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 667,
+                                                    lineNumber: 652,
                                                     columnNumber: 20
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " 727.510.5454"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 666,
+                                            lineNumber: 651,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 662,
+                                    lineNumber: 647,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 646,
+                            lineNumber: 631,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 645,
+                        lineNumber: 630,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4141,7 +4084,7 @@ const Stats = ()=>{
                                         children: "Average Cost Savings"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 675,
+                                        lineNumber: 660,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4149,14 +4092,14 @@ const Stats = ()=>{
                                         children: "30%"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 676,
+                                        lineNumber: 661,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "bg-primary/10 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 677,
+                                        lineNumber: 662,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4164,13 +4107,13 @@ const Stats = ()=>{
                                         children: "Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 678,
+                                        lineNumber: 663,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 674,
+                                lineNumber: 659,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4187,12 +4130,12 @@ const Stats = ()=>{
                                             loading: "lazy"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 683,
+                                            lineNumber: 668,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 682,
+                                        lineNumber: 667,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4200,7 +4143,7 @@ const Stats = ()=>{
                                         children: "Locations Managed"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 685,
+                                        lineNumber: 670,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4208,14 +4151,14 @@ const Stats = ()=>{
                                         children: "5K+"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 686,
+                                        lineNumber: 671,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "bg-primary/10 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 687,
+                                        lineNumber: 672,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4223,13 +4166,13 @@ const Stats = ()=>{
                                         children: "Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 688,
+                                        lineNumber: 673,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 681,
+                                lineNumber: 666,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4240,7 +4183,7 @@ const Stats = ()=>{
                                         children: "On-Time Service Rate"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 692,
+                                        lineNumber: 677,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4248,14 +4191,14 @@ const Stats = ()=>{
                                         children: "98%"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 693,
+                                        lineNumber: 678,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "bg-primary/10 mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 694,
+                                        lineNumber: 679,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4263,35 +4206,35 @@ const Stats = ()=>{
                                         children: "Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen."
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 695,
+                                        lineNumber: 680,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 691,
+                                lineNumber: 676,
                                 columnNumber: 14
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 673,
+                        lineNumber: 658,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 644,
+                lineNumber: 629,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         }, void 0, false, {
             fileName: "[project]/components/home/TenthRockHome.tsx",
-            lineNumber: 643,
+            lineNumber: 628,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 642,
+        lineNumber: 627,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -4329,7 +4272,7 @@ const Faq = ()=>{
                 className: "absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 735,
+                lineNumber: 720,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4345,14 +4288,14 @@ const Faq = ()=>{
                                         className: "w-2 h-2 rounded-full bg-secondary"
                                     }, void 0, false, {
                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                        lineNumber: 740,
+                                        lineNumber: 725,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     "Common Questions"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 739,
+                                lineNumber: 724,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -4361,7 +4304,7 @@ const Faq = ()=>{
                                 children: "Frequently Asked Questions"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 743,
+                                lineNumber: 728,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4369,13 +4312,13 @@ const Faq = ()=>{
                                 children: "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team."
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 744,
+                                lineNumber: 729,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 738,
+                        lineNumber: 723,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4410,7 +4353,7 @@ const Faq = ()=>{
                                                     children: faq.question
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 771,
+                                                    lineNumber: 756,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4419,18 +4362,18 @@ const Faq = ()=>{
                                                         className: `w-5 h-5 transition-colors duration-300 ${openItem === `item-${i}` ? "text-[#042940]" : "text-primary"}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                        lineNumber: 781,
+                                                        lineNumber: 766,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 776,
+                                                    lineNumber: 761,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 765,
+                                            lineNumber: 750,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4442,33 +4385,33 @@ const Faq = ()=>{
                                                     children: faq.answer
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 792,
+                                                    lineNumber: 777,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                lineNumber: 791,
+                                                lineNumber: 776,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 786,
+                                            lineNumber: 771,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 758,
+                                    lineNumber: 743,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, i, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 751,
+                                lineNumber: 736,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 749,
+                        lineNumber: 734,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4479,7 +4422,7 @@ const Faq = ()=>{
                                 children: "Still Have Questions?"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 803,
+                                lineNumber: 788,
                                 columnNumber: 12
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -4488,25 +4431,25 @@ const Faq = ()=>{
                                 children: "Contact Us"
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 804,
+                                lineNumber: 789,
                                 columnNumber: 12
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 802,
+                        lineNumber: 787,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 737,
+                lineNumber: 722,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 733,
+        lineNumber: 718,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -4541,7 +4484,7 @@ const Location = ()=>{
                             children: "Where to Find Us"
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 825,
+                            lineNumber: 810,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4549,13 +4492,13 @@ const Location = ()=>{
                             children: "Serving businesses nationwide with regional offices for local support."
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 828,
+                            lineNumber: 813,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                    lineNumber: 818,
+                    lineNumber: 803,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4587,7 +4530,7 @@ const Location = ()=>{
                                                     className: "h-6 w-6 text-[#c5d520]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 843,
+                                                    lineNumber: 828,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4595,13 +4538,13 @@ const Location = ()=>{
                                                     children: "Office"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 844,
+                                                    lineNumber: 829,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 842,
+                                            lineNumber: 827,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4609,13 +4552,13 @@ const Location = ()=>{
                                             children: "140 Island Way Ste.159, Clearwater Beach, FL 33767"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 846,
+                                            lineNumber: 831,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 841,
+                                    lineNumber: 826,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4627,7 +4570,7 @@ const Location = ()=>{
                                                     className: "h-6 w-6 text-[#c5d520]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 851,
+                                                    lineNumber: 836,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4635,13 +4578,13 @@ const Location = ()=>{
                                                     children: "Phone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 852,
+                                                    lineNumber: 837,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 850,
+                                            lineNumber: 835,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4649,7 +4592,7 @@ const Location = ()=>{
                                             children: "Available 24/7 for emergencies"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 854,
+                                            lineNumber: 839,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4657,13 +4600,13 @@ const Location = ()=>{
                                             children: "727.510.5454"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 855,
+                                            lineNumber: 840,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 849,
+                                    lineNumber: 834,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4675,7 +4618,7 @@ const Location = ()=>{
                                                     className: "h-6 w-6 text-[#c5d520]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 860,
+                                                    lineNumber: 845,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4683,13 +4626,13 @@ const Location = ()=>{
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                                    lineNumber: 861,
+                                                    lineNumber: 846,
                                                     columnNumber: 17
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 859,
+                                            lineNumber: 844,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4697,19 +4640,19 @@ const Location = ()=>{
                                             children: "hello@tenthrock.com"
                                         }, void 0, false, {
                                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                                            lineNumber: 863,
+                                            lineNumber: 848,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 858,
+                                    lineNumber: 843,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 834,
+                            lineNumber: 819,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -4739,34 +4682,34 @@ const Location = ()=>{
                                     type: "video/mp4"
                                 }, void 0, false, {
                                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                                    lineNumber: 881,
+                                    lineNumber: 866,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                                lineNumber: 874,
+                                lineNumber: 859,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/home/TenthRockHome.tsx",
-                            lineNumber: 867,
+                            lineNumber: 852,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/home/TenthRockHome.tsx",
-                    lineNumber: 833,
+                    lineNumber: 818,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/components/home/TenthRockHome.tsx",
-            lineNumber: 817,
+            lineNumber: 802,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 816,
+        lineNumber: 801,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -4776,7 +4719,7 @@ function Home() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(LoadingScreen, {}, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 893,
+                lineNumber: 878,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -4786,17 +4729,17 @@ function Home() {
                 children: "Skip to main content"
             }, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 895,
+                lineNumber: 880,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Navbar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 898,
+                lineNumber: 883,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Hero, {}, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 899,
+                lineNumber: 884,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -4805,81 +4748,81 @@ function Home() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$LogoReelSection$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 901,
+                        lineNumber: 886,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CommercialWasteServices, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 902,
+                        lineNumber: 887,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(WhoWeHelpSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 903,
+                        lineNumber: 888,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CtaBannerSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 904,
+                        lineNumber: 889,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ProcessSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 905,
+                        lineNumber: 890,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CaseStudySection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 906,
+                        lineNumber: 891,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ReasonsSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 907,
+                        lineNumber: 892,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatsSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 908,
+                        lineNumber: 893,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TestimonialsSection, {
                         testimonials: homeTestimonials
                     }, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 909,
+                        lineNumber: 894,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FaqSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 910,
+                        lineNumber: 895,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(LocationSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 911,
+                        lineNumber: 896,
                         columnNumber: 7
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(FinalCtaSection, {}, void 0, false, {
                         fileName: "[project]/components/home/TenthRockHome.tsx",
-                        lineNumber: 912,
+                        lineNumber: 897,
                         columnNumber: 7
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 900,
+                lineNumber: 885,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/home/TenthRockHome.tsx",
-                lineNumber: 914,
+                lineNumber: 899,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/home/TenthRockHome.tsx",
-        lineNumber: 892,
+        lineNumber: 877,
         columnNumber: 5
     }, this);
 }
