@@ -4645,6 +4645,34 @@ h1, h3, h4, h5, h6, h2 {
   }
 }
 
+.industry-card .industry-card-body {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height .3s ease-out, opacity .3s ease-out;
+  overflow: hidden;
+}
+
+.industry-card:hover .industry-card-body, .industry-card:focus-within .industry-card-body {
+  opacity: 1;
+  max-height: 8rem;
+}
+
+.industry-card .industry-card-cta {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height .3s ease-out, opacity .3s ease-out, transform .2s ease-out;
+  overflow: hidden;
+}
+
+.industry-card:hover .industry-card-cta, .industry-card:focus-within .industry-card-cta {
+  opacity: 1;
+  max-height: 2rem;
+}
+
+.industry-card:hover .industry-card-cta {
+  transform: translateX(4px);
+}
+
 @keyframes heroFadeUp {
   0% {
     opacity: 0;
@@ -5407,34 +5435,8 @@ h1, h3, h4, h5, h6, h2 {
   opacity: .5;
 }
 
-.group:focus-within .group-focus-within\:max-h-24 {
-  max-height: 6rem;
-}
-
-.group:focus-within .group-focus-within\:max-h-8 {
-  max-height: 2rem;
-}
-
-.group:focus-within .group-focus-within\:bg-\[\#c5d520\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(197 213 32 / var(--tw-bg-opacity, 1));
-}
-
-.group:focus-within .group-focus-within\:text-\[\#042940\] {
-  --tw-text-opacity: 1;
-  color: rgb(4 41 64 / var(--tw-text-opacity, 1));
-}
-
-.group\/menu-item:focus-within .group-focus-within\/menu-item\:opacity-100, .group:focus-within .group-focus-within\:opacity-100 {
+.group\/menu-item:focus-within .group-focus-within\/menu-item\:opacity-100 {
   opacity: 1;
-}
-
-.group:hover .group-hover\:max-h-24 {
-  max-height: 6rem;
-}
-
-.group:hover .group-hover\:max-h-8 {
-  max-height: 2rem;
 }
 
 .group:hover .group-hover\:translate-x-1 {
@@ -5465,10 +5467,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .group:hover .group-hover\:bg-\[\#042940\]\/10 {
   background-color: #0429401a;
-}
-
-.group:hover .group-hover\:bg-\[\#042940\]\/60 {
-  background-color: #04294099;
 }
 
 .group:hover .group-hover\:bg-\[\#c5d520\] {
@@ -5535,10 +5533,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .group\/menu-item:hover .group-hover\/menu-item\:opacity-100, .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-.group:active .group-active\:bg-\[\#042940\]\/60 {
-  background-color: #04294099;
 }
 
 .group.destructive .group-\[\.destructive\]\:border-muted\/40 {
@@ -7000,12 +6994,6 @@ h1, h3, h4, h5, h6, h2 {
   .md\:hover\:grayscale-0:hover {
     --tw-grayscale: grayscale(0);
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-  }
-
-  .group:hover .md\:group-hover\:scale-110 {
-    --tw-scale-x: 1.1;
-    --tw-scale-y: 1.1;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .peer[data-variant="inset"] ~ .md\:peer-data-\[variant\=inset\]\:m-2 {

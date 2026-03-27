@@ -35,7 +35,7 @@ export default function WhoWeHelpSection() {
           {sectors.map((sector, i) => (
             <Link href={sector.href} key={i}>
               <FadeIn 
-                className="group relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
+                className="industry-card relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
                 data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <Image 
@@ -43,22 +43,22 @@ export default function WhoWeHelpSection() {
                   alt={sector.title} 
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 md:group-hover:scale-110" 
+                  className="object-cover transition-transform duration-700" 
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 group-hover:bg-[#042940]/60 group-active:bg-[#042940]/60 transition-colors duration-300"></div>
+                <div className="absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 transition-colors duration-300"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90"></div>
                 
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                   <div className="transform transition-transform duration-300">
-                      <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 group-hover:bg-[#c5d520] group-hover:text-[#042940] group-focus-within:bg-[#c5d520] group-focus-within:text-[#042940] transition-colors duration-300">
+                   <div>
+                      <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 transition-colors duration-300">
                          {sector.icon}
                       </div>
                       <h3 className="text-white font-bold text-xl leading-tight">{sector.title}</h3>
-                      <p className="text-white/90 text-sm mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-out group-hover:max-h-24 group-hover:opacity-100 group-focus-within:max-h-24 group-focus-within:opacity-100">
+                      <p className="industry-card-body text-white/90 text-sm mt-2">
                         {sector.desc}
                       </p>
-                      <div className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-out group-hover:max-h-8 group-hover:opacity-100 group-focus-within:max-h-8 group-focus-within:opacity-100 group-hover:translate-x-1">
+                      <div className="industry-card-cta flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3">
                          Learn More <ArrowRight className="w-4 h-4" />
                       </div>
                    </div>
