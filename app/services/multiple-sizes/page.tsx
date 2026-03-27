@@ -12,7 +12,7 @@ export default function MultipleSizesPage() {
         "Utilize temporary roll-off services to prevent overflow of permanent waste systems.",
         "Access nationwide inventory for consistent service across all regional project sites.",
       ]}
-      aboutDescription="Tenth Rock differentiates from permanent front-load services by offering flexible, large-scale hauling solutions. We manage the logistics of selecting and scheduling container sizes to optimize site space and project budgets."
+      aboutDescription="Tenth Rock offers a 20 yard dumpster rental, 30 yard roll off, and 40 yard roll off units. We ensure you have a 30 yard open top or 20 yard rolloff for emergency junk removal and same-day junk removal."
     />
   );
 }
