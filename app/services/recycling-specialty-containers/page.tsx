@@ -7,10 +7,10 @@ export default function RecyclingSpecialtyContainersPage() {
       serviceDescription="Access commercial-grade recycling containers for cardboard, metals, and industrial materials. Specialized teams coordinate equipment deployment for temporary projects, facility cleanouts, and high-volume capacity needs."
       heroImage="/images/stock/service-centralized-program.jpg"
       aboutBullets={[
-        "Commercial recycling dumpster for cardboard, plastics, and mixed recyclables",
-        "Metal recycling container rental for scrap and ferrous metals",
-        "Cardboard and baler overflow support during peak volume",
-        "C&D (Construction Debris) containers and specialty waste containers",
+        "Deploy large-scale recycling containers for cardboard and metal scrap.",
+        "Secure specialized hauling for industrial materials and warehouse cleanouts.",
+        "Access project-based recycling solutions to manage temporary material overflows.",
+        "Receive detailed documentation for corporate sustainability and compliance reporting.",
       ]}
       aboutDescription="Tenth Rock provides dedicated recycling logistics that differ from standard residential programs. We manage the sourcing and hauling of specialty open-top containers to ensure your commercial site maintains compliance and operational efficiency."
     />
