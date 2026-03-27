@@ -4,7 +4,7 @@ export default function EventsStadiumsPage() {
   return (
     <ServiceTemplate
       serviceName="Events & Stadiums"
-      serviceDescription="Manage high-volume waste planning and execution for stadiums, festivals, and temporary activations. Specialized teams coordinate contingency logistics and rapid response to maintain site standards during live, high-visibility events."
+      serviceDescription="Implement high-volume event waste logistics and stadium waste coordination. Specialized teams provide emergency waste management and contingency planning to maintain standards during live, high-visibility events."
       heroImage="/images/stock/service-event-stadium.jpg"
       aboutBullets={[
         "Deploy rapid response crews for immediate container swaps and debris clearing.",
