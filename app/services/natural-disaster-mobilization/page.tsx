@@ -4,7 +4,7 @@ export default function NaturalDisasterMobilizationPage() {
   return (
     <ServiceTemplate
       serviceName="Natural Disaster Mobilization"
-      serviceDescription="Rapidly mobilize multi-site waste recovery following hurricanes, floods, and severe storms. Specialized teams coordinate debris removal and damaged product disposal to restore safety and operations across affected regions."
+      serviceDescription="Rapidly deploy emergency waste management and multi-site recovery support. Specialized teams coordinate emergency debris removal and rapid response debris removal across affected regions to restore business continuity."
       heroImage="/images/stock/industry-natural-disasters-storm.jpg"
       aboutBullets={[
         "Deploy emergency roll-off containers and high-capacity hauling for storm debris.",

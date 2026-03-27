@@ -64,10 +64,10 @@ function EventsStadiumsPage() {
         serviceDescription: "Implement high-volume event waste logistics and stadium waste coordination. Specialized teams provide emergency waste management and contingency planning to maintain standards during live, high-visibility events.",
         heroImage: "/images/stock/service-event-stadium.jpg",
         aboutBullets: [
-            "Deploy rapid response crews for immediate container swaps and debris clearing.",
-            "Secure specialized vendor logistics for high-traffic venues and fairgrounds.",
-            "Maintain site safety and aesthetic standards for attendees and stakeholders.",
-            "Access 24/7 support to manage waste overflows during peak event hours."
+            "Deploy emergency junk removal between back-to-back events.",
+            "Secure multi-day event waste support for fairgrounds and arenas.",
+            "Access same-day junk removal for post-event breakdown.",
+            "Implement emergency waste management for high-traffic public spaces."
         ],
         aboutDescription: "Tenth Rock delivers event waste management and multi-day event waste support. We manage the intense logistics of emergency junk removal to ensure seamless operations and attendee safety."
     }, void 0, false, {
