@@ -12,7 +12,7 @@ export default function OngoingAdvisoryPage() {
         "Implement waste workflow optimization to increase property-level efficiency.",
         "Provide operational waste risk mitigation and executive-level reporting for stakeholders.",
       ]}
-      aboutDescription="Tenth Rock serves as a strategic partner for private equity-backed brands and franchise networks. We deliver waste workflow optimization and operational waste risk mitigation to bridge the gap between strategy and site-level results."
+      aboutDescription="Tenth Rock delivers waste workflow optimization and ongoing waste program optimization. We manage operational waste risk mitigation and emergency junk removal to maintain high-visibility site standards."
     />
   );
 }

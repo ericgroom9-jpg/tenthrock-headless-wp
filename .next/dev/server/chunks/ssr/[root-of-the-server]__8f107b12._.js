@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function OngoingAdvisoryPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Ongoing Advisory & Program Implementation",
-        serviceDescription: "Implement a multi-site waste execution strategy through waste management oversight services. Specialized teams provide ongoing waste program optimization to ensure seamless performance across your entire enterprise.",
+        serviceDescription: "Implement a multi-site waste execution strategy through retained emergency waste management advisory. Specialized teams provide waste management oversight services to ensure seamless execution across enterprise networks.",
         heroImage: "/images/stock/service-commercial.jpg",
         aboutBullets: [
             "Maintain a multi-site waste execution strategy to adapt to shifting portfolio needs.",
@@ -69,7 +69,7 @@ function OngoingAdvisoryPage() {
             "Implement waste workflow optimization to increase property-level efficiency.",
             "Provide operational waste risk mitigation and executive-level reporting for stakeholders."
         ],
-        aboutDescription: "Tenth Rock serves as a strategic partner for private equity-backed brands and franchise networks. We deliver waste workflow optimization and operational waste risk mitigation to bridge the gap between strategy and site-level results."
+        aboutDescription: "Tenth Rock delivers waste workflow optimization and ongoing waste program optimization. We manage operational waste risk mitigation and emergency junk removal to maintain high-visibility site standards."
     }, void 0, false, {
         fileName: "[project]/app/services/ongoing-advisory/page.tsx",
         lineNumber: 5,
