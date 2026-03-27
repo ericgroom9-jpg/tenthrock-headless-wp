@@ -60,7 +60,7 @@ export default function CommercialWasteServices() {
               Our Services
           </div>
           <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-4 tracking-tighter">
-            Commercial Waste Services
+            Waste Management Services
           </h2>
           <p className="text-lg text-[#042940]/70">
             Four core capabilities. One point of contact. Dispatched across 48 states.
