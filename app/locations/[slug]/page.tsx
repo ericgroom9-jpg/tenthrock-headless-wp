@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -8,13 +10,14 @@ import { PhoneInput } from "@/components/ui/phone-input";
 import { Phone, Check, ArrowUpRight, ArrowDown, MapPin } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
-import CtaBannerSection from "@/components/shared/CtaBannerSection";
-import CaseStudySection from "@/components/shared/CaseStudySection";
-import FaqSection from "@/components/shared/FaqSection";
-import LocationSection from "@/components/shared/LocationSection";
-import FinalCtaSection from "@/components/shared/FinalCtaSection";
-import ProcessSection from "@/components/shared/ProcessSection";
+
+const CommercialWasteServices = dynamic(() => import("@/components/shared/CommercialWasteServices"));
+const CtaBannerSection = dynamic(() => import("@/components/shared/CtaBannerSection"));
+const CaseStudySection = dynamic(() => import("@/components/shared/CaseStudySection"));
+const FaqSection = dynamic(() => import("@/components/shared/FaqSection"));
+const LocationSection = dynamic(() => import("@/components/shared/LocationSection"));
+const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
+const ProcessSection = dynamic(() => import("@/components/shared/ProcessSection"));
 import { getStateData, getStateName } from "@/lib/data/state-cities";
 import { stateOutlines } from "@/lib/data/state-outlines";
 import { getStateLocationContent } from "@/lib/data/state-location-content";
@@ -81,11 +84,14 @@ export default function LocationTemplatePage() {
         aria-labelledby="location-hero-heading"
       >
         <div className="absolute inset-0">
-          <img
+          <Image
             src={imgPlaceholder}
             alt=""
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             aria-hidden="true"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
         </div>
@@ -397,12 +403,15 @@ export default function LocationTemplatePage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="rounded-[5px] overflow-hidden h-[350px] md:h-[480px] lg:h-[640px]"
+              className="relative rounded-[5px] overflow-hidden h-[350px] md:h-[480px] lg:h-[640px]"
             >
-              <img
+              <Image
                 src={imgInfoBlock}
                 alt="Commercial waste services in action"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                className="object-cover"
+                loading="lazy"
               />
             </motion.div>
           </div>

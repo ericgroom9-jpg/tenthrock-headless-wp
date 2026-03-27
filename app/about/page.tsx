@@ -1,16 +1,19 @@
 "use client";
 
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Calendar, ArrowRight } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import StatsSection from "@/components/shared/StatsSection";
-import CaseStudySection from "@/components/shared/CaseStudySection";
-import FaqSection from "@/components/shared/FaqSection";
-import LocationSection from "@/components/shared/LocationSection";
-import FinalCtaSection from "@/components/shared/FinalCtaSection";
+
+const StatsSection = dynamic(() => import("@/components/shared/StatsSection"));
+const CaseStudySection = dynamic(() => import("@/components/shared/CaseStudySection"));
+const FaqSection = dynamic(() => import("@/components/shared/FaqSection"));
+const LocationSection = dynamic(() => import("@/components/shared/LocationSection"));
+const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
 
 const imgOurStory = "/images/stock/clean-city-hero.jpg";
 const imgAtOurCore = "/images/stock/city-nature.jpg";
@@ -86,12 +89,15 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="rounded-[5px] overflow-hidden aspect-[16/9] md:aspect-[21/9]"
+            className="relative rounded-[5px] overflow-hidden aspect-[16/9] md:aspect-[21/9]"
           >
-            <img 
+            <Image 
               src={imgOurStory} 
               alt="Tenth Rock company story" 
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+              className="object-cover"
+              priority
             />
           </motion.div>
         </div>
@@ -167,12 +173,15 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square"
+              className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square"
             >
-              <img 
+              <Image 
                 src={imgAtOurCore} 
                 alt="Tenth Rock team members collaborating on waste management solutions" 
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                loading="lazy"
               />
             </motion.div>
           </div>
@@ -206,11 +215,14 @@ export default function AboutPage() {
               { src: "/images/associations/ifma.png", alt: "IFMA - International Facility Management Association" },
               { src: "/images/associations/icsc.png", alt: "ICSC" },
             ].map((logo, i) => (
-              <img
+              <Image
                 key={i}
                 src={logo.src}
                 alt={logo.alt}
+                width={128}
+                height={64}
                 className="h-12 md:h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                loading="lazy"
                 data-testid={`img-association-logo-${i}`}
               />
             ))}
@@ -231,12 +243,15 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square order-2 lg:order-1"
+              className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square order-2 lg:order-1"
             >
-              <img 
+              <Image 
                 src={imgCommunity} 
                 alt="Tenth Rock team participating in a local community cleanup event" 
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                loading="lazy"
               />
             </motion.div>
             

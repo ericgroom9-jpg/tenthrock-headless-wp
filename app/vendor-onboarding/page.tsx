@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -96,11 +97,14 @@ function HeroSection() {
   return (
     <section className="relative bg-[#042940] pt-24 md:pt-28 overflow-hidden" data-testid="section-onboard-hero">
       <div className="absolute inset-0">
-        <img 
+        <Image 
           src={heroImage}
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
           aria-hidden="true"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
       </div>

@@ -1,18 +1,21 @@
 "use client";
 
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import ProcessSection from "@/components/shared/ProcessSection";
-import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
-import StatsSection from "@/components/shared/StatsSection";
-import CaseStudySection from "@/components/shared/CaseStudySection";
-import FaqSection from "@/components/shared/FaqSection";
-import LocationSection from "@/components/shared/LocationSection";
-import FinalCtaSection from "@/components/shared/FinalCtaSection";
-import CtaBannerSection from "@/components/shared/CtaBannerSection";
+
+const CommercialWasteServices = dynamic(() => import("@/components/shared/CommercialWasteServices"));
+const StatsSection = dynamic(() => import("@/components/shared/StatsSection"));
+const CaseStudySection = dynamic(() => import("@/components/shared/CaseStudySection"));
+const FaqSection = dynamic(() => import("@/components/shared/FaqSection"));
+const LocationSection = dynamic(() => import("@/components/shared/LocationSection"));
+const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
+const CtaBannerSection = dynamic(() => import("@/components/shared/CtaBannerSection"));
 
 const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
@@ -28,11 +31,14 @@ export default function OurProcessPage() {
       >
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
+          <Image 
             src={heroImage} 
             alt="" 
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             aria-hidden="true"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/90 to-[#042940]/60"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#042940]/80 via-transparent to-transparent"></div>
