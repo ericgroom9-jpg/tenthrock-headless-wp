@@ -64,10 +64,10 @@ function StandardsSopsTrainingPage() {
         serviceDescription: "Implement site-level execution standards and waste management SOP development for consistent operations. Specialized teams create vendor performance protocols to prevent execution errors and service inconsistencies.",
         heroImage: "/images/stock/city-nature.jpg",
         aboutBullets: [
-            "Waste management SOP development for site-level consistency",
-            "Multi-site vendor training framework with on-site delivery",
-            "Vendor performance protocols and escalation procedures",
-            "Site-level execution standards that prevent costly errors"
+            "Develop standardized protocols for rapid issue resolution.",
+            "Secure uniform documentation for audit readiness and compliance.",
+            "Implement site-level standards for consistent waste handling.",
+            "Create operational guidelines for franchise and facility personnel."
         ],
         aboutDescription: "Tenth Rock builds a multi-site vendor training framework for national retail brands and franchise systems. We establish clear documentation and escalation protocols to streamline onsite management and corporate oversight."
     }, void 0, false, {
