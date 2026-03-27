@@ -64,10 +64,10 @@ function SiteStabilizationPage() {
         serviceDescription: "Deploy emergency junk removal and urgent bulk waste removal to manage a compactor failure response. Specialized teams provide emergency waste management for a broken compactor or missed pickups.",
         heroImage: "/images/stock/service-emergency-overflow.jpg",
         aboutBullets: [
-            "Deploy temporary dumpsters and crews for peak season or vendor gaps.",
-            "Access immediate hauling for compactors and unexpected overflows.",
-            "Secure fast site stabilization to avoid city fines and safety hazards.",
-            "Utilize a single point of contact for nationwide on-demand service."
+            "Access immediate containers for broken compactor events.",
+            "Secure emergency junk removal for waste overflow.",
+            "Utilize urgent bulk waste removal for missed pickups.",
+            "Clear illegal dumping with priority multi-site scheduling."
         ],
         aboutDescription: "Tenth Rock offers same-day junk removal to resolve a waste overflow or overflowing dumpster. We provide rapid recovery to clear illegal dumping and maintain site standards."
     }, void 0, false, {
