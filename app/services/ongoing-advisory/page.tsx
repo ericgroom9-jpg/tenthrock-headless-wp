@@ -4,7 +4,7 @@ export default function OngoingAdvisoryPage() {
   return (
     <ServiceTemplate
       serviceName="Ongoing Advisory & Program Implementation"
-      serviceDescription="Implement a multi-site waste execution strategy through waste management oversight services. Specialized teams provide ongoing waste program optimization to ensure seamless performance across your entire enterprise."
+      serviceDescription="Implement a multi-site waste execution strategy through retained emergency waste management advisory. Specialized teams provide waste management oversight services to ensure seamless execution across enterprise networks."
       heroImage="/images/stock/service-commercial.jpg"
       aboutBullets={[
         "Maintain a multi-site waste execution strategy to adapt to shifting portfolio needs.",
