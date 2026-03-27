@@ -12,7 +12,7 @@ export default function RecyclingSpecialtyContainersPage() {
         "Access project-based recycling solutions to manage temporary material overflows.",
         "Receive detailed documentation for corporate sustainability and compliance reporting.",
       ]}
-      aboutDescription="Tenth Rock provides dedicated recycling logistics that differ from standard residential programs. We manage the sourcing and hauling of specialty open-top containers to ensure your commercial site maintains compliance and operational efficiency."
+      aboutDescription="Tenth Rock delivers same-day junk removal to support landfill diversion and sustainability. We offer source-separated recycling for C&D (Construction Debris) and metal recycling container rental for an efficient circular economy."
     />
   );
 }

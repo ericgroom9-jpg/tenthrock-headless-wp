@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function RecyclingSpecialtyContainersPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Recycling & Specialty Containers",
-        serviceDescription: "Access commercial-grade recycling containers for cardboard, metals, and industrial materials. Specialized teams coordinate equipment deployment for temporary projects, facility cleanouts, and high-volume capacity needs.",
+        serviceDescription: "Deploy emergency waste management for high-volume commercial recycling dumpster and scrap needs. Specialized teams provide emergency roll-off service for cardboard & baler overflow support during capacity surges.",
         heroImage: "/images/stock/service-centralized-program.jpg",
         aboutBullets: [
             "Deploy large-scale recycling containers for cardboard and metal scrap.",
@@ -69,7 +69,7 @@ function RecyclingSpecialtyContainersPage() {
             "Access project-based recycling solutions to manage temporary material overflows.",
             "Receive detailed documentation for corporate sustainability and compliance reporting."
         ],
-        aboutDescription: "Tenth Rock provides dedicated recycling logistics that differ from standard residential programs. We manage the sourcing and hauling of specialty open-top containers to ensure your commercial site maintains compliance and operational efficiency."
+        aboutDescription: "Tenth Rock delivers same-day junk removal to support landfill diversion and sustainability. We offer source-separated recycling for C&D (Construction Debris) and metal recycling container rental for an efficient circular economy."
     }, void 0, false, {
         fileName: "[project]/app/services/recycling-specialty-containers/page.tsx",
         lineNumber: 5,
