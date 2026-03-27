@@ -5562,6 +5562,14 @@ h1, h3, h4, h5, h6, h2 {
   opacity: .5;
 }
 
+.group:focus-within .group-focus-within\:max-h-24 {
+  max-height: 6rem;
+}
+
+.group:focus-within .group-focus-within\:max-h-8 {
+  max-height: 2rem;
+}
+
 .group:focus-within .group-focus-within\:bg-\[\#c5d520\] {
   --tw-bg-opacity: 1;
   background-color: rgb(197 213 32 / var(--tw-bg-opacity, 1));
@@ -5572,8 +5580,16 @@ h1, h3, h4, h5, h6, h2 {
   color: rgb(4 41 64 / var(--tw-text-opacity, 1));
 }
 
-.group\/menu-item:focus-within .group-focus-within\/menu-item\:opacity-100 {
+.group\/menu-item:focus-within .group-focus-within\/menu-item\:opacity-100, .group:focus-within .group-focus-within\:opacity-100 {
   opacity: 1;
+}
+
+.group:hover .group-hover\:max-h-24 {
+  max-height: 6rem;
+}
+
+.group:hover .group-hover\:max-h-8 {
+  max-height: 2rem;
 }
 
 .group:hover .group-hover\:translate-x-1 {

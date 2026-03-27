@@ -54,11 +54,11 @@ export default function WhoWeHelpSection() {
                       <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 group-hover:bg-[#c5d520] group-hover:text-[#042940] group-focus-within:bg-[#c5d520] group-focus-within:text-[#042940] transition-colors duration-300">
                          {sector.icon}
                       </div>
-                      <h3 className="text-white font-bold text-xl leading-tight mb-2">{sector.title}</h3>
-                      <p className="text-white text-sm mt-2">
+                      <h3 className="text-white font-bold text-xl leading-tight">{sector.title}</h3>
+                      <p className="text-white/90 text-sm mt-2 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-out group-hover:max-h-24 group-hover:opacity-100 group-focus-within:max-h-24 group-focus-within:opacity-100">
                         {sector.desc}
                       </p>
-                      <div className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-4 group-hover:translate-x-1 transition-transform duration-200">
+                      <div className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-out group-hover:max-h-8 group-hover:opacity-100 group-focus-within:max-h-8 group-focus-within:opacity-100 group-hover:translate-x-1">
                          Learn More <ArrowRight className="w-4 h-4" />
                       </div>
                    </div>
