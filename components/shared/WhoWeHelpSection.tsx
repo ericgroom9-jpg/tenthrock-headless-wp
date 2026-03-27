@@ -22,7 +22,7 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
   return (
     <Link href={sector.href}>
       <div
-        className="industry-card relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-shadow duration-300"
+        className="relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-shadow duration-300"
         data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}

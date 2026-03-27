@@ -4796,39 +4796,6 @@ h1, h3, h4, h5, h6, h2 {
   }
 }
 
-.industry-card {
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-.industry-card .industry-card-body {
-  opacity: 0;
-  max-height: 0;
-  transition: max-height .3s ease-out, opacity .3s ease-out;
-  overflow: hidden;
-}
-
-.industry-card:hover .industry-card-body, .industry-card:focus-within .industry-card-body {
-  opacity: 1;
-  max-height: 8rem;
-}
-
-.industry-card .industry-card-cta {
-  opacity: 0;
-  max-height: 0;
-  transition: max-height .3s ease-out, opacity .3s ease-out, transform .2s ease-out;
-  overflow: hidden;
-}
-
-.industry-card:hover .industry-card-cta, .industry-card:focus-within .industry-card-cta {
-  opacity: 1;
-  max-height: 2rem;
-}
-
-.industry-card:hover .industry-card-cta {
-  transform: translateX(4px);
-}
-
 @keyframes heroFadeUp {
   0% {
     opacity: 0;

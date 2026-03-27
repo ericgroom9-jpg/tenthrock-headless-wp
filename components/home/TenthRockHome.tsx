@@ -75,7 +75,7 @@ const CtaBannerSection = dynamic(() => import("@/components/shared/CtaBannerSect
 const ProcessSection = dynamic(() => import("@/components/shared/ProcessSection"), { ssr: true, loading: () => <SectionSkeleton /> });
 const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"), { ssr: true, loading: () => <SectionSkeleton /> });
 const CaseStudySection = dynamic(() => import("@/components/shared/CaseStudySection"), { ssr: true, loading: () => <SectionSkeleton /> });
-const WhoWeHelpSection = dynamic(() => import("@/components/shared/WhoWeHelpSection"), { ssr: true, loading: () => <SectionSkeleton /> });
+const WhoWeHelpSection = dynamic(() => import("@/components/shared/WhoWeHelpSection"), { ssr: false, loading: () => <SectionSkeleton /> });
 const TestimonialsSection = dynamic(() => import("@/components/shared/TestimonialsSection"), { ssr: true, loading: () => <SectionSkeleton /> });
 
 // Assets - Main Logos
