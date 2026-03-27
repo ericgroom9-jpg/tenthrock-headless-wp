@@ -7,10 +7,10 @@ export default function UnplannedCleanutsPage() {
       serviceDescription="Rapidly mobilize for an emergency site cleanout or commercial site cleanout. Specialized teams coordinate bulk debris removal and emergency junk removal for fast asset recovery and transitions."
       heroImage="/images/stock/clean-city.jpg"
       aboutBullets={[
-        "Deploy professional crews for immediate removal of bulk debris and abandoned fixtures.",
-        "Resolve illegal dumping and tenant transitions with minimal operational disruption.",
-        "Secure fast site recovery to avoid municipal fines and safety hazards.",
-        "Utilize a single point of contact for nationwide on-demand service.",
+        "Access urgent bulk pickup for foreclosure cleanouts.",
+        "Secure same-day junk removal for retail fixtures and debris.",
+        "Deploy emergency junk removal for large-scale waste.",
+        "Receive code violation cleanup support for portfolio compliance.",
       ]}
       aboutDescription="Tenth Rock provides emergency waste management and code violation cleanup support. We deliver same-day junk removal for large-scale waste clearing with minimal operational disruption."
     />
