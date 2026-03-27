@@ -4,7 +4,7 @@ export default function SiteClosuresRemodelsPage() {
   return (
     <ServiceTemplate
       serviceName="Site Closures & Remodels"
-      serviceDescription="Manage end-to-end waste coordination for portfolio-wide transitions, store closings, and post-construction cleanouts. Coordinate all vendor sourcing and D&D logistics to ensure accurate close-out reporting."
+      serviceDescription="Implement a retail portfolio decommissioning strategy for store decommissions and renovations. Specialized teams provide retail remodel waste management and commercial cleanout for complex project work."
       heroImage="/images/stock/service-commercial.jpg"
       aboutBullets={[
         "Source specialized vendors and schedule logistics for complex asset recovery.",
