@@ -4,7 +4,7 @@ export default function EmergencyProductRemovalPage() {
   return (
     <ServiceTemplate
       serviceName="Emergency Product & Perishable Removal"
-      serviceDescription="Rapid removal of spoiled or damaged inventory from cold storage or refrigeration failures. We ensure compliant, documented disposal with 24/7 speed."
+      serviceDescription="Rapidly mobilize for a refrigeration failure event or cold storage failure. Specialized teams coordinate perishable bulk pickup and damaged inventory disposal to restore site safety."
       heroImage="/images/stock/service-emergency-overflow.jpg"
       aboutBullets={[
         "Rapid removal of temperature-compromised and spoiled product",

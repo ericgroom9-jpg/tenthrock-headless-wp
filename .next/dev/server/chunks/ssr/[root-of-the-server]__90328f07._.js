@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function EmergencyProductRemovalPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Emergency Product & Perishable Removal",
-        serviceDescription: "Rapid removal of spoiled or damaged inventory from cold storage or refrigeration failures. We ensure compliant, documented disposal with 24/7 speed.",
+        serviceDescription: "Rapidly mobilize for a refrigeration failure event or cold storage failure. Specialized teams coordinate perishable bulk pickup and damaged inventory disposal to restore site safety.",
         heroImage: "/images/stock/service-emergency-overflow.jpg",
         aboutBullets: [
             "Rapid removal of temperature-compromised and spoiled product",
@@ -69,7 +69,7 @@ function EmergencyProductRemovalPage() {
             "Damaged and unsellable inventory disposed with compliance documentation",
             "After-hours and weekend perishable bulk pickup available"
         ],
-        aboutDescription: "Refrigeration failure creates immediate health and pest risks. Tenth Rock provides rapid removal, insurance-ready documentation, and a single invoice for the entire job."
+        aboutDescription: "Refrigeration failure creates immediate health and pest risks that require documented, compliant disposal. Tenth Rock provides specialized logistics to stabilize your site and secure insurance-ready reporting for the entire loss."
     }, void 0, false, {
         fileName: "[project]/app/services/emergency-product-removal/page.tsx",
         lineNumber: 5,
