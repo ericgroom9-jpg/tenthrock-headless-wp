@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function StandardsSopsTrainingPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Standards, SOPs & Vendor Training",
-        serviceDescription: "Waste management SOP development, multi-site vendor training framework, vendor performance protocols, and site-level execution standards. Designed to prevent costly execution errors and inconsistencies across your portfolio with structured escalation procedures and documentation systems.",
+        serviceDescription: "Implement site-level execution standards and waste management SOP development for consistent operations. Specialized teams create vendor performance protocols to prevent execution errors and service inconsistencies.",
         heroImage: "/images/stock/city-nature.jpg",
         aboutBullets: [
             "Waste management SOP development for site-level consistency",

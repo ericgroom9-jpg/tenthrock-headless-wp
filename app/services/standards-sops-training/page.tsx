@@ -12,7 +12,7 @@ export default function StandardsSopsTrainingPage() {
         "Vendor performance protocols and escalation procedures",
         "Site-level execution standards that prevent costly errors",
       ]}
-      aboutDescription="Inconsistent vendor execution is the most expensive problem in multi-site waste management. Tenth Rock develops waste management SOPs, vendor performance protocols, and site-level execution standards tailored to your portfolio. We then deliver a multi-site vendor training framework directly to your vendors on-site, ensuring every crew at every location follows the same standards, escalation procedures, and documentation requirements."
+      aboutDescription="Tenth Rock builds a multi-site vendor training framework for national retail brands and franchise systems. We establish clear documentation and escalation protocols to streamline onsite management and corporate oversight."
     />
   );
 }
