@@ -69,7 +69,7 @@ function WasteProgramAssessmentsPage() {
             "Secure risk mitigation strategies to ensure long-term regulatory compliance.",
             "Receive detailed portfolio-wide recommendations for procurement and financial teams."
         ],
-        aboutDescription: "Tenth Rock provides a high-level multi-site waste roadmap for private equity firms and corporate facilities leaders. We identify inefficiencies in your current workflows to build a portfolio-wide waste strategy focused on immediate savings and operational excellence."
+        aboutDescription: "Tenth Rock delivers cost-control waste optimization and emergency junk removal planning. We create a multi-site waste roadmap providing actionable recommendations for financial efficiency and reliability."
     }, void 0, false, {
         fileName: "[project]/app/services/waste-program-assessments/page.tsx",
         lineNumber: 5,
