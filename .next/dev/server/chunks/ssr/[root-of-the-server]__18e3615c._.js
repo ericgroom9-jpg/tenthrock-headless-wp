@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function SiteClosuresRemodelsPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Site Closures & Remodels",
-        serviceDescription: "Manage end-to-end waste coordination for portfolio-wide transitions, store closings, and post-construction cleanouts. Coordinate all vendor sourcing and D&D logistics to ensure accurate close-out reporting.",
+        serviceDescription: "Implement a retail portfolio decommissioning strategy for store decommissions and renovations. Specialized teams provide retail remodel waste management and commercial cleanout for complex project work.",
         heroImage: "/images/stock/service-commercial.jpg",
         aboutBullets: [
             "Source specialized vendors and schedule logistics for complex asset recovery.",
@@ -69,7 +69,7 @@ function SiteClosuresRemodelsPage() {
             "Secure detailed documentation and compliance reporting for corporate audit requirements.",
             "Maintain aggressive timelines to minimize site downtime and lease-end penalties."
         ],
-        aboutDescription: "Streamline waste coordination for store decommissions, multi-site transitions, and large-scale remodel projects. Specialized teams manage the entire removal process to ensure on-time project completion and accurate close-out reporting."
+        aboutDescription: "Tenth Rock delivers site decommissioning and D&D (Deactivation and Demolition) support. We manage the commercial closeout lifecycle, providing portfolio-wide site turnover to keep projects on track."
     }, void 0, false, {
         fileName: "[project]/app/services/site-closures-remodels/page.tsx",
         lineNumber: 5,

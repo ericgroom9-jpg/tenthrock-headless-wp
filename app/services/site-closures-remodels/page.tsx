@@ -12,7 +12,7 @@ export default function SiteClosuresRemodelsPage() {
         "Secure detailed documentation and compliance reporting for corporate audit requirements.",
         "Maintain aggressive timelines to minimize site downtime and lease-end penalties.",
       ]}
-      aboutDescription="Streamline waste coordination for store decommissions, multi-site transitions, and large-scale remodel projects. Specialized teams manage the entire removal process to ensure on-time project completion and accurate close-out reporting."
+      aboutDescription="Tenth Rock delivers site decommissioning and D&D (Deactivation and Demolition) support. We manage the commercial closeout lifecycle, providing portfolio-wide site turnover to keep projects on track."
     />
   );
 }
