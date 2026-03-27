@@ -12,7 +12,7 @@ export default function OnDemandServicePage() {
         "Utilize a single point of contact for nationwide temporary waste logistics.",
         "Receive consolidated invoicing and service documentation for all project sites.",
       ]}
-      aboutDescription="Tenth Rock provides rapid container mobilization for general contractors and facilities managers. We manage the entire rental lifecycle from sourcing and scheduling to final haul-off to eliminate project delays."
+      aboutDescription="Tenth Rock provides emergency waste management and same day swaps. We offer emergency junk removal using a variety of sizes, including 30 yard dumpster rental, to keep projects on schedule."
     />
   );
 }
