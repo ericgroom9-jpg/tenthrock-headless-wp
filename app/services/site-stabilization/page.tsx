@@ -12,7 +12,7 @@ export default function SiteStabilizationPage() {
         "Secure fast site stabilization to avoid city fines and safety hazards.",
         "Utilize a single point of contact for nationwide on-demand service.",
       ]}
-      aboutDescription="We provide rapid compactor response and bulk removal to stabilize your site. Our crews deploy temporary capacity to eliminate overflows and restore your operations immediately."
+      aboutDescription="Tenth Rock offers same-day junk removal to resolve a waste overflow or overflowing dumpster. We provide rapid recovery to clear illegal dumping and maintain site standards."
     />
   );
 }
