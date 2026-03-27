@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function NaturalDisasterMobilizationPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Natural Disaster Mobilization",
-        serviceDescription: "Rapidly mobilize multi-site waste recovery following hurricanes, floods, and severe storms. Specialized teams coordinate debris removal and damaged product disposal to restore safety and operations across affected regions.",
+        serviceDescription: "Rapidly deploy emergency waste management and multi-site recovery support. Specialized teams coordinate emergency debris removal and rapid response debris removal across affected regions to restore business continuity.",
         heroImage: "/images/stock/industry-natural-disasters-storm.jpg",
         aboutBullets: [
             "Deploy emergency roll-off containers and high-capacity hauling for storm debris.",

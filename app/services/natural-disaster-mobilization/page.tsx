@@ -12,7 +12,7 @@ export default function NaturalDisasterMobilizationPage() {
         "Secure priority equipment staging for multi-location retailers in high-impact zones.",
         "Provide consolidated documentation and reporting for insurance and FEMA claims.",
       ]}
-      aboutDescription="Tenth Rock serves as the central command for insurance-driven recovery and corporate business continuity. We deploy temporary containers and hauling crews to storm-prone corridors, ensuring seamless coordination between recovery teams and regional facilities managers."
+      aboutDescription="Tenth Rock provides emergency dumpster rental and emergency roll-off rental for disaster recovery. We manage post-storm waste management and storm debris removal to stabilize property footprints."
     />
   );
 }
