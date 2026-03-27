@@ -12,7 +12,7 @@ export default function RecyclingSpecialtyContainersPage() {
         "Cardboard and baler overflow support during peak volume",
         "C&D (Construction Debris) containers and specialty waste containers",
       ]}
-      aboutDescription="Landfill diversion starts with the right container in the right place. Tenth Rock provides commercial recycling dumpsters and metal recycling container rentals for source-separated recycling, cardboard and baler overflow support, and specialty waste streams. We also deploy temporary recycling capacity and C&D containers for construction debris when your project generates materials that should not go to landfill."
+      aboutDescription="Tenth Rock provides dedicated recycling logistics that differ from standard residential programs. We manage the sourcing and hauling of specialty open-top containers to ensure your commercial site maintains compliance and operational efficiency."
     />
   );
 }
