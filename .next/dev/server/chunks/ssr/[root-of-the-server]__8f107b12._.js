@@ -69,7 +69,7 @@ function OngoingAdvisoryPage() {
             "Waste management oversight services for vendor accountability",
             "Operational risk mitigation and ongoing program improvement"
         ],
-        aboutDescription: "Audits and SOPs only work if someone enforces them. Tenth Rock provides retained advisory support that stays embedded in your operations long after the initial assessment. We manage waste workflow optimization, monitor vendor performance against established standards, and drive ongoing program improvement across your portfolio. This is not a report that sits on a shelf. It is hands-on waste management oversight that produces sustained results."
+        aboutDescription: "Tenth Rock serves as a strategic partner for private equity-backed brands and franchise networks. We deliver waste workflow optimization and operational waste risk mitigation to bridge the gap between strategy and site-level results."
     }, void 0, false, {
         fileName: "[project]/app/services/ongoing-advisory/page.tsx",
         lineNumber: 5,
