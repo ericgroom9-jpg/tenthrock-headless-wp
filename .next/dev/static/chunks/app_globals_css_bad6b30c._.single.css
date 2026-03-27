@@ -4641,6 +4641,11 @@ h1, h3, h4, h5, h6, h2 {
   }
 }
 
+.industry-card {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 .industry-card .industry-card-body {
   opacity: 0;
   max-height: 0;
