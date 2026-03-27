@@ -12,7 +12,7 @@ export default function StandardsSopsTrainingPage() {
         "Implement site-level standards for consistent waste handling.",
         "Create operational guidelines for franchise and facility personnel.",
       ]}
-      aboutDescription="Tenth Rock builds a multi-site vendor training framework for national retail brands and franchise systems. We establish clear documentation and escalation protocols to streamline onsite management and corporate oversight."
+      aboutDescription="Tenth Rock delivers a multi-site vendor training framework focused on vendor performance protocols. We provide emergency junk removal workflows to maintain high-visibility site standards."
     />
   );
 }
