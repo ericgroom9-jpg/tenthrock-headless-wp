@@ -7,10 +7,10 @@ export default function StandardsSopsTrainingPage() {
       serviceDescription="Implement site-level execution standards and waste management SOP development. Specialized teams provide emergency waste management protocols and escalation systems to ensure reliability across your footprint."
       heroImage="/images/stock/city-nature.jpg"
       aboutBullets={[
-        "Develop standardized protocols for rapid issue resolution.",
-        "Secure uniform documentation for audit readiness and compliance.",
-        "Implement site-level standards for consistent waste handling.",
-        "Create operational guidelines for franchise and facility personnel.",
+        "Establish waste management SOP development for rapid response.",
+        "Secure vendor performance protocols for accountability.",
+        "Deploy a multi-site vendor training framework for consistency.",
+        "Implement emergency waste management for risk mitigation.",
       ]}
       aboutDescription="Tenth Rock delivers a multi-site vendor training framework focused on vendor performance protocols. We provide emergency junk removal workflows to maintain high-visibility site standards."
     />

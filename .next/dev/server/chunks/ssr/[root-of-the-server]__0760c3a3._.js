@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function StandardsSopsTrainingPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Standards, SOPs & Vendor Training",
-        serviceDescription: "Implement site-level execution standards and waste management SOP development for consistent operations. Specialized teams create vendor performance protocols to prevent execution errors and service inconsistencies.",
+        serviceDescription: "Implement site-level execution standards and waste management SOP development. Specialized teams provide emergency waste management protocols and escalation systems to ensure reliability across your footprint.",
         heroImage: "/images/stock/city-nature.jpg",
         aboutBullets: [
             "Develop standardized protocols for rapid issue resolution.",
@@ -69,7 +69,7 @@ function StandardsSopsTrainingPage() {
             "Implement site-level standards for consistent waste handling.",
             "Create operational guidelines for franchise and facility personnel."
         ],
-        aboutDescription: "Tenth Rock builds a multi-site vendor training framework for national retail brands and franchise systems. We establish clear documentation and escalation protocols to streamline onsite management and corporate oversight."
+        aboutDescription: "Tenth Rock delivers a multi-site vendor training framework focused on vendor performance protocols. We provide emergency junk removal workflows to maintain high-visibility site standards."
     }, void 0, false, {
         fileName: "[project]/app/services/standards-sops-training/page.tsx",
         lineNumber: 5,
