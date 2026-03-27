@@ -64,12 +64,12 @@ function OnDemandServicePage() {
         serviceDescription: "Deploy emergency dumpster rental and same day dumpster rental for commercial projects. Specialized teams coordinate emergency roll-off service to resolve waste overflow and support site transitions.",
         heroImage: "/images/stock/service-dumpster-rental.jpg",
         aboutBullets: [
-            "Access high-capacity containers for roofing, remodeling, and construction debris.",
-            "Secure emergency roll-off deployment for unexpected waste overflows and cleanouts.",
-            "Utilize a single point of contact for nationwide temporary waste logistics.",
-            "Receive consolidated invoicing and service documentation for all project sites."
+            "Access roll off dumpsters and open top dumpsters for remodels.",
+            "Secure same-day junk removal for sudden waste overflow.",
+            "Utilize temporary dumpster units for commercial cleanouts.",
+            "Receive priority emergency roll-off service across your portfolio."
         ],
-        aboutDescription: "Tenth Rock provides rapid container mobilization for general contractors and facilities managers. We manage the entire rental lifecycle from sourcing and scheduling to final haul-off to eliminate project delays."
+        aboutDescription: "Tenth Rock provides emergency waste management and same day swaps. We offer emergency junk removal using a variety of sizes, including 30 yard dumpster rental, to keep projects on schedule."
     }, void 0, false, {
         fileName: "[project]/app/services/on-demand-service/page.tsx",
         lineNumber: 5,
