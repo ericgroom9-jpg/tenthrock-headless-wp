@@ -22,13 +22,15 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
   return (
     <Link href={sector.href}>
       <div
-        className="relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
+        className="relative h-[280px] md:h-[320px] rounded-[5px] cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-shadow duration-300"
+        style={{ isolation: "isolate" }}
         data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onFocus={() => setHovered(true)}
         onBlur={() => setHovered(false)}
       >
+      <div className="absolute inset-0 rounded-[5px] overflow-hidden">
         <Image
           src={sector.img}
           alt={sector.title}
@@ -78,6 +80,7 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
             </div>
           </div>
         </div>
+      </div>
       </div>
     </Link>
   );
