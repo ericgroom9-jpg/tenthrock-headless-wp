@@ -64,10 +64,10 @@ function RecyclingSpecialtyContainersPage() {
         serviceDescription: "Deploy emergency waste management for high-volume commercial recycling dumpster and scrap needs. Specialized teams provide emergency roll-off service for cardboard & baler overflow support during capacity surges.",
         heroImage: "/images/stock/service-centralized-program.jpg",
         aboutBullets: [
-            "Deploy large-scale recycling containers for cardboard and metal scrap.",
-            "Secure specialized hauling for industrial materials and warehouse cleanouts.",
-            "Access project-based recycling solutions to manage temporary material overflows.",
-            "Receive detailed documentation for corporate sustainability and compliance reporting."
+            "Access commercial recycling receptacle units for metal and cardboard.",
+            "Secure temporary recycling capacity for emergency junk removal.",
+            "Utilize emergency roll-off service for C&D and industrial materials.",
+            "Deploy specialty waste containers for sustainability reporting."
         ],
         aboutDescription: "Tenth Rock delivers same-day junk removal to support landfill diversion and sustainability. We offer source-separated recycling for C&D (Construction Debris) and metal recycling container rental for an efficient circular economy."
     }, void 0, false, {
