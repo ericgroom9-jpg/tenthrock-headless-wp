@@ -1,8 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
@@ -15,6 +15,73 @@ const sectors = [
   { title: "Educational", desc: "Campus-wide waste programs, recycling coordination, and event cleanup for schools and universities.", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
   { title: "Municipalities", desc: "Illegal dumping cleanup, public space maintenance, and disaster response for local governments.", img: "/images/stock/clean-city.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
 ];
+
+function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: number }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <Link href={sector.href}>
+      <div
+        className="relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
+        data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onFocus={() => setHovered(true)}
+        onBlur={() => setHovered(false)}
+      >
+        <Image
+          src={sector.img}
+          alt={sector.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="object-cover transition-transform duration-700"
+          style={{ transform: hovered ? "scale(1.1)" : "scale(1)" }}
+          loading="lazy"
+        />
+        <div className="absolute inset-0 transition-colors duration-300" style={{ backgroundColor: hovered ? "rgba(4,41,64,0.6)" : "rgba(4,41,64,0.82)" }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90" />
+
+        <div className="absolute inset-0 p-6 flex flex-col justify-end">
+          <div>
+            <div
+              className="w-12 h-12 rounded-full backdrop-blur-md flex items-center justify-center mb-4 transition-colors duration-300"
+              style={{
+                backgroundColor: hovered ? "#c5d520" : "rgba(255,255,255,0.1)",
+                color: hovered ? "#042940" : "#ffffff",
+              }}
+            >
+              {sector.icon}
+            </div>
+            <h3 className="text-white font-bold text-xl leading-tight">{sector.title}</h3>
+            <p
+              className="text-white/90 text-sm mt-2"
+              style={{
+                maxHeight: hovered ? "6rem" : "0",
+                opacity: hovered ? 1 : 0,
+                overflow: "hidden",
+                transition: "max-height 0.3s ease-out, opacity 0.3s ease-out",
+              }}
+            >
+              {sector.desc}
+            </p>
+            <div
+              className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3"
+              style={{
+                maxHeight: hovered ? "2rem" : "0",
+                opacity: hovered ? 1 : 0,
+                overflow: "hidden",
+                transition: "max-height 0.3s ease-out, opacity 0.3s ease-out",
+                transform: hovered ? "translateX(4px)" : "translateX(0)",
+              }}
+            >
+              Learn More <ArrowRight className="w-4 h-4" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 export default function WhoWeHelpSection() {
   return (
@@ -30,41 +97,10 @@ export default function WhoWeHelpSection() {
             From single-site operators to national chains, we serve industries that can't afford missed pickups or slow response times.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {sectors.map((sector, i) => (
-            <Link href={sector.href} key={i}>
-              <div 
-                className="industry-card relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1"
-                data-testid={`industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                <Image 
-                  src={sector.img} 
-                  alt={sector.title} 
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700" 
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 transition-colors duration-300"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90"></div>
-                
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                   <div>
-                      <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 transition-colors duration-300">
-                         {sector.icon}
-                      </div>
-                      <h3 className="text-white font-bold text-xl leading-tight">{sector.title}</h3>
-                      <p className="industry-card-body text-white/90 text-sm mt-2">
-                        {sector.desc}
-                      </p>
-                      <div className="industry-card-cta flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3">
-                         Learn More <ArrowRight className="w-4 h-4" />
-                      </div>
-                   </div>
-                </div>
-              </div>
-            </Link>
+            <IndustryCard key={i} sector={sector} index={i} />
           ))}
         </div>
       </div>

@@ -7,6 +7,7 @@ __turbopack_context__.s([
     ()=>WhoWeHelpSection
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
@@ -18,6 +19,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$siren$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Siren$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/siren.js [app-client] (ecmascript) <export default as Siren>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/house.js [app-client] (ecmascript) <export default as Home>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$store$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Store$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/store.js [app-client] (ecmascript) <export default as Store>");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
@@ -129,6 +132,138 @@ const sectors = [
         href: "/industries/municipalities"
     }
 ];
+function IndustryCard({ sector, index }) {
+    _s();
+    const [hovered, setHovered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+        href: sector.href,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1",
+            "data-testid": `industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`,
+            onMouseEnter: ()=>setHovered(true),
+            onMouseLeave: ()=>setHovered(false),
+            onFocus: ()=>setHovered(true),
+            onBlur: ()=>setHovered(false),
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    src: sector.img,
+                    alt: sector.title,
+                    fill: true,
+                    sizes: "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw",
+                    className: "object-cover transition-transform duration-700",
+                    style: {
+                        transform: hovered ? "scale(1.1)" : "scale(1)"
+                    },
+                    loading: "lazy"
+                }, void 0, false, {
+                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                    lineNumber: 32,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute inset-0 transition-colors duration-300",
+                    style: {
+                        backgroundColor: hovered ? "rgba(4,41,64,0.6)" : "rgba(4,41,64,0.82)"
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                    lineNumber: 41,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90"
+                }, void 0, false, {
+                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                    lineNumber: 42,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "absolute inset-0 p-6 flex flex-col justify-end",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-12 h-12 rounded-full backdrop-blur-md flex items-center justify-center mb-4 transition-colors duration-300",
+                                style: {
+                                    backgroundColor: hovered ? "#c5d520" : "rgba(255,255,255,0.1)",
+                                    color: hovered ? "#042940" : "#ffffff"
+                                },
+                                children: sector.icon
+                            }, void 0, false, {
+                                fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                                lineNumber: 46,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                className: "text-white font-bold text-xl leading-tight",
+                                children: sector.title
+                            }, void 0, false, {
+                                fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                                lineNumber: 55,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-white/90 text-sm mt-2",
+                                style: {
+                                    maxHeight: hovered ? "6rem" : "0",
+                                    opacity: hovered ? 1 : 0,
+                                    overflow: "hidden",
+                                    transition: "max-height 0.3s ease-out, opacity 0.3s ease-out"
+                                },
+                                children: sector.desc
+                            }, void 0, false, {
+                                fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                                lineNumber: 56,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3",
+                                style: {
+                                    maxHeight: hovered ? "2rem" : "0",
+                                    opacity: hovered ? 1 : 0,
+                                    overflow: "hidden",
+                                    transition: "max-height 0.3s ease-out, opacity 0.3s ease-out",
+                                    transform: hovered ? "translateX(4px)" : "translateX(0)"
+                                },
+                                children: [
+                                    "Learn More ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                        className: "w-4 h-4"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                                        lineNumber: 77,
+                                        columnNumber: 26
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                                lineNumber: 67,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                        lineNumber: 45,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+                    lineNumber: 44,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+            lineNumber: 24,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
+        lineNumber: 23,
+        columnNumber: 5
+    }, this);
+}
+_s(IndustryCard, "V8YbV+gTZxGliGj1g0fftBlvsq4=");
+_c = IndustryCard;
 function WhoWeHelpSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "sectors",
@@ -147,14 +282,14 @@ function WhoWeHelpSection() {
                                     className: "w-2 h-2 rounded-full bg-secondary"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                    lineNumber: 25,
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, this),
                                 "Industries"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 24,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -163,7 +298,7 @@ function WhoWeHelpSection() {
                             children: "Who We Help"
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 28,
+                            lineNumber: 95,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -171,136 +306,46 @@ function WhoWeHelpSection() {
                             children: "From single-site operators to national chains, we serve industries that can't afford missed pickups or slow response times."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 29,
+                            lineNumber: 96,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                    lineNumber: 23,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
-                    children: sectors.map((sector, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: sector.href,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "industry-card relative h-[280px] md:h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl active:shadow-xl transition-all duration-300 md:hover:-translate-y-1",
-                                "data-testid": `industry-card-${sector.title.toLowerCase().replace(/\s+/g, '-')}`,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        src: sector.img,
-                                        alt: sector.title,
-                                        fill: true,
-                                        sizes: "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw",
-                                        className: "object-cover transition-transform duration-700",
-                                        loading: "lazy"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                        lineNumber: 41,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 bg-[#042940]/85 md:bg-[#042940]/80 transition-colors duration-300"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                        lineNumber: 49,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                        lineNumber: 50,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "absolute inset-0 p-6 flex flex-col justify-end",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 transition-colors duration-300",
-                                                    children: sector.icon
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                    lineNumber: 54,
-                                                    columnNumber: 23
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                    className: "text-white font-bold text-xl leading-tight",
-                                                    children: sector.title
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                    lineNumber: 57,
-                                                    columnNumber: 23
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "industry-card-body text-white/90 text-sm mt-2",
-                                                    children: sector.desc
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                    lineNumber: 58,
-                                                    columnNumber: 23
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "industry-card-cta flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-3",
-                                                    children: [
-                                                        "Learn More ",
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                            className: "w-4 h-4"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                            lineNumber: 62,
-                                                            columnNumber: 37
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                                    lineNumber: 61,
-                                                    columnNumber: 23
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                            lineNumber: 53,
-                                            columnNumber: 20
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                        lineNumber: 52,
-                                        columnNumber: 17
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                lineNumber: 37,
-                                columnNumber: 15
-                            }, this)
+                    children: sectors.map((sector, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(IndustryCard, {
+                            sector: sector,
+                            index: i
                         }, i, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 36,
+                            lineNumber: 103,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                    lineNumber: 34,
+                    lineNumber: 101,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 22,
+            lineNumber: 89,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-        lineNumber: 21,
+        lineNumber: 88,
         columnNumber: 5
     }, this);
 }
-_c = WhoWeHelpSection;
-var _c;
-__turbopack_context__.k.register(_c, "WhoWeHelpSection");
+_c1 = WhoWeHelpSection;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "IndustryCard");
+__turbopack_context__.k.register(_c1, "WhoWeHelpSection");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
