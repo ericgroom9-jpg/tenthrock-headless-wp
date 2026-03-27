@@ -61,7 +61,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$Se
 function SiteStabilizationPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$services$2f$ServiceTemplate$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         serviceName: "Temporary Capacity & Site Stabilization",
-        serviceDescription: "We provide rapid compactor failure response and bulk waste removal to stabilize operations fast. Our crews deploy temporary capacity to eliminate overflows and prevent further disruption.",
+        serviceDescription: "Deploy emergency junk removal and urgent bulk waste removal to manage a compactor failure response. Specialized teams provide emergency waste management for a broken compactor or missed pickups.",
         heroImage: "/images/stock/service-emergency-overflow.jpg",
         aboutBullets: [
             "Deploy temporary dumpsters and crews for peak season or vendor gaps.",
@@ -69,7 +69,7 @@ function SiteStabilizationPage() {
             "Secure fast site stabilization to avoid city fines and safety hazards.",
             "Utilize a single point of contact for nationwide on-demand service."
         ],
-        aboutDescription: "We provide rapid compactor response and bulk removal to stabilize your site. Our crews deploy temporary capacity to eliminate overflows and restore your operations immediately."
+        aboutDescription: "Tenth Rock offers same-day junk removal to resolve a waste overflow or overflowing dumpster. We provide rapid recovery to clear illegal dumping and maintain site standards."
     }, void 0, false, {
         fileName: "[project]/app/services/site-stabilization/page.tsx",
         lineNumber: 5,
