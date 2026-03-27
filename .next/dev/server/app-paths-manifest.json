@@ -1,5 +1,6 @@
 {
   "/page": "app/page.js",
   "/services/emergency-product-removal/page": "app/services/emergency-product-removal/page.js",
-  "/services/ongoing-advisory/page": "app/services/ongoing-advisory/page.js"
+  "/services/ongoing-advisory/page": "app/services/ongoing-advisory/page.js",
+  "/services/site-stabilization/page": "app/services/site-stabilization/page.js"
 }
