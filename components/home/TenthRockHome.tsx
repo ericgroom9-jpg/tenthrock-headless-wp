@@ -244,7 +244,7 @@ const Hero = () => {
             className="hero-fade-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5"
             style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER}s` }}
           >
-            Fast, Reliable Waste Solutions, Anywhere You Need Them
+            One Dedicated Partner, Coast to Coast Commercial Cleanup and Waste Solutions
           </h1>
           
           <p
