@@ -78,13 +78,13 @@ const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    title: "TJ Maxx / HomeGoods",
+    title: "National Retailer",
     subtitle: "Holiday Overflow Resolution",
     tag: "Creative Solutions",
     description:
       "During a high-traffic holiday period, a national retail location experienced packaging overflow spilling into public areas, creating immediate safety and reputational risk. The store requested a 30-yard open-top dumpster late in the evening, but no containers were available. Tenth Rock deployed a stabilization crew within the hour, consolidated overflowing waste into a controlled staging area, and secured a 30-yard roll-off for 7:00 AM delivery. The store opened safely and on schedule.",
     mainImage: "/images/stock/service-dumpster-rental.jpg",
-    mainImageAlt: "TJ Maxx holiday overflow stabilization by Tenth Rock",
+    mainImageAlt: "National Retailer holiday overflow stabilization by Tenth Rock",
     thumbImages: [
       { src: "/images/stock/service-emergency-overflow.jpg", alt: "Overflow waste being staged" },
       { src: "/images/stock/case-study-thumb2.jpg", alt: "Staging area prepared overnight" },
