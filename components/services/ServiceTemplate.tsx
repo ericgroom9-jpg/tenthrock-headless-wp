@@ -128,7 +128,7 @@ const defaultParagraphSection1: ParagraphSection = {
 const defaultParagraphSection2: ParagraphSection = {
   badge: "Our Commitment",
   heading: "Sustainability Without Compromise",
-  body: "Environmental responsibility and operational efficiency aren't mutually exclusive. Our waste diversion programs help businesses meet sustainability goals without sacrificing service quality or increasing costs. We partner with certified recycling and processing facilities across the country to maximize diversion rates while maintaining the reliability your operations depend on.",
+  body: "Environmental responsibility and operational efficiency go hand in hand. Our approach supports waste diversion efforts without disrupting your service or adding unnecessary complexity. We work with recovery and processing facilities across the country to help reduce landfill use while maintaining the reliable operations your business depends on.",
   image: imgParkWater,
   imageAlt: "Sustainable waste management practices",
   bulletPoints: [
