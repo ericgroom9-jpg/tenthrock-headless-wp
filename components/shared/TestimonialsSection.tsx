@@ -26,6 +26,8 @@ export default function TestimonialsSection({
 }: TestimonialsSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  return null;
+
   if (!testimonials || testimonials.length === 0) return null;
 
   const nextTestimonial = () => {
