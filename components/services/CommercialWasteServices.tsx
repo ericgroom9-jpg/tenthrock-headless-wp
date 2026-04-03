@@ -97,7 +97,7 @@ const faqs = [
   },
   {
     question: "Do you provide documentation for every job?",
-    answer: "Yes, we provide comprehensive documentation including waste manifests and certificates of destruction for every completed job.",
+    answer: "Yes, we provide comprehensive documentation for every completed job.",
   },
   {
     question: "What areas do you service?",

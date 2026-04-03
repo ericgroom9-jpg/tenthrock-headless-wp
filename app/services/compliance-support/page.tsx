@@ -4,7 +4,7 @@ export default function ComplianceSupportPage() {
   return (
     <ServiceTemplate
       serviceName="Documentation Support"
-      serviceDescription="Comprehensive job documentation for every service we perform. Waste manifests, certificates of destruction, and photo records delivered with every completed project."
+      serviceDescription="Get clear confirmation for every service we perform. Detailed job records, material processing proof, and before and after photos are provided with every finished project."
       heroImage="/images/stock/service-emergency.jpg"
     />
   );
