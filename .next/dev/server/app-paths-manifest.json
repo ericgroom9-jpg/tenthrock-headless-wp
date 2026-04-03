@@ -1,13 +1,4 @@
 {
-  "/about/page": "app/about/page.js",
-  "/industries/hospitality/page": "app/industries/hospitality/page.js",
-  "/industries/retail/page": "app/industries/retail/page.js",
-  "/locations/[slug]/page": "app/locations/[slug]/page.js",
-  "/page": "app/page.js",
-  "/services/commercial-waste/page": "app/services/commercial-waste/page.js",
-  "/services/emergency-product-removal/page": "app/services/emergency-product-removal/page.js",
-  "/services/natural-disaster-mobilization/page": "app/services/natural-disaster-mobilization/page.js",
-  "/services/on-demand-service/page": "app/services/on-demand-service/page.js",
-  "/services/site-closures-remodels/page": "app/services/site-closures-remodels/page.js",
-  "/services/site-stabilization/page": "app/services/site-stabilization/page.js"
+  "/[slug]/page": "app/[slug]/page.js",
+  "/page": "app/page.js"
 }

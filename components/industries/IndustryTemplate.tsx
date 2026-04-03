@@ -76,7 +76,7 @@ const defaultParagraphSection2: ParagraphSection = {
 const defaultParagraphSection3: ParagraphSection = {
   badge: "Sustainability Focus",
   heading: "Environmental Responsibility Built In",
-  body: "Sustainability isn't an add-on. It's built into every program we design. We work with certified recycling and processing partners to maximize waste diversion and reduce landfill dependency, giving you the tools to make measurable environmental progress while controlling costs.",
+  body: "Responsibility is a core part of how we structure your waste programs. We work with recovery and processing partners across the country to keep materials out of landfills while maintaining the operational speed your business depends on. We provide clear visibility into your site activity, giving you the insights needed to manage your property's footprint effectively.",
   image: "/images/stock/floor-park.jpg",
   imageAlt: "Recycling and waste diversion at a Tenth Rock partner facility",
   bulletPoints: [
