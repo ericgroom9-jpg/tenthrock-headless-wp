@@ -81,7 +81,7 @@ const defaultParagraphSection3: ParagraphSection = {
   imageAlt: "Recycling and waste diversion at a Tenth Rock partner facility",
   bulletPoints: [
     "Waste diversion and recycling optimization",
-    "Certified processing and disposal partners",
+    "Direct access to local processing facilities",
     "Landfill reduction programs",
     "Scalable programs for multi-location operators",
   ],
