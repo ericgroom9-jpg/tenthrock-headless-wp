@@ -8,7 +8,7 @@ export default function SiteStabilizationPage() {
       serviceDescription="Deploy immediate containers, coordinated waste removal, and pressure washing to stabilize compromised sites. Our teams respond to compactor failures, overflow conditions, and service disruptions to restore safe, functional environments fast."
       heroImage="/images/stock/service-emergency-overflow.jpg"
       aboutBullets={[
-        "Access immediate containers for broken compactor events.",
+        "Deploy on demand dumpster solutions for compactor failures and capacity breakdowns.",
         "Secure emergency junk removal for waste overflow.",
         "Utilize urgent bulk waste removal for missed pickups.",
         "Clear illegal dumping with priority multi-site scheduling.",
