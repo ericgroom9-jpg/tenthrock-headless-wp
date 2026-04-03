@@ -236,7 +236,7 @@ const Hero = () => {
             style={{ animationDelay: HERO_BASE_DELAY }}
           >
             <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
-            Nationwide Commercial Waste Solutions
+            Comprehensive Waste Logistics for Commercial Facilities
           </div>
 
           <h1
