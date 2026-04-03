@@ -48,12 +48,12 @@ interface IndustryTemplateProps {
 const defaultParagraphSection1: ParagraphSection = {
   badge: "Industry Expertise",
   heading: "Programs Built Around How You Operate",
-  body: "Every industry has unique waste challenges. From compliance requirements to volume fluctuations, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean and compliant without disrupting the work that matters most.",
+  body: "Every industry has unique waste challenges. From volume fluctuations to tight timelines, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean without disrupting the work that matters most.",
   image: "/images/stock/service-dumpster-rental.jpg",
   imageAlt: "Tenth Rock crew managing waste at a commercial facility",
   bulletPoints: [
     "Custom programs designed around your operational schedule",
-    "Industry-specific compliance and documentation",
+    "Industry-specific service programs",
     "Dedicated account manager with sector expertise",
     "Flexible service scaling for seasonal demands",
   ],

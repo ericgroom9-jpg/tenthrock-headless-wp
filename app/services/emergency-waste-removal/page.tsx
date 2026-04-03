@@ -16,7 +16,7 @@ export default function EmergencyWasteRemovalPage() {
       subServices={[
         {
           title: "Emergency Product & Perishable Removal",
-          description: "Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. Unsellable product disposal and damaged inventory disposal handled with speed and compliance documentation.",
+          description: "Perishable bulk pickup and spoiled product disposal for cold storage failure, refrigeration failure events, and perishable inventory loss. Unsellable product disposal and damaged inventory disposal handled with speed and full documentation.",
           image: "/images/stock/service-emergency.jpg",
           link: "/services/emergency-product-removal",
         },

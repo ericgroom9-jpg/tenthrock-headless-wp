@@ -16,8 +16,8 @@ const bulletPoints = [
     description: "Scalable solutions for community events, parades, farmers markets, and public celebrations. We help keep your public spaces clean and welcoming."
   },
   {
-    title: "Compliance & Reporting",
-    description: "Detailed documentation that meets state and federal requirements. Transparent reporting helps you demonstrate fiscal responsibility to constituents."
+    title: "Documentation & Support",
+    description: "Detailed documentation for every job. Transparent records help you demonstrate fiscal responsibility to constituents."
   },
   {
     title: "Emergency Response Ready",

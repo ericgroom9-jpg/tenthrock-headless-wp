@@ -20,8 +20,8 @@ const bulletPoints = [
     description: "Specialized services for high-volume periods like graduation ceremonies, sporting events, and end-of-semester move-outs when waste volumes spike dramatically."
   },
   {
-    title: "Compliance & Reporting",
-    description: "Detailed documentation and reporting to meet state and federal environmental regulations, plus support for STARS sustainability ratings and other certifications."
+    title: "Documentation & Support",
+    description: "Detailed documentation for every job, plus support for campus sustainability initiatives and institutional certifications."
   }
 ];
 

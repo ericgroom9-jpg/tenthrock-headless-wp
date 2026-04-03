@@ -23,7 +23,7 @@ const caseStudies = [
         title: "Starbucks",
         subtitle: "Missed Pickup, Same-Day Stabilization",
         tag: "Speed",
-        description: "A missed pickup at a Starbucks location sent waste overflowing into the backroom mid-operation, creating immediate compliance risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a local crew on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.",
+        description: "A missed pickup at a Starbucks location sent waste overflowing into the backroom mid-operation, creating immediate operational risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a local crew on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.",
         mainImage: "/images/stock/service-emergency-overflow.jpg",
         mainImageAlt: "Starbucks emergency waste stabilization by Tenth Rock",
         thumbImages: [
@@ -223,7 +223,7 @@ const caseStudies = [
         title: "Compactor Failure",
         subtitle: "Emergency Site Stabilization",
         tag: "Project Management",
-        description: "A big-box retail location experienced a compactor failure after the unit became overfilled, forcing the door open and preventing the hauler from safely transporting it under DOT regulations. Tenth Rock deployed a stabilization crew to reduce the load, secured the compactor door for safe transport, arranged a same-day open-top dumpster, and coordinated vendors to clean and prepare the compactor area for repair upon return.",
+        description: "A big-box retail location experienced a compactor failure after the unit became overfilled, forcing the door open and preventing the hauler from safely transporting it. Tenth Rock deployed a stabilization crew to reduce the load, secured the compactor door for safe transport, arranged a same-day open-top dumpster, and coordinated vendors to clean and prepare the compactor area for repair upon return.",
         mainImage: "/images/stock/case-study-main.jpg",
         mainImageAlt: "Compactor failure emergency stabilization by Tenth Rock",
         thumbImages: [

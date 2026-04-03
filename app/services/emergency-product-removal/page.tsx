@@ -9,7 +9,7 @@ export default function EmergencyProductRemovalPage() {
       aboutBullets={[
         "Deploy immediate hauling for unsellable product disposal and spoilage.",
         "Secure emergency waste management for bulk recalls across multiple sites.",
-        "Maintain rigorous documentation for loss prevention and health-code compliance.",
+        "Maintain rigorous documentation for loss prevention.",
         "Access 24/7 rapid response to mitigate odors and site-level risks.",
       ]}
       aboutDescription="Tenth Rock provides spoiled product disposal and after-hours waste removal for urgent needs. We deliver the documentation required for perishable inventory loss disposal and insurance claims."

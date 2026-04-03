@@ -13,7 +13,7 @@ const bulletPoints = [
   },
   {
     title: "Debris Management Expertise",
-    description: "Specialized handling of storm debris, flood-damaged materials, and disaster waste. We sort, process, and dispose of materials according to regulatory requirements."
+    description: "Specialized handling of storm debris, flood-damaged materials, and disaster waste. We sort, process, and dispose of materials safely and efficiently."
   },
   {
     title: "FEMA Documentation Support",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "What types of storm debris do you remove?",
-    answer: "We handle construction debris, damaged product, waterlogged inventory, and mixed commercial waste that commonly appears after hurricanes, floods, and storms. All disposal follows proper regulatory protocols."
+    answer: "We handle construction debris, damaged product, waterlogged inventory, and mixed commercial waste that commonly appears after hurricanes, floods, and storms."
   },
   {
     question: "Do you provide documentation for insurance and reimbursement?",

@@ -17,7 +17,7 @@ const subServices = [
     description: "Deep cleaning for compactor areas, loading docks, and waste staging zones. Odor control, grime removal, and sanitization to meet health and safety standards.",
     image: imgServiceMaintenance,
     link: "/services/pressure-washing",
-    features: ["Odor & Grime Removal", "Health Code Compliance", "Scheduled Maintenance"],
+    features: ["Odor & Grime Removal", "Property Standards", "Scheduled Maintenance"],
   },
   {
     title: "Post-Waste Cleanup",

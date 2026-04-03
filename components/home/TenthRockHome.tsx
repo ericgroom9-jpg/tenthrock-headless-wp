@@ -492,7 +492,7 @@ const WhyUs = () => {
     },
     { 
       title: "Nationwide, Local Execution", 
-      content: "One contract, one point of contact, serviced by vetted local crews who know the regulations and disposal requirements in your area.",
+      content: "One contract, one point of contact, serviced by vetted local crews who know the disposal requirements in your area.",
       icon: <MapPin className="w-5 h-5 text-[#c5d520]" />
     }
   ];

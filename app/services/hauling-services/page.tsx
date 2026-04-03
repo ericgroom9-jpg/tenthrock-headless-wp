@@ -7,7 +7,7 @@ const imgServiceCommercial = "/images/stock/service-commercial.jpg";
 const subServices = [
   {
     title: "Compactor Transport",
-    description: "Safe, compliant transport of compactors and heavy waste equipment to any location. Licensed carriers, proper permitting, and real-time tracking for every shipment.",
+    description: "Safe, professional transport of compactors and heavy waste equipment to any location. Licensed carriers and proper permitting for every shipment.",
     image: imgHeroSkyscrapers,
     link: "/services/hauling-services",
     features: ["Licensed & Insured Carriers", "Proper Permitting", "Real-Time Tracking"],

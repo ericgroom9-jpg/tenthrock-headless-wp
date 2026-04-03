@@ -10,7 +10,7 @@ export default function UnplannedCleanutsPage() {
         "Access urgent bulk pickup for foreclosure cleanouts.",
         "Secure same-day junk removal for retail fixtures and debris.",
         "Deploy emergency junk removal for large-scale waste.",
-        "Receive code violation cleanup support for portfolio compliance.",
+        "Receive code violation cleanup support for property management.",
       ]}
       aboutDescription="Tenth Rock provides emergency waste management and code violation cleanup support. We deliver same-day junk removal for large-scale waste clearing with minimal operational disruption."
     />
