@@ -865,7 +865,7 @@ export default function ServiceTemplate({
                 Where to Find Us
               </h2>
               <p className="text-gray-600 text-base sm:text-lg max-w-2xl sm:mx-auto">
-                Serving businesses nationwide with regional offices for local support.
+                Serving businesses nationwide.
               </p>
             </FadeIn>
 
