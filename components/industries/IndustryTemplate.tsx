@@ -82,7 +82,7 @@ const defaultParagraphSection3: ParagraphSection = {
   bulletPoints: [
     "Waste diversion and recycling optimization",
     "Direct access to local processing facilities",
-    "Landfill reduction programs",
+    "Logistics tailored to reduce landfill use",
     "Scalable programs for multi-location operators",
   ],
 };
