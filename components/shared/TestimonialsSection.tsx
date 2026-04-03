@@ -40,7 +40,6 @@ export default function TestimonialsSection({
     <section className="py-16 md:py-24 bg-[#042940] text-white relative overflow-hidden" aria-label="Client testimonials" data-testid={`section-${testIdPrefix}`}>
       <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
       
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#c5d520]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
