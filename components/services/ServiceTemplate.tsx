@@ -101,7 +101,7 @@ const defaultFaqs = [
   },
   {
     question: "Can you manage waste across hundreds of locations?",
-    answer: "That's what we're built for. Multi-location businesses get one point of contact, one invoice, and consistent service at every site. We currently manage 5,000+ commercial locations nationwide.",
+    answer: "That's what we're built for. Multi-location businesses get one point of contact, one invoice, and consistent service at every site.",
   },
 ];
 
