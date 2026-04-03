@@ -752,7 +752,7 @@ const WhyUs = () => {
              className="flex flex-col justify-center"
            >
              <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-12 tracking-tighter">
-               Why You’ll Love Tenth Rock Solutions
+               Why You’ll Love Tenth Rock
              </h2>
              
              <div className="space-y-6 mb-12">
@@ -1502,7 +1502,7 @@ const Footer = () => {
         <Separator className="bg-white/10 mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
-           <p>© 2026 Tenth Rock Solutions. All rights reserved.</p>
+           <p>© 2026 Tenth Rock. All rights reserved.</p>
            <div className="flex gap-8 mt-4 md:mt-0">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

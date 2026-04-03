@@ -133,7 +133,7 @@ export default function Footer() {
         <Separator className="bg-white/10 mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
-          <p>© 2026 Tenth Rock Solutions. All rights reserved.</p>
+          <p>© 2026 Tenth Rock. All rights reserved.</p>
           <div className="flex gap-6 mt-2 md:mt-0">
             <Link href="/privacy-policy" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-privacy">Privacy Policy</Link>
             <Link href="/terms-of-service" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-terms">Terms of Service</Link>

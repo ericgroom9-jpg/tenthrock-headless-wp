@@ -28,8 +28,8 @@ const faqCategories: FaqCategory[] = [
     description: "Get answers to the most common questions about Tenth Rock, our services, and how we operate across the nation.",
     faqs: [
       {
-        question: "What is Tenth Rock Solutions?",
-        answer: "Tenth Rock Solutions is a nationwide commercial waste management company that provides centralized waste services across 48 states. We simplify waste management for multi-location businesses through a single point of contact and consolidated billing."
+        question: "What is Tenth Rock?",
+        answer: "Tenth Rock is a nationwide commercial waste management company that provides centralized waste services across 48 states. We simplify waste management for multi-location businesses through a single point of contact and consolidated billing."
       },
       {
         question: "What areas do you service?",

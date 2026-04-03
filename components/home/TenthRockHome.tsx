@@ -521,7 +521,7 @@ const WhyUs = () => {
              className="flex flex-col justify-center order-1 lg:order-2"
            >
              <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-8 md:mb-12 tracking-tighter">
-               Why You’ll Love Tenth Rock Solutions
+               Why You’ll Love Tenth Rock
              </h2>
              
              <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
