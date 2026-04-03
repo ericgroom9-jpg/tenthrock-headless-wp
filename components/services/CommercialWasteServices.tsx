@@ -359,10 +359,10 @@ export default function CommercialWasteServices() {
                   Speed
                 </div>
                 <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight">
-                  Starbucks <br/><span className="text-3xl md:text-4xl">Missed Pickup, Same-Day Stabilization</span>
+                  National Coffee Chain <br/><span className="text-3xl md:text-4xl">Missed Pickup, Same-Day Stabilization</span>
                 </h2>
                 <p className="text-lg text-[#042940]/70 mb-8 md:mb-12 leading-relaxed">
-                  A missed pickup at a Starbucks location sent waste overflowing into the backroom mid-operation, creating immediate operational risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a local crew on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.
+                  A missed pickup at a National Coffee Chain location sent waste overflowing into the backroom mid-operation, creating immediate operational risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a local crew on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
