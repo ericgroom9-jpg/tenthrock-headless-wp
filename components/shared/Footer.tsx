@@ -11,7 +11,7 @@ import Logo from "@/components/shared/Logo";
 const serviceLinks = [
   { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
   { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
-  { label: "Dumpsters & Temporary Containers", href: "/services/dumpsters-containers" },
+  { label: "Dumpster Rentals", href: "/services/dumpsters-containers" },
   { label: "Waste Advisory", href: "/services/waste-operations-advisory" },
 ];
 

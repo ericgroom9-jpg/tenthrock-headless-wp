@@ -294,7 +294,7 @@ export default function LocationTemplatePage() {
                       <option value="" disabled>Select one...</option>
                       <option value="emergency-waste-removal">Emergency Waste Removal</option>
                       <option value="specialized-project-logistics">Specialized Project Logistics</option>
-                      <option value="dumpsters-containers">Dumpsters & Temporary Containers</option>
+                      <option value="dumpsters-containers">Dumpster Rentals</option>
                       <option value="waste-operations-advisory">Waste Advisory</option>
                       <option value="other">Other</option>
                     </select>

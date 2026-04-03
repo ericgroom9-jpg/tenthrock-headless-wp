@@ -30,7 +30,7 @@ const serviceCategories = [
     ],
   },
   {
-    label: "Dumpsters & Temporary Containers",
+    label: "Dumpster Rentals",
     href: "/services/dumpsters-containers",
     subServices: [
       { label: "On-Demand Service", href: "/services/on-demand-service" },

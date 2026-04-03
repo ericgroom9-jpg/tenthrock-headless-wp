@@ -72,7 +72,7 @@ const services = [
         ]
     },
     {
-        title: "Dumpsters & Temporary Containers",
+        title: "Dumpster Rentals",
         desc: "Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow needs.",
         items: [
             {

@@ -25,7 +25,7 @@ const services = [
     ],
   },
   {
-    title: "Dumpsters & Temporary Containers",
+    title: "Dumpster Rentals",
     desc: "Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow needs.",
     items: [
       { label: "On-Demand Service", desc: "Same-day dumpster rental and emergency roll-off service. Temporary dumpster deployment for commercial projects with same-day swaps available.", img: "/images/stock/service-dumpster-rental.jpg", href: "/services/on-demand-service" },

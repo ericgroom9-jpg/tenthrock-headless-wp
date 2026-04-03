@@ -366,7 +366,7 @@ export default function ServiceTemplate({
                             {[
                               { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
                               { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
-                              { label: "Dumpsters & Temporary Containers", href: "/services/dumpsters-containers" },
+                              { label: "Dumpster Rentals", href: "/services/dumpsters-containers" },
                               { label: "Waste Advisory", href: "/services/waste-operations-advisory" },
                             ].filter((s) => s.label !== serviceName).map((s) => (
                             <li key={s.label} className="flex items-center gap-3 text-[#042940]">
@@ -469,7 +469,7 @@ export default function ServiceTemplate({
                         <option value="" disabled>Select one...</option>
                         <option value="emergency-waste-removal">Emergency Waste Removal</option>
                         <option value="specialized-project-logistics">Specialized Project Logistics</option>
-                        <option value="dumpsters-containers">Dumpsters & Temporary Containers</option>
+                        <option value="dumpsters-containers">Dumpster Rentals</option>
                         <option value="waste-operations-advisory">Waste Advisory</option>
                         <option value="other">Other</option>
                       </select>

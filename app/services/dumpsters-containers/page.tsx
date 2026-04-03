@@ -3,7 +3,7 @@ import ServiceTemplate from "@/components/services/ServiceTemplate";
 export default function DumpstersContainersPage() {
   return (
     <ServiceTemplate
-      serviceName="Dumpsters & Temporary Containers"
+      serviceName="Dumpster Rentals"
       serviceDescription="Deploy short-term roll-off and open-top containers for commercial projects, cleanouts, and overflow needs. Specialized teams coordinate emergency and planned rentals to keep your site clear and operational."
       heroImage="/images/stock/service-dumpster-rental.jpg"
       aboutBullets={[
@@ -38,6 +38,6 @@ export default function DumpstersContainersPage() {
 }
 
 export const metadata = {
-  title: "Dumpsters & Temporary Containers | Same-Day Roll-Off Dumpster Rental | Tenth Rock",
+  title: "Dumpster Rentals | Same-Day Roll-Off Dumpster Rental | Tenth Rock",
   description: "Same-day dumpster rental with roll-off dumpsters and open-top dumpsters in 20, 30, and 40 yard sizes. Emergency roll-off service and commercial recycling containers across 48 states.",
 };
