@@ -45,6 +45,7 @@ interface ParagraphSection {
 
 interface ServiceTemplateProps {
   serviceName: string;
+  heroTitle?: string;
   serviceDescription: string;
   heroImage?: string;
   subServices?: {
@@ -141,6 +142,7 @@ const defaultParagraphSection2: ParagraphSection = {
 
 export default function ServiceTemplate({
   serviceName,
+  heroTitle,
   serviceDescription,
   heroImage = imgServiceDumpsterRental,
   subServices,
@@ -195,7 +197,7 @@ export default function ServiceTemplate({
               <FadeIn
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px] whitespace-pre-line">
-                  {serviceName}
+                  {heroTitle || serviceName}
                 </h1>
                 <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
                   {serviceDescription}
