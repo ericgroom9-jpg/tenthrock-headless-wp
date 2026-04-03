@@ -305,7 +305,7 @@ export default function ServiceTemplate({
                       >
                         <div className="pb-8">
                           <p className="text-[#042940]/70 leading-relaxed mb-4">
-                            You call, we handle it. No middlemen, no back-and-forth, no guesswork. Here's how every job runs:
+                            You call, we handle it. No back-and-forth, no guesswork. Here's how every job runs:
                           </p>
                           <ul className="space-y-3">
                             <li className="flex items-center gap-3 text-[#042940]">

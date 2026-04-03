@@ -56,7 +56,7 @@ export default function OurProcessPage() {
               Our Process
             </h1>
             <p className="text-base text-white/90 mb-6 sm:mb-8 max-w-xl leading-relaxed">
-              Five steps from first call to job complete. No middlemen, no runarounds, no surprises. Here's exactly how every Tenth Rock project runs.
+              Five steps from first call to job complete. No runarounds, no surprises. Here's exactly how every Tenth Rock project runs.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
