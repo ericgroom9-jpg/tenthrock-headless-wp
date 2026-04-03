@@ -88,7 +88,7 @@ const services = [
                 href: "/services/multiple-sizes"
             },
             {
-                label: "Recycling & Specialty Containers",
+                label: "Recycling Dumpsters",
                 desc: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support included.",
                 img: "/images/stock/service-centralized-program.jpg",
                 href: "/services/recycling-specialty-containers"
@@ -96,7 +96,7 @@ const services = [
         ]
     },
     {
-        title: "Waste Operations Advisory & Enablement",
+        title: "Waste Advisory",
         desc: "Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management for multi-site operators.",
         items: [
             {
@@ -106,7 +106,7 @@ const services = [
                 href: "/services/waste-program-assessments"
             },
             {
-                label: "Standards, SOPs & Vendor Training",
+                label: "Standards & Vendor Training",
                 desc: "Waste management SOP development and multi-site vendor training framework. Vendor performance protocols and site-level execution standards that prevent costly errors.",
                 img: "/images/stock/city-nature.jpg",
                 href: "/services/standards-sops-training"

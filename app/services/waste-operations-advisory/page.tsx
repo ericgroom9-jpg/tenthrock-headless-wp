@@ -3,7 +3,7 @@ import ServiceTemplate from "@/components/services/ServiceTemplate";
 export default function WasteOperationsAdvisoryPage() {
   return (
     <ServiceTemplate
-      serviceName="Waste Operations Advisory & Enablement"
+      serviceName="Waste Advisory"
       serviceDescription="Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management. Designed to give multi-site operators structured control, accountability, and long-term waste management consistency."
       heroImage="/images/stock/hero-skyscrapers.jpg"
       aboutBullets={[
@@ -21,7 +21,7 @@ export default function WasteOperationsAdvisoryPage() {
           link: "/services/waste-program-assessments",
         },
         {
-          title: "Standards, SOPs & Vendor Training",
+          title: "Standards & Vendor Training",
           description: "Waste management SOP development and multi-site vendor training framework covering vendor performance protocols, site-level execution standards, escalation procedures, and documentation systems designed to prevent costly execution errors and inconsistencies.",
           image: "/images/stock/service-maintenance.jpg",
           link: "/services/standards-sops-training",
@@ -38,6 +38,6 @@ export default function WasteOperationsAdvisoryPage() {
 }
 
 export const metadata = {
-  title: "Waste Operations Advisory & Enablement | Tenth Rock",
+  title: "Waste Advisory | Tenth Rock",
   description: "Retained waste management advisory for multi-site operators. Hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management across 48 states.",
 };

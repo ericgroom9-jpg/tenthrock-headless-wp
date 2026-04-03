@@ -27,7 +27,7 @@ export default function DumpstersContainersPage() {
           link: "/services/multiple-sizes",
         },
         {
-          title: "Recycling & Specialty Containers",
+          title: "Recycling Dumpsters",
           description: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support, specialty waste containers, temporary recycling capacity, and C&D (Construction Debris) solutions.",
           image: "/images/stock/service-centralized-program.jpg",
           link: "/services/recycling-specialty-containers",

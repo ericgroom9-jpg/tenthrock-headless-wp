@@ -35,15 +35,15 @@ const serviceCategories = [
     subServices: [
       { label: "On-Demand Service", href: "/services/on-demand-service" },
       { label: "Multiple Sizes", href: "/services/multiple-sizes" },
-      { label: "Recycling & Specialty Containers", href: "/services/recycling-specialty-containers" },
+      { label: "Recycling Dumpsters", href: "/services/recycling-specialty-containers" },
     ],
   },
   {
-    label: "Waste Operations Advisory & Enablement",
+    label: "Waste Advisory",
     href: "/services/waste-operations-advisory",
     subServices: [
       { label: "Waste Program Assessments & Roadmaps", href: "/services/waste-program-assessments" },
-      { label: "Standards, SOPs & Vendor Training", href: "/services/standards-sops-training" },
+      { label: "Standards & Vendor Training", href: "/services/standards-sops-training" },
       { label: "Ongoing Advisory & Program Implementation", href: "/services/ongoing-advisory" },
     ],
   },

@@ -3,7 +3,7 @@ import ServiceTemplate from "@/components/services/ServiceTemplate";
 export default function RecyclingSpecialtyContainersPage() {
   return (
     <ServiceTemplate
-      serviceName="Recycling & Specialty Containers"
+      serviceName="Recycling Dumpsters"
       serviceDescription="Deploy emergency waste management for high-volume commercial recycling dumpster and scrap needs. Specialized teams provide emergency roll-off service for cardboard & baler overflow support during capacity surges."
       heroImage="/images/stock/service-centralized-program.jpg"
       aboutBullets={[
@@ -18,6 +18,6 @@ export default function RecyclingSpecialtyContainersPage() {
 }
 
 export const metadata = {
-  title: "Recycling & Specialty Containers | Commercial Recycling Dumpster Rental | Tenth Rock",
+  title: "Recycling Dumpsters | Commercial Recycling Dumpster Rental | Tenth Rock",
   description: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support, specialty waste containers, and C&D solutions across 48 states.",
 };

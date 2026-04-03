@@ -30,15 +30,15 @@ const services = [
     items: [
       { label: "On-Demand Service", desc: "Same-day dumpster rental and emergency roll-off service. Temporary dumpster deployment for commercial projects with same-day swaps available.", img: "/images/stock/service-dumpster-rental.jpg", href: "/services/on-demand-service" },
       { label: "Multiple Sizes", desc: "Commercial-grade open-top dumpsters in 20 yard, 30 yard, and 40 yard roll-off sizes. Matched to your project scope from small cleanouts to large-scale construction debris.", img: "/images/stock/service-dumpster.jpg", href: "/services/multiple-sizes" },
-      { label: "Recycling & Specialty Containers", desc: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support included.", img: "/images/stock/service-centralized-program.jpg", href: "/services/recycling-specialty-containers" },
+      { label: "Recycling Dumpsters", desc: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support included.", img: "/images/stock/service-centralized-program.jpg", href: "/services/recycling-specialty-containers" },
     ],
   },
   {
-    title: "Waste Operations Advisory & Enablement",
+    title: "Waste Advisory",
     desc: "Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management for multi-site operators.",
     items: [
       { label: "Waste Program Assessments & Roadmaps", desc: "Portfolio-wide waste strategy and operational waste audit to identify cost-control waste optimization opportunities across your multi-site waste roadmap.", img: "/images/stock/hero-skyscrapers.jpg", href: "/services/waste-program-assessments" },
-      { label: "Standards, SOPs & Vendor Training", desc: "Waste management SOP development and multi-site vendor training framework. Vendor performance protocols and site-level execution standards that prevent costly errors.", img: "/images/stock/city-nature.jpg", href: "/services/standards-sops-training" },
+      { label: "Standards & Vendor Training", desc: "Waste management SOP development and multi-site vendor training framework. Vendor performance protocols and site-level execution standards that prevent costly errors.", img: "/images/stock/city-nature.jpg", href: "/services/standards-sops-training" },
       { label: "Ongoing Advisory & Program Implementation", desc: "Retained advisory for waste workflow optimization, multi-site execution strategy, and ongoing program improvement with oversight services built for scale.", img: "/images/stock/service-commercial.jpg", href: "/services/ongoing-advisory" },
     ],
   },

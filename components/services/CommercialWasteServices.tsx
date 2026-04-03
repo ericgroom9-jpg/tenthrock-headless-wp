@@ -71,7 +71,7 @@ const services = [
     features: ["On-Demand Service", "Multiple Sizes", "Recycling & Specialty"],
   },
   {
-    title: "Waste Operations Advisory & Enablement",
+    title: "Waste Advisory",
     desc: "Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management.",
     img: imgServiceCentralizedProgram,
     features: ["Assessments & Roadmaps", "SOPs & Vendor Training", "Ongoing Advisory"],
