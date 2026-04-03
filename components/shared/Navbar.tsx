@@ -26,7 +26,7 @@ const serviceCategories = [
     subServices: [
       { label: "Site Closures & Remodels", href: "/services/site-closures-remodels" },
       { label: "Events & Stadiums", href: "/services/events-stadiums" },
-      { label: "Natural Disaster Mobilization", href: "/services/natural-disaster-mobilization" },
+      { label: "Natural Disasters", href: "/services/natural-disaster-mobilization" },
     ],
   },
   {
