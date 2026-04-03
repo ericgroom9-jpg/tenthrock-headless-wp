@@ -63,7 +63,7 @@ export default function WhoWeHelpSection() {
           </div>
           <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">Who We Help</h2>
           <p className="text-lg text-primary/70">
-            From single-site operators to national chains, we serve industries that can't afford missed pickups or slow response times.
+            From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.
           </p>
         </div>
 

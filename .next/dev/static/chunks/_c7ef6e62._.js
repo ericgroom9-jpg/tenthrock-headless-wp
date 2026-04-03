@@ -270,7 +270,7 @@ function WhoWeHelpSection() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-primary/70",
-                            children: "From single-site operators to national chains, we serve industries that can't afford missed pickups or slow response times."
+                            children: "From single-site operators to national brands, we support businesses that require reliable, consistent waste operations."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
                             lineNumber: 65,
