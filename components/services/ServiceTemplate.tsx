@@ -132,10 +132,10 @@ const defaultParagraphSection2: ParagraphSection = {
   image: imgParkWater,
   imageAlt: "Sustainable waste management practices",
   bulletPoints: [
-    "Certified waste diversion and recycling programs",
-    "Partnerships with local processing facilities",
-    "Scalable programs for multi-location operators",
-    "Dedicated account management and oversight",
+    "Practical waste diversion and recovery",
+    "Clear insights into site activity and service history",
+    "Direct access to a nationwide network of facilities",
+    "Expert support for streamlining your waste process",
   ],
 };
 
