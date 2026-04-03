@@ -97,7 +97,7 @@ const defaultFaqs = [
   },
   {
     question: "What areas do you service?",
-    answer: "We operate across 48 states through a vetted network of local providers. Whether your locations are in major metros or rural markets, we have crews who can reach them.",
+    answer: "We operate across 48 states through our vetted network of service partners. Whether your locations are in major metros or rural markets, we have crews who can reach them.",
   },
   {
     question: "Can you manage waste across hundreds of locations?",
