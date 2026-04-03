@@ -32,7 +32,7 @@ export default function WasteRemovalPage() {
   return (
     <ServiceTemplate
       serviceName="Waste Removal"
-      serviceDescription="Emergency disposal, bulk removal, and illegal dumping cleanup for commercial properties across 48 states. One call, fast dispatch, complete documentation."
+      serviceDescription="Emergency disposal, bulk removal, live loads, and illegal dumping cleanup for commercial properties across 48 states. One call, fast dispatch, complete documentation."
       heroImage={imgServiceEmergencyOverflow}
       subServices={subServices}
       aboutBullets={[
@@ -40,7 +40,7 @@ export default function WasteRemovalPage() {
         "Bulk cleanouts for store closures, remodels, and fixture swaps",
         "Illegal dumping removal with before-and-after documentation",
       ]}
-      aboutDescription="When waste piles up, your business suffers. Our crews handle emergency overflows, bulk debris hauls, and illegal dumping cleanup at commercial properties across 48 states. You call one number, a project manager takes over, and the problem is gone. Photo documentation and a single invoice follow every job."
+      aboutDescription="When waste piles up, your business suffers. Our crews handle emergency overflows, bulk debris hauls, live loads, and illegal dumping cleanup at commercial properties across 48 states. You call one number, a project manager takes over, and the problem is gone. Photo documentation and a single invoice follow every job."
     />
   );
 }
