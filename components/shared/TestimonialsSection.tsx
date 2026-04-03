@@ -24,9 +24,9 @@ export default function TestimonialsSection({
   testimonials,
   testIdPrefix = "testimonials",
 }: TestimonialsSectionProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
   return null;
+  /* Hidden: Client Stories section disabled
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!testimonials || testimonials.length === 0) return null;
 
@@ -102,4 +102,5 @@ export default function TestimonialsSection({
       </div>
     </section>
   );
+  */
 }
