@@ -37,7 +37,7 @@ const defaultFaqs = [
     },
     {
         question: "How Do You Help With Sustainability Goals?",
-        answer: "We provide detailed diversion reporting and waste audits to identify recycling opportunities. Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials."
+        answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials."
     }
 ];
 function FaqSection({ faqs = defaultFaqs }) {

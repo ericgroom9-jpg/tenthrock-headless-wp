@@ -1,6 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/services/natural-disaster-mobilization/page": "app/services/natural-disaster-mobilization/page.js",
-  "/services/recycling-specialty-containers/page": "app/services/recycling-specialty-containers/page.js",
-  "/services/standards-sops-training/page": "app/services/standards-sops-training/page.js"
+  "/page": "app/page.js"
 }

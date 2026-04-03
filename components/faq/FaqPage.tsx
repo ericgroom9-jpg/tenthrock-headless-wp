@@ -110,7 +110,7 @@ const faqCategories: FaqCategory[] = [
     faqs: [
       {
         question: "How do you help with sustainability goals?",
-        answer: "We provide detailed diversion reporting and waste audits to identify recycling opportunities. Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials. We track and report on diversion rates across all your locations."
+        answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials. We track and report on diversion rates across all your locations."
       },
       {
         question: "Do you provide recycling services?",
