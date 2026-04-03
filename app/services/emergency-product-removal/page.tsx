@@ -12,7 +12,7 @@ export default function EmergencyProductRemovalPage() {
         "Maintain rigorous documentation for loss prevention.",
         "Access 24/7 rapid response to mitigate odors and site-level risks.",
       ]}
-      aboutDescription="Tenth Rock provides spoiled product disposal and after-hours waste removal for urgent needs. We deliver the documentation required for perishable inventory loss disposal and insurance claims."
+      aboutDescription="Tenth Rock provides spoiled product disposal and after-hours waste removal for urgent needs. We deliver the documentation required for perishable inventory loss disposal."
     />
   );
 }
