@@ -10,7 +10,7 @@ export default function RecyclingSpecialtyContainersPage() {
         "Access commercial recycling receptacle units for metal and cardboard.",
         "Secure temporary recycling capacity for emergency junk removal.",
         "Utilize emergency roll-off service for C&D and industrial materials.",
-        "Deploy specialty waste containers for sustainability reporting.",
+        "Deploy specialty waste containers for landfill diversion.",
       ]}
       aboutDescription="Tenth Rock delivers same-day junk removal to support landfill diversion and sustainability. We offer source-separated recycling for C&D (Construction Debris) and metal recycling container rental for an efficient circular economy."
     />

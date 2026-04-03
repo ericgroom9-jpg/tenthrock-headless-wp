@@ -97,7 +97,7 @@ const faqs = [
   },
   {
     question: "Do you provide documentation for compliance?",
-    answer: "Yes, we provide comprehensive documentation including waste manifests, certificates of destruction, recycling reports, and compliance documentation for regulatory requirements.",
+    answer: "Yes, we provide comprehensive documentation including waste manifests and certificates of destruction for every completed job.",
   },
   {
     question: "What areas do you service?",

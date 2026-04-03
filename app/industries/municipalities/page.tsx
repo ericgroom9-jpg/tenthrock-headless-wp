@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "Can you support our community recycling goals?",
-    answer: "Absolutely. We help municipalities design and implement recycling programs that engage residents, provide educational materials, and track progress toward waste diversion goals."
+    answer: "Absolutely. We help municipalities design and implement recycling programs that engage residents and support waste diversion goals."
   },
   {
     question: "What's your response time for emergency cleanup?",

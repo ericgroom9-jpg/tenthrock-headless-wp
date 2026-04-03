@@ -62,28 +62,28 @@ const defaultParagraphSection1: ParagraphSection = {
 const defaultParagraphSection2: ParagraphSection = {
   badge: "Operational Excellence",
   heading: "One Partner, Complete Coverage",
-  body: "Managing waste across multiple locations shouldn't mean managing multiple vendors. Tenth Rock consolidates your waste operations under a single point of contact, giving you consistent service standards, unified reporting, and predictable costs. Our national network of vetted local vendors means you get the responsiveness of a local provider with the accountability of an enterprise partner.",
+  body: "Managing waste across multiple locations shouldn't mean managing multiple vendors. Tenth Rock consolidates your waste operations under a single point of contact, giving you consistent service standards and predictable costs. Our national network of vetted local vendors means you get the responsiveness of a local provider with the accountability of an enterprise partner.",
   image: "/images/stock/service-emergency-overflow.jpg",
   imageAlt: "Tenth Rock coordinating multi-location waste services",
   bulletPoints: [
     "Single point of contact for all locations",
-    "Unified billing and centralized reporting",
+    "Unified billing and centralized coordination",
     "Vetted local vendors across 48 states",
-    "Real-time service tracking and documentation",
+    "Consistent service standards at every site",
   ],
 };
 
 const defaultParagraphSection3: ParagraphSection = {
   badge: "Sustainability Focus",
   heading: "Environmental Responsibility Built In",
-  body: "Sustainability isn't an add-on. It's built into every program we design. We work with certified recycling and processing partners to maximize waste diversion, reduce landfill dependency, and provide the detailed reporting your stakeholders expect. From waste audits to diversion tracking, we give you the tools to make measurable environmental progress while controlling costs.",
+  body: "Sustainability isn't an add-on. It's built into every program we design. We work with certified recycling and processing partners to maximize waste diversion and reduce landfill dependency, giving you the tools to make measurable environmental progress while controlling costs.",
   image: "/images/stock/floor-park.jpg",
   imageAlt: "Recycling and waste diversion at a Tenth Rock partner facility",
   bulletPoints: [
     "Waste diversion and recycling optimization",
-    "Detailed ESG and sustainability reporting",
     "Certified processing and disposal partners",
-    "Waste audit and reduction consulting",
+    "Landfill reduction programs",
+    "Scalable programs for multi-location operators",
   ],
 };
 

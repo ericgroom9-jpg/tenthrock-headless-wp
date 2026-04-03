@@ -29,7 +29,7 @@ const faqCategories: FaqCategory[] = [
     faqs: [
       {
         question: "What is Tenth Rock Solutions?",
-        answer: "Tenth Rock Solutions is a nationwide commercial waste management company that provides centralized waste services across 48 states. We simplify waste management for multi-location businesses through a single point of contact, consolidated billing, and transparent performance tracking."
+        answer: "Tenth Rock Solutions is a nationwide commercial waste management company that provides centralized waste services across 48 states. We simplify waste management for multi-location businesses through a single point of contact and consolidated billing."
       },
       {
         question: "What areas do you service?",
@@ -95,7 +95,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         question: "What is centralized waste management?",
-        answer: "Centralized waste management means having a single partner handle all waste-related services across all your locations. This includes vendor management, performance tracking, billing consolidation, and compliance monitoring, all through one dedicated account manager."
+        answer: "Centralized waste management means having a single partner handle all waste-related services across all your locations. This includes vendor management, billing consolidation, and service coordination, all through one dedicated account manager."
       },
       {
         question: "Can you help with store closures and remodels?",
@@ -106,27 +106,24 @@ const faqCategories: FaqCategory[] = [
   {
     id: "sustainability",
     label: "Sustainability",
-    description: "Discover how we help businesses meet their environmental goals through waste diversion, recycling programs, and detailed reporting.",
+    description: "Discover how we help businesses meet their environmental goals through waste diversion and recycling programs.",
     faqs: [
       {
         question: "How do you help with sustainability goals?",
-        answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials. We track and report on diversion rates across all your locations."
+        answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials."
       },
       {
         question: "Do you provide recycling services?",
-        answer: "Yes, we offer comprehensive recycling programs for cardboard, plastics, metals, organics, and more. We work with certified recycling partners and provide detailed reporting on your recycling volumes and diversion rates."
+        answer: "Yes, we offer comprehensive recycling programs for cardboard, plastics, metals, organics, and more. We work with certified recycling partners to maximize your diversion rates."
       },
       {
         question: "Can you help us improve landfill diversion rates?",
-        answer: "We partner with businesses to improve landfill diversion through operational waste audits, targeted source-separated recycling programs, and the data and reporting needed to track measurable progress across your portfolio."
+        answer: "We partner with businesses to improve landfill diversion through operational waste audits and targeted source-separated recycling programs tailored to your portfolio."
       },
-      {
-        question: "What kind of waste program reporting do you offer?",
-        answer: "We provide portfolio-wide dashboards that include waste diversion rates, recycling volumes, cost-control metrics, and trend analysis. Reports can be generated monthly, quarterly, or annually to support your operational reporting needs."
-      },
+      
       {
         question: "Do you handle composting services?",
-        answer: "Yes, we coordinate organic waste composting for businesses that generate food waste, yard waste, or other compostable materials. We connect you with local composting facilities and track your diversion impact."
+        answer: "Yes, we coordinate organic waste composting for businesses that generate food waste, yard waste, or other compostable materials. We connect you with local composting facilities to maximize diversion."
       },
     ],
   },

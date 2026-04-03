@@ -35,8 +35,8 @@ const faqs = [
     answer: "Yes, we manage all event waste streams including food waste, cooking oil, cardboard from vendors, and specialty items. We coordinate disposal for all event-related waste materials through our vendor network."
   },
   {
-    question: "Can you provide waste diversion reporting for sustainability goals?",
-    answer: "Absolutely. We provide detailed post-event reports showing total waste volumes, recycling rates, and diversion metrics. Many of our venue partners use these reports for LEED certification and corporate sustainability reporting."
+    question: "Do you support waste diversion for events?",
+    answer: "Absolutely. We coordinate recycling and diversion programs for events of all sizes. Many of our venue partners have improved their diversion rates significantly through our managed programs."
   },
   {
     question: "How do you handle waste during multi-day festivals?",

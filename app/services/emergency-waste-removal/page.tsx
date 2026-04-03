@@ -10,7 +10,7 @@ export default function EmergencyWasteRemovalPage() {
         "Same-day and after-hours waste removal for urgent situations",
         "Spoiled product disposal, compactor failures, and overflow crises",
         "Crews dispatched within hours, not days",
-        "Full documentation and compliance reporting included",
+        "Full documentation included with every job",
       ]}
       aboutDescription="When waste becomes an emergency, you need a partner who picks up the phone and deploys crews fast. Tenth Rock provides 24/7 emergency waste management for commercial locations dealing with spoiled product, refrigeration failures, overflowing dumpsters, broken compactors, and unplanned cleanouts. One call gets your dedicated project manager on the line, a crew dispatched to your site, and the problem resolved with full photo documentation and a single invoice."
       subServices={[

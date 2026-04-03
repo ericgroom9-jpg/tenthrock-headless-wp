@@ -93,7 +93,7 @@ const defaultFaqs = [
   },
   {
     question: "Do you provide documentation for every job?",
-    answer: "Yes. Every completed job includes before-and-after photos, weight tickets when applicable, and a single consolidated invoice. We also provide waste manifests and diversion reports for compliance and ESG reporting.",
+    answer: "Yes. Every completed job includes before-and-after photos, weight tickets when applicable, and a single consolidated invoice.",
   },
   {
     question: "What areas do you service?",
@@ -120,7 +120,7 @@ const defaultParagraphSection1: ParagraphSection = {
   bulletPoints: [
     "Reduce waste management overhead by up to 30%",
     "Eliminate multi-vendor coordination headaches",
-    "Real-time reporting and compliance documentation",
+    "Real-time job status and documentation",
     "Scalable solutions that grow with your business",
   ],
 };
@@ -128,14 +128,14 @@ const defaultParagraphSection1: ParagraphSection = {
 const defaultParagraphSection2: ParagraphSection = {
   badge: "Our Commitment",
   heading: "Sustainability Without Compromise",
-  body: "Environmental responsibility and operational efficiency aren't mutually exclusive. Our waste diversion programs help businesses meet sustainability goals without sacrificing service quality or increasing costs. We partner with certified recycling and processing facilities across the country to maximize diversion rates while maintaining the reliability your operations depend on. Every ton diverted from landfills is tracked, documented, and reported, giving your team the data needed for ESG reporting and regulatory compliance.",
+  body: "Environmental responsibility and operational efficiency aren't mutually exclusive. Our waste diversion programs help businesses meet sustainability goals without sacrificing service quality or increasing costs. We partner with certified recycling and processing facilities across the country to maximize diversion rates while maintaining the reliability your operations depend on.",
   image: imgParkWater,
   imageAlt: "Sustainable waste management practices",
   bulletPoints: [
     "Certified waste diversion and recycling programs",
-    "Detailed sustainability reporting for ESG compliance",
     "Partnerships with local processing facilities",
-    "Zero-waste consultation available for qualifying clients",
+    "Scalable programs for multi-location operators",
+    "Dedicated account management and oversight",
   ],
 };
 

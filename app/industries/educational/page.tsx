@@ -13,7 +13,7 @@ const bulletPoints = [
   },
   {
     title: "Sustainability Initiatives",
-    description: "Help your institution meet its sustainability goals with robust recycling programs, composting solutions, and detailed diversion reporting for accreditation requirements."
+    description: "Help your institution meet its sustainability goals with robust recycling programs and composting solutions tailored to campus operations."
   },
   {
     title: "Event & Move-Out Support",

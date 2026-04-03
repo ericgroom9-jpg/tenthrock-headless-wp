@@ -3,14 +3,14 @@ import ServiceTemplate from "@/components/services/ServiceTemplate";
 export default function PerformanceTrackingPage() {
   return (
     <ServiceTemplate
-      serviceName="Performance Tracking"
-      serviceDescription="Real-time dashboards and reporting to monitor service levels across every site. Data-driven insights to optimize your waste management operations."
+      serviceName="Service Oversight"
+      serviceDescription="Dedicated account management and vendor coordination to maintain service levels across every site. Hands-on oversight to keep your waste operations running smoothly."
       heroImage="/images/stock/hero-skyscrapers.jpg"
     />
   );
 }
 
 export const metadata = {
-  title: "Performance Tracking | Tenth Rock",
-  description: "Real-time dashboards and reporting to monitor service levels across every site.",
+  title: "Service Oversight | Tenth Rock",
+  description: "Dedicated account management and vendor coordination to maintain service levels across every site.",
 };

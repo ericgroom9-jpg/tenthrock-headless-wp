@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: "How do you support our sustainability initiatives?",
-    answer: "We help hotels implement recycling programs, track diversion rates, and provide detailed reporting for sustainability certifications. Many of our hotel partners have achieved significant improvements in their environmental metrics."
+    answer: "We help hotels implement recycling programs and improve diversion rates. Many of our hotel partners have achieved significant improvements in their environmental metrics."
   },
   {
     question: "Can you service multiple properties under one agreement?",
