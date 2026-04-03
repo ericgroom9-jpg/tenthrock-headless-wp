@@ -16,7 +16,7 @@ const serviceCategories = [
     href: "/services/emergency-waste-removal",
     subServices: [
       { label: "Emergency Product & Perishable Removal", href: "/services/emergency-product-removal" },
-      { label: "Temporary Capacity & Site Stabilization", href: "/services/site-stabilization" },
+      { label: "Site Stabilization", href: "/services/site-stabilization" },
       { label: "Unplanned Cleanouts & Debris Removal", href: "/services/unplanned-cleanouts" },
     ],
   },

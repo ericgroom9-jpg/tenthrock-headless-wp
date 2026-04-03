@@ -21,7 +21,7 @@ export default function EmergencyWasteRemovalPage() {
           link: "/services/emergency-product-removal",
         },
         {
-          title: "Temporary Capacity & Site Stabilization",
+          title: "Site Stabilization",
           description: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal. We deploy temporary capacity for missed pickups, waste overflow situations, and broken compactor emergencies to stabilize your site fast.",
           image: "/images/stock/service-dumpster.jpg",
           link: "/services/site-stabilization",

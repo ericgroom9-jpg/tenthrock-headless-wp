@@ -34,7 +34,7 @@ const services = [
                 href: "/services/emergency-product-removal"
             },
             {
-                label: "Temporary Capacity & Site Stabilization",
+                label: "Site Stabilization",
                 desc: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal when missed pickups or waste overflow disrupts your operations.",
                 img: "/images/stock/service-emergency.jpg",
                 href: "/services/site-stabilization"
