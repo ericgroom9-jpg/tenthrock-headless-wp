@@ -83,7 +83,7 @@ const defaultParagraphSection3: ParagraphSection = {
     "Waste diversion and recycling optimization",
     "Direct access to local processing facilities",
     "Logistics tailored to reduce landfill use",
-    "Scalable programs for multi-location operators",
+    "Straightforward insights into your waste stream",
   ],
 };
 
