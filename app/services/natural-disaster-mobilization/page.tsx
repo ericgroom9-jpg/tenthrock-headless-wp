@@ -3,7 +3,7 @@ import ServiceTemplate from "@/components/services/ServiceTemplate";
 export default function NaturalDisasterMobilizationPage() {
   return (
     <ServiceTemplate
-      serviceName="Natural Disaster Mobilization"
+      serviceName="Natural Disasters"
       serviceDescription="Rapidly deploy emergency waste management and multi-site recovery support. Specialized teams coordinate emergency debris removal and rapid response debris removal across affected regions to restore business continuity."
       heroImage="/images/stock/industry-natural-disasters-storm.jpg"
       aboutBullets={[

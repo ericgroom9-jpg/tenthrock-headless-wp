@@ -346,7 +346,7 @@ const ServicesSection = () => {
       items: [
         { label: "Site Closures & Remodels", desc: "Site decommissioning, post-construction cleanout, and retail remodel waste management for portfolio-wide site turnover." },
         { label: "Events & Stadiums", desc: "Event waste logistics and stadium waste coordination for multi-day event waste support at fairs, festivals, and venues." },
-        { label: "Natural Disaster Mobilization", desc: "Rapid response for storm debris removal and hurricane debris cleanup with emergency roll-off rental and multi-site recovery support." },
+        { label: "Natural Disasters", desc: "Rapid response for storm debris removal and hurricane debris cleanup with emergency roll-off rental and multi-site recovery support." },
       ],
     },
     {

@@ -64,7 +64,7 @@ const services = [
                 href: "/services/events-stadiums"
             },
             {
-                label: "Natural Disaster Mobilization",
+                label: "Natural Disasters",
                 desc: "Rapid response for storm debris removal and hurricane debris cleanup. Emergency roll-off rental and open-top dumpsters deployed for multi-site recovery across affected regions.",
                 img: "/images/stock/service-maintenance.jpg",
                 href: "/services/natural-disaster-mobilization"

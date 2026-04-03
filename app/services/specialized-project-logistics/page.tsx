@@ -27,7 +27,7 @@ export default function SpecializedProjectLogisticsPage() {
           link: "/services/events-stadiums",
         },
         {
-          title: "Natural Disaster Mobilization",
+          title: "Natural Disasters",
           description: "Storm debris removal, hurricane debris cleanup, and emergency debris removal with rapid response. Emergency dumpster rental, emergency roll-off rental, and emergency open-top dumpsters deployed for multi-site recovery support and post-storm waste management.",
           image: "/images/stock/industry-natural-disasters-storm.jpg",
           link: "/services/natural-disaster-mobilization",

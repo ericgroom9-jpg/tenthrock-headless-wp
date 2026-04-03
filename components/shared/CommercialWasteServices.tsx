@@ -21,7 +21,7 @@ const services = [
     items: [
       { label: "Site Closures & Remodels", desc: "Site decommissioning, post-construction cleanout, and retail remodel waste management. Portfolio-wide site turnover and store closings handled start to finish.", img: "/images/stock/service-commercial.jpg", href: "/services/site-closures-remodels" },
       { label: "Events & Stadiums", desc: "Event waste logistics and stadium waste coordination for multi-day event waste support. Fairs, festivals, and temporary activations managed on tight timelines.", img: "/images/stock/service-event-stadium.jpg", href: "/services/events-stadiums" },
-      { label: "Natural Disaster Mobilization", desc: "Rapid response for storm debris removal and hurricane debris cleanup. Emergency roll-off rental and open-top dumpsters deployed for multi-site recovery across affected regions.", img: "/images/stock/service-maintenance.jpg", href: "/services/natural-disaster-mobilization" },
+      { label: "Natural Disasters", desc: "Rapid response for storm debris removal and hurricane debris cleanup. Emergency roll-off rental and open-top dumpsters deployed for multi-site recovery across affected regions.", img: "/images/stock/service-maintenance.jpg", href: "/services/natural-disaster-mobilization" },
     ],
   },
   {
