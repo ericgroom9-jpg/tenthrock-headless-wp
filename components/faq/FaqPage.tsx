@@ -33,7 +33,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         question: "What areas do you service?",
-        answer: "We provide waste management services across 48 states. Our extensive network of vetted hauler partners ensures consistent, reliable coverage whether your locations are in major metropolitan areas or rural communities."
+        answer: "We provide waste management services across 48 states. Our extensive network of vetted provider partners ensures consistent, reliable coverage whether your locations are in major metropolitan areas or rural communities."
       },
       {
         question: "How quickly can you arrange a pickup?",
@@ -56,7 +56,7 @@ const faqCategories: FaqCategory[] = [
     faqs: [
       {
         question: "How does your pricing work?",
-        answer: "Our pricing is transparent and competitive. We negotiate rates directly with haulers on your behalf, leveraging our national volume to secure the best pricing. You receive one consolidated invoice regardless of how many locations or haulers are involved."
+        answer: "Our pricing is transparent and competitive. We negotiate rates directly with providers on your behalf, leveraging our national volume to secure the best pricing. You receive one consolidated invoice regardless of how many locations or providers are involved."
       },
       {
         question: "Are there long-term contracts?",
@@ -68,7 +68,7 @@ const faqCategories: FaqCategory[] = [
       },
       {
         question: "Do you offer consolidated billing?",
-        answer: "Yes, consolidated billing is one of our core offerings. Instead of managing dozens of invoices from different haulers, you receive a single, detailed invoice from Tenth Rock that covers all your locations and services."
+        answer: "Yes, consolidated billing is one of our core offerings. Instead of managing dozens of invoices from different providers, you receive a single, detailed invoice from Tenth Rock that covers all your locations and services."
       },
       {
         question: "Are there any hidden fees?",

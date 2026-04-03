@@ -130,7 +130,7 @@ export default function StyleGuide() {
                 <div>
                   <span className="text-small text-muted-foreground block mb-2">Body - text-body</span>
                   <p className="text-body" data-testid="typography-body">
-                    Our nationwide network of vetted local vendors means you get fast, reliable waste removal without managing multiple hauler relationships. One call, one invoice, every location covered.
+                    Our nationwide network of vetted local vendors means you get fast, reliable waste removal without managing multiple provider relationships. One call, one invoice, every location covered.
                   </p>
                 </div>
                 <div>

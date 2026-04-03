@@ -127,7 +127,7 @@ const homeTestimonials = [
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
   },
   {
-    quote: "No more chasing haulers across 15 states. Tenth Rock picks up the phone and the problem is solved.",
+    quote: "No more chasing providers across 15 states. Tenth Rock picks up the phone and the problem is solved.",
     author: "Michael Ross",
     role: "Facility Manager",
     company: "Multi-Site Property Group",

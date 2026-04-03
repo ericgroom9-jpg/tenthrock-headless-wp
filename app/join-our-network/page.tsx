@@ -88,7 +88,7 @@ function HeroSection() {
               Join the Tenth Rock Vendor Network
             </h1>
             <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-lg leading-relaxed">
-              We partner with waste haulers, roll-off operators, and junk removal crews across 48 states. If you have the trucks and the drive, we have the work.
+              We partner with waste providers, roll-off operators, and junk removal crews across 48 states. If you have the trucks and the drive, we have the work.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
@@ -129,7 +129,7 @@ function WhyJoinSection() {
             Vendor Benefits
           </div>
           <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
-            Why Haulers Partner With Us
+            Why Providers Partner With Us
           </h2>
           <p className="text-lg text-[#042940]/70">
             We handle client relationships, billing, and job coordination. You focus on running your trucks and growing your operation.

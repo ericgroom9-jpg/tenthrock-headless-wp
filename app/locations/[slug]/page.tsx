@@ -356,7 +356,7 @@ export default function LocationTemplatePage() {
                 {stateContent?.thirdHeading || "Why Local Businesses Choose Us"}
               </h2>
               <p className="text-primary/70 leading-relaxed mb-8">
-                {stateContent?.thirdDesc || "Managing waste across multiple locations means dealing with different haulers, inconsistent pricing, and service gaps. Tenth Rock eliminates all of that. We vet and manage local vendors so you get reliable pickups, transparent invoicing, and one number to call when something goes wrong. Whether you need a one-time cleanout or ongoing scheduled service, our team handles the coordination so yours doesn't have to."}
+                {stateContent?.thirdDesc || "Managing waste across multiple locations means dealing with different providers, inconsistent pricing, and service gaps. Tenth Rock eliminates all of that. We vet and manage local vendors so you get reliable pickups, transparent invoicing, and one number to call when something goes wrong. Whether you need a one-time cleanout or ongoing scheduled service, our team handles the coordination so yours doesn't have to."}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button

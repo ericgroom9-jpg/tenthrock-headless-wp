@@ -97,7 +97,7 @@ const defaultFaqs = [
   },
   {
     question: "What areas do you service?",
-    answer: "We operate across 48 states through a vetted network of local haulers. Whether your locations are in major metros or rural markets, we have crews who can reach them.",
+    answer: "We operate across 48 states through a vetted network of local providers. Whether your locations are in major metros or rural markets, we have crews who can reach them.",
   },
   {
     question: "Can you manage waste across hundreds of locations?",
@@ -154,7 +154,7 @@ export default function ServiceTemplate({
     "24/7 emergency dispatch and rapid response",
     "One point of contact, one invoice, zero hassle",
   ],
-  aboutDescription = "Our local crews handle everything from emergency overflow pickups to scheduled dumpster service. We coordinate directly with vetted vendors in your area so you get fast, reliable waste removal without managing multiple hauler relationships.",
+  aboutDescription = "Our local crews handle everything from emergency overflow pickups to scheduled dumpster service. We coordinate directly with vetted vendors in your area so you get fast, reliable waste removal without managing multiple provider relationships.",
 }: ServiceTemplateProps) {
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);

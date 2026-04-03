@@ -40,7 +40,7 @@ export default function DumpsterRentalPage() {
         "Same-day or next-day delivery in most markets",
         "Flat-rate pricing with no hidden fees or overage surprises",
       ]}
-      aboutDescription="Whether it's a remodel, a store closure, or an ongoing commercial need, we match the right container to your project and get it on-site fast. Our network of local haulers delivers and picks up on your schedule. You get one flat rate, one invoice, and one number to call if anything changes."
+      aboutDescription="Whether it's a remodel, a store closure, or an ongoing commercial need, we match the right container to your project and get it on-site fast. Our network of local providers delivers and picks up on your schedule. You get one flat rate, one invoice, and one number to call if anything changes."
     />
   );
 }
