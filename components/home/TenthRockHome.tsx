@@ -251,7 +251,7 @@ const Hero = () => {
             className="hero-fade-up text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md"
             style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 2}s` }}
           >
-            Emergency pickups, dumpster rentals, and site cleanouts. 24/7 dispatch and emergency response.
+            Reliable on demand support for the toughest property challenges.
           </p>
           
           <div
