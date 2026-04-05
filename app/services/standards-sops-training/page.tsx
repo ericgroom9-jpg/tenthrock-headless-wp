@@ -4,7 +4,7 @@ export default function StandardsSopsTrainingPage() {
   return (
     <ServiceTemplate
       serviceName="Standards & Vendor Training"
-      serviceDescription="Implement site-level execution standards and waste management SOP development. Specialized teams provide emergency waste management protocols and escalation systems to ensure reliability across your footprint."
+      serviceDescription="Establish clear standards and workflows across your waste operations. We develop SOPs, define expectations, and provide vendor training resources to ensure consistent execution across every location."
       heroImage="/images/stock/city-nature.jpg"
       aboutBullets={[
         "Establish waste management SOP development for rapid response.",
