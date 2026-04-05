@@ -7,10 +7,10 @@ export default function WasteProgramAssessmentsPage() {
       serviceDescription="Build a structured waste strategy across your portfolio. We assess current operations, vendor performance, and cost drivers, then deliver a clear roadmap for more efficient, scalable waste programs."
       heroImage="/images/stock/hero-skyscrapers.jpg"
       aboutBullets={[
-        "Conduct an operational waste audit to identify hidden expenses.",
-        "Secure a multi-site waste roadmap for long-term scalability.",
-        "Develop a portfolio-wide waste strategy for procurement.",
-        "Implement emergency waste management for risk mitigation.",
+        "Evaluate existing waste operations to identify inefficiencies and gaps.",
+        "Develop a multi-site roadmap aligned to your operational and financial objectives.",
+        "Standardize vendor structures, service levels, and workflows across your portfolio.",
+        "Establish systems for visibility, consistency, and long-term performance.",
       ]}
       aboutDescription="Tenth Rock delivers cost-control waste optimization and emergency junk removal planning. We create a multi-site waste roadmap providing actionable recommendations for financial efficiency and reliability."
       processSubtitle="A structured approach to evaluating and improving your waste operations:"
