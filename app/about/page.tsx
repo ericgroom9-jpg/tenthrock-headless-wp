@@ -29,7 +29,7 @@ const coreValues = [
     description: "Built on professional respect and family values, we treat your operations as our own. We eliminate friction with a single point of contact and real-time updates to ensure every stakeholder thrives through total accountability."
   },
   {
-    title: "Environmental Responsibility",
+    title: "Operational Leadership and Responsibility",
     description: "We prioritize sustainable disposal methods and maximize recycling rates to minimize environmental impact."
   }
 ];
