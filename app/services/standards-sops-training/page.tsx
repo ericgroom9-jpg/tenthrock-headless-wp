@@ -7,12 +7,12 @@ export default function StandardsSopsTrainingPage() {
       serviceDescription="Establish clear standards and workflows across your waste operations. We develop SOPs, define expectations, and provide vendor training resources to ensure consistent execution across every location."
       heroImage="/images/stock/city-nature.jpg"
       aboutBullets={[
-        "Establish waste management SOP development for rapid response.",
-        "Secure vendor performance protocols for accountability.",
-        "Deploy a multi-site vendor training framework for consistency.",
-        "Implement emergency waste management for risk mitigation.",
+        "Define standardized workflows and service expectations across your portfolio.",
+        "Establish vendor performance protocols to drive accountability and consistency.",
+        "Develop training frameworks to align vendors with operational standards.",
+        "Create structured systems for execution, communication, and oversight.",
       ]}
-      aboutDescription="Tenth Rock delivers a multi-site vendor training framework focused on vendor performance protocols. We provide emergency junk removal workflows to maintain high-visibility site standards."
+      aboutDescription="Tenth Rock delivers advisory-led standards, SOPs, and vendor training programs designed for multi-location operations. We bring consistency and control to vendor execution, ensuring every site operates to the same standard."
       processSubtitle="A structured approach to evaluating and improving your waste operations:"
       processSteps={[
         { num: "01", title: "Discovery & Assessment", desc: "We review your current waste operations, vendor structure, and service data across locations." },
