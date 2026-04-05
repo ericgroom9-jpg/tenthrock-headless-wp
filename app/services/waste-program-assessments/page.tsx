@@ -12,7 +12,7 @@ export default function WasteProgramAssessmentsPage() {
         "Standardize vendor structures, service levels, and workflows across your portfolio.",
         "Establish systems for visibility, consistency, and long-term performance.",
       ]}
-      aboutDescription="Tenth Rock delivers cost-control waste optimization and emergency junk removal planning. We create a multi-site waste roadmap providing actionable recommendations for financial efficiency and reliability."
+      aboutDescription="Tenth Rock delivers advisory-led waste program assessments designed for multi-location operations. We bring structure, clarity, and control to fragmented waste services, creating a foundation for smarter decision-making and scalable execution."
       processSubtitle="A structured approach to evaluating and improving your waste operations:"
       processSteps={[
         { num: "01", title: "Discovery & Assessment", desc: "We review your current waste operations, vendor structure, and service data across locations." },
