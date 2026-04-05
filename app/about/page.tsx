@@ -22,7 +22,7 @@ const imgCommunity = "/images/stock/cyclist.jpg";
 const coreValues = [
   {
     title: "Innovative Problem Solving",
-    description: "We show up when we say we will, every time. Our nationwide network ensures consistent service quality across 48 states."
+    description: "We move beyond one-size-fits-all mentalities. Creative problem solving is in our DNA, allowing us to tackle the complex challenges other providers avoid. If a traditional path to resolution does not exist, we develop one."
   },
   {
     title: "Transparent Pricing",
