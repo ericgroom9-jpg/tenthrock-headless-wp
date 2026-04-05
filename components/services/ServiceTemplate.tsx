@@ -596,7 +596,7 @@ export default function ServiceTemplate({
               </p>
             </div>
 
-            <div className={`grid md:grid-cols-2 ${processSteps.length <= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-5'} gap-3`}>
+            <div className={`grid md:grid-cols-2 ${processSteps.length <= 3 ? 'lg:grid-cols-3 max-w-5xl mx-auto' : 'lg:grid-cols-5'} gap-3`}>
               {processSteps.map((step, i) => (
                 <FadeIn 
                   key={i}
