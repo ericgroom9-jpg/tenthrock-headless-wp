@@ -4,7 +4,7 @@ export default function WasteProgramAssessmentsPage() {
   return (
     <ServiceTemplate
       serviceName="Waste Program Assessments & Roadmaps"
-      serviceDescription="Implement a portfolio-wide waste strategy through comprehensive operational waste audits. Specialized teams provide emergency waste management oversight to evaluate vendor structures and cost drivers across your entire portfolio."
+      serviceDescription="Build a structured waste strategy across your portfolio. We assess current operations, vendor performance, and cost drivers, then deliver a clear roadmap for more efficient, scalable waste programs."
       heroImage="/images/stock/hero-skyscrapers.jpg"
       aboutBullets={[
         "Conduct an operational waste audit to identify hidden expenses.",
