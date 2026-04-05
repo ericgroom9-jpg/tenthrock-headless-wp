@@ -8,12 +8,12 @@ export default function OngoingAdvisoryPage() {
       serviceDescription="Support and evolve your waste program with ongoing advisory. We work alongside your team to refine operations, improve performance, and ensure consistent execution across your portfolio."
       heroImage="/images/stock/service-commercial.jpg"
       aboutBullets={[
-        "Conduct waste management oversight services for portfolio efficiency.",
-        "Secure ongoing waste program optimization for scalable growth.",
-        "Deploy a multi-site waste execution strategy for vendor oversight.",
-        "Implement operational waste risk mitigation for continuous reliability.",
+        "Provide ongoing guidance to support waste program performance across locations.",
+        "Refine vendor structures, workflows, and service levels as your business grows.",
+        "Support implementation of standards and initiatives across your portfolio.",
+        "Maintain visibility into operations to drive consistency and continuous improvement.",
       ]}
-      aboutDescription="Tenth Rock delivers waste workflow optimization and ongoing waste program optimization. We manage operational waste risk mitigation and emergency junk removal to maintain high-visibility site standards."
+      aboutDescription="Tenth Rock delivers ongoing advisory support designed to strengthen and sustain waste programs at scale. We work alongside your team to ensure your strategy is executed effectively and continues to evolve with your operations."
       processSubtitle="A structured approach to evaluating and improving your waste operations:"
       processSteps={[
         { num: "01", title: "Discovery & Assessment", desc: "We review your current waste operations, vendor structure, and service data across locations." },
