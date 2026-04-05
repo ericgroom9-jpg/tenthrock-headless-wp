@@ -9,7 +9,7 @@ export default function SiteStabilizationPage() {
       heroImage="/images/stock/service-emergency-overflow.jpg"
       aboutBullets={[
         "Deploy on demand dumpster solutions for compactor failures and capacity breakdowns.",
-        "Secure emergency junk removal for waste overflow.",
+        "Coordinate bulk waste removal to clear overflow and restore site conditions.",
         "Utilize urgent bulk waste removal for missed pickups.",
         "Clear illegal dumping with priority multi-site scheduling.",
       ]}
