@@ -4,7 +4,7 @@ export default function UnplannedCleanutsPage() {
   return (
     <ServiceTemplate
       serviceName="Unplanned Cleanouts & Debris Removal"
-      serviceDescription="Rapidly mobilize for an emergency site cleanout or commercial site cleanout. Specialized teams coordinate bulk debris removal and emergency junk removal for fast recovery and transitions."
+      serviceDescription="Rapidly mobilize for an emergency site cleanout or commercial site cleanout. Specialized teams coordinate bulk debris removal and on demand junk removal for fast property transitions."
       heroImage="/images/stock/clean-city.jpg"
       aboutBullets={[
         "Access urgent bulk pickup for foreclosure cleanouts.",
