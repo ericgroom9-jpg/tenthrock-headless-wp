@@ -12,7 +12,7 @@ export default function EventsStadiumsPage() {
         "Manage post-event breakdown with high-volume debris removal and rapid site turnover.",
         "Coordinate waste logistics between back-to-back events to keep operations moving without disruption.",
       ]}
-      aboutDescription="Tenth Rock delivers event waste management and multi-day event waste support. We manage the intense logistics of emergency junk removal to ensure seamless operations and attendee safety."
+      aboutDescription="Tenth Rock delivers event waste logistics and multi-day operational support. We manage the full lifecycle of waste at large-scale venues, ensuring efficient movement, clean environments, and seamless transitions between events."
     />
   );
 }
