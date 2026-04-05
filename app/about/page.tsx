@@ -240,7 +240,10 @@ export default function AboutPage() {
                 IN THE COMMUNITY
               </h2>
               <p className="text-base text-primary/70 leading-relaxed mb-8">
-                We believe reliable waste management shouldn't stop at the dumpster. Tenth Rock partners with local organizations, sponsors community cleanup events, and works with municipalities to improve waste infrastructure in underserved areas. When our providers are on the road, they're part of the community, not just passing through.
+                Real change begins at the local level. As a nationwide company, Tenth Rock is committed to sustainability and protecting the natural resources of the communities where we live and work. We believe our responsibility extends beyond the job site to include the health and longevity of the neighborhoods we serve.
+              </p>
+              <p className="text-base text-primary/70 leading-relaxed mb-8">
+                We are proud to support organizations that drive meaningful impact and foster environmental awareness. By providing waste management expertise and logistical resources for local initiatives, we help reduce litter, restore natural habitats, and educate the community on sustainable practices. Tenth Rock provides more than just waste solutions; we provide the support and visibility needed to build more inclusive and supportive communities.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
