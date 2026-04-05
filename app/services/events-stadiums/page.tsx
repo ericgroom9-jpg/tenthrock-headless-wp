@@ -9,7 +9,7 @@ export default function EventsStadiumsPage() {
       aboutBullets={[
         "Implement on-site waste systems for high-traffic environments to maintain cleanliness, safety, and flow.",
         "Support multi-day events across stadiums, arenas, and fairgrounds with structured, scalable waste programs.",
-        "Access same-day junk removal for post-event breakdown.",
+        "Manage post-event breakdown with high-volume debris removal and rapid site turnover.",
         "Implement emergency waste management for high-traffic public spaces.",
       ]}
       aboutDescription="Tenth Rock delivers event waste management and multi-day event waste support. We manage the intense logistics of emergency junk removal to ensure seamless operations and attendee safety."
