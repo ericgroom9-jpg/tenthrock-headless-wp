@@ -60,6 +60,7 @@ interface ServiceTemplateProps {
     title: string;
     desc: string;
   }[];
+  processSubtitle?: string;
   faqs?: {
     question: string;
     answer: string;
@@ -147,6 +148,7 @@ export default function ServiceTemplate({
   heroImage = imgServiceDumpsterRental,
   subServices,
   processSteps = defaultProcessSteps,
+  processSubtitle,
   faqs = defaultFaqs,
   stats = defaultStats,
   paragraphSection1 = defaultParagraphSection1,
@@ -590,11 +592,11 @@ export default function ServiceTemplate({
                 How It Works
               </h2>
               <p className="text-lg text-[#042940]/70">
-                A simple, transparent process designed to get your problem solved fast.
+                {processSubtitle || "A simple, transparent process designed to get your problem solved fast."}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+            <div className={`grid md:grid-cols-2 ${processSteps.length <= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-5'} gap-3`}>
               {processSteps.map((step, i) => (
                 <FadeIn 
                   key={i}
