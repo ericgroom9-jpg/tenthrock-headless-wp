@@ -12,7 +12,7 @@ export default function RecyclingSpecialtyContainersPage() {
         "Utilize specialty containers for construction debris (C&D) and industrial waste streams.",
         "Support sustainability initiatives with structured recycling programs and material tracking.",
       ]}
-      aboutDescription="Tenth Rock delivers same-day junk removal to support landfill diversion and sustainability. We offer source-separated recycling for C&D (Construction Debris) and metal recycling container rental for an efficient circular economy."
+      aboutDescription="Tenth Rock delivers recycling dumpsters and specialty container solutions designed for scale. From cardboard and metal to C&D, we provide the right containers and coordination to reduce landfill use and keep operations efficient."
     />
   );
 }
