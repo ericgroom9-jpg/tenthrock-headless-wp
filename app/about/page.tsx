@@ -25,7 +25,7 @@ const coreValues = [
     description: "We move beyond one-size-fits-all mentalities. Creative problem solving is in our DNA, allowing us to tackle the complex challenges other providers avoid. If a traditional path to resolution does not exist, we develop one."
   },
   {
-    title: "Transparent Pricing",
+    title: "Partnership and Transparent Communication",
     description: "No hidden fees, no surprises. Our upfront pricing model means you always know exactly what you're paying for."
   },
   {
