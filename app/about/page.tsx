@@ -66,13 +66,16 @@ export default function AboutPage() {
             >
               <div className="text-base text-primary/70 leading-relaxed space-y-6">
                 <p>
-                  Tenth Rock started because commercial waste management was, and still is, fundamentally broken. Businesses with multiple locations were stuck managing dozens of local providers, inconsistent service levels, and invoices that never matched what was agreed upon.
+                  Tenth Rock is a nationwide commercial waste logistics and advisory company built specifically for the complexity of multi-location operations.
                 </p>
                 <p>
-                  We built a nationwide network of vetted, local waste vendors and layered a single management platform on top. The result: one point of contact, one invoice, and consistent service at every location, whether you have 5 sites or 500.
+                  Founded by operators who have seen firsthand where waste coordination breaks down, we were built to solve the inefficiencies that occur when too many moving pieces go unmanaged. That boots-on-the-ground experience positions us as both an execution partner and a trusted advisor for organizations that need a team that has experienced these breakdowns from the inside.
                 </p>
                 <p>
-                  Today, Tenth Rock manages waste operations for retailers, property managers, event venues, and municipalities across 48 states. We handle the logistics so our clients can focus on running their business, not chasing down missed pickups.
+                  We work through a vetted network of certified service partners across 48 states, delivering consistent execution and single-point accountability across every location, scope, and timeline. Emergency waste removal, specialized project logistics, container management, and waste operations advisory, all handled with the precision that enterprise teams depend on to maintain operational continuity.
+                </p>
+                <p>
+                  Our network provides the infrastructure, and the expertise behind it drives the outcome. We are built to respond when urgency demands it and plan ahead when the opportunity exists, giving clients a partner capable of both. This range enables organizations to move beyond reactive waste management and into a more strategic posture, identifying inefficiencies, increasing cost visibility, and building waste operations that scale with their business.
                 </p>
               </div>
             </FadeIn>
