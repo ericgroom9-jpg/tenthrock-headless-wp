@@ -7,10 +7,10 @@ export default function MultipleSizesPage() {
       serviceDescription="Deploy the right roll-off dumpster for any project. Our open top containers are available in 20, 30, and 40 yard sizes, ensuring the right capacity for efficient, uninterrupted operations."
       heroImage="/images/stock/service-dumpster.jpg"
       aboutBullets={[
-        "Access 30 yard dumpster rental for bulky commercial debris removal.",
-        "Secure a 40 yard roll off for large-scale emergency waste management.",
-        "Utilize 20 yard dumpster rental for dense site transitions.",
-        "Receive same day dumpster rental to resolve waste overflow instantly.",
+        "Access 20, 30, and 40 yard roll-off dumpsters to match the scale and demands of your project.",
+        "Use 20 yard containers for tighter spaces and heavier, denser materials.",
+        "Deploy 30 yard dumpsters for standard commercial projects and ongoing site needs.",
+        "Leverage 40 yard containers for high-volume debris and large-scale operations.",
       ]}
       aboutDescription="Tenth Rock offers a 20 yard dumpster rental, 30 yard roll off, and 40 yard roll off units. We ensure you have a 30 yard open top or 20 yard rolloff for emergency junk removal and same-day junk removal."
     />
