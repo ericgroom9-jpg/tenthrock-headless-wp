@@ -7,10 +7,10 @@ export default function RecyclingSpecialtyContainersPage() {
       serviceDescription="Deploy material-specific containers for cardboard, metal, and construction debris. Our recycling and specialty dumpster rentals support high-volume operations, baler overflow, and landfill diversion, without disrupting your workflow."
       heroImage="/images/stock/service-centralized-program.jpg"
       aboutBullets={[
-        "Access commercial recycling receptacle units for metal and cardboard.",
-        "Secure temporary recycling capacity for emergency junk removal.",
-        "Utilize emergency roll-off service for C&D and industrial materials.",
-        "Deploy specialty waste containers for landfill diversion.",
+        "Access dedicated recycling containers for cardboard, metal, and source-separated materials.",
+        "Supplement existing systems with additional capacity for baler overflow and high-volume periods.",
+        "Utilize specialty containers for construction debris (C&D) and industrial waste streams.",
+        "Support sustainability initiatives with structured recycling programs and material tracking.",
       ]}
       aboutDescription="Tenth Rock delivers same-day junk removal to support landfill diversion and sustainability. We offer source-separated recycling for C&D (Construction Debris) and metal recycling container rental for an efficient circular economy."
     />
