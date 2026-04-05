@@ -8,7 +8,7 @@ export default function SiteClosuresRemodelsPage() {
       heroImage="/images/stock/service-commercial.jpg"
       aboutBullets={[
         "Execute store decommissioning for fixtures, flooring, and displays.",
-        "Secure post-construction cleanout and emergency waste management.",
+        "Secure post-construction cleanout to ensure a broom-clean finish.",
         "Access same-day junk removal for store closings and rapid clearing.",
         "Receive detailed reporting for retail portfolio decommissioning.",
       ]}
