@@ -30,7 +30,7 @@ const coreValues = [
   },
   {
     title: "Operational Leadership and Responsibility",
-    description: "We prioritize sustainable disposal methods and maximize recycling rates to minimize environmental impact."
+    description: "Leading is about getting the job done. Our team approaches every challenge with a front-row mentality, mobilizing rapidly to maintain your facility's uptime. Responsibility is our baseline, utilizing streamlined logistics to support a circular economy."
   }
 ];
 
