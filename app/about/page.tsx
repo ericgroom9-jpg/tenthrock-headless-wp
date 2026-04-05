@@ -21,7 +21,7 @@ const imgCommunity = "/images/stock/cyclist.jpg";
 
 const coreValues = [
   {
-    title: "Reliability You Can Count On",
+    title: "Innovative Problem Solving",
     description: "We show up when we say we will, every time. Our nationwide network ensures consistent service quality across 48 states."
   },
   {
