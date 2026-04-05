@@ -13,7 +13,13 @@ import {
   CheckCircle2,
   MapPin,
   Truck,
-  Mail
+  Mail,
+  DollarSign,
+  Globe,
+  Headphones,
+  Ban,
+  Monitor,
+  TrendingUp
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -24,24 +30,34 @@ const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
 const networkBenefits = [
   {
-    icon: <Zap className="w-6 h-6" />,
-    title: "Steady Job Volume",
-    desc: "We bring the clients. You bring the trucks. Our national client base means consistent work flowing to your crew."
+    icon: <DollarSign className="w-6 h-6" />,
+    title: "Same-Day Payment",
+    desc: "Complete a job, get paid the same day. No net-30 terms. No invoice follow-ups. No waiting to get what you've earned."
   },
   {
-    icon: <Shield className="w-6 h-6" />,
-    title: "Reliable Payments",
-    desc: "Transparent billing and bi-weekly direct deposits. No chasing invoices or wondering when you will get paid."
+    icon: <Globe className="w-6 h-6" />,
+    title: "Access the Network",
+    desc: "We work with hotel chains, national retailers, property managers, and multi-location operators nationwide. No pitching, no selling. Just show up, execute, and get paid."
   },
   {
-    icon: <Clock className="w-6 h-6" />,
-    title: "Flexible Scheduling",
-    desc: "Accept jobs that fit your capacity. Decline the rest. No penalties, no minimum commitments."
+    icon: <Headphones className="w-6 h-6" />,
+    title: "A Team in Your Corner",
+    desc: "From dispatch to documentation, your dedicated Success Manager is there every step of the way. No matter what comes up on a project, you're never navigating it alone."
   },
   {
-    icon: <Users className="w-6 h-6" />,
-    title: "Dedicated Support",
-    desc: "Your vendor relations manager handles client communication so you can focus on getting the job done."
+    icon: <Ban className="w-6 h-6" />,
+    title: "No Sales. Ever.",
+    desc: "Inside the Tenth Rock ecosystem, the selling is already done. No proposals, no follow-ups, no client-facing anything, just real work without the overhead of chasing it."
+  },
+  {
+    icon: <Monitor className="w-6 h-6" />,
+    title: "Powered by TRAC\u2122",
+    desc: "Tenth Rock's proprietary platform automates every step of the job process; tracking, documentation, and photo management all in one place, so every job closes clean, and your work speaks for itself."
+  },
+  {
+    icon: <TrendingUp className="w-6 h-6" />,
+    title: "Grow Locally. Backed Nationally.",
+    desc: "Your community is your territory. Rock brings the national relationships, the operational backbone, and an industry reputation that opens doors in your local market."
   }
 ];
 
@@ -136,7 +152,7 @@ function WhyJoinSection() {
           </p>
         </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {networkBenefits.map((benefit, i) => (
             <FadeIn
               key={i}
