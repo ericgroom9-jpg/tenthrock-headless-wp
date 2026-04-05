@@ -85,7 +85,7 @@ function HeroSection() {
           <FadeIn
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
-              Join the Tenth Rock Vendor Network
+              Join Our Network
             </h1>
             <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-lg leading-relaxed">
               We partner with experienced haulers and service providers to support commercial waste operations nationwide. Access opportunities backed by organized workflows, clear communication, and fast, reliable payment.
