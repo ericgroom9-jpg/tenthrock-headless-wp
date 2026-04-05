@@ -7,7 +7,7 @@ export default function EventsStadiumsPage() {
       serviceDescription="Implement high-volume event waste logistics and stadium waste coordination. Specialized teams provide emergency waste management and contingency planning to maintain standards during live, high-visibility events."
       heroImage="/images/stock/service-event-stadium.jpg"
       aboutBullets={[
-        "Deploy emergency junk removal between back-to-back events.",
+        "Implement on-site waste systems for high-traffic environments to maintain cleanliness, safety, and flow.",
         "Secure multi-day event waste support for fairgrounds and arenas.",
         "Access same-day junk removal for post-event breakdown.",
         "Implement emergency waste management for high-traffic public spaces.",
