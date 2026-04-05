@@ -4,7 +4,7 @@ export default function MultipleSizesPage() {
   return (
     <ServiceTemplate
       serviceName="Multiple Sizes"
-      serviceDescription="Deploy the right emergency roll-off service for any project. Our open top dumpsters provide the specific capacity needed for commercial site cleanout and emergency waste management."
+      serviceDescription="Deploy the right roll-off dumpster for any project. Our open top containers are available in 20, 30, and 40 yard sizes, ensuring the right capacity for efficient, uninterrupted operations."
       heroImage="/images/stock/service-dumpster.jpg"
       aboutBullets={[
         "Access 30 yard dumpster rental for bulky commercial debris removal.",
