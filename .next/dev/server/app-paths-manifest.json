@@ -1,5 +1,6 @@
 {
   "/page": "app/page.js",
   "/services/multiple-sizes/page": "app/services/multiple-sizes/page.js",
-  "/services/on-demand-service/page": "app/services/on-demand-service/page.js"
+  "/services/on-demand-service/page": "app/services/on-demand-service/page.js",
+  "/services/recycling-specialty-containers/page": "app/services/recycling-specialty-containers/page.js"
 }

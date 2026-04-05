@@ -4,7 +4,7 @@ export default function RecyclingSpecialtyContainersPage() {
   return (
     <ServiceTemplate
       serviceName="Recycling Dumpsters"
-      serviceDescription="Deploy emergency waste management for high-volume commercial recycling dumpster and scrap needs. Specialized teams provide emergency roll-off service for cardboard & baler overflow support during capacity surges."
+      serviceDescription="Deploy material-specific containers for cardboard, metal, and construction debris. Our recycling and specialty dumpster rentals support high-volume operations, baler overflow, and landfill diversion, without disrupting your workflow."
       heroImage="/images/stock/service-centralized-program.jpg"
       aboutBullets={[
         "Access commercial recycling receptacle units for metal and cardboard.",
