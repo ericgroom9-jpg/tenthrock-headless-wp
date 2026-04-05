@@ -8,7 +8,7 @@ export default function EventsStadiumsPage() {
       heroImage="/images/stock/service-event-stadium.jpg"
       aboutBullets={[
         "Implement on-site waste systems for high-traffic environments to maintain cleanliness, safety, and flow.",
-        "Secure multi-day event waste support for fairgrounds and arenas.",
+        "Support multi-day events across stadiums, arenas, and fairgrounds with structured, scalable waste programs.",
         "Access same-day junk removal for post-event breakdown.",
         "Implement emergency waste management for high-traffic public spaces.",
       ]}
