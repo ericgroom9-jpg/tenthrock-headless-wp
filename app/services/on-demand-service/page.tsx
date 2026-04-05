@@ -12,7 +12,7 @@ export default function OnDemandServicePage() {
         "Scale container capacity up or down based on real-time site needs.",
         "Support multi-location portfolios with responsive, flexible dumpster logistics.",
       ]}
-      aboutDescription="Tenth Rock provides emergency waste management and same day swaps. We offer emergency junk removal using a variety of sizes, including 30 yard dumpster rental, to keep projects on schedule."
+      aboutDescription="Tenth Rock delivers on-demand dumpster rental and container management. We handle rapid dispatch, same-day swaps, and ongoing service coordination, keeping projects on schedule and sites running efficiently."
     />
   );
 }
