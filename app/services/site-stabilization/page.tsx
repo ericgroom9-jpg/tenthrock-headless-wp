@@ -13,7 +13,7 @@ export default function SiteStabilizationPage() {
         "Support multi-location rollouts with rapid response and prioritized scheduling.",
         "Provide pressure washing to clean and reset impacted areas after waste removal.",
       ]}
-      aboutDescription="Tenth Rock offers same-day junk removal to resolve a waste overflow or overflowing dumpster. We provide rapid recovery to clear illegal dumping and maintain site standards."
+      aboutDescription="Tenth Rock delivers rapid site stabilization when systems fail. From container deployment and waste removal to final site cleanup, we restore order, safety, and operational continuity fast."
     />
   );
 }
