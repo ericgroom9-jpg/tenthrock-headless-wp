@@ -26,7 +26,7 @@ const coreValues = [
   },
   {
     title: "Partnership and Transparent Communication",
-    description: "No hidden fees, no surprises. Our upfront pricing model means you always know exactly what you're paying for."
+    description: "Built on professional respect and family values, we treat your operations as our own. We eliminate friction with a single point of contact and real-time updates to ensure every stakeholder thrives through total accountability."
   },
   {
     title: "Environmental Responsibility",
