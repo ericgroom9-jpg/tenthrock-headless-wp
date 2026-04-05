@@ -11,7 +11,7 @@ export default function SiteStabilizationPage() {
         "Deploy on demand dumpster solutions for compactor failures and capacity breakdowns.",
         "Coordinate bulk waste removal to clear overflow and restore site conditions.",
         "Support multi-location rollouts with rapid response and prioritized scheduling.",
-        "Clear illegal dumping with priority multi-site scheduling.",
+        "Provide pressure washing to clean and reset impacted areas after waste removal.",
       ]}
       aboutDescription="Tenth Rock offers same-day junk removal to resolve a waste overflow or overflowing dumpster. We provide rapid recovery to clear illegal dumping and maintain site standards."
     />
