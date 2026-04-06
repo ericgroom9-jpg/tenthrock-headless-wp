@@ -39,7 +39,7 @@ const faqs = [
     answer: "Yes, we provide a range of container sizes and types appropriate for different campus environments - from compact bins for academic buildings to large compactors for dining facilities and roll-offs for construction projects."
   },
   {
-    question: "How does reporting work for sustainability certifications?",
+    question: "How do you support high-stakes campus events?",
     answer: "We provide detailed monthly and annual reports that align with common sustainability frameworks like AASHE STARS, including waste volumes, diversion rates, and environmental impact metrics that can be directly incorporated into your certification submissions."
   },
   {
