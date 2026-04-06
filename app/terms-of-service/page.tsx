@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import FadeIn from "@/components/shared/FadeIn";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+
+const POLICY_KEY = "Wlc5NU4ySTVhMmRJVEcxcFUxRTlQUT09";
 
 export default function TermsOfServicePage() {
   return (
@@ -16,19 +18,16 @@ export default function TermsOfServicePage() {
 }
 
 function TermsOfServiceSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [content, setContent] = useState<string | null>(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
-    const existing = containerRef.current.querySelector("script");
-    if (existing) return;
-
-    const script = document.createElement("script");
-    script.src =
-      "https://policies.termageddon.com/api/embed/Wlc5NU4ySTVhMmRJVEcxcFUxRTlQUT09.js";
-    script.async = true;
-    containerRef.current.appendChild(script);
+    fetch(
+      `https://embed.termageddon.com/api/render/${POLICY_KEY}?origin=${encodeURIComponent(window.location.href)}`
+    )
+      .then((res) => res.text())
+      .then((html) => setContent(html))
+      .catch(() => setError(true));
   }, []);
 
   return (
@@ -45,25 +44,32 @@ function TermsOfServiceSection() {
             Terms of Service
           </h1>
 
-          <div ref={containerRef} className="w-full" data-testid="content-terms-of-service">
-            <div
-              id="Wlc5NU4ySTVhMmRJVEcxcFUxRTlQUT09"
-              className="policy_embed_div"
-              style={{ width: "100%", minHeight: "480px" }}
-            >
-              Please wait while the policy is loaded. If it does not load,
-              please{" "}
-              <a
-                rel="nofollow"
-                href="https://policies.termageddon.com/api/policy/Wlc5NU4ySTVhMmRJVEcxcFUxRTlQUT09"
-                target="_blank"
-                className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors"
-                data-testid="link-terms-fallback"
-              >
-                click here
-              </a>{" "}
-              to view the policy.
-            </div>
+          <div className="w-full" data-testid="content-terms-of-service">
+            {content ? (
+              <div
+                className="prose prose-lg max-w-none text-[#042940] [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:mt-8 [&_h2]:mb-4 [&_p]:text-base [&_p]:leading-relaxed [&_p]:text-[#042940]/90 [&_ul]:list-disc [&_ul]:pl-6 [&_a]:text-[#042940] [&_a]:underline [&_a]:font-medium hover:[&_a]:text-[#c5d520] [&_table]:w-full [&_td]:p-2 [&_td]:border [&_td]:border-gray-200 [&_th]:p-2 [&_th]:border [&_th]:border-gray-200 [&_th]:bg-gray-50 [&_th]:font-semibold"
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
+            ) : error ? (
+              <p className="text-base text-[#042940]/80">
+                The policy could not be loaded.{" "}
+                <a
+                  rel="nofollow"
+                  href={`https://policies.termageddon.com/api/policy/${POLICY_KEY}`}
+                  target="_blank"
+                  className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors"
+                  data-testid="link-terms-fallback"
+                >
+                  Click here to view it directly
+                </a>
+                .
+              </p>
+            ) : (
+              <div className="flex items-center gap-3 text-[#042940]/60">
+                <div className="w-5 h-5 border-2 border-[#042940]/30 border-t-[#042940] rounded-full animate-spin" />
+                Loading policy...
+              </div>
+            )}
           </div>
         </FadeIn>
       </div>
