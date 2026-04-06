@@ -12,16 +12,16 @@ const bulletPoints = [
     description: "Comprehensive waste management covering dormitories, dining halls, academic buildings, and athletic facilities. We handle the complexity of multi-building campuses with ease."
   },
   {
-    title: "Sustainability Initiatives",
-    description: "Help your institution meet its sustainability goals with robust recycling programs and composting solutions tailored to campus operations."
+    title: "Campus Recycling Programs",
+    description: "Robust recycling solutions tailored to high-traffic academic and residential environments. We coordinate the collection and hauling of campus-wide recyclables to support your institution's internal goals."
   },
   {
     title: "Event & Move-Out Support",
     description: "Specialized services for high-volume periods like graduation ceremonies, sporting events, and end-of-semester move-outs when waste volumes spike dramatically."
   },
   {
-    title: "Documentation & Support",
-    description: "Detailed documentation for every job, plus support for campus sustainability initiatives and institutional certifications."
+    title: "Operational Documentation",
+    description: "Comprehensive service logs and activity records for every campus facility. This organized documentation ensures transparency and provides the professional tracking needed for facilities management."
   }
 ];
 
