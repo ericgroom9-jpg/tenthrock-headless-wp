@@ -27,7 +27,7 @@ const bulletPoints = [
 
 const faqs = [
   {
-    question: "Do you work with government procurement processes?",
+    question: "How do you manage waste for community festivals?",
     answer: "Yes, we're experienced with municipal RFP processes, cooperative purchasing agreements, and state contracts. We provide all required documentation and can work within your procurement requirements."
   },
   {
