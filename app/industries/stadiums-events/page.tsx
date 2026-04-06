@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "Do you handle specialty waste from events?",
-    answer: "Yes, we manage high-volume solid waste streams including cardboard recycling, vendor debris, and bulk hauling. Our teams coordinate the logistics for all event-related solid materials."
+    answer: "Yes, we manage high-volume solid waste streams including cardboard recycling, vendor debris, and bulk hauling. Our teams coordinate the logistics for all event-related solid materials; please note we do not handle liquid waste, cooking oil, or grease disposal."
   },
   {
     question: "Do you support waste diversion for events?",
