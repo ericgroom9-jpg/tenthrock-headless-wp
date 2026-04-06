@@ -1,3 +1,4 @@
 {
-  "/join-our-network/page": "app/join-our-network/page.js"
+  "/join-our-network/page": "app/join-our-network/page.js",
+  "/locations/[slug]/page": "app/locations/[slug]/page.js"
 }

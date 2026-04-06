@@ -143,7 +143,7 @@ export interface StateLocationContent {
     ],
   },
   "florida": {
-    subtitle: "Commercial waste removal services for businesses across Florida. From large property cleanouts to urgent disposal situations, Tenth Rock Waste Solutions helps organizations keep facilities clear, compliant, and operating efficiently.",
+    subtitle: "Commercial dumpster rental and emergency waste services across Florida. Tenth Rock supports multi-location businesses with roll-off containers, rapid response, and coordinated waste logistics to keep operations running without disruption.",
     bullets: [
       "Emergency waste support for Florida businesses",
       "Rapid coordination for compactor failures and waste overflow",
