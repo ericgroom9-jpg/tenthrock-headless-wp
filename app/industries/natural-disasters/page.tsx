@@ -20,8 +20,8 @@ const bulletPoints = [
     description: "Real-time tracking, photo documentation, and clear reporting across every site to maintain full visibility throughout the recovery process."
   },
   {
-    title: "Recovery Coordination",
-    description: "We provide the logistical horsepower needed to support large-scale recovery. Our teams work alongside site managers and contractors to keep your business moving forward."
+    title: "Community Recovery Partnership",
+    description: "We work alongside emergency management agencies, utilities, and contractors to support comprehensive community recovery efforts."
   }
 ];
 
