@@ -905,7 +905,6 @@ export default function ServiceTemplate({
 
               <FadeIn
                 className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100"
-                suppressHydrationWarning
               >
                 <video
                   autoPlay
