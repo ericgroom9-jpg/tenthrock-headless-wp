@@ -28,7 +28,7 @@ const bulletPoints = [
 const faqs = [
   {
     question: "How do you manage waste for community festivals?",
-    answer: "Yes, we're experienced with municipal RFP processes, cooperative purchasing agreements, and state contracts. We provide all required documentation and can work within your procurement requirements."
+    answer: "We provide scalable equipment and rapid hauling for high-volume public events. Our teams coordinate with city officials to clear streets and parks immediately, ensuring public spaces remain welcoming."
   },
   {
     question: "How do you handle seasonal variations in park usage?",
