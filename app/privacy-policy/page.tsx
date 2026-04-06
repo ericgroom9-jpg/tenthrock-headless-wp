@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 import FadeIn from "@/components/shared/FadeIn";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -16,7 +16,20 @@ export default function PrivacyPolicyPage() {
 }
 
 function PrivacyPolicySection() {
-  const [iframeHeight, setIframeHeight] = useState(2000);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const existing = containerRef.current.querySelector("script");
+    if (existing) return;
+
+    const script = document.createElement("script");
+    script.src =
+      "https://policies.termageddon.com/api/embed/TVdZcmMxWmpXRGxsV0RkblJHYzlQUT09.js";
+    script.async = true;
+    containerRef.current.appendChild(script);
+  }, []);
 
   return (
     <section
@@ -32,20 +45,14 @@ function PrivacyPolicySection() {
             Privacy Policy
           </h1>
 
-          <div
-            className="w-full"
-            data-testid="content-privacy-policy"
-          >
-            <iframe
-              src="https://policies.termageddon.com/api/policy/TVdZcmMxWmpXRGxsV0RkblJHYzlQUT09?h-align=left&table-style=accordion"
-              title="Privacy Policy"
-              width="100%"
-              height={iframeHeight}
-              style={{ border: "none", overflow: "hidden" }}
-              data-testid="iframe-privacy-policy"
-            />
-            <p className="text-sm text-[#042940]/60 mt-6">
-              If the policy does not display,{" "}
+          <div ref={containerRef} className="w-full" data-testid="content-privacy-policy">
+            <div
+              id="TVdZcmMxWmpXRGxsV0RkblJHYzlQUT09"
+              className="policy_embed_div"
+              style={{ width: "100%", minHeight: "480px" }}
+            >
+              Please wait while the policy is loaded. If it does not load,
+              please{" "}
               <a
                 rel="nofollow"
                 href="https://policies.termageddon.com/api/policy/TVdZcmMxWmpXRGxsV0RkblJHYzlQUT09"
@@ -53,9 +60,10 @@ function PrivacyPolicySection() {
                 className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors"
                 data-testid="link-privacy-fallback"
               >
-                click here to view it directly
-              </a>.
-            </p>
+                click here
+              </a>{" "}
+              to view the policy.
+            </div>
           </div>
         </FadeIn>
       </div>
