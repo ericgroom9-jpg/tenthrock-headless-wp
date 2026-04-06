@@ -62,7 +62,7 @@ export default function TestimonialsSection({
               <FadeIn
                 key={currentIndex}
               >
-                <blockquote className="text-3xl md:text-5xl font-bold leading-tight mb-10 tracking-tight" data-testid={`text-${testIdPrefix}-quote`}>
+                <blockquote className="text-xl md:text-2xl font-bold leading-snug mb-10 tracking-tight" data-testid={`text-${testIdPrefix}-quote`}>
                   &ldquo;{current.quote}&rdquo;
                 </blockquote>
                  
