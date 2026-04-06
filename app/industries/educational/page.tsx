@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: "How do you support high-stakes campus events?",
-    answer: "We provide detailed monthly and annual reports that align with common sustainability frameworks like AASHE STARS, including waste volumes, diversion rates, and environmental impact metrics that can be directly incorporated into your certification submissions."
+    answer: "We deploy increased hauling capacity and on-call logistics for graduations and game days. Our teams sync with your schedule to clear high-volume debris immediately, keeping the campus pristine for visitors."
   },
   {
     question: "Can you coordinate with multiple campus departments?",
