@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "How do you determine equipment placement for large venues?",
-    answer: "Absolutely. We coordinate recycling and diversion programs for events of all sizes. Many of our venue partners have improved their diversion rates significantly through our managed programs."
+    answer: "We conduct site assessments to strategically position high-volume containers. Our goal is to maximize hauling efficiency and minimize disruptions, ensuring waste operations remain invisible to fans and attendees."
   },
   {
     question: "How do you handle waste during multi-day festivals?",
