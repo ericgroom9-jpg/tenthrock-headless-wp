@@ -16,8 +16,8 @@ const bulletPoints = [
     description: "Scalable solutions for community events, parades, farmers markets, and public celebrations. We help keep your public spaces clean and welcoming."
   },
   {
-    title: "Documentation & Support",
-    description: "Detailed documentation for every job. Transparent records help you demonstrate fiscal responsibility to constituents."
+    title: "Unified Logistics Management",
+    description: "One point of contact for all public works and facility waste. We eliminate the administrative burden of managing multiple vendors, providing a professional approach to city-wide coordination."
   },
   {
     title: "Emergency Response Ready",
