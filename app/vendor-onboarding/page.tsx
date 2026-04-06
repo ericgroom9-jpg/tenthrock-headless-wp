@@ -116,7 +116,7 @@ function HeroSection() {
               Welcome to Tenth Rock! Let's Get You Set Up.
             </h1>
             <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-lg leading-relaxed">
-              Complete your application below to start receiving commercial waste, roll-off, and junk removal jobs in your service area. The form takes about 10 minutes.
+              Thank you for your interest in joining the Tenth Rock team. As a Certified Service Partner, your role is at the heart of everything we do -- delivering swift, professional waste management solutions to our clients nationwide. Before you begin your application, please review what you'll need below. Having everything ready will make the process quick and straightforward.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
