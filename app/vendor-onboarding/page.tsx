@@ -13,39 +13,67 @@ const heroImage = "/images/stock/hero-skyscrapers.jpg";
 
 const vendorTestimonials = [
   {
-    quote: "Partnering with Tenth Rock gave our business a steady stream of contracts across multiple states. The onboarding was seamless.",
-    author: "James Hartley",
-    role: "Owner",
-    company: "Hartley Waste Services",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
+    quote: "We have worked with Tenth Rock for several years. They have consistently provided outstanding communication, job turnaround, and assistance in any of the unique situations that come up in this industry. If you are looking for a great partner, Tenth Rock is it!",
+    author: "Lane J.",
+    role: "",
+    company: "Sewickley, PA",
+    img: ""
   },
   {
-    quote: "Their dispatch system is top-notch. We get job alerts instantly and the payment process is reliable and transparent.",
-    author: "Maria Gonzalez",
-    role: "Operations Manager",
-    company: "Southwest Hauling Co.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
+    quote: "Working with Tenth Rock is organized and efficient. They don't waste your time with dry runs. They provide clear communication and solid work. They pay when the job is done, unlike other companies that I have to chase down for payment. When they call, I'm ready because I know it will be a smooth process, and they'll take care of me, and I'm proud to do the same for them.",
+    author: "Kenneth L.",
+    role: "",
+    company: "Bel Air, MD",
+    img: ""
   },
   {
-    quote: "Joining the Tenth Rock network was the best business decision we made. Volume is up 40% and growing every quarter.",
-    author: "Robert Chen",
-    role: "VP of Business Development",
-    company: "Pacific Disposal Group",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
+    quote: "They know how to treat their vendors! I've had my share of headaches with other companies, but Tenth Rock provides everything upfront, and if I have questions mid-job, they're always available to help guide me through things that come up. I'm looking forward to working with them for many years to come.",
+    author: "Jason M.",
+    role: "",
+    company: "Adairsville, GA",
+    img: ""
   },
   {
-    quote: "The support team is incredible. Any issue we've had was resolved within the hour. True partners in every sense.",
-    author: "Lisa Thompson",
-    role: "Fleet Manager",
-    company: "Greenway Environmental",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200"
+    quote: "Working with Tenth Rock has been great. They truly value their vendors and treat us with the respect we deserve, which is rare with the bigger companies in this industry. It's refreshing to work with a company that appreciates the hard work we put in.",
+    author: "Brian L.",
+    role: "",
+    company: "Spring Hill, FL",
+    img: ""
   },
   {
-    quote: "We've expanded into three new states since joining. Tenth Rock handles the client relationships so we can focus on operations.",
-    author: "David Park",
-    role: "CEO",
-    company: "Atlas Waste Solutions",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
+    quote: "Tenth Rock is my top company to work with. As soon as I get a call from them, I immediately am ready to get to work. They make the entire process so simple on the vendor side, making everything run very smoothly from the very first call to completion. They are on point with communication on both vendor and retail sides, which makes it hassle- and stress-free for both parties, making it as smooth as butter. Definitely looking forward to continuing our partnership.",
+    author: "Michael R.",
+    role: "",
+    company: "Chester, VA",
+    img: ""
+  },
+  {
+    quote: "Working with Tenth Rock LLC has been an awesome experience. They are easy to work with, maintain great communication, and provide quick payouts. I highly recommend them!",
+    author: "Gustavo M.",
+    role: "",
+    company: "Irving, TX",
+    img: ""
+  },
+  {
+    quote: "Working with Tenth Rock has been a highly positive experience. My rep streamlines the process effectively, providing photographs of the required work, which simplifies the bidding process. Upon completion of the work, submitting proof of completion and the invoice leads to prompt payment. I truly appreciate the collaboration with Tenth Rock in addressing their clients' needs.",
+    author: "Katie M.",
+    role: "",
+    company: "House Springs, MO",
+    img: ""
+  },
+  {
+    quote: "Tenth Rock is solid. They don't mess around. Jobs are straight to the point. I don't have to guess what they need or chase them down for payment like with other companies. They respect me and my time, and that makes a big difference.",
+    author: "Hector J.",
+    role: "",
+    company: "Chandler, AZ",
+    img: ""
+  },
+  {
+    quote: "Tenth Rock makes it easy to do good work. They set you up for success and give you the support you need. Once the job's done, I send proof, and they pay on the same day. Glad to be working with them.",
+    author: "Arvin T.",
+    role: "",
+    company: "Novato, CA",
+    img: ""
   }
 ];
 
@@ -81,7 +109,7 @@ export default function VendorOnboardingPage() {
       <WhatYouNeedSection />
       <FormSection />
       <HelpSection />
-      <TestimonialsSection testimonials={vendorTestimonials} tagline="Vendor Stories" testIdPrefix="onboard-testimonials" />
+      <TestimonialsSection testimonials={vendorTestimonials} tagline="What Our Partners Are Saying" testIdPrefix="onboard-testimonials" />
       <FaqSection faqs={vendorFaqs} />
       <Footer />
     </main>

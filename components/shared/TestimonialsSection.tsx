@@ -24,8 +24,6 @@ export default function TestimonialsSection({
   testimonials,
   testIdPrefix = "testimonials",
 }: TestimonialsSectionProps) {
-  return null;
-  /* Hidden: Client Stories section disabled
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!testimonials || testimonials.length === 0) return null;
@@ -38,10 +36,12 @@ export default function TestimonialsSection({
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
+  const current = testimonials[currentIndex];
+  const authorLine = [current.role, current.company].filter(Boolean).join(", ");
+
   return (
-    <section className="py-16 md:py-24 bg-[#042940] text-white relative overflow-hidden" aria-label="Client testimonials" data-testid={`section-${testIdPrefix}`}>
+    <section className="py-16 md:py-24 bg-[#042940] text-white relative overflow-hidden" aria-label="Testimonials" data-testid={`section-${testIdPrefix}`}>
       <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
-      
       
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#c5d520]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
@@ -59,25 +59,32 @@ export default function TestimonialsSection({
           </div>
            
           <div className="relative min-h-[300px]">
-            
               <FadeIn
                 key={currentIndex}
               >
                 <blockquote className="text-3xl md:text-5xl font-bold leading-tight mb-10 tracking-tight" data-testid={`text-${testIdPrefix}-quote`}>
-                  &ldquo;{testimonials[currentIndex].quote}&rdquo;
+                  &ldquo;{current.quote}&rdquo;
                 </blockquote>
                  
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
-                    <Image src={testimonials[currentIndex].img} alt={testimonials[currentIndex].author} width={64} height={64} className="w-full h-full object-cover" loading="lazy" />
-                  </div>
+                  {current.img && (
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
+                      <Image src={current.img} alt={current.author} width={64} height={64} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  )}
+                  {!current.img && (
+                    <div className="w-16 h-16 rounded-full bg-[#c5d520]/20 border-2 border-white/20 flex items-center justify-center text-[#c5d520] font-bold text-xl">
+                      {current.author.charAt(0)}
+                    </div>
+                  )}
                   <div>
-                    <div className="font-bold text-xl text-white" data-testid={`text-${testIdPrefix}-author`}>{testimonials[currentIndex].author}</div>
-                    <div className="text-white/70 font-medium">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</div>
+                    <div className="font-bold text-xl text-white" data-testid={`text-${testIdPrefix}-author`}>{current.author}</div>
+                    {authorLine && (
+                      <div className="text-white/70 font-medium">{authorLine}</div>
+                    )}
                   </div>
                 </div>
               </FadeIn>
-            
           </div>
 
           <div className="flex gap-4 pt-8">
@@ -102,5 +109,4 @@ export default function TestimonialsSection({
       </div>
     </section>
   );
-  */
 }
