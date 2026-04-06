@@ -50,6 +50,7 @@ export default function LocationSection() {
 
           <FadeIn
             className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100"
+            suppressHydrationWarning
           >
             <video
               autoPlay
@@ -59,6 +60,7 @@ export default function LocationSection() {
               preload="metadata"
               className="w-full h-auto"
               style={{ aspectRatio: "768 / 512" }}
+              suppressHydrationWarning
             >
               <source src="/assets_export/videos/us-map-pins-loop.mp4" type="video/mp4" />
             </video>

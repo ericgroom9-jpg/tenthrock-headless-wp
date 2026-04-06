@@ -905,6 +905,7 @@ export default function ServiceTemplate({
 
               <FadeIn
                 className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100"
+                suppressHydrationWarning
               >
                 <video
                   autoPlay
@@ -913,6 +914,7 @@ export default function ServiceTemplate({
                   playsInline
                   className="w-full h-auto"
                   style={{ aspectRatio: "768 / 512" }}
+                  suppressHydrationWarning
                 >
                   <source src={usMapVideo} type="video/mp4" />
                 </video>

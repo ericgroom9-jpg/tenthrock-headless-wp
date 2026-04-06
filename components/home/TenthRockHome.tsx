@@ -855,6 +855,7 @@ const Location = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100"
+            suppressHydrationWarning
           >
             <video
               autoPlay
@@ -863,6 +864,7 @@ const Location = () => {
               playsInline
               className="w-full h-auto"
               style={{ aspectRatio: "768 / 512" }}
+              suppressHydrationWarning
             >
               <source src="/assets_export/videos/us-map-pins-loop.mp4" type="video/mp4" />
             </video>

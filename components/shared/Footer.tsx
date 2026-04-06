@@ -132,9 +132,9 @@ export default function Footer() {
         
         <Separator className="bg-white/10 mb-8" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70">
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
-            <p data-testid="text-footer-copyright">© 2026 Tenth Rock. All rights reserved.</p>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70" suppressHydrationWarning>
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2" suppressHydrationWarning>
+            <p data-testid="text-footer-copyright" suppressHydrationWarning>© 2026 Tenth Rock. All rights reserved.</p>
             <span className="hidden sm:inline text-white/30">|</span>
             <p className="text-white/50" data-testid="text-footer-address">140 Island Way Ste. 159, Clearwater Beach, FL 33767</p>
           </div>
