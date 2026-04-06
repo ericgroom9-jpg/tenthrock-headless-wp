@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: "What's your response time for emergency cleanup?",
-    answer: "For municipalities with service agreements, we maintain emergency response protocols with 24-48 hour mobilization for most situations. We prioritize public safety and rapid restoration of services."
+    answer: "We maintain emergency response protocols with 24-48 hour mobilization for most situations. We prioritize public safety and rapid restoration of services."
   },
   {
     question: "Do you provide service to all municipal facilities?",
