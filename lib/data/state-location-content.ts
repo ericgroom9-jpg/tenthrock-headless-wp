@@ -1,4 +1,5 @@
 export interface StateLocationContent {
+    heroTitle?: string;
     subtitle: string;
     bullets: string[];
     aboutDesc: string;
@@ -143,6 +144,7 @@ export interface StateLocationContent {
     ],
   },
   "florida": {
+    heroTitle: "Dumpster rental and emergency waste support for businesses across Florida",
     subtitle: "Commercial dumpster rental and emergency waste services across Florida. Tenth Rock supports multi-location businesses with roll-off containers, rapid response, and coordinated waste logistics to keep operations running without disruption.",
     bullets: [
       "Emergency waste support for Florida businesses",
