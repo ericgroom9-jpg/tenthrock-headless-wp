@@ -156,7 +156,7 @@ function ProcessStepsSection() {
             Before You Begin
           </div>
           <h2 className="text-3xl md:text-4xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
-            From Application to First Job
+            What You'll Need
           </h2>
         </FadeIn>
 
