@@ -12,8 +12,8 @@ const bulletPoints = [
     description: "Discreet service scheduling and equipment placement that keeps waste operations invisible to guests. We protect the ambiance you've worked hard to create."
   },
   {
-    title: "Food Waste & Kitchen Support",
-    description: "Specialized handling for kitchen waste, cooking oil recycling, and food scraps. We help manage the unique waste streams of hospitality food service."
+    title: "High-Volume Kitchen Support",
+    description: "Specialized logistics for back-of-house solid waste and cardboard recycling. We maintain kitchen flow by coordinating debris removal."
   },
   {
     title: "Multi-Property Coordination",

@@ -1,6 +1,4 @@
 {
-  "/[slug]/page": "app/[slug]/page.js",
   "/industries/natural-disasters/page": "app/industries/natural-disasters/page.js",
-  "/industries/stadiums-events/page": "app/industries/stadiums-events/page.js",
   "/page": "app/page.js"
 }
