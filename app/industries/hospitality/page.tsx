@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "How do you manage waste fluctuations during peak seasons?",
-    answer: "We coordinate scheduled pickups for high-volume solid waste, cardboard breakdown, and packaging materials. Our teams work around kitchen schedules to keep service areas clear without disrupting operations."
+    answer: "We provide scalable hauling schedules that adjust to your property's occupancy and event calendar. Our flexible logistics prevent overflows and maintain site hygiene during your busiest periods."
   },
   {
     question: "How do you support our sustainability initiatives?",
