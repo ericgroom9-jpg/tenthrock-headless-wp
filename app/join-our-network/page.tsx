@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 import { 
@@ -270,6 +271,7 @@ function NetworkStatsSection() {
 }
 
 function EmailCaptureSection() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -295,7 +297,7 @@ function EmailCaptureSection() {
         throw new Error(data.error || "Something went wrong. Please try again.");
       }
 
-      setSubmitted(true);
+      router.push("/vendor-onboarding");
     } catch (err: any) {
       setError(err.message || "Something went wrong. Please try again.");
     }
