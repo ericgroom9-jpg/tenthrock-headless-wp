@@ -148,7 +148,7 @@ function WhyJoinSection() {
             Why Providers Partner With Us
           </h2>
           <p className="text-lg text-[#042940]/70">
-            We handle client relationships, billing, and job coordination. You focus on running your trucks and growing your operation.
+            Access a reliable, high-volume stream of commercial projects with a dedicated logistics partner that prioritizes clear communication and efficient site coordination.
           </p>
         </FadeIn>
 
