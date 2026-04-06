@@ -1,4 +1,5 @@
 {
+  "/industries/educational/page": "app/industries/educational/page.js",
   "/industries/hospitality/page": "app/industries/hospitality/page.js",
   "/industries/natural-disasters/page": "app/industries/natural-disasters/page.js",
   "/industries/stadiums-events/page": "app/industries/stadiums-events/page.js",

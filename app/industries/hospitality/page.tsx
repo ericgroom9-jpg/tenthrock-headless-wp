@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: "How do you provide visibility into our waste metrics?",
-    answer: "We help hotels implement recycling programs and improve diversion rates. Many of our hotel partners have achieved significant improvements in their environmental metrics."
+    answer: "We deliver detailed activity logs and recovery data for every service across your portfolio. This unified reporting provides the organized documentation you need to track performance and support internal goals."
   },
   {
     question: "Can you service multiple properties under one agreement?",
