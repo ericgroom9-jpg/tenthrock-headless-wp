@@ -35,7 +35,7 @@ const faqs = [
     answer: "Yes, we manage high-volume solid waste streams including cardboard recycling, vendor debris, and bulk hauling. Our teams coordinate the logistics for all event-related solid materials; please note we do not handle liquid waste, cooking oil, or grease disposal."
   },
   {
-    question: "Do you support waste diversion for events?",
+    question: "How do you determine equipment placement for large venues?",
     answer: "Absolutely. We coordinate recycling and diversion programs for events of all sizes. Many of our venue partners have improved their diversion rates significantly through our managed programs."
   },
   {
