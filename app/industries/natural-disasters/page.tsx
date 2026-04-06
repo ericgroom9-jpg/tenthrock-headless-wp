@@ -16,8 +16,8 @@ const bulletPoints = [
     description: "Coordinated handling of storm debris, flood-damaged materials, and large-volume waste to restore safe, functional environments."
   },
   {
-    title: "Comprehensive Site Records",
-    description: "Detailed activity logs and photo documentation are provided for every service. We ensure you have organized records of all recovery efforts for internal project tracking."
+    title: "Documentation & Job Visibility",
+    description: "Real-time tracking, photo documentation, and clear reporting across every site to maintain full visibility throughout the recovery process."
   },
   {
     title: "Recovery Coordination",
