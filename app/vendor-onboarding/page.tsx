@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
-import { Phone, CheckCircle2 } from "lucide-react";
+import { Phone, MessageSquare, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
@@ -72,20 +72,15 @@ const vendorFaqs = [
   }
 ];
 
-const processSteps = [
-  { title: "Complete the Form Below", desc: "Provide your company details, service area, equipment capabilities, and insurance documentation." },
-  { title: "We Review Your Application", desc: "Our vendor relations team reviews your submission and verifies documentation. This typically takes 3-5 business days." },
-  { title: "Onboarding Call", desc: "A brief call to walk through our dispatch system, job acceptance process, and payment terms." },
-  { title: "Start Receiving Jobs", desc: "Once approved, job alerts start flowing based on your service area and equipment profile." },
-];
 
 export default function VendorOnboardingPage() {
   return (
     <main>
       <Navbar variant="floating" />
       <HeroSection />
-      <ProcessStepsSection />
+      <WhatYouNeedSection />
       <FormSection />
+      <HelpSection />
       <TestimonialsSection testimonials={vendorTestimonials} tagline="Vendor Stories" testIdPrefix="onboard-testimonials" />
       <FaqSection faqs={vendorFaqs} />
       <Footer />
@@ -144,7 +139,7 @@ function HeroSection() {
   );
 }
 
-function ProcessStepsSection() {
+function WhatYouNeedSection() {
   return (
     <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-onboard-process">
       <div className="container mx-auto px-4 md:px-8">
@@ -160,20 +155,52 @@ function ProcessStepsSection() {
           </h2>
         </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {processSteps.map((step, i) => (
-            <FadeIn
-              key={i}
-              className="bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-[#042940]/5"
-              data-testid={`card-onboard-step-${i}`}
-            >
-              <div className="w-12 h-12 rounded-full bg-[#042940] flex items-center justify-center text-white font-bold text-lg mb-5">
-                {String(i + 1).padStart(2, "0")}
+        <div className="grid md:grid-cols-2 gap-6">
+          <FadeIn
+            className="bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-[#042940]/5"
+            data-testid="card-onboard-step-0"
+          >
+            <div className="w-12 h-12 rounded-full bg-[#042940] flex items-center justify-center text-white font-bold text-lg mb-5">
+              01
+            </div>
+            <h3 className="text-xl font-bold text-[#042940] mb-4">Certificate of Insurance (COI)</h3>
+            <div className="space-y-4 text-[#042940]/70 text-sm leading-relaxed">
+              <p>
+                Before starting your application, you'll need a Certificate of Insurance (COI) listing Tenth Rock as the certificate holder. This simply ensures your insurance provider notifies us if your coverage changes or lapses and does not affect your coverage.
+              </p>
+              <p>
+                To obtain it, contact your insurance carrier and request an updated certificate with Tenth Rock listed as the certificate holder at the address shown. This is a quick, routine request they handle regularly.
+              </p>
+              <p>
+                Please have your COI ready before beginning, as you'll be asked to upload it as part of the application.
+              </p>
+              <div className="bg-[#F9F9F6] rounded-[5px] p-5 mt-4 border border-[#042940]/5">
+                <p className="font-bold text-[#042940] text-sm mb-2">Certificate Holder Information</p>
+                <p className="text-[#042940]/80 text-sm leading-relaxed">
+                  Tenth Rock<br />
+                  140 Island Way, Suite 149<br />
+                  Clearwater Beach, FL 33767<br /><br />
+                  Contact: Mandy Groom<br />
+                  Email: <a href="mailto:onboarding@tenthrock.com" className="text-[#042940] underline" data-testid="link-onboard-email">onboarding@tenthrock.com</a>
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-[#042940] mb-2">{step.title}</h3>
-              <p className="text-[#042940]/70 text-sm leading-relaxed">{step.desc}</p>
-            </FadeIn>
-          ))}
+            </div>
+          </FadeIn>
+
+          <FadeIn
+            className="bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-[#042940]/5"
+            data-testid="card-onboard-step-1"
+          >
+            <div className="w-12 h-12 rounded-full bg-[#042940] flex items-center justify-center text-white font-bold text-lg mb-5">
+              02
+            </div>
+            <h3 className="text-xl font-bold text-[#042940] mb-4">Service Area Map</h3>
+            <div className="space-y-4 text-[#042940]/70 text-sm leading-relaxed">
+              <p>
+                You'll be asked to drop up to six pins on a map to define your service area. Each pin represents a 30-mile radius. Please utilize as many pins as possible to accurately reflect where you operate. We only reach out for opportunities inside your pinned areas, so the more coverage you define, the more opportunities we can send your way.
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -184,21 +211,6 @@ function FormSection() {
   return (
     <section id="onboarding-form" className="py-16 md:py-24 bg-white" data-testid="section-onboard-form">
       <div className="container mx-auto px-4 md:px-8">
-        <FadeIn
-          className="text-center mb-12"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9F9F6] border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-            Application
-          </div>
-          <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
-            Complete Your Vendor Application
-          </h2>
-          <p className="text-lg text-[#042940]/70 max-w-lg mx-auto">
-            Fill out the form below with your company information, service capabilities, and documentation. Our team will review and respond within 3-5 business days.
-          </p>
-        </FadeIn>
-
         <FadeIn
           className="max-w-4xl mx-auto"
         >
@@ -211,6 +223,50 @@ function FormSection() {
               allow="clipboard-write"
               data-testid="iframe-vendor-onboarding"
             />
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
+function HelpSection() {
+  return (
+    <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-onboard-help">
+      <div className="container mx-auto px-4 md:px-8">
+        <FadeIn
+          className="max-w-2xl mx-auto text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
+            Need Help With Your Application?
+          </h2>
+          <p className="text-lg text-[#042940]/70 mb-8 max-w-lg mx-auto">
+            If you have questions or need assistance at any point, our team is ready to help. Call or text us directly.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Button
+              size="lg"
+              className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
+              data-testid="button-onboard-help-text"
+              asChild
+            >
+              <a href="sms:+17275105454">
+                <MessageSquare className="w-4 h-4 mr-2" />
+                Text Us
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="w-full sm:w-auto border-[#042940]/20 text-[#042940] hover:bg-[#042940] hover:text-white active:bg-[#042940] active:text-white min-h-[52px] whitespace-nowrap rounded-full"
+              data-testid="button-onboard-help-call"
+              asChild
+            >
+              <a href="tel:+17275105454">
+                <Phone className="w-4 h-4 mr-2" />
+                Call 727-510-5454
+              </a>
+            </Button>
           </div>
         </FadeIn>
       </div>
