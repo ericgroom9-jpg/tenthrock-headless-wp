@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "Do you provide documentation for insurance and reimbursement?",
-    answer: "Yes. We provide detailed documentation of all work performed, including load tickets, tonnage reports, GPS tracking, and photo documentation that supports insurance claims and reimbursement eligibility."
+    answer: "Yes. We provide detailed documentation of all work performed, including load tickets, tonnage reports, and photo documentation."
   },
   {
     question: "What types of disasters do you respond to?",
