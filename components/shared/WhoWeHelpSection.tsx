@@ -30,8 +30,8 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
           className="object-cover transition-transform duration-700 group-hover:scale-110 group-focus-within:scale-110"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-[rgba(4,41,64,0.82)] transition-colors duration-300 group-hover:bg-[rgba(4,41,64,0.6)] group-focus-within:bg-[rgba(4,41,64,0.6)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/40 md:via-transparent to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-[rgba(4,41,64,0.88)] transition-colors duration-300 group-hover:bg-[rgba(4,41,64,0.72)] group-focus-within:bg-[rgba(4,41,64,0.72)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/50 to-transparent" />
 
         <div className="absolute inset-0 p-6 flex flex-col justify-end">
           <div>
