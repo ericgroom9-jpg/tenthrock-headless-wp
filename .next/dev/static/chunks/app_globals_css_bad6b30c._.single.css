@@ -3891,6 +3891,14 @@ h1, h3, h4, h5, h6, h2 {
   color: #ffffff1a;
 }
 
+.text-white\/30 {
+  color: #ffffff4d;
+}
+
+.text-white\/50 {
+  color: #ffffff80;
+}
+
 .text-white\/60 {
   color: #fff9;
 }
@@ -6417,6 +6425,10 @@ h1, h3, h4, h5, h6, h2 {
     margin-top: 0;
   }
 
+  .sm\:inline {
+    display: inline;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -6507,6 +6519,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .sm\:justify-center {
     justify-content: center;
+  }
+
+  .sm\:gap-2 {
+    gap: .5rem;
   }
 
   .sm\:gap-2\.5 {
