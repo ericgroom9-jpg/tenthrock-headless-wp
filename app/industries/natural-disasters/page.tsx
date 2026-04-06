@@ -20,8 +20,8 @@ const bulletPoints = [
     description: "Detailed activity logs and photo documentation are provided for every service. We ensure you have organized records of all recovery efforts for internal project tracking."
   },
   {
-    title: "Community Recovery Partnership",
-    description: "We work alongside emergency management agencies, utilities, and contractors to support comprehensive community recovery efforts."
+    title: "Recovery Coordination",
+    description: "We provide the logistical horsepower needed to support large-scale recovery. Our teams work alongside site managers and contractors to keep your business moving forward."
   }
 ];
 
