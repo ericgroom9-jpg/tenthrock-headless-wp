@@ -1662,10 +1662,6 @@ h1, h3, h4, h5, h6, h2 {
   display: grid;
 }
 
-.contents {
-  display: contents;
-}
-
 .hidden {
   display: none;
 }
@@ -2404,10 +2400,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .resize-none {
   resize: none;
-}
-
-.list-disc {
-  list-style-type: disc;
 }
 
 .list-none {
@@ -3599,10 +3591,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .pl-4 {
   padding-left: 1rem;
-}
-
-.pl-6 {
-  padding-left: 1.5rem;
 }
 
 .pl-7 {
