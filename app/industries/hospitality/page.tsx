@@ -20,8 +20,8 @@ const bulletPoints = [
     description: "Centralized management for hotel groups and resort portfolios. Consistent service standards across all your properties with unified reporting."
   },
   {
-    title: "Sustainability Certifications",
-    description: "Support for LEED, Green Key, and other hospitality sustainability programs. We provide the documentation and diversion rates you need for certification."
+    title: "Resource Efficiency Support",
+    description: "Streamlined logistics to support your internal sustainability goals. We provide detailed material tracking and recovery data to help you measure environmental impact."
   }
 ];
 
