@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     question: "Do you work with insurance companies?",
-    answer: "Yes, we provide documentation and work directly with insurance adjusters when needed. Our detailed records support claims processing and help expedite settlements."
+    answer: "Yes, we provide documentation and work directly with insurance adjusters when needed."
   }
 ];
 
