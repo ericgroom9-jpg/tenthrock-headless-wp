@@ -153,7 +153,7 @@ function ProcessStepsSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
             <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-            How It Works
+            Before You Begin
           </div>
           <h2 className="text-3xl md:text-4xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
             From Application to First Job
