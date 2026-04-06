@@ -16,8 +16,8 @@ const bulletPoints = [
     description: "Coordinated handling of storm debris, flood-damaged materials, and large-volume waste to restore safe, functional environments."
   },
   {
-    title: "FEMA Documentation Support",
-    description: "Detailed record-keeping and documentation that meets FEMA requirements for disaster reimbursement. We help you recover eligible costs."
+    title: "Comprehensive Site Records",
+    description: "Detailed activity logs and photo documentation are provided for every service. We ensure you have organized records of all recovery efforts for internal project tracking."
   },
   {
     title: "Community Recovery Partnership",
