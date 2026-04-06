@@ -20,8 +20,8 @@ const bulletPoints = [
     description: "Specialized services for high-volume periods like graduation ceremonies, sporting events, and end-of-semester move-outs when waste volumes spike dramatically."
   },
   {
-    title: "Operational Documentation",
-    description: "Comprehensive service logs and activity records for every campus facility. This organized documentation ensures transparency and provides the professional tracking needed for facilities management."
+    title: "Campus Safety & Aesthetics",
+    description: "We prioritize discreet equipment placement and timely debris removal to maintain a clean, professional campus environment. Our logistics focus on keeping pedestrian pathways clear and waste operations invisible to students and faculty."
   }
 ];
 
