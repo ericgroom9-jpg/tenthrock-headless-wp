@@ -113,7 +113,7 @@ function HeroSection() {
           <FadeIn
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
-              Vendor Onboarding
+              Welcome to Tenth Rock! Let's Get You Set Up.
             </h1>
             <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-lg leading-relaxed">
               Complete your application below to start receiving commercial waste, roll-off, and junk removal jobs in your service area. The form takes about 10 minutes.
