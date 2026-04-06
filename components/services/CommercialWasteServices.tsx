@@ -511,14 +511,15 @@ export default function CommercialWasteServices() {
               </FadeIn>
 
               <FadeIn
-                className="lg:col-span-2 relative aspect-video rounded-[5px] overflow-hidden bg-gray-100"
+                className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100"
               >
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="w-full h-auto"
+                  style={{ aspectRatio: "768 / 512" }}
                 >
                   <source src={usMapVideo} type="video/mp4" />
                 </video>
