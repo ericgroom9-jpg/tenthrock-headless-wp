@@ -260,43 +260,14 @@ function FormSection() {
 
 function HelpSection() {
   return (
-    <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-onboard-help">
-      <div className="container mx-auto px-4 md:px-8">
-        <FadeIn
-          className="max-w-2xl mx-auto text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
-            Need Help With Your Application?
-          </h2>
-          <p className="text-lg text-[#042940]/70 mb-8 max-w-lg mx-auto">
-            If you have questions or need assistance at any point, our team is ready to help. Call or text us directly.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
-              data-testid="button-onboard-help-text"
-              asChild
-            >
-              <a href="sms:+17275105454">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                Text Us
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto border-[#042940]/20 text-[#042940] hover:bg-[#042940] hover:text-white active:bg-[#042940] active:text-white min-h-[52px] whitespace-nowrap rounded-full"
-              data-testid="button-onboard-help-call"
-              asChild
-            >
-              <a href="tel:+17275105454">
-                <Phone className="w-4 h-4 mr-2" />
-                Call 727-510-5454
-              </a>
-            </Button>
-          </div>
-        </FadeIn>
+    <section className="py-10 md:py-12 bg-[#F9F9F6]" data-testid="section-onboard-help">
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        <p className="text-base md:text-lg text-[#042940]/70" data-testid="text-onboard-help">
+          Questions? Call or text{" "}
+          <a href="tel:+17275105454" className="text-[#042940] font-semibold underline" data-testid="link-onboard-help-phone">727-510-5454</a>
+          {" | "}
+          <a href="mailto:onboarding@tenthrock.com" className="text-[#042940] font-semibold underline" data-testid="link-onboard-help-email">onboarding@tenthrock.com</a>
+        </p>
       </div>
     </section>
   );

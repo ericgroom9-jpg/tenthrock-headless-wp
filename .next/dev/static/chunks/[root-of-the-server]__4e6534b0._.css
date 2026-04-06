@@ -3404,6 +3404,10 @@ h1, h3, h4, h5, h6, h2 {
   padding: 1rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -3414,10 +3418,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .p-\[1px\] {
   padding: 1px;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .px-0 {
