@@ -74,6 +74,7 @@ export default function JoinOurNetworkPage() {
       <HeroSection />
       <LogoReelSection headline="Trusted by leading national brands we serve" testIdPrefix="join-logos" />
       <WhyJoinSection />
+      <HowItWorksSection />
       <NetworkStatsSection />
       <EmailCaptureSection />
       <Footer />
@@ -164,6 +165,60 @@ function WhyJoinSection() {
               </div>
               <h3 className="text-xl font-bold text-[#042940] mb-3">{benefit.title}</h3>
               <p className="text-[#042940]/70 leading-relaxed">{benefit.desc}</p>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const howItWorksSteps = [
+  {
+    num: "01",
+    title: "Submit Your Email",
+    desc: "Enter your email below, and we'll send your full onboarding application straight to your inbox."
+  },
+  {
+    num: "02",
+    title: "Complete Your Application",
+    desc: "Tell us about your operation, what you do, where you work, and what you're equipped to handle."
+  },
+  {
+    num: "03",
+    title: "Get Reviewed & Approved",
+    desc: "Our team reviews your application and reaches out to finalize your Certified Service Partner status."
+  },
+  {
+    num: "04",
+    title: "Start Receiving Jobs",
+    desc: "Once approved, you're in the network, and your dedicated Success Manager will reach out when opportunities arise in your area."
+  }
+];
+
+function HowItWorksSection() {
+  return (
+    <section className="py-16 md:py-24 bg-white" data-testid="section-join-how-it-works">
+      <div className="container mx-auto px-4 md:px-8">
+        <FadeIn className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
+            How It Works
+          </h2>
+          <p className="text-lg text-[#042940]/70">
+            Four Steps To Your First Opportunity
+          </p>
+        </FadeIn>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {howItWorksSteps.map((step, i) => (
+            <FadeIn
+              key={i}
+              className="relative bg-[#F9F9F6] p-6 md:p-8 rounded-[5px] border border-[#042940]/5"
+              data-testid={`join-how-step-${i}`}
+            >
+              <div className="text-[#c5d520] font-bold text-sm mb-4">{step.num}</div>
+              <h3 className="text-lg font-semibold text-[#042940] mb-3">{step.title}</h3>
+              <p className="text-sm text-[#042940]/70 leading-relaxed">{step.desc}</p>
             </FadeIn>
           ))}
         </div>
