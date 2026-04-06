@@ -21,7 +21,7 @@ const bulletPoints = [
   },
   {
     title: "Vendor & Concession Coordination",
-    description: "We work directly with food vendors and concession operators to manage back-of-house waste streams and cardboard recycling."
+    description: "Direct coordination of back-of-house solid waste and high-volume hauling for concession operators"
   }
 ];
 
