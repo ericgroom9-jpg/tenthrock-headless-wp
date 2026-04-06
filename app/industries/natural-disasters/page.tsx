@@ -13,7 +13,7 @@ const bulletPoints = [
   },
   {
     title: "Debris Management Expertise",
-    description: "Specialized handling of storm debris, flood-damaged materials, and disaster waste. We sort, process, and dispose of materials safely and efficiently."
+    description: "Coordinated handling of storm debris, flood-damaged materials, and large-volume waste to restore safe, functional environments."
   },
   {
     title: "FEMA Documentation Support",
