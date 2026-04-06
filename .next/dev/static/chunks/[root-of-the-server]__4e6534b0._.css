@@ -3018,8 +3018,8 @@ h1, h3, h4, h5, h6, h2 {
   background-color: var(--color-bg);
 }
 
-.bg-\[rgba\(4\,41\,64\,0\.82\)\] {
-  background-color: #042940d1;
+.bg-\[rgba\(4\,41\,64\,0\.88\)\] {
+  background-color: #042940e0;
 }
 
 .bg-accent {
@@ -3268,9 +3268,9 @@ h1, h3, h4, h5, h6, h2 {
   --tw-gradient-stops: var(--tw-gradient-from), #0429404d var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
-.via-\[\#042940\]\/40 {
+.via-\[\#042940\]\/50 {
   --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #04294066 var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-stops: var(--tw-gradient-from), #04294080 var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .via-\[\#042940\]\/60 {
@@ -5601,8 +5601,8 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(197 213 32 / var(--tw-bg-opacity, 1));
 }
 
-.group:focus-within .group-focus-within\:bg-\[rgba\(4\,41\,64\,0\.6\)\] {
-  background-color: #04294099;
+.group:focus-within .group-focus-within\:bg-\[rgba\(4\,41\,64\,0\.72\)\] {
+  background-color: #042940b8;
 }
 
 .group:focus-within .group-focus-within\:text-\[\#042940\] {
@@ -5653,8 +5653,8 @@ h1, h3, h4, h5, h6, h2 {
   background-color: #c5d52033;
 }
 
-.group:hover .group-hover\:bg-\[rgba\(4\,41\,64\,0\.6\)\] {
-  background-color: #04294099;
+.group:hover .group-hover\:bg-\[rgba\(4\,41\,64\,0\.72\)\] {
+  background-color: #042940b8;
 }
 
 .group:hover .group-hover\:bg-primary\/10 {
