@@ -35,8 +35,8 @@ const faqs = [
     answer: "Yes, we provide additional capacity for large events, conferences, and banquets. We work with your events team to pre-position resources and ensure rapid cleanup that supports quick room turnovers."
   },
   {
-    question: "Do you offer cooking oil recycling?",
-    answer: "Absolutely. We provide dedicated cooking oil collection and recycling services for hotel kitchens and restaurants. This keeps grease out of your waste stream and supports sustainable practices."
+    question: "How do you handle back-of-house waste for large kitchens?",
+    answer: "We coordinate scheduled pickups for high-volume solid waste, cardboard breakdown, and packaging materials. Our teams work around kitchen schedules to keep service areas clear without disrupting operations."
   },
   {
     question: "How do you support our sustainability initiatives?",
