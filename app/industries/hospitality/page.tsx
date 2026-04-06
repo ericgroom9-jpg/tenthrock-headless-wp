@@ -39,7 +39,7 @@ const faqs = [
     answer: "We provide scalable hauling schedules that adjust to your property's occupancy and event calendar. Our flexible logistics prevent overflows and maintain site hygiene during your busiest periods."
   },
   {
-    question: "How do you support our sustainability initiatives?",
+    question: "How do you provide visibility into our waste metrics?",
     answer: "We help hotels implement recycling programs and improve diversion rates. Many of our hotel partners have achieved significant improvements in their environmental metrics."
   },
   {
