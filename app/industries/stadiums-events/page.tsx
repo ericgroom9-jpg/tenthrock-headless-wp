@@ -21,7 +21,7 @@ const bulletPoints = [
   },
   {
     title: "Vendor & Concession Coordination",
-    description: "Direct coordination of back-of-house solid waste and high-volume hauling for concession operators"
+    description: "Direct coordination of back-of-house solid waste and high-volume hauling for concession operators."
   }
 ];
 
