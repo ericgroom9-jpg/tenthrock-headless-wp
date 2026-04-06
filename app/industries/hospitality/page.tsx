@@ -35,7 +35,7 @@ const faqs = [
     answer: "Yes, we provide additional capacity for large events, conferences, and banquets. We work with your events team to pre-position resources and ensure rapid cleanup that supports quick room turnovers."
   },
   {
-    question: "How do you handle back-of-house waste for large kitchens?",
+    question: "How do you manage waste fluctuations during peak seasons?",
     answer: "We coordinate scheduled pickups for high-volume solid waste, cardboard breakdown, and packaging materials. Our teams work around kitchen schedules to keep service areas clear without disrupting operations."
   },
   {
