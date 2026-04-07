@@ -40,16 +40,14 @@ export default function FinalCtaSection() {
                 
              {/* Floating Stat Card */}
                 <FadeIn
-                  className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-[5px] max-w-[200px] sm:max-w-xs transform md:hover:scale-105 transition-transform duration-300"
+                  className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-3 sm:p-5 rounded-[5px] transform md:hover:scale-105 transition-transform duration-300"
                 >
-                   <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
-                         <Phone className="w-6 h-6" />
+                   <a href="tel:+17275105454" className="flex items-center gap-3 hover:underline" data-testid="link-cta-phone-card">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
+                         <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
-                      <div>
-                         <a href="tel:+17275105454" className="text-[#c5d520] text-xl font-bold hover:underline">727.510.5454</a>
-                      </div>
-                   </div>
+                      <span className="text-[#c5d520] text-base sm:text-xl font-bold whitespace-nowrap">727.510.5454</span>
+                   </a>
                 </FadeIn>
              </div>
           </FadeIn>
