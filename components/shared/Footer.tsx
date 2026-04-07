@@ -136,7 +136,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2" suppressHydrationWarning>
             <p data-testid="text-footer-copyright" suppressHydrationWarning>© 2026 Tenth Rock. All rights reserved.</p>
             <span className="hidden sm:inline text-white/30">|</span>
-            <p className="text-white/50" data-testid="text-footer-address">140 Island Way Ste. 159, Clearwater Beach, FL 33767</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:underline" data-testid="text-footer-address">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
           </div>
           <div className="flex gap-6 mt-2 md:mt-0">
             <Link href="/privacy-policy" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-privacy">Privacy Policy</Link>

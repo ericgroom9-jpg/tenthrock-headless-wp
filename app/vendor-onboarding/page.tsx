@@ -209,8 +209,8 @@ function WhatYouNeedSection() {
                 <p className="font-bold text-[#042940] text-sm mb-2">Certificate Holder Information</p>
                 <p className="text-[#042940]/80 text-sm leading-relaxed">
                   Tenth Rock<br />
-                  140 Island Way, Suite 149<br />
-                  Clearwater Beach, FL 33767<br /><br />
+                  <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Suite+149+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="hover:underline">140 Island Way, Suite 149<br />
+                  Clearwater Beach, FL 33767</a><br /><br />
                   Contact: Mandy Groom<br />
                   Email: <a href="mailto:onboarding@tenthrock.com" className="text-[#042940] underline" data-testid="link-onboard-email">onboarding@tenthrock.com</a>
                 </p>

@@ -27,7 +27,7 @@ export default function LocationSection() {
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
               </div>
-              <p className="text-gray-600 ml-9">140 Island Way Ste. 159, Clearwater Beach, FL 33767</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="text-gray-600 ml-9 hover:underline">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
             </div>
 
             <div>
