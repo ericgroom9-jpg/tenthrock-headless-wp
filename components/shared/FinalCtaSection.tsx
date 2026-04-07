@@ -15,7 +15,7 @@ export default function FinalCtaSection() {
             className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
           >
              {/* Content Side */}
-             <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
+             <div className="lg:w-1/2 p-6 sm:p-10 md:p-14 flex flex-col justify-center relative z-10">
                 <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
                 
                 <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-tight tracking-tighter">

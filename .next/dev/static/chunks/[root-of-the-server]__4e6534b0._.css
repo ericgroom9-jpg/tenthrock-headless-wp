@@ -6733,17 +6733,20 @@ h1, h3, h4, h5, h6, h2 {
     border-radius: .5625rem;
   }
 
+  .sm\:p-10 {
+    padding: 2.5rem;
+  }
+
+  .sm\:p-5 {
+    padding: 1.25rem;
+  }
+
   .sm\:p-6 {
     padding: 1.5rem;
   }
 
   .sm\:p-8 {
     padding: 2rem;
-  }
-
-  .sm\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .sm\:px-6 {
