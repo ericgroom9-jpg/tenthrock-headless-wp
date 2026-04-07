@@ -45,7 +45,7 @@ function ThankYouSection() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold"
+              className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] whitespace-nowrap"
               data-testid="button-back-to-home"
             >
               <Link href="/">Back To Home</Link>
@@ -54,7 +54,7 @@ function ThankYouSection() {
               asChild
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto border-[#042940] text-[#042940] font-bold"
+              className="w-full sm:w-auto border-[#042940] text-[#042940] font-bold min-h-[52px] whitespace-nowrap"
               data-testid="button-thank-you-phone"
             >
               <a href="tel:7275105454">

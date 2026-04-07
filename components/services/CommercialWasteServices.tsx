@@ -388,7 +388,7 @@ export default function CommercialWasteServices() {
 
                 <Button 
                   size="lg"
-                  className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto"
+                  className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto whitespace-nowrap"
                   asChild
                 >
                   <a href="/request-a-service">Request A Service</a>

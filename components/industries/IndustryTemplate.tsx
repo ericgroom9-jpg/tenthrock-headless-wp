@@ -210,7 +210,7 @@ export default function IndustryTemplate({
                   <Button 
                     asChild
                     size="lg" 
-                    className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] rounded-full min-h-[52px] w-full sm:w-auto"
+                    className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] rounded-full min-h-[52px] w-full sm:w-auto whitespace-nowrap"
                     data-testid="button-about-cta"
                   >
                     <Link href="/request-a-service">Request A Service</Link>

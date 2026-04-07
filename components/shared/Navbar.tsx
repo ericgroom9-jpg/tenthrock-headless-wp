@@ -637,7 +637,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </div>
 
                 <div className="pt-4 px-4 space-y-3">
-                  <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px]" data-testid="button-mobile-login">
+                  <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] whitespace-nowrap" data-testid="button-mobile-login">
                     Login
                   </Button>
                   <Button 

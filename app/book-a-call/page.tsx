@@ -76,7 +76,7 @@ function BookACallSection() {
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+                className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] whitespace-nowrap"
                 data-testid="button-book-call-continue"
               >
                 <Link href="/thank-you">

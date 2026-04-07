@@ -62,7 +62,7 @@ export default function LocationsPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
                 size="lg" 
-                className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full"
+                className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full min-h-[52px] whitespace-nowrap"
                 data-testid="button-locations-cta"
                 asChild
               >

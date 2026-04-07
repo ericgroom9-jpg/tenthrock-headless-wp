@@ -204,7 +204,7 @@ function HowItWorksSection() {
   return (
     <section className="py-16 md:py-24 bg-white" data-testid="section-join-how-it-works">
       <div className="container mx-auto px-4 md:px-8">
-        <FadeIn className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <FadeIn className="text-left sm:text-center max-w-2xl mx-auto mb-12 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
             How It Works
           </h2>
@@ -310,7 +310,7 @@ function EmailCaptureSection() {
     <section id="email-capture" className="py-16 md:py-24 bg-white" data-testid="section-join-email">
       <div className="container mx-auto px-4 md:px-8">
         <FadeIn
-          className="max-w-2xl mx-auto text-center"
+          className="max-w-2xl mx-auto text-left sm:text-center"
         >
           {submitted ? (
             <div className="py-12" data-testid="join-email-success">

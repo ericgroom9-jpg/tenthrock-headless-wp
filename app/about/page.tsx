@@ -141,7 +141,7 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold"
+                  className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold min-h-[52px] whitespace-nowrap"
                   data-testid="button-schedule-demo"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="w-full sm:w-auto border-primary text-primary rounded-full font-bold"
+                  className="w-full sm:w-auto border-primary text-primary rounded-full font-bold min-h-[52px] whitespace-nowrap"
                   data-testid="button-more-solutions"
                   asChild
                 >
@@ -251,7 +251,7 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 
                   size="lg" 
-                  className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold"
+                  className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold min-h-[52px] whitespace-nowrap"
                   data-testid="button-community-cta"
                   asChild
                 >
@@ -260,7 +260,7 @@ export default function AboutPage() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="w-full sm:w-auto border-primary text-primary rounded-full font-bold"
+                  className="w-full sm:w-auto border-primary text-primary rounded-full font-bold min-h-[52px] whitespace-nowrap"
                   data-testid="button-community-phone"
                   asChild
                 >
