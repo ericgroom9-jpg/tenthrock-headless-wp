@@ -54,6 +54,8 @@ export default function TestimonialsSection({
             {tagline}
           </div>
 
+          <h2 className="sr-only">What Our Clients Say</h2>
+
           <div className="flex gap-1 mb-8">
             {[1,2,3,4,5].map(i => <Star key={i} className="w-6 h-6 fill-[#c5d520] text-[#c5d520]" />)}
           </div>

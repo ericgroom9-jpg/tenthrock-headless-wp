@@ -294,7 +294,7 @@ export default function CommercialWasteServices() {
 
               <div className="grid gap-8">
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <div className="font-semibold text-xl text-[#042940] mb-4">Average Cost Savings</div>
+                  <h3 className="font-semibold text-xl text-[#042940] mb-4">Average Cost Savings</h3>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">30%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
                   <p className="text-[#042940]/70">Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization.</p>
@@ -304,14 +304,14 @@ export default function CommercialWasteServices() {
                   <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
                     <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Tenth Rock nationwide waste operations" loading="lazy" />
                   </div>
-                  <div className="font-semibold text-xl text-[#042940] mb-4">Locations Managed</div>
+                  <h3 className="font-semibold text-xl text-[#042940] mb-4">Locations Managed</h3>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">5K+</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
                   <p className="text-[#042940]/70">Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service.</p>
                 </div>
 
                 <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <div className="font-semibold text-xl text-[#042940] mb-4">On-Time Service Rate</div>
+                  <h3 className="font-semibold text-xl text-[#042940] mb-4">On-Time Service Rate</h3>
                   <div className="text-7xl font-extrabold text-[#042940] mb-4">98%</div>
                   <Separator className="bg-[#042940]/10 mb-4" />
                   <p className="text-[#042940]/70">Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen.</p>

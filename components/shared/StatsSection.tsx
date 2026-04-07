@@ -41,7 +41,7 @@ export default function StatsSection() {
 
           <div className="grid gap-8">
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                <div className="font-semibold text-xl text-primary mb-4">Average Cost Savings</div>
+                <h3 className="font-semibold text-xl text-primary mb-4">Average Cost Savings</h3>
                 <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                 <Separator className="bg-primary/10 mb-4" />
                 <p className="text-primary/70">Clients typically cut waste spend by up to 30% through vendor consolidation, rate negotiation, and right-sized service frequencies.</p>
@@ -51,14 +51,14 @@ export default function StatsSection() {
                 <div className="relative h-64 w-full rounded-[5px] overflow-hidden mb-8">
                   <Image src={imgParkWater} alt="Tenth Rock nationwide waste operations" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" loading="lazy" />
                 </div>
-                <div className="font-semibold text-xl text-primary mb-4">Locations Managed</div>
+                <h3 className="font-semibold text-xl text-primary mb-4">Locations Managed</h3>
                 <div className="text-7xl font-extrabold text-primary mb-4">5K+</div>
                 <Separator className="bg-primary/10 mb-4" />
                 <p className="text-primary/70">Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service.</p>
              </div>
 
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                <div className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</div>
+                <h3 className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</h3>
                 <div className="text-7xl font-extrabold text-primary mb-4">98%</div>
                 <Separator className="bg-primary/10 mb-4" />
                 <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen.</p>
