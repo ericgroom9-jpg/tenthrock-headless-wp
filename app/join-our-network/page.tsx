@@ -123,9 +123,12 @@ function HeroSection() {
                 variant="outline"
                 className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
                 data-testid="button-join-hero-phone"
+                asChild
               >
-                <Phone className="w-4 h-4 mr-2" />
-                727.510.5454
+                <a href="tel:+17275105454">
+                  <Phone className="w-4 h-4 mr-2" />
+                  727.510.5454
+                </a>
               </Button>
             </div>
           </FadeIn>

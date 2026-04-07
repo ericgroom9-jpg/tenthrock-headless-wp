@@ -47,7 +47,7 @@ export default function FinalCtaSection() {
                          <Phone className="w-6 h-6" />
                       </div>
                       <div>
-                         <div className="text-[#c5d520] text-xl font-bold">727.510.5454</div>
+                         <a href="tel:+17275105454" className="text-[#c5d520] text-xl font-bold hover:underline">727.510.5454</a>
                       </div>
                    </div>
                 </FadeIn>

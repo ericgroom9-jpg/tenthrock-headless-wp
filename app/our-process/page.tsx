@@ -71,9 +71,12 @@ export default function OurProcessPage() {
                 variant="outline" 
                 className="w-full sm:w-auto border-white/50 text-white backdrop-blur-md bg-white/10 rounded-full font-bold"
                 data-testid="button-hero-secondary"
+                asChild
               >
-                <Phone className="w-5 h-5 mr-2" />
-                727.510.5454
+                <a href="tel:+17275105454">
+                  <Phone className="w-5 h-5 mr-2" />
+                  727.510.5454
+                </a>
               </Button>
             </div>
           </FadeIn>

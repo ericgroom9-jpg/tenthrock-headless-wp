@@ -259,9 +259,12 @@ export default function AboutPage() {
                   variant="outline" 
                   className="w-full sm:w-auto border-primary text-primary rounded-full font-bold"
                   data-testid="button-community-phone"
+                  asChild
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  727.510.5454
+                  <a href="tel:+17275105454">
+                    <Phone className="w-5 h-5 mr-2" />
+                    727.510.5454
+                  </a>
                 </Button>
               </div>
             </FadeIn>

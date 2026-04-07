@@ -36,7 +36,7 @@ export default function LocationSection() {
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Phone</h3>
               </div>
               <p className="text-gray-600 ml-9">Available 24/7 for emergencies</p>
-              <p className="text-[#042940] font-semibold ml-9">727.510.5454</p>
+              <a href="tel:+17275105454" className="text-[#042940] font-semibold ml-9 hover:underline">727.510.5454</a>
             </div>
 
             <div>

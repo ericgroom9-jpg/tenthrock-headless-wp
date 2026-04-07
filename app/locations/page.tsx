@@ -71,9 +71,12 @@ export default function LocationsPage() {
                 variant="outline" 
                 className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white rounded-full font-bold min-h-[52px] whitespace-nowrap"
                 data-testid="button-locations-phone"
+                asChild
               >
-                <Phone className="w-5 h-5 mr-2" />
-                727.510.5454
+                <a href="tel:+17275105454">
+                  <Phone className="w-5 h-5 mr-2" />
+                  727.510.5454
+                </a>
               </Button>
             </div>
           </FadeIn>

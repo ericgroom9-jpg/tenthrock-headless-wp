@@ -57,9 +57,12 @@ export default function WhoWeServePage() {
                 variant="outline"
                 className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap gap-2"
                 data-testid="button-hero-phone"
+                asChild
               >
-                <Phone className="w-4 h-4" />
-                727.510.5454
+                <a href="tel:+17275105454">
+                  <Phone className="w-4 h-4" />
+                  727.510.5454
+                </a>
               </Button>
             </div>
           </FadeIn>

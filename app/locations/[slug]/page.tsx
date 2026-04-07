@@ -121,9 +121,12 @@ export default function LocationTemplatePage() {
                   variant="outline"
                   className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
                   data-testid="button-location-phone"
+                  asChild
                 >
-                  <Phone className="mr-2 h-5 w-5" />
-                  727.510.5454
+                  <a href="tel:+17275105454">
+                    <Phone className="mr-2 h-5 w-5" />
+                    727.510.5454
+                  </a>
                 </Button>
               </div>
             </FadeIn>
@@ -371,9 +374,12 @@ export default function LocationTemplatePage() {
                   variant="outline"
                   className="w-full sm:w-auto border-[#042940]/20 text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
                   data-testid="button-info-phone"
+                  asChild
                 >
-                  <Phone className="mr-2 h-5 w-5" />
-                  727.510.5454
+                  <a href="tel:+17275105454">
+                    <Phone className="mr-2 h-5 w-5" />
+                    727.510.5454
+                  </a>
                 </Button>
               </div>
             </FadeIn>
