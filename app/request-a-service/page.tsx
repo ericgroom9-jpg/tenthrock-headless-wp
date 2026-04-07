@@ -125,7 +125,7 @@ function RequestAServiceSection() {
 
                 <div>
                   <label htmlFor="request-phone" className="block text-sm font-medium text-[#042940] mb-2">
-                    +1 Phone Number
+                    Phone Number
                   </label>
                   <PhoneInput
                     id="request-phone"

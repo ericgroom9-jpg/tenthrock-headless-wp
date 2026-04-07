@@ -50,22 +50,17 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     );
 
     return (
-      <div className="relative">
-        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#042940]/70 text-sm font-medium select-none pointer-events-none">
-          +1
-        </span>
-        <Input
-          ref={ref}
-          type="tel"
-          inputMode="numeric"
-          value={displayValue}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
-          placeholder="(555) 000-0000"
-          className={cn("pl-10", className)}
-          {...props}
-        />
-      </div>
+      <Input
+        ref={ref}
+        type="tel"
+        inputMode="numeric"
+        value={displayValue}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        placeholder="(555) 000-0000"
+        className={className}
+        {...props}
+      />
     );
   }
 );
