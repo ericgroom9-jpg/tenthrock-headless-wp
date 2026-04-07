@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
@@ -27,8 +29,8 @@ export default function StatsSection() {
                 Numbers tell the story. Our clients stick with us because we deliver measurable results: lower costs, faster response, and fewer headaches managing waste across multiple locations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
-                <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full">
-                  Request A Service
+                <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
+                  <Link href="/request-a-service">Request A Service</Link>
                 </Button>
                 <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" asChild>
                    <a href="tel:+17275105454"><Phone className="w-5 h-5 text-secondary" /> 727.510.5454</a>

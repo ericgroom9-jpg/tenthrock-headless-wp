@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/shared/FadeIn";
 import { Phone, CheckSquare } from "lucide-react";
@@ -63,8 +64,9 @@ export default function LocationsPage() {
                 size="lg" 
                 className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full"
                 data-testid="button-locations-cta"
+                asChild
               >
-                Request A Service
+                <Link href="/request-a-service">Request A Service</Link>
               </Button>
               <Button 
                 size="lg" 

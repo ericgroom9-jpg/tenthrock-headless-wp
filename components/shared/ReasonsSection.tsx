@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import FadeIn from "@/components/shared/FadeIn";
 import { Headset, CheckCircle2, MapPin, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -52,8 +54,8 @@ export default function ReasonsSection({
                <p className="text-lg text-primary/70 mb-8 leading-relaxed">
                  {subtitle}
                </p>
-               <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full" data-testid={`button-${testIdPrefix}-cta`}>
-                  {buttonText}
+               <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full" data-testid={`button-${testIdPrefix}-cta`} asChild>
+                  <Link href="/request-a-service">{buttonText}</Link>
                </Button>
              </FadeIn>
           </div>

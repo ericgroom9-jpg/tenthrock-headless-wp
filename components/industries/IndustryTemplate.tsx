@@ -345,8 +345,9 @@ export default function IndustryTemplate({
                   size="lg" 
                   className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
                   data-testid="button-industry-paragraph-2-cta"
+                  asChild
                 >
-                  Request A Service
+                  <Link href="/request-a-service">Request A Service</Link>
                 </Button>
               </FadeIn>
             </div>

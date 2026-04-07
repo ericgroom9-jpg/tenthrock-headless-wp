@@ -8,10 +8,12 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FadeIn$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/shared/FadeIn.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/phone.js [app-client] (ecmascript) <export default as Phone>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-client] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -34,7 +36,7 @@ function FinalCtaSection() {
                                 className: "absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 19,
+                                lineNumber: 20,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -46,14 +48,14 @@ function FinalCtaSection() {
                                         children: "Waste Management"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                        lineNumber: 22,
+                                        lineNumber: 23,
                                         columnNumber: 35
                                     }, this),
                                     " Today"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 21,
+                                lineNumber: 22,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -61,7 +63,7 @@ function FinalCtaSection() {
                                 children: "One call. One partner. Every location covered. Stop juggling providers and start saving up to 30% on waste spend."
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 24,
+                                lineNumber: 25,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -69,21 +71,29 @@ function FinalCtaSection() {
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                     size: "lg",
                                     className: "w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full",
-                                    children: "Request A Service"
+                                    asChild: true,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/request-a-service",
+                                        children: "Request A Service"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shared/FinalCtaSection.tsx",
+                                        lineNumber: 31,
+                                        columnNumber: 23
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                    lineNumber: 29,
+                                    lineNumber: 30,
                                     columnNumber: 20
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 28,
+                                lineNumber: 29,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                        lineNumber: 18,
+                        lineNumber: 19,
                         columnNumber: 14
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -98,21 +108,21 @@ function FinalCtaSection() {
                                 loading: "lazy"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 37,
+                                lineNumber: 38,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 38,
+                                lineNumber: 39,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 40,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FadeIn$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -128,12 +138,12 @@ function FinalCtaSection() {
                                                 className: "w-5 h-5 sm:w-6 sm:h-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                                lineNumber: 47,
+                                                lineNumber: 48,
                                                 columnNumber: 26
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                            lineNumber: 46,
+                                            lineNumber: 47,
                                             columnNumber: 23
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -141,40 +151,40 @@ function FinalCtaSection() {
                                             children: "727.510.5454"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                            lineNumber: 49,
+                                            lineNumber: 50,
                                             columnNumber: 23
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 46,
                                     columnNumber: 20
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 42,
+                                lineNumber: 43,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 14
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 11
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/shared/FinalCtaSection.tsx",
-            lineNumber: 13,
+            lineNumber: 14,
             columnNumber: 8
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }

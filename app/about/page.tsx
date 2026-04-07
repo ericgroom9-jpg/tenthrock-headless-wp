@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/shared/FadeIn";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -151,8 +152,9 @@ export default function AboutPage() {
                   variant="outline" 
                   className="w-full sm:w-auto border-primary text-primary rounded-full font-bold"
                   data-testid="button-more-solutions"
+                  asChild
                 >
-                  View Our Services
+                  <Link href="/services/commercial-waste-services">View Our Services</Link>
                 </Button>
               </div>
             </FadeIn>

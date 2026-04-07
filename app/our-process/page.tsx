@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
@@ -63,8 +64,9 @@ export default function OurProcessPage() {
                 size="lg" 
                 className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full"
                 data-testid="button-hero-primary"
+                asChild
               >
-                Request A Service
+                <Link href="/request-a-service">Request A Service</Link>
               </Button>
               <Button 
                 size="lg" 

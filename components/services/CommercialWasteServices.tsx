@@ -151,9 +151,12 @@ export default function CommercialWasteServices() {
                   size="lg" 
                   className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full whitespace-nowrap"
                   data-testid="button-hero-cta"
+                  asChild
                 >
-                  Request A Service
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <Link href="/request-a-service">
+                    Request A Service
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
                 <Button 
                   size="lg" 
@@ -279,8 +282,8 @@ export default function CommercialWasteServices() {
                     We've built our reputation on reliability, efficiency, and exceptional customer service. Our clients trust us to handle their waste management needs because we consistently deliver results.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
-                    <Button size="lg" className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full">
-                      Request A Service
+                    <Button size="lg" className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
+                      <Link href="/request-a-service">Request A Service</Link>
                     </Button>
                     <Button size="lg" variant="ghost" className="w-full sm:w-auto text-[#042940] hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" asChild>
                       <a href="tel:+17275105454"><Phone className="w-5 h-5 text-[#c5d520]" /> 727.510.5454</a>
@@ -462,8 +465,8 @@ export default function CommercialWasteServices() {
             
             <div className="mt-16 text-left sm:text-center">
               <p className="text-[#042940]/70 mb-4 font-medium">Still Have Questions?</p>
-              <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full">
-                Contact Us
+              <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full" asChild>
+                <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
@@ -549,8 +552,8 @@ export default function CommercialWasteServices() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full">
-                    Request A Service
+                  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full" asChild>
+                    <Link href="/request-a-service">Request A Service</Link>
                   </Button>
                 </div>
               </div>

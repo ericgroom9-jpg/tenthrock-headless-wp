@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -26,8 +27,8 @@ export default function FinalCtaSection() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                   <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full">
-                      Request A Service
+                   <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full" asChild>
+                      <Link href="/request-a-service">Request A Service</Link>
                    </Button>
                 </div>
              </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import FadeIn from "@/components/shared/FadeIn";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -108,8 +109,8 @@ export default function FaqSection({ faqs = defaultFaqs }: FaqSectionProps) {
         
         <div className="mt-16 text-left sm:text-center">
            <p className="text-primary/70 mb-4 font-medium">Still Have Questions?</p>
-           <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap rounded-full">
-              Contact Us
+           <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap rounded-full" asChild>
+              <Link href="/contact">Contact Us</Link>
            </Button>
         </div>
       </div>
