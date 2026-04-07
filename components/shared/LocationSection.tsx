@@ -44,7 +44,7 @@ export default function LocationSection() {
                 <Mail className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Email</h3>
               </div>
-              <p className="text-gray-600 ml-9">hello@tenthrock.com</p>
+              <a href="mailto:hello@tenthrock.com" className="text-gray-600 ml-9 hover:underline">hello@tenthrock.com</a>
             </div>
           </FadeIn>
 
