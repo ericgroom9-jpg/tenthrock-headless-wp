@@ -7032,6 +7032,11 @@ h1, h3, h4, h5, h6, h2 {
     padding-right: 2rem;
   }
 
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   .md\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -7055,11 +7060,6 @@ h1, h3, h4, h5, h6, h2 {
   .md\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-  }
-
-  .md\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .md\:pb-16 {
