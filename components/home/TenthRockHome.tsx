@@ -894,7 +894,6 @@ export default function Home() {
       <CaseStudySection />
       <ReasonsSection />
       <StatsSection />
-      <TestimonialsSection testimonials={homeTestimonials} />
       <FaqSection />
       <LocationSection />
       <FinalCtaSection />
