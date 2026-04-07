@@ -866,7 +866,7 @@ const Location = () => {
               style={{ aspectRatio: "768 / 512" }}
               suppressHydrationWarning
             >
-              <source src="/assets_export/videos/us-map-pins-loop.mp4" type="video/mp4" />
+              <source src="/assets_export/videos/us-map-pins-loop.mp4?v=2" type="video/mp4" />
             </video>
           </motion.div>
         </div>

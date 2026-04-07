@@ -202,7 +202,7 @@ function LocationSection() {
                                 },
                                 suppressHydrationWarning: true,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
-                                    src: "/assets_export/videos/us-map-pins-loop.mp4",
+                                    src: "/assets_export/videos/us-map-pins-loop.mp4?v=2",
                                     type: "video/mp4"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/LocationSection.tsx",
