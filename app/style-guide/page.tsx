@@ -49,11 +49,9 @@ export default function StyleGuide() {
                 Visual reference for all design tokens
               </p>
             </div>
-            <Link href="/">
-              <Button variant="outline" data-testid="link-back-home">
-                Back to Home
-              </Button>
-            </Link>
+            <Button variant="outline" data-testid="link-back-home" asChild>
+              <Link href="/">Back to Home</Link>
+            </Button>
           </div>
         </div>
       </header>

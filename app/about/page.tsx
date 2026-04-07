@@ -253,8 +253,9 @@ export default function AboutPage() {
                   size="lg" 
                   className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold"
                   data-testid="button-community-cta"
+                  asChild
                 >
-                  Learn More
+                  <Link href="/contact">Learn More</Link>
                 </Button>
                 <Button 
                   size="lg" 
