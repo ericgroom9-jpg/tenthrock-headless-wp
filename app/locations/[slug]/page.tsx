@@ -19,7 +19,7 @@ const FaqSection = dynamic(() => import("@/components/shared/FaqSection"));
 const LocationSection = dynamic(() => import("@/components/shared/LocationSection"));
 const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
 const ProcessSection = dynamic(() => import("@/components/shared/ProcessSection"));
-import { getStateData, getStateName } from "@/lib/data/state-cities";
+import { getStateData, getStateName, cityToSlug } from "@/lib/data/state-cities";
 import { stateOutlines } from "@/lib/data/state-outlines";
 import { getStateLocationContent } from "@/lib/data/state-location-content";
 
@@ -485,15 +485,22 @@ export default function LocationTemplatePage() {
                   {stateData.cities.map((city, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-3 py-3 border-b border-[#042940]/5"
+                      className="border-b border-[#042940]/5"
                       data-testid={`city-item-${i}`}
                     >
-                      <div className="w-5 h-5 rounded-full bg-[#c5d520]/20 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-                        <svg className="w-3 h-3 text-[#c5d520]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      <span className="text-[#042940] font-medium text-sm md:text-base" data-testid={`text-city-name-${i}`}>{city}</span>
+                      <Link
+                        href={`/locations/${slug}/${cityToSlug(city)}`}
+                        className="flex items-center gap-3 py-3 group min-h-[44px]"
+                        data-testid={`link-city-${i}`}
+                      >
+                        <div className="w-5 h-5 rounded-full bg-[#c5d520]/20 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                          <svg className="w-3 h-3 text-[#c5d520]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-[#042940] font-medium text-sm md:text-base group-hover:text-[#c5d520] group-active:text-[#c5d520] transition-colors" data-testid={`text-city-name-${i}`}>{city}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#042940]/30 group-hover:text-[#c5d520] transition-colors ml-auto flex-shrink-0" aria-hidden="true" />
+                      </Link>
                     </li>
                   ))}
                 </ul>

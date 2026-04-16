@@ -1341,6 +1341,10 @@ h1, h3, h4, h5, h6, h2 {
   margin-bottom: .25rem;
 }
 
+.mb-1\.5 {
+  margin-bottom: .375rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -2618,6 +2622,10 @@ h1, h3, h4, h5, h6, h2 {
   border-color: #0429401a;
 }
 
+.border-\[\#042940\]\/15 {
+  border-color: #04294026;
+}
+
 .border-\[\#042940\]\/20 {
   border-color: #04294033;
 }
@@ -2628,6 +2636,11 @@ h1, h3, h4, h5, h6, h2 {
 
 .border-\[\#042940\]\/5 {
   border-color: #0429400d;
+}
+
+.border-\[\#c5d520\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(197 213 32 / var(--tw-border-opacity, 1));
 }
 
 .border-\[\#c5d520\]\/30 {
@@ -3375,6 +3388,11 @@ h1, h3, h4, h5, h6, h2 {
   padding-bottom: .75rem;
 }
 
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -3681,6 +3699,10 @@ h1, h3, h4, h5, h6, h2 {
 .text-\[\#042940\] {
   --tw-text-opacity: 1;
   color: rgb(4 41 64 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#042940\]\/30 {
+  color: #0429404d;
 }
 
 .text-\[\#042940\]\/40 {
@@ -4938,6 +4960,10 @@ h1, h3, h4, h5, h6, h2 {
   background-color: rgb(197 213 32 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-\[\#c5d520\]\/20:hover {
+  background-color: #c5d52033;
+}
+
 .hover\:bg-\[\#d4e232\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(212 226 50 / var(--tw-bg-opacity, 1));
@@ -5482,6 +5508,11 @@ h1, h3, h4, h5, h6, h2 {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.group:hover .group-hover\:border-\[\#c5d520\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(197 213 32 / var(--tw-border-opacity, 1));
+}
+
 .group:hover .group-hover\:border-primary\/40 {
   border-color: hsl(var(--primary) / .4);
 }
@@ -5558,6 +5589,11 @@ h1, h3, h4, h5, h6, h2 {
 
 .group\/menu-item:hover .group-hover\/menu-item\:opacity-100, .group:hover .group-hover\:opacity-100 {
   opacity: 1;
+}
+
+.group:active .group-active\:text-\[\#c5d520\] {
+  --tw-text-opacity: 1;
+  color: rgb(197 213 32 / var(--tw-text-opacity, 1));
 }
 
 .group.destructive .group-\[\.destructive\]\:border-muted\/40 {
@@ -7268,6 +7304,10 @@ h1, h3, h4, h5, h6, h2 {
   .lg\:object-right {
     -o-object-position: right;
     object-position: right;
+  }
+
+  .lg\:p-12 {
+    padding: 3rem;
   }
 
   .lg\:p-20 {

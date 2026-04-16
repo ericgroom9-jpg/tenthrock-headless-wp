@@ -208,3 +208,16 @@ export function getStateName(slug: string): string {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
+
+export function cityToSlug(city: string): string {
+  return city
+    .toLowerCase()
+    .replace(/['.]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+export function getCityFromSlug(stateSlug: string, citySlug: string): string | null {
+  const state = stateCitiesMap[stateSlug];
+  if (!state) return null;
+  return state.cities.find((c) => cityToSlug(c) === citySlug) || null;
+}
