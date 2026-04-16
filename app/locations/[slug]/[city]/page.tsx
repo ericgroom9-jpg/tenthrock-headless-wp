@@ -58,13 +58,13 @@ export default function CityLocationPage() {
 
   const aboutAccordions = [
     {
-      title: `About ${cityName} Waste Solutions`,
+      title: `Dumpster rental and emergency waste support for businesses across ${cityName}, ${stateData?.abbreviation || stateName}`,
       benefits: [
-        `Emergency waste removal for ${cityName} businesses`,
-        "Rapid response for compactor failures and waste overflow",
-        "Perishable inventory disposal and bulk debris removal",
+        "Roll-off containers in 20, 30, and 40 yard sizes",
+        "Rapid coordination for compactor failures, overflow, and site cleanouts",
+        "Perishable inventory disposal and bulk junk removal",
       ],
-      description: `Businesses in ${cityName}, ${stateName} rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates fast, reliable waste removal to keep your ${cityName} facility safe, compliant, and operational.`,
+      description: `Businesses across ${cityName}, ${stateData?.abbreviation || stateName} rely on Tenth Rock to manage waste services with speed and control. We coordinate dumpster rentals, emergency response, and service execution, providing a single point of contact and full visibility across every location.`,
     },
     {
       title: `Trusted by ${cityName} Businesses`,
@@ -137,10 +137,10 @@ export default function CityLocationPage() {
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6"
                 data-testid="heading-city-hero"
               >
-                Waste Solutions in {cityName}, {stateData?.abbreviation || stateName}
+                Waste Management Services in {cityName}, {stateData?.abbreviation || stateName}
               </h1>
               <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-xl leading-relaxed" data-testid="text-city-hero-subtitle">
-                Commercial waste removal services for businesses in {cityName}. From large cleanouts to urgent disposal needs, Tenth Rock Waste Solutions helps companies keep sites clear, compliant, and operating smoothly.
+                Commercial dumpster rental and emergency waste services across {cityName}, {stateData?.abbreviation || stateName}. Tenth Rock supports multi-location businesses with roll-off containers, rapid response, and coordinated waste logistics to keep operations running without disruption.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
