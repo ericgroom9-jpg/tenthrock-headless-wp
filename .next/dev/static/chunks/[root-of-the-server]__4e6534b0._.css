@@ -6649,12 +6649,12 @@ h1, h3, h4, h5, h6, h2 {
     height: 6rem;
   }
 
-  .sm\:h-6 {
-    height: 1.5rem;
-  }
-
   .sm\:h-56 {
     height: 14rem;
+  }
+
+  .sm\:h-6 {
+    height: 1.5rem;
   }
 
   .sm\:min-h-\[520px\] {
@@ -7325,16 +7325,16 @@ h1, h3, h4, h5, h6, h2 {
     height: 2.5rem;
   }
 
+  .lg\:h-64 {
+    height: 16rem;
+  }
+
   .lg\:h-\[600px\] {
     height: 600px;
   }
 
   .lg\:h-\[640px\] {
     height: 640px;
-  }
-
-  .lg\:h-64 {
-    height: 16rem;
   }
 
   .lg\:min-h-\[560px\] {
