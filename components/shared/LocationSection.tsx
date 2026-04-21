@@ -46,6 +46,15 @@ export default function LocationSection() {
               </div>
               <a href="mailto:hello@tenthrock.com" className="block text-gray-600 pl-9 hover:underline">hello@tenthrock.com</a>
             </div>
+
+            <div className="rounded-[5px] overflow-hidden bg-gray-100">
+              <img
+                src="/images/white_truck_side_view.jpg"
+                alt="Tenth Rock waste hauling truck"
+                className="w-full h-auto block"
+                data-testid="img-location-truck"
+              />
+            </div>
           </FadeIn>
 
           <FadeIn
