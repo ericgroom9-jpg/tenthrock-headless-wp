@@ -49,8 +49,8 @@ export default function LocationSection() {
 
             <div className="rounded-[5px] overflow-hidden">
               <img
-                src="/images/stock/city-nature.jpg"
-                alt="Clean city street with greenery"
+                src="/images/stock/clean-city.jpg"
+                alt="Clean modern city street"
                 className="w-full h-48 sm:h-56 lg:h-64 object-cover block"
                 data-testid="img-location-truck"
               />

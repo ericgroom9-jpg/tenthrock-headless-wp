@@ -190,8 +190,8 @@ function LocationSection() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "rounded-[5px] overflow-hidden",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        src: "/images/stock/city-nature.jpg",
-                                        alt: "Clean city street with greenery",
+                                        src: "/images/stock/clean-city.jpg",
+                                        alt: "Clean modern city street",
                                         className: "w-full h-48 sm:h-56 lg:h-64 object-cover block",
                                         "data-testid": "img-location-truck"
                                     }, void 0, false, {
