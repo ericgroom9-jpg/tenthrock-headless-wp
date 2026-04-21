@@ -49,8 +49,8 @@ export default function LocationSection() {
 
             <div className="rounded-[5px] overflow-hidden bg-gray-100">
               <img
-                src="/images/white_truck_side_view.jpg"
-                alt="Tenth Rock waste hauling truck"
+                src="/images/stock/city-nature.jpg"
+                alt="Clean city street with greenery"
                 className="w-full h-auto block"
                 data-testid="img-location-truck"
               />
