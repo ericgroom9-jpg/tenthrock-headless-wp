@@ -325,7 +325,7 @@ export default function ServiceTemplate({
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
                                 <span className="text-xs font-bold text-[#042940]">2</span>
                               </div>
-                              <span>Your project manager scopes the job, assigns a local crew, and sends you a flat-rate quote.</span>
+                              <span>Your project manager scopes the job and sends you a flat-rate quote.</span>
                             </li>
                             <li className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
