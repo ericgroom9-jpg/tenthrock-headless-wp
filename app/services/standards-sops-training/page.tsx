@@ -19,6 +19,12 @@ export default function StandardsSopsTrainingPage() {
         { num: "02", title: "Analysis & Strategy Development", desc: "We identify inefficiencies, gaps, and opportunities, then build a tailored roadmap aligned with your operational goals." },
         { num: "03", title: "Recommendations & Implementation Planning", desc: "You receive clear, actionable recommendations and a structured plan to standardize and improve performance across your entire portfolio." },
       ]}
+      howItWorksIntro="A structured approach to evaluating and improving your waste operations:"
+      howItWorksSteps={[
+        { title: "Discovery & Assessment", desc: "We review your current waste operations, vendor structure, and service data across locations." },
+        { title: "Analysis & Strategy Development", desc: "We identify inefficiencies, gaps, and opportunities, then build a tailored roadmap aligned with your operational goals." },
+        { title: "Recommendations & Implementation Planning", desc: "You receive clear, actionable recommendations and a structured plan to standardize and improve performance across your entire portfolio." },
+      ]}
     />
   );
 }

@@ -74,6 +74,8 @@ interface ServiceTemplateProps {
   paragraphSection2?: ParagraphSection;
   aboutBullets?: string[];
   aboutDescription?: string;
+  howItWorksIntro?: string;
+  howItWorksSteps?: { title: string; desc: string }[];
 }
 
 const defaultProcessSteps = [
@@ -159,6 +161,8 @@ export default function ServiceTemplate({
     "One point of contact, one invoice, zero hassle",
   ],
   aboutDescription = "Our local crews handle everything from emergency overflow pickups to scheduled dumpster service. We coordinate directly with vetted vendors in your area so you get fast, reliable waste removal without managing multiple provider relationships.",
+  howItWorksIntro,
+  howItWorksSteps,
 }: ServiceTemplateProps) {
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
@@ -312,27 +316,24 @@ export default function ServiceTemplate({
                       >
                         <div className="pb-8">
                           <p className="text-[#042940]/70 leading-relaxed mb-4">
-                            You call, we handle it. No back-and-forth, no guesswork. Here's how every job runs:
+                            {howItWorksIntro || "You call, we handle it. No back-and-forth, no guesswork. Here's how every job runs:"}
                           </p>
                           <ul className="space-y-3">
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <span className="text-xs font-bold text-[#042940]">1</span>
-                              </div>
-                              <span>Call 727.510.5454 or submit a request online. We respond within the hour.</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <span className="text-xs font-bold text-[#042940]">2</span>
-                              </div>
-                              <span>Your project manager scopes the job and sends you a flat-rate quote.</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-[#042940]">
-                              <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">
-                                <span className="text-xs font-bold text-[#042940]">3</span>
-                              </div>
-                              <span>Crews arrive on schedule. You get real-time updates and photo documentation when the job is done.</span>
-                            </li>
+                            {(howItWorksSteps || [
+                              { title: "", desc: "Call 727.510.5454 or submit a request online. We respond within the hour." },
+                              { title: "", desc: "Your project manager scopes the job and sends you a flat-rate quote." },
+                              { title: "", desc: "Crews arrive on schedule. You get real-time updates and photo documentation when the job is done." },
+                            ]).map((step, sIdx) => (
+                              <li key={sIdx} className="flex items-start gap-3 text-[#042940]">
+                                <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                  <span className="text-xs font-bold text-[#042940]">{sIdx + 1}</span>
+                                </div>
+                                <span>
+                                  {step.title && <strong>{step.title}: </strong>}
+                                  {step.desc}
+                                </span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </FadeIn>
