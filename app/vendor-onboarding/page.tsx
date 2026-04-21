@@ -88,7 +88,7 @@ const vendorFaqs = [
   },
   {
     question: "How does payment work?",
-    answer: "We offer transparent, reliable payment terms. Invoices are processed bi-weekly with direct deposit. You'll have full visibility into all completed jobs and payments through our vendor portal."
+    answer: "We pay invoices by credit card upon job completion."
   },
   {
     question: "Can I choose which jobs to accept?",
@@ -96,7 +96,7 @@ const vendorFaqs = [
   },
   {
     question: "Is there a fee to join the network?",
-    answer: "There is no upfront fee to join our vendor network. We operate on a partnership model where we handle client acquisition, billing, and account management while you focus on service delivery."
+    answer: "There is no fee to join our vendor network. We operate on a partnership model where we handle client acquisition, billing, and account management while you focus on service delivery."
   }
 ];
 
