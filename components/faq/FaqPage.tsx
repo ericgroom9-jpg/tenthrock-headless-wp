@@ -110,7 +110,7 @@ const faqCategories: FaqCategory[] = [
     faqs: [
       {
         question: "How do you help with sustainability goals?",
-        answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials."
+        answer: "We get the operation right the first time: optimized container setup for material separation and vendors who execute properly. The result: less landfill debris, better material recovery, and fewer unnecessary hauls."
       },
       {
         question: "Do you provide recycling services?",
