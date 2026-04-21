@@ -20,7 +20,7 @@ const defaultSteps = [
     {
         num: "02",
         title: "We Scope the Job",
-        desc: "A dedicated project manager is assigned to your account. They assess the situation, identify the right local crew, and build a plan."
+        desc: "A dedicated project manager is assigned to your account. They assess the situation and build a plan."
     },
     {
         num: "03",
