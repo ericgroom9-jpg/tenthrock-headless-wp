@@ -21,7 +21,7 @@ const bulletPoints = [
   },
   {
     title: "Vendor & Concession Coordination",
-    description: "Direct coordination of back-of-house solid waste and high-volume hauling for concession operators (note: excludes grease or liquid disposal)."
+    description: "Direct coordination of back-of-house solid waste and high-volume hauling for concession operators."
   }
 ];
 
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     question: "Do you handle specialty waste from events?",
-    answer: "Yes, we manage high-volume solid waste streams including cardboard recycling, vendor debris, and bulk hauling. Our teams coordinate the logistics for all event-related solid materials; please note we do not handle liquid waste, cooking oil, or grease disposal."
+    answer: "Yes, we manage high-volume solid waste streams including cardboard recycling, vendor debris, and bulk hauling. Our teams coordinate the logistics for all event-related solid materials."
   },
   {
     question: "How do you determine equipment placement for large venues?",
