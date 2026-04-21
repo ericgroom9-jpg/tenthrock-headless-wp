@@ -6653,6 +6653,10 @@ h1, h3, h4, h5, h6, h2 {
     height: 1.5rem;
   }
 
+  .sm\:h-56 {
+    height: 14rem;
+  }
+
   .sm\:min-h-\[520px\] {
     min-height: 520px;
   }
@@ -7327,6 +7331,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:h-\[640px\] {
     height: 640px;
+  }
+
+  .lg\:h-64 {
+    height: 16rem;
   }
 
   .lg\:min-h-\[560px\] {

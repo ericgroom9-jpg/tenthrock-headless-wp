@@ -47,18 +47,18 @@ export default function LocationSection() {
               <a href="mailto:hello@tenthrock.com" className="block text-gray-600 pl-9 hover:underline">hello@tenthrock.com</a>
             </div>
 
-            <div className="rounded-[5px] overflow-hidden bg-gray-100">
+            <div className="rounded-[5px] overflow-hidden">
               <img
                 src="/images/stock/city-nature.jpg"
                 alt="Clean city street with greenery"
-                className="w-full h-auto block"
+                className="w-full h-48 sm:h-56 lg:h-64 object-cover block"
                 data-testid="img-location-truck"
               />
             </div>
           </FadeIn>
 
           <FadeIn
-            className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100 self-start"
+            className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-start"
           >
             <video
               autoPlay
