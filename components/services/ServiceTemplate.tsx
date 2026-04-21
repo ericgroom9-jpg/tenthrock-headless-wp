@@ -249,7 +249,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-about-service"
                   >
-                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">About {serviceName}</h2>
+                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">About {serviceName}</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "about" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -296,7 +296,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-how-service-works"
                   >
-                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">How Service Works</h2>
+                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">How Service Works</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "how" 
                         ? "border-2 border-[#042940] bg-transparent" 
@@ -348,7 +348,7 @@ export default function ServiceTemplate({
                     className="w-full flex items-center justify-between py-6 group cursor-pointer"
                     data-testid="accordion-other-services"
                   >
-                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter">Other Services</h2>
+                    <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">Other Services</h2>
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
                       openAccordion === "other" 
                         ? "border-2 border-[#042940] bg-transparent" 
