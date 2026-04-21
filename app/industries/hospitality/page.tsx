@@ -20,8 +20,8 @@ const bulletPoints = [
     description: "Centralized management for hotel groups and resort portfolios. Consistent service standards across all your properties with unified reporting."
   },
   {
-    title: "Resource Efficiency Support",
-    description: "Streamlined logistics to support your internal sustainability goals. We provide detailed material tracking and recovery data to help you measure environmental impact."
+    title: "Recycling Stream Coordination",
+    description: "Source-separated receptacles and coordinated hauling for your highest-volume materials such as cardboard, glass, and metals. We keep recoverable materials out of landfills and capture rebates where markets support it."
   }
 ];
 
