@@ -236,7 +236,7 @@ const Hero = () => {
             style={{ animationDelay: HERO_BASE_DELAY }}
           >
             <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
-            Comprehensive Waste Logistics for Commercial Facilities
+            Nationwide Commercial Waste Management
           </div>
 
           <h1
@@ -244,14 +244,14 @@ const Hero = () => {
             className="hero-fade-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5"
             style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER}s` }}
           >
-            One Dedicated Partner, Coast to Coast Commercial Cleanup &amp; Waste Solutions
+            Centralized Waste Logistics for Businesses at Scale
           </h1>
           
           <p
             className="hero-fade-up text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md"
             style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 2}s` }}
           >
-            Reliable on demand support for the toughest property challenges.
+            Coordinated execution for complex projects, multi-site operations, and urgent demands across 48 states.
           </p>
           
           <div
