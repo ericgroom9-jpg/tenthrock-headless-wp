@@ -772,14 +772,14 @@ export default function ServiceTemplate({
                   <h3 className="font-semibold text-xl text-primary mb-4">Locations Managed</h3>
                   <div className="text-7xl font-extrabold text-primary mb-4">5K+</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/70">Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service.</p>
+                  <p className="text-primary/70">Commercial locations across 48 states have trusted Tenth Rock for consistent, reliable waste service.</p>
                 </div>
 
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
-                  <h3 className="font-semibold text-xl text-primary mb-4">On-Time Service Rate</h3>
+                  <h3 className="font-semibold text-xl text-primary mb-4">Rapid Response Rate</h3>
                   <div className="text-7xl font-extrabold text-primary mb-4">98%</div>
                   <Separator className="bg-primary/10 mb-4" />
-                  <p className="text-primary/70">Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen.</p>
+                  <p className="text-primary/70">When we commit to a timeline, we hit it. Delays cost money and can damage your brand. We move fast to stabilize your site, keep operations running, and protect your business.</p>
                 </div>
               </div>
             </div>

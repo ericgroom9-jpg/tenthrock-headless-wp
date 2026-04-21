@@ -222,7 +222,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Commercial locations across 48 states trust Tenth Rock for consistent, reliable waste service."
+                                        children: "Commercial locations across 48 states have trusted Tenth Rock for consistent, reliable waste service."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 57,
@@ -239,7 +239,7 @@ function StatsSection() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "font-semibold text-xl text-primary mb-4",
-                                        children: "On-Time Service Rate"
+                                        children: "Rapid Response Rate"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 61,
@@ -262,7 +262,7 @@ function StatsSection() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-primary/70",
-                                        children: "Our dispatched crews arrive when promised. Missed pickups cost you money. We don't let that happen."
+                                        children: "When we commit to a timeline, we hit it. Delays cost money and can damage your brand. We move fast to stabilize your site, keep operations running, and protect your business."
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/StatsSection.tsx",
                                         lineNumber: 64,
