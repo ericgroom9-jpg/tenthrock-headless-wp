@@ -32,7 +32,7 @@ const defaultFeatures: ReasonFeature[] = [
 export default function ReasonsSection({
   tagline = "Benefits",
   heading = "More Reasons You'll Love Us",
-  subtitle = "We rebuilt waste management from the ground up to serve businesses with multiple locations. No hidden fees, no confusing contracts, no missed pickups.",
+  subtitle = "We rebuilt waste management from the ground up to serve businesses with multiple locations. No hidden fees, no confusing contracts, no operational gaps.",
   buttonText = "Request A Service",
   features = defaultFeatures,
   testIdPrefix = "reasons",
