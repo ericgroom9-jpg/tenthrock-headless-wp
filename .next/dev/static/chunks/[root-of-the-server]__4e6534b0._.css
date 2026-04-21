@@ -2632,6 +2632,10 @@ h1, h3, h4, h5, h6, h2 {
   border-color: hsl(var(--primary) / .1);
 }
 
+.self-start {
+  align-self: flex-start;
+}
+
 .overflow-auto {
   overflow: auto;
 }

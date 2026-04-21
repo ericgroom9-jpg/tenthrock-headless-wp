@@ -58,7 +58,7 @@ export default function LocationSection() {
           </FadeIn>
 
           <FadeIn
-            className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100"
+            className="lg:col-span-2 relative rounded-[5px] overflow-hidden bg-gray-100 self-start"
           >
             <video
               autoPlay
