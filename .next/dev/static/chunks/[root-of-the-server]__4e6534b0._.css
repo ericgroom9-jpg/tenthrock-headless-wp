@@ -3624,6 +3624,10 @@ h1, h3, h4, h5, h6, h2 {
   padding-left: 2rem;
 }
 
+.pl-9 {
+  padding-left: 2.25rem;
+}
+
 .pr-10 {
   padding-right: 2.5rem;
 }

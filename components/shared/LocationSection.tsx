@@ -27,7 +27,7 @@ export default function LocationSection() {
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
               </div>
-              <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="text-gray-600 ml-9 hover:underline">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="block text-gray-600 pl-9 hover:underline">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
             </div>
 
             <div>
@@ -35,8 +35,8 @@ export default function LocationSection() {
                 <Phone className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Phone</h3>
               </div>
-              <p className="text-gray-600 ml-9">Available 24/7 for emergencies</p>
-              <a href="tel:+17275105454" className="text-[#042940] font-semibold ml-9 hover:underline">727.510.5454</a>
+              <p className="text-gray-600 pl-9">Available 24/7 for emergencies</p>
+              <a href="tel:+17275105454" className="block text-[#042940] font-semibold pl-9 hover:underline">727.510.5454</a>
             </div>
 
             <div>
@@ -44,7 +44,7 @@ export default function LocationSection() {
                 <Mail className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Email</h3>
               </div>
-              <a href="mailto:hello@tenthrock.com" className="text-gray-600 ml-9 hover:underline">hello@tenthrock.com</a>
+              <a href="mailto:hello@tenthrock.com" className="block text-gray-600 pl-9 hover:underline">hello@tenthrock.com</a>
             </div>
           </FadeIn>
 
