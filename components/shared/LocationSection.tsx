@@ -14,7 +14,7 @@ export default function LocationSection() {
             Where to Find Us
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-            Servicing businesses nationwide.
+            Headquartered in Clearwater Beach, FL. Dispatching crews across 48 states, 24/7.
           </p>
         </FadeIn>
 
@@ -45,15 +45,6 @@ export default function LocationSection() {
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Email</h3>
               </div>
               <a href="mailto:hello@tenthrock.com" className="block text-gray-600 pl-9 hover:underline">hello@tenthrock.com</a>
-            </div>
-
-            <div className="rounded-[5px] overflow-hidden">
-              <img
-                src="/images/stock/clean-city.jpg"
-                alt="Clean modern city street"
-                className="w-full h-48 sm:h-56 lg:h-64 object-cover block"
-                data-testid="img-location-truck"
-              />
             </div>
           </FadeIn>
 

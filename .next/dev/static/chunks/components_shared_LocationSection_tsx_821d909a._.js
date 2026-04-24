@@ -36,7 +36,7 @@ function LocationSection() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-gray-600 text-base sm:text-lg max-w-2xl mx-auto",
-                            children: "Servicing businesses nationwide."
+                            children: "Headquartered in Clearwater Beach, FL. Dispatching crews across 48 states, 24/7."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/LocationSection.tsx",
                             lineNumber: 16,
@@ -186,23 +186,6 @@ function LocationSection() {
                                     fileName: "[project]/components/shared/LocationSection.tsx",
                                     lineNumber: 42,
                                     columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "rounded-[5px] overflow-hidden",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                        src: "/images/stock/clean-city.jpg",
-                                        alt: "Clean modern city street",
-                                        className: "w-full h-48 sm:h-56 lg:h-64 object-cover block",
-                                        "data-testid": "img-location-truck"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/shared/LocationSection.tsx",
-                                        lineNumber: 51,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/shared/LocationSection.tsx",
-                                    lineNumber: 50,
-                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
@@ -228,17 +211,17 @@ function LocationSection() {
                                     type: "video/mp4"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 64,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/LocationSection.tsx",
-                                lineNumber: 63,
+                                lineNumber: 54,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/shared/LocationSection.tsx",
-                            lineNumber: 60,
+                            lineNumber: 51,
                             columnNumber: 11
                         }, this)
                     ]
