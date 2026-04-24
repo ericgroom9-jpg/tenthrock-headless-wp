@@ -7340,11 +7340,6 @@ h1, h3, h4, h5, h6, h2 {
     padding-right: 1.5rem;
   }
 
-  .lg\:py-20 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
   .lg\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
