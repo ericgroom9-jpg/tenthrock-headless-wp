@@ -1,5 +1,4 @@
 {
   "/page": "app/page.js",
-  "/services/standards-sops-training/page": "app/services/standards-sops-training/page.js",
-  "/services/waste-program-assessments/page": "app/services/waste-program-assessments/page.js"
+  "/services/unplanned-cleanouts/page": "app/services/unplanned-cleanouts/page.js"
 }
