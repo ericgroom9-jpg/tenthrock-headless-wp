@@ -39,6 +39,10 @@ export default function UnplannedCleanutsPage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
+      statsImage="/images/stock/unplanned-cleanouts-4.png"
+      statsImageAlt="Multifamily property exterior with landscaped grounds"
+      ctaImage="/images/stock/unplanned-cleanouts-5.png"
+      ctaImageAlt="Apartment complex ready for service"
     />
   );
 }

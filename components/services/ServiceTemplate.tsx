@@ -76,6 +76,10 @@ interface ServiceTemplateProps {
   aboutDescription?: string;
   howItWorksIntro?: string;
   howItWorksSteps?: { title: string; desc: string }[];
+  statsImage?: string;
+  statsImageAlt?: string;
+  ctaImage?: string;
+  ctaImageAlt?: string;
 }
 
 const defaultProcessSteps = [
@@ -163,6 +167,10 @@ export default function ServiceTemplate({
   aboutDescription = "Our local crews handle everything from emergency overflow pickups to scheduled dumpster service. We coordinate directly with vetted vendors in your area so you get fast, reliable waste removal without managing multiple provider relationships.",
   howItWorksIntro,
   howItWorksSteps,
+  statsImage,
+  statsImageAlt,
+  ctaImage,
+  ctaImageAlt,
 }: ServiceTemplateProps) {
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
@@ -768,7 +776,7 @@ export default function ServiceTemplate({
                 
                 <div className="border border-primary/10 p-8 rounded-[5px] bg-white">
                   <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
-                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Tenth Rock nationwide waste operations" loading="lazy" />
+                    <Image src={statsImage || imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt={statsImageAlt || "Tenth Rock nationwide waste operations"} loading="lazy" />
                   </div>
                   <h3 className="font-semibold text-xl text-primary mb-4">Locations Managed</h3>
                   <div className="text-7xl font-extrabold text-primary mb-4">5K+</div>
@@ -952,7 +960,7 @@ export default function ServiceTemplate({
 
               {/* Image Side */}
               <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <Image src={imgCyclist} alt="Tenth Rock service crew ready to dispatch" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
+                <Image src={ctaImage || imgCyclist} alt={ctaImageAlt || "Tenth Rock service crew ready to dispatch"} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
                 <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 
