@@ -17,8 +17,8 @@ export default function SiteClosuresRemodelsPage() {
         badge: "Why It Matters",
         heading: "Built for the Demands of Modern Business",
         body: "Managing waste across hundreds of locations is a competitive advantage, not a chore. Tenth Rock replaces fragmented vendors with a single, accountable partner to save your team time and budget.",
-        image: "/images/stock/site-closures-2.jpg",
-        imageAlt: "Modern storefront with blank signage ready for new tenant",
+        image: "/images/stock/site-closures-2.png",
+        imageAlt: "Vacant retail storefront with Coming Soon and For Lease signs",
         bulletPoints: [
           "Reduce waste management overhead by up to 30%",
           "Eliminate multi-vendor coordination headaches",
