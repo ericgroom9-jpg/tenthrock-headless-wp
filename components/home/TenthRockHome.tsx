@@ -23,7 +23,6 @@ import {
   Store,
   HardHat,
   ChevronDown,
-  Mail,
   Instagram,
   Twitter,
   Facebook,
