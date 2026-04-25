@@ -48,7 +48,7 @@ const caseStudies: CaseStudy[] = [
     thumbImages: [
       { src: "/images/stock/hurricane-dumpster-blue.png", alt: "Blue roll-off dumpster filled with hurricane debris staged for deployment" },
       { src: "/images/stock/service-maintenance.jpg", alt: "Multi-site debris coordination" },
-      { src: "/images/stock/case-study-thumb3.jpg", alt: "Statewide container logistics" },
+      { src: "/images/stock/hurricane-damage-mobile-homes.jpg", alt: "Aerial view of a Florida mobile home community heavily damaged by hurricane debris" },
     ],
     stats: [
       { value: "36M+", label: "Cubic Yards of Debris" },

@@ -76,8 +76,8 @@ const caseStudies = [
                 alt: "Multi-site debris coordination"
             },
             {
-                src: "/images/stock/case-study-thumb3.jpg",
-                alt: "Statewide container logistics"
+                src: "/images/stock/hurricane-damage-mobile-homes.jpg",
+                alt: "Aerial view of a Florida mobile home community heavily damaged by hurricane debris"
             }
         ],
         stats: [
