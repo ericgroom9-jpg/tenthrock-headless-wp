@@ -17,7 +17,7 @@ const LocationSection = dynamic(() => import("@/components/shared/LocationSectio
 const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
 
 const imgOurStory = "/images/stock/clean-city-hero.jpg";
-const imgAtOurCore = "/images/stock/city-nature.jpg";
+const imgAtOurCore = "/images/stock/about-tampa-skyline.jpg";
 const imgCommunity = "/images/stock/cyclist.jpg";
 
 const coreValues = [
@@ -165,7 +165,7 @@ export default function AboutPage() {
             >
               <Image 
                 src={imgAtOurCore} 
-                alt="Tenth Rock team members collaborating on waste management solutions" 
+                alt="Downtown Tampa, Florida skyline along the waterway near Tenth Rock headquarters" 
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
