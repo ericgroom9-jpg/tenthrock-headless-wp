@@ -57,6 +57,26 @@ function LocationSection() {
                             className: "space-y-6 lg:space-y-8",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative rounded-[5px] overflow-hidden aspect-[4/3]",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        src: "/images/stock/location-clearwater-beach.jpg",
+                                        alt: "Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters",
+                                        fill: true,
+                                        sizes: "(max-width: 1024px) 100vw, 33vw",
+                                        className: "object-cover",
+                                        loading: "lazy",
+                                        "data-testid": "img-location-clearwater-beach"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shared/LocationSection.tsx",
+                                        lineNumber: 27,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/shared/LocationSection.tsx",
+                                    lineNumber: 26,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex items-center gap-3 mb-2",
@@ -65,7 +85,7 @@ function LocationSection() {
                                                     className: "h-6 w-6 text-[#c5d520]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                                    lineNumber: 28,
+                                                    lineNumber: 40,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -73,13 +93,13 @@ function LocationSection() {
                                                     children: "Office"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                                    lineNumber: 29,
+                                                    lineNumber: 41,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/LocationSection.tsx",
-                                            lineNumber: 27,
+                                            lineNumber: 39,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -90,13 +110,13 @@ function LocationSection() {
                                             children: "140 Island Way Ste. 159, Clearwater Beach, FL 33767"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/LocationSection.tsx",
-                                            lineNumber: 31,
+                                            lineNumber: 43,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                    lineNumber: 26,
+                                    lineNumber: 38,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -108,7 +128,7 @@ function LocationSection() {
                                                     className: "h-6 w-6 text-[#c5d520]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                                    lineNumber: 36,
+                                                    lineNumber: 48,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -116,13 +136,13 @@ function LocationSection() {
                                                     children: "Phone"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                                    lineNumber: 37,
+                                                    lineNumber: 49,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/LocationSection.tsx",
-                                            lineNumber: 35,
+                                            lineNumber: 47,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -130,7 +150,7 @@ function LocationSection() {
                                             children: "Available 24/7 for emergencies"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/LocationSection.tsx",
-                                            lineNumber: 39,
+                                            lineNumber: 51,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -139,13 +159,13 @@ function LocationSection() {
                                             children: "727.510.5454"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/LocationSection.tsx",
-                                            lineNumber: 40,
+                                            lineNumber: 52,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 46,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -157,7 +177,7 @@ function LocationSection() {
                                                     className: "h-6 w-6 text-[#c5d520]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                                    lineNumber: 45,
+                                                    lineNumber: 57,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -165,13 +185,13 @@ function LocationSection() {
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                                    lineNumber: 46,
+                                                    lineNumber: 58,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/LocationSection.tsx",
-                                            lineNumber: 44,
+                                            lineNumber: 56,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -180,13 +200,13 @@ function LocationSection() {
                                             children: "hello@tenthrock.com"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/LocationSection.tsx",
-                                            lineNumber: 48,
+                                            lineNumber: 60,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 55,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -197,32 +217,33 @@ function LocationSection() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FadeIn$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             className: "lg:col-span-2 relative rounded-[5px] overflow-hidden self-start",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative w-full",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
+                                autoPlay: true,
+                                loop: true,
+                                muted: true,
+                                playsInline: true,
+                                preload: "metadata",
+                                className: "w-full h-auto",
                                 style: {
                                     aspectRatio: "768 / 512"
                                 },
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    src: "/images/stock/location-clearwater-beach.jpg",
-                                    alt: "Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters",
-                                    fill: true,
-                                    sizes: "(max-width: 1024px) 100vw, 66vw",
-                                    className: "object-cover",
-                                    loading: "lazy",
-                                    "data-testid": "img-location-clearwater-beach"
+                                suppressHydrationWarning: true,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
+                                    src: "/assets_export/videos/us-map-pins-loop.mp4?v=2",
+                                    type: "video/mp4"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/LocationSection.tsx",
-                                    lineNumber: 56,
+                                    lineNumber: 77,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/LocationSection.tsx",
-                                lineNumber: 55,
+                                lineNumber: 67,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/shared/LocationSection.tsx",
-                            lineNumber: 52,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, this)
                     ]

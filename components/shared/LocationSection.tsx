@@ -23,6 +23,18 @@ export default function LocationSection() {
           <FadeIn
             className="space-y-6 lg:space-y-8"
           >
+            <div className="relative rounded-[5px] overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/stock/location-clearwater-beach.jpg"
+                alt="Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover"
+                loading="lazy"
+                data-testid="img-location-clearwater-beach"
+              />
+            </div>
+
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
@@ -52,17 +64,18 @@ export default function LocationSection() {
           <FadeIn
             className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-start"
           >
-            <div className="relative w-full" style={{ aspectRatio: "768 / 512" }}>
-              <Image
-                src="/images/stock/location-clearwater-beach.jpg"
-                alt="Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters"
-                fill
-                sizes="(max-width: 1024px) 100vw, 66vw"
-                className="object-cover"
-                loading="lazy"
-                data-testid="img-location-clearwater-beach"
-              />
-            </div>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-auto"
+              style={{ aspectRatio: "768 / 512" }}
+              suppressHydrationWarning
+            >
+              <source src="/assets_export/videos/us-map-pins-loop.mp4?v=2" type="video/mp4" />
+            </video>
           </FadeIn>
         </div>
       </div>
