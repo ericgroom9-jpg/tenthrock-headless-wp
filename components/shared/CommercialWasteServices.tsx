@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 import { Siren, HardHat, Container, LineChart, ArrowRight } from "lucide-react";
 
@@ -11,26 +12,26 @@ const services = [
     desc: "Same-day junk removal and emergency waste management for spoiled product, overflowing dumpsters, and urgent commercial site cleanouts across 48 states.",
     items: [
       { label: "Emergency Product & Perishable Removal", desc: "Perishable bulk pickup and spoiled product disposal after cold storage failure or refrigeration failure events. After-hours waste removal available 24/7.", img: "/images/stock/service-emergency-overflow.jpg", href: "/services/emergency-product-removal" },
-      { label: "Site Stabilization", desc: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal when missed pickups or waste overflow disrupts your operations.", img: "/images/stock/service-emergency.jpg", href: "/services/site-stabilization" },
-      { label: "Unplanned Cleanouts & Debris Removal", desc: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, code violation cleanup support, and emergency site cleanout situations.", img: "/images/stock/clean-city.jpg", href: "/services/unplanned-cleanouts" },
+      { label: "Site Stabilization", desc: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal when missed pickups or waste overflow disrupts your operations.", img: "/images/stock/site-stabilization-1.png", href: "/services/site-stabilization" },
+      { label: "Unplanned Cleanouts & Debris Removal", desc: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, code violation cleanup support, and emergency site cleanout situations.", img: "/images/stock/unplanned-cleanouts-1.png", href: "/services/unplanned-cleanouts" },
     ],
   },
   {
     title: "Specialized Project Logistics",
     desc: "End-to-end waste coordination for site decommissioning, commercial cleanouts, event waste logistics, and storm debris removal across multiple sites.",
     items: [
-      { label: "Site Closures & Remodels", desc: "Site decommissioning, post-construction cleanout, and retail remodel waste management. Portfolio-wide site turnover and store closings handled start to finish.", img: "/images/stock/service-commercial.jpg", href: "/services/site-closures-remodels" },
+      { label: "Site Closures & Remodels", desc: "Site decommissioning, post-construction cleanout, and retail remodel waste management. Portfolio-wide site turnover and store closings handled start to finish.", img: "/images/stock/site-closures-1.jpg", href: "/services/site-closures-remodels" },
       { label: "Events & Stadiums", desc: "Event waste logistics and stadium waste coordination for multi-day event waste support. Fairs, festivals, and temporary activations managed on tight timelines.", img: "/images/stock/service-event-stadium.jpg", href: "/services/events-stadiums" },
-      { label: "Natural Disasters", desc: "Rapid response for storm debris removal and hurricane debris cleanup. Emergency roll-off rental and open-top dumpsters deployed for multi-site recovery across affected regions.", img: "/images/stock/service-maintenance.jpg", href: "/services/natural-disaster-mobilization" },
+      { label: "Natural Disasters", desc: "Rapid response for storm debris removal and hurricane debris cleanup. Emergency roll-off rental and open-top dumpsters deployed for multi-site recovery across affected regions.", img: "/images/stock/industry-natural-disasters-storm.jpg", href: "/services/natural-disaster-mobilization" },
     ],
   },
   {
     title: "Dumpster Rentals",
     desc: "Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow needs.",
     items: [
-      { label: "On-Demand Service", desc: "Same-day dumpster rental and emergency roll-off service. Temporary dumpster deployment for commercial projects with same-day swaps available.", img: "/images/stock/service-dumpster-rental.jpg", href: "/services/on-demand-service" },
-      { label: "Multiple Sizes", desc: "Commercial-grade open-top dumpsters in 20 yard, 30 yard, and 40 yard roll-off sizes. Matched to your project scope from small cleanouts to large-scale construction debris.", img: "/images/stock/service-dumpster.jpg", href: "/services/multiple-sizes" },
-      { label: "Recycling Dumpsters", desc: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support included.", img: "/images/stock/service-centralized-program.jpg", href: "/services/recycling-specialty-containers" },
+      { label: "On-Demand Service", desc: "Same-day dumpster rental and emergency roll-off service. Temporary dumpster deployment for commercial projects with same-day swaps available.", img: "/images/stock/dumpster-blue-2.png", href: "/services/on-demand-service" },
+      { label: "Multiple Sizes", desc: "Commercial-grade open-top dumpsters in 20 yard, 30 yard, and 40 yard roll-off sizes. Matched to your project scope from small cleanouts to large-scale construction debris.", img: "/images/stock/dumpster-large-red.png", href: "/services/multiple-sizes" },
+      { label: "Recycling Dumpsters", desc: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support included.", img: "/images/stock/recycling-2.png", href: "/services/recycling-specialty-containers" },
     ],
   },
   {
@@ -38,8 +39,8 @@ const services = [
     desc: "Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management for multi-site operators.",
     items: [
       { label: "Waste Program Assessments & Roadmaps", desc: "Portfolio-wide waste strategy and operational waste audit to identify cost-control waste optimization opportunities across your multi-site waste roadmap.", img: "/images/stock/hero-skyscrapers.jpg", href: "/services/waste-program-assessments" },
-      { label: "Standards & Vendor Training", desc: "Waste management SOP development and multi-site vendor training framework. Vendor performance protocols and site-level execution standards that prevent costly errors.", img: "/images/stock/city-nature.jpg", href: "/services/standards-sops-training" },
-      { label: "Ongoing Advisory & Program Implementation", desc: "Retained advisory for waste workflow optimization, multi-site execution strategy, and ongoing program improvement with oversight services built for scale.", img: "/images/stock/service-commercial.jpg", href: "/services/ongoing-advisory" },
+      { label: "Standards & Vendor Training", desc: "Waste management SOP development and multi-site vendor training framework. Vendor performance protocols and site-level execution standards that prevent costly errors.", img: "/images/stock/training-1.jpg", href: "/services/standards-sops-training" },
+      { label: "Ongoing Advisory & Program Implementation", desc: "Retained advisory for waste workflow optimization, multi-site execution strategy, and ongoing program improvement with oversight services built for scale.", img: "/images/stock/advisory-1.jpg", href: "/services/ongoing-advisory" },
     ],
   },
 ];
@@ -111,10 +112,12 @@ export default function CommercialWasteServices() {
                        className="relative rounded-[5px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[420px] group cursor-pointer block ring-0 hover:ring-2 hover:ring-[#c5d520]/40"
                        data-testid={`card-service-feature-${activeService}-${idx}`}
                      >
-                       <img
+                       <Image
                          src={item.img}
                          alt={item.label}
-                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                         fill
+                         sizes="(min-width: 1024px) 280px, (min-width: 640px) 33vw, 100vw"
+                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                        />
                        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/80 to-[#042940]/30 group-hover:via-[#042940]/70 group-hover:to-[#042940]/20 transition-all duration-300"></div>
                        <div className="relative z-10 p-6 flex flex-col justify-end h-full">
