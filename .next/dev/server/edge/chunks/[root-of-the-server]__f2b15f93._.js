@@ -28,13 +28,13 @@ let lastFetch = 0;
 const CACHE_DURATION_MS = 300000; // 5 minutes
 async function getRedirects() {
     const now = Date.now();
-    // Return cached redirects if still valid
-    if (now - lastFetch < CACHE_DURATION_MS && redirectsCache.length > 0) {
+    // Honor cache window even when empty/fail, so we don't hammer WP on every request
+    if (lastFetch > 0 && now - lastFetch < CACHE_DURATION_MS) {
         return redirectsCache;
     }
     const wpApiUrl = process.env.WP_API_URL;
     if (!wpApiUrl) {
-        console.warn('[Redirects] WP_API_URL not set');
+        lastFetch = now;
         return redirectsCache;
     }
     // Get WordPress base URL (without /graphql)
@@ -54,6 +54,7 @@ async function getRedirects() {
         });
         if (!response.ok) {
             console.warn(`[Redirects] API returned ${response.status}`);
+            lastFetch = now;
             return redirectsCache;
         }
         const data = await response.json();
@@ -81,6 +82,7 @@ async function getRedirects() {
         console.log(`[Redirects] Fetched ${redirectsCache.length} redirects from WordPress`);
     } catch (error) {
         console.error('[Redirects] Failed to fetch redirects:', error);
+        lastFetch = now;
     }
     return redirectsCache;
 }

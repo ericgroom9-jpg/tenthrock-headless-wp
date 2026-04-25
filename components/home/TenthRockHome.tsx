@@ -147,14 +147,16 @@ const Logo = ({ className = "", variant = "main" }: { className?: string, varian
   
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <Image 
-        src={logoSrc} 
-        alt="Tenth Rock Waste Solutions" 
-        width={160}
-        height={40}
-        className="h-8 md:h-10 w-auto object-contain" 
-        priority
-      />
+      <div className="relative h-8 md:h-10 w-[140px] md:w-[180px]">
+        <Image 
+          src={logoSrc} 
+          alt="Tenth Rock Waste Solutions" 
+          fill
+          sizes="180px"
+          className="object-contain object-left" 
+          priority
+        />
+      </div>
     </div>
   );
 };
@@ -186,14 +188,16 @@ const LoadingScreen = () => {
     >
       <div className="flex flex-col items-center gap-6">
         <div className="loading-logo-reveal">
-          <Image
-            src={logoWhite}
-            alt="Tenth Rock Waste Solutions"
-            width={220}
-            height={55}
-            className="w-44 md:w-56 h-auto"
-            priority
-          />
+          <div className="relative w-44 md:w-56 h-11 md:h-14">
+            <Image
+              src={logoWhite}
+              alt="Tenth Rock Waste Solutions"
+              fill
+              sizes="(max-width: 768px) 176px, 224px"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
         <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden loading-bar-container">
           <div className="h-full bg-[#c5d520] rounded-full loading-bar-fill" />
@@ -431,13 +435,13 @@ const ServicesSection = () => {
 
            {/* Feature Boxes */}
            <div className="lg:col-span-8">
-             <AnimatePresence mode="wait">
+             <AnimatePresence mode="popLayout" initial={false}>
                <motion.div
                  key={activeService}
                  initial={{ opacity: 0, y: 10 }}
                  animate={{ opacity: 1, y: 0 }}
                  exit={{ opacity: 0, y: -10 }}
-                 transition={{ duration: 0.35 }}
+                 transition={{ duration: 0.25 }}
                  className="grid sm:grid-cols-3 gap-4"
                >
                  {services[activeService].items.map((item, idx) => {
