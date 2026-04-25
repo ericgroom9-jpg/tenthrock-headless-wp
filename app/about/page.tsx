@@ -18,7 +18,7 @@ const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSectio
 
 const imgOurStory = "/images/stock/clean-city-hero.jpg";
 const imgAtOurCore = "/images/stock/about-tampa-skyline.jpg";
-const imgCommunity = "/images/stock/cyclist.jpg";
+const imgCommunity = "/images/stock/community-park-sunset.jpg";
 
 const coreValues = [
   {
@@ -223,7 +223,7 @@ export default function AboutPage() {
             >
               <Image 
                 src={imgCommunity} 
-                alt="Tenth Rock team participating in a local community cleanup event" 
+                alt="Families enjoying a sunny afternoon at a community park" 
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -239,7 +239,7 @@ export default function AboutPage() {
                 id="community-heading"
                 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"
               >
-                IN THE COMMUNITY
+                In The Community
               </h2>
               <p className="text-base text-primary/70 leading-relaxed mb-8">
                 Real change begins at the local level. As a nationwide company, Tenth Rock is committed to sustainability and protecting the natural resources of the communities where we live and work. We believe our responsibility extends beyond the job site to include the health and longevity of the neighborhoods we serve.
