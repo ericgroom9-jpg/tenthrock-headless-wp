@@ -538,7 +538,6 @@ export default function ServiceTemplate({
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <FadeIn
-                className="order-2 lg:order-1"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-1">
                   <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
@@ -575,7 +574,7 @@ export default function ServiceTemplate({
               </FadeIn>
               {paragraphSection1.image && (
                 <FadeIn
-                  className="order-1 lg:order-2 relative rounded-[5px] overflow-hidden aspect-[4/3]"
+                  className="relative rounded-[5px] overflow-hidden aspect-[4/3]"
                 >
                   <Image 
                     src={paragraphSection1.image} 
@@ -637,7 +636,7 @@ export default function ServiceTemplate({
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {paragraphSection2.image && (
                 <FadeIn
-                  className="relative rounded-[5px] overflow-hidden aspect-[4/3]"
+                  className="order-2 lg:order-1 relative rounded-[5px] overflow-hidden aspect-[4/3]"
                 >
                   <Image 
                     src={paragraphSection2.image} 
@@ -650,6 +649,7 @@ export default function ServiceTemplate({
                 </FadeIn>
               )}
               <FadeIn
+                className="order-1 lg:order-2"
               >
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-2">
                   <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>

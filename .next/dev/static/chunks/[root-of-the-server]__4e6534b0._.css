@@ -6641,6 +6641,10 @@ h1, h3, h4, h5, h6, h2 {
     display: flex;
   }
 
+  .sm\:hidden {
+    display: none;
+  }
+
   .sm\:aspect-\[4\/3\] {
     aspect-ratio: 4 / 3;
   }
@@ -6785,6 +6789,11 @@ h1, h3, h4, h5, h6, h2 {
     padding: 2rem;
   }
 
+  .sm\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -6850,6 +6859,11 @@ h1, h3, h4, h5, h6, h2 {
     line-height: 1.75rem;
   }
 
+  .sm\:text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+  }
+
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -6871,10 +6885,6 @@ h1, h3, h4, h5, h6, h2 {
 
   .md\:right-12 {
     right: 3rem;
-  }
-
-  .md\:order-last {
-    order: 9999;
   }
 
   .md\:mx-0 {

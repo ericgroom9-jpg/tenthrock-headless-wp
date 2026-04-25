@@ -118,20 +118,24 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
       : "sticky top-0 z-50 px-4 md:px-8 py-3 bg-white/95 backdrop-blur-sm"
     }>
       <div className={`container mx-auto max-w-[92rem] ${isFloating ? "bg-white rounded-[5px] shadow-lg px-3 sm:px-6 py-3" : "px-0"}`}>
-        <div className="flex items-center justify-between gap-2 sm:gap-4">
-          <Link href="/" className="hover:opacity-90 transition-opacity shrink-0" data-testid="link-nav-home">
+        <div className="flex items-center justify-between gap-1 sm:gap-4">
+          <Link href="/" className="hover:opacity-90 transition-opacity inline-flex items-center min-h-[44px] min-w-0" data-testid="link-nav-home">
             <Logo variant="main" />
           </Link>
 
           {/* Mobile: Primary CTA + Hamburger visible in top bar */}
-          <div className="flex items-center gap-2 xl:hidden shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2 xl:hidden shrink-0">
             <Button
               asChild
               size="sm"
-              className="bg-[#c5d520] text-[#042940] font-bold rounded-full px-3 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20 hover:bg-[#d6d98b] active:bg-[#d6d98b]"
+              className="bg-[#c5d520] text-[#042940] font-bold rounded-full px-2.5 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20 hover:bg-[#d6d98b] active:bg-[#d6d98b]"
               data-testid="button-mobile-cta"
             >
-              <Link href="/request-a-service">Request A Service</Link>
+              <Link href="/request-a-service">
+                <span className="sm:hidden" aria-hidden="true">Get Service</span>
+                <span className="hidden sm:inline">Request A Service</span>
+                <span className="sr-only sm:hidden">Request A Service</span>
+              </Link>
             </Button>
             <button 
               className="p-3 text-primary rounded-[5px] transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
