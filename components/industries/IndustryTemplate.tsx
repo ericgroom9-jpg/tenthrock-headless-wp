@@ -49,8 +49,8 @@ const defaultParagraphSection1: ParagraphSection = {
   badge: "Industry Expertise",
   heading: "Programs Built Around How You Operate",
   body: "Every industry has unique waste challenges. From volume fluctuations to tight timelines, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean without disrupting the work that matters most.",
-  image: "/images/stock/service-dumpster-rental.jpg",
-  imageAlt: "Tenth Rock crew managing waste at a commercial facility",
+  image: "/images/stock/programs-built-aerial-buildings.jpg",
+  imageAlt: "Aerial view of high-rise condominium and office buildings served by Tenth Rock",
   bulletPoints: [
     "Custom programs designed around your operational schedule",
     "Industry-specific service programs",
