@@ -50,7 +50,6 @@ const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/floor-park.jpg";
 
-const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4?v=2";
 
 
 const services = [

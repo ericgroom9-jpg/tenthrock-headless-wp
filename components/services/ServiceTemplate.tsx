@@ -34,7 +34,6 @@ const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
 const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
 const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/floor-park.jpg";
-const usMapVideo = "/assets_export/videos/us-map-pins-loop.mp4?v=2";
 
 interface ParagraphSection {
   badge: string;
