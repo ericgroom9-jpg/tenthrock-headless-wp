@@ -52,10 +52,10 @@ export default function MunicipalitiesPage() {
   return (
     <IndustryTemplate
       industryName="Municipalities"
-      heroImage="/assets_export/stock_images/clean_city_street.jpg"
+      heroImage="/images/stock/municipalities-american-flag.jpg"
       heroDescription="Professional waste management for cities, towns, and public agencies. We help you serve your community with reliable, cost-effective solutions."
       aboutTitle="Serving Those Who Serve the Public"
-      aboutImage="/assets_export/stock_images/clean_city_street.jpg"
+      aboutImage="/images/stock/municipalities-american-flag.jpg"
       bulletPoints={bulletPoints}
       faqs={faqs}
     />
