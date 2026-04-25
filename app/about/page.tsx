@@ -112,7 +112,7 @@ export default function AboutPage() {
                 id="core-heading"
                 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-10 leading-tight"
               >
-                AT OUR CORE
+                At Our Core
               </h2>
               
               <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
