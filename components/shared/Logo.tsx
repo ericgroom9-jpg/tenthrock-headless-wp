@@ -20,9 +20,12 @@ export default function Logo({ className = "", variant = "main" }: LogoProps) {
         alt="Tenth Rock Waste Solutions" 
         width={160}
         height={40}
+        sizes="(max-width: 640px) 160px, (max-width: 768px) 200px, 240px"
         className="h-8 md:h-10 w-auto max-w-[160px] sm:max-w-[200px] md:max-w-none object-contain" 
+        style={{ height: "auto" }}
         loading="eager"
         priority
+        fetchPriority="high"
       />
     </div>
   );
