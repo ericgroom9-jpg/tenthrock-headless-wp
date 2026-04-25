@@ -22,7 +22,7 @@ const ProcessSection = dynamic(() => import("@/components/shared/ProcessSection"
 import { getStateData, getStateName, getCityFromSlug, cityToSlug } from "@/lib/data/state-cities";
 import { stateOutlines } from "@/lib/data/state-outlines";
 
-const imgPlaceholder = "/images/stock/service-centralized-program.jpg";
+const imgPlaceholder = "/images/stock/locations-hero-modern-city.jpg";
 const imgInfoBlock = "/images/stock/service-dumpster-rental.jpg";
 
 function formatSlug(slug: string): string {

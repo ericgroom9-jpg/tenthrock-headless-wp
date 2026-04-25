@@ -23,7 +23,7 @@ import { getStateData, getStateName, cityToSlug } from "@/lib/data/state-cities"
 import { stateOutlines } from "@/lib/data/state-outlines";
 import { getStateLocationContent } from "@/lib/data/state-location-content";
 
-const imgPlaceholder = "/images/stock/service-centralized-program.jpg";
+const imgPlaceholder = "/images/stock/locations-hero-modern-city.jpg";
 const imgInfoBlock = "/images/stock/service-dumpster-rental.jpg";
 
 

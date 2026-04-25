@@ -3259,12 +3259,6 @@ h1, h3, h4, h5, h6, h2 {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-\[\#042940\]\/90 {
-  --tw-gradient-from: #042940e6 var(--tw-gradient-from-position);
-  --tw-gradient-to: #04294000 var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-black\/80 {
   --tw-gradient-from: #000c var(--tw-gradient-from-position);
   --tw-gradient-to: #0000 var(--tw-gradient-to-position);
