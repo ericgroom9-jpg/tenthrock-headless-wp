@@ -224,20 +224,20 @@ const caseStudies = [
         subtitle: "Emergency Site Stabilization",
         tag: "Project Management",
         description: "A big-box retail location experienced a compactor failure after the unit became overfilled, forcing the door open and preventing the provider from safely transporting it. Tenth Rock deployed a stabilization crew to reduce the load, secured the compactor door for safe transport, arranged a same-day open-top dumpster, and coordinated vendors to clean and prepare the compactor area for repair upon return.",
-        mainImage: "/images/stock/case-study-main.jpg",
-        mainImageAlt: "Compactor failure emergency stabilization by Tenth Rock",
+        mainImage: "/images/stock/compactor-1.jpg",
+        mainImageAlt: "Overfilled retail compactor with door jammed open by trapped debris",
         thumbImages: [
             {
-                src: "/images/stock/service-dumpster.jpg",
-                alt: "Emergency dumpster deployed on site"
+                src: "/images/stock/compactor-2.png",
+                alt: "Same-day open-top dumpster deployed to relieve compactor overflow"
             },
             {
-                src: "/images/stock/case-study-thumb2.jpg",
-                alt: "Compactor area cleaned for repair"
+                src: "/images/stock/compactor-3.jpg",
+                alt: "Loading dock and trailer staged for vendor coordination"
             },
             {
-                src: "/images/stock/case-study-thumb3.jpg",
-                alt: "Vendor coordination at site"
+                src: "/images/stock/compactor-4.jpg",
+                alt: "Big-box retail warehouse exterior at sunset where stabilization took place"
             }
         ],
         stats: [
