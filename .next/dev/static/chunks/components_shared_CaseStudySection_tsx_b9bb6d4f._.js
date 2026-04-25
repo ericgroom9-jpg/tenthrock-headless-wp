@@ -24,20 +24,20 @@ const caseStudies = [
         subtitle: "Missed Pickup, Same-Day Stabilization",
         tag: "Speed",
         description: "A missed pickup at a National Coffee Chain location sent waste overflowing into the backroom mid-operation, creating immediate operational risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a team on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.",
-        mainImage: "/images/stock/service-emergency-overflow.jpg",
-        mainImageAlt: "National Coffee Chain emergency waste stabilization by Tenth Rock",
+        mainImage: "/images/stock/coffee-case-1.jpg",
+        mainImageAlt: "National coffee chain interior with customers and barista at the counter",
         thumbImages: [
             {
-                src: "/images/stock/service-emergency.jpg",
-                alt: "Emergency waste crew dispatched"
+                src: "/images/stock/coffee-case-2.png",
+                alt: "Clock face showing 6:15 PM, the time the call came in"
             },
             {
-                src: "/images/stock/case-study-thumb1.jpg",
-                alt: "On-site waste removal in progress"
+                src: "/images/stock/coffee-case-3.jpg",
+                alt: "Quiet city street at night where the response was dispatched"
             },
             {
-                src: "/images/stock/case-study-thumb2.jpg",
-                alt: "Site restored to operational status"
+                src: "/images/stock/coffee-case-4.jpg",
+                alt: "Brick storefront with large windows after stabilization"
             }
         ],
         stats: [
