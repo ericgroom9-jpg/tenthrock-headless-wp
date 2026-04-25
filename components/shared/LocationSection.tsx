@@ -23,18 +23,6 @@ export default function LocationSection() {
           <FadeIn
             className="space-y-6 lg:space-y-8"
           >
-            <div className="relative rounded-[5px] overflow-hidden aspect-[4/3]">
-              <Image
-                src="/images/stock/location-clearwater-beach.jpg"
-                alt="Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters"
-                fill
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                className="object-cover"
-                loading="lazy"
-                data-testid="img-location-clearwater-beach"
-              />
-            </div>
-
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
@@ -58,6 +46,18 @@ export default function LocationSection() {
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Email</h3>
               </div>
               <a href="mailto:hello@tenthrock.com" className="block text-gray-600 pl-9 hover:underline">hello@tenthrock.com</a>
+            </div>
+
+            <div className="relative rounded-[5px] overflow-hidden aspect-[4/3]">
+              <Image
+                src="/images/stock/location-clearwater-beach.jpg"
+                alt="Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters"
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover"
+                loading="lazy"
+                data-testid="img-location-clearwater-beach"
+              />
             </div>
           </FadeIn>
 
