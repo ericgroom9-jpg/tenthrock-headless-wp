@@ -19,8 +19,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 ;
 ;
 ;
-const imgCyclist = "/images/stock/final-cta-highway-sunset.jpg";
-function FinalCtaSection() {
+const DEFAULT_IMAGE = "/images/stock/final-cta-highway-sunset.jpg";
+const DEFAULT_IMAGE_ALT = "Aerial view of an open highway at sunset symbolizing nationwide waste logistics";
+function FinalCtaSection({ image, imageAlt } = {}) {
+    const src = image || DEFAULT_IMAGE;
+    const alt = imageAlt || DEFAULT_IMAGE_ALT;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-16 bg-white",
         "aria-label": "Get started with waste management",
@@ -36,7 +39,7 @@ function FinalCtaSection() {
                                 className: "absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 20,
+                                lineNumber: 28,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -48,14 +51,14 @@ function FinalCtaSection() {
                                         children: "Waste Management"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                        lineNumber: 23,
+                                        lineNumber: 31,
                                         columnNumber: 35
                                     }, this),
                                     " Today"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 22,
+                                lineNumber: 30,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -63,7 +66,7 @@ function FinalCtaSection() {
                                 children: "One call. One partner. Every location covered. Stop juggling providers and start saving up to 30% on waste spend."
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 25,
+                                lineNumber: 33,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -77,52 +80,52 @@ function FinalCtaSection() {
                                         children: "Request A Service"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                        lineNumber: 31,
+                                        lineNumber: 39,
                                         columnNumber: 23
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 38,
                                     columnNumber: 20
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 29,
+                                lineNumber: 37,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                        lineNumber: 19,
+                        lineNumber: 27,
                         columnNumber: 14
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "lg:w-1/2 relative min-h-[300px] lg:min-h-full",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                src: imgCyclist,
-                                alt: "Aerial view of an open highway at sunset symbolizing nationwide waste logistics",
+                                src: src,
+                                alt: alt,
                                 fill: true,
                                 sizes: "(max-width: 1024px) 100vw, 50vw",
                                 className: "object-cover object-center lg:object-right",
                                 loading: "lazy"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 38,
+                                lineNumber: 46,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 39,
+                                lineNumber: 47,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 40,
+                                lineNumber: 48,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FadeIn$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -138,12 +141,12 @@ function FinalCtaSection() {
                                                 className: "w-5 h-5 sm:w-6 sm:h-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                                lineNumber: 48,
+                                                lineNumber: 56,
                                                 columnNumber: 26
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                            lineNumber: 47,
+                                            lineNumber: 55,
                                             columnNumber: 23
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -151,40 +154,40 @@ function FinalCtaSection() {
                                             children: "727.510.5454"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                            lineNumber: 50,
+                                            lineNumber: 58,
                                             columnNumber: 23
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 54,
                                     columnNumber: 20
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                                lineNumber: 43,
+                                lineNumber: 51,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                        lineNumber: 37,
+                        lineNumber: 45,
                         columnNumber: 14
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shared/FinalCtaSection.tsx",
-                lineNumber: 15,
+                lineNumber: 23,
                 columnNumber: 11
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/shared/FinalCtaSection.tsx",
-            lineNumber: 14,
+            lineNumber: 22,
             columnNumber: 8
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/FinalCtaSection.tsx",
-        lineNumber: 13,
+        lineNumber: 21,
         columnNumber: 5
     }, this);
 }

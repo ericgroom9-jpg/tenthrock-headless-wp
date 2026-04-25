@@ -6,9 +6,17 @@ import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const imgCyclist = "/images/stock/final-cta-highway-sunset.jpg";
+const DEFAULT_IMAGE = "/images/stock/final-cta-highway-sunset.jpg";
+const DEFAULT_IMAGE_ALT = "Aerial view of an open highway at sunset symbolizing nationwide waste logistics";
 
-export default function FinalCtaSection() {
+interface FinalCtaSectionProps {
+  image?: string;
+  imageAlt?: string;
+}
+
+export default function FinalCtaSection({ image, imageAlt }: FinalCtaSectionProps = {}) {
+  const src = image || DEFAULT_IMAGE;
+  const alt = imageAlt || DEFAULT_IMAGE_ALT;
   return (
     <section className="py-16 bg-white" aria-label="Get started with waste management">
        <div className="container mx-auto px-4 md:px-8">
@@ -35,7 +43,7 @@ export default function FinalCtaSection() {
 
              {/* Image Side */}
              <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <Image src={imgCyclist} alt="Aerial view of an open highway at sunset symbolizing nationwide waste logistics" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
+                <Image src={src} alt={alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
                 <div className="absolute inset-0 bg-[#042940]/40 lg:bg-[#042940]/20 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#042940] via-[#042940]/60 lg:via-[#042940]/50 to-transparent"></div>
                 
