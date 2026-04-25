@@ -103,12 +103,12 @@ const caseStudies: CaseStudy[] = [
     tag: "Cost Savings",
     description:
       "Following a regional power outage caused by severe storms, multiple retail locations were left with large volumes of temperature-sensitive products requiring immediate removal to prevent odor, pest activity, and potential health code violations. Tenth Rock mobilized live-load hauling providers, allowing trailers to be staged and loaded immediately as product was removed from refrigeration areas, eliminating the wait for roll-off containers.",
-    mainImage: "/images/stock/service-emergency.jpg",
-    mainImageAlt: "Emergency perishable removal after power outage by Tenth Rock",
+    mainImage: "/images/stock/outage-1.png",
+    mainImageAlt: "Severe storm clouds and lightning rolling over a retail shopping center before a power outage",
     thumbImages: [
-      { src: "/images/stock/service-emergency-overflow.jpg", alt: "Perishable product being removed" },
-      { src: "/images/stock/case-study-thumb1.jpg", alt: "Live-load trailer staged on site" },
-      { src: "/images/stock/service-centralized-program.jpg", alt: "Coordinated multi-site disposal" },
+      { src: "/images/stock/outage-2.png", alt: "Darkened commercial storefront at night during a regional power outage" },
+      { src: "/images/stock/outage-3.png", alt: "Long-haul trailer backed up to a commercial loading dock for live-load hauling" },
+      { src: "/images/stock/outage-4.png", alt: "Wide shot of a rain-slicked commercial shopping center after the storm" },
     ],
     stats: [
       { value: "1", label: "Point of Contact" },
