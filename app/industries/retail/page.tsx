@@ -52,10 +52,10 @@ export default function RetailPage() {
   return (
     <IndustryTemplate
       industryName="Retail"
-      heroImage="/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg"
+      heroImage="/images/stock/retail-modern-office-building.jpg"
       heroDescription="Keep your stores clean and operations running smoothly. Waste management solutions designed for the unique demands of retail environments."
       aboutTitle="Retail-Ready Waste Solutions"
-      aboutImage="/assets_export/stock_images/indoor-hotel-view_1768502512665.jpg"
+      aboutImage="/images/stock/retail-modern-office-building.jpg"
       bulletPoints={bulletPoints}
       faqs={faqs}
     />
