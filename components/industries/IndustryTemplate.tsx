@@ -167,43 +167,58 @@ export default function IndustryTemplate({
                 </h2>
 
                 <div className="space-y-0" role="region" aria-label="About services accordion">
-                  {bulletPoints.map((point, i) => (
-                    <div key={i}>
-                      <button
-                        onClick={() => setActiveBullet(activeBullet === i ? -1 : i)}
-                        className="w-full text-left py-4 sm:py-5 md:py-6 flex items-start gap-4 sm:gap-5 md:gap-6 group"
-                        data-testid={`bullet-${i}`}
-                        aria-expanded={activeBullet === i}
-                        aria-controls={`bullet-panel-${i}`}
-                        id={`bullet-button-${i}`}
-                      >
-                        <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#042940] shrink-0 w-6 sm:w-8" aria-hidden="true">
-                          {i + 1}
-                        </span>
-                        <div className="flex-1 min-w-0">
-                          <h3 className={`text-lg sm:text-xl md:text-2xl font-semibold transition-colors duration-300 ${
-                            activeBullet === i ? "text-[#042940]" : "text-[#042940]"
-                          }`}>
-                            {point.title}
-                          </h3>
-                          <FadeIn
-                            id={`bullet-panel-${i}`}
-                            role="region"
-                            aria-labelledby={`bullet-button-${i}`}
-                            className="overflow-hidden"
+                  {bulletPoints.map((point, i) => {
+                    const isOpen = activeBullet === i;
+                    return (
+                      <div key={i} data-testid={`accordion-item-${i}`}>
+                        <button
+                          type="button"
+                          onClick={() => setActiveBullet(isOpen ? -1 : i)}
+                          className="w-full text-left py-4 sm:py-5 md:py-6 flex items-start gap-4 sm:gap-5 md:gap-6 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#042940] focus-visible:ring-offset-2 rounded-sm"
+                          data-testid={`bullet-${i}`}
+                          aria-expanded={isOpen}
+                          aria-controls={`bullet-panel-${i}`}
+                          id={`bullet-button-${i}`}
+                        >
+                          <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#042940] shrink-0 w-6 sm:w-8" aria-hidden="true">
+                            {i + 1}
+                          </span>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#042940]">
+                              {point.title}
+                            </h3>
+                          </div>
+                          <span
+                            className={`shrink-0 mt-2 sm:mt-3 text-[#042940] transition-transform duration-300 ${
+                              isOpen ? "rotate-180" : "rotate-0"
+                            }`}
+                            aria-hidden="true"
                           >
-                            <p className="text-[#042940]/80 leading-relaxed text-sm sm:text-base">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          id={`bullet-panel-${i}`}
+                          role="region"
+                          aria-labelledby={`bullet-button-${i}`}
+                          aria-hidden={!isOpen}
+                          className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
+                            isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                          }`}
+                        >
+                          <div className="min-h-0 overflow-hidden pl-10 sm:pl-12 md:pl-14 pr-2">
+                            <p className="text-[#042940]/80 leading-relaxed text-sm sm:text-base pb-4 sm:pb-5 md:pb-6" data-testid={`text-bullet-description-${i}`}>
                               {point.description}
                             </p>
-                          </FadeIn>
+                          </div>
                         </div>
-                      </button>
-                      {/* Progress bar */}
-                      <div className="h-0.5 bg-gray-200 ml-10 sm:ml-12 md:ml-14" aria-hidden="true">
-                        <div className="h-full bg-[#042940]" />
+                        {/* Divider */}
+                        <div className="h-px bg-gray-200" aria-hidden="true" />
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8 md:mt-10">
