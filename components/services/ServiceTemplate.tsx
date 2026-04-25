@@ -124,8 +124,8 @@ const defaultParagraphSection1: ParagraphSection = {
   badge: "Why It Matters",
   heading: "Built for the Demands of Modern Business",
   body: "Managing waste across hundreds of locations is a competitive advantage, not a chore. Tenth Rock replaces fragmented vendors with a single, accountable partner to save your team time and budget.",
-  image: imgServiceDumpsterRental,
-  imageAlt: "Commercial waste management operations",
+  image: "/images/stock/built-for-business-aerial-city.jpg",
+  imageAlt: "Aerial view of a sprawling modern city with commercial districts",
   bulletPoints: [
     "Reduce waste management overhead by up to 30%",
     "Eliminate multi-vendor coordination headaches",
