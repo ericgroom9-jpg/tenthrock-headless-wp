@@ -83,12 +83,12 @@ const caseStudies: CaseStudy[] = [
     tag: "Creative Solutions",
     description:
       "During a high-traffic holiday period, a national retail location experienced packaging overflow spilling into public areas, creating immediate safety and reputational risk. The store requested a 30-yard open-top dumpster late in the evening, but no containers were available. Tenth Rock deployed a stabilization crew within the hour, consolidated overflowing waste into a controlled staging area, and secured a 30-yard roll-off for 7:00 AM delivery. The store opened safely and on schedule.",
-    mainImage: "/images/stock/service-dumpster-rental.jpg",
-    mainImageAlt: "National Retailer holiday overflow stabilization by Tenth Rock",
+    mainImage: "/images/stock/holiday-1.jpg",
+    mainImageAlt: "Modern retail center lit up at dusk during a high-traffic holiday season",
     thumbImages: [
-      { src: "/images/stock/service-emergency-overflow.jpg", alt: "Overflow waste being staged" },
-      { src: "/images/stock/case-study-thumb2.jpg", alt: "Staging area prepared overnight" },
-      { src: "/images/stock/case-study-thumb3.jpg", alt: "Roll-off delivered next morning" },
+      { src: "/images/stock/holiday-2.jpg", alt: "Crowds of holiday shoppers moving through a store entrance with shopping bags" },
+      { src: "/images/stock/holiday-3.jpg", alt: "Back-of-house loading area where overflow waste was staged overnight" },
+      { src: "/images/stock/holiday-4.png", alt: "Clean 30-yard open-top roll-off dumpster delivered for next morning" },
     ],
     stats: [
       { value: "0", label: "Overtime Staff Required" },
