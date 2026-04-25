@@ -19,7 +19,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 ;
 ;
 ;
-const imgCyclist = "/images/stock/cyclist.jpg";
+const imgCyclist = "/images/stock/final-cta-highway-sunset.jpg";
 function FinalCtaSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-16 bg-white",
@@ -101,7 +101,7 @@ function FinalCtaSection() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 src: imgCyclist,
-                                alt: "Tenth Rock service crew ready to dispatch",
+                                alt: "Aerial view of an open highway at sunset symbolizing nationwide waste logistics",
                                 fill: true,
                                 sizes: "(max-width: 1024px) 100vw, 50vw",
                                 className: "object-cover object-center lg:object-right",
