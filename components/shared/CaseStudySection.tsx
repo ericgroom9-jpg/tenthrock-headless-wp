@@ -63,12 +63,12 @@ const caseStudies: CaseStudy[] = [
     tag: "Multi-Site Execution",
     description:
       "During a multi-location retail transition, stores required a full cleanout after asset recovery teams completed their work. Remaining fixtures, shelving, signage, and debris still needed to be removed for broom-clean turnover. Tenth Rock coordinated labor crews, hauling, and dumpster deployment across multiple locations, handling minor demolition and final punch-list items that had fallen between vendors.",
-    mainImage: "/images/stock/service-commercial.jpg",
-    mainImageAlt: "Multi-site store decommissioning by Tenth Rock",
+    mainImage: "/images/stock/closures-1.jpg",
+    mainImageAlt: "Closed retail storefront with windows papered over during decommissioning",
     thumbImages: [
-      { src: "/images/stock/case-study-main.jpg", alt: "Store cleanout in progress" },
-      { src: "/images/stock/service-dumpster.jpg", alt: "Dumpster deployment at closure site" },
-      { src: "/images/stock/case-study-thumb1.jpg", alt: "Broom-clean store turnover" },
+      { src: "/images/stock/closures-2.jpg", alt: "Vacated retail interior cleared and ready for broom-clean turnover" },
+      { src: "/images/stock/closures-3.jpg", alt: "Hauling truck transporting debris across state lines" },
+      { src: "/images/stock/closures-4.jpg", alt: "Aerial view of a multi-site commercial coordination effort" },
     ],
     stats: [
       { value: "20+", label: "Stores Delivered Broom-Clean" },
