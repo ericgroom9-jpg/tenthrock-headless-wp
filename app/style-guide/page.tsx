@@ -91,7 +91,7 @@ export default function StyleGuide() {
               <div className="space-y-6">
                 <div className="border-b pb-4">
                   <span className="text-small text-muted-foreground block mb-2">H1 - text-h1</span>
-                  <h1 className="text-h1" data-testid="typography-h1">The quick brown fox</h1>
+                  <p className="text-h1" data-testid="typography-h1" role="heading" aria-level={2}>The quick brown fox</p>
                 </div>
                 <div className="border-b pb-4">
                   <span className="text-small text-muted-foreground block mb-2">H2 - text-h2</span>

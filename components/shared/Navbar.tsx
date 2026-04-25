@@ -123,8 +123,16 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
             <Logo variant="main" />
           </Link>
 
-          {/* Mobile: Hamburger visible in top bar */}
+          {/* Mobile: Primary CTA + Hamburger visible in top bar */}
           <div className="flex items-center gap-2 xl:hidden shrink-0">
+            <Button
+              asChild
+              size="sm"
+              className="bg-[#c5d520] text-[#042940] font-bold rounded-full px-3 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20 hover:bg-[#d6d98b] active:bg-[#d6d98b]"
+              data-testid="button-mobile-cta"
+            >
+              <Link href="/request-a-service">Request A Service</Link>
+            </Button>
             <button 
               className="p-3 text-primary rounded-[5px] transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
               onClick={() => setIsNavExpanded(!isNavExpanded)}
