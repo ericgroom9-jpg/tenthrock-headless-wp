@@ -46,7 +46,7 @@ const caseStudies: CaseStudy[] = [
     mainImage: "/images/stock/industry-natural-disasters-storm.jpg",
     mainImageAlt: "Florida hurricane emergency dumpster deployment by Tenth Rock",
     thumbImages: [
-      { src: "/images/stock/service-dumpster-rental.jpg", alt: "Roll-off dumpsters staged for deployment" },
+      { src: "/images/stock/hurricane-dumpster-blue.png", alt: "Blue roll-off dumpster filled with hurricane debris staged for deployment" },
       { src: "/images/stock/service-maintenance.jpg", alt: "Multi-site debris coordination" },
       { src: "/images/stock/case-study-thumb3.jpg", alt: "Statewide container logistics" },
     ],
