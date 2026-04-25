@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 import { MapPin, Phone, Mail } from "lucide-react";
 
@@ -51,18 +52,17 @@ export default function LocationSection() {
           <FadeIn
             className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-start"
           >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="w-full h-auto"
-              style={{ aspectRatio: "768 / 512" }}
-              suppressHydrationWarning
-            >
-              <source src="/assets_export/videos/us-map-pins-loop.mp4?v=2" type="video/mp4" />
-            </video>
+            <div className="relative w-full" style={{ aspectRatio: "768 / 512" }}>
+              <Image
+                src="/images/stock/location-clearwater-beach.jpg"
+                alt="Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters"
+                fill
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                className="object-cover"
+                loading="lazy"
+                data-testid="img-location-clearwater-beach"
+              />
+            </div>
           </FadeIn>
         </div>
       </div>
