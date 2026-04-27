@@ -450,9 +450,6 @@ export default function LocationTemplatePage() {
                     <div className="w-20 h-20 rounded-full bg-[#c5d520]/20 border-2 border-[#c5d520]/40 flex items-center justify-center mb-6" aria-hidden="true">
                       <MapPin className="w-10 h-10 text-[#c5d520]" />
                     </div>
-                    <span className="text-7xl md:text-8xl font-bold text-white/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none" aria-hidden="true">
-                      {stateData.abbreviation}
-                    </span>
                     <h3 className="text-2xl md:text-3xl font-medium text-white mb-3 tracking-tighter" data-testid="text-state-name">
                       {locationName}
                     </h3>
