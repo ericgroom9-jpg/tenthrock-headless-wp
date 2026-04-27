@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
-import UsCoverageMap from "@/components/shared/UsCoverageMap";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function LocationSection() {
@@ -63,9 +62,20 @@ export default function LocationSection() {
           </FadeIn>
 
           <FadeIn
-            className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-start bg-white"
+            className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-start"
           >
-            <UsCoverageMap className="w-full h-auto" />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-auto"
+              style={{ aspectRatio: "768 / 512" }}
+              suppressHydrationWarning
+            >
+              <source src="/assets_export/videos/us-map-pins-loop.mp4?v=2" type="video/mp4" />
+            </video>
           </FadeIn>
         </div>
       </div>
