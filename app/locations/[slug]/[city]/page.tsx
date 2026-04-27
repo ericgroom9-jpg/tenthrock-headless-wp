@@ -23,7 +23,7 @@ import { getStateData, getStateName, getCityFromSlug, cityToSlug } from "@/lib/d
 import { stateOutlines } from "@/lib/data/state-outlines";
 
 const imgPlaceholder = "/images/stock/locations-hero-modern-city.jpg";
-const imgInfoBlock = "/images/stock/service-dumpster-rental.jpg";
+const imgInfoBlock = "/images/stock/service-dumpster-rental-v2.jpg";
 
 function formatSlug(slug: string): string {
   return slug
