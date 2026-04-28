@@ -63,9 +63,11 @@ export default function LocationSection() {
           </FadeIn>
 
           <FadeIn
-            className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-start"
+            className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-center"
           >
-            <UsMapPinsAnimation />
+            <div className="mx-auto w-full max-w-[640px]">
+              <UsMapPinsAnimation />
+            </div>
           </FadeIn>
         </div>
       </div>

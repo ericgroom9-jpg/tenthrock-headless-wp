@@ -2629,6 +2629,10 @@ h1, h3, h4, h5, h6, h2 {
   align-self: flex-start;
 }
 
+.self-center {
+  align-self: center;
+}
+
 .overflow-auto {
   overflow: auto;
 }
