@@ -74,6 +74,7 @@ export default function UsMapPinsAnimation() {
         aria-label="Map of the contiguous United States with a pin in every state representing nationwide service coverage"
         className="w-full h-auto block"
         preserveAspectRatio="xMidYMid meet"
+        style={{ overflow: "visible" }}
       >
         <defs>
           <filter id="pin-shadow" x="-30%" y="-30%" width="160%" height="160%">
