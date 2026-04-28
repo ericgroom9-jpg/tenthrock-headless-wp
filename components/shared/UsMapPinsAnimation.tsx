@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { STATE_PATHS, MAP_PINS, MAP_VIEWBOX } from "@/components/shared/us-map-data";
 
 const MAP_FILL = "#042940";
@@ -22,6 +23,10 @@ const TOOLTIP_PAD_X = 8;
 const TOOLTIP_PAD_Y = 5;
 const TOOLTIP_GAP = 6;
 
+function stateSlug(name: string) {
+  return name.toLowerCase().replace(/\s+/g, "-");
+}
+
 function Pin({
   x,
   y,
@@ -37,27 +42,40 @@ function Pin({
   onHover: (code: string) => void;
   onLeave: (code: string) => void;
 }) {
+  const router = useRouter();
+  const href = `/locations/${stateSlug(name)}`;
+  const handleClick = (e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    router.push(href);
+  };
   return (
-    <g
-      transform={`translate(${x - PIN_W / 2} ${y - PIN_H})`}
-      aria-label={name}
-      role="img"
+    <a
+      href={href}
+      onClick={handleClick}
+      aria-label={`View locations and services in ${name}`}
+      data-testid={`link-pin-${code}`}
       style={{ cursor: "pointer" }}
-      data-testid={`pin-${code}`}
-      onPointerEnter={() => onHover(code)}
-      onPointerLeave={() => onLeave(code)}
-      onFocus={() => onHover(code)}
-      onBlur={() => onLeave(code)}
-      tabIndex={0}
     >
-      <path
-        d="M11 0 C4.925 0 0 4.925 0 11 C0 14.5 1.7 17.5 4.5 19 L11 28 L17.5 19 C20.3 17.5 22 14.5 22 11 C22 4.925 17.075 0 11 0 Z"
-        transform="scale(0.9)"
-        fill={PIN_FILL}
-        filter="url(#pin-shadow)"
-      />
-      <circle cx={PIN_W / 2} cy={9.9} r={3.6} fill={PIN_DOT_FILL} />
-    </g>
+      <g
+        transform={`translate(${x - PIN_W / 2} ${y - PIN_H})`}
+        role="img"
+        aria-label={name}
+        data-testid={`pin-${code}`}
+        onPointerEnter={() => onHover(code)}
+        onPointerLeave={() => onLeave(code)}
+        onFocus={() => onHover(code)}
+        onBlur={() => onLeave(code)}
+      >
+        <path
+          d="M11 0 C4.925 0 0 4.925 0 11 C0 14.5 1.7 17.5 4.5 19 L11 28 L17.5 19 C20.3 17.5 22 14.5 22 11 C22 4.925 17.075 0 11 0 Z"
+          transform="scale(0.9)"
+          fill={PIN_FILL}
+          filter="url(#pin-shadow)"
+        />
+        <circle cx={PIN_W / 2} cy={9.9} r={3.6} fill={PIN_DOT_FILL} />
+      </g>
+    </a>
   );
 }
 
