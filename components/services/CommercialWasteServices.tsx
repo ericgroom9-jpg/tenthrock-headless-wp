@@ -47,7 +47,6 @@ const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
 const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
-const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/floor-park.jpg";
 
 
@@ -477,7 +476,7 @@ export default function CommercialWasteServices() {
         <LocationSection />
 
         {/* Final CTA - Uses shared FinalCtaSection (matches homepage) */}
-        <FinalCtaSection image={imgCyclist} imageAlt="Tenth Rock service crew ready to dispatch" />
+        <FinalCtaSection />
       </main>
 
       <Footer />

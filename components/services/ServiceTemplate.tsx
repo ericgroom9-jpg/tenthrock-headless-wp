@@ -32,7 +32,6 @@ const logoWhite = "/images/logos/Green-White-Logo.png";
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
 const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
 const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
-const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/sustainability-park-skyline.jpg";
 
 interface ParagraphSection {
@@ -876,7 +875,7 @@ export default function ServiceTemplate({
         <LocationSection />
 
         {/* Final CTA Banner - Uses shared FinalCtaSection (matches homepage) */}
-        <FinalCtaSection image={ctaImage || imgCyclist} imageAlt={ctaImageAlt || "Tenth Rock service crew ready to dispatch"} />
+        <FinalCtaSection image={ctaImage} imageAlt={ctaImageAlt} />
       </main>
 
       {/* Footer - Shared Component */}

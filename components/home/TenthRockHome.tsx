@@ -102,7 +102,6 @@ const imgIndustryRetail = "/images/stock/hotel.jpg";
 // Decorative/Section-specific images
 const imgTruck = "/images/stock/white-truck.jpg";
 const imgCleanCity = "/images/stock/clean-city.jpg";
-const imgCyclist = "/images/stock/cyclist.jpg";
 const imgParkWater = "/images/stock/why-clients-nyc-sunrise.jpg";
 const imgHeroSkyscrapers = "/images/stock/hero-skyscrapers.jpg";
 const imgUSMap = "/images/generated/3d-usa-map.png";
