@@ -50,8 +50,8 @@ export default function LocationSection() {
 
             <div className="relative rounded-[5px] overflow-hidden aspect-[4/3]">
               <Image
-                src="/images/stock/location-clearwater-beach.jpg"
-                alt="Aerial view of Clearwater Beach shoreline near Tenth Rock headquarters"
+                src="/images/stock/location-clearwater-beach-v2.jpg"
+                alt="Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina near Tenth Rock headquarters"
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover"
