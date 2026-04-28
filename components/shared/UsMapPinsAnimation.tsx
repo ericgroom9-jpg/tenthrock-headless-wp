@@ -15,16 +15,41 @@ const PIN_H = 25.2;
 const PIN_INTERVAL_S = 0.11;
 const POP_DURATION_S = 0.45;
 
-function Pin({ x, y, name }: { x: number; y: number; name: string }) {
+const TOOLTIP_FILL = "#042940";
+const TOOLTIP_TEXT = "#FFFFFF";
+const TOOLTIP_FONT_SIZE = 14;
+const TOOLTIP_PAD_X = 8;
+const TOOLTIP_PAD_Y = 5;
+const TOOLTIP_GAP = 6;
+
+function Pin({
+  x,
+  y,
+  name,
+  code,
+  onHover,
+  onLeave,
+}: {
+  x: number;
+  y: number;
+  name: string;
+  code: string;
+  onHover: (code: string) => void;
+  onLeave: (code: string) => void;
+}) {
   return (
     <g
       transform={`translate(${x - PIN_W / 2} ${y - PIN_H})`}
       aria-label={name}
       role="img"
       style={{ cursor: "pointer" }}
-      data-testid={`pin-${name.toLowerCase().replace(/\s+/g, "-")}`}
+      data-testid={`pin-${code}`}
+      onPointerEnter={() => onHover(code)}
+      onPointerLeave={() => onLeave(code)}
+      onFocus={() => onHover(code)}
+      onBlur={() => onLeave(code)}
+      tabIndex={0}
     >
-      <title>{name}</title>
       <path
         d="M11 0 C4.925 0 0 4.925 0 11 C0 14.5 1.7 17.5 4.5 19 L11 28 L17.5 19 C20.3 17.5 22 14.5 22 11 C22 4.925 17.075 0 11 0 Z"
         transform="scale(0.9)"
@@ -39,6 +64,7 @@ function Pin({ x, y, name }: { x: number; y: number; name: string }) {
 export default function UsMapPinsAnimation() {
   const [hasStarted, setHasStarted] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [hoveredCode, setHoveredCode] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -65,8 +91,21 @@ export default function UsMapPinsAnimation() {
     return () => observer.disconnect();
   }, []);
 
+  const handleHover = (code: string) => setHoveredCode(code);
+  const handleLeave = (code: string) => {
+    setHoveredCode((prev) => (prev === code ? null : prev));
+  };
+
+  const hoveredPin = hoveredCode
+    ? MAP_PINS.find((p) => p.code === hoveredCode)
+    : null;
+
   return (
-    <div ref={containerRef} data-testid="us-map-pins-animation">
+    <div
+      ref={containerRef}
+      data-testid="us-map-pins-animation"
+      className="relative"
+    >
       <svg
         viewBox={MAP_VIEWBOX}
         xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +146,15 @@ export default function UsMapPinsAnimation() {
           hasStarted ? (
             <g>
               {MAP_PINS.map((p) => (
-                <Pin key={p.code} x={p.x} y={p.y} name={p.name} />
+                <Pin
+                  key={p.code}
+                  x={p.x}
+                  y={p.y}
+                  name={p.name}
+                  code={p.code}
+                  onHover={handleHover}
+                  onLeave={handleLeave}
+                />
               ))}
             </g>
           ) : null
@@ -127,12 +174,62 @@ export default function UsMapPinsAnimation() {
                   transformOrigin: `${p.x}px ${p.y}px`,
                 }}
               >
-                <Pin x={p.x} y={p.y} name={p.name} />
+                <Pin
+                  x={p.x}
+                  y={p.y}
+                  name={p.name}
+                  code={p.code}
+                  onHover={handleHover}
+                  onLeave={handleLeave}
+                />
               </motion.g>
             ))}
           </g>
         )}
+
+        {hoveredPin ? (
+          <Tooltip x={hoveredPin.x} y={hoveredPin.y} name={hoveredPin.name} />
+        ) : null}
       </svg>
     </div>
+  );
+}
+
+function Tooltip({ x, y, name }: { x: number; y: number; name: string }) {
+  const charW = TOOLTIP_FONT_SIZE * 0.58;
+  const w = name.length * charW + TOOLTIP_PAD_X * 2;
+  const h = TOOLTIP_FONT_SIZE + TOOLTIP_PAD_Y * 2;
+  const tipY = y - PIN_H - TOOLTIP_GAP;
+  const rectX = x - w / 2;
+  const rectY = tipY - h;
+
+  return (
+    <g
+      pointerEvents="none"
+      data-testid={`tooltip-${name.toLowerCase().replace(/\s+/g, "-")}`}
+    >
+      <rect
+        x={rectX}
+        y={rectY}
+        width={w}
+        height={h}
+        rx={4}
+        ry={4}
+        fill={TOOLTIP_FILL}
+        opacity={0.95}
+      />
+      <text
+        x={x}
+        y={rectY + h / 2}
+        fill={TOOLTIP_TEXT}
+        fontSize={TOOLTIP_FONT_SIZE}
+        fontWeight={600}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        style={{ fontFamily: "inherit" }}
+      >
+        {name}
+      </text>
+    </g>
   );
 }
