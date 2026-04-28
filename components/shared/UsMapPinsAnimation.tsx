@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { STATE_PATHS, MAP_PINS, MAP_VIEWBOX } from "@/components/shared/us-map-data";
 
 const MAP_FILL = "#042940";
@@ -14,7 +14,6 @@ const PIN_H = 16.8;
 
 const PIN_INTERVAL_S = 0.11;
 const POP_DURATION_S = 0.45;
-const HOLD_AFTER_COMPLETE_MS = 2400;
 
 function Pin({ x, y, name }: { x: number; y: number; name: string }) {
   return (
@@ -31,7 +30,6 @@ function Pin({ x, y, name }: { x: number; y: number; name: string }) {
 }
 
 export default function UsMapPinsAnimation() {
-  const [cycle, setCycle] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,14 +57,6 @@ export default function UsMapPinsAnimation() {
     observer.observe(containerRef.current);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (!hasStarted || reducedMotion) return;
-    const totalRevealMs = MAP_PINS.length * PIN_INTERVAL_S * 1000;
-    const cycleMs = totalRevealMs + HOLD_AFTER_COMPLETE_MS;
-    const id = setInterval(() => setCycle((c) => c + 1), cycleMs);
-    return () => clearInterval(id);
-  }, [hasStarted, reducedMotion]);
 
   return (
     <div ref={containerRef} data-testid="us-map-pins-animation">
@@ -105,37 +95,35 @@ export default function UsMapPinsAnimation() {
           ))}
         </g>
 
-        {reducedMotion ? (
+        {reducedMotion || !hasStarted ? (
+          hasStarted ? (
+            <g>
+              {MAP_PINS.map((p) => (
+                <Pin key={p.code} x={p.x} y={p.y} name={p.name} />
+              ))}
+            </g>
+          ) : null
+        ) : (
           <g>
-            {MAP_PINS.map((p) => (
-              <Pin key={p.code} x={p.x} y={p.y} name={p.name} />
+            {MAP_PINS.map((p, i) => (
+              <motion.g
+                key={p.code}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: POP_DURATION_S,
+                  delay: i * PIN_INTERVAL_S,
+                  ease: [0.34, 1.56, 0.64, 1],
+                }}
+                style={{
+                  transformBox: "fill-box",
+                  transformOrigin: "50% 100%",
+                }}
+              >
+                <Pin x={p.x} y={p.y} name={p.name} />
+              </motion.g>
             ))}
           </g>
-        ) : (
-          <AnimatePresence mode="wait">
-            {hasStarted && (
-              <g key={cycle}>
-                {MAP_PINS.map((p, i) => (
-                  <motion.g
-                    key={p.code}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      duration: POP_DURATION_S,
-                      delay: i * PIN_INTERVAL_S,
-                      ease: [0.34, 1.56, 0.64, 1],
-                    }}
-                    style={{
-                      transformBox: "fill-box",
-                      transformOrigin: "50% 100%",
-                    }}
-                  >
-                    <Pin x={p.x} y={p.y} name={p.name} />
-                  </motion.g>
-                ))}
-              </g>
-            )}
-          </AnimatePresence>
         )}
       </svg>
     </div>
