@@ -28,8 +28,8 @@ const caseStudies = [
         mainImageAlt: "National coffee chain interior with customers and barista at the counter",
         thumbImages: [
             {
-                src: "/images/stock/coffee-case-2.png",
-                alt: "Clock face showing 6:15 PM, the time the call came in"
+                src: "/images/stock/coffee-case-2.jpg",
+                alt: "Stacked bags of commercial waste piled up after a missed pickup"
             },
             {
                 src: "/images/stock/coffee-case-3.jpg",
