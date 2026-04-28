@@ -7,8 +7,8 @@ export interface StatePath { c: string; d: string; }
   {
     "code": "ca",
     "name": "California",
-    "x": 89.4,
-    "y": 257.8
+    "x": 60,
+    "y": 350
   },
   {
     "code": "or",
