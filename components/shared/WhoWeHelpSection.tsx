@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
-  { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/retail-modern-office-building.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
+  { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/retail-rodeo-drive-v2.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
   { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
   { title: "Faith Based", desc: "Scheduled and on-demand waste service for churches, campuses, and community event cleanup.", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
   { title: "Real Estate", desc: "Tenant turnover cleanouts, construction debris removal, and ongoing service for managed properties.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
