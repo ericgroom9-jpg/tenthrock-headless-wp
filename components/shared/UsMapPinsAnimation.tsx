@@ -116,8 +116,7 @@ export default function UsMapPinsAnimation() {
                   ease: [0.34, 1.56, 0.64, 1],
                 }}
                 style={{
-                  transformBox: "fill-box",
-                  transformOrigin: "50% 100%",
+                  transformOrigin: `${p.x}px ${p.y}px`,
                 }}
               >
                 <Pin x={p.x} y={p.y} name={p.name} />
