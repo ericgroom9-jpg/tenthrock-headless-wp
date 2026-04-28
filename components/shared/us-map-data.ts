@@ -199,8 +199,8 @@ export interface StatePath { c: string; d: string; }
   {
     "code": "fl",
     "name": "Florida",
-    "x": 818,
-    "y": 620
+    "x": 730,
+    "y": 530
   },
   {
     "code": "wv",
