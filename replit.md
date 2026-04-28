@@ -1,72 +1,30 @@
 # Headless WordPress Boilerplate
 
 ## Overview
-This project provides a modern headless WordPress implementation using Next.js App Router and PostgreSQL for content caching. It aims to deliver a complete solution for building decoupled WordPress sites, focusing on WordPress's default "Posts" content type with full taxonomy support (categories and tags). The boilerplate emphasizes high performance, SEO, and a robust developer experience.
+This project delivers a modern headless WordPress boilerplate using Next.js App Router and PostgreSQL. It focuses on providing a high-performance, SEO-friendly, and robust solution for decoupled WordPress sites, specifically targeting the default "Posts" content type with full taxonomy support. The system aims to enhance the developer experience while offering advanced features like content caching, real-time previewing, and dynamic content revalidation.
 
 ## User Preferences
 I want to interact with the agent in an iterative development approach. I prefer detailed explanations of changes and potential impacts. The agent should ask for confirmation before making major architectural changes or introducing new dependencies.
 
 ## System Architecture
-The system is built on a Next.js 16 App Router frontend with TypeScript, utilizing Next.js API Routes for backend functionality. Content is sourced from WordPress via WPGraphQL and cached in a PostgreSQL database managed by Drizzle ORM.
+The system employs a Next.js 16 App Router frontend, utilizing TypeScript and Next.js API Routes. Content is fetched from WordPress via WPGraphQL and cached in a PostgreSQL database managed by Drizzle ORM.
 
 **Key Architectural Decisions:**
-- **Server-Side Rendering (SSR):** All pages are SSR for improved SEO and performance.
-- **Content Caching:** WordPress content is synced to PostgreSQL to enable fast data retrieval, decoupling the frontend from direct, real-time WordPress queries. Taxonomies (categories and tags) are embedded as JSON within post records in the database for simplified schema and efficient access.
-- **SEO Integration:** Leverages Next.js Metadata API with Yoast SEO integration, supporting page titles, meta descriptions, Open Graph, Twitter Cards, and canonical URLs. It also proxies SEO files (sitemaps, robots.txt, llms.txt) directly from WordPress, replacing WordPress URLs with the frontend domain.
-- **Preview Mode:** Allows previewing draft content directly from WordPress using Next.js Draft Mode. When an editor clicks "Preview" in WordPress, they're redirected to `/api/preview` which validates a secret, enables Draft Mode, and redirects to the content page. The page then fetches draft content using authenticated GraphQL requests. Includes `/api/exit-preview` to disable Draft Mode.
-  - **Dual Authentication Support:** Handles staging sites with nginx HTTP Basic Auth protection. Uses a cookie-based auth flow: authenticates to WordPress via `/wp-login.php` (with staging Basic Auth to pass nginx), captures session cookies, then uses those cookies + staging Basic Auth for GraphQL requests. Session cookies are cached for 30 minutes.
-  - **Post Type Configuration:** Registered post types are defined in `lib/config/post-types.ts`. The preview route validates incoming requests against this allowlist for security. See "Pre-Launch Checklist" below for adding custom post types.
-  - **Required Environment Variables:**
-    - `WP_PREVIEW_SECRET`: Shared secret for preview URL validation
-    - `WP_AUTH_USER` / `WP_AUTH_PASSWORD`: Staging gate credentials (nginx/apache Basic Auth)
-    - `preview_user_un`: WordPress username with Editor/Admin role
-    - `preview_user_pass`: WordPress password (regular login password, NOT Application Password)
-  - **WordPress Plugin:** A separate MU plugin (maintained in different repo) must override preview links to redirect to the headless frontend.
-- **301 Redirects:** Uses Next.js middleware (`middleware.ts`) to fetch and apply 301/302 redirects from the WordPress Headless Tools plugin in real-time. Redirects are fetched from `/wp-json/headless/v1/redirects` and cached for 5 minutes. Supports Basic Auth for staging environments.
-- **On-Demand Revalidation:** Provides a `/api/revalidate` endpoint for cache purging when content is updated in WordPress. Supports both POST and GET requests:
-  - **POST** (recommended): `{ secret, path?, type?, slug? }`
-    - `path`: Specific path to revalidate (e.g., `/blog/my-post`)
-    - `type`: Content type (`post`, `page`, `posts`, `pages`, `all`)
-    - `slug`: Content slug (used with `type` to build path)
-  - **GET**: `?secret=...&path=/blog/my-post`
-  - **Examples:**
-    - Purge single post: `POST { secret, type: "post", slug: "my-post" }`
-    - Purge all posts: `POST { secret, type: "posts" }`
-    - Purge entire site: `POST { secret, type: "all" }`
-  - Uses `REVALIDATE_SECRET` env var (falls back to `WP_PREVIEW_SECRET` if not set)
-- **ACF Global Scripts:** Supports injecting custom `<head>` and `<body>` scripts configured via Advanced Custom Fields (ACF) in WordPress.
-- **Gravity Forms Integration:** Includes a reusable headless module for Gravity Forms, supporting multi-page forms, conditional logic, client-side validation, spam protection, multicolumn layouts (12-column grid), and file uploads. Uses a hybrid approach: WPGraphQL for fetching form schemas and Gravity Forms REST API v2 for form submissions (enabling native file upload support without additional plugins).
-  - **Client-Side Validation:** Comprehensive validation utility (`lib/gf/validation.ts`) with support for required fields, email format, phone format (7-15 digits), number ranges, URL format, date validation, time validation (12/24-hour), and file upload validation (type and size). Validation runs on blur for real-time feedback and blocks page navigation/submission until resolved.
-  - **TIME Field Support:** Full support for Gravity Forms TIME field type with hour/minute inputs and AM/PM selector (for 12-hour format). Serializes as "HH:MM AM/PM" or "HH:MM" depending on format configuration.
-  - **DATE Field UX:** Calendar icon positioned on left with entire input clickable to open date picker for improved usability.
-- **Loading Screen & Hero Animation:** Homepage features a CSS-only loading screen with logo reveal and progress bar, followed by staggered hero entrance animations using framer-motion. Timing is centralized via three constants (`LOADER_FADE_START_MS`, `LOADER_FADE_MS`, `LOADER_TOTAL_MS`) in `TenthRockHome.tsx`. The loading screen uses CSS keyframes (`loading-logo-reveal`, `loading-bar-container`, `loading-bar-fill`) defined in `globals.css` to avoid SSR hydration issues. Hero elements animate in sequence (badge, heading, paragraph, CTA buttons) starting after the loader is fully removed.
-- **Design System:** Features a comprehensive design system with CSS variables for brand colors, typography, spacing, and radius, located in `app/globals.css`. A `/style-guide` page provides a live visual reference for all design tokens and components.
-- **Modular Component Architecture:** Emphasizes modular React components for easy restyling and maintenance.
-- **Landing Page Builder (Feature Flag):** An optional module for self-service landing page creation using ACF Flexible Content blocks. When enabled, pages using the "Landing Page" template in WordPress are rendered with modular blocks instead of standard page content.
-  - **Feature Flag:** Set `FEATURE_LANDING_BUILDER=false` to disable. Enabled by default.
-  - **Template Detection:** Checks the page's WordPress template; if it matches the landing page template, uses the block renderer.
-  - **Available Blocks:** Hero, Feature Grid, CTA Banner, Form Section (Gravity Forms or iframe), Rich Text, Testimonials.
-  - **Form Section:** Supports toggling between Gravity Forms (by ID) and iframe embeds (for CRM forms like HubSpot, Salesforce).
-  - **Module Location:** All landing builder code is isolated in `modules/landing-builder/` to prevent accidental modification during frontend updates.
-  - **Style Guide Integration:** All blocks use Tailwind CSS and the global style guide variables, ensuring landing pages stay on-brand.
 
-**Service Categories (4 categories, 3 subcategories each):**
-1. **Emergency Waste Removal** (`/services/emergency-waste-removal`)
-   - Emergency Product & Perishable Removal (`/services/emergency-product-removal`)
-   - Temporary Capacity & Site Stabilization (`/services/site-stabilization`)
-   - Unplanned Cleanouts & Debris Removal (`/services/unplanned-cleanouts`)
-2. **Specialized Project Logistics** (`/services/specialized-project-logistics`)
-   - Site Closures & Remodels (`/services/site-closures-remodels`)
-   - Events & Stadiums (`/services/events-stadiums`)
-   - Natural Disaster Mobilization (`/services/natural-disaster-mobilization`)
-3. **Dumpsters & Temporary Containers** (`/services/dumpsters-containers`)
-   - On-Demand Service (`/services/on-demand-service`)
-   - Multiple Sizes (`/services/multiple-sizes`)
-   - Recycling & Specialty Containers (`/services/recycling-specialty-containers`)
-4. **Waste Operations Advisory & Enablement** (`/services/waste-operations-advisory`)
-   - Waste Program Assessments & Roadmaps (`/services/waste-program-assessments`)
-   - Standards, SOPs & Vendor Training (`/services/standards-sops-training`)
-   - Ongoing Advisory & Program Implementation (`/services/ongoing-advisory`)
+- **Server-Side Rendering (SSR):** All pages are SSR for enhanced SEO and performance.
+- **Content Caching:** WordPress content is synced to PostgreSQL for fast retrieval, supporting taxonomies (categories, tags) embedded as JSON.
+- **SEO Integration:** Leverages Next.js Metadata API with Yoast SEO integration and proxies SEO files (sitemaps, robots.txt) from WordPress, remapping URLs to the frontend domain.
+- **Preview Mode:** Enables previewing draft WordPress content via Next.js Draft Mode, supporting authenticated GraphQL requests and basic authentication for staging environments. It allows administrators to review content changes before publishing.
+- **301 Redirects:** Next.js middleware dynamically applies 301/302 redirects fetched from WordPress.
+- **On-Demand Revalidation:** A dedicated API endpoint (`/api/revalidate`) allows for purging cached content based on specific paths, content types, or the entire site.
+- **ACF Global Scripts:** Supports injection of custom `<head>` and `<body>` scripts configured in WordPress via Advanced Custom Fields.
+- **Gravity Forms Integration:** Provides a reusable headless module for Gravity Forms, handling multi-page forms, conditional logic, client-side validation, spam protection, and file uploads using WPGraphQL for schema and Gravity Forms REST API for submissions.
+- **US Map Pins Animation:** A self-contained SVG animation (`UsMapPinsAnimation.tsx`) visually represents locations with sequential pin animations.
+- **Loading Screen & Hero Animation:** The homepage features a CSS-driven loading screen with logo reveal and progress bar, followed by staggered hero entrance animations using framer-motion.
+- **Design System:** A comprehensive design system is implemented using CSS variables for consistent styling, with a `/style-guide` page providing a visual reference.
+- **Modular Component Architecture:** Emphasizes modular React components for maintainability.
+- **Landing Page Builder (Feature Flag):** An optional module that allows self-service landing page creation using ACF Flexible Content blocks, with various pre-defined content sections (Hero, Feature Grid, CTA Banner, Form Section, Rich Text, Testimonials). It integrates with the global style guide.
+- **Service Categories:** The project defines four main service categories, each with three subcategories, structured with SEO-friendly URLs.
 
 **Core Features:**
 - Full taxonomy support (categories and tags) for posts.
@@ -75,122 +33,14 @@ The system is built on a Next.js 16 App Router frontend with TypeScript, utilizi
 
 ## External Dependencies
 - **WordPress:** Content Management System.
-- **WPGraphQL Plugin:** Provides a GraphQL API for WordPress.
+- **WPGraphQL Plugin:** GraphQL API for WordPress.
 - **WPGraphQL Yoast SEO Plugin:** Integrates Yoast SEO data into WPGraphQL.
-- **WPGraphQL for ACF Plugin:** Enables ACF fields within WPGraphQL (optional, for global scripts).
+- **WPGraphQL for ACF Plugin:** Enables ACF fields within WPGraphQL.
 - **Redirection Plugin:** Manages 301 redirects in WordPress.
 - **Gravity Forms Plugin:** For building and managing forms.
 - **WPGraphQL for Gravity Forms Plugin (AxeWP):** Integrates Gravity Forms with WPGraphQL.
 - **PostgreSQL:** Primary database for cached content.
 - **Drizzle ORM:** TypeScript ORM for interacting with PostgreSQL.
 - **Next.js:** React framework for frontend and API routes.
-- **graphql-request:** GraphQL client for interacting with WPGraphQL.
+- **graphql-request:** GraphQL client.
 - **Shadcn UI:** UI component library.
-
-## Pre-Launch Checklist
-
-### WordPress Post Type Configuration
-
-Before launching each instance of this boilerplate, verify all WordPress post types are properly registered:
-
-1. **Review WordPress post types:**
-   - In WordPress Admin, go to the preview plugin settings (Sher Headless Tools → Preview Settings)
-   - Note all enabled post types and their frontend routes
-
-2. **Update Next.js configuration:**
-   - Open `lib/config/post-types.ts`
-   - Ensure each WordPress post type has a matching entry:
-   ```typescript
-   export const POST_TYPE_CONFIG: Record<string, PostTypeConfig> = {
-     post: { route: '/blog/[slug]', fetcher: 'post', label: 'Blog Post' },
-     page: { route: '/[slug]', fetcher: 'page', label: 'Page' },
-     // Add custom post types:
-     product: { route: '/products/[slug]', fetcher: 'page', label: 'Product' },
-     event: { route: '/events/[slug]', fetcher: 'page', label: 'Event' },
-   };
-   ```
-
-3. **Create matching Next.js routes:**
-   - For each custom post type, create a route folder:
-     - `app/products/[slug]/page.tsx` for products
-     - `app/events/[slug]/page.tsx` for events
-   - Copy and adapt from `app/[slug]/page.tsx` as a template
-
-4. **Test preview for each post type:**
-   - Create a draft for each post type in WordPress
-   - Click "Preview" and verify it loads correctly on the frontend
-
-### Environment Variables Checklist
-
-Verify all required environment variables are set:
-
-- [ ] `WP_API_URL` - WordPress GraphQL endpoint (e.g., `https://wp.example.com/graphql`)
-- [ ] `WP_PREVIEW_SECRET` - Shared secret matching WordPress plugin
-- [ ] `preview_user_un` - WordPress username with Editor/Admin role
-- [ ] `preview_user_pass` - WordPress password (NOT Application Password)
-- [ ] `WP_AUTH_USER` / `WP_AUTH_PASSWORD` - Only if staging has nginx/apache Basic Auth protection
-
-### Database Setup (Required for New Instances)
-
-When duplicating this boilerplate, the database secrets copy over but the actual database does not. You must provision a fresh database for each new project instance:
-
-1. **Provision Database:** Use the Replit Database tool in the workspace to create a new PostgreSQL database
-2. **Push Schema:** Run `npx drizzle-kit push` to create the tables
-3. **Sync Content:** Run the WordPress content sync to populate the cache
-
-The database uses these tables:
-- `posts` - Cached WordPress posts
-- `pages` - Cached WordPress pages  
-- `redirects` - 301/302 redirects from WordPress
-- `sync_status` - Tracks last sync times
-- `global_settings` - ACF global options
-
-### Content Sync
-
-- [ ] Run initial content sync to populate PostgreSQL cache
-- [ ] Verify posts and pages display correctly
-- [ ] Test preview mode for both posts and pages
-
-### Landing Page Builder Setup (Optional)
-
-If using the landing page builder feature:
-
-1. **Create Page Template in WordPress:**
-   Create `template-landing-page.php` in your theme:
-   ```php
-   <?php
-   /**
-    * Template Name: Landing Page
-    * Description: Flexible landing page builder template
-    */
-   get_header();
-   the_content();
-   get_footer();
-   ```
-
-2. **Create ACF Field Group:**
-   - **Field Group Title:** Landing Page Sections
-   - **Field Name:** `landing_sections`
-   - **Field Type:** Flexible Content
-   - **Location Rule:** Post Template is equal to "Landing Page"
-   - **Show in GraphQL:** Yes (required for headless access)
-
-3. **Add ACF Layouts (blocks):**
-   Each layout should have "Show in GraphQL" enabled:
-   - `hero_section` - Headline, subheadline, CTA, background
-   - `feature_grid` - Grid of feature cards with icons
-   - `cta_banner` - Full-width call-to-action
-   - `form_section` - Gravity Forms or iframe embed
-   - `rich_text` - WYSIWYG content
-   - `testimonials` - Customer quotes
-
-4. **Install Required Plugins:**
-   - ACF Pro (for Flexible Content)
-   - WPGraphQL for ACF
-
-5. **Test:**
-   - Create a Page, select "Landing Page" template
-   - Add sections using the ACF flexible content interface
-   - Publish and view on frontend
-
-**To Disable:** Set environment variable `FEATURE_LANDING_BUILDER=false`
