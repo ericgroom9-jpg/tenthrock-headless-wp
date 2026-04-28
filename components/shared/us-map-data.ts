@@ -294,5 +294,5 @@ export interface StatePath { c: string; d: string; }
   }
 ];
 
-  export const MAP_VIEWBOX = "10 30 920 555";
+  export const MAP_VIEWBOX = "10 5 920 580";
   
