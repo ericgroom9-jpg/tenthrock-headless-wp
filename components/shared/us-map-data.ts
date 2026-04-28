@@ -133,7 +133,7 @@ export interface StatePath { c: string; d: string; }
   {
     "code": "la",
     "name": "Louisiana",
-    "x": 566.2,
+    "x": 540,
     "y": 446.3
   },
   {
