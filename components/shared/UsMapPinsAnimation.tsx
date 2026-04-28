@@ -9,8 +9,8 @@ const BORDER_COLOR = "#FFFFFF";
 const BORDER_WIDTH = 1;
 const PIN_FILL = "#BAD656";
 const PIN_DOT_FILL = "#042940";
-const PIN_W = 16.5;
-const PIN_H = 21;
+const PIN_W = 19.8;
+const PIN_H = 25.2;
 
 const PIN_INTERVAL_S = 0.11;
 const POP_DURATION_S = 0.45;
@@ -20,11 +20,11 @@ function Pin({ x, y, name }: { x: number; y: number; name: string }) {
     <g transform={`translate(${x - PIN_W / 2} ${y - PIN_H})`} aria-label={name}>
       <path
         d="M11 0 C4.925 0 0 4.925 0 11 C0 14.5 1.7 17.5 4.5 19 L11 28 L17.5 19 C20.3 17.5 22 14.5 22 11 C22 4.925 17.075 0 11 0 Z"
-        transform="scale(0.75)"
+        transform="scale(0.9)"
         fill={PIN_FILL}
         filter="url(#pin-shadow)"
       />
-      <circle cx={PIN_W / 2} cy={8.25} r={3} fill={PIN_DOT_FILL} />
+      <circle cx={PIN_W / 2} cy={9.9} r={3.6} fill={PIN_DOT_FILL} />
     </g>
   );
 }
