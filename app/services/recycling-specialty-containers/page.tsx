@@ -41,8 +41,6 @@ export default function RecyclingSpecialtyContainersPage() {
       }}
       statsImage="/images/stock/recycling-3.jpg"
       statsImageAlt="Pair of green commercial recycling containers staged behind an industrial building"
-      ctaImage="/images/stock/recycling-5.jpg"
-      ctaImageAlt="Person depositing a glass bottle into a green source-separated recycling container"
     />
   );
 }

@@ -41,8 +41,6 @@ export default function SiteClosuresRemodelsPage() {
       }}
       statsImage="/images/stock/site-closures-4.png"
       statsImageAlt="Vacant retail storefront with for lease and coming soon signage"
-      ctaImage="/images/stock/site-closures-5.jpg"
-      ctaImageAlt="Coming soon sign on a modern retail space interior"
     />
   );
 }

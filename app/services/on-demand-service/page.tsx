@@ -41,8 +41,6 @@ export default function OnDemandServicePage() {
       }}
       statsImage="/images/stock/dumpster-blue-1.png"
       statsImageAlt="Blue roll-off dumpster filled with construction debris"
-      ctaImage="/images/stock/dumpster-compactor-green.png"
-      ctaImageAlt="Commercial green compactor servicing a site"
     />
   );
 }

@@ -41,8 +41,6 @@ export default function MultipleSizesPage() {
       }}
       statsImage="/images/stock/dumpster-blue-3.png"
       statsImageAlt="Multiple blue roll-off dumpsters staged for delivery"
-      ctaImage="/images/stock/dumpster-blue-1.png"
-      ctaImageAlt="Blue roll-off dumpster on site loaded with construction debris"
     />
   );
 }

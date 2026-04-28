@@ -42,8 +42,6 @@ export default function SiteStabilizationPage() {
       }}
       statsImage="/images/stock/site-stabilization-4.png"
       statsImageAlt="Aerial view of commercial parking and rooftops"
-      ctaImage="/images/stock/site-stabilization-5.png"
-      ctaImageAlt="Aerial view of industrial complex with logistics infrastructure"
     />
   );
 }
