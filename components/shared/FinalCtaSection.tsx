@@ -6,8 +6,8 @@ import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const DEFAULT_IMAGE = "/images/stock/cyclist.jpg";
-const DEFAULT_IMAGE_ALT = "Smiling commuter on a bicycle in front of a modern commercial building";
+const DEFAULT_IMAGE = "/images/stock/final-cta-highway-sunset.jpg";
+const DEFAULT_IMAGE_ALT = "Aerial view of an open highway at sunset symbolizing nationwide waste logistics";
 
 interface FinalCtaSectionProps {
   image?: string;

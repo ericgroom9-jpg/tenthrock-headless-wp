@@ -19,8 +19,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 ;
 ;
 ;
-const DEFAULT_IMAGE = "/images/stock/cyclist.jpg";
-const DEFAULT_IMAGE_ALT = "Smiling commuter on a bicycle in front of a modern commercial building";
+const DEFAULT_IMAGE = "/images/stock/final-cta-highway-sunset.jpg";
+const DEFAULT_IMAGE_ALT = "Aerial view of an open highway at sunset symbolizing nationwide waste logistics";
 function FinalCtaSection({ image, imageAlt } = {}) {
     const src = image || DEFAULT_IMAGE;
     const alt = imageAlt || DEFAULT_IMAGE_ALT;
