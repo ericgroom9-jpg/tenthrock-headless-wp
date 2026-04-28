@@ -2219,6 +2219,10 @@ h1, h3, h4, h5, h6, h2 {
   max-width: 20rem;
 }
 
+.max-w-\[740px\] {
+  max-width: 740px;
+}
+
 .flex-1 {
   flex: 1;
 }
@@ -7334,6 +7338,10 @@ h1, h3, h4, h5, h6, h2 {
 
   .lg\:-mt-32 {
     margin-top: -8rem;
+  }
+
+  .lg\:mt-20 {
+    margin-top: 5rem;
   }
 
   .lg\:aspect-auto {
