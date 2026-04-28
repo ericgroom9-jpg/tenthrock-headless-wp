@@ -74,7 +74,7 @@ export default function LocationSection() {
               style={{ aspectRatio: "768 / 512" }}
               suppressHydrationWarning
             >
-              <source src="/assets_export/videos/us-map-pins-loop.mp4?v=2" type="video/mp4" />
+              <source src="/assets_export/videos/us-map-pins-loop.mp4?v=3" type="video/mp4" />
             </video>
           </FadeIn>
         </div>
