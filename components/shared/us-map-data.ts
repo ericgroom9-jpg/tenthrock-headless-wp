@@ -158,7 +158,7 @@ export interface StatePath { c: string; d: string; }
     "code": "mi",
     "name": "Michigan",
     "x": 660,
-    "y": 220
+    "y": 195
   },
   {
     "code": "in",
