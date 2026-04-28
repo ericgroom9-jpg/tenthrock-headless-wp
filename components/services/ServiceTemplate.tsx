@@ -33,7 +33,7 @@ const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jp
 const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
 const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
 const imgCyclist = "/images/stock/cyclist.jpg";
-const imgParkWater = "/images/stock/floor-park.jpg";
+const imgParkWater = "/images/stock/sustainability-park-skyline.jpg";
 
 interface ParagraphSection {
   badge: string;
@@ -139,7 +139,7 @@ const defaultParagraphSection2: ParagraphSection = {
   heading: "Sustainability Without Compromise",
   body: "Environmental responsibility and operational efficiency go hand in hand. Our approach supports waste diversion efforts without disrupting your service or adding unnecessary complexity. We work with recovery and processing facilities across the country to help reduce landfill use while maintaining the reliable operations your business depends on.",
   image: imgParkWater,
-  imageAlt: "Sustainable waste management practices",
+  imageAlt: "Open green park with city skyline in the background, representing sustainable urban operations",
   bulletPoints: [
     "Practical waste diversion and recovery",
     "Clear insights into site activity and service history",
