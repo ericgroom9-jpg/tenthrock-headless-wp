@@ -19,7 +19,7 @@ function Pin({ x, y, name }: { x: number; y: number; name: string }) {
   return (
     <g transform={`translate(${x - PIN_W / 2} ${y - PIN_H})`} aria-label={name}>
       <path
-        d="M11 0 C4.9 0 0 4.9 0 11 c0 8.25 11 17 11 17 s11 -8.75 11 -17 C22 4.9 17.1 0 11 0 z"
+        d="M11 0 C4.925 0 0 4.925 0 11 C0 14.5 1.7 17.5 4.5 19 L11 28 L17.5 19 C20.3 17.5 22 14.5 22 11 C22 4.925 17.075 0 11 0 Z"
         transform="scale(0.6)"
         fill={PIN_FILL}
         filter="url(#pin-shadow)"
