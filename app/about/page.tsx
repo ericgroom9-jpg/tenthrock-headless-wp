@@ -16,7 +16,7 @@ const FaqSection = dynamic(() => import("@/components/shared/FaqSection"));
 const LocationSection = dynamic(() => import("@/components/shared/LocationSection"));
 const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
 
-const imgOurStory = "/images/stock/team-tenth-rock-uniform.jpg";
+const imgOurStory = "/images/stock/about-our-story-clearwater-beach.jpg";
 const imgAtOurCore = "/images/stock/about-tampa-skyline.jpg";
 const imgCommunity = "/images/stock/community-park-sunset.jpg";
 
@@ -88,7 +88,7 @@ export default function AboutPage() {
           >
             <Image 
               src={imgOurStory} 
-              alt="Tenth Rock team members in branded uniforms representing the nationwide service network" 
+              alt="Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina, near Tenth Rock headquarters" 
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
               className="object-cover"
