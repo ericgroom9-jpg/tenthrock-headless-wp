@@ -23,6 +23,7 @@ The system employs a Next.js 16 App Router frontend, utilizing TypeScript and Ne
 - **Loading Screen & Hero Animation:** The homepage features a CSS-driven loading screen with logo reveal and progress bar, followed by staggered hero entrance animations using framer-motion.
 - **Design System:** A comprehensive design system is implemented using CSS variables for consistent styling, with a `/style-guide` page providing a visual reference.
 - **Modular Component Architecture:** Emphasizes modular React components for maintainability.
+- **Shared "Why Clients Call Us" Stats Section:** A single shared component (`components/shared/StatsSection.tsx`) renders the "Why Clients Call Us Again and Again" section identically across the homepage, the Who We Serve page, the Commercial Waste Services page, and every Service Template page. Image is hardcoded to `/images/stock/why-clients-nyc-sunrise.jpg` (the homepage hero of the section). Per-page `statsImage`/`statsImageAlt` overrides on `ServiceTemplate` were removed; do not reintroduce them — the picture must always match the homepage.
 - **Landing Page Builder (Feature Flag):** An optional module that allows self-service landing page creation using ACF Flexible Content blocks, with various pre-defined content sections (Hero, Feature Grid, CTA Banner, Form Section, Rich Text, Testimonials). It integrates with the global style guide.
 - **Service Categories:** The project defines four main service categories, each with three subcategories, structured with SEO-friendly URLs.
 

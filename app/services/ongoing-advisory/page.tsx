@@ -40,8 +40,6 @@ export default function OngoingAdvisoryPage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
-      statsImage="/images/stock/advisory-4.jpg"
-      statsImageAlt="Top-down aerial view of an urban plaza framed by mixed-use buildings"
       processSubtitle="A structured approach to evaluating and improving your waste operations:"
       processSteps={[
         { num: "01", title: "Discovery & Assessment", desc: "We review your current waste operations, vendor structure, and service data across locations." },

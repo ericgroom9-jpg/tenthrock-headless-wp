@@ -39,8 +39,6 @@ export default function StandardsSopsTrainingPage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
-      statsImage="/images/stock/training-4.jpg"
-      statsImageAlt="Conference room set up for vendor training session"
       processSubtitle="A structured approach to evaluating and improving your waste operations:"
       processSteps={[
         { num: "01", title: "Discovery & Assessment", desc: "We review your current waste operations, vendor structure, and service data across locations." },

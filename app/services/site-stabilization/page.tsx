@@ -40,8 +40,6 @@ export default function SiteStabilizationPage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
-      statsImage="/images/stock/site-stabilization-4.png"
-      statsImageAlt="Aerial view of commercial parking and rooftops"
     />
   );
 }

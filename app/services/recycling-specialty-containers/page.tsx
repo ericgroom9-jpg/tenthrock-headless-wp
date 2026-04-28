@@ -39,8 +39,6 @@ export default function RecyclingSpecialtyContainersPage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
-      statsImage="/images/stock/recycling-3.jpg"
-      statsImageAlt="Pair of green commercial recycling containers staged behind an industrial building"
     />
   );
 }

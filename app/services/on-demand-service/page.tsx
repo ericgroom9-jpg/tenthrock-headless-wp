@@ -39,8 +39,6 @@ export default function OnDemandServicePage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
-      statsImage="/images/stock/dumpster-blue-1.png"
-      statsImageAlt="Blue roll-off dumpster filled with construction debris"
     />
   );
 }

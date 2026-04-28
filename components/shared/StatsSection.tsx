@@ -8,7 +8,7 @@ import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-const imgParkWater = "/images/stock/floor-park.jpg";
+const imgParkWater = "/images/stock/why-clients-nyc-sunrise.jpg";
 
 export default function StatsSection() {
   return (
@@ -44,7 +44,7 @@ export default function StatsSection() {
                 <h3 className="font-semibold text-xl text-primary mb-4">Average Cost Savings</h3>
                 <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
                 <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/70">Clients typically cut waste spend by up to 30% through vendor consolidation, rate negotiation, and right-sized service frequencies.</p>
+                <p className="text-primary/70">Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization.</p>
              </div>
              
              <div className="border border-primary/10 p-8 rounded-[5px] bg-white">

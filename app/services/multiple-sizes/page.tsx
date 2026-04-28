@@ -39,8 +39,6 @@ export default function MultipleSizesPage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
-      statsImage="/images/stock/dumpster-blue-3.png"
-      statsImageAlt="Multiple blue roll-off dumpsters staged for delivery"
     />
   );
 }

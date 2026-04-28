@@ -32,6 +32,7 @@ import LocationSection from "@/components/shared/LocationSection";
 import Logo from "@/components/shared/Logo";
 import SharedCommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
+import StatsSection from "@/components/shared/StatsSection";
 
 const logoWhite = "/images/logos/Green-White-Logo.png";
 
@@ -47,7 +48,6 @@ const imgCaseStudyThumb1 = "/images/stock/case-study-thumb1.jpg";
 const imgCaseStudyThumb2 = "/images/stock/case-study-thumb2.jpg";
 const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
-const imgParkWater = "/images/stock/floor-park.jpg";
 
 
 
@@ -264,62 +264,8 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Stats Section - Matching Homepage Design */}
-        <section className="py-16 md:py-24 bg-[#FDFDFD]">
-          <div className="container mx-auto px-4 md:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              <div className="lg:sticky lg:top-32">
-                <FadeIn
-                >
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
-                    <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
-                    Key Metrics
-                  </div>
-                  <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
-                    Why Clients Call Us Again and Again.
-                  </h2>
-                  <p className="text-lg text-[#042940]/70 mb-8">
-                    We've built our reputation on reliability, efficiency, and exceptional customer service. Our clients trust us to handle their waste management needs because we consistently deliver results.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
-                    <Button size="lg" className="w-full sm:w-auto bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
-                      <Link href="/request-a-service">Request A Service</Link>
-                    </Button>
-                    <Button size="lg" variant="ghost" className="w-full sm:w-auto text-[#042940] hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" asChild>
-                      <a href="tel:+17275105454"><Phone className="w-5 h-5 text-[#c5d520]" /> 727.510.5454</a>
-                    </Button>
-                  </div>
-                </FadeIn>
-              </div>
-
-              <div className="grid gap-8">
-                <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <h3 className="font-semibold text-xl text-[#042940] mb-4">Average Cost Savings</h3>
-                  <div className="text-7xl font-extrabold text-[#042940] mb-4">30%</div>
-                  <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/70">Clients typically cut waste spend by 30% in their first year through vendor consolidation and rate optimization.</p>
-                </div>
-                
-                <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8 relative">
-                    <Image src={imgParkWater} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" alt="Tenth Rock nationwide waste operations" loading="lazy" />
-                  </div>
-                  <h3 className="font-semibold text-xl text-[#042940] mb-4">Locations Managed</h3>
-                  <div className="text-7xl font-extrabold text-[#042940] mb-4">5K+</div>
-                  <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/70">Commercial locations across 48 states have trusted Tenth Rock for consistent, reliable waste service.</p>
-                </div>
-
-                <div className="border border-[#042940]/10 p-8 rounded-[5px] bg-white">
-                  <h3 className="font-semibold text-xl text-[#042940] mb-4">Rapid Response Rate</h3>
-                  <div className="text-7xl font-extrabold text-[#042940] mb-4">98%</div>
-                  <Separator className="bg-[#042940]/10 mb-4" />
-                  <p className="text-[#042940]/70">When we commit to a timeline, we hit it. Delays cost money and can damage your brand. We move fast to stabilize your site, keep operations running, and protect your business.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Stats Section - shared with homepage */}
+        <StatsSection />
 
         {/* Case Study Section - Matching Homepage Design */}
         <section className="py-16 md:py-24 bg-white border-b border-[#042940]/5">

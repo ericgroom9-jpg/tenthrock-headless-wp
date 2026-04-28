@@ -39,8 +39,6 @@ export default function SiteClosuresRemodelsPage() {
           "Reporting that supports your sustainability goals",
         ],
       }}
-      statsImage="/images/stock/site-closures-4.png"
-      statsImageAlt="Vacant retail storefront with for lease and coming soon signage"
     />
   );
 }
