@@ -2,20 +2,71 @@ import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
 import { Layout } from '@/components/layout/Layout';
 import { storage } from '@/lib/storage';
-import { fetchPagePreviewById } from '@/lib/wordpress';
+import { fetchPagePreviewById, fetchServiceBySlug, fetchIndustryBySlug } from '@/lib/wordpress';
 import { isLandingBuilderEnabled } from '@/lib/config/features';
+import ServiceTemplate from '@/components/services/ServiceTemplate';
+import IndustryTemplate from '@/components/industries/IndustryTemplate';
 import type { Metadata } from 'next';
 
-// Conditionally import landing builder (tree-shaken if disabled)
 import { 
   getPageTemplateInfo, 
   getLandingPageData,
   LandingPageRenderer 
 } from '@/modules/landing-builder';
 
+const defaultIndustryHeroImage = '/images/stock/service-dumpster-rental.jpg';
+
+const defaultIndustryBulletPoints = [
+  {
+    title: 'Dedicated Account Management',
+    description: 'A single point of contact who understands your industry and coordinates all waste operations across your locations.',
+  },
+  {
+    title: 'Custom Service Programs',
+    description: 'Tailored pickup schedules, container sizing, and recycling programs designed around how your business operates.',
+  },
+  {
+    title: 'Nationwide Coverage',
+    description: 'Consistent service standards across all your locations with our vetted network of local vendors in 48 states.',
+  },
+  {
+    title: 'Transparent Reporting',
+    description: 'Detailed reporting on volumes, costs, and sustainability metrics so you always know where you stand.',
+  },
+];
+
 interface PageProps {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ previewId?: string }>;
+}
+
+function buildSeoMetadata(title: string, seo: any, featuredImageUrl?: string | null): Metadata {
+  const plainTitle = title;
+  return {
+    title: seo?.title || plainTitle,
+    description: seo?.metaDesc || '',
+    openGraph: {
+      title: seo?.opengraphTitle || plainTitle,
+      description: seo?.opengraphDescription || '',
+      type: 'website',
+      images: seo?.opengraphImage
+        ? [seo.opengraphImage]
+        : featuredImageUrl
+          ? [featuredImageUrl]
+          : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo?.twitterTitle || plainTitle,
+      description: seo?.twitterDescription || '',
+      images: seo?.twitterImage
+        ? [seo.twitterImage]
+        : featuredImageUrl
+          ? [featuredImageUrl]
+          : undefined,
+    },
+    ...(seo?.canonical ? { alternates: { canonical: seo.canonical } } : {}),
+  };
 }
 
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
@@ -23,31 +74,34 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   const { previewId } = await searchParams;
   const draft = await draftMode();
   
-  // Check if this is a landing page and get SEO from template info
   if (isLandingBuilderEnabled()) {
     const templateInfo = await getPageTemplateInfo(slug);
     if (templateInfo?.isLandingPage && templateInfo.seo) {
-      const seo = templateInfo.seo;
-      return {
-        title: seo.title || templateInfo.title,
-        description: seo.metaDesc || '',
-        openGraph: {
-          title: seo.opengraphTitle || templateInfo.title,
-          description: seo.opengraphDescription || '',
-          type: 'website',
-          images: seo.opengraphImage ? [seo.opengraphImage] : undefined,
-        },
-        twitter: {
-          card: 'summary_large_image',
-          title: seo.twitterTitle || templateInfo.title,
-          description: seo.twitterDescription || '',
-          images: seo.twitterImage ? [seo.twitterImage] : undefined,
-        },
-      };
+      return buildSeoMetadata(templateInfo.title, templateInfo.seo);
     }
   }
+
+  const [service, industry] = await Promise.all([
+    fetchServiceBySlug(slug).catch(() => null),
+    fetchIndustryBySlug(slug).catch(() => null),
+  ]);
+
+  if (service) {
+    return buildSeoMetadata(
+      `${service.title} | Tenth Rock`,
+      service.seoMetadata,
+      service.featuredImageUrl,
+    );
+  }
+
+  if (industry) {
+    return buildSeoMetadata(
+      `${industry.title} Waste Management | Tenth Rock`,
+      industry.seoMetadata,
+      industry.featuredImageUrl,
+    );
+  }
   
-  // Regular page metadata
   let page;
   if (draft.isEnabled && previewId) {
     page = await fetchPagePreviewById(parseInt(previewId));
@@ -57,29 +111,10 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   }
   
   if (!page) {
-    return {
-      title: 'Page Not Found',
-    };
+    return { title: 'Page Not Found' };
   }
 
-  const seo = page.seoMetadata;
-  
-  return {
-    title: seo?.title || page.title,
-    description: seo?.metaDesc || '',
-    openGraph: {
-      title: seo?.opengraphTitle || page.title,
-      description: seo?.opengraphDescription || '',
-      type: 'website',
-      images: seo?.opengraphImage ? [seo.opengraphImage] : undefined,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: seo?.twitterTitle || page.title,
-      description: seo?.twitterDescription || '',
-      images: seo?.twitterImage ? [seo.twitterImage] : undefined,
-    },
-  };
+  return buildSeoMetadata(page.title, page.seoMetadata);
 }
 
 export default async function WordPressPage({ params, searchParams }: PageProps) {
@@ -89,15 +124,11 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
   
   const isPreview = draft.isEnabled;
   
-  // Check if this is a landing page (only if feature is enabled)
   if (isLandingBuilderEnabled()) {
     const templateInfo = await getPageTemplateInfo(slug);
     
     if (templateInfo?.isLandingPage) {
       console.log('[Page] Rendering as landing page:', slug);
-      
-      // Fetch landing page sections from WordPress
-      // Pass isPreview to use preview query for draft content
       const landingData = await getLandingPageData(templateInfo.databaseId, isPreview);
       
       if (landingData && landingData.sections.length > 0) {
@@ -107,13 +138,41 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
           </Layout>
         );
       }
-      
-      // Fall through to regular page rendering if no sections
       console.log('[Page] Landing page has no sections, falling back to regular rendering');
     }
   }
+
+  const [service, industry] = await Promise.all([
+    fetchServiceBySlug(slug).catch(() => null),
+    fetchIndustryBySlug(slug).catch(() => null),
+  ]);
+
+  if (service) {
+    const plainExcerpt = service.excerpt?.replace(/<[^>]*>/g, '').trim() || '';
+    return (
+      <ServiceTemplate
+        serviceName={service.title}
+        serviceDescription={plainExcerpt || service.title}
+        heroImage={service.featuredImageUrl || undefined}
+        aboutDescription={service.content?.replace(/<[^>]*>/g, '').trim() || undefined}
+      />
+    );
+  }
+
+  if (industry) {
+    const plainExcerpt = industry.excerpt?.replace(/<[^>]*>/g, '').trim() || '';
+    return (
+      <IndustryTemplate
+        industryName={industry.title}
+        heroImage={industry.featuredImageUrl || defaultIndustryHeroImage}
+        heroDescription={plainExcerpt || `Waste management solutions for the ${industry.title} industry.`}
+        aboutTitle={`${industry.title} Waste Solutions`}
+        aboutImage={industry.featuredImageUrl || defaultIndustryHeroImage}
+        bulletPoints={defaultIndustryBulletPoints}
+      />
+    );
+  }
   
-  // Regular page rendering
   let page;
   
   if (draft.isEnabled && previewId) {
@@ -122,7 +181,6 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
   }
   
   if (!page) {
-    console.log('[Preview Page] Fetching page by slug:', slug);
     page = await storage.getPageBySlug(slug);
   }
 

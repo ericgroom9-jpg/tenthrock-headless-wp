@@ -52,13 +52,13 @@ export const POST_TYPE_CONFIG: Record<string, PostTypeConfig> = {
     hasSinglePage: true,
   },
   tr_service: {
-    route: '/services/[slug]',
+    route: '/[slug]',
     fetcher: 'cpt',
     label: 'Service',
     hasSinglePage: true,
   },
   tr_industry: {
-    route: '/industries/[slug]',
+    route: '/[slug]',
     fetcher: 'cpt',
     label: 'Industry',
     hasSinglePage: true,
