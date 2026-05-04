@@ -129,11 +129,15 @@ const defaultFaqCategories: FaqCategory[] = [
   },
 ];
 
+import type { FaqPageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
+
 interface FaqPageProps {
   categories?: FaqCategory[];
+  acf?: FaqPageTemplateData | null;
+  globalSections?: GlobalSectionsData | null;
 }
 
-export default function FaqPage({ categories }: FaqPageProps) {
+export default function FaqPage({ categories, acf, globalSections }: FaqPageProps) {
   const faqCategories = categories && categories.length > 0 ? categories : defaultFaqCategories;
   const [activeCategory, setActiveCategory] = useState(faqCategories[0]?.id || "general");
   const [openItem, setOpenItem] = useState<string>("item-0");
@@ -158,7 +162,7 @@ export default function FaqPage({ categories }: FaqPageProps) {
       <section aria-labelledby="faq-hero-heading" className="relative pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-44 lg:pb-32 overflow-hidden bg-[#042940]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/stock/clean-city-hero.jpg"
+            src={acf?.heroImage || "/images/stock/clean-city-hero.jpg"}
             alt=""
             aria-hidden="true"
             fill
@@ -176,14 +180,14 @@ export default function FaqPage({ categories }: FaqPageProps) {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-6" data-testid="text-faq-tagline">
               <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-              Support Center
+              {acf?.heroTagline || "Support Center"}
             </div>
             <h1 id="faq-hero-heading" className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tighter leading-[1.05] text-white mb-6" data-testid="text-faq-heading">
-              Frequently Asked{" "}
-              <span className="text-[#c5d520]">Questions</span>
+              {acf?.heroHeading || "Frequently Asked"}{" "}
+              <span className="text-[#c5d520]">{acf?.heroHeadingHighlight || "Questions"}</span>
             </h1>
             <p className="text-base text-white/70 max-w-2xl sm:mx-auto leading-relaxed" data-testid="text-faq-description">
-              Find answers to common questions about our waste management services, pricing, sustainability initiatives, and more.
+              {acf?.heroSubtitle || "Find answers to common questions about our waste management services, pricing, sustainability initiatives, and more."}
             </p>
           </FadeIn>
         </div>
@@ -301,15 +305,15 @@ export default function FaqPage({ categories }: FaqPageProps) {
             className="text-center mt-16 md:mt-20"
           >
             <p className="text-[#042940]/70 mb-4 font-medium" data-testid="text-faq-still-questions">
-              Still have questions?
+              {acf?.ctaText || "Still have questions?"}
             </p>
-            <Link href="/contact" data-testid="link-faq-contact-us">
+            <Link href={acf?.ctaLink || "/contact"} data-testid="link-faq-contact-us">
               <Button
                 size="lg"
                 className="shadow-lg min-h-[52px] whitespace-nowrap rounded-full px-8"
                 data-testid="button-faq-contact-us"
               >
-                Contact Us
+                {acf?.ctaLabel || "Contact Us"}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>

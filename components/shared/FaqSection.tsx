@@ -12,7 +12,13 @@ interface FaqItem {
 }
 
 interface FaqSectionProps {
+  tagline?: string;
+  heading?: string;
+  subtitle?: string;
   faqs?: FaqItem[];
+  ctaText?: string;
+  ctaLabel?: string;
+  ctaLink?: string;
 }
 
 const defaultFaqs: FaqItem[] = [
@@ -38,23 +44,30 @@ const defaultFaqs: FaqItem[] = [
   }
 ];
 
-export default function FaqSection({ faqs = defaultFaqs }: FaqSectionProps) {
+export default function FaqSection({
+  tagline = "Common Questions",
+  heading = "Frequently Asked Questions",
+  subtitle = "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.",
+  faqs = defaultFaqs,
+  ctaText = "Still Have Questions?",
+  ctaLabel = "Contact Us",
+  ctaLink = "/contact",
+}: FaqSectionProps) {
   const [openItem, setOpenItem] = useState<string>("item-0");
 
   return (
     <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
-      {/* Background Decor */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
         <div className="text-left sm:text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-4">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              Common Questions
+              {tagline}
           </div>
-          <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">Frequently Asked Questions</h2>
+          <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">{heading}</h2>
           <p className="text-lg text-primary/70 max-w-2xl mx-auto">
-            Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
+            {subtitle}
           </p>
         </div>
 
@@ -108,9 +121,9 @@ export default function FaqSection({ faqs = defaultFaqs }: FaqSectionProps) {
         </div>
         
         <div className="mt-16 text-left sm:text-center">
-           <p className="text-primary/70 mb-4 font-medium">Still Have Questions?</p>
+           <p className="text-primary/70 mb-4 font-medium">{ctaText}</p>
            <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap rounded-full" asChild>
-              <Link href="/contact">Contact Us</Link>
+              <Link href={ctaLink}>{ctaLabel}</Link>
            </Button>
         </div>
       </div>

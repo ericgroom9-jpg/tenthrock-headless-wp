@@ -731,28 +731,101 @@ const Faq = () => {
 };
 
 
-export default function Home() {
+import type { HomepageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
+import { resolveReasonIcon } from "@/components/shared/ReasonsSection";
+
+interface HomeProps {
+  acf?: HomepageTemplateData | null;
+  globalSections?: GlobalSectionsData | null;
+}
+
+export default function Home({ acf, globalSections }: HomeProps) {
+  const gs = globalSections;
   return (
     <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
       <LoadingScreen />
-      {/* Skip link for accessibility */}
       <a href="#main-content" className="skip-link" data-testid="skip-link">
         Skip to main content
       </a>
       <Navbar />
       <Hero />
       <main id="main-content" role="main">
-      <LogoReelSection />
+      <LogoReelSection
+        headline={gs?.logoReel?.headline}
+      />
       <CommercialWasteServices />
-      <WhoWeHelpSection />
-      <CtaBannerSection />
-      <ProcessSection />
+      <WhoWeHelpSection
+        tagline={gs?.whoHelp?.tagline}
+        heading={gs?.whoHelp?.heading}
+        subtitle={gs?.whoHelp?.subtitle}
+      />
+      <CtaBannerSection
+        tagline={gs?.ctaBanner?.tagline}
+        heading={gs?.ctaBanner?.heading}
+        subtitle={gs?.ctaBanner?.subtitle}
+        placeholder={gs?.ctaBanner?.placeholder}
+        buttonLabel={gs?.ctaBanner?.button}
+      />
+      <ProcessSection
+        tagline={gs?.process?.tagline}
+        heading={gs?.process?.heading}
+        subtitle={gs?.process?.subtitle}
+        steps={gs?.process?.steps?.map(s => ({ num: s.number, title: s.title, desc: s.description }))}
+      />
       <CaseStudySection />
-      <ReasonsSection />
-      <StatsSection />
-      <FaqSection />
-      <LocationSection />
-      <FinalCtaSection />
+      <ReasonsSection
+        tagline={gs?.reasons?.tagline}
+        heading={gs?.reasons?.heading}
+        subtitle={gs?.reasons?.subtitle}
+        buttonText={gs?.reasons?.ctaLabel}
+        buttonLink={gs?.reasons?.ctaLink}
+        features={gs?.reasons?.features?.map(f => ({
+          title: f.title,
+          icon: resolveReasonIcon(f.iconName),
+          desc: f.description,
+        }))}
+      />
+      <StatsSection
+        tagline={gs?.stats?.tagline}
+        heading={gs?.stats?.heading}
+        subtitle={gs?.stats?.subtitle}
+        ctaLabel={gs?.stats?.ctaLabel}
+        ctaLink={gs?.stats?.ctaLink}
+        phoneLabel={gs?.stats?.phoneLabel}
+        phoneLink={gs?.stats?.phoneLink}
+        cards={gs?.stats?.cards}
+      />
+      <FaqSection
+        tagline={gs?.faq?.tagline}
+        heading={gs?.faq?.heading}
+        subtitle={gs?.faq?.subtitle}
+        ctaText={gs?.faq?.ctaText}
+        ctaLabel={gs?.faq?.ctaLabel}
+        ctaLink={gs?.faq?.ctaLink}
+      />
+      <LocationSection
+        heading={gs?.location?.heading}
+        subtitle={gs?.location?.subtitle}
+        address={gs?.location?.address}
+        addressLink={gs?.location?.addressLink}
+        phoneNote={gs?.location?.phoneNote}
+        phone={gs?.location?.phone}
+        phoneLink={gs?.location?.phoneLink}
+        email={gs?.location?.email}
+        emailLink={gs?.location?.emailLink}
+        hqImage={gs?.location?.hqImage}
+        hqImageAlt={gs?.location?.hqImageAlt}
+      />
+      <FinalCtaSection
+        heading={gs?.finalCta?.heading}
+        subtitle={gs?.finalCta?.subtitle}
+        ctaLabel={gs?.finalCta?.label}
+        ctaLink={gs?.finalCta?.link}
+        image={gs?.finalCta?.image}
+        imageAlt={gs?.finalCta?.imageAlt}
+        phone={gs?.finalCta?.phone}
+        phoneLink={gs?.finalCta?.phoneLink}
+      />
       </main>
       <Footer />
     </div>

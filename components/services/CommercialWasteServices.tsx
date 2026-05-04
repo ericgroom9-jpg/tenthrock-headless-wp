@@ -109,8 +109,17 @@ const faqs = [
   },
 ];
 
-export default function CommercialWasteServices() {
+import type { HeroPageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
+import { resolveReasonIcon } from "@/components/shared/ReasonsSection";
+
+interface CommercialWasteServicesProps {
+  acf?: HeroPageTemplateData | null;
+  globalSections?: GlobalSectionsData | null;
+}
+
+export default function CommercialWasteServices({ acf, globalSections }: CommercialWasteServicesProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const gs = globalSections;
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -118,15 +127,13 @@ export default function CommercialWasteServices() {
         Skip to main content
       </a>
 
-      {/* Navigation - Use shared Navbar component */}
       <Navbar variant="floating" />
 
       <main id="main-content" className="flex-1">
-        {/* Hero Section - with top padding for floating navbar */}
         <section className="relative bg-[#042940] overflow-hidden pt-24 md:pt-28">
           <div className="absolute inset-0">
             <Image 
-              src={imgServiceCentralizedProgram}
+              src={acf?.heroImage || imgServiceCentralizedProgram}
               alt=""
               fill
               sizes="100vw"
@@ -141,10 +148,10 @@ export default function CommercialWasteServices() {
               className="max-w-2xl"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
-                Waste Management Services
+                {acf?.heroHeading || "Waste Management Services"}
               </h1>
               <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-xl leading-relaxed">
-                Emergency response, project logistics, container rentals, and waste program advisory for multi-location operators. One point of contact, 48 states.
+                {acf?.heroSubheading || "Emergency response, project logistics, container rentals, and waste program advisory for multi-location operators. One point of contact, 48 states."}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 
@@ -153,8 +160,8 @@ export default function CommercialWasteServices() {
                   data-testid="button-hero-cta"
                   asChild
                 >
-                  <Link href="/request-a-service">
-                    Request A Service
+                  <Link href={acf?.heroCtaLink || "/request-a-service"}>
+                    {acf?.heroCtaLabel || "Request A Service"}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -165,9 +172,9 @@ export default function CommercialWasteServices() {
                   data-testid="button-hero-phone"
                   asChild
                 >
-                  <a href="tel:+17275105454">
+                  <a href={acf?.heroPhoneLink || "tel:+17275105454"}>
                     <Phone className="mr-2 h-5 w-5" />
-                    727.510.5454
+                    {acf?.heroPhoneLabel || "727.510.5454"}
                   </a>
                 </Button>
               </div>
@@ -418,11 +425,30 @@ export default function CommercialWasteServices() {
           </div>
         </section>
 
-        {/* Location Section - Shared (matches homepage) */}
-        <LocationSection />
+        <LocationSection
+          heading={gs?.location?.heading}
+          subtitle={gs?.location?.subtitle}
+          address={gs?.location?.address}
+          addressLink={gs?.location?.addressLink}
+          phoneNote={gs?.location?.phoneNote}
+          phone={gs?.location?.phone}
+          phoneLink={gs?.location?.phoneLink}
+          email={gs?.location?.email}
+          emailLink={gs?.location?.emailLink}
+          hqImage={gs?.location?.hqImage}
+          hqImageAlt={gs?.location?.hqImageAlt}
+        />
 
-        {/* Final CTA - Uses shared FinalCtaSection (matches homepage) */}
-        <FinalCtaSection />
+        <FinalCtaSection
+          heading={gs?.finalCta?.heading}
+          subtitle={gs?.finalCta?.subtitle}
+          ctaLabel={gs?.finalCta?.label}
+          ctaLink={gs?.finalCta?.link}
+          image={gs?.finalCta?.image}
+          imageAlt={gs?.finalCta?.imageAlt}
+          phone={gs?.finalCta?.phone}
+          phoneLink={gs?.finalCta?.phoneLink}
+        />
       </main>
 
       <Footer />

@@ -42,7 +42,7 @@ const defaultFaqs = [
         answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials."
     }
 ];
-function FaqSection({ faqs = defaultFaqs }) {
+function FaqSection({ tagline = "Common Questions", heading = "Frequently Asked Questions", subtitle = "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.", faqs = defaultFaqs, ctaText = "Still Have Questions?", ctaLabel = "Contact Us", ctaLink = "/contact" }) {
     _s();
     const [openItem, setOpenItem] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("item-0");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -54,7 +54,7 @@ function FaqSection({ faqs = defaultFaqs }) {
                 className: "absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"
             }, void 0, false, {
                 fileName: "[project]/components/shared/FaqSection.tsx",
-                lineNumber: 47,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -70,37 +70,37 @@ function FaqSection({ faqs = defaultFaqs }) {
                                         className: "w-2 h-2 rounded-full bg-secondary"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/FaqSection.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 65,
                                         columnNumber: 15
                                     }, this),
-                                    "Common Questions"
+                                    tagline
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
-                                lineNumber: 51,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 id: "faq-heading",
                                 className: "text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight",
-                                children: "Frequently Asked Questions"
+                                children: heading
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
-                                lineNumber: 55,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-lg text-primary/70 max-w-2xl mx-auto",
-                                children: "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team."
+                                children: subtitle
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
-                                lineNumber: 56,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/FaqSection.tsx",
-                        lineNumber: 50,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -120,7 +120,7 @@ function FaqSection({ faqs = defaultFaqs }) {
                                                     children: faq.question
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/FaqSection.tsx",
-                                                    lineNumber: 79,
+                                                    lineNumber: 92,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -129,18 +129,18 @@ function FaqSection({ faqs = defaultFaqs }) {
                                                         className: `w-5 h-5 transition-colors duration-300 ${openItem === `item-${i}` ? "text-[#042940]" : "text-primary"}`
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/FaqSection.tsx",
-                                                        lineNumber: 89,
+                                                        lineNumber: 102,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/FaqSection.tsx",
-                                                    lineNumber: 84,
+                                                    lineNumber: 97,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/FaqSection.tsx",
-                                            lineNumber: 73,
+                                            lineNumber: 86,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -152,33 +152,33 @@ function FaqSection({ faqs = defaultFaqs }) {
                                                     children: faq.answer
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/FaqSection.tsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 113,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/FaqSection.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 112,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/FaqSection.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 107,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/shared/FaqSection.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 79,
                                     columnNumber: 15
                                 }, this)
                             }, i, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
-                                lineNumber: 63,
+                                lineNumber: 76,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/shared/FaqSection.tsx",
-                        lineNumber: 61,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -186,10 +186,10 @@ function FaqSection({ faqs = defaultFaqs }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-primary/70 mb-4 font-medium",
-                                children: "Still Have Questions?"
+                                children: ctaText
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
-                                lineNumber: 111,
+                                lineNumber: 124,
                                 columnNumber: 12
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -197,34 +197,34 @@ function FaqSection({ faqs = defaultFaqs }) {
                                 className: "w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap rounded-full",
                                 asChild: true,
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/contact",
-                                    children: "Contact Us"
+                                    href: ctaLink,
+                                    children: ctaLabel
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/FaqSection.tsx",
-                                    lineNumber: 113,
+                                    lineNumber: 126,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/FaqSection.tsx",
-                                lineNumber: 112,
+                                lineNumber: 125,
                                 columnNumber: 12
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/FaqSection.tsx",
-                        lineNumber: 110,
+                        lineNumber: 123,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shared/FaqSection.tsx",
-                lineNumber: 49,
+                lineNumber: 62,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/shared/FaqSection.tsx",
-        lineNumber: 45,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }

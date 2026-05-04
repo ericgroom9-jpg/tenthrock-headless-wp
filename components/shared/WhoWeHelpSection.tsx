@@ -52,18 +52,28 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
   );
 }
 
-export default function WhoWeHelpSection() {
+interface WhoWeHelpSectionProps {
+  tagline?: string;
+  heading?: string;
+  subtitle?: string;
+}
+
+export default function WhoWeHelpSection({
+  tagline = "Industries",
+  heading = "Who We Help",
+  subtitle = "From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.",
+}: WhoWeHelpSectionProps = {}) {
   return (
     <section id="sectors" aria-labelledby="sectors-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-left sm:text-center max-w-4xl mx-auto mb-10 md:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              Industries
+              {tagline}
           </div>
-          <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">Who We Help</h2>
+          <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">{heading}</h2>
           <p className="text-lg text-primary/70">
-            From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.
+            {subtitle}
           </p>
         </div>
 

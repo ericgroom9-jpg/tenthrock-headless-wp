@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { GraphQLClient, gql } from 'graphql-request';
 import type { SeoMetadata, TaxonomyTerm } from '@/shared/schema';
 
@@ -1866,3 +1867,1074 @@ export async function fetchAllPartnerLogos(): Promise<PartnerLogoData[]> {
     return [];
   }
 }
+
+// ═══════════════════════════════════════════════════════
+// PAGE TEMPLATE ACF DATA — Interfaces
+// ═══════════════════════════════════════════════════════
+
+export interface SimpleNumber { value: string; suffix: string; label: string }
+export interface ServiceCategorySubItem { label: string; description: string }
+export interface ServiceCategory { title: string; description: string; link: string; subItems: ServiceCategorySubItem[] | null }
+export interface WhyUsFeature { title: string; content: string; iconName: string }
+export interface InlineFaqItem { question: string; answer: string }
+export interface ProcessStep { number: string; title: string; description: string }
+export interface StatCard { title: string; value: string; description: string }
+export interface ReasonFeature { iconName: string; title: string; description: string }
+export interface AssociationLogo { logo: string; altText: string }
+export interface CoreValue { title: string; description: string }
+export interface BenefitCard { iconName: string; title: string; description: string }
+export interface HowStep { number: string; title: string; description: string }
+export interface StatBullet { text: string }
+export interface StatNumber { value: string; label: string }
+export interface HoursLine { line: string }
+export interface InterestOption { value: string; label: string }
+export interface ExpectationItem { text: string }
+export interface NextStepItem { text: string }
+
+export interface HomepageTemplateData {
+  heroTagline?: string;
+  heroHeading?: string;
+  heroSubheading?: string;
+  heroVideo?: string;
+  heroCtaLabel?: string;
+  heroCtaLink?: string;
+  heroSecondaryLabel?: string;
+  heroSecondaryLink?: string;
+  simpleNumbers?: SimpleNumber[];
+  servicesTagline?: string;
+  servicesHeading?: string;
+  servicesSubtitle?: string;
+  servicesCategories?: ServiceCategory[];
+  whyUsHeading?: string;
+  whyUsImage?: string;
+  whyUsImageAlt?: string;
+  whyUsFeatures?: WhyUsFeature[];
+  whyUsCtaLabel?: string;
+  whyUsCtaLink?: string;
+  whyUsSecondaryLabel?: string;
+  whyUsSecondaryLink?: string;
+  faqTagline?: string;
+  faqHeading?: string;
+  faqSubtitle?: string;
+  faqItems?: InlineFaqItem[];
+  faqCtaText?: string;
+  faqCtaLabel?: string;
+  faqCtaLink?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface AboutTemplateData {
+  storyTagline?: string;
+  storyHeading?: string;
+  storyBody?: string;
+  storyImage?: string;
+  storyImageAlt?: string;
+  coreHeading?: string;
+  coreValues?: CoreValue[];
+  coreImage?: string;
+  coreImageAlt?: string;
+  coreCtaLabel?: string;
+  coreCtaLink?: string;
+  coreSecondaryLabel?: string;
+  coreSecondaryLink?: string;
+  associationsHeading?: string;
+  associationsLogos?: AssociationLogo[];
+  communityHeading?: string;
+  communityBody?: string;
+  communityImage?: string;
+  communityImageAlt?: string;
+  communityCtaLabel?: string;
+  communityCtaLink?: string;
+  communitySecondaryLabel?: string;
+  communitySecondaryLink?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface HeroPageTemplateData {
+  heroHeading?: string;
+  heroSubheading?: string;
+  heroImage?: string;
+  heroCtaLabel?: string;
+  heroCtaLink?: string;
+  heroPhoneLabel?: string;
+  heroPhoneLink?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface LocationsPageTemplateData extends HeroPageTemplateData {
+  areasHeading?: string;
+  areasSubtitle?: string;
+}
+
+export interface JoinNetworkTemplateData {
+  heroHeading?: string;
+  heroSubheading?: string;
+  heroImage?: string;
+  heroCtaLabel?: string;
+  heroPhoneLabel?: string;
+  heroPhoneLink?: string;
+  logosHeadline?: string;
+  benefitsTagline?: string;
+  benefitsHeading?: string;
+  benefitsSubtitle?: string;
+  benefitsCards?: BenefitCard[];
+  howHeading?: string;
+  howSubtitle?: string;
+  howSteps?: HowStep[];
+  statsHeading?: string;
+  statsBullets?: StatBullet[];
+  statsNumbers?: StatNumber[];
+  emailTagline?: string;
+  emailHeading?: string;
+  emailSubtitle?: string;
+  emailPlaceholder?: string;
+  emailSubmitLabel?: string;
+  emailDisclaimer?: string;
+  emailSuccessHeading?: string;
+  emailSuccessMessage?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface FaqPageTemplateData {
+  heroTagline?: string;
+  heroHeading?: string;
+  heroHeadingHighlight?: string;
+  heroSubtitle?: string;
+  heroImage?: string;
+  ctaText?: string;
+  ctaLabel?: string;
+  ctaLink?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface ContactFormTemplateData {
+  pageHeading?: string;
+  emergencyText?: string;
+  emergencyPhone?: string;
+  emergencyPhoneLink?: string;
+  vendorText?: string;
+  vendorLinkText?: string;
+  vendorLinkUrl?: string;
+  cardHeading?: string;
+  phone?: string;
+  phoneLink?: string;
+  email?: string;
+  emailLink?: string;
+  hours?: HoursLine[];
+  formHeading?: string;
+  formSubtitle?: string;
+  interestOptions?: InterestOption[];
+  messageLabel?: string;
+  submitLabel?: string;
+  privacyText?: string;
+  privacyLinkText?: string;
+  privacyLinkUrl?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface BookCallTemplateData {
+  heading?: string;
+  expectations?: ExpectationItem[];
+  description?: string;
+  calendarEmbed?: string;
+  calendarFallbackHeading?: string;
+  calendarFallbackText?: string;
+  skipText?: string;
+  continueLabel?: string;
+  continueLink?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface ThankYouTemplateData {
+  heading?: string;
+  subtitle?: string;
+  stepsHeading?: string;
+  nextSteps?: NextStepItem[];
+  ctaLabel?: string;
+  ctaLink?: string;
+  secondaryLabel?: string;
+  secondaryLink?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface LegalPageTemplateData {
+  heading?: string;
+  embedKey?: string;
+  fallbackText?: string;
+  fallbackLinkText?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface GlobalSectionsData {
+  process?: {
+    tagline?: string;
+    heading?: string;
+    subtitle?: string;
+    steps?: ProcessStep[];
+  };
+  stats?: {
+    tagline?: string;
+    heading?: string;
+    subtitle?: string;
+    ctaLabel?: string;
+    ctaLink?: string;
+    phoneLabel?: string;
+    phoneLink?: string;
+    image?: string;
+    imageAlt?: string;
+    cards?: StatCard[];
+  };
+  ctaBanner?: {
+    tagline?: string;
+    heading?: string;
+    subtitle?: string;
+    placeholder?: string;
+    button?: string;
+  };
+  reasons?: {
+    tagline?: string;
+    heading?: string;
+    subtitle?: string;
+    ctaLabel?: string;
+    ctaLink?: string;
+    features?: ReasonFeature[];
+  };
+  finalCta?: {
+    heading?: string;
+    subtitle?: string;
+    label?: string;
+    link?: string;
+    image?: string;
+    imageAlt?: string;
+    phone?: string;
+    phoneLink?: string;
+  };
+  location?: {
+    heading?: string;
+    subtitle?: string;
+    address?: string;
+    addressLink?: string;
+    phoneNote?: string;
+    phone?: string;
+    phoneLink?: string;
+    email?: string;
+    emailLink?: string;
+    hqImage?: string;
+    hqImageAlt?: string;
+  };
+  faq?: {
+    tagline?: string;
+    heading?: string;
+    subtitle?: string;
+    ctaText?: string;
+    ctaLabel?: string;
+    ctaLink?: string;
+  };
+  whoHelp?: {
+    tagline?: string;
+    heading?: string;
+    subtitle?: string;
+  };
+  logoReel?: {
+    headline?: string;
+  };
+  testimonials?: {
+    tagline?: string;
+  };
+}
+
+// ═══════════════════════════════════════════════════════
+// PAGE TEMPLATE ACF DATA — GraphQL Queries
+// ═══════════════════════════════════════════════════════
+
+const GET_PAGE_TEMPLATE_ACF_QUERY = gql`
+  ${SEO_FRAGMENT}
+  query GetPageTemplateAcf($slug: ID!) {
+    page(id: $slug, idType: URI) {
+      databaseId
+      slug
+      title
+      seo { ...SeoFields }
+      homepageFields {
+        heroTagline
+        heroHeading
+        heroSubheading
+        heroVideo
+        heroCtaLabel
+        heroCtaLink
+        heroSecondaryLabel
+        heroSecondaryLink
+        simpleNumbers { value suffix label }
+        servicesTagline
+        servicesHeading
+        servicesSubtitle
+        servicesCategories {
+          title
+          description
+          link
+          subItems { label description }
+        }
+        whyUsHeading
+        whyUsImage
+        whyUsImageAlt
+        whyUsFeatures { title content iconName }
+        whyUsCtaLabel
+        whyUsCtaLink
+        whyUsSecondaryLabel
+        whyUsSecondaryLink
+        faqTagline
+        faqHeading
+        faqSubtitle
+        faqItems { question answer }
+        faqCtaText
+        faqCtaLabel
+        faqCtaLink
+      }
+      aboutFields {
+        storyTagline
+        storyHeading
+        storyBody
+        storyImage
+        storyImageAlt
+        coreHeading
+        coreValues { title description }
+        coreImage
+        coreImageAlt
+        coreCtaLabel
+        coreCtaLink
+        coreSecondaryLabel
+        coreSecondaryLink
+        associationsHeading
+        associationsLogos { logo altText }
+        communityHeading
+        communityBody
+        communityImage
+        communityImageAlt
+        communityCtaLabel
+        communityCtaLink
+        communitySecondaryLabel
+        communitySecondaryLink
+      }
+      commercialWasteFields {
+        heroHeading
+        heroSubheading
+        heroImage
+        heroCtaLabel
+        heroCtaLink
+        heroPhoneLabel
+        heroPhoneLink
+      }
+      whoWeServeFields {
+        heroHeading
+        heroSubheading
+        heroImage
+        heroCtaLabel
+        heroCtaLink
+        heroPhoneLabel
+        heroPhoneLink
+      }
+      ourProcessFields {
+        heroHeading
+        heroSubheading
+        heroImage
+        heroCtaLabel
+        heroCtaLink
+        heroPhoneLabel
+        heroPhoneLink
+      }
+      locationsFields {
+        heroHeading
+        heroSubheading
+        heroImage
+        heroCtaLabel
+        heroCtaLink
+        heroPhoneLabel
+        heroPhoneLink
+        areasHeading
+        areasSubtitle
+      }
+      joinNetworkFields {
+        heroHeading
+        heroSubheading
+        heroImage
+        heroCtaLabel
+        heroPhoneLabel
+        heroPhoneLink
+        logosHeadline
+        benefitsTagline
+        benefitsHeading
+        benefitsSubtitle
+        benefitsCards { iconName title description }
+        howHeading
+        howSubtitle
+        howSteps { number title description }
+        statsHeading
+        statsBullets { text }
+        statsNumbers { value label }
+        emailTagline
+        emailHeading
+        emailSubtitle
+        emailPlaceholder
+        emailSubmitLabel
+        emailDisclaimer
+        emailSuccessHeading
+        emailSuccessMessage
+      }
+      faqPageFields {
+        heroTagline
+        heroHeading
+        heroHeadingHighlight
+        heroSubtitle
+        heroImage
+        ctaText
+        ctaLabel
+        ctaLink
+      }
+      contactFields {
+        pageHeading
+        emergencyText
+        emergencyPhone
+        emergencyPhoneLink
+        vendorText
+        vendorLinkText
+        vendorLinkUrl
+        cardHeading
+        phone
+        phoneLink
+        email
+        emailLink
+        hours { line }
+        formHeading
+        formSubtitle
+        interestOptions { value label }
+        submitLabel
+        privacyText
+        privacyLinkText
+        privacyLinkUrl
+      }
+      requestServiceFields {
+        pageHeading
+        emergencyText
+        emergencyPhone
+        emergencyPhoneLink
+        vendorText
+        vendorLinkText
+        vendorLinkUrl
+        cardHeading
+        phone
+        phoneLink
+        email
+        emailLink
+        hours { line }
+        formHeading
+        formSubtitle
+        interestOptions { value label }
+        messageLabel
+        submitLabel
+        privacyText
+        privacyLinkText
+        privacyLinkUrl
+      }
+      bookCallFields {
+        heading
+        expectations { text }
+        description
+        calendarEmbed
+        calendarFallbackHeading
+        calendarFallbackText
+        skipText
+        continueLabel
+        continueLink
+      }
+      thankYouFields {
+        heading
+        subtitle
+        stepsHeading
+        nextSteps { text }
+        ctaLabel
+        ctaLink
+        secondaryLabel
+        secondaryLink
+      }
+      privacyFields {
+        heading
+        embedKey
+        fallbackText
+        fallbackLinkText
+      }
+      termsFields {
+        heading
+        embedKey
+        fallbackText
+        fallbackLinkText
+      }
+    }
+  }
+`;
+
+const GET_GLOBAL_SECTIONS_QUERY = gql`
+  query GetGlobalSections {
+    trGlobalSections {
+      gsProcess {
+        processTagline
+        processHeading
+        processSubtitle
+        processSteps { number title description }
+      }
+      gsStats {
+        statsTagline
+        statsHeading
+        statsSubtitle
+        statsCtaLabel
+        statsCtaLink
+        statsPhoneLabel
+        statsPhoneLink
+        statsImage
+        statsImageAlt
+        statsCards { title value description }
+      }
+      gsCtaBanner {
+        ctaBannerTagline
+        ctaBannerHeading
+        ctaBannerSubtitle
+        ctaBannerPlaceholder
+        ctaBannerButton
+      }
+      gsReasons {
+        reasonsTagline
+        reasonsHeading
+        reasonsSubtitle
+        reasonsCtaLabel
+        reasonsCtaLink
+        reasonsFeatures { iconName title description }
+      }
+      gsFinalCta {
+        finalCtaHeading
+        finalCtaSubtitle
+        finalCtaLabel
+        finalCtaLink
+        finalCtaImage
+        finalCtaImageAlt
+        finalCtaPhone
+        finalCtaPhoneLink
+      }
+      gsLocation {
+        locationHeading
+        locationSubtitle
+        locationAddress
+        locationAddressLink
+        locationPhoneNote
+        locationPhone
+        locationPhoneLink
+        locationEmail
+        locationEmailLink
+        locationHqImage
+        locationHqImageAlt
+      }
+      gsFaq {
+        faqSectionTagline
+        faqSectionHeading
+        faqSectionSubtitle
+        faqSectionCtaText
+        faqSectionCtaLabel
+        faqSectionCtaLink
+      }
+      gsWhoHelp {
+        whoHelpTagline
+        whoHelpHeading
+        whoHelpSubtitle
+      }
+      gsLogoReel {
+        logoReelHeadline
+      }
+      gsTestimonials {
+        testimonialsTagline
+      }
+    }
+  }
+`;
+
+// ═══════════════════════════════════════════════════════
+// PAGE TEMPLATE ACF DATA — Fetcher Functions
+// ═══════════════════════════════════════════════════════
+
+interface WpPageAcfResponse {
+  page: {
+    databaseId: number;
+    slug: string;
+    title: string;
+    seo: WpSeo | null;
+    homepageFields: Record<string, unknown> | null;
+    aboutFields: Record<string, unknown> | null;
+    commercialWasteFields: Record<string, unknown> | null;
+    whoWeServeFields: Record<string, unknown> | null;
+    ourProcessFields: Record<string, unknown> | null;
+    locationsFields: Record<string, unknown> | null;
+    joinNetworkFields: Record<string, unknown> | null;
+    faqPageFields: Record<string, unknown> | null;
+    contactFields: Record<string, unknown> | null;
+    requestServiceFields: Record<string, unknown> | null;
+    bookCallFields: Record<string, unknown> | null;
+    thankYouFields: Record<string, unknown> | null;
+    privacyFields: Record<string, unknown> | null;
+    termsFields: Record<string, unknown> | null;
+  } | null;
+}
+
+function hasData(obj: Record<string, unknown> | null): boolean {
+  if (!obj) return false;
+  return Object.values(obj).some(v => {
+    if (v === null || v === undefined || v === '') return false;
+    if (Array.isArray(v) && v.length === 0) return false;
+    return true;
+  });
+}
+
+function nonEmpty<T>(val: T | null | undefined): T | undefined {
+  if (val === null || val === undefined || val === '') return undefined;
+  if (Array.isArray(val) && val.length === 0) return undefined;
+  return val;
+}
+
+export const fetchHomepageAcf = cache(async (): Promise<HomepageTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/home/' }
+    );
+    if (!page?.homepageFields || !hasData(page.homepageFields)) return null;
+    const f = page.homepageFields as Record<string, any>;
+    return {
+      heroTagline: f.heroTagline || undefined,
+      heroHeading: f.heroHeading || undefined,
+      heroSubheading: f.heroSubheading || undefined,
+      heroVideo: f.heroVideo || undefined,
+      heroCtaLabel: f.heroCtaLabel || undefined,
+      heroCtaLink: f.heroCtaLink || undefined,
+      heroSecondaryLabel: f.heroSecondaryLabel || undefined,
+      heroSecondaryLink: f.heroSecondaryLink || undefined,
+      simpleNumbers: nonEmpty(f.simpleNumbers),
+      servicesTagline: f.servicesTagline || undefined,
+      servicesHeading: f.servicesHeading || undefined,
+      servicesSubtitle: f.servicesSubtitle || undefined,
+      servicesCategories: nonEmpty(f.servicesCategories),
+      whyUsHeading: f.whyUsHeading || undefined,
+      whyUsImage: f.whyUsImage || undefined,
+      whyUsImageAlt: f.whyUsImageAlt || undefined,
+      whyUsFeatures: nonEmpty(f.whyUsFeatures),
+      whyUsCtaLabel: f.whyUsCtaLabel || undefined,
+      whyUsCtaLink: f.whyUsCtaLink || undefined,
+      whyUsSecondaryLabel: f.whyUsSecondaryLabel || undefined,
+      whyUsSecondaryLink: f.whyUsSecondaryLink || undefined,
+      faqTagline: f.faqTagline || undefined,
+      faqHeading: f.faqHeading || undefined,
+      faqSubtitle: f.faqSubtitle || undefined,
+      faqItems: nonEmpty(f.faqItems),
+      faqCtaText: f.faqCtaText || undefined,
+      faqCtaLabel: f.faqCtaLabel || undefined,
+      faqCtaLink: f.faqCtaLink || undefined,
+      seoMetadata: transformSeoData(page.seo),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch homepage ACF:', error);
+    return null;
+  }
+});
+
+export const fetchAboutAcf = cache(async (): Promise<AboutTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/about/' }
+    );
+    if (!page?.aboutFields || !hasData(page.aboutFields)) return null;
+    const f = page.aboutFields as Record<string, any>;
+    return {
+      storyTagline: f.storyTagline || undefined,
+      storyHeading: f.storyHeading || undefined,
+      storyBody: f.storyBody || undefined,
+      storyImage: f.storyImage || undefined,
+      storyImageAlt: f.storyImageAlt || undefined,
+      coreHeading: f.coreHeading || undefined,
+      coreValues: nonEmpty(f.coreValues),
+      coreImage: f.coreImage || undefined,
+      coreImageAlt: f.coreImageAlt || undefined,
+      coreCtaLabel: f.coreCtaLabel || undefined,
+      coreCtaLink: f.coreCtaLink || undefined,
+      coreSecondaryLabel: f.coreSecondaryLabel || undefined,
+      coreSecondaryLink: f.coreSecondaryLink || undefined,
+      associationsHeading: f.associationsHeading || undefined,
+      associationsLogos: nonEmpty(f.associationsLogos),
+      communityHeading: f.communityHeading || undefined,
+      communityBody: f.communityBody || undefined,
+      communityImage: f.communityImage || undefined,
+      communityImageAlt: f.communityImageAlt || undefined,
+      communityCtaLabel: f.communityCtaLabel || undefined,
+      communityCtaLink: f.communityCtaLink || undefined,
+      communitySecondaryLabel: f.communitySecondaryLabel || undefined,
+      communitySecondaryLink: f.communitySecondaryLink || undefined,
+      seoMetadata: transformSeoData(page.seo),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch about ACF:', error);
+    return null;
+  }
+});
+
+async function fetchHeroPageAcf(slug: string, fieldName: string): Promise<HeroPageTemplateData | null> {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
+    );
+    const fields = (page as any)?.[fieldName];
+    if (!fields || !hasData(fields)) return null;
+    return {
+      heroHeading: fields.heroHeading || undefined,
+      heroSubheading: fields.heroSubheading || undefined,
+      heroImage: fields.heroImage || undefined,
+      heroCtaLabel: fields.heroCtaLabel || undefined,
+      heroCtaLink: fields.heroCtaLink || undefined,
+      heroPhoneLabel: fields.heroPhoneLabel || undefined,
+      heroPhoneLink: fields.heroPhoneLink || undefined,
+      seoMetadata: transformSeoData(page?.seo || null),
+    };
+  } catch (error) {
+    console.error(`[WP] Failed to fetch ${slug} ACF:`, error);
+    return null;
+  }
+}
+
+export const fetchCommercialWasteAcf = cache(async (): Promise<HeroPageTemplateData | null> => {
+  return fetchHeroPageAcf('commercial-waste', 'commercialWasteFields');
+});
+
+export const fetchWhoWeServeAcf = cache(async (): Promise<HeroPageTemplateData | null> => {
+  return fetchHeroPageAcf('who-we-serve', 'whoWeServeFields');
+});
+
+export const fetchOurProcessAcf = cache(async (): Promise<HeroPageTemplateData | null> => {
+  return fetchHeroPageAcf('our-process', 'ourProcessFields');
+});
+
+export const fetchLocationsPageAcf = cache(async (): Promise<LocationsPageTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/locations/' }
+    );
+    if (!page?.locationsFields || !hasData(page.locationsFields)) return null;
+    const f = page.locationsFields as Record<string, any>;
+    return {
+      heroHeading: f.heroHeading || undefined,
+      heroSubheading: f.heroSubheading || undefined,
+      heroImage: f.heroImage || undefined,
+      heroCtaLabel: f.heroCtaLabel || undefined,
+      heroCtaLink: f.heroCtaLink || undefined,
+      heroPhoneLabel: f.heroPhoneLabel || undefined,
+      heroPhoneLink: f.heroPhoneLink || undefined,
+      areasHeading: f.areasHeading || undefined,
+      areasSubtitle: f.areasSubtitle || undefined,
+      seoMetadata: transformSeoData(page.seo),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch locations page ACF:', error);
+    return null;
+  }
+});
+
+export const fetchJoinNetworkAcf = cache(async (): Promise<JoinNetworkTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/join-our-network/' }
+    );
+    if (!page?.joinNetworkFields || !hasData(page.joinNetworkFields)) return null;
+    const f = page.joinNetworkFields as Record<string, any>;
+    return {
+      heroHeading: f.heroHeading || undefined,
+      heroSubheading: f.heroSubheading || undefined,
+      heroImage: f.heroImage || undefined,
+      heroCtaLabel: f.heroCtaLabel || undefined,
+      heroPhoneLabel: f.heroPhoneLabel || undefined,
+      heroPhoneLink: f.heroPhoneLink || undefined,
+      logosHeadline: f.logosHeadline || undefined,
+      benefitsTagline: f.benefitsTagline || undefined,
+      benefitsHeading: f.benefitsHeading || undefined,
+      benefitsSubtitle: f.benefitsSubtitle || undefined,
+      benefitsCards: nonEmpty(f.benefitsCards),
+      howHeading: f.howHeading || undefined,
+      howSubtitle: f.howSubtitle || undefined,
+      howSteps: nonEmpty(f.howSteps),
+      statsHeading: f.statsHeading || undefined,
+      statsBullets: nonEmpty(f.statsBullets),
+      statsNumbers: nonEmpty(f.statsNumbers),
+      emailTagline: f.emailTagline || undefined,
+      emailHeading: f.emailHeading || undefined,
+      emailSubtitle: f.emailSubtitle || undefined,
+      emailPlaceholder: f.emailPlaceholder || undefined,
+      emailSubmitLabel: f.emailSubmitLabel || undefined,
+      emailDisclaimer: f.emailDisclaimer || undefined,
+      emailSuccessHeading: f.emailSuccessHeading || undefined,
+      emailSuccessMessage: f.emailSuccessMessage || undefined,
+      seoMetadata: transformSeoData(page.seo),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch join network ACF:', error);
+    return null;
+  }
+});
+
+export const fetchFaqPageAcf = cache(async (): Promise<FaqPageTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/faq/' }
+    );
+    if (!page?.faqPageFields || !hasData(page.faqPageFields)) return null;
+    const f = page.faqPageFields as Record<string, any>;
+    return {
+      heroTagline: f.heroTagline || undefined,
+      heroHeading: f.heroHeading || undefined,
+      heroHeadingHighlight: f.heroHeadingHighlight || undefined,
+      heroSubtitle: f.heroSubtitle || undefined,
+      heroImage: f.heroImage || undefined,
+      ctaText: f.ctaText || undefined,
+      ctaLabel: f.ctaLabel || undefined,
+      ctaLink: f.ctaLink || undefined,
+      seoMetadata: transformSeoData(page.seo),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch FAQ page ACF:', error);
+    return null;
+  }
+});
+
+async function fetchContactFormAcf(slug: string, fieldName: string): Promise<ContactFormTemplateData | null> {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
+    );
+    const fields = (page as any)?.[fieldName];
+    if (!fields || !hasData(fields)) return null;
+    return {
+      pageHeading: fields.pageHeading || undefined,
+      emergencyText: fields.emergencyText || undefined,
+      emergencyPhone: fields.emergencyPhone || undefined,
+      emergencyPhoneLink: fields.emergencyPhoneLink || undefined,
+      vendorText: fields.vendorText || undefined,
+      vendorLinkText: fields.vendorLinkText || undefined,
+      vendorLinkUrl: fields.vendorLinkUrl || undefined,
+      cardHeading: fields.cardHeading || undefined,
+      phone: fields.phone || undefined,
+      phoneLink: fields.phoneLink || undefined,
+      email: fields.email || undefined,
+      emailLink: fields.emailLink || undefined,
+      hours: nonEmpty(fields.hours),
+      formHeading: fields.formHeading || undefined,
+      formSubtitle: fields.formSubtitle || undefined,
+      interestOptions: nonEmpty(fields.interestOptions),
+      messageLabel: fields.messageLabel || undefined,
+      submitLabel: fields.submitLabel || undefined,
+      privacyText: fields.privacyText || undefined,
+      privacyLinkText: fields.privacyLinkText || undefined,
+      privacyLinkUrl: fields.privacyLinkUrl || undefined,
+      seoMetadata: transformSeoData(page?.seo || null),
+    };
+  } catch (error) {
+    console.error(`[WP] Failed to fetch ${slug} ACF:`, error);
+    return null;
+  }
+}
+
+export const fetchContactAcf = cache(async (): Promise<ContactFormTemplateData | null> => {
+  return fetchContactFormAcf('contact', 'contactFields');
+});
+
+export const fetchRequestServiceAcf = cache(async (): Promise<ContactFormTemplateData | null> => {
+  return fetchContactFormAcf('request-a-service', 'requestServiceFields');
+});
+
+export const fetchBookCallAcf = cache(async (): Promise<BookCallTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/book-a-call/' }
+    );
+    if (!page?.bookCallFields || !hasData(page.bookCallFields)) return null;
+    const f = page.bookCallFields as Record<string, any>;
+    return {
+      heading: f.heading || undefined,
+      expectations: nonEmpty(f.expectations),
+      description: f.description || undefined,
+      calendarEmbed: f.calendarEmbed || undefined,
+      calendarFallbackHeading: f.calendarFallbackHeading || undefined,
+      calendarFallbackText: f.calendarFallbackText || undefined,
+      skipText: f.skipText || undefined,
+      continueLabel: f.continueLabel || undefined,
+      continueLink: f.continueLink || undefined,
+      seoMetadata: transformSeoData(page.seo),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch book-a-call ACF:', error);
+    return null;
+  }
+});
+
+export const fetchThankYouAcf = cache(async (): Promise<ThankYouTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/thank-you/' }
+    );
+    if (!page?.thankYouFields || !hasData(page.thankYouFields)) return null;
+    const f = page.thankYouFields as Record<string, any>;
+    return {
+      heading: f.heading || undefined,
+      subtitle: f.subtitle || undefined,
+      stepsHeading: f.stepsHeading || undefined,
+      nextSteps: nonEmpty(f.nextSteps),
+      ctaLabel: f.ctaLabel || undefined,
+      ctaLink: f.ctaLink || undefined,
+      secondaryLabel: f.secondaryLabel || undefined,
+      secondaryLink: f.secondaryLink || undefined,
+      seoMetadata: transformSeoData(page.seo),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch thank-you ACF:', error);
+    return null;
+  }
+});
+
+async function fetchLegalPageAcf(slug: string, fieldName: string): Promise<LegalPageTemplateData | null> {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
+    );
+    const fields = (page as any)?.[fieldName];
+    if (!fields || !hasData(fields)) return null;
+    return {
+      heading: fields.heading || undefined,
+      embedKey: fields.embedKey || undefined,
+      fallbackText: fields.fallbackText || undefined,
+      fallbackLinkText: fields.fallbackLinkText || undefined,
+      seoMetadata: transformSeoData(page?.seo || null),
+    };
+  } catch (error) {
+    console.error(`[WP] Failed to fetch ${slug} ACF:`, error);
+    return null;
+  }
+}
+
+export const fetchPrivacyPolicyAcf = cache(async (): Promise<LegalPageTemplateData | null> => {
+  return fetchLegalPageAcf('privacy-policy', 'privacyFields');
+});
+
+export const fetchTermsOfServiceAcf = cache(async (): Promise<LegalPageTemplateData | null> => {
+  return fetchLegalPageAcf('terms-of-service', 'termsFields');
+});
+
+export const fetchGlobalSections = cache(async (): Promise<GlobalSectionsData | null> => {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ trGlobalSections: Record<string, any> | null }>(
+      GET_GLOBAL_SECTIONS_QUERY
+    );
+    const gs = response.trGlobalSections;
+    if (!gs) return null;
+
+    const p = gs.gsProcess;
+    const s = gs.gsStats;
+    const cb = gs.gsCtaBanner;
+    const r = gs.gsReasons;
+    const fc = gs.gsFinalCta;
+    const loc = gs.gsLocation;
+    const faq = gs.gsFaq;
+    const wh = gs.gsWhoHelp;
+    const lr = gs.gsLogoReel;
+    const t = gs.gsTestimonials;
+
+    return {
+      process: p ? {
+        tagline: p.processTagline || undefined,
+        heading: p.processHeading || undefined,
+        subtitle: p.processSubtitle || undefined,
+        steps: nonEmpty(p.processSteps),
+      } : undefined,
+      stats: s ? {
+        tagline: s.statsTagline || undefined,
+        heading: s.statsHeading || undefined,
+        subtitle: s.statsSubtitle || undefined,
+        ctaLabel: s.statsCtaLabel || undefined,
+        ctaLink: s.statsCtaLink || undefined,
+        phoneLabel: s.statsPhoneLabel || undefined,
+        phoneLink: s.statsPhoneLink || undefined,
+        image: s.statsImage || undefined,
+        imageAlt: s.statsImageAlt || undefined,
+        cards: nonEmpty(s.statsCards),
+      } : undefined,
+      ctaBanner: cb ? {
+        tagline: cb.ctaBannerTagline || undefined,
+        heading: cb.ctaBannerHeading || undefined,
+        subtitle: cb.ctaBannerSubtitle || undefined,
+        placeholder: cb.ctaBannerPlaceholder || undefined,
+        button: cb.ctaBannerButton || undefined,
+      } : undefined,
+      reasons: r ? {
+        tagline: r.reasonsTagline || undefined,
+        heading: r.reasonsHeading || undefined,
+        subtitle: r.reasonsSubtitle || undefined,
+        ctaLabel: r.reasonsCtaLabel || undefined,
+        ctaLink: r.reasonsCtaLink || undefined,
+        features: nonEmpty(r.reasonsFeatures),
+      } : undefined,
+      finalCta: fc ? {
+        heading: fc.finalCtaHeading || undefined,
+        subtitle: fc.finalCtaSubtitle || undefined,
+        label: fc.finalCtaLabel || undefined,
+        link: fc.finalCtaLink || undefined,
+        image: fc.finalCtaImage || undefined,
+        imageAlt: fc.finalCtaImageAlt || undefined,
+        phone: fc.finalCtaPhone || undefined,
+        phoneLink: fc.finalCtaPhoneLink || undefined,
+      } : undefined,
+      location: loc ? {
+        heading: loc.locationHeading || undefined,
+        subtitle: loc.locationSubtitle || undefined,
+        address: loc.locationAddress || undefined,
+        addressLink: loc.locationAddressLink || undefined,
+        phoneNote: loc.locationPhoneNote || undefined,
+        phone: loc.locationPhone || undefined,
+        phoneLink: loc.locationPhoneLink || undefined,
+        email: loc.locationEmail || undefined,
+        emailLink: loc.locationEmailLink || undefined,
+        hqImage: loc.locationHqImage || undefined,
+        hqImageAlt: loc.locationHqImageAlt || undefined,
+      } : undefined,
+      faq: faq ? {
+        tagline: faq.faqSectionTagline || undefined,
+        heading: faq.faqSectionHeading || undefined,
+        subtitle: faq.faqSectionSubtitle || undefined,
+        ctaText: faq.faqSectionCtaText || undefined,
+        ctaLabel: faq.faqSectionCtaLabel || undefined,
+        ctaLink: faq.faqSectionCtaLink || undefined,
+      } : undefined,
+      whoHelp: wh ? {
+        tagline: wh.whoHelpTagline || undefined,
+        heading: wh.whoHelpHeading || undefined,
+        subtitle: wh.whoHelpSubtitle || undefined,
+      } : undefined,
+      logoReel: lr ? {
+        headline: lr.logoReelHeadline || undefined,
+      } : undefined,
+      testimonials: t ? {
+        tagline: t.testimonialsTagline || undefined,
+      } : undefined,
+    };
+  } catch (error) {
+    console.warn('[WP] Failed to fetch global sections (ACF options page may not be configured):', error);
+    return null;
+  }
+});

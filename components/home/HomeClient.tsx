@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import type { HomepageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
 
 const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
   ssr: false,
@@ -23,6 +24,11 @@ const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
   ),
 });
 
-export default function HomeClient() {
-  return <TenthRockHome />;
+interface Props {
+  acf?: HomepageTemplateData | null;
+  globalSections?: GlobalSectionsData | null;
+}
+
+export default function HomeClient({ acf, globalSections }: Props) {
+  return <TenthRockHome acf={acf || null} globalSections={globalSections || null} />;
 }

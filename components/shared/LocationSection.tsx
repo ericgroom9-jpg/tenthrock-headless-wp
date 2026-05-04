@@ -5,7 +5,33 @@ import FadeIn from "@/components/shared/FadeIn";
 import { MapPin, Phone, Mail } from "lucide-react";
 import UsMapPinsAnimation from "@/components/shared/UsMapPinsAnimation";
 
-export default function LocationSection() {
+interface LocationSectionProps {
+  heading?: string;
+  subtitle?: string;
+  address?: string;
+  addressLink?: string;
+  phoneNote?: string;
+  phone?: string;
+  phoneLink?: string;
+  email?: string;
+  emailLink?: string;
+  hqImage?: string;
+  hqImageAlt?: string;
+}
+
+export default function LocationSection({
+  heading = "Where to Find Us",
+  subtitle = "Headquartered in Clearwater Beach, FL. Dispatching crews across 48 states, 24/7.",
+  address = "140 Island Way Ste. 159, Clearwater Beach, FL 33767",
+  addressLink = "https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767",
+  phoneNote = "Available 24/7 for emergencies",
+  phone = "727.510.5454",
+  phoneLink = "tel:+17275105454",
+  email = "hello@tenthrock.com",
+  emailLink = "mailto:hello@tenthrock.com",
+  hqImage = "/images/stock/location-clearwater-beach-v2.jpg",
+  hqImageAlt = "Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina near Tenth Rock headquarters",
+}: LocationSectionProps = {}) {
   return (
     <section className="py-16 md:py-24 bg-white" aria-labelledby="location-heading">
       <div className="container mx-auto px-4 md:px-8">
@@ -13,10 +39,10 @@ export default function LocationSection() {
           className="text-left sm:text-center mb-8 sm:mb-12"
         >
           <h2 id="location-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
-            Where to Find Us
+            {heading}
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-            Headquartered in Clearwater Beach, FL. Dispatching crews across 48 states, 24/7.
+            {subtitle}
           </p>
         </FadeIn>
 
@@ -29,7 +55,7 @@ export default function LocationSection() {
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Office</h3>
               </div>
-              <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="block text-gray-600 pl-9 hover:underline">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
+              <a href={addressLink} target="_blank" rel="noopener noreferrer" className="block text-gray-600 pl-9 hover:underline">{address}</a>
             </div>
 
             <div>
@@ -37,8 +63,8 @@ export default function LocationSection() {
                 <Phone className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Phone</h3>
               </div>
-              <p className="text-gray-600 pl-9">Available 24/7 for emergencies</p>
-              <a href="tel:+17275105454" className="block text-[#042940] font-semibold pl-9 hover:underline">727.510.5454</a>
+              <p className="text-gray-600 pl-9">{phoneNote}</p>
+              <a href={phoneLink} className="block text-[#042940] font-semibold pl-9 hover:underline">{phone}</a>
             </div>
 
             <div>
@@ -46,13 +72,13 @@ export default function LocationSection() {
                 <Mail className="h-6 w-6 text-[#c5d520]" />
                 <h3 className="text-lg sm:text-xl font-semibold text-[#042940]">Email</h3>
               </div>
-              <a href="mailto:hello@tenthrock.com" className="block text-gray-600 pl-9 hover:underline">hello@tenthrock.com</a>
+              <a href={emailLink} className="block text-gray-600 pl-9 hover:underline">{email}</a>
             </div>
 
             <div className="relative rounded-[5px] overflow-hidden aspect-[4/3]">
               <Image
-                src="/images/stock/location-clearwater-beach-v2.jpg"
-                alt="Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina near Tenth Rock headquarters"
+                src={hqImage}
+                alt={hqImageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover"
