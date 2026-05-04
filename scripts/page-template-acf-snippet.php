@@ -42,7 +42,9 @@ add_filter( 'acf/location/rule_values/headless_template', function ( $choices ) 
 
 add_filter( 'acf/location/rule_match/headless_template', function ( $match, $rule, $screen ) {
     if ( ! isset( $screen['post_id'] ) ) return $match;
-    $tmpl = get_post_meta( $screen['post_id'], '_headless_template', true );
+    $raw = get_page_template_slug( $screen['post_id'] );
+    // Strip namespace prefix (e.g. 'headless//template-homepage' -> 'template-homepage')
+    $tmpl = ( $raw && strpos( $raw, '//' ) !== false ) ? explode( '//', $raw, 2 )[1] : $raw;
     if ( $rule['operator'] === '==' ) {
         $match = ( $tmpl === $rule['value'] );
     } elseif ( $rule['operator'] === '!=' ) {
