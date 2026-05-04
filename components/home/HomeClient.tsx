@@ -6,6 +6,7 @@ const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
   ssr: false,
   loading: () => (
     <div className="min-h-screen bg-[#042940] flex items-center justify-center">
+      <h1 className="sr-only">Centralized Waste Logistics for Businesses at Scale</h1>
       <div className="flex flex-col items-center gap-6">
         <img
           src="/images/logos/Green-White-Logo.png"
