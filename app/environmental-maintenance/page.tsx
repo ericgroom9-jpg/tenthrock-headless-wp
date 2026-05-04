@@ -1,13 +1,13 @@
+import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
+import type { Metadata } from "next";
 
-const imgEnvironmental = "/images/stock/service-maintenance.jpg";
+export const metadata: Metadata = {
+  title: "EnvironmentalMaintenance | Tenth Rock",
+};
 
-export default function EnvironmentalMaintenancePage() {
-  return (
-    <ServiceTemplate
-      serviceName="Environmental &\nCompactor Maintenance"
-      serviceDescription="Keep your waste handling equipment running efficiently with our maintenance and environmental consulting services."
-      heroImage={imgEnvironmental}
-    />
-  );
+export default async function EnvironmentalMaintenancePage() {
+  const data = await fetchServiceWithAcf('environmental-maintenance');
+  if (!data) return null;
+  return <ServiceTemplate {...data} />;
 }

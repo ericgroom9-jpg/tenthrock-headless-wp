@@ -1,16 +1,14 @@
+import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
+import type { Metadata } from "next";
 
-export default function SpendOptimizationPage() {
-  return (
-    <ServiceTemplate
-      serviceName="Spend Optimization"
-      serviceDescription="Consolidate vendors and negotiate better rates to reduce your total waste spend. Our procurement expertise saves clients up to 30% on waste costs."
-      heroImage="/images/stock/city-nature.jpg"
-    />
-  );
-}
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "Spend Optimization | Tenth Rock",
   description: "Consolidate vendors and negotiate better rates to reduce your total waste spend.",
 };
+
+export default async function SpendOptimizationPage() {
+  const data = await fetchServiceWithAcf('spend-optimization');
+  if (!data) return null;
+  return <ServiceTemplate {...data} />;
+}

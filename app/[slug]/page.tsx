@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
 import { Layout } from '@/components/layout/Layout';
 import { storage } from '@/lib/storage';
-import { fetchPagePreviewById, fetchServiceBySlug, fetchIndustryBySlug } from '@/lib/wordpress';
+import { fetchPagePreviewById, fetchServiceWithAcf, fetchIndustryWithAcf } from '@/lib/wordpress';
 import { isLandingBuilderEnabled } from '@/lib/config/features';
 import ServiceTemplate from '@/components/services/ServiceTemplate';
 import IndustryTemplate from '@/components/industries/IndustryTemplate';
@@ -13,27 +13,6 @@ import {
   getLandingPageData,
   LandingPageRenderer 
 } from '@/modules/landing-builder';
-
-const defaultIndustryHeroImage = '/images/stock/service-dumpster-rental.jpg';
-
-const defaultIndustryBulletPoints = [
-  {
-    title: 'Dedicated Account Management',
-    description: 'A single point of contact who understands your industry and coordinates all waste operations across your locations.',
-  },
-  {
-    title: 'Custom Service Programs',
-    description: 'Tailored pickup schedules, container sizing, and recycling programs designed around how your business operates.',
-  },
-  {
-    title: 'Nationwide Coverage',
-    description: 'Consistent service standards across all your locations with our vetted network of local vendors in 48 states.',
-  },
-  {
-    title: 'Transparent Reporting',
-    description: 'Detailed reporting on volumes, costs, and sustainability metrics so you always know where you stand.',
-  },
-];
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -82,23 +61,21 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   }
 
   const [service, industry] = await Promise.all([
-    fetchServiceBySlug(slug).catch(() => null),
-    fetchIndustryBySlug(slug).catch(() => null),
+    fetchServiceWithAcf(slug).catch(() => null),
+    fetchIndustryWithAcf(slug).catch(() => null),
   ]);
 
   if (service) {
     return buildSeoMetadata(
-      `${service.title} | Tenth Rock`,
+      `${service.serviceName} | Tenth Rock`,
       service.seoMetadata,
-      service.featuredImageUrl,
     );
   }
 
   if (industry) {
     return buildSeoMetadata(
-      `${industry.title} Waste Management | Tenth Rock`,
+      `${industry.industryName} Waste Management | Tenth Rock`,
       industry.seoMetadata,
-      industry.featuredImageUrl,
     );
   }
   
@@ -143,34 +120,16 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
   }
 
   const [service, industry] = await Promise.all([
-    fetchServiceBySlug(slug).catch(() => null),
-    fetchIndustryBySlug(slug).catch(() => null),
+    fetchServiceWithAcf(slug).catch(() => null),
+    fetchIndustryWithAcf(slug).catch(() => null),
   ]);
 
   if (service) {
-    const plainExcerpt = service.excerpt?.replace(/<[^>]*>/g, '').trim() || '';
-    return (
-      <ServiceTemplate
-        serviceName={service.title}
-        serviceDescription={plainExcerpt || service.title}
-        heroImage={service.featuredImageUrl || undefined}
-        aboutDescription={service.content?.replace(/<[^>]*>/g, '').trim() || undefined}
-      />
-    );
+    return <ServiceTemplate {...service} />;
   }
 
   if (industry) {
-    const plainExcerpt = industry.excerpt?.replace(/<[^>]*>/g, '').trim() || '';
-    return (
-      <IndustryTemplate
-        industryName={industry.title}
-        heroImage={industry.featuredImageUrl || defaultIndustryHeroImage}
-        heroDescription={plainExcerpt || `Waste management solutions for the ${industry.title} industry.`}
-        aboutTitle={`${industry.title} Waste Solutions`}
-        aboutImage={industry.featuredImageUrl || defaultIndustryHeroImage}
-        bulletPoints={defaultIndustryBulletPoints}
-      />
-    );
+    return <IndustryTemplate {...industry} />;
   }
   
   let page;

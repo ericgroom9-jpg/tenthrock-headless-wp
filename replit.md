@@ -31,11 +31,15 @@ The system employs a Next.js 16 App Router frontend, utilizing TypeScript and Ne
 - **Post Type & Template Registry:** `lib/config/post-types.ts` is the central registry mapping WordPress post types and page templates to Next.js frontend routes. It contains `POST_TYPE_CONFIG` (7 CPTs + post + page) and `PAGE_TEMPLATE_CONFIG` (15 templates). The preview API (`app/api/preview/route.ts`) consumes the registry for preview routing. List-only CPTs correctly return 400 when previewed.
 - **Dynamic CPT Routes:** Service and industry CPTs are served at the root level (`/[slug]`) via `app/[slug]/page.tsx`, matching the old website's URL structure (no `/services/` or `/industries/` prefix). The root `[slug]` route checks for service CPT, then industry CPT, then falls back to regular WordPress pages. Static routes (33 service folders and 8 industry folders, all at root level under `app/`) take priority over the dynamic `[slug]` route per Next.js App Router convention.
 
+- **ACF Field Groups:** Five ACF field group snippets (Code Snippets IDs 10-14) define structured fields for all CPTs: Services (hero, about, sub-services, process, FAQs, stats, paragraph sections), Industries (hero, about, bullet points, FAQs, paragraph sections), Testimonials (quote, author, role, company, image), Case Studies (title, subtitle, tag, description, images, stats), FAQs (answer, display_order — question is the post title), Partner Logos (logo image, alt text, display order). All image fields use 'text' type for URL paths. Five custom taxonomies registered via snippet ID 9: `testimonial_context`, `case_study_industry`, `faq_category`, `faq_context`, `service_region`.
+- **ACF-Powered Frontend:** Service and industry pages fetch ACF field data from WordPress via `fetchServiceWithAcf`/`fetchIndustryWithAcf` and render using `ServiceTemplate`/`IndustryTemplate` components. The FAQ page (`app/faq/page.tsx`) fetches categories and questions from WordPress via `fetchAllFaqs`. Shared components (`CaseStudySection`, `LogoReelSection`, `FaqSection`, `TestimonialsSection`) accept optional data props with hardcoded defaults as fallback, enabling incremental migration of client-side pages to WP-powered data.
+
 **Core Features:**
 - Full taxonomy support (categories and tags) for posts.
 - SEO-friendly URL structure and meta-data handling.
 - Development tooling for database schema pushing.
-- GraphQL queries for CPTs in `lib/wordpress.ts`: `fetchServiceBySlug`, `fetchIndustryBySlug`, `fetchAllServiceSlugs`, `fetchAllIndustrySlugs`.
+- GraphQL queries for CPTs in `lib/wordpress.ts`: `fetchServiceWithAcf`, `fetchIndustryWithAcf`, `fetchAllTestimonials`, `fetchAllCaseStudies`, `fetchAllFaqs`, `fetchAllPartnerLogos`, plus legacy `fetchServiceBySlug`, `fetchIndustryBySlug`, `fetchAllServiceSlugs`, `fetchAllIndustrySlugs`.
+- TypeScript interfaces for all ACF data: `ServiceTemplateData`, `IndustryTemplateData`, `TestimonialData`, `CaseStudyData`, `FaqCategoryData`, `PartnerLogoData`.
 
 ## External Dependencies
 - **WordPress:** Content Management System.

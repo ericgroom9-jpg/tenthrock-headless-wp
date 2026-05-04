@@ -1,13 +1,13 @@
+import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
+import type { Metadata } from "next";
 
-const imgCentralized = "/images/stock/service-centralized-program.jpg";
+export const metadata: Metadata = {
+  title: "CentralizedPrograms | Tenth Rock",
+};
 
-export default function CentralizedProgramsPage() {
-  return (
-    <ServiceTemplate
-      serviceName="Centralized Waste Programs"
-      serviceDescription="Streamline waste operations across your entire organization with our centralized management platform. One partner, one invoice, complete visibility."
-      heroImage={imgCentralized}
-    />
-  );
+export default async function CentralizedProgramsPage() {
+  const data = await fetchServiceWithAcf('centralized-programs');
+  if (!data) return null;
+  return <ServiceTemplate {...data} />;
 }

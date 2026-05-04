@@ -17,11 +17,11 @@ interface FaqItem {
 interface FaqCategory {
   id: string;
   label: string;
-  description: string;
+  description?: string;
   faqs: FaqItem[];
 }
 
-const faqCategories: FaqCategory[] = [
+const defaultFaqCategories: FaqCategory[] = [
   {
     id: "general",
     label: "General",
@@ -129,8 +129,13 @@ const faqCategories: FaqCategory[] = [
   },
 ];
 
-export default function FaqPage() {
-  const [activeCategory, setActiveCategory] = useState("general");
+interface FaqPageProps {
+  categories?: FaqCategory[];
+}
+
+export default function FaqPage({ categories }: FaqPageProps) {
+  const faqCategories = categories && categories.length > 0 ? categories : defaultFaqCategories;
+  const [activeCategory, setActiveCategory] = useState(faqCategories[0]?.id || "general");
   const [openItem, setOpenItem] = useState<string>("item-0");
   const accordionRef = useRef<HTMLDivElement>(null);
 

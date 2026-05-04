@@ -1,16 +1,14 @@
+import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
+import type { Metadata } from "next";
 
-export default function BrandProtectionPage() {
-  return (
-    <ServiceTemplate
-      serviceName="Brand Protection"
-      serviceDescription="Protect your brand reputation with discreet, rapid waste removal before it becomes visible. We ensure your locations always present a clean, professional image."
-      heroImage="/images/stock/clean-city.jpg"
-    />
-  );
-}
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "Brand Protection | Tenth Rock",
   description: "Protect your brand reputation with discreet, rapid waste removal before it becomes visible.",
 };
+
+export default async function BrandProtectionPage() {
+  const data = await fetchServiceWithAcf('brand-protection');
+  if (!data) return null;
+  return <ServiceTemplate {...data} />;
+}

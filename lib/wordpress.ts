@@ -529,6 +529,25 @@ const GET_SERVICE_BY_SLUG_QUERY = gql`
       seo {
         ...SeoFields
       }
+      serviceFields {
+        heroTitle
+        heroDescription
+        heroImage
+        aboutDescription
+        aboutBullets { bulletText }
+        subServices { subTitle subDescription subImage subLink subFeatures { featureText } }
+        faqs { question answer }
+        processSteps { stepNum stepTitle stepDesc }
+        stats { statValue statLabel statDescription }
+        para1Badge para1Heading para1Body para1Image para1ImageAlt
+        para1Bullets { bulletText }
+        para2Badge para2Heading para2Body para2Image para2ImageAlt
+        para2Bullets { bulletText }
+        howItWorksSteps { stepTitle stepDesc }
+        ctaImage ctaImageAlt
+        processSubtitle
+        howItWorksIntro
+      }
     }
   }
 `;
@@ -550,6 +569,20 @@ const GET_INDUSTRY_BY_SLUG_QUERY = gql`
       }
       seo {
         ...SeoFields
+      }
+      industryFields {
+        heroDescription
+        heroImage
+        aboutTitle
+        aboutImage
+        aboutBullets { bulletTitle bulletDescription }
+        faqs { question answer }
+        para1Badge para1Heading para1Body para1Image para1ImageAlt
+        para1Bullets { bulletText }
+        para2Badge para2Heading para2Body para2Image para2ImageAlt
+        para2Bullets { bulletText }
+        para3Badge para3Heading para3Body para3Image para3ImageAlt
+        para3Bullets { bulletText }
       }
     }
   }
@@ -602,6 +635,83 @@ const GET_ALL_INDUSTRIES_QUERY = gql`
     industries(first: 100, where: { status: PUBLISH }) {
       nodes {
         slug
+      }
+    }
+  }
+`;
+
+const GET_ALL_TESTIMONIALS_QUERY = gql`
+  query GetAllTestimonials {
+    testimonials(first: 100, where: { status: PUBLISH }) {
+      nodes {
+        databaseId
+        title
+        testimonialFields {
+          quote
+          authorName
+          authorRole
+          company
+          authorImage
+        }
+      }
+    }
+  }
+`;
+
+const GET_ALL_CASE_STUDIES_QUERY = gql`
+  query GetAllCaseStudies {
+    caseStudies(first: 100, where: { status: PUBLISH }) {
+      nodes {
+        databaseId
+        title
+        caseStudyFields {
+          subtitle
+          tag
+          description
+          mainImage
+          mainImageAlt
+          thumbImages { thumbImage thumbAlt }
+          stats { statValue statLabel }
+          displayOrder
+        }
+      }
+    }
+  }
+`;
+
+const GET_ALL_FAQS_QUERY = gql`
+  query GetAllFaqs {
+    faqs(first: 100, where: { status: PUBLISH }) {
+      nodes {
+        databaseId
+        title
+        faqFields {
+          answer
+          displayOrder
+        }
+        faqCategories {
+          nodes {
+            slug
+            name
+            description
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GET_ALL_PARTNER_LOGOS_QUERY = gql`
+  query GetAllPartnerLogos {
+    partnerLogos(first: 100, where: { status: PUBLISH }) {
+      nodes {
+        databaseId
+        title
+        partnerLogoFields {
+          logoImage
+          logoAlt
+          displayOrder
+        }
       }
     }
   }
@@ -705,6 +815,231 @@ interface WpCptNode {
   excerpt: string;
   featuredImage: WpFeaturedImage | null;
   seo: WpSeo | null;
+  serviceFields?: WpServiceFields | null;
+  industryFields?: WpIndustryFields | null;
+}
+
+interface WpServiceFields {
+  heroTitle: string | null;
+  heroDescription: string | null;
+  heroImage: string | null;
+  aboutDescription: string | null;
+  aboutBullets: { bulletText: string }[] | null;
+  subServices: {
+    subTitle: string;
+    subDescription: string;
+    subImage: string;
+    subLink: string;
+    subFeatures: { featureText: string }[] | null;
+  }[] | null;
+  faqs: { question: string; answer: string }[] | null;
+  processSteps: { stepNum: string; stepTitle: string; stepDesc: string }[] | null;
+  stats: { statValue: string; statLabel: string; statDescription: string }[] | null;
+  para1Badge: string | null;
+  para1Heading: string | null;
+  para1Body: string | null;
+  para1Image: string | null;
+  para1ImageAlt: string | null;
+  para1Bullets: { bulletText: string }[] | null;
+  para2Badge: string | null;
+  para2Heading: string | null;
+  para2Body: string | null;
+  para2Image: string | null;
+  para2ImageAlt: string | null;
+  para2Bullets: { bulletText: string }[] | null;
+  howItWorksSteps: { stepTitle: string; stepDesc: string }[] | null;
+  ctaImage: string | null;
+  ctaImageAlt: string | null;
+  processSubtitle: string | null;
+  howItWorksIntro: string | null;
+}
+
+interface WpIndustryFields {
+  heroDescription: string | null;
+  heroImage: string | null;
+  aboutTitle: string | null;
+  aboutImage: string | null;
+  aboutBullets: { bulletTitle: string; bulletDescription: string }[] | null;
+  faqs: { question: string; answer: string }[] | null;
+  para1Badge: string | null;
+  para1Heading: string | null;
+  para1Body: string | null;
+  para1Image: string | null;
+  para1ImageAlt: string | null;
+  para1Bullets: { bulletText: string }[] | null;
+  para2Badge: string | null;
+  para2Heading: string | null;
+  para2Body: string | null;
+  para2Image: string | null;
+  para2ImageAlt: string | null;
+  para2Bullets: { bulletText: string }[] | null;
+  para3Badge: string | null;
+  para3Heading: string | null;
+  para3Body: string | null;
+  para3Image: string | null;
+  para3ImageAlt: string | null;
+  para3Bullets: { bulletText: string }[] | null;
+}
+
+interface WpTestimonialNode {
+  databaseId: number;
+  title: string;
+  testimonialFields: {
+    quote: string;
+    authorName: string;
+    authorRole: string | null;
+    company: string | null;
+    authorImage: string | null;
+  } | null;
+}
+
+interface WpCaseStudyNode {
+  databaseId: number;
+  title: string;
+  caseStudyFields: {
+    subtitle: string | null;
+    tag: string | null;
+    description: string | null;
+    mainImage: string | null;
+    mainImageAlt: string | null;
+    thumbImages: { thumbImage: string; thumbAlt: string }[] | null;
+    stats: { statValue: string; statLabel: string }[] | null;
+    displayOrder: string | null;
+  } | null;
+}
+
+interface WpFaqNode {
+  databaseId: number;
+  title: string;
+  faqFields: {
+    answer: string;
+    displayOrder: string | null;
+  } | null;
+  faqCategories: {
+    nodes: { slug: string; name: string; description?: string }[];
+  } | null;
+}
+
+interface WpPartnerLogoNode {
+  databaseId: number;
+  title: string;
+  partnerLogoFields: {
+    logoImage: string | null;
+    logoAlt: string | null;
+    displayOrder: string | null;
+  } | null;
+}
+
+export interface ServiceTemplateData {
+  serviceName: string;
+  heroTitle?: string;
+  serviceDescription: string;
+  heroImage?: string;
+  aboutDescription?: string;
+  aboutBullets?: string[];
+  subServices?: {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    features?: string[];
+  }[];
+  faqs?: { question: string; answer: string }[];
+  processSteps?: { num: string; title: string; desc: string }[];
+  processSubtitle?: string;
+  stats?: { label: string; value: string; description: string }[];
+  paragraphSection1?: {
+    badge: string;
+    heading: string;
+    body: string;
+    image?: string;
+    imageAlt?: string;
+    bulletPoints?: string[];
+  };
+  paragraphSection2?: {
+    badge: string;
+    heading: string;
+    body: string;
+    image?: string;
+    imageAlt?: string;
+    bulletPoints?: string[];
+  };
+  howItWorksIntro?: string;
+  howItWorksSteps?: { title: string; desc: string }[];
+  ctaImage?: string;
+  ctaImageAlt?: string;
+  seoMetadata?: SeoMetadata;
+}
+
+export interface IndustryTemplateData {
+  industryName: string;
+  heroImage: string;
+  heroDescription: string;
+  aboutTitle: string;
+  aboutImage: string;
+  bulletPoints: { title: string; description: string }[];
+  faqs?: { question: string; answer: string }[];
+  paragraphSection1?: {
+    badge: string;
+    heading: string;
+    body: string;
+    image?: string;
+    imageAlt?: string;
+    bulletPoints?: string[];
+  };
+  paragraphSection2?: {
+    badge: string;
+    heading: string;
+    body: string;
+    image?: string;
+    imageAlt?: string;
+    bulletPoints?: string[];
+  };
+  paragraphSection3?: {
+    badge: string;
+    heading: string;
+    body: string;
+    image?: string;
+    imageAlt?: string;
+    bulletPoints?: string[];
+  };
+  seoMetadata?: SeoMetadata;
+}
+
+export interface TestimonialData {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+  img: string;
+}
+
+export interface CaseStudyData {
+  title: string;
+  subtitle: string;
+  tag: string;
+  description: string;
+  mainImage: string;
+  mainImageAlt: string;
+  thumbImages: { src: string; alt: string }[];
+  stats: { value: string; label: string }[];
+}
+
+export interface FaqData {
+  question: string;
+  answer: string;
+}
+
+export interface FaqCategoryData {
+  id: string;
+  label: string;
+  description?: string;
+  faqs: FaqData[];
+}
+
+export interface PartnerLogoData {
+  src: string;
+  alt: string;
 }
 
 export interface CptEntry {
@@ -1175,5 +1510,262 @@ export async function checkWordPressConnection(): Promise<boolean> {
   } catch (error) {
     console.error('WordPress connection check failed:', error);
     return false;
+  }
+}
+
+function buildParagraphSection(
+  badge: string | null,
+  heading: string | null,
+  body: string | null,
+  image: string | null,
+  imageAlt: string | null,
+  bullets: { bulletText: string }[] | null,
+) {
+  if (!badge && !heading && !body) return undefined;
+  return {
+    badge: badge || '',
+    heading: heading || '',
+    body: body || '',
+    image: image || undefined,
+    imageAlt: imageAlt || undefined,
+    bulletPoints: bullets?.map(b => b.bulletText).filter(Boolean) || undefined,
+  };
+}
+
+function transformServiceNode(node: WpCptNode): ServiceTemplateData {
+  const sf = node.serviceFields;
+  const result: ServiceTemplateData = {
+    serviceName: node.title,
+    serviceDescription: sf?.heroDescription || node.excerpt?.replace(/<[^>]*>/g, '').trim() || node.title,
+    seoMetadata: transformSeoData(node.seo),
+  };
+
+  if (sf?.heroTitle) result.heroTitle = sf.heroTitle;
+  if (sf?.heroImage) result.heroImage = sf.heroImage;
+  else if (node.featuredImage?.node?.sourceUrl) result.heroImage = node.featuredImage.node.sourceUrl;
+  if (sf?.aboutDescription) result.aboutDescription = sf.aboutDescription;
+  if (sf?.aboutBullets?.length) result.aboutBullets = sf.aboutBullets.map(b => b.bulletText).filter(Boolean);
+  if (sf?.subServices?.length) {
+    result.subServices = sf.subServices.map(s => ({
+      title: s.subTitle,
+      description: s.subDescription,
+      image: s.subImage,
+      link: s.subLink,
+      features: s.subFeatures?.map(f => f.featureText).filter(Boolean) || undefined,
+    }));
+  }
+  if (sf?.faqs?.length) result.faqs = sf.faqs;
+  if (sf?.processSteps?.length) {
+    result.processSteps = sf.processSteps.map(s => ({
+      num: s.stepNum,
+      title: s.stepTitle,
+      desc: s.stepDesc,
+    }));
+  }
+  if (sf?.processSubtitle) result.processSubtitle = sf.processSubtitle;
+  if (sf?.stats?.length) {
+    result.stats = sf.stats.map(s => ({
+      value: s.statValue,
+      label: s.statLabel,
+      description: s.statDescription,
+    }));
+  }
+  result.paragraphSection1 = buildParagraphSection(
+    sf?.para1Badge ?? null, sf?.para1Heading ?? null, sf?.para1Body ?? null,
+    sf?.para1Image ?? null, sf?.para1ImageAlt ?? null, sf?.para1Bullets ?? null,
+  );
+  result.paragraphSection2 = buildParagraphSection(
+    sf?.para2Badge ?? null, sf?.para2Heading ?? null, sf?.para2Body ?? null,
+    sf?.para2Image ?? null, sf?.para2ImageAlt ?? null, sf?.para2Bullets ?? null,
+  );
+  if (sf?.howItWorksIntro) result.howItWorksIntro = sf.howItWorksIntro;
+  if (sf?.howItWorksSteps?.length) {
+    result.howItWorksSteps = sf.howItWorksSteps.map(s => ({
+      title: s.stepTitle,
+      desc: s.stepDesc,
+    }));
+  }
+  if (sf?.ctaImage) result.ctaImage = sf.ctaImage;
+  if (sf?.ctaImageAlt) result.ctaImageAlt = sf.ctaImageAlt;
+
+  return result;
+}
+
+function transformIndustryNode(node: WpCptNode): IndustryTemplateData {
+  const inf = node.industryFields;
+  const defaultImg = '/images/stock/service-dumpster-rental.jpg';
+  return {
+    industryName: node.title,
+    heroImage: inf?.heroImage || node.featuredImage?.node?.sourceUrl || defaultImg,
+    heroDescription: inf?.heroDescription || node.excerpt?.replace(/<[^>]*>/g, '').trim() || `Waste management solutions for the ${node.title} industry.`,
+    aboutTitle: inf?.aboutTitle || `${node.title} Waste Solutions`,
+    aboutImage: inf?.aboutImage || node.featuredImage?.node?.sourceUrl || defaultImg,
+    bulletPoints: inf?.aboutBullets?.map(b => ({ title: b.bulletTitle, description: b.bulletDescription })) || [],
+    faqs: inf?.faqs?.length ? inf.faqs : undefined,
+    paragraphSection1: buildParagraphSection(
+      inf?.para1Badge ?? null, inf?.para1Heading ?? null, inf?.para1Body ?? null,
+      inf?.para1Image ?? null, inf?.para1ImageAlt ?? null, inf?.para1Bullets ?? null,
+    ),
+    paragraphSection2: buildParagraphSection(
+      inf?.para2Badge ?? null, inf?.para2Heading ?? null, inf?.para2Body ?? null,
+      inf?.para2Image ?? null, inf?.para2ImageAlt ?? null, inf?.para2Bullets ?? null,
+    ),
+    paragraphSection3: buildParagraphSection(
+      inf?.para3Badge ?? null, inf?.para3Heading ?? null, inf?.para3Body ?? null,
+      inf?.para3Image ?? null, inf?.para3ImageAlt ?? null, inf?.para3Bullets ?? null,
+    ),
+    seoMetadata: transformSeoData(node.seo),
+  };
+}
+
+export async function fetchServiceWithAcf(slug: string): Promise<ServiceTemplateData | null> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ service: WpCptNode | null }>(
+      GET_SERVICE_BY_SLUG_QUERY,
+      { slug }
+    );
+    if (!response.service) return null;
+    return transformServiceNode(response.service);
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    if (msg.includes('Cannot query field') || msg.includes('not found')) {
+      console.warn(`[WP] Service "${slug}" not found:`, msg);
+      return null;
+    }
+    console.error(`[WP] Failed to fetch service with ACF "${slug}":`, error);
+    throw error;
+  }
+}
+
+export async function fetchIndustryWithAcf(slug: string): Promise<IndustryTemplateData | null> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ industry: WpCptNode | null }>(
+      GET_INDUSTRY_BY_SLUG_QUERY,
+      { slug }
+    );
+    if (!response.industry) return null;
+    return transformIndustryNode(response.industry);
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    if (msg.includes('Cannot query field') || msg.includes('not found')) {
+      console.warn(`[WP] Industry "${slug}" not found:`, msg);
+      return null;
+    }
+    console.error(`[WP] Failed to fetch industry with ACF "${slug}":`, error);
+    throw error;
+  }
+}
+
+export async function fetchAllTestimonials(): Promise<TestimonialData[]> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ testimonials: { nodes: WpTestimonialNode[] } }>(
+      GET_ALL_TESTIMONIALS_QUERY
+    );
+    return response.testimonials.nodes
+      .filter(n => n.testimonialFields)
+      .map(n => ({
+        quote: n.testimonialFields!.quote,
+        author: n.testimonialFields!.authorName,
+        role: n.testimonialFields!.authorRole || '',
+        company: n.testimonialFields!.company || '',
+        img: n.testimonialFields!.authorImage || '',
+      }));
+  } catch (error) {
+    console.error('[WP] Failed to fetch testimonials:', error);
+    return [];
+  }
+}
+
+export async function fetchAllCaseStudies(): Promise<CaseStudyData[]> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ caseStudies: { nodes: WpCaseStudyNode[] } }>(
+      GET_ALL_CASE_STUDIES_QUERY
+    );
+    return response.caseStudies.nodes
+      .filter(n => n.caseStudyFields)
+      .sort((a, b) => {
+        const orderA = parseInt(a.caseStudyFields?.displayOrder || '99', 10);
+        const orderB = parseInt(b.caseStudyFields?.displayOrder || '99', 10);
+        return orderA - orderB;
+      })
+      .map(n => {
+        const cf = n.caseStudyFields!;
+        return {
+          title: n.title,
+          subtitle: cf.subtitle || '',
+          tag: cf.tag || '',
+          description: cf.description || '',
+          mainImage: cf.mainImage || '',
+          mainImageAlt: cf.mainImageAlt || '',
+          thumbImages: cf.thumbImages?.map(t => ({ src: t.thumbImage, alt: t.thumbAlt })) || [],
+          stats: cf.stats?.map(s => ({ value: s.statValue, label: s.statLabel })) || [],
+        };
+      });
+  } catch (error) {
+    console.error('[WP] Failed to fetch case studies:', error);
+    return [];
+  }
+}
+
+export async function fetchAllFaqs(): Promise<FaqCategoryData[]> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ faqs: { nodes: WpFaqNode[] } }>(
+      GET_ALL_FAQS_QUERY
+    );
+    const categoryMap = new Map<string, { label: string; description?: string; faqs: (FaqData & { order: number })[] }>();
+    for (const node of response.faqs.nodes) {
+      if (!node.faqFields || !node.title.trim() || !node.faqFields.answer.trim()) continue;
+      const cats = node.faqCategories?.nodes || [];
+      const catSlug = cats[0]?.slug || 'general';
+      const catName = cats[0]?.name || 'General';
+      const catDesc = cats[0]?.description || undefined;
+      if (!categoryMap.has(catSlug)) {
+        categoryMap.set(catSlug, { label: catName, description: catDesc, faqs: [] });
+      }
+      categoryMap.get(catSlug)!.faqs.push({
+        question: node.title,
+        answer: node.faqFields.answer,
+        order: parseInt(node.faqFields.displayOrder || '99', 10),
+      });
+    }
+    return Array.from(categoryMap.entries()).map(([id, data]) => ({
+      id,
+      label: data.label,
+      description: data.description,
+      faqs: data.faqs
+        .sort((a, b) => a.order - b.order)
+        .map(({ question, answer }) => ({ question, answer })),
+    }));
+  } catch (error) {
+    console.error('[WP] Failed to fetch FAQs:', error);
+    return [];
+  }
+}
+
+export async function fetchAllPartnerLogos(): Promise<PartnerLogoData[]> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ partnerLogos: { nodes: WpPartnerLogoNode[] } }>(
+      GET_ALL_PARTNER_LOGOS_QUERY
+    );
+    return response.partnerLogos.nodes
+      .filter(n => n.partnerLogoFields?.logoImage)
+      .sort((a, b) => {
+        const orderA = parseInt(a.partnerLogoFields?.displayOrder || '99', 10);
+        const orderB = parseInt(b.partnerLogoFields?.displayOrder || '99', 10);
+        return orderA - orderB;
+      })
+      .map(n => ({
+        src: n.partnerLogoFields!.logoImage!,
+        alt: n.partnerLogoFields!.logoAlt || n.title,
+      }));
+  } catch (error) {
+    console.error('[WP] Failed to fetch partner logos:', error);
+    return [];
   }
 }

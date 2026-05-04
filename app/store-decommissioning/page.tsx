@@ -1,13 +1,13 @@
+import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
+import type { Metadata } from "next";
 
-const imgStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
+export const metadata: Metadata = {
+  title: "StoreDecommissioning | Tenth Rock",
+};
 
-export default function StoreDecommissioningPage() {
-  return (
-    <ServiceTemplate
-      serviceName="Store Decommissioning &\nRemodel"
-      serviceDescription="Professional decommissioning services for retail closures, renovations, and remodels. We handle everything from fixture removal to final site cleanup."
-      heroImage={imgStoreDecommissioning}
-    />
-  );
+export default async function StoreDecommissioningPage() {
+  const data = await fetchServiceWithAcf('store-decommissioning');
+  if (!data) return null;
+  return <ServiceTemplate {...data} />;
 }
