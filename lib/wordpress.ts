@@ -511,6 +511,70 @@ const GET_ACF_OPTIONS_QUERY = gql`
   }
 `;
 
+const GET_SERVICE_BY_SLUG_QUERY = gql`
+  ${SEO_FRAGMENT}
+  ${FEATURED_IMAGE_FRAGMENT}
+  query GetServiceBySlug($slug: ID!) {
+    service(id: $slug, idType: SLUG) {
+      databaseId
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          ...FeaturedImageFields
+        }
+      }
+      seo {
+        ...SeoFields
+      }
+    }
+  }
+`;
+
+const GET_INDUSTRY_BY_SLUG_QUERY = gql`
+  ${SEO_FRAGMENT}
+  ${FEATURED_IMAGE_FRAGMENT}
+  query GetIndustryBySlug($slug: ID!) {
+    industry(id: $slug, idType: SLUG) {
+      databaseId
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          ...FeaturedImageFields
+        }
+      }
+      seo {
+        ...SeoFields
+      }
+    }
+  }
+`;
+
+const GET_ALL_SERVICES_QUERY = gql`
+  query GetAllServices {
+    services(first: 100, where: { status: PUBLISH }) {
+      nodes {
+        slug
+      }
+    }
+  }
+`;
+
+const GET_ALL_INDUSTRIES_QUERY = gql`
+  query GetAllIndustries {
+    industries(first: 100, where: { status: PUBLISH }) {
+      nodes {
+        slug
+      }
+    }
+  }
+`;
+
 // Type definitions for WordPress GraphQL responses
 interface WpFeaturedImage {
   node: {
@@ -599,6 +663,27 @@ interface WpAcfOptions {
 export interface GlobalScripts {
   headScripts: string | null;
   bodyScripts: string | null;
+}
+
+interface WpCptNode {
+  databaseId: number;
+  slug: string;
+  title: string;
+  content: string;
+  excerpt: string;
+  featuredImage: WpFeaturedImage | null;
+  seo: WpSeo | null;
+}
+
+export interface CptEntry {
+  databaseId: number;
+  slug: string;
+  title: string;
+  content: string;
+  excerpt: string;
+  featuredImageUrl: string | null;
+  featuredImageAlt: string | null;
+  seoMetadata?: SeoMetadata;
 }
 
 // Transform WordPress SEO data to our schema format
@@ -928,6 +1013,85 @@ export async function fetchAcfGlobalScripts(): Promise<GlobalScripts> {
       headScripts: null,
       bodyScripts: null,
     };
+  }
+}
+
+function transformCptNode(node: WpCptNode): CptEntry {
+  return {
+    databaseId: node.databaseId,
+    slug: node.slug,
+    title: node.title,
+    content: node.content,
+    excerpt: node.excerpt,
+    featuredImageUrl: node.featuredImage?.node?.sourceUrl || null,
+    featuredImageAlt: node.featuredImage?.node?.altText || null,
+    seoMetadata: transformSeoData(node.seo),
+  };
+}
+
+export async function fetchServiceBySlug(slug: string): Promise<CptEntry | null> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ service: WpCptNode | null }>(
+      GET_SERVICE_BY_SLUG_QUERY,
+      { slug }
+    );
+    if (!response.service) return null;
+    return transformCptNode(response.service);
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    if (msg.includes('Cannot query field') || msg.includes('not found')) {
+      console.warn(`[WP] Service "${slug}" not found:`, msg);
+      return null;
+    }
+    console.error(`[WP] Failed to fetch service by slug "${slug}":`, error);
+    throw error;
+  }
+}
+
+export async function fetchIndustryBySlug(slug: string): Promise<CptEntry | null> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ industry: WpCptNode | null }>(
+      GET_INDUSTRY_BY_SLUG_QUERY,
+      { slug }
+    );
+    if (!response.industry) return null;
+    return transformCptNode(response.industry);
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    if (msg.includes('Cannot query field') || msg.includes('not found')) {
+      console.warn(`[WP] Industry "${slug}" not found:`, msg);
+      return null;
+    }
+    console.error(`[WP] Failed to fetch industry by slug "${slug}":`, error);
+    throw error;
+  }
+}
+
+export async function fetchAllServiceSlugs(): Promise<string[]> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ services: { nodes: { slug: string }[] } }>(
+      GET_ALL_SERVICES_QUERY
+    );
+    return response.services.nodes.map(n => n.slug);
+  } catch (error) {
+    console.error('[WP] Failed to fetch service slugs:', error);
+    return [];
+  }
+}
+
+export async function fetchAllIndustrySlugs(): Promise<string[]> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ industries: { nodes: { slug: string }[] } }>(
+      GET_ALL_INDUSTRIES_QUERY
+    );
+    return response.industries.nodes.map(n => n.slug);
+  } catch (error) {
+    console.error('[WP] Failed to fetch industry slugs:', error);
+    return [];
   }
 }
 

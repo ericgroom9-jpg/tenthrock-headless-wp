@@ -26,11 +26,14 @@ The system employs a Next.js 16 App Router frontend, utilizing TypeScript and Ne
 - **Shared "Why Clients Call Us" Stats Section:** A single shared component (`components/shared/StatsSection.tsx`) renders the "Why Clients Call Us Again and Again" section identically across the homepage, the Who We Serve page, the Commercial Waste Services page, and every Service Template page. Image is hardcoded to `/images/stock/why-clients-nyc-sunrise.jpg` (the homepage hero of the section). Per-page `statsImage`/`statsImageAlt` overrides on `ServiceTemplate` were removed; do not reintroduce them — the picture must always match the homepage.
 - **Landing Page Builder (Feature Flag):** An optional module that allows self-service landing page creation using ACF Flexible Content blocks, with various pre-defined content sections (Hero, Feature Grid, CTA Banner, Form Section, Rich Text, Testimonials). It integrates with the global style guide.
 - **Service Categories:** The project defines four main service categories, each with three subcategories, structured with SEO-friendly URLs.
+- **Custom Post Types (CPT):** Six CPTs registered via Code Snippets plugin on WordPress (mbstest1.sherstaging.com): `tr_service` (Services), `tr_industry` (Industries), `tr_testimonial` (Testimonials), `tr_case_study` (Case Studies), `tr_faq` (FAQs), `tr_partner_logo` (Partner Logos). All exposed via WPGraphQL with Yoast SEO support. Services and Industries have single pages; Testimonials, Case Studies, FAQs, and Partner Logos are list-only (no single page views). PHP snippet ID 5 in Code Snippets plugin.
+- **Dynamic CPT Routes:** `app/services/[slug]/page.tsx` and `app/industries/[slug]/page.tsx` provide dynamic server-rendered pages for WordPress-managed services and industries. These use `ServiceTemplate` and `IndustryTemplate` components respectively. Static routes (33 service folders, 8 industry folders) take priority over dynamic `[slug]` routes per Next.js App Router convention.
 
 **Core Features:**
 - Full taxonomy support (categories and tags) for posts.
 - SEO-friendly URL structure and meta-data handling.
 - Development tooling for database schema pushing.
+- GraphQL queries for CPTs in `lib/wordpress.ts`: `fetchServiceBySlug`, `fetchIndustryBySlug`, `fetchAllServiceSlugs`, `fetchAllIndustrySlugs`.
 
 ## External Dependencies
 - **WordPress:** Content Management System.

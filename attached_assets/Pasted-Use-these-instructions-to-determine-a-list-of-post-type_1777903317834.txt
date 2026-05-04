@@ -1,0 +1,42 @@
+Use these instructions to determine a list of post types that we need + what their status should be (single pages or not)so that the client can easily manage the content on this website.
+Scan through the entire website (every page, etc.) before answering - not just the home page. 
+old site: https://www.tenthrock.com/
+Which post types do we need?
+The goal of this step is to create a list of post types that we’ll need for this website. 
+
+For a given content type, a post type should always exist if: 
+
+
+The client’s old website had single pages for it
+Example: the client’s old website has /work/case-study1 on it. In this case, we would need a case study page so we can carry over the URLs
+The content repeats and should be managed in one place
+Example: testimonials, team members, events, locations.
+The content needs its own archive/listing page
+Example: /news, /resources, /projects.
+The content needs taxonomies or filtering
+Example: filter projects by service, industry, or year.
+The layout of each post/page is exactly identical, and can easily be managed via a consistent schema of CMS fields.
+
+If none of the above apply, keep it as a normal Page or static section. 
+
+When doing this, remember that not all post types need pages for each post/instance. 
+Which post types need their own pages? 
+
+Give a post type its own single page when any of these are true:
+
+The old site already had single URLs you need to keep
+Example: /work/case-study1
+People need to land on the item from search, ads, or sharing
+Example: jobs, events, resources, case studies
+The item has enough unique content to justify a full template.
+Example: long description, gallery, outcomes, related items
+SEO value matters per item.
+Example: each project or article should rank independently
+
+Keep the post type list-only (no single page) when:
+
+It’s mainly supporting content for other pages
+Example: testimonials, FAQs, etc. 
+Entries are short and not useful as standalone pages
+There is no need for sharing, indexing, or direct navigation to each item
+You only need to query and render it inside other templates/components
