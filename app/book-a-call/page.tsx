@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchBookCallAcf();
   return {
     title: data?.seoMetadata?.title || "Book A Call | Tenth Rock",
-    description: data?.seoMetadata?.description || "Schedule a consultation with Tenth Rock waste management experts.",
+    description: data?.seoMetadata?.metaDesc || "Schedule a consultation with Tenth Rock waste management experts.",
   };
 }
 

@@ -8,7 +8,7 @@ export async function generateMetadata() {
   const data = await fetchCommercialWasteAcf();
   return {
     title: data?.seoMetadata?.title || "Commercial Waste Services | Tenth Rock",
-    description: data?.seoMetadata?.description || "Nationwide commercial waste services including emergency removal, dumpster rentals, and waste advisory.",
+    description: data?.seoMetadata?.metaDesc || "Nationwide commercial waste services including emergency removal, dumpster rentals, and waste advisory.",
   };
 }
 

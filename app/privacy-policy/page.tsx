@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchPrivacyPolicyAcf();
   return {
     title: data?.seoMetadata?.title || "Privacy Policy | Tenth Rock",
-    description: data?.seoMetadata?.description || "Tenth Rock privacy policy.",
+    description: data?.seoMetadata?.metaDesc || "Tenth Rock privacy policy.",
   };
 }
 

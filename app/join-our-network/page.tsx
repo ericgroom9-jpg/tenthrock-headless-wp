@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchJoinNetworkAcf();
   return {
     title: data?.seoMetadata?.title || "Join Our Network | Tenth Rock",
-    description: data?.seoMetadata?.description || "Partner with Tenth Rock as a certified service provider. Same-day payment, no sales, national reach.",
+    description: data?.seoMetadata?.metaDesc || "Partner with Tenth Rock as a certified service provider. Same-day payment, no sales, national reach.",
   };
 }
 

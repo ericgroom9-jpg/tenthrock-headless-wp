@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchFaqPageAcf();
   return {
     title: data?.seoMetadata?.title || "FAQ | Tenth Rock - Commercial Waste Management",
-    description: data?.seoMetadata?.description || "Find answers to frequently asked questions about Tenth Rock's commercial waste management services, pricing, sustainability, and more.",
+    description: data?.seoMetadata?.metaDesc || "Find answers to frequently asked questions about Tenth Rock's commercial waste management services, pricing, sustainability, and more.",
   };
 }
 

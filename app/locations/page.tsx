@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchLocationsPageAcf();
   return {
     title: data?.seoMetadata?.title || "Locations | Tenth Rock - Nationwide Coverage",
-    description: data?.seoMetadata?.description || "Tenth Rock operates in 48 states with local crews ready for emergency pickups, scheduled service, and project-based waste removal.",
+    description: data?.seoMetadata?.metaDesc || "Tenth Rock operates in 48 states with local crews ready for emergency pickups, scheduled service, and project-based waste removal.",
   };
 }
 

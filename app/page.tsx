@@ -7,10 +7,10 @@ export async function generateMetadata() {
   const data = await fetchHomepageAcf();
   return {
     title: data?.seoMetadata?.title || 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
-    description: data?.seoMetadata?.description || 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
+    description: data?.seoMetadata?.metaDesc || 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
     openGraph: {
       title: data?.seoMetadata?.title || 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
-      description: data?.seoMetadata?.description || 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
+      description: data?.seoMetadata?.metaDesc || 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
       type: 'website',
     },
   };

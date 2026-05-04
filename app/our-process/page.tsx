@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchOurProcessAcf();
   return {
     title: data?.seoMetadata?.title || "Our Process | Tenth Rock",
-    description: data?.seoMetadata?.description || "Five steps from first call to job complete. See how Tenth Rock handles every project.",
+    description: data?.seoMetadata?.metaDesc || "Five steps from first call to job complete. See how Tenth Rock handles every project.",
   };
 }
 

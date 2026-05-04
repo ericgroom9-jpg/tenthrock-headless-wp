@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchTermsOfServiceAcf();
   return {
     title: data?.seoMetadata?.title || "Terms of Service | Tenth Rock",
-    description: data?.seoMetadata?.description || "Tenth Rock terms of service.",
+    description: data?.seoMetadata?.metaDesc || "Tenth Rock terms of service.",
   };
 }
 

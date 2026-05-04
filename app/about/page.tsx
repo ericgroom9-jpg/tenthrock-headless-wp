@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchAboutAcf();
   return {
     title: data?.seoMetadata?.title || "About | Tenth Rock Waste Solutions",
-    description: data?.seoMetadata?.description || "Built from the ground up to fix a broken industry. Learn about Tenth Rock's mission and values.",
+    description: data?.seoMetadata?.metaDesc || "Built from the ground up to fix a broken industry. Learn about Tenth Rock's mission and values.",
   };
 }
 

@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchWhoWeServeAcf();
   return {
     title: data?.seoMetadata?.title || "Who We Serve | Tenth Rock",
-    description: data?.seoMetadata?.description || "Tenth Rock serves retail chains, stadiums, hospitality, real estate, and more with reliable waste management.",
+    description: data?.seoMetadata?.metaDesc || "Tenth Rock serves retail chains, stadiums, hospitality, real estate, and more with reliable waste management.",
   };
 }
 

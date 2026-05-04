@@ -7,7 +7,7 @@ export async function generateMetadata() {
   const data = await fetchRequestServiceAcf();
   return {
     title: data?.seoMetadata?.title || "Request A Service | Tenth Rock",
-    description: data?.seoMetadata?.description || "Request commercial waste management services from Tenth Rock.",
+    description: data?.seoMetadata?.metaDesc || "Request commercial waste management services from Tenth Rock.",
   };
 }
 
