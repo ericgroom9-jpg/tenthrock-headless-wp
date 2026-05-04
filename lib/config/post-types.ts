@@ -117,7 +117,7 @@ export const PAGE_TEMPLATE_CONFIG: Record<string, PageTemplateConfig> = {
   },
   commercialWaste: {
     wpTemplate: 'template-commercial-waste',
-    route: '/services/commercial-waste',
+    route: '/commercial-waste',
     label: 'Commercial Waste Services',
   },
   whoWeServe: {

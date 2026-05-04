@@ -35,7 +35,7 @@ const sectors = [
             lineNumber: 8,
             columnNumber: 180
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/retail"
+        href: "/retail"
     },
     {
         title: "Stadiums & Events",
@@ -48,7 +48,7 @@ const sectors = [
             lineNumber: 9,
             columnNumber: 205
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/stadiums-events"
+        href: "/stadiums-events"
     },
     {
         title: "Faith Based",
@@ -61,7 +61,7 @@ const sectors = [
             lineNumber: 10,
             columnNumber: 180
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/faith-based"
+        href: "/faith-based"
     },
     {
         title: "Real Estate",
@@ -74,7 +74,7 @@ const sectors = [
             lineNumber: 11,
             columnNumber: 199
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/real-estate"
+        href: "/real-estate"
     },
     {
         title: "Natural Disasters",
@@ -87,7 +87,7 @@ const sectors = [
             lineNumber: 12,
             columnNumber: 198
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/natural-disasters"
+        href: "/natural-disasters"
     },
     {
         title: "Hospitality",
@@ -100,7 +100,7 @@ const sectors = [
             lineNumber: 13,
             columnNumber: 188
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/hospitality"
+        href: "/hospitality"
     },
     {
         title: "Educational",
@@ -113,7 +113,7 @@ const sectors = [
             lineNumber: 14,
             columnNumber: 179
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/educational"
+        href: "/educational"
     },
     {
         title: "Municipalities",
@@ -126,7 +126,7 @@ const sectors = [
             lineNumber: 15,
             columnNumber: 196
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/municipalities"
+        href: "/municipalities"
     }
 ];
 function IndustryCard({ sector, index }) {

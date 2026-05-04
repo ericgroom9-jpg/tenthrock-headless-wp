@@ -333,7 +333,7 @@ const ServicesSection = () => {
     {
       title: "Emergency Waste Removal",
       desc: "Same-day junk removal and emergency waste management for spoiled product, overflowing dumpsters, and urgent commercial site cleanouts across 48 states.",
-      href: "/services/emergency-waste-removal",
+      href: "/emergency-waste-removal",
       items: [
         { label: "Product & Perishable Removal", desc: "Perishable bulk pickup and spoiled product disposal after cold storage failure or refrigeration failure events. After-hours waste removal available." },
         { label: "Temporary Capacity & Stabilization", desc: "Compactor failure response and urgent bulk waste removal when missed pickups or waste overflow disrupts operations." },
@@ -343,7 +343,7 @@ const ServicesSection = () => {
     {
       title: "Specialized Project Logistics",
       desc: "End-to-end waste coordination for site decommissioning, commercial cleanouts, event waste logistics, and storm debris removal across multiple sites.",
-      href: "/services/specialized-project-logistics",
+      href: "/specialized-project-logistics",
       items: [
         { label: "Site Closures & Remodels", desc: "Site decommissioning, post-construction cleanout, and retail remodel waste management for portfolio-wide site turnover." },
         { label: "Events & Stadiums", desc: "Event waste logistics and stadium waste coordination for multi-day event waste support at fairs, festivals, and venues." },
@@ -353,7 +353,7 @@ const ServicesSection = () => {
     {
       title: "Dumpster Rentals",
       desc: "Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow.",
-      href: "/services/dumpsters-containers",
+      href: "/dumpsters-containers",
       items: [
         { label: "On-Demand Service", desc: "Same-day dumpster rental and emergency roll-off service with same-day swaps. Temporary dumpster deployment, no long-term commitments." },
         { label: "Multiple Sizes", desc: "Commercial-grade open-top dumpsters in 20 yard, 30 yard, and 40 yard roll-off sizes matched to your project scope." },
@@ -363,7 +363,7 @@ const ServicesSection = () => {
     {
       title: "Waste Advisory",
       desc: "Retained waste management advisory providing hands-on program rollout, vendor training, performance optimization, and portfolio-wide execution management.",
-      href: "/services/waste-operations-advisory",
+      href: "/waste-operations-advisory",
       items: [
         { label: "Assessments & Roadmaps", desc: "Portfolio-wide waste strategy and operational waste audit with cost-control optimization across your multi-site waste roadmap." },
         { label: "Standards, SOPs & Training", desc: "Waste management SOP development and multi-site vendor training framework with vendor performance protocols." },
@@ -548,7 +548,7 @@ const WhyUs = () => {
                   <Link href="/request-a-service">Request A Service</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto border-[#042940] text-[#042940] hover:bg-[#042940] active:bg-[#042940] hover:text-white active:text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
-                  <Link href="/services/commercial-waste-services">View Our Services</Link>
+                  <Link href="/commercial-waste">View Our Services</Link>
                 </Button>
              </div>
            </motion.div>

@@ -96,7 +96,7 @@ function ThankYouSection() {
               className="w-full sm:w-auto border-[#042940]/20 text-[#042940] font-bold min-h-[52px] rounded-full px-10 whitespace-nowrap"
               data-testid="button-thank-you-services"
             >
-              <Link href="/services">
+              <Link href="/commercial-waste">
                 Explore Our Services
               </Link>
             </Button>

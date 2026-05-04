@@ -154,7 +154,7 @@ export default function AboutPage() {
                   data-testid="button-more-solutions"
                   asChild
                 >
-                  <Link href="/services/commercial-waste-services">View Our Services</Link>
+                  <Link href="/commercial-waste">View Our Services</Link>
                 </Button>
               </div>
             </FadeIn>
