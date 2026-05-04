@@ -555,6 +555,38 @@ const GET_INDUSTRY_BY_SLUG_QUERY = gql`
   }
 `;
 
+const GET_LOCATION_BY_SLUG_QUERY = gql`
+  ${SEO_FRAGMENT}
+  ${FEATURED_IMAGE_FRAGMENT}
+  query GetLocationBySlug($slug: ID!) {
+    location(id: $slug, idType: SLUG) {
+      databaseId
+      slug
+      title
+      content
+      excerpt
+      featuredImage {
+        node {
+          ...FeaturedImageFields
+        }
+      }
+      seo {
+        ...SeoFields
+      }
+    }
+  }
+`;
+
+const GET_ALL_LOCATIONS_QUERY = gql`
+  query GetAllLocations {
+    locations(first: 100, where: { status: PUBLISH }) {
+      nodes {
+        slug
+      }
+    }
+  }
+`;
+
 const GET_ALL_SERVICES_QUERY = gql`
   query GetAllServices {
     services(first: 100, where: { status: PUBLISH }) {
@@ -1091,6 +1123,39 @@ export async function fetchAllIndustrySlugs(): Promise<string[]> {
     return response.industries.nodes.map(n => n.slug);
   } catch (error) {
     console.error('[WP] Failed to fetch industry slugs:', error);
+    return [];
+  }
+}
+
+export async function fetchLocationBySlug(slug: string): Promise<CptEntry | null> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ location: WpCptNode | null }>(
+      GET_LOCATION_BY_SLUG_QUERY,
+      { slug }
+    );
+    if (!response.location) return null;
+    return transformCptNode(response.location);
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    if (msg.includes('Cannot query field') || msg.includes('not found')) {
+      console.warn(`[WP] Location "${slug}" not found:`, msg);
+      return null;
+    }
+    console.error(`[WP] Failed to fetch location by slug "${slug}":`, error);
+    throw error;
+  }
+}
+
+export async function fetchAllLocationSlugs(): Promise<string[]> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ locations: { nodes: { slug: string }[] } }>(
+      GET_ALL_LOCATIONS_QUERY
+    );
+    return response.locations.nodes.map(n => n.slug);
+  } catch (error) {
+    console.error('[WP] Failed to fetch location slugs:', error);
     return [];
   }
 }

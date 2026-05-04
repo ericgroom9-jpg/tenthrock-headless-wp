@@ -63,6 +63,12 @@ export const POST_TYPE_CONFIG: Record<string, PostTypeConfig> = {
     label: 'Industry',
     hasSinglePage: true,
   },
+  tr_location: {
+    route: '/locations/[slug]',
+    fetcher: 'cpt',
+    label: 'Location',
+    hasSinglePage: true,
+  },
   tr_testimonial: {
     route: '',
     fetcher: 'cpt',
