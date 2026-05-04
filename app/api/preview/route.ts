@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { draftMode } from 'next/headers';
-import { isValidPostType, buildPreviewPath } from '@/lib/config/post-types';
+import { isValidPostType, buildPreviewPath, getPostTypeConfig } from '@/lib/config/post-types';
 
 /**
  * Validate and sanitize a slug to prevent security issues
@@ -136,9 +136,13 @@ export async function GET(request: NextRequest) {
   const redirectPath = buildPreviewPath(sanitizedType, pathSlug);
   
   if (!redirectPath) {
+    const config = getPostTypeConfig(sanitizedType);
+    const reason = config && !config.hasSinglePage
+      ? `Post type '${sanitizedType}' (${config.label}) does not have single pages and cannot be previewed.`
+      : 'Failed to build preview path';
     return NextResponse.json(
-      { error: 'Failed to build preview path' },
-      { status: 500 }
+      { error: reason },
+      { status: 400 }
     );
   }
 
