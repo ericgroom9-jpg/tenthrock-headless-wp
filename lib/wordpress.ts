@@ -606,6 +606,16 @@ const GET_LOCATION_BY_SLUG_QUERY = gql`
       seo {
         ...SeoFields
       }
+      locationFields {
+        heroSubtitle
+        heroImage
+        aboutDescription
+        aboutBullets { bulletText }
+        trustedDescription
+        stateAbbreviation
+        cities { cityName }
+        faqs { question answer }
+      }
     }
   }
 `;
@@ -817,6 +827,7 @@ interface WpCptNode {
   seo: WpSeo | null;
   serviceFields?: WpServiceFields | null;
   industryFields?: WpIndustryFields | null;
+  locationFields?: Record<string, unknown> | null;
 }
 
 interface WpServiceFields {
@@ -1003,6 +1014,21 @@ export interface IndustryTemplateData {
     imageAlt?: string;
     bulletPoints?: string[];
   };
+  seoMetadata?: SeoMetadata;
+}
+
+export interface LocationTemplateData {
+  locationName: string;
+  heroSubtitle: string;
+  heroImage: string;
+  aboutDescription: string;
+  aboutBullets: string[];
+  trustedDescription: string;
+  infoHeading: string;
+  infoBody: string;
+  stateAbbreviation: string;
+  cities: string[];
+  faqs: { question: string; answer: string }[];
   seoMetadata?: SeoMetadata;
 }
 
@@ -1479,6 +1505,77 @@ export async function fetchLocationBySlug(slug: string): Promise<CptEntry | null
     }
     console.error(`[WP] Failed to fetch location by slug "${slug}":`, error);
     throw error;
+  }
+}
+
+function parseInfoFromContent(content: string | null): { infoHeading: string; infoBody: string } {
+  const defaults = { infoHeading: 'Why Local Businesses Choose Us', infoBody: '' };
+  if (!content) return defaults;
+  try {
+    const cleaned = content
+      .replace(/<[^>]*>/g, '')
+      .replace(/\u201c/g, '"').replace(/\u201d/g, '"')
+      .replace(/&#8220;/g, '"').replace(/&#8221;/g, '"')
+      .replace(/&#8217;/g, "'")
+      .trim();
+    const parsed = JSON.parse(cleaned);
+    return {
+      infoHeading: parsed.infoHeading || defaults.infoHeading,
+      infoBody: parsed.infoBody || defaults.infoBody,
+    };
+  } catch {
+    return defaults;
+  }
+}
+
+function transformLocationNode(node: WpCptNode): LocationTemplateData {
+  const lf = node.locationFields as {
+    heroSubtitle?: string;
+    heroImage?: string;
+    aboutDescription?: string;
+    aboutBullets?: { bulletText: string }[];
+    trustedDescription?: string;
+    stateAbbreviation?: string;
+    cities?: { cityName: string }[];
+    faqs?: { question: string; answer: string }[];
+  } | null;
+
+  const locationName = node.title.replace(/^Waste Management Services in\s*/i, '');
+  const info = parseInfoFromContent(node.content);
+
+  return {
+    locationName,
+    heroSubtitle: lf?.heroSubtitle || '',
+    heroImage: lf?.heroImage || '/images/stock/locations-hero-modern-city.jpg',
+    aboutDescription: lf?.aboutDescription || '',
+    aboutBullets: lf?.aboutBullets?.map(b => b.bulletText) || [],
+    trustedDescription: lf?.trustedDescription || '',
+    infoHeading: info.infoHeading,
+    infoBody: info.infoBody || `Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works directly with local waste facilities and hauling partners across ${locationName} to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.`,
+    stateAbbreviation: lf?.stateAbbreviation || '',
+    cities: lf?.cities?.map(c => c.cityName) || [],
+    faqs: lf?.faqs?.length ? lf.faqs : [],
+    seoMetadata: transformSeoData(node.seo),
+  };
+}
+
+export async function fetchLocationWithAcf(slug: string): Promise<LocationTemplateData | null> {
+  const client = getWpClient();
+  try {
+    const response = await client.request<{ location: WpCptNode | null }>(
+      GET_LOCATION_BY_SLUG_QUERY,
+      { slug }
+    );
+    if (!response.location) return null;
+    return transformLocationNode(response.location);
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error);
+    if (msg.includes('Cannot query field') || msg.includes('not found')) {
+      console.warn(`[WP] Location "${slug}" ACF not found:`, msg);
+      return null;
+    }
+    console.error(`[WP] Failed to fetch location with ACF "${slug}":`, error);
+    return null;
   }
 }
 
