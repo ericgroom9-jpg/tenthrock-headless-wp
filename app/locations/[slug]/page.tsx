@@ -8,6 +8,8 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const revalidate = 1800;
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const locationName = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");

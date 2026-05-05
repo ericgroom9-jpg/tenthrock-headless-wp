@@ -2,7 +2,7 @@ import { fetchCommercialWasteAcf, fetchGlobalSections } from "@/lib/wordpress";
 import type { HeroPageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
 import CommercialWasteServices from "@/components/services/CommercialWasteServices";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchCommercialWasteAcf();

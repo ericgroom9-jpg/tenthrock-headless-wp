@@ -1,7 +1,7 @@
 import { fetchJoinNetworkAcf } from "@/lib/wordpress";
 import JoinOurNetworkClient from "./JoinOurNetworkClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchJoinNetworkAcf();

@@ -1,7 +1,7 @@
 import { fetchHomepageAcf, fetchGlobalSections } from '@/lib/wordpress';
 import HomeClient from '@/components/home/HomeClient';
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchHomepageAcf();

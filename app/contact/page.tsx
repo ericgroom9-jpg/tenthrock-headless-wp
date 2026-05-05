@@ -1,7 +1,7 @@
 import { fetchContactAcf } from "@/lib/wordpress";
 import ContactClient from "./ContactClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchContactAcf();

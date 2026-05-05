@@ -11,6 +11,8 @@ interface PageProps {
   searchParams: Promise<{ preview?: string; token?: string; id?: string; previewId?: string }>;
 }
 
+export const revalidate = 1800;
+
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const { previewId } = await searchParams;

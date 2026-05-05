@@ -2,6 +2,8 @@ import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
 import type { Metadata } from "next";
 
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: "Multiple Sizes & Types | Tenth Rock",
   description: "From 2-yard front-load to 40-yard roll-offs, the right container for every job.",

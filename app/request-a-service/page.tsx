@@ -1,7 +1,7 @@
 import { fetchRequestServiceAcf } from "@/lib/wordpress";
 import RequestAServiceClient from "./RequestAServiceClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchRequestServiceAcf();

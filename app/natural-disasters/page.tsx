@@ -2,6 +2,8 @@ import { fetchIndustryWithAcf } from '@/lib/wordpress';
 import IndustryTemplate from "@/components/industries/IndustryTemplate";
 import type { Metadata } from "next";
 
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: "Disaster Response Waste Management | Emergency Cleanup | Tenth Rock",
   description: "Rapid-response waste management for natural disasters and emergencies. Storm debris removal, flood cleanup, and disaster recovery support when you need it most.",

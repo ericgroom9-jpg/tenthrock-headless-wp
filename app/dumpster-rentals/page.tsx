@@ -2,6 +2,8 @@ import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
 import type { Metadata } from "next";
 
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: "Dumpster Rentals | Tenth Rock",
   description: "Flexible dumpster rental solutions for construction, renovation, and cleanouts. Quick delivery, multiple sizes, and competitive pricing.",

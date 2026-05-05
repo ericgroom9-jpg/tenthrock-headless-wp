@@ -48,6 +48,8 @@ function buildSeoMetadata(title: string, seo: any, featuredImageUrl?: string | n
   };
 }
 
+export const revalidate = 1800;
+
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const { previewId } = await searchParams;

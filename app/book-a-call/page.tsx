@@ -1,7 +1,7 @@
 import { fetchBookCallAcf } from "@/lib/wordpress";
 import BookACallClient from "./BookACallClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchBookCallAcf();

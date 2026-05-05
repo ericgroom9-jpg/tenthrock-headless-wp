@@ -1,7 +1,7 @@
 import { fetchLocationsPageAcf, fetchGlobalSections } from "@/lib/wordpress";
 import LocationsClient from "./LocationsClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchLocationsPageAcf();

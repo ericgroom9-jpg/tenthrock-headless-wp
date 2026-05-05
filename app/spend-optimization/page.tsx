@@ -2,6 +2,8 @@ import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
 import type { Metadata } from "next";
 
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: "Spend Optimization | Tenth Rock",
   description: "Consolidate vendors and negotiate better rates to reduce your total waste spend.",

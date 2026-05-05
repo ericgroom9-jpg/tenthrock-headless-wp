@@ -1,7 +1,7 @@
 import { fetchTermsOfServiceAcf } from "@/lib/wordpress";
 import TermsOfServiceClient from "./TermsOfServiceClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchTermsOfServiceAcf();

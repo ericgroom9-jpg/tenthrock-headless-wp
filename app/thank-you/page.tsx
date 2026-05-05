@@ -1,7 +1,7 @@
 import { fetchThankYouAcf } from "@/lib/wordpress";
 import ThankYouClient from "./ThankYouClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchThankYouAcf();

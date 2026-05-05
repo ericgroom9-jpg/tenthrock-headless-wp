@@ -1,7 +1,7 @@
 import { fetchWhoWeServeAcf, fetchGlobalSections } from "@/lib/wordpress";
 import WhoWeServeClient from "./WhoWeServeClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchWhoWeServeAcf();

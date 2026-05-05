@@ -2,6 +2,8 @@ import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
 import type { Metadata } from "next";
 
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: "Service Oversight | Tenth Rock",
   description: "Dedicated account management and vendor coordination to maintain service levels across every site.",

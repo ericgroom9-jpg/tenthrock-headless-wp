@@ -1,7 +1,7 @@
 import { fetchOurProcessAcf, fetchGlobalSections } from "@/lib/wordpress";
 import OurProcessClient from "./OurProcessClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchOurProcessAcf();

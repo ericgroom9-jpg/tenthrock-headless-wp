@@ -1,7 +1,7 @@
 import FaqPage from "@/components/faq/FaqPage";
 import { fetchAllFaqs, fetchFaqPageAcf, fetchGlobalSections } from "@/lib/wordpress";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchFaqPageAcf();

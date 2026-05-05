@@ -1,7 +1,7 @@
 import { fetchAboutAcf, fetchGlobalSections } from "@/lib/wordpress";
 import AboutClient from "./AboutClient";
 
-export const revalidate = 300;
+export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchAboutAcf();

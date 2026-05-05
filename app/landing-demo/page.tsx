@@ -3,6 +3,8 @@ import { LandingPageRenderer } from '@/modules/landing-builder';
 import type { LandingPageData } from '@/modules/landing-builder/types';
 import type { Metadata } from 'next';
 
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: 'Landing Page Builder Demo',
   description: 'Preview of all available landing page blocks',
