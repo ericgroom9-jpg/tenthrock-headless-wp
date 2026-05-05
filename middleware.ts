@@ -9,7 +9,9 @@ type Redirect = {
 
 let redirectsCache: Redirect[] = [];
 let lastFetch = 0;
-const CACHE_DURATION_MS = 300000; // 5 minutes
+// Cache redirects for 30 minutes — same window as page ISR — so the
+// middleware never re-queries WordPress more than twice per hour per instance.
+const CACHE_DURATION_MS = 30 * 60 * 1000; // 30 minutes
 
 async function getRedirects(): Promise<Redirect[]> {
   const now = Date.now();
@@ -40,7 +42,13 @@ async function getRedirects(): Promise<Redirect[]> {
       headers['Authorization'] = `Basic ${credentials}`;
     }
 
-    const response = await fetch(redirectsEndpoint, { headers });
+    // Next.js fetch cache: also dedupes redirects across instances behind the
+    // same data cache, with the same 30-minute TTL.
+    const response = await fetch(redirectsEndpoint, {
+      headers,
+      // @ts-ignore - Next.js extends RequestInit with `next`
+      next: { revalidate: 1800, tags: ['wordpress-redirects'] },
+    });
 
     if (!response.ok) {
       console.warn(`[Redirects] API returned ${response.status}`);

@@ -162,6 +162,13 @@ export function clearWordPressSessionCache(): void {
 }
 
 // WordPress GraphQL client configuration
+// Public (non-preview) requests are cached by Next.js for 30 minutes (1800s)
+// at the data-fetch layer. This guarantees that no matter how many visitors
+// hit how many pages, WordPress is queried at most once per 30 minutes per
+// unique GraphQL operation+variables tuple — even for dynamic routes.
+export const WP_REVALIDATE_SECONDS = 1800;
+export const WP_CACHE_TAG = 'wordpress';
+
 const getWpClient = (authToken?: string) => {
   const wpApiUrl = process.env.WP_API_URL;
   
@@ -186,7 +193,22 @@ const getWpClient = (authToken?: string) => {
     headers['Authorization'] = `Bearer ${authToken}`;
   }
 
-  return new GraphQLClient(wpApiUrl, { headers });
+  // For preview/auth'd requests, bypass cache so editors see fresh content.
+  // For public requests, attach Next.js fetch cache options so identical
+  // GraphQL queries within the 30-minute window are served from cache.
+  const requestInit: RequestInit = authToken
+    ? { cache: 'no-store' as RequestCache }
+    : ({
+        next: { revalidate: WP_REVALIDATE_SECONDS, tags: [WP_CACHE_TAG] },
+      } as unknown as RequestInit);
+
+  return new GraphQLClient(wpApiUrl, {
+    headers,
+    requestMiddleware: (req) => ({
+      ...req,
+      ...requestInit,
+    }),
+  });
 };
 
 // WordPress GraphQL client for preview/draft requests with WordPress user authentication
@@ -222,7 +244,14 @@ async function getPreviewClient(): Promise<GraphQLClient> {
     console.warn('[Preview] No session cookies available - draft content may not be accessible');
   }
 
-  return new GraphQLClient(wpApiUrl, { headers });
+  // Preview client must always bypass cache so editors see latest drafts.
+  return new GraphQLClient(wpApiUrl, {
+    headers,
+    requestMiddleware: (req) => ({
+      ...req,
+      cache: 'no-store' as RequestCache,
+    }),
+  });
 }
 
 // GraphQL fragments for reusable queries
@@ -1360,7 +1389,13 @@ export async function fetchRedirects(): Promise<WpRedirect[]> {
       headers['Authorization'] = `Basic ${credentials}`;
     }
 
-    const response = await fetch(redirectsEndpoint, { headers });
+    // Cache redirects in the Next.js fetch cache for 30 minutes; tagged so
+    // /api/revalidate can purge them along with the rest of WP content.
+    const response = await fetch(redirectsEndpoint, {
+      headers,
+      // @ts-ignore - Next.js extends RequestInit with `next`
+      next: { revalidate: WP_REVALIDATE_SECONDS, tags: [WP_CACHE_TAG, 'wordpress-redirects'] },
+    });
     
     if (!response.ok) {
       console.warn(`Redirects API returned ${response.status} - mu-plugin may not be installed (see wordpress-plugins/headless-redirects-api.php)`);
@@ -1560,7 +1595,7 @@ function transformLocationNode(node: WpCptNode): LocationTemplateData {
   };
 }
 
-export async function fetchLocationWithAcf(slug: string): Promise<LocationTemplateData | null> {
+export const fetchLocationWithAcf = cache(async (slug: string): Promise<LocationTemplateData | null> => {
   const client = getWpClient();
   try {
     const response = await client.request<{ location: WpCptNode | null }>(
@@ -1578,7 +1613,7 @@ export async function fetchLocationWithAcf(slug: string): Promise<LocationTempla
     console.error(`[WP] Failed to fetch location with ACF "${slug}":`, error);
     return null;
   }
-}
+});
 
 export async function fetchAllLocationSlugs(): Promise<string[]> {
   const client = getWpClient();
@@ -1716,7 +1751,7 @@ function transformIndustryNode(node: WpCptNode): IndustryTemplateData {
   };
 }
 
-export async function fetchServiceWithAcf(slug: string): Promise<ServiceTemplateData | null> {
+export const fetchServiceWithAcf = cache(async (slug: string): Promise<ServiceTemplateData | null> => {
   const client = getWpClient();
   try {
     const response = await client.request<{ service: WpCptNode | null }>(
@@ -1734,9 +1769,9 @@ export async function fetchServiceWithAcf(slug: string): Promise<ServiceTemplate
     console.error(`[WP] Failed to fetch service with ACF "${slug}":`, error);
     throw error;
   }
-}
+});
 
-export async function fetchIndustryWithAcf(slug: string): Promise<IndustryTemplateData | null> {
+export const fetchIndustryWithAcf = cache(async (slug: string): Promise<IndustryTemplateData | null> => {
   const client = getWpClient();
   try {
     const response = await client.request<{ industry: WpCptNode | null }>(
@@ -1754,7 +1789,7 @@ export async function fetchIndustryWithAcf(slug: string): Promise<IndustryTempla
     console.error(`[WP] Failed to fetch industry with ACF "${slug}":`, error);
     throw error;
   }
-}
+});
 
 export async function fetchAllTestimonials(): Promise<TestimonialData[]> {
   const client = getWpClient();

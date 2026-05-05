@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 
 export const dynamic = 'force-dynamic';
 
@@ -60,7 +60,17 @@ export async function POST(request: NextRequest) {
 
     if (type === 'all') {
       revalidatePath('/', 'layout');
-      revalidatedPaths.push('/ (entire site)');
+      // Purge the entire WordPress fetch-cache layer so every cached
+      // GraphQL/REST response is refetched on next request.
+      revalidateTag('wordpress');
+      revalidateTag('wordpress-redirects');
+      revalidatedPaths.push('/ (entire site)', 'tag:wordpress', 'tag:wordpress-redirects');
+    } else if (path || (type && slug)) {
+      // For any targeted revalidation, also flush the WP data cache so the
+      // newly-rendered page fetches fresh content instead of serving from
+      // the 30-minute Next.js fetch cache.
+      revalidateTag('wordpress');
+      revalidatedPaths.push('tag:wordpress');
     }
 
     if (revalidatedPaths.length === 0) {
