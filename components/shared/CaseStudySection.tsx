@@ -5,7 +5,7 @@ import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight } from "lucide-react";
 
-interface CaseStudy {
+export interface CaseStudy {
   title: string;
   subtitle: string;
   tag: string;
@@ -16,7 +16,7 @@ interface CaseStudy {
   stats: { value: string; label: string }[];
 }
 
-const caseStudies: CaseStudy[] = [
+const defaultCaseStudies: CaseStudy[] = [
   {
     title: "National Coffee Chain",
     subtitle: "Missed Pickup, Same-Day Stabilization",
@@ -139,18 +139,23 @@ const caseStudies: CaseStudy[] = [
   },
 ];
 
-export default function CaseStudySection() {
+interface CaseStudySectionProps {
+  caseStudies?: CaseStudy[];
+}
+
+export default function CaseStudySection({ caseStudies }: CaseStudySectionProps) {
+  const studies = caseStudies && caseStudies.length > 0 ? caseStudies : defaultCaseStudies;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? caseStudies.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? studies.length - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === caseStudies.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === studies.length - 1 ? 0 : prev + 1));
   };
 
-  const study = caseStudies[currentIndex];
+  const study = studies[currentIndex];
 
   return (
     <section className="py-16 md:py-24 bg-white border-b border-primary/5" aria-label="Case studies" data-testid="section-case-studies">
@@ -240,7 +245,7 @@ export default function CaseStudySection() {
                 <ArrowRight className="w-5 h-5" />
               </button>
               <span className="text-sm text-primary/40 ml-2" data-testid="text-case-study-counter">
-                {currentIndex + 1} / {caseStudies.length}
+                {currentIndex + 1} / {studies.length}
               </span>
             </div>
           </div>

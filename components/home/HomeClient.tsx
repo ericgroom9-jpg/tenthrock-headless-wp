@@ -1,11 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import type { HomepageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
 
 const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
   ssr: false,
   loading: () => (
     <div className="min-h-screen bg-[#042940] flex items-center justify-center">
+      <h1 className="sr-only">Centralized Waste Logistics for Businesses at Scale</h1>
       <div className="flex flex-col items-center gap-6">
         <img
           src="/images/logos/Green-White-Logo.png"
@@ -22,6 +24,11 @@ const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
   ),
 });
 
-export default function HomeClient() {
-  return <TenthRockHome />;
+interface Props {
+  acf?: HomepageTemplateData | null;
+  globalSections?: GlobalSectionsData | null;
+}
+
+export default function HomeClient({ acf, globalSections }: Props) {
+  return <TenthRockHome acf={acf || null} globalSections={globalSections || null} />;
 }

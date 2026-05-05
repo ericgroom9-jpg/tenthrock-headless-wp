@@ -35,7 +35,7 @@ const sectors = [
             lineNumber: 8,
             columnNumber: 180
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/retail"
+        href: "/retail"
     },
     {
         title: "Stadiums & Events",
@@ -48,7 +48,7 @@ const sectors = [
             lineNumber: 9,
             columnNumber: 205
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/stadiums-events"
+        href: "/stadiums-events"
     },
     {
         title: "Faith Based",
@@ -61,7 +61,7 @@ const sectors = [
             lineNumber: 10,
             columnNumber: 180
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/faith-based"
+        href: "/faith-based"
     },
     {
         title: "Real Estate",
@@ -74,7 +74,7 @@ const sectors = [
             lineNumber: 11,
             columnNumber: 199
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/real-estate"
+        href: "/real-estate"
     },
     {
         title: "Natural Disasters",
@@ -87,7 +87,7 @@ const sectors = [
             lineNumber: 12,
             columnNumber: 198
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/natural-disasters"
+        href: "/natural-disasters"
     },
     {
         title: "Hospitality",
@@ -100,7 +100,7 @@ const sectors = [
             lineNumber: 13,
             columnNumber: 188
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/hospitality"
+        href: "/hospitality"
     },
     {
         title: "Educational",
@@ -113,7 +113,7 @@ const sectors = [
             lineNumber: 14,
             columnNumber: 179
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/educational"
+        href: "/educational"
     },
     {
         title: "Municipalities",
@@ -126,7 +126,7 @@ const sectors = [
             lineNumber: 15,
             columnNumber: 196
         }, ("TURBOPACK compile-time value", void 0)),
-        href: "/industries/municipalities"
+        href: "/municipalities"
     }
 ];
 function IndustryCard({ sector, index }) {
@@ -231,7 +231,7 @@ function IndustryCard({ sector, index }) {
     }, this);
 }
 _c = IndustryCard;
-function WhoWeHelpSection() {
+function WhoWeHelpSection({ tagline = "Industries", heading = "Who We Help", subtitle = "From single-site operators to national brands, we support businesses that require reliable, consistent waste operations." } = {}) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "sectors",
         "aria-labelledby": "sectors-heading",
@@ -249,37 +249,37 @@ function WhoWeHelpSection() {
                                     className: "w-2 h-2 rounded-full bg-secondary"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 71,
                                     columnNumber: 15
                                 }, this),
-                                "Industries"
+                                tagline
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 60,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             id: "sectors-heading",
                             className: "text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight",
-                            children: "Who We Help"
+                            children: heading
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 64,
+                            lineNumber: 74,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-primary/70",
-                            children: "From single-site operators to national brands, we support businesses that require reliable, consistent waste operations."
+                            children: subtitle
                         }, void 0, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 65,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                    lineNumber: 59,
+                    lineNumber: 69,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -289,23 +289,23 @@ function WhoWeHelpSection() {
                             index: i
                         }, i, false, {
                             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                            lineNumber: 72,
+                            lineNumber: 82,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-                    lineNumber: 70,
+                    lineNumber: 80,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-            lineNumber: 58,
+            lineNumber: 68,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/WhoWeHelpSection.tsx",
-        lineNumber: 57,
+        lineNumber: 67,
         columnNumber: 5
     }, this);
 }

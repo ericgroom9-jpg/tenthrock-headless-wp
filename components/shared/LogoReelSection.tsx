@@ -3,7 +3,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 
-const partnerLogos = [
+const defaultPartnerLogos = [
   { src: "/images/logos/7-eleven.png", alt: "7-Eleven" },
   { src: "/images/logos/arbys.png", alt: "Arby's" },
   { src: "/images/logos/best-buy.png", alt: "Best Buy" },
@@ -29,12 +29,15 @@ const partnerLogos = [
 interface LogoReelSectionProps {
   headline?: string;
   testIdPrefix?: string;
+  logos?: { src: string; alt: string }[];
 }
 
 export default function LogoReelSection({ 
   headline = "Supporting these leading national brands",
-  testIdPrefix = "logo-reel"
+  testIdPrefix = "logo-reel",
+  logos,
 }: LogoReelSectionProps) {
+  const partnerLogos = logos && logos.length > 0 ? logos : defaultPartnerLogos;
   return (
     <section className="py-12 bg-white border-b border-primary/5 overflow-hidden" data-testid={`section-${testIdPrefix}`}>
       <div className="container mx-auto px-4 md:px-8">

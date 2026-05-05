@@ -2,11 +2,12 @@ import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
 import { Layout } from '@/components/layout/Layout';
 import { storage } from '@/lib/storage';
-import { fetchPagePreviewById } from '@/lib/wordpress';
+import { fetchPagePreviewById, fetchServiceWithAcf, fetchIndustryWithAcf } from '@/lib/wordpress';
 import { isLandingBuilderEnabled } from '@/lib/config/features';
+import ServiceTemplate from '@/components/services/ServiceTemplate';
+import IndustryTemplate from '@/components/industries/IndustryTemplate';
 import type { Metadata } from 'next';
 
-// Conditionally import landing builder (tree-shaken if disabled)
 import { 
   getPageTemplateInfo, 
   getLandingPageData,
@@ -18,36 +19,66 @@ interface PageProps {
   searchParams: Promise<{ previewId?: string }>;
 }
 
+function buildSeoMetadata(title: string, seo: any, featuredImageUrl?: string | null): Metadata {
+  const plainTitle = title;
+  return {
+    title: seo?.title || plainTitle,
+    description: seo?.metaDesc || '',
+    openGraph: {
+      title: seo?.opengraphTitle || plainTitle,
+      description: seo?.opengraphDescription || '',
+      type: 'website',
+      images: seo?.opengraphImage
+        ? [seo.opengraphImage]
+        : featuredImageUrl
+          ? [featuredImageUrl]
+          : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo?.twitterTitle || plainTitle,
+      description: seo?.twitterDescription || '',
+      images: seo?.twitterImage
+        ? [seo.twitterImage]
+        : featuredImageUrl
+          ? [featuredImageUrl]
+          : undefined,
+    },
+    ...(seo?.canonical ? { alternates: { canonical: seo.canonical } } : {}),
+  };
+}
+
 export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const { previewId } = await searchParams;
   const draft = await draftMode();
   
-  // Check if this is a landing page and get SEO from template info
   if (isLandingBuilderEnabled()) {
     const templateInfo = await getPageTemplateInfo(slug);
     if (templateInfo?.isLandingPage && templateInfo.seo) {
-      const seo = templateInfo.seo;
-      return {
-        title: seo.title || templateInfo.title,
-        description: seo.metaDesc || '',
-        openGraph: {
-          title: seo.opengraphTitle || templateInfo.title,
-          description: seo.opengraphDescription || '',
-          type: 'website',
-          images: seo.opengraphImage ? [seo.opengraphImage] : undefined,
-        },
-        twitter: {
-          card: 'summary_large_image',
-          title: seo.twitterTitle || templateInfo.title,
-          description: seo.twitterDescription || '',
-          images: seo.twitterImage ? [seo.twitterImage] : undefined,
-        },
-      };
+      return buildSeoMetadata(templateInfo.title, templateInfo.seo);
     }
   }
+
+  const [service, industry] = await Promise.all([
+    fetchServiceWithAcf(slug).catch(() => null),
+    fetchIndustryWithAcf(slug).catch(() => null),
+  ]);
+
+  if (service) {
+    return buildSeoMetadata(
+      `${service.serviceName} | Tenth Rock`,
+      service.seoMetadata,
+    );
+  }
+
+  if (industry) {
+    return buildSeoMetadata(
+      `${industry.industryName} Waste Management | Tenth Rock`,
+      industry.seoMetadata,
+    );
+  }
   
-  // Regular page metadata
   let page;
   if (draft.isEnabled && previewId) {
     page = await fetchPagePreviewById(parseInt(previewId));
@@ -57,29 +88,10 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   }
   
   if (!page) {
-    return {
-      title: 'Page Not Found',
-    };
+    return { title: 'Page Not Found' };
   }
 
-  const seo = page.seoMetadata;
-  
-  return {
-    title: seo?.title || page.title,
-    description: seo?.metaDesc || '',
-    openGraph: {
-      title: seo?.opengraphTitle || page.title,
-      description: seo?.opengraphDescription || '',
-      type: 'website',
-      images: seo?.opengraphImage ? [seo.opengraphImage] : undefined,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: seo?.twitterTitle || page.title,
-      description: seo?.twitterDescription || '',
-      images: seo?.twitterImage ? [seo.twitterImage] : undefined,
-    },
-  };
+  return buildSeoMetadata(page.title, page.seoMetadata);
 }
 
 export default async function WordPressPage({ params, searchParams }: PageProps) {
@@ -89,15 +101,11 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
   
   const isPreview = draft.isEnabled;
   
-  // Check if this is a landing page (only if feature is enabled)
   if (isLandingBuilderEnabled()) {
     const templateInfo = await getPageTemplateInfo(slug);
     
     if (templateInfo?.isLandingPage) {
       console.log('[Page] Rendering as landing page:', slug);
-      
-      // Fetch landing page sections from WordPress
-      // Pass isPreview to use preview query for draft content
       const landingData = await getLandingPageData(templateInfo.databaseId, isPreview);
       
       if (landingData && landingData.sections.length > 0) {
@@ -107,13 +115,23 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
           </Layout>
         );
       }
-      
-      // Fall through to regular page rendering if no sections
       console.log('[Page] Landing page has no sections, falling back to regular rendering');
     }
   }
+
+  const [service, industry] = await Promise.all([
+    fetchServiceWithAcf(slug).catch(() => null),
+    fetchIndustryWithAcf(slug).catch(() => null),
+  ]);
+
+  if (service) {
+    return <ServiceTemplate {...service} />;
+  }
+
+  if (industry) {
+    return <IndustryTemplate {...industry} />;
+  }
   
-  // Regular page rendering
   let page;
   
   if (draft.isEnabled && previewId) {
@@ -122,7 +140,6 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
   }
   
   if (!page) {
-    console.log('[Preview Page] Fetching page by slug:', slug);
     page = await storage.getPageBySlug(slug);
   }
 
