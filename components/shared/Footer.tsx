@@ -9,21 +9,21 @@ import { Separator } from "@/components/ui/separator";
 import Logo from "@/components/shared/Logo";
 
 const serviceLinks = [
-  { label: "Emergency Waste Removal", href: "/emergency-waste-removal" },
-  { label: "Specialized Project Logistics", href: "/specialized-project-logistics" },
-  { label: "Dumpster Rentals", href: "/dumpsters-containers" },
-  { label: "Waste Advisory", href: "/waste-operations-advisory" },
+  { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
+  { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
+  { label: "Dumpster Rentals", href: "/services/dumpsters-containers" },
+  { label: "Waste Advisory", href: "/services/waste-operations-advisory" },
 ];
 
 const industryLinks = [
-  { label: "Retail", href: "/retail" },
-  { label: "Stadiums & Events", href: "/stadiums-events" },
-  { label: "Faith Based", href: "/faith-based" },
-  { label: "Real Estate", href: "/real-estate" },
-  { label: "Natural Disasters", href: "/natural-disasters" },
-  { label: "Hospitality", href: "/hospitality" },
-  { label: "Educational", href: "/educational" },
-  { label: "Municipalities", href: "/municipalities" },
+  { label: "Retail", href: "/industries/retail" },
+  { label: "Stadiums & Events", href: "/industries/stadiums-events" },
+  { label: "Faith Based", href: "/industries/faith-based" },
+  { label: "Real Estate", href: "/industries/real-estate" },
+  { label: "Natural Disasters", href: "/industries/natural-disasters" },
+  { label: "Hospitality", href: "/industries/hospitality" },
+  { label: "Educational", href: "/industries/educational" },
+  { label: "Municipalities", href: "/industries/municipalities" },
 ];
 
 export default function Footer() {

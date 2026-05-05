@@ -377,10 +377,10 @@ export default function ServiceTemplate({
                           </p>
                           <ul className="space-y-3">
                             {[
-                              { label: "Emergency Waste Removal", href: "/emergency-waste-removal" },
-                              { label: "Specialized Project Logistics", href: "/specialized-project-logistics" },
-                              { label: "Dumpster Rentals", href: "/dumpsters-containers" },
-                              { label: "Waste Advisory", href: "/waste-operations-advisory" },
+                              { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
+                              { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
+                              { label: "Dumpster Rentals", href: "/services/dumpsters-containers" },
+                              { label: "Waste Advisory", href: "/services/waste-operations-advisory" },
                             ].filter((s) => s.label !== serviceName).map((s) => (
                             <li key={s.label} className="flex items-center gap-3 text-[#042940]">
                               <div className="w-6 h-6 rounded-full bg-[#c5d520] flex items-center justify-center flex-shrink-0">

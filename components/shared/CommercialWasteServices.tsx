@@ -11,36 +11,36 @@ const services = [
     title: "Emergency Waste Removal",
     desc: "Same-day junk removal and emergency waste management for spoiled product, overflowing dumpsters, and urgent commercial site cleanouts across 48 states.",
     items: [
-      { label: "Emergency Product & Perishable Removal", desc: "Perishable bulk pickup and spoiled product disposal after cold storage failure or refrigeration failure events. After-hours waste removal available 24/7.", img: "/images/stock/service-emergency-overflow.jpg", href: "/emergency-product-removal" },
-      { label: "Site Stabilization", desc: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal when missed pickups or waste overflow disrupts your operations.", img: "/images/stock/site-stabilization-1.png", href: "/site-stabilization" },
-      { label: "Unplanned Cleanouts & Debris Removal", desc: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, code violation cleanup support, and emergency site cleanout situations.", img: "/images/stock/unplanned-cleanouts-1.png", href: "/unplanned-cleanouts" },
+      { label: "Emergency Product & Perishable Removal", desc: "Perishable bulk pickup and spoiled product disposal after cold storage failure or refrigeration failure events. After-hours waste removal available 24/7.", img: "/images/stock/service-emergency-overflow.jpg", href: "/services/emergency-product-removal" },
+      { label: "Site Stabilization", desc: "Compactor failure response, overflowing dumpster support, and urgent bulk waste removal when missed pickups or waste overflow disrupts your operations.", img: "/images/stock/site-stabilization-1.png", href: "/services/site-stabilization" },
+      { label: "Unplanned Cleanouts & Debris Removal", desc: "Commercial site cleanout and bulk debris removal for foreclosure cleanouts, code violation cleanup support, and emergency site cleanout situations.", img: "/images/stock/unplanned-cleanouts-1.png", href: "/services/unplanned-cleanouts" },
     ],
   },
   {
     title: "Specialized Project Logistics",
     desc: "End-to-end waste coordination for site decommissioning, commercial cleanouts, event waste logistics, and storm debris removal across multiple sites.",
     items: [
-      { label: "Site Closures & Remodels", desc: "Site decommissioning, post-construction cleanout, and retail remodel waste management. Portfolio-wide site turnover and store closings handled start to finish.", img: "/images/stock/site-closures-1.jpg", href: "/site-closures-remodels" },
-      { label: "Events & Stadiums", desc: "Event waste logistics and stadium waste coordination for multi-day event waste support. Fairs, festivals, and temporary activations managed on tight timelines.", img: "/images/stock/service-event-stadium.jpg", href: "/events-stadiums" },
-      { label: "Natural Disasters", desc: "Rapid response for storm debris removal and hurricane debris cleanup. Emergency roll-off rental and open-top dumpsters deployed for multi-site recovery across affected regions.", img: "/images/stock/industry-natural-disasters-storm.jpg", href: "/natural-disaster-mobilization" },
+      { label: "Site Closures & Remodels", desc: "Site decommissioning, post-construction cleanout, and retail remodel waste management. Portfolio-wide site turnover and store closings handled start to finish.", img: "/images/stock/site-closures-1.jpg", href: "/services/site-closures-remodels" },
+      { label: "Events & Stadiums", desc: "Event waste logistics and stadium waste coordination for multi-day event waste support. Fairs, festivals, and temporary activations managed on tight timelines.", img: "/images/stock/service-event-stadium.jpg", href: "/services/events-stadiums" },
+      { label: "Natural Disasters", desc: "Rapid response for storm debris removal and hurricane debris cleanup. Emergency roll-off rental and open-top dumpsters deployed for multi-site recovery across affected regions.", img: "/images/stock/industry-natural-disasters-storm.jpg", href: "/services/natural-disaster-mobilization" },
     ],
   },
   {
     title: "Dumpster Rentals",
     desc: "Same-day dumpster rental, roll-off dumpsters, and open-top dumpsters for commercial projects, cleanouts, and emergency overflow needs.",
     items: [
-      { label: "On-Demand Service", desc: "Same-day dumpster rental and emergency roll-off service. Temporary dumpster deployment for commercial projects with same-day swaps available.", img: "/images/stock/dumpster-blue-2.png", href: "/on-demand-service" },
-      { label: "Multiple Sizes", desc: "Commercial-grade open-top dumpsters in 20 yard, 30 yard, and 40 yard roll-off sizes. Matched to your project scope from small cleanouts to large-scale construction debris.", img: "/images/stock/dumpster-large-red.png", href: "/multiple-sizes" },
-      { label: "Recycling Dumpsters", desc: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support included.", img: "/images/stock/recycling-2.png", href: "/recycling-specialty-containers" },
+      { label: "On-Demand Service", desc: "Same-day dumpster rental and emergency roll-off service. Temporary dumpster deployment for commercial projects with same-day swaps available.", img: "/images/stock/dumpster-blue-2.png", href: "/services/on-demand-service" },
+      { label: "Multiple Sizes", desc: "Commercial-grade open-top dumpsters in 20 yard, 30 yard, and 40 yard roll-off sizes. Matched to your project scope from small cleanouts to large-scale construction debris.", img: "/images/stock/dumpster-large-red.png", href: "/services/multiple-sizes" },
+      { label: "Recycling Dumpsters", desc: "Commercial recycling dumpster and metal recycling container rental for landfill diversion and source-separated recycling. Cardboard and baler overflow support included.", img: "/images/stock/recycling-2.png", href: "/services/recycling-specialty-containers" },
     ],
   },
   {
     title: "Waste Advisory",
     desc: "Retained waste management advisory providing hands-on program rollout, vendor training and oversight, performance optimization, and portfolio-wide execution management for multi-site operators.",
     items: [
-      { label: "Waste Program Assessments & Roadmaps", desc: "Portfolio-wide waste strategy and operational waste audit to identify cost-control waste optimization opportunities across your multi-site waste roadmap.", img: "/images/stock/hero-skyscrapers.jpg", href: "/waste-program-assessments" },
-      { label: "Standards & Vendor Training", desc: "Waste management SOP development and multi-site vendor training framework. Vendor performance protocols and site-level execution standards that prevent costly errors.", img: "/images/stock/training-1.jpg", href: "/standards-sops-training" },
-      { label: "Ongoing Advisory & Program Implementation", desc: "Retained advisory for waste workflow optimization, multi-site execution strategy, and ongoing program improvement with oversight services built for scale.", img: "/images/stock/advisory-1.jpg", href: "/ongoing-advisory" },
+      { label: "Waste Program Assessments & Roadmaps", desc: "Portfolio-wide waste strategy and operational waste audit to identify cost-control waste optimization opportunities across your multi-site waste roadmap.", img: "/images/stock/hero-skyscrapers.jpg", href: "/services/waste-program-assessments" },
+      { label: "Standards & Vendor Training", desc: "Waste management SOP development and multi-site vendor training framework. Vendor performance protocols and site-level execution standards that prevent costly errors.", img: "/images/stock/training-1.jpg", href: "/services/standards-sops-training" },
+      { label: "Ongoing Advisory & Program Implementation", desc: "Retained advisory for waste workflow optimization, multi-site execution strategy, and ongoing program improvement with oversight services built for scale.", img: "/images/stock/advisory-1.jpg", href: "/services/ongoing-advisory" },
     ],
   },
 ];

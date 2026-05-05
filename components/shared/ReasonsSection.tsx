@@ -18,17 +18,9 @@ interface ReasonsSectionProps {
   heading?: string;
   subtitle?: string;
   buttonText?: string;
-  buttonLink?: string;
   features?: ReasonFeature[];
   testIdPrefix?: string;
 }
-
-const iconMap: Record<string, ReactNode> = {
-  headset: <Headset className="w-6 h-6" />,
-  "check-circle-2": <CheckCircle2 className="w-6 h-6" />,
-  "map-pin": <MapPin className="w-6 h-6" />,
-  truck: <Truck className="w-6 h-6" />,
-};
 
 const defaultFeatures: ReasonFeature[] = [
   { title: "Dedicated Point of Contact", icon: <Headset className="w-6 h-6" />, desc: "One person to handle everything. No call centers, no runarounds, just answers." },
@@ -37,16 +29,11 @@ const defaultFeatures: ReasonFeature[] = [
   { title: "Real Cost Savings", icon: <Truck className="w-6 h-6" />, desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service." }
 ];
 
-export function resolveReasonIcon(iconName: string): ReactNode {
-  return iconMap[iconName] || <Headset className="w-6 h-6" />;
-}
-
 export default function ReasonsSection({
   tagline = "Benefits",
   heading = "More Reasons You'll Love Us",
   subtitle = "We rebuilt waste management from the ground up to serve businesses with multiple locations. No hidden fees, no confusing contracts, no operational gaps.",
   buttonText = "Request A Service",
-  buttonLink = "/request-a-service",
   features = defaultFeatures,
   testIdPrefix = "reasons",
 }: ReasonsSectionProps) {
@@ -68,7 +55,7 @@ export default function ReasonsSection({
                  {subtitle}
                </p>
                <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] min-h-[52px] whitespace-nowrap rounded-full" data-testid={`button-${testIdPrefix}-cta`} asChild>
-                  <Link href={buttonLink}>{buttonText}</Link>
+                  <Link href="/request-a-service">{buttonText}</Link>
                </Button>
              </FadeIn>
           </div>

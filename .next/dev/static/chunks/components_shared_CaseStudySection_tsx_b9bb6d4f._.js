@@ -18,7 +18,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const defaultCaseStudies = [
+const caseStudies = [
     {
         title: "National Coffee Chain",
         subtitle: "Missed Pickup, Same-Day Stabilization",
@@ -260,17 +260,16 @@ const defaultCaseStudies = [
         ]
     }
 ];
-function CaseStudySection({ caseStudies }) {
+function CaseStudySection() {
     _s();
-    const studies = caseStudies && caseStudies.length > 0 ? caseStudies : defaultCaseStudies;
     const [currentIndex, setCurrentIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const goToPrev = ()=>{
-        setCurrentIndex((prev)=>prev === 0 ? studies.length - 1 : prev - 1);
+        setCurrentIndex((prev)=>prev === 0 ? caseStudies.length - 1 : prev - 1);
     };
     const goToNext = ()=>{
-        setCurrentIndex((prev)=>prev === studies.length - 1 ? 0 : prev + 1);
+        setCurrentIndex((prev)=>prev === caseStudies.length - 1 ? 0 : prev + 1);
     };
-    const study = studies[currentIndex];
+    const study = caseStudies[currentIndex];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-16 md:py-24 bg-white border-b border-primary/5",
         "aria-label": "Case studies",
@@ -294,12 +293,12 @@ function CaseStudySection({ caseStudies }) {
                                     loading: "lazy"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                    lineNumber: 170,
+                                    lineNumber: 165,
                                     columnNumber: 17
                                 }, this)
                             }, `main-${currentIndex}`, false, {
                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                lineNumber: 166,
+                                lineNumber: 161,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -315,23 +314,23 @@ function CaseStudySection({ caseStudies }) {
                                             loading: "lazy"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                            lineNumber: 187,
+                                            lineNumber: 182,
                                             columnNumber: 21
                                         }, this)
                                     }, `thumb-${currentIndex}-${i}`, false, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 178,
                                         columnNumber: 19
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                lineNumber: 180,
+                                lineNumber: 175,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                        lineNumber: 164,
+                        lineNumber: 159,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -347,14 +346,14 @@ function CaseStudySection({ caseStudies }) {
                                                 className: "w-1.5 h-1.5 rounded-full bg-[#c5d520]"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                                lineNumber: 207,
+                                                lineNumber: 202,
                                                 columnNumber: 19
                                             }, this),
                                             study.tag
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 206,
+                                        lineNumber: 201,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -364,7 +363,7 @@ function CaseStudySection({ caseStudies }) {
                                             " ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                                lineNumber: 211,
+                                                lineNumber: 206,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -372,13 +371,13 @@ function CaseStudySection({ caseStudies }) {
                                                 children: study.subtitle
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                                lineNumber: 212,
+                                                lineNumber: 207,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 210,
+                                        lineNumber: 205,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -386,7 +385,7 @@ function CaseStudySection({ caseStudies }) {
                                         children: study.description
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 214,
+                                        lineNumber: 209,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -399,7 +398,7 @@ function CaseStudySection({ caseStudies }) {
                                                         children: stat.value
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                                        lineNumber: 221,
+                                                        lineNumber: 216,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -407,31 +406,31 @@ function CaseStudySection({ caseStudies }) {
                                                         children: stat.label
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 217,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                         className: "h-1 w-12 bg-primary/10 mt-3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                                        lineNumber: 223,
+                                                        lineNumber: 218,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                                lineNumber: 220,
+                                                lineNumber: 215,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 213,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, `content-${currentIndex}`, true, {
                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                lineNumber: 203,
+                                lineNumber: 198,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -446,12 +445,12 @@ function CaseStudySection({ caseStudies }) {
                                             className: "w-5 h-5 rotate-180"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                            lineNumber: 237,
+                                            lineNumber: 232,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 231,
+                                        lineNumber: 226,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -463,12 +462,12 @@ function CaseStudySection({ caseStudies }) {
                                             className: "w-5 h-5"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                            lineNumber: 245,
+                                            lineNumber: 240,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 239,
+                                        lineNumber: 234,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -477,39 +476,39 @@ function CaseStudySection({ caseStudies }) {
                                         children: [
                                             currentIndex + 1,
                                             " / ",
-                                            studies.length
+                                            caseStudies.length
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                        lineNumber: 247,
+                                        lineNumber: 242,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                                lineNumber: 230,
+                                lineNumber: 225,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/CaseStudySection.tsx",
-                        lineNumber: 201,
+                        lineNumber: 196,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shared/CaseStudySection.tsx",
-                lineNumber: 163,
+                lineNumber: 158,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/shared/CaseStudySection.tsx",
-            lineNumber: 162,
+            lineNumber: 157,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/CaseStudySection.tsx",
-        lineNumber: 161,
+        lineNumber: 156,
         columnNumber: 5
     }, this);
 }

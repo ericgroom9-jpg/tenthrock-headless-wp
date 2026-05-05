@@ -5,14 +5,14 @@ import Link from "next/link";
 import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
-  { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/retail-rodeo-drive-v2.jpg", icon: <Store className="w-6 h-6" />, href: "/retail" },
-  { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/stadiums-events" },
-  { title: "Faith Based", desc: "Scheduled and on-demand waste service for churches, campuses, and community event cleanup.", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/faith-based" },
-  { title: "Real Estate", desc: "Tenant turnover cleanouts, construction debris removal, and ongoing service for managed properties.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/real-estate" },
-  { title: "Natural Disasters", desc: "Rapid debris removal, emergency roll-offs, and storm damage cleanup deployed within hours.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/natural-disasters" },
-  { title: "Hospitality", desc: "Daily waste pickup, grease trap service, and pressure washing to keep guest-facing areas spotless.", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/hospitality" },
-  { title: "Educational", desc: "Campus-wide waste programs, recycling coordination, and event cleanup for schools and universities.", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/educational" },
-  { title: "Municipalities", desc: "Illegal dumping cleanup, public space maintenance, and disaster response for local governments.", img: "/images/stock/municipalities-american-flag.jpg", icon: <Landmark className="w-6 h-6" />, href: "/municipalities" },
+  { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/retail-rodeo-drive-v2.jpg", icon: <Store className="w-6 h-6" />, href: "/industries/retail" },
+  { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.jpg", icon: <Trophy className="w-6 h-6" />, href: "/industries/stadiums-events" },
+  { title: "Faith Based", desc: "Scheduled and on-demand waste service for churches, campuses, and community event cleanup.", img: "/images/stock/industry-faith-based.jpg", icon: <Heart className="w-6 h-6" />, href: "/industries/faith-based" },
+  { title: "Real Estate", desc: "Tenant turnover cleanouts, construction debris removal, and ongoing service for managed properties.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate" },
+  { title: "Natural Disasters", desc: "Rapid debris removal, emergency roll-offs, and storm damage cleanup deployed within hours.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/industries/natural-disasters" },
+  { title: "Hospitality", desc: "Daily waste pickup, grease trap service, and pressure washing to keep guest-facing areas spotless.", img: "/images/stock/industry-hospitality.jpg", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality" },
+  { title: "Educational", desc: "Campus-wide waste programs, recycling coordination, and event cleanup for schools and universities.", img: "/images/stock/university.jpg", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/educational" },
+  { title: "Municipalities", desc: "Illegal dumping cleanup, public space maintenance, and disaster response for local governments.", img: "/images/stock/municipalities-american-flag.jpg", icon: <Landmark className="w-6 h-6" />, href: "/industries/municipalities" },
 ];
 
 function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: number }) {
@@ -52,28 +52,18 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
   );
 }
 
-interface WhoWeHelpSectionProps {
-  tagline?: string;
-  heading?: string;
-  subtitle?: string;
-}
-
-export default function WhoWeHelpSection({
-  tagline = "Industries",
-  heading = "Who We Help",
-  subtitle = "From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.",
-}: WhoWeHelpSectionProps = {}) {
+export default function WhoWeHelpSection() {
   return (
     <section id="sectors" aria-labelledby="sectors-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-left sm:text-center max-w-4xl mx-auto mb-10 md:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              {tagline}
+              Industries
           </div>
-          <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">{heading}</h2>
+          <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">Who We Help</h2>
           <p className="text-lg text-primary/70">
-            {subtitle}
+            From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.
           </p>
         </div>
 

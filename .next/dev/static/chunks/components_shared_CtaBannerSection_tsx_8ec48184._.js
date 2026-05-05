@@ -15,7 +15,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e
 ;
 ;
 ;
-function CtaBannerSection({ tagline = "Service Availability", heading, subtitle = "Enter your zip code to get started.", placeholder = "Enter Zip Code", buttonLabel = "Check Now" } = {}) {
+function CtaBannerSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "py-16 md:py-24 bg-white relative overflow-hidden",
         "aria-label": "Check service availability",
@@ -33,7 +33,7 @@ function CtaBannerSection({ tagline = "Service Availability", heading, subtitle 
                         }
                     }, void 0, false, {
                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                        lineNumber: 28,
+                        lineNumber: 15,
                         columnNumber: 12
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -44,14 +44,14 @@ function CtaBannerSection({ tagline = "Service Availability", heading, subtitle 
                         }
                     }, void 0, false, {
                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                        lineNumber: 36,
+                        lineNumber: 23,
                         columnNumber: 12
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none"
                     }, void 0, false, {
                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                        lineNumber: 43,
+                        lineNumber: 31,
                         columnNumber: 12
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -64,93 +64,91 @@ function CtaBannerSection({ tagline = "Service Availability", heading, subtitle 
                                         className: "w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 35,
                                         columnNumber: 17
                                     }, this),
-                                    tagline
+                                    "Service Availability"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                lineNumber: 46,
+                                lineNumber: 34,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-4xl md:text-5xl font-medium text-white leading-tight mb-6 tracking-tighter",
-                                children: heading || /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                                    children: [
-                                        "Check If We Service ",
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-[#c5d520]",
-                                            children: "Your Area"
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                            lineNumber: 52,
-                                            columnNumber: 50
-                                        }, this)
-                                    ]
-                                }, void 0, true)
-                            }, void 0, false, {
+                                children: [
+                                    "Check If We Service ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-[#c5d520]",
+                                        children: "Your Area"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/shared/CtaBannerSection.tsx",
+                                        lineNumber: 40,
+                                        columnNumber: 36
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                lineNumber: 51,
+                                lineNumber: 39,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-xl text-white/70 font-medium leading-relaxed max-w-xl mb-10",
-                                children: subtitle
+                                children: "Enter your zip code to get started."
                             }, void 0, false, {
                                 fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                lineNumber: 54,
+                                lineNumber: 42,
                                 columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                        placeholder: placeholder,
+                                        placeholder: "Enter Zip Code",
                                         className: "!bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full",
                                         style: {
                                             backgroundColor: 'rgba(255, 255, 255, 0.1)'
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 47,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                         size: "lg",
                                         className: "bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[52px] whitespace-nowrap rounded-full",
-                                        children: buttonLabel
+                                        children: "Check Now"
                                     }, void 0, false, {
                                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 52,
                                         columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                                lineNumber: 58,
+                                lineNumber: 46,
                                 columnNumber: 14
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                        lineNumber: 45,
+                        lineNumber: 33,
                         columnNumber: 12
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/shared/CtaBannerSection.tsx",
-                lineNumber: 25,
+                lineNumber: 11,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/shared/CtaBannerSection.tsx",
-            lineNumber: 24,
+            lineNumber: 10,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/CtaBannerSection.tsx",
-        lineNumber: 23,
+        lineNumber: 9,
         columnNumber: 5
     }, this);
 }
