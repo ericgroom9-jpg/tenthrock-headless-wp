@@ -5,8 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 import { Siren, HardHat, Container, LineChart, ArrowRight } from "lucide-react";
+import type { ServiceCategory } from "@/lib/wordpress";
 
-const services = [
+const defaultServices = [
   {
     title: "Emergency Waste Removal",
     desc: "Same-day junk removal and emergency waste management for spoiled product, overflowing dumpsters, and urgent commercial site cleanouts across 48 states.",
@@ -47,8 +48,39 @@ const services = [
 
 const categoryIcons = [Siren, HardHat, Container, LineChart];
 
-export default function CommercialWasteServices() {
+interface CWSProps {
+  servicesTagline?: string;
+  servicesHeading?: string;
+  servicesSubtitle?: string;
+  servicesCategories?: ServiceCategory[] | null;
+}
+
+export default function CommercialWasteServices({
+  servicesTagline,
+  servicesHeading,
+  servicesSubtitle,
+  servicesCategories,
+}: CWSProps = {}) {
   const [activeService, setActiveService] = useState(0);
+
+  const services = (servicesCategories && servicesCategories.length > 0)
+    ? servicesCategories.map((cat, i) => {
+        const fallback = defaultServices[i] || defaultServices[0];
+        return {
+          title: cat.title || fallback.title,
+          desc: cat.description || fallback.desc,
+          items: (cat.subItems || []).map((sub, j) => {
+            const fbItem = fallback.items[j] || fallback.items[0];
+            return {
+              label: sub.label || fbItem.label,
+              desc: sub.description || fbItem.desc,
+              img: fbItem.img,
+              href: fbItem.href,
+            };
+          }),
+        };
+      })
+    : defaultServices;
 
   return (
     <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
@@ -58,13 +90,13 @@ export default function CommercialWasteServices() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-              Our Services
+              {servicesTagline || "Our Services"}
           </div>
           <h2 id="services-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-4 tracking-tighter">
-            Waste Management Services
+            {servicesHeading || "Waste Management Services"}
           </h2>
           <p className="text-lg text-[#042940]/70">
-            Four core capabilities. One point of contact. Dispatched across 48 states.
+            {servicesSubtitle || "Four core capabilities. One point of contact. Dispatched across 48 states."}
           </p>
         </FadeIn>
         

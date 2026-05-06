@@ -24,7 +24,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const services = [
+const defaultServices = [
     {
         title: "Emergency Waste Removal",
         desc: "Same-day junk removal and emergency waste management for spoiled product, overflowing dumpsters, and urgent commercial site cleanouts across 48 states.",
@@ -128,9 +128,25 @@ const categoryIcons = [
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$container$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Container$3e$__["Container"],
     __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$line$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__LineChart$3e$__["LineChart"]
 ];
-function CommercialWasteServices() {
+function CommercialWasteServices({ servicesTagline, servicesHeading, servicesSubtitle, servicesCategories } = {}) {
     _s();
     const [activeService, setActiveService] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const services = servicesCategories && servicesCategories.length > 0 ? servicesCategories.map((cat, i)=>{
+        const fallback = defaultServices[i] || defaultServices[0];
+        return {
+            title: cat.title || fallback.title,
+            desc: cat.description || fallback.desc,
+            items: (cat.subItems || []).map((sub, j)=>{
+                const fbItem = fallback.items[j] || fallback.items[0];
+                return {
+                    label: sub.label || fbItem.label,
+                    desc: sub.description || fbItem.desc,
+                    img: fbItem.img,
+                    href: fbItem.href
+                };
+            })
+        };
+    }) : defaultServices;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "services",
         "aria-labelledby": "services-heading",
@@ -148,37 +164,37 @@ function CommercialWasteServices() {
                                     className: "w-2 h-2 rounded-full bg-[#c5d520]"
                                 }, void 0, false, {
                                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, this),
-                                "Our Services"
+                                servicesTagline || "Our Services"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                            lineNumber: 59,
+                            lineNumber: 91,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             id: "services-heading",
                             className: "text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-4 tracking-tighter",
-                            children: "Waste Management Services"
+                            children: servicesHeading || "Waste Management Services"
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                            lineNumber: 63,
+                            lineNumber: 95,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-lg text-[#042940]/70",
-                            children: "Four core capabilities. One point of contact. Dispatched across 48 states."
+                            children: servicesSubtitle || "Four core capabilities. One point of contact. Dispatched across 48 states."
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                            lineNumber: 66,
+                            lineNumber: 98,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                    lineNumber: 56,
+                    lineNumber: 88,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -201,31 +217,31 @@ function CommercialWasteServices() {
                                                     className: "w-2 h-2 rounded-full bg-[#c5d520] flex-shrink-0"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                    lineNumber: 88,
+                                                    lineNumber: 120,
                                                     columnNumber: 22
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                            lineNumber: 85,
+                                            lineNumber: 117,
                                             columnNumber: 18
                                         }, this),
                                         activeService === i && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$shared$2f$FadeIn$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                             className: "absolute left-0 top-0 bottom-0 w-1 bg-[#c5d520]"
                                         }, void 0, false, {
                                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 124,
                                             columnNumber: 20
                                         }, this)
                                     ]
                                 }, i, true, {
                                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                    lineNumber: 74,
+                                    lineNumber: 106,
                                     columnNumber: 16
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                            lineNumber: 72,
+                            lineNumber: 104,
                             columnNumber: 12
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -247,14 +263,14 @@ function CommercialWasteServices() {
                                                 className: "object-cover transition-transform duration-700 group-hover:scale-110"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 147,
                                                 columnNumber: 24
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/80 to-[#042940]/30 group-hover:via-[#042940]/70 group-hover:to-[#042940]/20 transition-all duration-300"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                lineNumber: 122,
+                                                lineNumber: 154,
                                                 columnNumber: 24
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -266,12 +282,12 @@ function CommercialWasteServices() {
                                                             className: "w-5 h-5 text-[#c5d520]"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                            lineNumber: 125,
+                                                            lineNumber: 157,
                                                             columnNumber: 28
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                        lineNumber: 124,
+                                                        lineNumber: 156,
                                                         columnNumber: 26
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -279,7 +295,7 @@ function CommercialWasteServices() {
                                                         children: item.label
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 159,
                                                         columnNumber: 26
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -287,7 +303,7 @@ function CommercialWasteServices() {
                                                         children: item.desc
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                        lineNumber: 130,
+                                                        lineNumber: 162,
                                                         columnNumber: 26
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -299,53 +315,53 @@ function CommercialWasteServices() {
                                                                 className: "w-4 h-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                                lineNumber: 137,
+                                                                lineNumber: 169,
                                                                 columnNumber: 39
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 165,
                                                         columnNumber: 26
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 155,
                                                 columnNumber: 24
                                             }, this)
                                         ]
                                     }, idx, true, {
                                         fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 141,
                                         columnNumber: 22
                                     }, this);
                                 })
                             }, activeService, false, {
                                 fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                                lineNumber: 102,
+                                lineNumber: 134,
                                 columnNumber: 16
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                            lineNumber: 100,
+                            lineNumber: 132,
                             columnNumber: 12
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-                    lineNumber: 71,
+                    lineNumber: 103,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-            lineNumber: 55,
+            lineNumber: 87,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/shared/CommercialWasteServices.tsx",
-        lineNumber: 54,
+        lineNumber: 86,
         columnNumber: 5
     }, this);
 }

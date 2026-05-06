@@ -211,10 +211,18 @@ const Hero = ({
   heroTagline,
   heroHeading,
   heroSubheading,
+  heroCtaLabel,
+  heroCtaLink,
+  heroSecondaryLabel,
+  heroSecondaryLink,
 }: {
   heroTagline?: string;
   heroHeading?: string;
   heroSubheading?: string;
+  heroCtaLabel?: string;
+  heroCtaLink?: string;
+  heroSecondaryLabel?: string;
+  heroSecondaryLink?: string;
 } = {}) => {
   return (
     <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
@@ -268,10 +276,10 @@ const Hero = ({
             style={{ animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 3}s` }}
           >
             <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" aria-label="Request a waste removal service" data-testid="button-hero-cta" asChild>
-              <Link href="/request-a-service">Request A Service</Link>
+              <Link href={heroCtaLink || "/request-a-service"}>{heroCtaLabel || "Request A Service"}</Link>
             </Button>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} aria-label="See how our process works" data-testid="button-hero-secondary">
-              See How It Works
+            <Button size="lg" variant="outline" className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" asChild aria-label="Secondary call to action" data-testid="button-hero-secondary">
+              <Link href={heroSecondaryLink || "#process"}>{heroSecondaryLabel || "See How It Works"}</Link>
             </Button>
           </div>
         </div>
@@ -763,13 +771,22 @@ export default function Home({ acf, globalSections, testimonials, caseStudies, p
         heroTagline={acf?.heroTagline}
         heroHeading={acf?.heroHeading}
         heroSubheading={acf?.heroSubheading}
+        heroCtaLabel={acf?.heroCtaLabel}
+        heroCtaLink={acf?.heroCtaLink}
+        heroSecondaryLabel={acf?.heroSecondaryLabel}
+        heroSecondaryLink={acf?.heroSecondaryLink}
       />
       <main id="main-content" role="main">
       <LogoReelSection
         headline={gs?.logoReel?.headline}
         logos={partnerLogos && partnerLogos.length > 0 ? partnerLogos : undefined}
       />
-      <CommercialWasteServices />
+      <CommercialWasteServices
+        servicesTagline={acf?.servicesTagline}
+        servicesHeading={acf?.servicesHeading}
+        servicesSubtitle={acf?.servicesSubtitle}
+        servicesCategories={acf?.servicesCategories}
+      />
       <WhoWeHelpSection
         tagline={gs?.whoHelp?.tagline}
         heading={gs?.whoHelp?.heading}
@@ -812,12 +829,13 @@ export default function Home({ acf, globalSections, testimonials, caseStudies, p
         cards={gs?.stats?.cards}
       />
       <FaqSection
-        tagline={gs?.faq?.tagline}
-        heading={gs?.faq?.heading}
-        subtitle={gs?.faq?.subtitle}
-        ctaText={gs?.faq?.ctaText}
-        ctaLabel={gs?.faq?.ctaLabel}
-        ctaLink={gs?.faq?.ctaLink}
+        tagline={acf?.faqTagline || gs?.faq?.tagline}
+        heading={acf?.faqHeading || gs?.faq?.heading}
+        subtitle={acf?.faqSubtitle || gs?.faq?.subtitle}
+        faqs={acf?.faqItems && acf.faqItems.length > 0 ? acf.faqItems : undefined}
+        ctaText={acf?.faqCtaText || gs?.faq?.ctaText}
+        ctaLabel={acf?.faqCtaLabel || gs?.faq?.ctaLabel}
+        ctaLink={acf?.faqCtaLink || gs?.faq?.ctaLink}
       />
       <LocationSection
         heading={gs?.location?.heading}
