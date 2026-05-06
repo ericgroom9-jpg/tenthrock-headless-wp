@@ -41,6 +41,7 @@ if ( ! function_exists( 'tr_acf_field' ) ) {
             'required'           => 0,
             'conditional_logic'  => 0,
             'show_in_graphql'    => 1,
+            'show_in_rest'       => 1,
             'graphql_field_name' => tr_acf_to_camel( $name ),
         );
         if ( $type === 'textarea' ) {
@@ -85,6 +86,7 @@ if ( ! function_exists( 'tr_acf_repeater' ) ) {
             'required'           => 0,
             'conditional_logic'  => 0,
             'show_in_graphql'    => 1,
+            'show_in_rest'       => 1,
             'graphql_field_name' => tr_acf_to_camel( $name ),
             'collapsed'          => '',
             'min'                => 0,
@@ -117,6 +119,7 @@ if ( ! function_exists( 'tr_acf_group' ) ) {
             'active'                => true,
             'description'           => '',
             'show_in_graphql'       => 1,
+            'show_in_rest'          => 1,
             'graphql_field_name'    => $graphql_field_name,
             'map_graphql_types_from_location_rules' => 0,
             'graphql_types'         => array( $graphql_type ),

@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import type { HomepageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
+import type { HomepageTemplateData, GlobalSectionsData, TestimonialData, CaseStudyData, PartnerLogoData } from "@/lib/wordpress";
 
 const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
   // SSR enabled (default) so the real <h1>/<h2>/<h3> structure inside
@@ -28,8 +28,19 @@ const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
 interface Props {
   acf?: HomepageTemplateData | null;
   globalSections?: GlobalSectionsData | null;
+  testimonials?: TestimonialData[];
+  caseStudies?: CaseStudyData[];
+  partnerLogos?: PartnerLogoData[];
 }
 
-export default function HomeClient({ acf, globalSections }: Props) {
-  return <TenthRockHome acf={acf || null} globalSections={globalSections || null} />;
+export default function HomeClient({ acf, globalSections, testimonials, caseStudies, partnerLogos }: Props) {
+  return (
+    <TenthRockHome
+      acf={acf || null}
+      globalSections={globalSections || null}
+      testimonials={testimonials || []}
+      caseStudies={caseStudies || []}
+      partnerLogos={partnerLogos || []}
+    />
+  );
 }

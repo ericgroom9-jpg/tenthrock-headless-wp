@@ -1,4 +1,4 @@
-import { fetchHomepageAcf, fetchGlobalSections } from '@/lib/wordpress';
+import { fetchHomepageAcf, fetchGlobalSections, fetchAllTestimonials, fetchAllCaseStudies, fetchAllPartnerLogos } from '@/lib/wordpress';
 import HomeClient from '@/components/home/HomeClient';
 
 export const revalidate = 1800;
@@ -17,9 +17,20 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const [acf, globalSections] = await Promise.all([
+  const [acf, globalSections, testimonials, caseStudies, partnerLogos] = await Promise.all([
     fetchHomepageAcf(),
     fetchGlobalSections(),
+    fetchAllTestimonials(),
+    fetchAllCaseStudies(),
+    fetchAllPartnerLogos(),
   ]);
-  return <HomeClient acf={acf} globalSections={globalSections} />;
+  return (
+    <HomeClient
+      acf={acf}
+      globalSections={globalSections}
+      testimonials={testimonials}
+      caseStudies={caseStudies}
+      partnerLogos={partnerLogos}
+    />
+  );
 }

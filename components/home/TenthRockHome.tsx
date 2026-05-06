@@ -737,9 +737,12 @@ import { resolveReasonIcon } from "@/components/shared/ReasonsSection";
 interface HomeProps {
   acf?: HomepageTemplateData | null;
   globalSections?: GlobalSectionsData | null;
+  testimonials?: import("@/lib/wordpress").TestimonialData[];
+  caseStudies?: import("@/lib/wordpress").CaseStudyData[];
+  partnerLogos?: import("@/lib/wordpress").PartnerLogoData[];
 }
 
-export default function Home({ acf, globalSections }: HomeProps) {
+export default function Home({ acf, globalSections, testimonials, caseStudies, partnerLogos }: HomeProps) {
   const gs = globalSections;
   return (
     <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
@@ -752,6 +755,7 @@ export default function Home({ acf, globalSections }: HomeProps) {
       <main id="main-content" role="main">
       <LogoReelSection
         headline={gs?.logoReel?.headline}
+        logos={partnerLogos && partnerLogos.length > 0 ? partnerLogos : undefined}
       />
       <CommercialWasteServices />
       <WhoWeHelpSection
@@ -772,7 +776,7 @@ export default function Home({ acf, globalSections }: HomeProps) {
         subtitle={gs?.process?.subtitle}
         steps={gs?.process?.steps?.map(s => ({ num: s.number, title: s.title, desc: s.description }))}
       />
-      <CaseStudySection />
+      <CaseStudySection caseStudies={caseStudies && caseStudies.length > 0 ? caseStudies : undefined} />
       <ReasonsSection
         tagline={gs?.reasons?.tagline}
         heading={gs?.reasons?.heading}
