@@ -30,12 +30,18 @@ function checkRateLimit(ip: string): boolean {
 }
 
 function getWpRestBaseUrl(): string {
-  const wpApiUrl = process.env.WP_API_URL;
-  if (!wpApiUrl) {
-    throw new Error('WP_API_URL environment variable is not set');
+  // Prefer the canonical REST URL, then derive from the GraphQL URL or the
+  // legacy WP_API_URL secret. All three resolve to the same `<host>/wp-json` base.
+  const candidate =
+    process.env.WORDPRESS_REST_URL ||
+    process.env.WORDPRESS_GRAPHQL_URL ||
+    process.env.WP_API_URL;
+  if (!candidate) {
+    throw new Error(
+      'No WordPress URL configured (set WORDPRESS_REST_URL, WORDPRESS_GRAPHQL_URL, or WP_API_URL)'
+    );
   }
-  // Convert GraphQL URL to REST API base (e.g., https://site.com/graphql -> https://site.com/wp-json)
-  const url = new URL(wpApiUrl);
+  const url = new URL(candidate);
   return `${url.protocol}//${url.host}/wp-json`;
 }
 
@@ -88,13 +94,17 @@ export async function POST(request: NextRequest) {
     const submitUrl = `${wpRestUrl}/gf/v2/forms/${formId}/submissions`;
 
     const headers: Record<string, string> = {};
-    
-    // Add Basic Auth if configured
-    if (process.env.WP_AUTH_USER && process.env.WP_AUTH_PASSWORD) {
+
+    // Gravity Forms REST API v2 requires Basic Auth with consumer key/secret
+    // (issued via WP → Forms → Settings → REST API). The site-wide WP_AUTH_USER
+    // creds are GraphQL-only and will be rejected here with 401.
+    if (process.env.GF_CONSUMER_KEY && process.env.GF_CONSUMER_SECRET) {
       const credentials = Buffer.from(
-        `${process.env.WP_AUTH_USER}:${process.env.WP_AUTH_PASSWORD}`
+        `${process.env.GF_CONSUMER_KEY}:${process.env.GF_CONSUMER_SECRET}`
       ).toString('base64');
       headers['Authorization'] = `Basic ${credentials}`;
+    } else {
+      console.error('GF_CONSUMER_KEY / GF_CONSUMER_SECRET not configured — submission will likely fail.');
     }
 
     const response = await fetch(submitUrl, {
@@ -125,9 +135,25 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Surface the confirmation object from upstream so the client can follow
+    // redirect-type confirmations (editor-managed in WP → Forms → Confirmations).
+    // GF nests the resolved confirmation under `data.form.confirmation` and also
+    // exposes `confirmation_redirect` / `confirmation_type` at the top level.
+    const formConfirmation = data?.form?.confirmation ?? null;
+    let confirmation = formConfirmation;
+    if (!confirmation && data.confirmation_type === 'redirect' && data.confirmation_redirect) {
+      // Strip an empty-host absolute URL like "http:///foo" back to "/foo".
+      let url: string = data.confirmation_redirect;
+      try {
+        const u = new URL(url);
+        if (!u.host) url = u.pathname + u.search + u.hash;
+      } catch { /* keep as-is */ }
+      confirmation = { type: 'redirect', url };
+    }
     return NextResponse.json({
       is_valid: true,
       confirmation_message: data.confirmation_message,
+      confirmation,
       entry_id: data.entry_id,
     });
   } catch (error: unknown) {

@@ -13,6 +13,8 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { stateOutlines } from "@/lib/data/state-outlines";
 import { cityToSlug } from "@/lib/data/state-cities";
+import { submitGravityForm } from "@/lib/gf/submit-client";
+import { GF_FORM_IDS } from "@/lib/gf/form-ids";
 
 const CommercialWasteServices = dynamic(() => import("@/components/shared/CommercialWasteServices"));
 const CtaBannerSection = dynamic(() => import("@/components/shared/CtaBannerSection"));
@@ -78,9 +80,24 @@ export default function LocationTemplateClient({
     message: "",
     consent: false,
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleLocationFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitError(null);
+    setSubmitting(true);
+    const result = await submitGravityForm(e.currentTarget, GF_FORM_IDS.locationInquiry);
+    setSubmitting(false);
+    if (!result.ok) {
+      setSubmitError(result.error || "Submission failed. Please try again.");
+      return;
+    }
+    router.push(result.redirectUrl || "/");
   };
 
   return (
@@ -207,10 +224,7 @@ export default function LocationTemplateClient({
               </div>
               <form
                 className="space-y-5"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  router.push("/book-a-call");
-                }}
+                onSubmit={handleLocationFormSubmit}
                 data-testid="form-location-quote"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -221,6 +235,8 @@ export default function LocationTemplateClient({
                     <input
                       type="text"
                       id="firstName"
+                      name="input_1"
+                      required
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
                       className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
@@ -234,6 +250,8 @@ export default function LocationTemplateClient({
                     <input
                       type="text"
                       id="lastName"
+                      name="input_2"
+                      required
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
                       className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
@@ -250,6 +268,8 @@ export default function LocationTemplateClient({
                     <input
                       type="email"
                       id="email"
+                      name="input_3"
+                      required
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
                       className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
@@ -262,6 +282,8 @@ export default function LocationTemplateClient({
                     </label>
                     <PhoneInput
                       id="phone"
+                      name="input_4"
+                      required
                       value={formData.phone}
                       onChange={(value) => handleInputChange("phone", value)}
                       className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
@@ -278,6 +300,8 @@ export default function LocationTemplateClient({
                     <input
                       type="text"
                       id="company"
+                      name="input_5"
+                      required
                       value={formData.company}
                       onChange={(e) => handleInputChange("company", e.target.value)}
                       className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
@@ -290,6 +314,8 @@ export default function LocationTemplateClient({
                     </label>
                     <select
                       id="interest"
+                      name="input_6"
+                      required
                       value={formData.interest}
                       onChange={(e) => handleInputChange("interest", e.target.value)}
                       className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
@@ -311,6 +337,8 @@ export default function LocationTemplateClient({
                   </label>
                   <textarea
                     id="message"
+                    name="input_7"
+                    required
                     rows={4}
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
@@ -324,6 +352,9 @@ export default function LocationTemplateClient({
                   <label className="flex items-center gap-3 cursor-pointer" data-testid="checkbox-consent">
                     <input
                       type="checkbox"
+                      name="input_8.1"
+                      value="1"
+                      required
                       checked={formData.consent}
                       onChange={(e) => handleInputChange("consent", e.target.checked)}
                       className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]"
@@ -335,12 +366,16 @@ export default function LocationTemplateClient({
                   <Button
                     type="submit"
                     size="lg"
+                    disabled={submitting}
                     className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] hover:shadow-[0_0_30px_rgba(197,213,32,0.5)] transition-all whitespace-nowrap"
                     data-testid="button-form-submit"
                   >
-                    Submit Request
+                    {submitting ? "Submitting…" : "Submit Request"}
                   </Button>
                 </div>
+                {submitError && (
+                  <p className="text-red-600 text-sm" data-testid="text-location-form-error">{submitError}</p>
+                )}
               </form>
             </FadeIn>
           </div>

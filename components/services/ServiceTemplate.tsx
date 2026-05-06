@@ -24,6 +24,8 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import LocationSection from "@/components/shared/LocationSection";
 import Logo from "@/components/shared/Logo";
+import { submitGravityForm } from "@/lib/gf/submit-client";
+import { GF_FORM_IDS } from "@/lib/gf/form-ids";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import StatsSection from "@/components/shared/StatsSection";
@@ -175,9 +177,20 @@ export default function ServiceTemplate({
   const [activeService, setActiveService] = useState(0);
   const [openAccordion, setOpenAccordion] = useState<string | null>("about");
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/book-a-call");
+    setSubmitError(null);
+    setSubmitting(true);
+    const result = await submitGravityForm(e.currentTarget, GF_FORM_IDS.serviceInquiry);
+    setSubmitting(false);
+    if (!result.ok) {
+      setSubmitError(result.error || "Submission failed. Please try again.");
+      return;
+    }
+    router.push(result.redirectUrl || "/");
   };
 
   return (
@@ -415,7 +428,9 @@ export default function ServiceTemplate({
                       </label>
                       <Input 
                         id="firstName"
+                        name="input_1"
                         type="text"
+                        required
                         className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-first-name"
                       />
@@ -426,7 +441,9 @@ export default function ServiceTemplate({
                       </label>
                       <Input 
                         id="lastName"
+                        name="input_2"
                         type="text"
+                        required
                         className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-last-name"
                       />
@@ -440,7 +457,9 @@ export default function ServiceTemplate({
                       </label>
                       <Input 
                         id="email"
+                        name="input_3"
                         type="email"
+                        required
                         className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-email"
                       />
@@ -451,6 +470,8 @@ export default function ServiceTemplate({
                       </label>
                       <PhoneInput 
                         id="phone"
+                        name="input_4"
+                        required
                         className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-phone"
                       />
@@ -464,7 +485,9 @@ export default function ServiceTemplate({
                       </label>
                       <Input 
                         id="company"
+                        name="input_5"
                         type="text"
+                        required
                         className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
                         data-testid="input-company"
                       />
@@ -475,6 +498,8 @@ export default function ServiceTemplate({
                       </label>
                       <select 
                         id="interest"
+                        name="input_6"
+                        required
                         className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
                         data-testid="select-interest"
                         defaultValue=""
@@ -495,6 +520,8 @@ export default function ServiceTemplate({
                     </label>
                     <textarea 
                       id="message"
+                      name="input_7"
+                      required
                       rows={4}
                       placeholder="Type your message..."
                       className="w-full px-4 py-3 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none resize-none transition-colors"
@@ -506,6 +533,9 @@ export default function ServiceTemplate({
                     <label className="flex items-center gap-3 cursor-pointer">
                       <input 
                         type="checkbox" 
+                        name="input_8.1"
+                        value="1"
+                        required
                         className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]"
                         data-testid="checkbox-terms"
                       />
@@ -516,12 +546,16 @@ export default function ServiceTemplate({
                     <Button 
                       type="submit"
                       size="lg"
+                      disabled={submitting}
                       className="w-full sm:w-auto bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] hover:shadow-[0_0_30px_rgba(197,213,32,0.5)] transition-all whitespace-nowrap"
                       data-testid="button-form-submit"
                     >
-                      Submit Request
+                      {submitting ? "Submitting…" : "Submit Request"}
                     </Button>
                   </div>
+                  {submitError && (
+                    <p className="text-red-600 text-sm" data-testid="text-service-form-error">{submitError}</p>
+                  )}
                 </form>
               </FadeIn>
             </div>

@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { submitGravityForm } from "@/lib/gf/submit-client";
+import { GF_FORM_IDS } from "@/lib/gf/form-ids";
 import FadeIn from "@/components/shared/FadeIn";
 import { Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -63,9 +66,20 @@ function RequestAServiceSection({ data }: { data: ContactFormTemplateData | null
   const privacyLinkText = data?.privacyLinkText || "Privacy Policy";
   const privacyLinkUrl = data?.privacyLinkUrl || "/privacy-policy";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push("/book-a-call");
+    setSubmitError(null);
+    setSubmitting(true);
+    const result = await submitGravityForm(e.currentTarget, GF_FORM_IDS.requestAService);
+    setSubmitting(false);
+    if (!result.ok) {
+      setSubmitError(result.error || "Submission failed. Please try again.");
+      return;
+    }
+    router.push(result.redirectUrl || "/");
   };
 
   return (
@@ -126,19 +140,19 @@ function RequestAServiceSection({ data }: { data: ContactFormTemplateData | null
               <form className="space-y-5" data-testid="form-request-service" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="request-name" className="block text-sm font-medium text-[#042940] mb-2">Name</label>
-                  <Input id="request-name" type="text" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-name" />
+                  <Input id="request-name" name="input_1" type="text" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-name" />
                 </div>
                 <div>
                   <label htmlFor="request-email" className="block text-sm font-medium text-[#042940] mb-2">Email</label>
-                  <Input id="request-email" type="email" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-email" />
+                  <Input id="request-email" name="input_2" type="email" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-email" />
                 </div>
                 <div>
                   <label htmlFor="request-phone" className="block text-sm font-medium text-[#042940] mb-2">Phone Number</label>
-                  <PhoneInput id="request-phone" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-phone" />
+                  <PhoneInput id="request-phone" name="input_3" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-phone" />
                 </div>
                 <div>
                   <label htmlFor="request-interest" className="block text-sm font-medium text-[#042940] mb-2">I&apos;m interested in help with:</label>
-                  <select id="request-interest" className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat" data-testid="select-request-interest" defaultValue="">
+                  <select id="request-interest" name="input_4" required className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat" data-testid="select-request-interest" defaultValue="">
                     <option value="" disabled>Select one...</option>
                     {interestOptions.map((opt) => (
                       <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -147,19 +161,22 @@ function RequestAServiceSection({ data }: { data: ContactFormTemplateData | null
                 </div>
                 <div>
                   <label htmlFor="request-message" className="block text-sm font-medium text-[#042940] mb-2">{messageLabel}</label>
-                  <textarea id="request-message" rows={5} placeholder="Type your message..." className="w-full px-4 py-3 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none resize-none transition-colors" data-testid="textarea-request-message" />
+                  <textarea id="request-message" name="input_5" required rows={5} placeholder="Type your message..." className="w-full px-4 py-3 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none resize-none transition-colors" data-testid="textarea-request-message" />
                 </div>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-[#042940]/10">
                   <label className="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]" data-testid="checkbox-request-terms" />
+                    <input type="checkbox" name="input_6.1" value="1" required className="w-5 h-5 rounded-[3px] border-[#042940]/30 text-[#c5d520] focus:ring-[#c5d520] accent-[#c5d520]" data-testid="checkbox-request-terms" />
                     <span className="text-sm text-[#042940]/80">
                       {privacyText} <a href={privacyLinkUrl} className="text-[#042940] font-medium underline hover:text-[#c5d520] transition-colors" data-testid="link-request-privacy-policy">{privacyLinkText}</a>
                     </span>
                   </label>
-                  <Button type="submit" size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] whitespace-nowrap" data-testid="button-request-submit">
-                    {submitLabel}
+                  <Button type="submit" size="lg" disabled={submitting} className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] whitespace-nowrap" data-testid="button-request-submit">
+                    {submitting ? "Submitting…" : submitLabel}
                   </Button>
                 </div>
+                {submitError && (
+                  <p className="text-red-600 text-sm" data-testid="text-request-error">{submitError}</p>
+                )}
               </form>
             </div>
           </FadeIn>

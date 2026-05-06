@@ -38,7 +38,7 @@ A high-performance, SEO-friendly headless WordPress site using Next.js and Postg
 - **API Routes:** `app/api/*`
 - **Custom Post Types & Taxonomies:** Defined in WordPress via Code Snippets (`scripts/`)
 - **ACF Field Groups:** Defined in WordPress via Code Snippets (`scripts/`)
-- **Gravity Forms Integration:** `components/gravity-forms/*`
+- **Gravity Forms Integration:** `components/gravity-forms/*` (legacy generic renderer); the 5 native lead forms (Contact, Request A Service, Join Our Network, Service Inquiry, Location Inquiry) post to `/api/forms/submit-rest` via `lib/gf/submit-client.ts`. Form IDs in `lib/gf/form-ids.ts`. Seeded by `scripts/seed-gravity-forms.mjs`.
 - **US Map Data:** `components/shared/us-map-data.ts`
 - **Global CSS Variables:** `styles/globals.css`
 - **Storybook:** _Populate as you build_
@@ -64,6 +64,10 @@ A high-performance, SEO-friendly headless WordPress site using Next.js and Postg
 I want to interact with the agent in an iterative development approach. I prefer detailed explanations of changes and potential impacts. The agent should ask for confirmation before making major architectural changes or introducing new dependencies.
 
 ## Gotchas
+
+- **GF REST auth uses GF_CONSUMER_KEY/SECRET (NOT WP_AUTH_USER):** The site's `WP_AUTH_USER`/`WP_AUTH_PASSWORD` are GraphQL-only and the GF REST endpoint rejects them with 401. `app/api/forms/submit-rest/route.ts` Basic-auths with the GF consumer creds (issued in WP → Forms → Settings → REST API).
+- **GF redirect confirmations live at `data.form.confirmation`:** The submissions endpoint nests the resolved confirmation under `data.form.confirmation` (with the *relative* `url`) and also exposes a top-level `confirmation_redirect` (which is an absolute URL but with an empty host like `http:///foo` because GF can't determine a base). The proxy returns `data.form.confirmation` so editor-managed relative redirects pass through unchanged. `submit-client.ts` reads `confirmation.url` and falls back to `/` if missing.
+- **GF phone fields default to `phoneFormat:"standard"` (US-only):** Standard format rejects E.164 (`+15555550123`) and most non-(xxx)xxx-xxxx inputs. All 3 lead forms with phone (Contact #1, Service Inquiry #4, Location Inquiry #5) have `phoneFormat:"international"` so any non-empty value passes.
 
 - **Shared Stats Section Image:** The "Why Clients Call Us" stats section (`StatsSection.tsx`) hardcodes its image; do not attempt to override it per page.
 - **ACF REST writes require BOTH `show_in_graphql` AND `show_in_rest`:** ACF Pro 6.7+ silently drops the REST `acf` payload unless both flags are set on the field group and every field.

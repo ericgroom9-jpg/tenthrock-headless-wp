@@ -87,8 +87,6 @@ export default function JoinOurNetworkClient({ acf }: Props) {
   const emailPlaceholder = acf?.emailPlaceholder || "Your business email";
   const emailSubmitLabel = acf?.emailSubmitLabel || "Send Me the Form";
   const emailDisclaimer = acf?.emailDisclaimer || "No spam. We will only send you the onboarding link.";
-  const emailSuccessHeading = acf?.emailSuccessHeading || "Check Your Inbox";
-  const emailSuccessMessage = acf?.emailSuccessMessage || "We sent the vendor onboarding link to your email. Follow the link to complete your application and start receiving jobs.";
 
   return (
     <main>
@@ -234,8 +232,6 @@ export default function JoinOurNetworkClient({ acf }: Props) {
         placeholder={emailPlaceholder}
         submitLabel={emailSubmitLabel}
         disclaimer={emailDisclaimer}
-        successHeading={emailSuccessHeading}
-        successMessage={emailSuccessMessage}
       />
 
       <Footer />
@@ -244,17 +240,17 @@ export default function JoinOurNetworkClient({ acf }: Props) {
 }
 
 function EmailCaptureSection({
-  tagline, heading, subtitle, placeholder, submitLabel, disclaimer, successHeading, successMessage,
+  tagline, heading, subtitle, placeholder, submitLabel, disclaimer,
 }: {
   tagline: string; heading: string; subtitle: string; placeholder: string;
-  submitLabel: string; disclaimer: string; successHeading: string; successMessage: string;
+  submitLabel: string; disclaimer: string;
 }) {
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
 
@@ -263,21 +259,19 @@ function EmailCaptureSection({
       return;
     }
 
+    const formEl = e.currentTarget;
+    setSubmitting(true);
     try {
-      const res = await fetch("/api/vendor-interest", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Something went wrong. Please try again.");
+      const { submitGravityForm } = await import("@/lib/gf/submit-client");
+      const { GF_FORM_IDS } = await import("@/lib/gf/form-ids");
+      const result = await submitGravityForm(formEl, GF_FORM_IDS.joinOurNetwork);
+      if (!result.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
       }
-
-      router.push("/vendor-onboarding");
+      router.push(result.redirectUrl || "/");
     } catch (err: any) {
       setError(err.message || "Something went wrong. Please try again.");
+      setSubmitting(false);
     }
   };
 
@@ -285,62 +279,48 @@ function EmailCaptureSection({
     <section id="email-capture" className="py-16 md:py-24 bg-white" data-testid="section-join-email">
       <div className="container mx-auto px-4 md:px-8">
         <FadeIn className="max-w-2xl mx-auto text-left sm:text-center">
-          {submitted ? (
-            <div className="py-12" data-testid="join-email-success">
-              <div className="w-16 h-16 rounded-full bg-[#c5d520]/20 flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 className="w-8 h-8 text-[#c5d520]" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9F9F6] border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+            {tagline}
+          </div>
+          <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
+            {heading}
+          </h2>
+          <p className="text-lg text-[#042940]/70 mb-8 max-w-lg mx-auto">
+            {subtitle}
+          </p>
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto" data-testid="form-join-email">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="relative flex-1">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#042940]/40 pointer-events-none" />
+                <input
+                  type="email"
+                  name="input_1"
+                  placeholder={placeholder}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 rounded-full border border-[#042940]/20 text-[#042940] placeholder:text-[#042940]/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-base"
+                  required
+                  data-testid="input-join-email"
+                />
               </div>
-              <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
-                {successHeading}
-              </h2>
-              <p className="text-lg text-[#042940]/70 max-w-md mx-auto">
-                {successMessage.replace("your email", `**${email}**`)}
-              </p>
+              <Button
+                type="submit"
+                size="lg"
+                disabled={submitting}
+                className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full px-8"
+                data-testid="button-join-submit"
+              >
+                {submitting ? "Submitting…" : submitLabel}
+              </Button>
             </div>
-          ) : (
-            <>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9F9F6] border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
-                <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-                {tagline}
-              </div>
-              <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
-                {heading}
-              </h2>
-              <p className="text-lg text-[#042940]/70 mb-8 max-w-lg mx-auto">
-                {subtitle}
-              </p>
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto" data-testid="form-join-email">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <div className="relative flex-1">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#042940]/40 pointer-events-none" />
-                    <input
-                      type="email"
-                      placeholder={placeholder}
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full pl-12 pr-4 py-4 rounded-full border border-[#042940]/20 text-[#042940] placeholder:text-[#042940]/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-base"
-                      required
-                      data-testid="input-join-email"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full sm:w-auto bg-[#c5d520] hover:bg-[#d6d98b] active:bg-[#d6d98b] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full px-8"
-                    data-testid="button-join-submit"
-                  >
-                    {submitLabel}
-                  </Button>
-                </div>
-                {error && (
-                  <p className="text-red-600 text-sm mt-3" data-testid="text-join-email-error">{error}</p>
-                )}
-                <p className="text-sm text-[#042940]/50 mt-4">
-                  {disclaimer}
-                </p>
-              </form>
-            </>
-          )}
+            {error && (
+              <p className="text-red-600 text-sm mt-3" data-testid="text-join-email-error">{error}</p>
+            )}
+            <p className="text-sm text-[#042940]/50 mt-4">
+              {disclaimer}
+            </p>
+          </form>
         </FadeIn>
       </div>
     </section>
