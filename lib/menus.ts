@@ -9,7 +9,14 @@
  * Cache: tagged 'wordpress' so menu edits in WP propagate within seconds
  * via the existing /api/revalidate webhook.
  */
-import { WP_CACHE_TAG, WP_REVALIDATE_SECONDS } from './wordpress';
+import { WP_CACHE_TAG } from './wordpress';
+
+// Menus are tiny and editors expect instant feedback after saving in WP
+// Appearance → Menus. We rely on the `wordpress` cache tag for invalidation,
+// but if the WP→Next revalidate webhook isn't reachable (e.g. on a dev
+// preview whose URL doesn't match TR_REVALIDATE_URLS), we'd be stuck on a
+// stale copy. So: short 30s window AND tagged for explicit invalidation.
+const MENU_REVALIDATE_SECONDS = 30;
 
 export type MenuLocation =
   | 'primary'
@@ -103,7 +110,7 @@ export async function fetchMenu(location: MenuLocation): Promise<MenuNode[] | nu
   const fetchOnce = (extra: Record<string, string>) =>
     fetch(url, {
       headers: { Accept: 'application/json', ...extra },
-      next: { revalidate: WP_REVALIDATE_SECONDS, tags: [WP_CACHE_TAG] },
+      next: { revalidate: MENU_REVALIDATE_SECONDS, tags: [WP_CACHE_TAG] },
     } as RequestInit);
 
   try {
