@@ -1,7 +1,5 @@
 {
+  "/[slug]/page": "app/[slug]/page.js",
   "/about/page": "app/about/page.js",
-  "/locations/[slug]/page": "app/locations/[slug]/page.js",
-  "/our-process/page": "app/our-process/page.js",
-  "/page": "app/page.js",
-  "/waste-removal/page": "app/waste-removal/page.js"
+  "/page": "app/page.js"
 }

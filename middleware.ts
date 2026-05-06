@@ -35,21 +35,35 @@ const EMPTY_SLUG_DATA: SlugRoutingData = {
   reservedCptSlugs: new Set(),
 };
 
-function buildAuthHeaders(): Record<string, string> {
-  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+function basicAuthHeader(): string | null {
   if (process.env.WP_AUTH_USER && process.env.WP_AUTH_PASSWORD) {
-    headers['Authorization'] = `Basic ${btoa(`${process.env.WP_AUTH_USER}:${process.env.WP_AUTH_PASSWORD}`)}`;
+    return `Basic ${btoa(`${process.env.WP_AUTH_USER}:${process.env.WP_AUTH_PASSWORD}`)}`;
   }
-  return headers;
+  return null;
+}
+
+// Fetch a WP endpoint preferring no auth (so public REST endpoints aren't
+// rejected by WP's auth handler when Basic creds happen to be set), and
+// only retry with Basic auth on 401 — that handles staging environments
+// fronted by nginx Basic Auth without breaking public REST endpoints.
+async function fetchWpWithFallback(
+  url: string,
+  init: RequestInit,
+): Promise<Response> {
+  const baseHeaders = { 'Content-Type': 'application/json', ...(init.headers as Record<string, string> | undefined) };
+  const noAuthRes = await fetch(url, { ...init, headers: baseHeaders });
+  if (noAuthRes.status !== 401) return noAuthRes;
+  const auth = basicAuthHeader();
+  if (!auth) return noAuthRes;
+  return fetch(url, { ...init, headers: { ...baseHeaders, Authorization: auth } });
 }
 
 async function getSlugRoutingData(): Promise<SlugRoutingData> {
   const wpApiUrl = process.env.WP_API_URL;
   if (!wpApiUrl) return EMPTY_SLUG_DATA;
   try {
-    const res = await fetch(wpApiUrl, {
+    const res = await fetchWpWithFallback(wpApiUrl, {
       method: 'POST',
-      headers: buildAuthHeaders(),
       body: JSON.stringify({
         query: `{
           pages(first: 100, where: { status: PUBLISH }) { nodes { slug headlessTemplate } }
@@ -101,20 +115,11 @@ async function getRedirects(): Promise<Redirect[]> {
   const redirectsEndpoint = `${wpBaseUrl}/wp-json/headless/v1/redirects`;
 
   try {
-    // Build request headers with Basic Auth for staging environment
-    const headers: Record<string, string> = {
-      'Content-Type': 'application/json',
-    };
-    
-    if (process.env.WP_AUTH_USER && process.env.WP_AUTH_PASSWORD) {
-      const credentials = btoa(`${process.env.WP_AUTH_USER}:${process.env.WP_AUTH_PASSWORD}`);
-      headers['Authorization'] = `Basic ${credentials}`;
-    }
-
-    // Next.js fetch cache: also dedupes redirects across instances behind the
-    // same data cache, with the same 30-minute TTL.
-    const response = await fetch(redirectsEndpoint, {
-      headers,
+    // Try without Basic auth first (public endpoint), only fall back to
+    // Basic auth on 401 — that handles staging-nginx-protected installs
+    // without breaking public WP REST endpoints which would otherwise
+    // reject any wrong/extra auth header with 401.
+    const response = await fetchWpWithFallback(redirectsEndpoint, {
       // @ts-ignore - Next.js extends RequestInit with `next`
       next: { revalidate: 1800, tags: ['wordpress-redirects'] },
     });
