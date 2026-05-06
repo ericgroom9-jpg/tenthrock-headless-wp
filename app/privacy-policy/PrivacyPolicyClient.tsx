@@ -5,30 +5,33 @@ import FadeIn from "@/components/shared/FadeIn";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import type { LegalPageTemplateData } from "@/lib/wordpress";
+import { extractArticle } from "@/lib/termageddon";
 
 const DEFAULT_KEY = "TVdZcmMxWmpXRGxsV0RkblJHYzlQUT09";
 
 interface Props {
   data: LegalPageTemplateData | null;
+  initialContent?: string | null;
 }
 
-export default function PrivacyPolicyClient({ data }: Props) {
+export default function PrivacyPolicyClient({ data, initialContent }: Props) {
   const heading = data?.heading || "Privacy Policy";
   const embedKey = data?.embedKey || DEFAULT_KEY;
   const fallbackText = data?.fallbackText || "The policy could not be loaded.";
   const fallbackLinkText = data?.fallbackLinkText || "Click here to view it directly";
 
-  const [content, setContent] = useState<string | null>(null);
+  const [content, setContent] = useState<string | null>(initialContent ?? null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (initialContent) return;
     fetch(
       `https://embed.termageddon.com/api/render/${embedKey}?origin=${encodeURIComponent(window.location.href)}`
     )
       .then((res) => res.text())
-      .then((html) => setContent(html))
+      .then((html) => setContent(extractArticle(html)))
       .catch(() => setError(true));
-  }, [embedKey]);
+  }, [embedKey, initialContent]);
 
   return (
     <main>
