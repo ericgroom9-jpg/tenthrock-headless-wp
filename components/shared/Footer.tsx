@@ -33,14 +33,14 @@ const DEFAULT_INDUSTRY_LINKS: FlatLink[] = [
 ];
 
 const DEFAULT_COMPANY_LINKS: FlatLink[] = [
-  { label: "About Us", href: "/about" },
-  { label: "Our Process", href: "/our-process" },
-  { label: "Who We Serve", href: "/who-we-serve" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Our Process", href: "/waste-management-process" },
+  { label: "Who We Serve", href: "/industries" },
   { label: "Locations", href: "/locations" },
   { label: "Success Stories", href: "#" },
   { label: "Join Our Network", href: "/join-our-network" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
   { label: "Request A Service", href: "/request-a-service" },
 ];
 

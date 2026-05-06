@@ -53,7 +53,7 @@ const MENUS = [
     location: 'primary',
     name: 'Primary Navigation',
     items: [
-      { title: 'Waste Management Services', url: '/commercial-waste', children: [
+      { title: 'Waste Management Services', url: '/services', children: [
         { title: 'Emergency Waste Removal', url: '/emergency-waste-removal', children: [
           { title: 'Emergency Product & Perishable Removal', url: '/emergency-product-removal' },
           { title: 'Site Stabilization', url: '/site-stabilization' },
@@ -75,7 +75,7 @@ const MENUS = [
           { title: 'Ongoing Advisory & Program Implementation', url: '/ongoing-advisory' },
         ]},
       ]},
-      { title: 'Who We Serve', url: '/who-we-serve', children: [
+      { title: 'Who We Serve', url: '/industries', children: [
         { title: 'Retail', url: '/retail' },
         { title: 'Stadiums & Events', url: '/stadiums-events' },
         { title: 'Faith Based', url: '/faith-based' },
@@ -86,11 +86,11 @@ const MENUS = [
         { title: 'Municipalities', url: '/municipalities' },
       ]},
       { title: 'Locations', url: '/locations' },
-      { title: 'About Us', url: '/about', children: [
-        { title: 'About Us', url: '/about' },
+      { title: 'About Us', url: '/about-us', children: [
+        { title: 'About Us', url: '/about-us' },
         { title: 'Join Our Network', url: '/join-our-network' },
         { title: 'FAQ', url: '/faq' },
-        { title: 'Contact Us', url: '/contact' },
+        { title: 'Contact Us', url: '/contact-us' },
       ]},
     ],
   },
@@ -138,14 +138,14 @@ const MENUS = [
     location: 'footer-company',
     name: 'Footer — Company',
     items: [
-      { title: 'About Us', url: '/about' },
-      { title: 'Our Process', url: '/our-process' },
-      { title: 'Who We Serve', url: '/who-we-serve' },
+      { title: 'About Us', url: '/about-us' },
+      { title: 'Our Process', url: '/waste-management-process' },
+      { title: 'Who We Serve', url: '/industries' },
       { title: 'Locations', url: '/locations' },
       { title: 'Success Stories', url: '#' },
       { title: 'Join Our Network', url: '/join-our-network' },
       { title: 'FAQ', url: '/faq' },
-      { title: 'Contact', url: '/contact' },
+      { title: 'Contact', url: '/contact-us' },
       { title: 'Request A Service', url: '/request-a-service' },
     ],
   },

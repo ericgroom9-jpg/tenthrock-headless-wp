@@ -85,10 +85,10 @@ const DEFAULT_LOCATION_LINKS = [
 }));
 
 const DEFAULT_ABOUT_LINKS = [
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Join Our Network", href: "/join-our-network" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const DEFAULT_HEADER_CTAS = [
@@ -97,10 +97,10 @@ const DEFAULT_HEADER_CTAS = [
 ];
 
 const DEFAULT_TOP_LABELS = {
-  services:  { label: "Waste Management Services", href: "/commercial-waste" },
-  sectors:   { label: "Who We Serve",              href: "/who-we-serve" },
+  services:  { label: "Waste Management Services", href: "/services" },
+  sectors:   { label: "Who We Serve",              href: "/industries" },
   locations: { label: "Locations",                 href: "/locations" },
-  about:     { label: "About Us",                  href: "/about" },
+  about:     { label: "About Us",                  href: "/about-us" },
 };
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
