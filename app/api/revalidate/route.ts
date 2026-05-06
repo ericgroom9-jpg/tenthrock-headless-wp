@@ -15,9 +15,12 @@ export async function POST(request: NextRequest) {
     const body: RevalidateRequest = await request.json();
     const { secret, path, type, slug } = body;
 
-    const revalidateSecret = process.env.REVALIDATE_SECRET || process.env.WP_PREVIEW_SECRET;
+    const revalidateSecret =
+      process.env.WP_REVALIDATE_SECRET ||
+      process.env.REVALIDATE_SECRET ||
+      process.env.WP_PREVIEW_SECRET;
 
-    if (!secret || secret !== revalidateSecret) {
+    if (!secret || !revalidateSecret || secret !== revalidateSecret) {
       return NextResponse.json(
         { error: 'Invalid secret' },
         { status: 401 }
