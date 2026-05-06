@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { fetchIndustryWithAcf } from '@/lib/wordpress';
 import IndustryTemplate from "@/components/industries/IndustryTemplate";
 import type { Metadata } from "next";
@@ -11,6 +12,6 @@ export const metadata: Metadata = {
 
 export default async function RetailPage() {
   const data = await fetchIndustryWithAcf('retail');
-  if (!data) return null;
+  if (!data) notFound();
   return <IndustryTemplate {...data} />;
 }

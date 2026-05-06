@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
 import type { Metadata } from "next";
@@ -10,6 +11,6 @@ export const metadata: Metadata = {
 
 export default async function CentralizedProgramsPage() {
   const data = await fetchServiceWithAcf('centralized-programs');
-  if (!data) return null;
+  if (!data) notFound();
   return <ServiceTemplate {...data} />;
 }

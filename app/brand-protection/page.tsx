@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from "@/components/services/ServiceTemplate";
 import type { Metadata } from "next";
@@ -11,6 +12,6 @@ export const metadata: Metadata = {
 
 export default async function BrandProtectionPage() {
   const data = await fetchServiceWithAcf('brand-protection');
-  if (!data) return null;
+  if (!data) notFound();
   return <ServiceTemplate {...data} />;
 }

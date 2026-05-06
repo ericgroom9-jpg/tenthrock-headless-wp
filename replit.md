@@ -67,6 +67,8 @@ I want to interact with the agent in an iterative development approach. I prefer
 - **Shared Stats Section Image:** The "Why Clients Call Us" stats section (`StatsSection.tsx`) hardcodes its image; do not attempt to override it per page.
 - **ACF REST API Caching:** Location page info (third heading/description) is stored in the WordPress `content` field as JSON due to ACF REST API caching limitations.
 - **Snippet Installation:** Use `node scripts/install-snippet.mjs <id-or-name> <php-file>` for re-installing/re-deploying WordPress snippets.
+- **CPT pages must `notFound()` on missing data:** the 40+ hardcoded CPT routes under `app/*/page.tsx` must call `notFound()` (not `return null`) when their `fetchServiceWithAcf`/`fetchIndustryWithAcf` returns null. Returning null produces an empty 200 that gets indexed as thin content.
+- **SEO heading audit:** `node scripts/audit-headings.mjs` fetches every page template + representative CPT, parses H1–H6, and prints a unified pass/fail table. Run after template or content changes.
 
 ## Pointers
 
