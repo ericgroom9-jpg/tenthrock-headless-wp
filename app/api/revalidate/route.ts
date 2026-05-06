@@ -62,14 +62,14 @@ export async function POST(request: NextRequest) {
       revalidatePath('/', 'layout');
       // Purge the entire WordPress fetch-cache layer so every cached
       // GraphQL/REST response is refetched on next request.
-      revalidateTag('wordpress');
-      revalidateTag('wordpress-redirects');
+      revalidateTag('wordpress', 'max');
+      revalidateTag('wordpress-redirects', 'max');
       revalidatedPaths.push('/ (entire site)', 'tag:wordpress', 'tag:wordpress-redirects');
     } else if (path || (type && slug)) {
       // For any targeted revalidation, also flush the WP data cache so the
       // newly-rendered page fetches fresh content instead of serving from
       // the 30-minute Next.js fetch cache.
-      revalidateTag('wordpress');
+      revalidateTag('wordpress', 'max');
       revalidatedPaths.push('tag:wordpress');
     }
 

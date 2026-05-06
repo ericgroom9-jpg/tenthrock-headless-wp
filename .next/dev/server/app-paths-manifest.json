@@ -1,6 +1,4 @@
 {
-  "/api/revalidate/route": "app/api/revalidate/route.js",
-  "/emergency-waste-removal/page": "app/emergency-waste-removal/page.js",
   "/locations/[slug]/page": "app/locations/[slug]/page.js",
   "/page": "app/page.js"
 }
