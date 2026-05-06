@@ -28,6 +28,65 @@ let lastFetch = 0;
 // Cache redirects for 30 minutes — same window as page ISR — so the
 // middleware never re-queries WordPress more than twice per hour per instance.
 const CACHE_DURATION_MS = 30 * 60 * 1000; // 30 minutes
+// ─────────────────────────────────────────────────────────────
+// Page-template → current WP slug map (for slug-rename handling)
+// ─────────────────────────────────────────────────────────────
+let templateSlugCache = {};
+let templateSlugLastFetch = 0;
+function buildAuthHeaders() {
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+    if (process.env.WP_AUTH_USER && process.env.WP_AUTH_PASSWORD) {
+        headers['Authorization'] = `Basic ${btoa(`${process.env.WP_AUTH_USER}:${process.env.WP_AUTH_PASSWORD}`)}`;
+    }
+    return headers;
+}
+async function getTemplateSlugMap() {
+    const now = Date.now();
+    if (templateSlugLastFetch > 0 && now - templateSlugLastFetch < CACHE_DURATION_MS) {
+        return templateSlugCache;
+    }
+    const wpApiUrl = process.env.WP_API_URL;
+    if (!wpApiUrl) {
+        templateSlugLastFetch = now;
+        return templateSlugCache;
+    }
+    try {
+        const res = await fetch(wpApiUrl, {
+            method: 'POST',
+            headers: buildAuthHeaders(),
+            body: JSON.stringify({
+                query: `{ pages(first: 100, where: { status: PUBLISH }) { nodes { slug headlessTemplate } } }`
+            }),
+            // @ts-ignore - Next.js extends RequestInit with `next`
+            next: {
+                revalidate: 1800,
+                tags: [
+                    'wordpress'
+                ]
+            }
+        });
+        if (!res.ok) {
+            templateSlugLastFetch = now;
+            return templateSlugCache;
+        }
+        const json = await res.json();
+        const map = {};
+        for (const node of json?.data?.pages?.nodes || []){
+            if (node?.headlessTemplate && node?.slug) {
+                map[node.headlessTemplate] = node.slug;
+            }
+        }
+        templateSlugCache = map;
+        templateSlugLastFetch = now;
+        console.log(`[TemplateSlugs] Fetched ${Object.keys(map).length} template slug mappings`);
+    } catch (error) {
+        console.error('[TemplateSlugs] Failed to fetch template slugs:', error);
+        templateSlugLastFetch = now;
+    }
+    return templateSlugCache;
+}
 async function getRedirects() {
     const now = Date.now();
     // Honor cache window even when empty/fail, so we don't hammer WP on every request

@@ -1,0 +1,89 @@
+The following is a list of URLs on the old website. 
+
+for each, in order, with similar headings (if applicable) return a list of full URLs on the front end of this website that correlate to these pages on the old website. 
+
+One URL per line so I can copy/paste into a spreadsheet.
+
+https://www.tenthrock.com/
+About / Company Pages
+https://www.tenthrock.com/about-us/
+https://www.tenthrock.com/about/
+https://www.tenthrock.com/company/
+https://www.tenthrock.com/waste-management-process/
+https://www.tenthrock.com/nationwide-waste-management-disposal/
+Core Service Pages
+https://www.tenthrock.com/services/
+https://www.tenthrock.com/waste-removal-services/
+https://www.tenthrock.com/commercial-dumpster-rental/
+https://www.tenthrock.com/waste-equipment-hauling-services/
+https://www.tenthrock.com/pressure-washing-services/
+https://www.tenthrock.com/natrual-disaster-cleanup/
+Industry Pages
+https://www.tenthrock.com/industries/
+https://www.tenthrock.com/school-junk-management/
+https://www.tenthrock.com/stadiums-events-junk-removal/
+https://www.tenthrock.com/church-junk-removal/
+https://www.tenthrock.com/public-space-junk-removal/
+https://www.tenthrock.com/hospitality-junk-removal/
+https://www.tenthrock.com/property-management-junk-removal/
+https://www.tenthrock.com/retail-store-junk-removal/
+Contact / Conversion Pages
+https://www.tenthrock.com/contact-us/
+https://www.tenthrock.com/join-our-network/
+Legal Pages
+https://www.tenthrock.com/privacy-policy/
+https://www.tenthrock.com/terms-of-service/
+New Pages
+Frequently Asked Questions
+Request a Service
+Book a Call
+Contact Us - Thank You
+Location Pages (New)
+Alabama
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+Florida
+Georgia
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming

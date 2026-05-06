@@ -2580,6 +2580,46 @@ interface WpPageAcfResponse {
   } | null;
 }
 
+// ─────────────────────────────────────────────────────────────
+// Page-template → current WP slug map
+// Each of the 14 page-template pages is identified in WP by the
+// `headlessTemplate` field (registered in scripts/register-page-templates-snippet.php).
+// We look up its current slug here so editors can rename the WP slug
+// freely without breaking the ACF fetch (and middleware can redirect
+// the canonical front-end route to the new slug).
+// ─────────────────────────────────────────────────────────────
+const GET_PAGE_TEMPLATE_SLUGS_QUERY = gql`
+  query GetPageTemplateSlugs {
+    pages(first: 100, where: { status: PUBLISH }) {
+      nodes { slug headlessTemplate }
+    }
+  }
+`;
+
+export const fetchPageTemplateSlugMap = cache(async (): Promise<Record<string, string>> => {
+  const client = getWpClient();
+  try {
+    const data = await client.request<{ pages: { nodes: Array<{ slug: string; headlessTemplate: string | null }> } }>(
+      GET_PAGE_TEMPLATE_SLUGS_QUERY
+    );
+    const map: Record<string, string> = {};
+    for (const node of data?.pages?.nodes || []) {
+      if (node?.headlessTemplate && node?.slug) {
+        map[node.headlessTemplate] = node.slug;
+      }
+    }
+    return map;
+  } catch (error) {
+    console.error('[WP] Failed to fetch page template slug map:', error);
+    return {};
+  }
+});
+
+async function resolveTemplateSlug(wpTemplate: string, fallback: string): Promise<string> {
+  const map = await fetchPageTemplateSlugMap();
+  return map[wpTemplate] || fallback;
+}
+
 function hasData(obj: Record<string, unknown> | null): boolean {
   if (!obj) return false;
   return Object.values(obj).some(v => {
@@ -2598,8 +2638,9 @@ function nonEmpty<T>(val: T | null | undefined): T | undefined {
 export const fetchHomepageAcf = cache(async (): Promise<HomepageTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-homepage', 'home');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/home/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     if (!page?.homepageFields || !hasData(page.homepageFields)) return null;
     const f = page.homepageFields as Record<string, any>;
@@ -2643,8 +2684,9 @@ export const fetchHomepageAcf = cache(async (): Promise<HomepageTemplateData | n
 export const fetchAboutAcf = cache(async (): Promise<AboutTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-about', 'about');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/about/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     if (!page?.aboutFields || !hasData(page.aboutFields)) return null;
     const f = page.aboutFields as Record<string, any>;
@@ -2707,8 +2749,9 @@ async function fetchHeroPageAcf(slug: string, fieldName: string): Promise<HeroPa
 export const fetchCommercialWasteAcf = cache(async (): Promise<CommercialWasteTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-commercial-waste', 'commercial-waste');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/commercial-waste/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     const hero = page?.commercialWasteFields as Record<string, any> | null | undefined;
     const body = page?.commercialWasteBodyFields as Record<string, any> | null | undefined;
@@ -2758,18 +2801,21 @@ export const fetchCommercialWasteAcf = cache(async (): Promise<CommercialWasteTe
 });
 
 export const fetchWhoWeServeAcf = cache(async (): Promise<HeroPageTemplateData | null> => {
-  return fetchHeroPageAcf('who-we-serve', 'whoWeServeFields');
+  const slug = await resolveTemplateSlug('template-who-we-serve', 'who-we-serve');
+  return fetchHeroPageAcf(slug, 'whoWeServeFields');
 });
 
 export const fetchOurProcessAcf = cache(async (): Promise<HeroPageTemplateData | null> => {
-  return fetchHeroPageAcf('our-process', 'ourProcessFields');
+  const slug = await resolveTemplateSlug('template-our-process', 'our-process');
+  return fetchHeroPageAcf(slug, 'ourProcessFields');
 });
 
 export const fetchLocationsPageAcf = cache(async (): Promise<LocationsPageTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-locations', 'locations');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/locations/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     if (!page?.locationsFields || !hasData(page.locationsFields)) return null;
     const f = page.locationsFields as Record<string, any>;
@@ -2794,8 +2840,9 @@ export const fetchLocationsPageAcf = cache(async (): Promise<LocationsPageTempla
 export const fetchJoinNetworkAcf = cache(async (): Promise<JoinNetworkTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-join-our-network', 'join-our-network');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/join-our-network/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     if (!page?.joinNetworkFields || !hasData(page.joinNetworkFields)) return null;
     const f = page.joinNetworkFields as Record<string, any>;
@@ -2836,8 +2883,9 @@ export const fetchJoinNetworkAcf = cache(async (): Promise<JoinNetworkTemplateDa
 export const fetchFaqPageAcf = cache(async (): Promise<FaqPageTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-faq', 'faq');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/faq/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     if (!page?.faqPageFields || !hasData(page.faqPageFields)) return null;
     const f = page.faqPageFields as Record<string, any>;
@@ -2897,18 +2945,21 @@ async function fetchContactFormAcf(slug: string, fieldName: string): Promise<Con
 }
 
 export const fetchContactAcf = cache(async (): Promise<ContactFormTemplateData | null> => {
-  return fetchContactFormAcf('contact', 'contactFields');
+  const slug = await resolveTemplateSlug('template-contact', 'contact');
+  return fetchContactFormAcf(slug, 'contactFields');
 });
 
 export const fetchRequestServiceAcf = cache(async (): Promise<ContactFormTemplateData | null> => {
-  return fetchContactFormAcf('request-a-service', 'requestServiceFields');
+  const slug = await resolveTemplateSlug('template-request-a-service', 'request-a-service');
+  return fetchContactFormAcf(slug, 'requestServiceFields');
 });
 
 export const fetchBookCallAcf = cache(async (): Promise<BookCallTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-book-a-call', 'book-a-call');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/book-a-call/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     if (!page?.bookCallFields || !hasData(page.bookCallFields)) return null;
     const f = page.bookCallFields as Record<string, any>;
@@ -2933,8 +2984,9 @@ export const fetchBookCallAcf = cache(async (): Promise<BookCallTemplateData | n
 export const fetchThankYouAcf = cache(async (): Promise<ThankYouTemplateData | null> => {
   const client = getWpClient();
   try {
+    const slug = await resolveTemplateSlug('template-thank-you', 'thank-you');
     const { page } = await client.request<WpPageAcfResponse>(
-      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/thank-you/' }
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: `/${slug}/` }
     );
     if (!page?.thankYouFields || !hasData(page.thankYouFields)) return null;
     const f = page.thankYouFields as Record<string, any>;
@@ -2975,11 +3027,13 @@ async function fetchLegalPageAcf(slug: string, fieldName: string): Promise<Legal
 }
 
 export const fetchPrivacyPolicyAcf = cache(async (): Promise<LegalPageTemplateData | null> => {
-  return fetchLegalPageAcf('privacy-policy', 'privacyFields');
+  const slug = await resolveTemplateSlug('template-privacy-policy', 'privacy-policy');
+  return fetchLegalPageAcf(slug, 'privacyFields');
 });
 
 export const fetchTermsOfServiceAcf = cache(async (): Promise<LegalPageTemplateData | null> => {
-  return fetchLegalPageAcf('terms-of-service', 'termsFields');
+  const slug = await resolveTemplateSlug('template-terms-of-service', 'terms-of-service');
+  return fetchLegalPageAcf(slug, 'termsFields');
 });
 
 export const fetchGlobalSections = cache(async (): Promise<GlobalSectionsData | null> => {

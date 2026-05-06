@@ -1,6 +1,6 @@
 # Headless WordPress Boilerplate
 
-This application provides a high-performance, SEO-friendly headless WordPress site using Next.js and PostgreSQL, focusing on posts and taxonomy support.
+A high-performance, SEO-friendly headless WordPress site using Next.js and PostgreSQL, focusing on posts and taxonomy support.
 
 ## Run & Operate
 
@@ -16,13 +16,13 @@ This application provides a high-performance, SEO-friendly headless WordPress si
 - `WP_PREVIEW_SECRET`
 - `WP_REVALIDATE_SECRET`
 - `DATABASE_URL`
-- `PREVIEW_USER_UN` (for snippet installation)
-- `PREVIEW_USER_PASS` (for snippet installation)
+- `PREVIEW_USER_UN`
+- `PREVIEW_USER_PASS`
 
 ## Stack
 
 - **Framework:** Next.js 16 (App Router)
-- **Runtime:** Node.js (version specified in `package.json`)
+- **Runtime:** Node.js
 - **Language:** TypeScript
 - **ORM:** Drizzle ORM
 - **Database:** PostgreSQL
@@ -32,30 +32,30 @@ This application provides a high-performance, SEO-friendly headless WordPress si
 ## Where things live
 
 - **WordPress Content Sync/Caching:** `lib/wordpress.ts`, `drizzle/schema.ts`
-- **Dynamic Routes Configuration:** `lib/config/post-types.ts` (source of truth for WP post types and page templates to Next.js routes)
-- **Middleware:** `middleware.ts` (handles 301 redirects)
-- **API Routes:** `app/api/*` (e.g., `app/api/revalidate/route.ts` for on-demand revalidation)
-- **Custom Post Types & Taxonomies:** Defined in WordPress via Code Snippets (see PHP files in `scripts/`)
-- **ACF Field Groups:** Defined in WordPress via Code Snippets (see PHP files in `scripts/`)
+- **Dynamic Routes Configuration:** `lib/config/post-types.ts`
+- **Middleware:** `middleware.ts`
+- **API Routes:** `app/api/*`
+- **Custom Post Types & Taxonomies:** Defined in WordPress via Code Snippets (`scripts/`)
+- **ACF Field Groups:** Defined in WordPress via Code Snippets (`scripts/`)
 - **Gravity Forms Integration:** `components/gravity-forms/*`
 - **US Map Data:** `components/shared/us-map-data.ts`
 - **Global CSS Variables:** `styles/globals.css`
-- **Storybook:** `_Populate as you build_`
+- **Storybook:** _Populate as you build_
 
 ## Architecture decisions
 
-- **Server-Side Rendering (SSR):** All pages are SSR for SEO and performance.
+- **Server-Side Rendering (SSR):** All pages are SSR for SEO and performance benefits.
 - **Content Caching:** WordPress content is mirrored to PostgreSQL via Drizzle ORM for fast retrieval, including taxonomies as JSON.
 - **SEO & Preview Mode:** Integrates with Yoast SEO, proxies SEO files, and supports Next.js Draft Mode for real-time content preview.
-- **Dynamic Routing & CPTs:** Custom Post Types (`tr_service`, `tr_industry`, `tr_location`, etc.) are dynamically routed. Services and industries are served at the root (`/[slug]`), taking priority over regular pages.
+- **Dynamic Routing & CPTs:** Custom Post Types (`tr_service`, `tr_industry`, `tr_location`, etc.) are dynamically routed with services and industries prioritized at the root (`/[slug]`).
 - **WordPress Backend Management:** All CPTs, taxonomies, and ACF field groups are registered and managed via WordPress Code Snippets.
 
 ## Product
 
 - **Decoupled WordPress Site:** High-performance, SEO-friendly frontend for WordPress content.
-- **Content Types:** Supports WordPress "Posts" and several Custom Post Types (Services, Industries, Locations, Testimonials, Case Studies, FAQs, Partner Logos).
+- **Content Types:** Supports WordPress "Posts" and custom post types (Services, Industries, Locations, Testimonials, Case Studies, FAQs, Partner Logos).
 - **Page Templates:** 14 distinct page templates with ACF-driven content.
-- **Preview Functionality:** Allows content editors to preview draft WordPress content before publishing.
+- **Preview Functionality:** Allows content editors to preview draft WordPress content.
 - **Gravity Forms Integration:** Headless module for complex forms with validation and spam protection.
 - **Global Sections:** Reusable content sections configured via ACF options pages.
 
@@ -65,25 +65,13 @@ I want to interact with the agent in an iterative development approach. I prefer
 ## Gotchas
 
 - **Shared Stats Section Image:** The "Why Clients Call Us" stats section (`StatsSection.tsx`) hardcodes its image; do not attempt to override it per page.
-- **Location info heading/body:** Now stored as proper ACF fields (`info_heading`, `info_body`) on `tr_location` (group `group_tr_location` in `scripts/register-cpt-acf-snippet.php`, GraphQL `locationFields.infoHeading`/`infoBody`). `transformLocationNode` in `lib/wordpress.ts` reads ACF first and falls back to `parseInfoFromContent` only for legacy unmigrated posts. Legacy posts had a JSON blob (`{"infoHeading":"...","infoBody":"..."}`) stuffed into the WP `content` field — `inject-locations.mjs` now writes ACF and clears `content` to empty.
-- **Snippet Installation:** Use `node scripts/install-snippet.mjs <id-or-name> <php-file>` for re-installing/re-deploying WordPress snippets.
-- **ACF REST writes require BOTH `show_in_graphql` AND `show_in_rest`:** ACF Pro 6.7+ silently drops the REST `acf` payload (returns `acf: []`) unless `show_in_rest => 1` is set on the field group AND every field. The helpers in `scripts/register-cpt-acf-snippet.php` (`tr_acf_field`, `tr_acf_repeater`, `tr_acf_group`) all set both. If you add new field types, propagate this flag.
-- **Content injection scripts:** `scripts/inject-content.mjs` (testimonials/case-studies/FAQs/partner-logos), `scripts/recover-and-inject-services.mjs` (services + industries, sources from git commit `ea2eb3ca`), `scripts/inject-locations.mjs` (47 state location pages from `lib/data/state-location-content.ts`). `inject-content.mjs` is **not idempotent** — re-running creates duplicates; use `scripts/cleanup-empty-cpts.mjs` to delete posts with empty critical ACF fields after re-runs.
-- **ACF field names must match the PHP schema exactly:** When adding entries to `scripts/create-template-pages.mjs`, every key MUST match the `name` arg in the corresponding `_tr_f()` call in `scripts/page-template-acf-snippet.php`. WP silently drops unknown keys (no error). The homepage hero uses `hero_cta_label`/`hero_cta_link` (not `hero_primary_label`/`hero_primary_link`). When in doubt, grep the snippet for the field name before writing.
-- **Page-template pages & ACF injection:** `node scripts/create-template-pages.mjs [slug...]` upserts the 14 page-template WP pages (home, about, commercial-waste, who-we-serve, our-process, locations, join-our-network, faq, contact, request-a-service, book-a-call, thank-you, privacy-policy, terms-of-service), assigns each to its `template-*` page template, and PATCHes the full ACF payload mirroring each Client component's hardcoded defaults so the frontend renders identically. Idempotent — looks up by slug, POSTs if missing else PATCHes. **Template values are bare slugs** (e.g. `template-homepage`), NOT namespaced (`headless//template-homepage`); WP's REST validates against the registered slug list. Pages were created at WP IDs 397–410.
-- **`show_in_rest=1` is global:** `scripts/page-template-acf-snippet.php` `_tr_f` helper now sets `show_in_rest=1` recursively on every field/sub-field, and every one of the 26 page-template field groups carries `show_in_rest => true`. Without this, ACF Pro 6.7+ silently drops the REST `acf` payload (returns `acf: []` even when GraphQL works). Same rule already documented for CPT ACF — propagate to any new field type.
-- **`commercialWasteBodyFields` group:** New ACF group `group_pt_cw_body` (graphql_field_name `commercialWasteBodyFields`) covers the body of `template-commercial-waste`: process_*, zip_*, case_study_* (incl. `case_study_thumbs` and `case_study_stats` repeaters), faq_* gap fields. The hero remains in the original `commercialWasteFields` group; `fetchCommercialWasteAcf` in `lib/wordpress.ts` merges both, returning `CommercialWasteTemplateData`.
-- **ACF default backfill:** `scripts/backfill-empty-acf.mjs` walks every CPT (services, industries, testimonials, partner_logos) and PATCHes only EMPTY ACF fields with the same defaults the React templates fall back to (mirrors `defaultProcessSteps`/`defaultFaqs`/`defaultStats`/`defaultParagraphSection*` from `ServiceTemplate.tsx`/`IndustryTemplate.tsx`, `homeTestimonials` from `TenthRockHome.tsx`, `defaultPartnerLogos` from `LogoReelSection.tsx`). Idempotent — non-empty fields are left alone. Re-run after adding new posts so admins never see empty boxes. Decodes HTML entities (`&#8217;` → `'`) for derived alt text.
-- **CPT pages must `notFound()` on missing data:** the 40+ hardcoded CPT routes under `app/*/page.tsx` must call `notFound()` (not `return null`) when their `fetchServiceWithAcf`/`fetchIndustryWithAcf` returns null. Returning null produces an empty 200 that gets indexed as thin content.
-- **SEO heading audit:** `node scripts/audit-headings.mjs` fetches every page template + representative CPT, parses H1–H6, and prints a unified pass/fail table. Run after template or content changes.
-- **Deeper semantic heading audit:** `node scripts/audit-headings-semantic.mjs` additionally flags sr-only / hidden H1s and visually-styled large text (`text-3xl..text-7xl`) on non-heading tags. Numeric stat displays (e.g. `30%`, `5K+`, `10 min`) are excluded automatically — they are data, not headings.
-- **Homepage hardcoded fallback pattern:** `components/home/TenthRockHome.tsx` and `components/shared/CommercialWasteServices.tsx` keep their original arrays as `defaultServices` / `defaultFaqs` etc. The components accept optional ACF props (`heroTagline`, `servicesCategories`, `faqItems`, etc.) and render `acfValue || hardcodedFallback`. For repeaters where ACF only carries a subset of fields (e.g. `services_categories.sub_items` has `label`/`description` but no `img`/`href`), the merge uses the **hardcoded array as a per-index fallback** for the missing fields. Keep `defaultServices` aligned (4 categories × 3 sub_items) with the WP `services_categories` repeater shape so the img/href fallback indexes line up. Sections sourced from global ACF options (`gs.logoReel`, `gs.whoHelp`, `gs.stats`, `gs.process`, `gs.reasons`, `gs.faq`, `gs.location`, `gs.ctaBanner`) intentionally do NOT read per-page ACF — they're shared across pages.
-- **Homepage SSR:** `components/home/HomeClient.tsx` must dynamically import `TenthRockHome` WITHOUT `ssr: false` — disabling SSR strips the real `<h1>`/`<h2>`/`<h3>` from the initial HTML and crawlers / screen readers only see the loading fallback. The hero `<h1 id="hero-heading">` is the single visible H1; do not re-add an `sr-only` H1 alongside it.
-- **Global Sections options page seeding:** WP snippet **#12 "Tenth Rock — Backfill Global Sections"** (source: `scripts/backfill-global-sections-snippet.php`) registers `POST /wp-json/tr/v1/backfill-global-sections` (auth: `edit_posts`). It writes the React component fallback defaults (StatsSection, ProcessSection, ReasonsSection, FaqSection, LocationSection, CtaBannerSection, FinalCtaSection, WhoWeHelpSection, LogoReelSection) to the `tr-global-sections` ACF options page using `update_field('field_*_key', value, 'option')` so admins see real, editable values instead of empty boxes. **Idempotent — only EMPTY fields are filled; existing values are preserved.** Repeater rows MUST be passed as arrays of `{ field_key => value }` (not bare names) when going through `update_field` against an options page, otherwise ACF stores garbage. Re-run via `curl -X POST -u $preview_user_un:$preview_user_pass $WP_BASE/wp-json/tr/v1/backfill-global-sections` after editing the snippet defaults or adding new gs_* fields.
-
-- **WP → Next.js cache invalidation on save:** every page uses `export const revalidate = 1800` (30-min ISR) and WP fetches are tagged `wordpress` with the same TTL — without a webhook, editor edits would not appear on the front-end for up to 30 minutes. WP snippet **#11 "Tenth Rock — Revalidate Headless Frontend on Save"** (source: `scripts/wp-revalidate-on-save-snippet.php`, installer: `scripts/install-revalidate-snippet.mjs`) hooks `acf/save_post` (prio 20), `save_post`, `before_delete_post`, and `transition_post_status`, then fires non-blocking `wp_remote_post` to every configured front-end's `/api/revalidate` with `{secret, type:'all'}`. Re-run the installer whenever the front-end URL list or revalidate secret changes — URLs and secret are template-substituted into the snippet body at install time so neither lives in source. The Next.js route accepts secrets in this fallback order: `WP_REVALIDATE_SECRET → REVALIDATE_SECRET → WP_PREVIEW_SECRET`, and the installer mirrors the same order. End-to-end edit→propagation latency is ~3–8 s (fire-and-forget POST + Next 16 `revalidateTag('wordpress','max')`).
-
-- **Privacy / Terms page content:** editable in WordPress via ACF. Both `template-privacy-policy` and `template-terms-of-service` field groups (in `scripts/page-template-acf-snippet.php`, snippet **#9 "Register Page Template ACF Fields"**) expose a `heading` text field and a `body_content` WYSIWYG field, surfaced over GraphQL as `privacyFields { heading bodyContent }` / `termsFields { heading bodyContent }`. Pages prefer ACF body when non-empty and fall back to the static `PRIVACY_POLICY_HTML` / `TERMS_OF_SERVICE_HTML` constants in `lib/legal-content.ts` (mirrored from live tenthrock.com Squarespace). `node scripts/create-template-pages.mjs privacy-policy terms-of-service` reads the constants out of `lib/legal-content.ts` and PATCHes them into the WP ACF body so editors start with the live-site copy. The earlier Termageddon embed approach was abandoned — the live site does NOT use Termageddon; the policy text is hardcoded on tenthrock.com.
+- **ACF REST writes require BOTH `show_in_graphql` AND `show_in_rest`:** ACF Pro 6.7+ silently drops the REST `acf` payload unless both flags are set on the field group and every field.
+- **Content injection scripts:** `scripts/inject-content.mjs` is **not idempotent**; re-running creates duplicates. Use `scripts/cleanup-empty-cpts.mjs` to clean up.
+- **ACF field names must match the PHP schema exactly:** When adding entries, keys must match the `name` arg in corresponding `_tr_f()` calls. WP silently drops unknown keys.
+- **WP → Next.js cache invalidation on save:** Editor edits require `revalidateTag('wordpress')` called via a webhook to appear on the frontend within seconds.
+- **CPT pages must `notFound()` on missing data:** Returning null produces an empty 200, which is bad for SEO.
+- **Homepage hardcoded fallback pattern:** Components use `acfValue || hardcodedFallback` for content. For repeaters, the hardcoded array acts as a per-index fallback for missing fields.
+- **Page-template slug renames propagate from WP:** Each of the 14 page-template pages is identified internally by its `headlessTemplate` value (e.g. `template-about`), exposed on `Page` over WPGraphQL via `scripts/register-page-templates-snippet.php`. `lib/wordpress.ts` exports `fetchPageTemplateSlugMap()` which returns `{ [wpTemplate]: currentSlug }`; every `fetchXxxAcf()` for a page template resolves the slug through this map before calling `GET_PAGE_TEMPLATE_ACF_QUERY`, so editor slug renames don't disconnect ACF data. `middleware.ts` does its own combined fetch (`getSlugRoutingData()` — page template slugs **plus** all `services`+`industries` slugs as a collision guard) and on each request: (a) rewrites `/<wpSlug>` → the canonical folder route from `PAGE_TEMPLATE_CONFIG` so the existing `app/<canonical>/page.tsx` renders, and (b) 301-redirects `/<canonical>` → `/<wpSlug>` so the public URL follows the editor's slug change. Homepage `/` is exempt from the redirect leg, but `/home` (or whatever the homepage's WP slug is) rewrites to `/`. Templates with `[slug]` in their route (e.g. `template-location`) are skipped. **Collision guard:** if the WP slug matches an existing service/industry CPT slug, middleware logs a warning and skips both legs — never hijacks a CPT URL. **No process-memory TTL** in middleware for this fetch: it's tagged `wordpress` and snippet #11 fires `revalidateTag('wordpress')` on every WP save, so the Next data cache is the single source of freshness.
 
 ## Pointers
 

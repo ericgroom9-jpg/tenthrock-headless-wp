@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { PAGE_TEMPLATE_CONFIG } from '@/lib/config/post-types';
 
 type Redirect = {
   origin: string;
@@ -12,6 +13,74 @@ let lastFetch = 0;
 // Cache redirects for 30 minutes — same window as page ISR — so the
 // middleware never re-queries WordPress more than twice per hour per instance.
 const CACHE_DURATION_MS = 30 * 60 * 1000; // 30 minutes
+
+// ─────────────────────────────────────────────────────────────
+// Page-template → current WP slug map (for slug-rename handling)
+// Plus CPT slug set used as a collision guard so a renamed template
+// slug never hijacks an existing service / industry URL.
+//
+// We deliberately DO NOT keep a process-memory TTL here. Both fetches
+// are tagged `wordpress`, and snippet #11 fires `revalidateTag('wordpress')`
+// on every WP save — so the Next data cache is the single source of
+// truth for freshness. Each middleware invocation does a fetch() that's
+// served from the data cache (cheap) until the tag is invalidated.
+// ─────────────────────────────────────────────────────────────
+type SlugRoutingData = {
+  templateSlugMap: Record<string, string>;
+  reservedCptSlugs: Set<string>;
+};
+
+const EMPTY_SLUG_DATA: SlugRoutingData = {
+  templateSlugMap: {},
+  reservedCptSlugs: new Set(),
+};
+
+function buildAuthHeaders(): Record<string, string> {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  if (process.env.WP_AUTH_USER && process.env.WP_AUTH_PASSWORD) {
+    headers['Authorization'] = `Basic ${btoa(`${process.env.WP_AUTH_USER}:${process.env.WP_AUTH_PASSWORD}`)}`;
+  }
+  return headers;
+}
+
+async function getSlugRoutingData(): Promise<SlugRoutingData> {
+  const wpApiUrl = process.env.WP_API_URL;
+  if (!wpApiUrl) return EMPTY_SLUG_DATA;
+  try {
+    const res = await fetch(wpApiUrl, {
+      method: 'POST',
+      headers: buildAuthHeaders(),
+      body: JSON.stringify({
+        query: `{
+          pages(first: 100, where: { status: PUBLISH }) { nodes { slug headlessTemplate } }
+          services(first: 200) { nodes { slug } }
+          industries(first: 200) { nodes { slug } }
+        }`,
+      }),
+      // @ts-ignore - Next.js extends RequestInit with `next`
+      next: { revalidate: 1800, tags: ['wordpress'] },
+    });
+    if (!res.ok) return EMPTY_SLUG_DATA;
+    const json = await res.json();
+    const templateSlugMap: Record<string, string> = {};
+    for (const node of json?.data?.pages?.nodes || []) {
+      if (node?.headlessTemplate && node?.slug) {
+        templateSlugMap[node.headlessTemplate] = node.slug;
+      }
+    }
+    const reservedCptSlugs = new Set<string>();
+    for (const node of json?.data?.services?.nodes || []) {
+      if (node?.slug) reservedCptSlugs.add(node.slug);
+    }
+    for (const node of json?.data?.industries?.nodes || []) {
+      if (node?.slug) reservedCptSlugs.add(node.slug);
+    }
+    return { templateSlugMap, reservedCptSlugs };
+  } catch (error) {
+    console.error('[TemplateSlugs] Failed to fetch slug routing data:', error);
+    return EMPTY_SLUG_DATA;
+  }
+}
 
 async function getRedirects(): Promise<Redirect[]> {
   const now = Date.now();
@@ -111,6 +180,59 @@ export async function middleware(request: NextRequest) {
     
     console.log(`[Redirects] ${path} -> ${destination} (${match.type})`);
     return NextResponse.redirect(destination, match.type);
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // Page-template slug rename handling.
+  // For each registered page template, compare the WP slug against the
+  // canonical front-end folder route. If they differ:
+  //   • Visiting the WP slug   → rewrite to the canonical folder so the
+  //                              existing route renders (URL stays as WP slug).
+  //   • Visiting the canonical → 301 redirect to the WP slug, so the public
+  //                              URL follows what the editor set in WP.
+  //                              (Skipped when canonical is "/" — homepage
+  //                               must always remain at root.)
+  // Templates with dynamic routes (containing "[slug]") are skipped.
+  // Collision guard: if the WP slug matches an existing service or
+  // industry CPT slug, we skip — never hijack a CPT URL.
+  // ─────────────────────────────────────────────────────────────
+  const { templateSlugMap, reservedCptSlugs } = await getSlugRoutingData();
+  if (Object.keys(templateSlugMap).length > 0) {
+    const normalize = (p: string) => (p !== '/' && p.endsWith('/') ? p.slice(0, -1) : p);
+    const reqPath = normalize(path);
+
+    for (const config of Object.values(PAGE_TEMPLATE_CONFIG)) {
+      if (config.route.includes('[slug]')) continue;
+      const wpSlug = templateSlugMap[config.wpTemplate];
+      if (!wpSlug) continue;
+
+      const canonical = normalize(config.route);
+      const wpPath = `/${wpSlug}`;
+      if (wpPath === canonical) continue; // no rename, nothing to do
+
+      if (reservedCptSlugs.has(wpSlug)) {
+        console.warn(`[TemplateSlugs] Skip ${config.wpTemplate}: WP slug "${wpSlug}" collides with an existing service/industry CPT slug.`);
+        continue;
+      }
+
+      // Request hits the WP slug → rewrite to the canonical folder route.
+      if (reqPath === wpPath) {
+        const url = request.nextUrl.clone();
+        url.pathname = canonical;
+        console.log(`[TemplateSlugs] rewrite ${path} -> ${canonical} (template ${config.wpTemplate})`);
+        return NextResponse.rewrite(url);
+      }
+
+      // Request hits the canonical folder route → 301 to the new WP slug,
+      // so the public URL reflects the editor's slug change.
+      // (Don't redirect away from the homepage.)
+      if (canonical !== '/' && reqPath === canonical) {
+        const url = request.nextUrl.clone();
+        url.pathname = wpPath;
+        console.log(`[TemplateSlugs] redirect ${path} -> ${wpPath} (template ${config.wpTemplate})`);
+        return NextResponse.redirect(url, 301);
+      }
+    }
   }
 
   return NextResponse.next();
