@@ -63,8 +63,15 @@ if ( ! function_exists( 'tr_headless_templates' ) ) {
     }
 }
 
-if ( ! defined( 'TR_HEADLESS_THEME' ) ) {
-    define( 'TR_HEADLESS_THEME', 'headless' );
+/**
+ * The synthetic "theme" we attribute virtual templates to. We use the
+ * active stylesheet so the native "Choose a template" modal — which
+ * filters templates by the active theme — actually shows them.
+ */
+if ( ! function_exists( 'tr_headless_theme_slug' ) ) {
+    function tr_headless_theme_slug() {
+        return get_stylesheet();
+    }
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -104,8 +111,9 @@ if ( ! function_exists( 'tr_build_headless_block_template' ) ) {
             return null;
         }
         $tpl = new WP_Block_Template();
-        $tpl->id             = TR_HEADLESS_THEME . '//' . $slug;
-        $tpl->theme          = TR_HEADLESS_THEME;
+        $theme               = tr_headless_theme_slug();
+        $tpl->id             = $theme . '//' . $slug;
+        $tpl->theme          = $theme;
         $tpl->slug           = $slug;
         $tpl->title          = $title;
         $tpl->description    = 'Headless Next.js template — content rendered by the frontend.';
@@ -133,7 +141,8 @@ add_filter( 'get_block_templates', function ( $templates, $query, $template_type
         return $templates;
     }
     // If a specific theme/slug was requested, only inject when ours matches.
-    if ( ! empty( $query['theme'] ) && $query['theme'] !== TR_HEADLESS_THEME ) {
+    $theme = tr_headless_theme_slug();
+    if ( ! empty( $query['theme'] ) && $query['theme'] !== $theme ) {
         return $templates;
     }
     // If filtered to a specific post type, only inject when 'page' is included.
@@ -151,7 +160,7 @@ add_filter( 'get_block_templates', function ( $templates, $query, $template_type
             continue;
         }
         // Avoid duplicates if WordPress already produced one with the same id.
-        $id = TR_HEADLESS_THEME . '//' . $slug;
+        $id = $theme . '//' . $slug;
         $already = false;
         foreach ( $templates as $existing ) {
             if ( isset( $existing->id ) && $existing->id === $id ) {
@@ -181,10 +190,12 @@ add_filter( 'get_block_template', function ( $block_template, $id, $template_typ
     if ( $template_type !== 'wp_template' ) {
         return $block_template;
     }
-    if ( strpos( $id, TR_HEADLESS_THEME . '//' ) !== 0 ) {
+    $theme  = tr_headless_theme_slug();
+    $prefix = $theme . '//';
+    if ( strpos( $id, $prefix ) !== 0 ) {
         return $block_template;
     }
-    $slug    = substr( $id, strlen( TR_HEADLESS_THEME . '//' ) );
+    $slug = substr( $id, strlen( $prefix ) );
     $titles  = tr_headless_templates();
     if ( ! isset( $titles[ $slug ] ) || $slug === '' ) {
         return $block_template;
@@ -238,7 +249,7 @@ add_action( 'rest_api_init', function () {
             update_post_meta( $post->ID, '_headless_template', $value );
             // Also write the native page_template field with our namespace
             // so the native picker stays in sync.
-            $native = ( $value === '' ) ? '' : ( TR_HEADLESS_THEME . '//' . $value );
+            $native = ( $value === '' ) ? '' : ( tr_headless_theme_slug() . '//' . $value );
             update_post_meta( $post->ID, '_wp_page_template', $native );
             return true;
         },
