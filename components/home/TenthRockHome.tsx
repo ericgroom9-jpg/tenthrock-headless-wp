@@ -215,6 +215,7 @@ const Hero = ({
   heroCtaLink,
   heroSecondaryLabel,
   heroSecondaryLink,
+  heroVideoSrc,
 }: {
   heroTagline?: string;
   heroHeading?: string;
@@ -223,7 +224,9 @@ const Hero = ({
   heroCtaLink?: string;
   heroSecondaryLabel?: string;
   heroSecondaryLink?: string;
+  heroVideoSrc?: string;
 } = {}) => {
+  const videoSrc = heroVideoSrc || heroVideo;
   return (
     <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
       {/* Background Video */}
@@ -238,7 +241,7 @@ const Hero = ({
             disablePictureInPicture
             disableRemotePlayback
             className="w-full h-full object-cover opacity-80"
-            src={heroVideo}
+            src={videoSrc}
           />
         </div>
         <div className="absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"></div>
@@ -775,6 +778,7 @@ export default function Home({ acf, globalSections, testimonials, caseStudies, p
         heroCtaLink={acf?.heroCtaLink}
         heroSecondaryLabel={acf?.heroSecondaryLabel}
         heroSecondaryLink={acf?.heroSecondaryLink}
+        heroVideoSrc={acf?.heroVideo}
       />
       <main id="main-content" role="main">
       <LogoReelSection
@@ -808,15 +812,23 @@ export default function Home({ acf, globalSections, testimonials, caseStudies, p
       <CaseStudySection caseStudies={caseStudies && caseStudies.length > 0 ? caseStudies : undefined} />
       <ReasonsSection
         tagline={gs?.reasons?.tagline}
-        heading={gs?.reasons?.heading}
+        heading={acf?.whyUsHeading || gs?.reasons?.heading}
         subtitle={gs?.reasons?.subtitle}
-        buttonText={gs?.reasons?.ctaLabel}
-        buttonLink={gs?.reasons?.ctaLink}
-        features={gs?.reasons?.features?.map(f => ({
-          title: f.title,
-          icon: resolveReasonIcon(f.iconName),
-          desc: f.description,
-        }))}
+        buttonText={acf?.whyUsCtaLabel || gs?.reasons?.ctaLabel}
+        buttonLink={acf?.whyUsCtaLink || gs?.reasons?.ctaLink}
+        features={
+          acf?.whyUsFeatures && acf.whyUsFeatures.length > 0
+            ? acf.whyUsFeatures.map(f => ({
+                title: f.title,
+                icon: resolveReasonIcon(f.iconName),
+                desc: f.content,
+              }))
+            : gs?.reasons?.features?.map(f => ({
+                title: f.title,
+                icon: resolveReasonIcon(f.iconName),
+                desc: f.description,
+              }))
+        }
       />
       <StatsSection
         tagline={gs?.stats?.tagline}

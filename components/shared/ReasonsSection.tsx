@@ -26,7 +26,9 @@ interface ReasonsSectionProps {
 const iconMap: Record<string, ReactNode> = {
   headset: <Headset className="w-6 h-6" />,
   "check-circle-2": <CheckCircle2 className="w-6 h-6" />,
+  checkcircle2: <CheckCircle2 className="w-6 h-6" />,
   "map-pin": <MapPin className="w-6 h-6" />,
+  mappin: <MapPin className="w-6 h-6" />,
   truck: <Truck className="w-6 h-6" />,
 };
 
@@ -38,7 +40,9 @@ const defaultFeatures: ReasonFeature[] = [
 ];
 
 export function resolveReasonIcon(iconName: string): ReactNode {
-  return iconMap[iconName] || <Headset className="w-6 h-6" />;
+  if (!iconName) return <Headset className="w-6 h-6" />;
+  const key = String(iconName).toLowerCase().replace(/[\s_-]/g, "");
+  return iconMap[key] || iconMap[iconName] || <Headset className="w-6 h-6" />;
 }
 
 export default function ReasonsSection({
