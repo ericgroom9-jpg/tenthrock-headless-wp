@@ -122,7 +122,9 @@ if ( ! function_exists( 'tr_build_headless_block_template' ) ) {
         $tpl->type           = 'wp_template';
         $tpl->status         = 'publish';
         $tpl->has_theme_file = false;
-        $tpl->is_custom      = false;
+        // Mark as "custom" so the native "Choose a template" modal — which
+        // filters with `is_custom || slug === 'page'` — actually lists them.
+        $tpl->is_custom      = true;
         $tpl->author         = null;
         $tpl->modified       = null;
         // A minimal body so the editor can preview/render the template.
