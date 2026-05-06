@@ -83,7 +83,8 @@ export default function AboutClient({ acf, globalSections }: Props) {
   const communitySecondaryLabel = acf?.communitySecondaryLabel || "727.510.5454";
   const communitySecondaryLink = acf?.communitySecondaryLink || "tel:+17275105454";
 
-  const storyParagraphs = storyBody.split("\n").filter(p => p.trim());
+  const storyHasHtml = /<\/?[a-z][\s\S]*?>/i.test(storyBody);
+  const storyParagraphs = storyHasHtml ? [] : storyBody.split("\n").filter(p => p.trim());
 
   return (
     <main className="min-h-screen bg-white">
@@ -108,10 +109,12 @@ export default function AboutClient({ acf, globalSections }: Props) {
             </FadeIn>
             
             <FadeIn className="lg:pt-8">
-              <div className="text-base text-primary/70 leading-relaxed space-y-6">
-                {storyParagraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
+              <div className="text-base text-primary/70 leading-relaxed space-y-6 [&_p]:leading-relaxed">
+                {storyHasHtml ? (
+                  <div dangerouslySetInnerHTML={{ __html: storyBody }} />
+                ) : (
+                  storyParagraphs.map((p, i) => <p key={i}>{p}</p>)
+                )}
               </div>
             </FadeIn>
           </div>
