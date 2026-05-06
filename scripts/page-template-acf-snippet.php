@@ -76,12 +76,25 @@ add_action( 'acf/init', function () {
 // ═══════════════════════════════════════════════════════
 
 function _tr_f( $key, $label, $name, $type = 'text', $extra = array() ) {
-    return array_merge( array(
-        'key'   => $key,
-        'label' => $label,
-        'name'  => $name,
-        'type'  => $type,
-    ), $extra );
+    // show_in_rest=1 is REQUIRED for REST writes; ACF Pro 6.7+ silently drops
+    // the `acf` payload unless every field AND its group have show_in_rest set.
+    $base = array(
+        'key'           => $key,
+        'label'         => $label,
+        'name'          => $name,
+        'type'          => $type,
+        'show_in_rest'  => 1,
+    );
+    // Recursively flag sub_fields for repeaters/groups.
+    if ( ! empty( $extra['sub_fields'] ) && is_array( $extra['sub_fields'] ) ) {
+        foreach ( $extra['sub_fields'] as &$sf ) {
+            if ( is_array( $sf ) && ! isset( $sf['show_in_rest'] ) ) {
+                $sf['show_in_rest'] = 1;
+            }
+        }
+        unset( $sf );
+    }
+    return array_merge( $base, $extra );
 }
 
 function _tr_loc_template( $slug ) {
@@ -112,6 +125,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_process',
         'title'    => 'Global: Process Section',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsProcess',
         'fields'   => array(
@@ -134,6 +148,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_stats',
         'title'    => 'Global: Stats / Why Clients Call Us',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsStats',
         'fields'   => array(
@@ -162,6 +177,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_cta_banner',
         'title'    => 'Global: CTA Banner (Zip Code)',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsCtaBanner',
         'fields'   => array(
@@ -178,6 +194,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_reasons',
         'title'    => 'Global: Reasons Section',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsReasons',
         'fields'   => array(
@@ -202,6 +219,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_final_cta',
         'title'    => 'Global: Final CTA Section',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsFinalCta',
         'fields'   => array(
@@ -221,6 +239,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_location',
         'title'    => 'Global: Location / Where to Find Us',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsLocation',
         'fields'   => array(
@@ -243,6 +262,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_faq',
         'title'    => 'Global: FAQ Section Defaults',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsFaq',
         'fields'   => array(
@@ -260,6 +280,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_who_help',
         'title'    => 'Global: Who We Help Section',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsWhoHelp',
         'fields'   => array(
@@ -274,6 +295,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_logo_reel',
         'title'    => 'Global: Logo Reel Section',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsLogoReel',
         'fields'   => array(
@@ -286,6 +308,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_gs_testimonials',
         'title'    => 'Global: Testimonials Section',
         'location' => _tr_loc_options(),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'gsTestimonials',
         'fields'   => array(
@@ -302,6 +325,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_homepage',
         'title'    => 'Homepage Fields',
         'location' => _tr_loc_template( 'template-homepage' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'homepageFields',
         'graphql_types'     => array('Page'),
@@ -376,6 +400,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_about',
         'title'    => 'About Page Fields',
         'location' => _tr_loc_template( 'template-about' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'aboutFields',
         'graphql_types'     => array('Page'),
@@ -423,6 +448,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_commercial',
         'title'    => 'Commercial Waste Fields',
         'location' => _tr_loc_template( 'template-commercial-waste' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'commercialWasteFields',
         'graphql_types'     => array('Page'),
@@ -442,6 +468,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_who_serve',
         'title'    => 'Who We Serve Fields',
         'location' => _tr_loc_template( 'template-who-we-serve' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'whoWeServeFields',
         'graphql_types'     => array('Page'),
@@ -461,6 +488,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_process',
         'title'    => 'Our Process Fields',
         'location' => _tr_loc_template( 'template-our-process' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'ourProcessFields',
         'graphql_types'     => array('Page'),
@@ -475,11 +503,76 @@ add_action( 'acf/init', function () {
         ),
     ));
 
+    // --- COMMERCIAL WASTE BODY (extends Hero fields above) ---
+    acf_add_local_field_group( array(
+        'key'      => 'group_pt_cw_body',
+        'title'    => 'Commercial Waste — Body Sections',
+        'location' => _tr_loc_template( 'template-commercial-waste' ),
+        'show_in_rest'       => true,
+        'show_in_graphql'    => true,
+        'graphql_field_name' => 'commercialWasteBodyFields',
+        'graphql_types'     => array('Page'),
+        'fields'   => array(
+            _tr_f( 'field_pt_cw_proc_tag', 'Process Tagline', 'process_tagline' ),
+            _tr_f( 'field_pt_cw_proc_head', 'Process Heading', 'process_heading' ),
+            _tr_f( 'field_pt_cw_proc_sub', 'Process Subtitle', 'process_subtitle', 'textarea' ),
+            _tr_f( 'field_pt_cw_proc_steps', 'Process Steps', 'process_steps', 'repeater', array(
+                'layout' => 'block',
+                'sub_fields' => array(
+                    _tr_f( 'field_pt_cw_ps_num', 'Number', 'number' ),
+                    _tr_f( 'field_pt_cw_ps_title', 'Title', 'title' ),
+                    _tr_f( 'field_pt_cw_ps_desc', 'Description', 'description', 'textarea' ),
+                ),
+            )),
+            _tr_f( 'field_pt_cw_zip_tag', 'Zip Tagline', 'zip_tagline' ),
+            _tr_f( 'field_pt_cw_zip_head', 'Zip Heading', 'zip_heading' ),
+            _tr_f( 'field_pt_cw_zip_hl', 'Zip Heading Highlight', 'zip_heading_highlight' ),
+            _tr_f( 'field_pt_cw_zip_sub', 'Zip Subtitle', 'zip_subtitle', 'textarea' ),
+            _tr_f( 'field_pt_cw_zip_ph', 'Zip Placeholder', 'zip_placeholder' ),
+            _tr_f( 'field_pt_cw_zip_btn', 'Zip Button Label', 'zip_button' ),
+            _tr_f( 'field_pt_cw_cs_tag', 'Case Study Tag', 'case_study_tag' ),
+            _tr_f( 'field_pt_cw_cs_head', 'Case Study Heading', 'case_study_heading' ),
+            _tr_f( 'field_pt_cw_cs_sub', 'Case Study Subheading', 'case_study_subheading' ),
+            _tr_f( 'field_pt_cw_cs_body', 'Case Study Body', 'case_study_body', 'textarea' ),
+            _tr_f( 'field_pt_cw_cs_main', 'Case Study Main Image URL', 'case_study_main_image' ),
+            _tr_f( 'field_pt_cw_cs_thumbs', 'Case Study Thumbnails', 'case_study_thumbs', 'repeater', array(
+                'layout' => 'table',
+                'sub_fields' => array(
+                    _tr_f( 'field_pt_cw_cst_url', 'Image URL', 'image' ),
+                    _tr_f( 'field_pt_cw_cst_alt', 'Alt Text', 'alt' ),
+                ),
+            )),
+            _tr_f( 'field_pt_cw_cs_stats', 'Case Study Stats', 'case_study_stats', 'repeater', array(
+                'layout' => 'table',
+                'sub_fields' => array(
+                    _tr_f( 'field_pt_cw_css_val', 'Value', 'value' ),
+                    _tr_f( 'field_pt_cw_css_lbl', 'Label', 'label' ),
+                ),
+            )),
+            _tr_f( 'field_pt_cw_cs_cta', 'Case Study CTA Label', 'case_study_cta_label' ),
+            _tr_f( 'field_pt_cw_cs_cta_lnk', 'Case Study CTA Link', 'case_study_cta_link' ),
+            _tr_f( 'field_pt_cw_faq_tag', 'FAQ Tagline', 'faq_tagline' ),
+            _tr_f( 'field_pt_cw_faq_head', 'FAQ Heading', 'faq_heading' ),
+            _tr_f( 'field_pt_cw_faq_sub', 'FAQ Subtitle', 'faq_subtitle', 'textarea' ),
+            _tr_f( 'field_pt_cw_faqs', 'FAQs', 'faqs', 'repeater', array(
+                'layout' => 'block',
+                'sub_fields' => array(
+                    _tr_f( 'field_pt_cw_faq_q', 'Question', 'question' ),
+                    _tr_f( 'field_pt_cw_faq_a', 'Answer', 'answer', 'textarea' ),
+                ),
+            )),
+            _tr_f( 'field_pt_cw_faq_cta_t', 'FAQ CTA Text', 'faq_cta_text' ),
+            _tr_f( 'field_pt_cw_faq_cta_l', 'FAQ CTA Label', 'faq_cta_label' ),
+            _tr_f( 'field_pt_cw_faq_cta_u', 'FAQ CTA Link', 'faq_cta_link' ),
+        ),
+    ));
+
     // --- LOCATIONS ---
     acf_add_local_field_group( array(
         'key'      => 'group_pt_locations',
         'title'    => 'Locations Page Fields',
         'location' => _tr_loc_template( 'template-locations' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'locationsFields',
         'graphql_types'     => array('Page'),
@@ -501,6 +594,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_join_network',
         'title'    => 'Join Our Network Fields',
         'location' => _tr_loc_template( 'template-join-our-network' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'joinNetworkFields',
         'graphql_types'     => array('Page'),
@@ -563,6 +657,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_faq',
         'title'    => 'FAQ Page Fields',
         'location' => _tr_loc_template( 'template-faq' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'faqPageFields',
         'graphql_types'     => array('Page'),
@@ -583,6 +678,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_contact',
         'title'    => 'Contact Page Fields',
         'location' => _tr_loc_template( 'template-contact' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'contactFields',
         'graphql_types'     => array('Page'),
@@ -626,6 +722,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_request',
         'title'    => 'Request A Service Fields',
         'location' => _tr_loc_template( 'template-request-a-service' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'requestServiceFields',
         'graphql_types'     => array('Page'),
@@ -670,6 +767,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_book_call',
         'title'    => 'Book A Call Fields',
         'location' => _tr_loc_template( 'template-book-a-call' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'bookCallFields',
         'graphql_types'     => array('Page'),
@@ -696,6 +794,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_thank_you',
         'title'    => 'Thank You Page Fields',
         'location' => _tr_loc_template( 'template-thank-you' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'thankYouFields',
         'graphql_types'     => array('Page'),
@@ -721,6 +820,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_privacy',
         'title'    => 'Privacy Policy Fields',
         'location' => _tr_loc_template( 'template-privacy-policy' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'privacyFields',
         'graphql_types'     => array('Page'),
@@ -737,6 +837,7 @@ add_action( 'acf/init', function () {
         'key'      => 'group_pt_terms',
         'title'    => 'Terms of Service Fields',
         'location' => _tr_loc_template( 'template-terms-of-service' ),
+        'show_in_rest'       => true,
         'show_in_graphql'    => true,
         'graphql_field_name' => 'termsFields',
         'graphql_types'     => array('Page'),

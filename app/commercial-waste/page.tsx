@@ -1,5 +1,5 @@
 import { fetchCommercialWasteAcf, fetchGlobalSections } from "@/lib/wordpress";
-import type { HeroPageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
+import type { CommercialWasteTemplateData, GlobalSectionsData } from "@/lib/wordpress";
 import CommercialWasteServices from "@/components/services/CommercialWasteServices";
 
 export const revalidate = 1800;

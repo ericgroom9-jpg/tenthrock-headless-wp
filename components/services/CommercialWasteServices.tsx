@@ -109,17 +109,34 @@ const faqs = [
   },
 ];
 
-import type { HeroPageTemplateData, GlobalSectionsData } from "@/lib/wordpress";
+import type { CommercialWasteTemplateData, GlobalSectionsData } from "@/lib/wordpress";
 import { resolveReasonIcon } from "@/components/shared/ReasonsSection";
 
 interface CommercialWasteServicesProps {
-  acf?: HeroPageTemplateData | null;
+  acf?: CommercialWasteTemplateData | null;
   globalSections?: GlobalSectionsData | null;
 }
 
 export default function CommercialWasteServices({ acf, globalSections }: CommercialWasteServicesProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const gs = globalSections;
+  const procSteps = (acf?.processSteps && acf.processSteps.length > 0)
+    ? acf.processSteps.map((s) => ({ num: s.number || "", title: s.title || "", desc: s.description || "" }))
+    : processSteps;
+  const csThumbs = (acf?.caseStudyThumbs && acf.caseStudyThumbs.length > 0)
+    ? acf.caseStudyThumbs.map((t, i) => ({ src: t.image || [imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3][i] || imgCaseStudyThumb1, alt: t.alt || `Commercial waste operations detail ${i + 1}` }))
+    : [imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3].map((src, i) => ({ src, alt: `Commercial waste operations detail ${i + 1}` }));
+  const csStats = (acf?.caseStudyStats && acf.caseStudyStats.length > 0)
+    ? acf.caseStudyStats.map((s) => ({ value: s.value || "", label: s.label || "" }))
+    : [
+        { value: "10 min", label: "Response Time" },
+        { value: "4 hrs", label: "Total Stabilization" },
+        { value: "0", label: "Customer Impact" },
+        { value: "1", label: "Call to Resolution" },
+      ];
+  const cwFaqs = (acf?.faqs && acf.faqs.length > 0)
+    ? acf.faqs.map((f) => ({ question: f.question || "", answer: f.answer || "" }))
+    : faqs;
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -190,18 +207,18 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
             <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
                 <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
-                Our Process
+                {acf?.processTagline || "Our Process"}
               </div>
               <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
-                How It Works
+                {acf?.processHeading || "How It Works"}
               </h2>
               <p className="text-lg text-[#042940]/70">
-                A simple, transparent process designed to get your problem solved fast.
+                {acf?.processSubtitle || "A simple, transparent process designed to get your problem solved fast."}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
-              {processSteps.map((step, i) => (
+              {procSteps.map((step, i) => (
                 <FadeIn 
                   key={i}
                   className="group bg-white p-6 md:p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] active:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-start sm:items-center text-left sm:text-center md:hover:-translate-y-1"
@@ -247,23 +264,23 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
               <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-sm shadow-sm mb-8">
                   <div className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse" />
-                  Service Availability
+                  {acf?.zipTagline || "Service Availability"}
                 </div>
                 
                 <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6 tracking-tighter">
-                  Check If We Service <span className="text-[#c5d520]">Your Area</span>
+                  {acf?.zipHeading || "Check If We Service "}<span className="text-[#c5d520]">{acf?.zipHeadingHighlight || "Your Area"}</span>
                 </h2>
                 <p className="text-xl text-white/70 font-medium leading-relaxed max-w-xl mb-10">
-                  Enter your zip code below to instantly see if our network of local vendors covers your location.
+                  {acf?.zipSubtitle || "Enter your zip code below to instantly see if our network of local vendors covers your location."}
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center">
                   <Input 
-                    placeholder="Enter Zip Code" 
+                    placeholder={acf?.zipPlaceholder || "Enter Zip Code"} 
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
                   />
                   <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[52px] whitespace-nowrap">
-                    Check Now
+                    {acf?.zipButton || "Check Now"}
                   </Button>
                 </div>
               </div>
@@ -283,7 +300,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
                   className="rounded-[5px] overflow-hidden h-[400px] relative"
                 >
                   <Image 
-                    src={imgCaseStudyMain} 
+                    src={acf?.caseStudyMainImage || imgCaseStudyMain} 
                     alt="Commercial waste management case study by Tenth Rock" 
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -292,14 +309,14 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
                   />
                 </FadeIn>
                 <div className="grid grid-cols-3 gap-4">
-                  {[imgCaseStudyThumb1, imgCaseStudyThumb2, imgCaseStudyThumb3].map((img, i) => (
+                  {csThumbs.map((thumb, i) => (
                     <FadeIn
                       key={i}
                       className="rounded-[5px] overflow-hidden aspect-square relative"
                     >
                       <Image 
-                        src={img} 
-                        alt={`Commercial waste operations detail ${i + 1}`} 
+                        src={thumb.src} 
+                        alt={thumb.alt} 
                         fill
                         sizes="(max-width: 1024px) 33vw, 16vw"
                         className="object-cover md:hover:scale-110 transition-transform duration-500" 
@@ -315,22 +332,17 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5d520]/10 text-[#042940] font-bold text-xs uppercase tracking-wider mb-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></span>
-                  Speed
+                  {acf?.caseStudyTag || "Speed"}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 tracking-tighter leading-tight">
-                  National Coffee Chain <br/><span className="text-3xl md:text-4xl">Missed Pickup, Same-Day Stabilization</span>
+                  {acf?.caseStudyHeading || "National Coffee Chain"} <br/><span className="text-3xl md:text-4xl">{acf?.caseStudySubheading || "Missed Pickup, Same-Day Stabilization"}</span>
                 </h2>
                 <p className="text-lg text-[#042940]/70 mb-8 md:mb-12 leading-relaxed">
-                  A missed pickup at a National Coffee Chain location sent waste overflowing into the backroom mid-operation, creating immediate operational risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a local crew on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.
+                  {acf?.caseStudyBody || "A missed pickup at a National Coffee Chain location sent waste overflowing into the backroom mid-operation, creating immediate operational risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a local crew on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours."}
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
-                  {[
-                    { value: "10 min", label: "Response Time" },
-                    { value: "4 hrs", label: "Total Stabilization" },
-                    { value: "0", label: "Customer Impact" },
-                    { value: "1", label: "Call to Resolution" },
-                  ].map((stat, i) => (
+                  {csStats.map((stat, i) => (
                     <div key={i}>
                       <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
                       <div className="text-sm font-bold text-[#042940] uppercase tracking-wide">{stat.label}</div>
@@ -344,7 +356,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
                   className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto whitespace-nowrap"
                   asChild
                 >
-                  <a href="/request-a-service">Request A Service</a>
+                  <a href={acf?.caseStudyCtaLink || "/request-a-service"}>{acf?.caseStudyCtaLabel || "Request A Service"}</a>
                 </Button>
               </FadeIn>
             </div>
@@ -359,16 +371,16 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
             <div className="text-left sm:text-center mb-16 space-y-4">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#c5d520]" />
-                Common Questions
+                {acf?.faqTagline || "Common Questions"}
               </div>
-              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter leading-tight">Frequently Asked Questions</h2>
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter leading-tight">{acf?.faqHeading || "Frequently Asked Questions"}</h2>
               <p className="text-lg text-[#042940]/70 max-w-2xl mx-auto">
-                Everything you need to know about our commercial waste services. Can't find the answer you're looking for? Reach out to our team.
+                {acf?.faqSubtitle || "Everything you need to know about our commercial waste services. Can't find the answer you're looking for? Reach out to our team."}
               </p>
             </div>
 
             <div className="grid gap-4">
-              {faqs.map((faq, i) => (
+              {cwFaqs.map((faq, i) => (
                 <FadeIn
                   key={i}
                 >
@@ -417,9 +429,9 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
             </div>
             
             <div className="mt-16 text-left sm:text-center">
-              <p className="text-[#042940]/70 mb-4 font-medium">Still Have Questions?</p>
+              <p className="text-[#042940]/70 mb-4 font-medium">{acf?.faqCtaText || "Still Have Questions?"}</p>
               <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] rounded-full" asChild>
-                <Link href="/contact">Contact Us</Link>
+                <Link href={acf?.faqCtaLink || "/contact"}>{acf?.faqCtaLabel || "Contact Us"}</Link>
               </Button>
             </div>
           </div>

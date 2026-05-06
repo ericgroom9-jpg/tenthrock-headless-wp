@@ -2001,6 +2001,40 @@ export interface LocationsPageTemplateData extends HeroPageTemplateData {
   areasSubtitle?: string;
 }
 
+export interface CwProcessStep { number?: string; title?: string; description?: string; }
+export interface CwThumb { image?: string; alt?: string; }
+export interface CwStat { value?: string; label?: string; }
+export interface CwFaq { question?: string; answer?: string; }
+
+export interface CommercialWasteTemplateData extends HeroPageTemplateData {
+  processTagline?: string;
+  processHeading?: string;
+  processSubtitle?: string;
+  processSteps?: CwProcessStep[];
+  zipTagline?: string;
+  zipHeading?: string;
+  zipHeadingHighlight?: string;
+  zipSubtitle?: string;
+  zipPlaceholder?: string;
+  zipButton?: string;
+  caseStudyTag?: string;
+  caseStudyHeading?: string;
+  caseStudySubheading?: string;
+  caseStudyBody?: string;
+  caseStudyMainImage?: string;
+  caseStudyThumbs?: CwThumb[];
+  caseStudyStats?: CwStat[];
+  caseStudyCtaLabel?: string;
+  caseStudyCtaLink?: string;
+  faqTagline?: string;
+  faqHeading?: string;
+  faqSubtitle?: string;
+  faqs?: CwFaq[];
+  faqCtaText?: string;
+  faqCtaLabel?: string;
+  faqCtaLink?: string;
+}
+
 export interface JoinNetworkTemplateData {
   heroHeading?: string;
   heroSubheading?: string;
@@ -2259,6 +2293,34 @@ const GET_PAGE_TEMPLATE_ACF_QUERY = gql`
         heroPhoneLabel
         heroPhoneLink
       }
+      commercialWasteBodyFields {
+        processTagline
+        processHeading
+        processSubtitle
+        processSteps { number title description }
+        zipTagline
+        zipHeading
+        zipHeadingHighlight
+        zipSubtitle
+        zipPlaceholder
+        zipButton
+        caseStudyTag
+        caseStudyHeading
+        caseStudySubheading
+        caseStudyBody
+        caseStudyMainImage
+        caseStudyThumbs { image alt }
+        caseStudyStats { value label }
+        caseStudyCtaLabel
+        caseStudyCtaLink
+        faqTagline
+        faqHeading
+        faqSubtitle
+        faqs { question answer }
+        faqCtaText
+        faqCtaLabel
+        faqCtaLink
+      }
       whoWeServeFields {
         heroHeading
         heroSubheading
@@ -2502,6 +2564,7 @@ interface WpPageAcfResponse {
     homepageFields: Record<string, unknown> | null;
     aboutFields: Record<string, unknown> | null;
     commercialWasteFields: Record<string, unknown> | null;
+    commercialWasteBodyFields: Record<string, unknown> | null;
     whoWeServeFields: Record<string, unknown> | null;
     ourProcessFields: Record<string, unknown> | null;
     locationsFields: Record<string, unknown> | null;
@@ -2640,8 +2703,57 @@ async function fetchHeroPageAcf(slug: string, fieldName: string): Promise<HeroPa
   }
 }
 
-export const fetchCommercialWasteAcf = cache(async (): Promise<HeroPageTemplateData | null> => {
-  return fetchHeroPageAcf('commercial-waste', 'commercialWasteFields');
+export const fetchCommercialWasteAcf = cache(async (): Promise<CommercialWasteTemplateData | null> => {
+  const client = getWpClient();
+  try {
+    const { page } = await client.request<WpPageAcfResponse>(
+      GET_PAGE_TEMPLATE_ACF_QUERY, { slug: '/commercial-waste/' }
+    );
+    const hero = page?.commercialWasteFields as Record<string, any> | null | undefined;
+    const body = page?.commercialWasteBodyFields as Record<string, any> | null | undefined;
+    if ((!hero || !hasData(hero)) && (!body || !hasData(body))) return null;
+    const h = hero || {};
+    const b = body || {};
+    return {
+      heroHeading: h.heroHeading || undefined,
+      heroSubheading: h.heroSubheading || undefined,
+      heroImage: h.heroImage || undefined,
+      heroCtaLabel: h.heroCtaLabel || undefined,
+      heroCtaLink: h.heroCtaLink || undefined,
+      heroPhoneLabel: h.heroPhoneLabel || undefined,
+      heroPhoneLink: h.heroPhoneLink || undefined,
+      processTagline: b.processTagline || undefined,
+      processHeading: b.processHeading || undefined,
+      processSubtitle: b.processSubtitle || undefined,
+      processSteps: nonEmpty(b.processSteps),
+      zipTagline: b.zipTagline || undefined,
+      zipHeading: b.zipHeading || undefined,
+      zipHeadingHighlight: b.zipHeadingHighlight || undefined,
+      zipSubtitle: b.zipSubtitle || undefined,
+      zipPlaceholder: b.zipPlaceholder || undefined,
+      zipButton: b.zipButton || undefined,
+      caseStudyTag: b.caseStudyTag || undefined,
+      caseStudyHeading: b.caseStudyHeading || undefined,
+      caseStudySubheading: b.caseStudySubheading || undefined,
+      caseStudyBody: b.caseStudyBody || undefined,
+      caseStudyMainImage: b.caseStudyMainImage || undefined,
+      caseStudyThumbs: nonEmpty(b.caseStudyThumbs),
+      caseStudyStats: nonEmpty(b.caseStudyStats),
+      caseStudyCtaLabel: b.caseStudyCtaLabel || undefined,
+      caseStudyCtaLink: b.caseStudyCtaLink || undefined,
+      faqTagline: b.faqTagline || undefined,
+      faqHeading: b.faqHeading || undefined,
+      faqSubtitle: b.faqSubtitle || undefined,
+      faqs: nonEmpty(b.faqs),
+      faqCtaText: b.faqCtaText || undefined,
+      faqCtaLabel: b.faqCtaLabel || undefined,
+      faqCtaLink: b.faqCtaLink || undefined,
+      seoMetadata: transformSeoData(page?.seo || null),
+    };
+  } catch (error) {
+    console.error('[WP] Failed to fetch commercial waste ACF:', error);
+    return null;
+  }
 });
 
 export const fetchWhoWeServeAcf = cache(async (): Promise<HeroPageTemplateData | null> => {
