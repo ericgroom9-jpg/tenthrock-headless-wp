@@ -118,6 +118,10 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [headerCtas, setHeaderCtas] = useState(DEFAULT_HEADER_CTAS);
   // Top-level dropdown trigger labels & hrefs (so editor renames flow through)
   const [topLabels, setTopLabels] = useState(DEFAULT_TOP_LABELS);
+  // Any top-level WP menu items that don't map to one of the 4 known dropdowns
+  // (Services / Who We Serve / Locations / About). Rendered as plain links
+  // after About Us, in document order.
+  const [extraTopLinks, setExtraTopLinks] = useState<{ label: string; href: string }[]>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -162,6 +166,14 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
           if (about && about.children.length) {
             setAboutLinks(about.children.map(s => ({ label: s.label, href: s.href })));
           }
+
+          // Anything not matched to one of the 4 known groups becomes an extra link.
+          const matched = new Set([services?.id, sectors?.id, locations?.id, about?.id].filter(Boolean));
+          setExtraTopLinks(
+            primary
+              .filter(n => !matched.has(n.id))
+              .map(n => ({ label: n.label, href: n.href || "#" }))
+          );
         }
 
         const ctas: MenuNode[] | null = ctasRes?.tree ?? null;
@@ -529,6 +541,18 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 )}
               
             </div>
+
+            {/* Extra top-level menu items added in WP (no dropdown) */}
+            {extraTopLinks.map((item) => (
+              <Link
+                key={`extra-${item.label}-${item.href}`}
+                href={item.href}
+                className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] inline-flex items-center"
+                data-testid={`link-nav-extra-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "item"}`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           {/* Right Side Actions - desktop only */}
@@ -743,6 +767,20 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     )}
                   
                 </div>
+
+                {/* Extra top-level menu items added in WP (no submenu) */}
+                {extraTopLinks.map((item) => (
+                  <div key={`m-extra-${item.label}-${item.href}`} className="border-b border-gray-100">
+                    <Link
+                      href={item.href}
+                      className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex items-center w-full py-3 px-4 min-h-[52px]"
+                      onClick={() => setIsNavExpanded(false)}
+                      data-testid={`link-mobile-extra-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "item"}`}
+                    >
+                      {item.label}
+                    </Link>
+                  </div>
+                ))}
 
                 <div className="pt-4 px-4 space-y-3">
                   <Button asChild variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] whitespace-nowrap" data-testid="button-mobile-login">
