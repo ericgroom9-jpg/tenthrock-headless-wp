@@ -96,6 +96,13 @@ const DEFAULT_HEADER_CTAS = [
   { label: "Request A Service", href: "/request-a-service" },
 ];
 
+const DEFAULT_TOP_LABELS = {
+  services:  { label: "Waste Management Services", href: "/commercial-waste" },
+  sectors:   { label: "Who We Serve",              href: "/who-we-serve" },
+  locations: { label: "Locations",                 href: "/locations" },
+  about:     { label: "About Us",                  href: "/about" },
+};
+
 export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -109,6 +116,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [locationLinks, setLocationLinks] = useState(DEFAULT_LOCATION_LINKS);
   const [aboutLinks, setAboutLinks] = useState(DEFAULT_ABOUT_LINKS);
   const [headerCtas, setHeaderCtas] = useState(DEFAULT_HEADER_CTAS);
+  // Top-level dropdown trigger labels & hrefs (so editor renames flow through)
+  const [topLabels, setTopLabels] = useState(DEFAULT_TOP_LABELS);
 
   useEffect(() => {
     let cancelled = false;
@@ -127,9 +136,18 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
           const byLabel = (needle: string) => primary.find(n =>
             n.label.toLowerCase().includes(needle.toLowerCase())
           );
-          const services = byLabel("service") || byLabel("waste management");
-          const sectors  = byLabel("who we serve") || byLabel("industries") || byLabel("sectors");
-          const about    = byLabel("about");
+          const services  = byLabel("service") || byLabel("waste management");
+          const sectors   = byLabel("who we serve") || byLabel("industries") || byLabel("sectors");
+          const locations = byLabel("location");
+          const about     = byLabel("about");
+
+          // Update trigger label + href for each top-level group present in WP
+          setTopLabels({
+            services:  services  ? { label: services.label,  href: services.href  || DEFAULT_TOP_LABELS.services.href  } : DEFAULT_TOP_LABELS.services,
+            sectors:   sectors   ? { label: sectors.label,   href: sectors.href   || DEFAULT_TOP_LABELS.sectors.href   } : DEFAULT_TOP_LABELS.sectors,
+            locations: locations ? { label: locations.label, href: locations.href || DEFAULT_TOP_LABELS.locations.href } : DEFAULT_TOP_LABELS.locations,
+            about:     about     ? { label: about.label,     href: about.href     || DEFAULT_TOP_LABELS.about.href     } : DEFAULT_TOP_LABELS.about,
+          });
 
           if (services && services.children.length) {
             setServiceCategories(services.children.map(cat => ({
@@ -238,11 +256,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 data-testid="button-nav-services"
               >
                 <Link
-                  href="/commercial-waste"
+                  href={topLabels.services.href}
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
                   data-testid="link-nav-services"
                 >
-                  Waste Management Services
+                  {topLabels.services.label}
                 </Link>
                 <button
                   type="button"
@@ -308,11 +326,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 data-testid="button-nav-sectors"
               >
                 <a
-                  href="/who-we-serve"
+                  href={topLabels.sectors.href}
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
                   data-testid="link-nav-who-we-serve"
                 >
-                  Who We Serve
+                  {topLabels.sectors.label}
                 </a>
                 <button
                   type="button"
@@ -374,11 +392,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 data-testid="button-nav-locations"
               >
                 <Link
-                  href="/locations"
+                  href={topLabels.locations.href}
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
                   data-testid="link-nav-locations"
                 >
-                  Locations
+                  {topLabels.locations.label}
                 </Link>
                 <button
                   type="button"
@@ -457,11 +475,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 data-testid="button-nav-about"
               >
                 <a
-                  href="/about"
+                  href={topLabels.about.href}
                   className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
                   data-testid="link-nav-about"
                 >
-                  About Us
+                  {topLabels.about.label}
                 </a>
                 <button
                   type="button"
@@ -539,11 +557,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     data-testid="button-mobile-services"
                   >
                     <Link
-                      href="/commercial-waste"
+                      href={topLabels.services.href}
                       className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
-                      Waste Management Services
+                      {topLabels.services.label}
                     </Link>
                     <button
                       type="button"
@@ -595,11 +613,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     data-testid="button-mobile-sectors"
                   >
                     <a
-                      href="/who-we-serve"
+                      href={topLabels.sectors.href}
                       className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
-                      Who We Serve
+                      {topLabels.sectors.label}
                     </a>
                     <button
                       type="button"
@@ -641,11 +659,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     data-testid="button-mobile-locations"
                   >
                     <Link
-                      href="/locations"
+                      href={topLabels.locations.href}
                       className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
-                      Locations
+                      {topLabels.locations.label}
                     </Link>
                     <button
                       type="button"
@@ -687,11 +705,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     data-testid="button-mobile-about"
                   >
                     <a
-                      href="/about"
+                      href={topLabels.about.href}
                       className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
                       onClick={() => setIsNavExpanded(false)}
                     >
-                      About Us
+                      {topLabels.about.label}
                     </a>
                     <button
                       type="button"
