@@ -207,7 +207,15 @@ const LoadingScreen = () => {
 const HERO_BASE_DELAY = `${(LOADER_TOTAL_MS / 1000) + 0.1}s`;
 const HERO_STAGGER = 0.15;
 
-const Hero = () => {
+const Hero = ({
+  heroTagline,
+  heroHeading,
+  heroSubheading,
+}: {
+  heroTagline?: string;
+  heroHeading?: string;
+  heroSubheading?: string;
+} = {}) => {
   return (
     <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
       {/* Background Video */}
@@ -237,7 +245,7 @@ const Hero = () => {
             style={{ animationDelay: HERO_BASE_DELAY }}
           >
             <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
-            Nationwide Commercial Waste Management
+            {heroTagline || "Nationwide Commercial Waste Management"}
           </div>
 
           <h1
@@ -245,14 +253,14 @@ const Hero = () => {
             className="hero-fade-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5"
             style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER}s` }}
           >
-            Centralized Waste Logistics for Businesses at Scale
+            {heroHeading || "Centralized Waste Logistics for Businesses at Scale"}
           </h1>
           
           <p
             className="hero-fade-up text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md"
             style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 2}s` }}
           >
-            Coordinated execution for complex projects, multi-site operations, and urgent demands across 48 states.
+            {heroSubheading || "Coordinated execution for complex projects, multi-site operations, and urgent demands across 48 states."}
           </p>
           
           <div
@@ -751,7 +759,11 @@ export default function Home({ acf, globalSections, testimonials, caseStudies, p
         Skip to main content
       </a>
       <Navbar />
-      <Hero />
+      <Hero
+        heroTagline={acf?.heroTagline}
+        heroHeading={acf?.heroHeading}
+        heroSubheading={acf?.heroSubheading}
+      />
       <main id="main-content" role="main">
       <LogoReelSection
         headline={gs?.logoReel?.headline}
