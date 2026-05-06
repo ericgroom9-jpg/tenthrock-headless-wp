@@ -1658,6 +1658,10 @@ h1, h3, h4, h5, h6, h2 {
   display: grid;
 }
 
+.contents {
+  display: contents;
+}
+
 .hidden {
   display: none;
 }
@@ -2948,11 +2952,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .border-l-transparent {
   border-left-color: #0000;
-}
-
-.border-t-\[\#042940\] {
-  --tw-border-opacity: 1;
-  border-top-color: rgb(4 41 64 / var(--tw-border-opacity, 1));
 }
 
 .border-t-transparent {
@@ -7886,6 +7885,10 @@ h1, h3, h4, h5, h6, h2 {
   font-weight: 600;
 }
 
+.\[\&_p\]\:mb-4 p {
+  margin-bottom: 1rem;
+}
+
 .\[\&_p\]\:text-base p {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -7912,51 +7915,16 @@ h1, h3, h4, h5, h6, h2 {
   flex-shrink: 0;
 }
 
-.\[\&_table\]\:w-full table {
-  width: 100%;
-}
-
-.\[\&_td\]\:border td {
-  border-width: 1px;
-}
-
-.\[\&_td\]\:border-gray-200 td {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
-}
-
-.\[\&_td\]\:p-2 td {
-  padding: .5rem;
-}
-
-.\[\&_th\]\:border th {
-  border-width: 1px;
-}
-
-.\[\&_th\]\:border-gray-200 th {
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
-}
-
-.\[\&_th\]\:bg-gray-50 th {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-}
-
-.\[\&_th\]\:p-2 th {
-  padding: .5rem;
-}
-
-.\[\&_th\]\:font-semibold th {
-  font-weight: 600;
-}
-
 .\[\&_tr\:last-child\]\:border-0 tr:last-child {
   border-width: 0;
 }
 
 .\[\&_tr\]\:border-b tr {
   border-bottom-width: 1px;
+}
+
+.\[\&_ul\]\:mb-4 ul {
+  margin-bottom: 1rem;
 }
 
 .\[\&_ul\]\:list-disc ul {

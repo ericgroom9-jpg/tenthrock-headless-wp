@@ -1,10 +1,8 @@
 import { fetchPrivacyPolicyAcf } from "@/lib/wordpress";
-import { fetchTermageddonContent } from "@/lib/termageddon";
+import { PRIVACY_POLICY_HTML } from "@/lib/legal-content";
 import PrivacyPolicyClient from "./PrivacyPolicyClient";
 
 export const revalidate = 1800;
-
-const DEFAULT_KEY = "TVdZcmMxWmpXRGxsV0RkblJHYzlQUT09";
 
 export async function generateMetadata() {
   const data = await fetchPrivacyPolicyAcf();
@@ -16,7 +14,5 @@ export async function generateMetadata() {
 
 export default async function PrivacyPolicyPage() {
   const data = await fetchPrivacyPolicyAcf();
-  const embedKey = data?.embedKey || DEFAULT_KEY;
-  const initialContent = await fetchTermageddonContent(embedKey);
-  return <PrivacyPolicyClient data={data} initialContent={initialContent} />;
+  return <PrivacyPolicyClient data={data} content={PRIVACY_POLICY_HTML} />;
 }
