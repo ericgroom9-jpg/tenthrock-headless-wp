@@ -109,13 +109,16 @@ export default function AboutClient({ acf, globalSections }: Props) {
             </FadeIn>
             
             <FadeIn className="lg:pt-8">
-              <div className="text-base text-primary/70 leading-relaxed space-y-6 [&_p]:leading-relaxed [&_p+p]:mt-6">
-                {storyHasHtml ? (
-                  <div dangerouslySetInnerHTML={{ __html: storyBody }} />
-                ) : (
-                  storyParagraphs.map((p, i) => <p key={i}>{p}</p>)
-                )}
-              </div>
+              {storyHasHtml ? (
+                <div
+                  className="text-base text-primary/70 leading-relaxed space-y-6"
+                  dangerouslySetInnerHTML={{ __html: storyBody }}
+                />
+              ) : (
+                <div className="text-base text-primary/70 leading-relaxed space-y-6">
+                  {storyParagraphs.map((p, i) => <p key={i}>{p}</p>)}
+                </div>
+              )}
             </FadeIn>
           </div>
           
