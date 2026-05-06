@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,14 +9,16 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import Logo from "@/components/shared/Logo";
 
-const serviceLinks = [
+interface FlatLink { label: string; href: string }
+
+const DEFAULT_SERVICE_LINKS: FlatLink[] = [
   { label: "Emergency Waste Removal", href: "/emergency-waste-removal" },
   { label: "Specialized Project Logistics", href: "/specialized-project-logistics" },
   { label: "Dumpster Rentals", href: "/dumpsters-containers" },
   { label: "Waste Advisory", href: "/waste-operations-advisory" },
 ];
 
-const industryLinks = [
+const DEFAULT_INDUSTRY_LINKS: FlatLink[] = [
   { label: "Retail", href: "/retail" },
   { label: "Stadiums & Events", href: "/stadiums-events" },
   { label: "Faith Based", href: "/faith-based" },
@@ -26,7 +29,78 @@ const industryLinks = [
   { label: "Municipalities", href: "/municipalities" },
 ];
 
+const DEFAULT_COMPANY_LINKS: FlatLink[] = [
+  { label: "About Us", href: "/about" },
+  { label: "Our Process", href: "/our-process" },
+  { label: "Who We Serve", href: "/who-we-serve" },
+  { label: "Locations", href: "/locations" },
+  { label: "Success Stories", href: "#" },
+  { label: "Join Our Network", href: "/join-our-network" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
+  { label: "Request A Service", href: "/request-a-service" },
+];
+
+const DEFAULT_LEGAL_LINKS: FlatLink[] = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
+];
+
+// Match WP social menu items to their lucide icon by label substring.
+const SOCIAL_ICONS: Array<{ match: RegExp; Icon: typeof Linkedin }> = [
+  { match: /linkedin/i,  Icon: Linkedin },
+  { match: /twitter|^x$|x\.com/i, Icon: Twitter },
+  { match: /instagram/i, Icon: Instagram },
+  { match: /facebook/i,  Icon: Facebook },
+];
+
+const DEFAULT_SOCIAL_LINKS: FlatLink[] = [
+  { label: "LinkedIn",  href: "#" },
+  { label: "Twitter",   href: "#" },
+  { label: "Instagram", href: "#" },
+  { label: "Facebook",  href: "#" },
+];
+
+function pickIcon(label: string): typeof Linkedin {
+  return SOCIAL_ICONS.find(s => s.match.test(label))?.Icon ?? Linkedin;
+}
+
 export default function Footer() {
+  const [serviceLinks, setServiceLinks]   = useState<FlatLink[]>(DEFAULT_SERVICE_LINKS);
+  const [industryLinks, setIndustryLinks] = useState<FlatLink[]>(DEFAULT_INDUSTRY_LINKS);
+  const [companyLinks, setCompanyLinks]   = useState<FlatLink[]>(DEFAULT_COMPANY_LINKS);
+  const [legalLinks, setLegalLinks]       = useState<FlatLink[]>(DEFAULT_LEGAL_LINKS);
+  const [socialLinks, setSocialLinks]     = useState<FlatLink[]>(DEFAULT_SOCIAL_LINKS);
+
+  useEffect(() => {
+    let cancelled = false;
+    const fetchOne = async (loc: string): Promise<FlatLink[] | null> => {
+      try {
+        const res = await fetch(`/api/menus/${loc}`);
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (!Array.isArray(data?.flat) || data.flat.length === 0) return null;
+        return data.flat as FlatLink[];
+      } catch { return null; }
+    };
+    (async () => {
+      const [svc, ind, comp, leg, soc] = await Promise.all([
+        fetchOne("footer-services"),
+        fetchOne("footer-industries"),
+        fetchOne("footer-company"),
+        fetchOne("footer-legal"),
+        fetchOne("footer-social"),
+      ]);
+      if (cancelled) return;
+      if (svc)  setServiceLinks(svc);
+      if (ind)  setIndustryLinks(ind);
+      if (comp) setCompanyLinks(comp);
+      if (leg)  setLegalLinks(leg);
+      if (soc)  setSocialLinks(soc);
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
   return (
     <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white py-20 border-t border-white/5">
       <div className="container mx-auto px-4 md:px-8">
@@ -41,18 +115,24 @@ export default function Footer() {
               Redefining commercial waste management with speed, transparency, and reliability across 48 states.
             </p>
             <div className="flex gap-3">
-              <a href="#" aria-label="LinkedIn" data-testid="link-social-linkedin" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="#" aria-label="Twitter" data-testid="link-social-twitter" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" aria-label="Instagram" data-testid="link-social-instagram" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" aria-label="Facebook" data-testid="link-social-facebook" className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                <Facebook className="w-5 h-5" />
-              </a>
+              {socialLinks.map((social) => {
+                const Icon = pickIcon(social.label);
+                const slug = social.label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+                const isExternal = /^https?:\/\//i.test(social.href);
+                return (
+                  <a
+                    key={`${social.label}-${social.href}`}
+                    href={social.href}
+                    aria-label={social.label}
+                    data-testid={`link-social-${slug}`}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer"
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                );
+              })}
             </div>
           </FadeIn>
           
@@ -91,15 +171,20 @@ export default function Footer() {
           >
             <p className="font-bold text-lg mb-6 text-white">Company</p>
             <ul className="space-y-1 text-white/60 text-sm">
-              <li><Link href="/about" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-about">About Us</Link></li>
-              <li><Link href="/our-process" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-process">Our Process</Link></li>
-              <li><Link href="/who-we-serve" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-who-we-serve">Who We Serve</Link></li>
-              <li><Link href="/locations" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-locations">Locations</Link></li>
-              <li><Link href="#" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-success-stories">Success Stories</Link></li>
-              <li><Link href="/join-our-network" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-join-network">Join Our Network</Link></li>
-              <li><Link href="/faq" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-faq">FAQ</Link></li>
-              <li><Link href="/contact" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-contact">Contact</Link></li>
-              <li><Link href="/request-a-service" className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid="link-footer-request-service">Request A Service</Link></li>
+              {companyLinks.map((item) => {
+                const slug = item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+                return (
+                  <li key={`${item.label}-${item.href}`}>
+                    <Link
+                      href={item.href}
+                      className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center"
+                      data-testid={`link-footer-company-${slug}`}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </FadeIn>
 
@@ -139,8 +224,19 @@ export default function Footer() {
             <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:underline" data-testid="text-footer-address">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
           </div>
           <div className="flex gap-6 mt-2 md:mt-0">
-            <Link href="/privacy-policy" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-privacy">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center" data-testid="link-footer-terms">Terms of Service</Link>
+            {legalLinks.map((item) => {
+              const slug = item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+              return (
+                <Link
+                  key={`${item.label}-${item.href}`}
+                  href={item.href}
+                  className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center"
+                  data-testid={`link-footer-legal-${slug}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

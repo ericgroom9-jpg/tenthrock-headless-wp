@@ -6,7 +6,7 @@ A high-performance, SEO-friendly headless WordPress site using Next.js and Postg
 
 - **Run Dev Server:** `npm run dev`
 - **Build:** `npm run build`
-- **Typecheck:** `npm run typecheck`
+- **Typecheck:** `npm run check`
 - **Codegen (GraphQL types):** `npm run codegen`
 - **DB Push (Drizzle schema):** `drizzle-kit push:pg`
 
@@ -32,6 +32,7 @@ A high-performance, SEO-friendly headless WordPress site using Next.js and Postg
 ## Where things live
 
 - **WordPress Content Sync/Caching:** `lib/wordpress.ts`, `drizzle/schema.ts`
+- **WordPress Nav Menus:** `lib/menus.ts` (fetch + tree builder), `app/api/menus/[location]/route.ts` (client proxy), `scripts/register-nav-menus-snippet.php` (WP side: 8 locations + REST), `scripts/seed-nav-menus.mjs` (initial seed). Consumed by `components/shared/Navbar.tsx` and `components/shared/Footer.tsx` via client-side fetch with hardcoded defaults as FOUC fallback.
 - **Dynamic Routes Configuration:** `lib/config/post-types.ts`
 - **Middleware:** `middleware.ts`
 - **API Routes:** `app/api/*`
@@ -71,6 +72,8 @@ I want to interact with the agent in an iterative development approach. I prefer
 - **WP → Next.js cache invalidation on save:** Editor edits require `revalidateTag('wordpress')` called via a webhook to appear on the frontend within seconds.
 - **CPT pages must `notFound()` on missing data:** Returning null produces an empty 200, which is bad for SEO.
 - **Homepage hardcoded fallback pattern:** Components use `acfValue || hardcodedFallback` for content. For repeaters, the hardcoded array acts as a per-index fallback for missing fields.
+- **Nav menu auth quirk (staging):** The headless REST endpoint `/wp-json/headless/v1/menus/<location>` is `__return_true` (public). On `tenthrock.sherstaging.com` the staging gate accepts unauthenticated requests for `/wp-json/*` but **rejects** `WP_AUTH_USER:WP_AUTH_PASSWORD` (those are GraphQL-only creds). `lib/menus.ts` therefore tries no-auth first and falls back to `PREVIEW_USER_UN/PASS` only on 401 — never sends `WP_AUTH_*`.
+- **Nav menus use client-side fetch with hardcoded defaults:** `Navbar.tsx`/`Footer.tsx` are imported by 21+ "use client" page files. To avoid converting them all to async server components, they hold static `DEFAULT_*` arrays matching the WP seed 1:1 (no FOUC) and `useEffect`-fetch from the proxy on mount. Editor changes propagate within seconds via the existing `revalidateTag('wordpress')` webhook (snippet #14 fires it on `wp_update_nav_menu`/create/delete). Primary menu uses **label-substring matching** ("service"/"who we serve"/"about") so editors can rename top-level items freely; renaming requires snake-case keywords to remain in the label.
 - **Page-template slug renames propagate from WP:** Each of the 14 page-template pages is identified internally by its `headlessTemplate` value (e.g. `template-about`), exposed on `Page` over WPGraphQL via `scripts/register-page-templates-snippet.php`. `lib/wordpress.ts` exports `fetchPageTemplateSlugMap()` which returns `{ [wpTemplate]: currentSlug }`; every `fetchXxxAcf()` for a page template resolves the slug through this map before calling `GET_PAGE_TEMPLATE_ACF_QUERY`, so editor slug renames don't disconnect ACF data. `middleware.ts` does its own combined fetch (`getSlugRoutingData()` — page template slugs **plus** all `services`+`industries` slugs as a collision guard) and on each request: (a) rewrites `/<wpSlug>` → the canonical folder route from `PAGE_TEMPLATE_CONFIG` so the existing `app/<canonical>/page.tsx` renders, and (b) 301-redirects `/<canonical>` → `/<wpSlug>` so the public URL follows the editor's slug change. Homepage `/` is exempt from the redirect leg, but `/home` (or whatever the homepage's WP slug is) rewrites to `/`. Templates with `[slug]` in their route (e.g. `template-location`) are skipped. **Collision guard:** if the WP slug matches an existing service/industry CPT slug, middleware logs a warning and skips both legs — never hijacks a CPT URL. **No process-memory TTL** in middleware for this fetch: it's tagged `wordpress` and snippet #11 fires `revalidateTag('wordpress')` on every WP save, so the Next data cache is the single source of freshness.
 
 ## Pointers

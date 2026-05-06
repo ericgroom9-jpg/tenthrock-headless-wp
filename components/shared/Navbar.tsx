@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/shared/Logo";
@@ -10,7 +10,15 @@ interface NavbarProps {
   variant?: "floating" | "sticky";
 }
 
-const serviceCategories = [
+interface MenuNode {
+  id: number;
+  label: string;
+  href: string;
+  target?: string;
+  children: MenuNode[];
+}
+
+const DEFAULT_SERVICE_CATEGORIES = [
   {
     label: "Emergency Waste Removal",
     href: "/emergency-waste-removal",
@@ -49,7 +57,7 @@ const serviceCategories = [
   },
 ];
 
-const sectorLinks = [
+const DEFAULT_SECTOR_LINKS = [
   { label: "Retail", href: "/retail" },
   { label: "Stadiums & Events", href: "/stadiums-events" },
   { label: "Faith Based", href: "/faith-based" },
@@ -60,7 +68,7 @@ const sectorLinks = [
   { label: "Municipalities", href: "/municipalities" },
 ];
 
-const locationLinks = [
+const DEFAULT_LOCATION_LINKS = [
   "Alabama", "Arizona", "Arkansas", "California", "Colorado",
   "Connecticut", "Delaware", "Florida", "Georgia", "Idaho",
   "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
@@ -76,11 +84,16 @@ const locationLinks = [
   href: `/locations/${state.toLowerCase().replace(/\s+/g, "-")}`,
 }));
 
-const aboutLinks = [
+const DEFAULT_ABOUT_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Join Our Network", href: "/join-our-network" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
+];
+
+const DEFAULT_HEADER_CTAS = [
+  { label: "Login", href: "#" },
+  { label: "Request A Service", href: "/request-a-service" },
 ];
 
 export default function Navbar({ variant = "floating" }: NavbarProps) {
@@ -89,6 +102,71 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
   const [isSectorsOpen, setIsSectorsOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+
+  // Menus from WordPress (with hardcoded fallbacks while loading or if WP unreachable)
+  const [serviceCategories, setServiceCategories] = useState(DEFAULT_SERVICE_CATEGORIES);
+  const [sectorLinks, setSectorLinks] = useState(DEFAULT_SECTOR_LINKS);
+  const [locationLinks, setLocationLinks] = useState(DEFAULT_LOCATION_LINKS);
+  const [aboutLinks, setAboutLinks] = useState(DEFAULT_ABOUT_LINKS);
+  const [headerCtas, setHeaderCtas] = useState(DEFAULT_HEADER_CTAS);
+
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const [primaryRes, ctasRes, locsRes] = await Promise.all([
+          fetch("/api/menus/primary").then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch("/api/menus/header-ctas").then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch("/api/menus/locations-dropdown").then(r => r.ok ? r.json() : null).catch(() => null),
+        ]);
+        if (cancelled) return;
+
+        const primary: MenuNode[] | null = primaryRes?.tree ?? null;
+        if (primary && primary.length) {
+          // Match by label (case-insensitive contains) so editors can rename freely.
+          const byLabel = (needle: string) => primary.find(n =>
+            n.label.toLowerCase().includes(needle.toLowerCase())
+          );
+          const services = byLabel("service") || byLabel("waste management");
+          const sectors  = byLabel("who we serve") || byLabel("industries") || byLabel("sectors");
+          const about    = byLabel("about");
+
+          if (services && services.children.length) {
+            setServiceCategories(services.children.map(cat => ({
+              label: cat.label,
+              href: cat.href,
+              subServices: cat.children.map(s => ({ label: s.label, href: s.href })),
+            })));
+          }
+          if (sectors && sectors.children.length) {
+            setSectorLinks(sectors.children.map(s => ({ label: s.label, href: s.href })));
+          }
+          if (about && about.children.length) {
+            setAboutLinks(about.children.map(s => ({ label: s.label, href: s.href })));
+          }
+        }
+
+        const ctas: MenuNode[] | null = ctasRes?.tree ?? null;
+        if (ctas && ctas.length) {
+          setHeaderCtas(ctas.map(c => ({ label: c.label, href: c.href })));
+        }
+
+        const locs: MenuNode[] | null = locsRes?.tree ?? null;
+        if (locs && locs.length) {
+          setLocationLinks(locs.map(l => ({ label: l.label, href: l.href })));
+        }
+      } catch {
+        // keep defaults on error
+      }
+    };
+    load();
+    return () => { cancelled = true; };
+  }, []);
+
+  // If WP has only 1 header CTA, treat it as the primary action and keep
+  // Login from the defaults so we never render two identical buttons.
+  const loginCta   = headerCtas.length >= 2 ? headerCtas[0] : DEFAULT_HEADER_CTAS[0];
+  const primaryCta = headerCtas[headerCtas.length - 1] ?? DEFAULT_HEADER_CTAS[1];
 
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -131,10 +209,10 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
               className="bg-[#c5d520] text-[#042940] font-bold rounded-full px-2.5 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20 hover:bg-[#d6d98b] active:bg-[#d6d98b]"
               data-testid="button-mobile-cta"
             >
-              <Link href="/request-a-service">
-                <span className="sm:hidden" aria-hidden="true">Get Service</span>
-                <span className="hidden sm:inline">Request A Service</span>
-                <span className="sr-only sm:hidden">Request A Service</span>
+              <Link href={primaryCta.href}>
+                <span className="sm:hidden" aria-hidden="true">{primaryCta.label.length > 11 ? "Get Service" : primaryCta.label}</span>
+                <span className="hidden sm:inline">{primaryCta.label}</span>
+                <span className="sr-only sm:hidden">{primaryCta.label}</span>
               </Link>
             </Button>
             <button 
@@ -437,11 +515,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
 
           {/* Right Side Actions - desktop only */}
           <div className="hidden xl:flex items-center gap-3 shrink-0">
-            <Button size="lg" variant="ghost" className="text-primary font-extrabold transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-login">
-              Login
+            <Button asChild size="lg" variant="ghost" className="text-primary font-extrabold transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-login">
+              <Link href={loginCta.href}>{loginCta.label}</Link>
             </Button>
             <Button asChild size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
-              <Link href="/request-a-service">Request A Service</Link>
+              <Link href={primaryCta.href}>{primaryCta.label}</Link>
             </Button>
           </div>
         </div>
@@ -649,8 +727,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                 </div>
 
                 <div className="pt-4 px-4 space-y-3">
-                  <Button variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] whitespace-nowrap" data-testid="button-mobile-login">
-                    Login
+                  <Button asChild variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] whitespace-nowrap" data-testid="button-mobile-login">
+                    <Link href={loginCta.href} onClick={() => setIsNavExpanded(false)}>{loginCta.label}</Link>
                   </Button>
                   <Button 
                     asChild 
@@ -658,7 +736,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
                     className="w-full bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full"
                     data-testid="button-mobile-menu-cta"
                   >
-                    <Link href="/request-a-service" onClick={() => setIsNavExpanded(false)}>Request A Service</Link>
+                    <Link href={primaryCta.href} onClick={() => setIsNavExpanded(false)}>{primaryCta.label}</Link>
                   </Button>
                 </div>
               </div>
