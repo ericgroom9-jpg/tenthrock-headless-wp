@@ -2135,9 +2135,7 @@ export interface ThankYouTemplateData {
 
 export interface LegalPageTemplateData {
   heading?: string;
-  embedKey?: string;
-  fallbackText?: string;
-  fallbackLinkText?: string;
+  bodyContent?: string;
   seoMetadata?: SeoMetadata;
 }
 
@@ -2462,15 +2460,11 @@ const GET_PAGE_TEMPLATE_ACF_QUERY = gql`
       }
       privacyFields {
         heading
-        embedKey
-        fallbackText
-        fallbackLinkText
+        bodyContent
       }
       termsFields {
         heading
-        embedKey
-        fallbackText
-        fallbackLinkText
+        bodyContent
       }
     }
   }
@@ -2971,9 +2965,7 @@ async function fetchLegalPageAcf(slug: string, fieldName: string): Promise<Legal
     if (!fields || !hasData(fields)) return null;
     return {
       heading: fields.heading || undefined,
-      embedKey: fields.embedKey || undefined,
-      fallbackText: fields.fallbackText || undefined,
-      fallbackLinkText: fields.fallbackLinkText || undefined,
+      bodyContent: fields.bodyContent || undefined,
       seoMetadata: transformSeoData(page?.seo || null),
     };
   } catch (error) {

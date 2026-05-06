@@ -20,6 +20,19 @@ const baseUrl = WP_API_URL.replace(/\/graphql\/?$/, '');
 const auth = 'Basic ' + Buffer.from(`${USER}:${PASS}`).toString('base64');
 const TPL = (slug) => slug;
 
+// Pull static legal HTML out of lib/legal-content.ts (so we don't duplicate it here).
+import { readFileSync } from 'node:fs';
+const legalSrc = readFileSync(new URL('../lib/legal-content.ts', import.meta.url), 'utf8');
+function extractConst(name) {
+  const m = legalSrc.match(new RegExp(`export const ${name}\\s*=\\s*\`([\\s\\S]*?)\`;`));
+  if (!m) throw new Error(`Could not extract ${name} from lib/legal-content.ts`);
+  return m[1];
+}
+const LEGAL_CONTENT = {
+  PRIVACY_POLICY_HTML: extractConst('PRIVACY_POLICY_HTML'),
+  TERMS_OF_SERVICE_HTML: extractConst('TERMS_OF_SERVICE_HTML'),
+};
+
 async function wp(method, endpoint, body) {
   const url = `${baseUrl}/wp-json${endpoint}`;
   const opts = {
@@ -495,9 +508,7 @@ We are proud to support organizations that drive meaningful impact and foster en
     template: TPL('template-privacy-policy'),
     acf: {
       heading: 'Privacy Policy',
-      embed_key: '',
-      fallback_text: 'Privacy policy content is being prepared. Please',
-      fallback_link_text: 'contact us',
+      body_content: LEGAL_CONTENT.PRIVACY_POLICY_HTML,
     },
   },
   {
@@ -506,9 +517,7 @@ We are proud to support organizations that drive meaningful impact and foster en
     template: TPL('template-terms-of-service'),
     acf: {
       heading: 'Terms of Service',
-      embed_key: '',
-      fallback_text: 'Terms of service content is being prepared. Please',
-      fallback_link_text: 'contact us',
+      body_content: LEGAL_CONTENT.TERMS_OF_SERVICE_HTML,
     },
   },
 ];

@@ -14,5 +14,6 @@ export async function generateMetadata() {
 
 export default async function TermsOfServicePage() {
   const data = await fetchTermsOfServiceAcf();
-  return <TermsOfServiceClient data={data} content={TERMS_OF_SERVICE_HTML} />;
+  const content = data?.bodyContent?.trim() || TERMS_OF_SERVICE_HTML;
+  return <TermsOfServiceClient data={data} content={content} />;
 }

@@ -826,9 +826,10 @@ add_action( 'acf/init', function () {
         'graphql_types'     => array('Page'),
         'fields'   => array(
             _tr_f( 'field_pt_pp_heading', 'Heading', 'heading' ),
-            _tr_f( 'field_pt_pp_embed_key', 'Termageddon Embed Key', 'embed_key' ),
-            _tr_f( 'field_pt_pp_fallback', 'Fallback Text', 'fallback_text' ),
-            _tr_f( 'field_pt_pp_fb_link', 'Fallback Link Text', 'fallback_link_text' ),
+            _tr_f( 'field_pt_pp_body', 'Body Content', 'body_content', 'wysiwyg', array(
+                'tabs' => 'all', 'toolbar' => 'full', 'media_upload' => 0, 'delay' => 0,
+                'instructions' => 'Full privacy policy body. Headings (H2), paragraphs, and lists render with the page styling.',
+            ) ),
         ),
     ));
 
@@ -843,9 +844,10 @@ add_action( 'acf/init', function () {
         'graphql_types'     => array('Page'),
         'fields'   => array(
             _tr_f( 'field_pt_tos_heading', 'Heading', 'heading' ),
-            _tr_f( 'field_pt_tos_embed_key', 'Termageddon Embed Key', 'embed_key' ),
-            _tr_f( 'field_pt_tos_fallback', 'Fallback Text', 'fallback_text' ),
-            _tr_f( 'field_pt_tos_fb_link', 'Fallback Link Text', 'fallback_link_text' ),
+            _tr_f( 'field_pt_tos_body', 'Body Content', 'body_content', 'wysiwyg', array(
+                'tabs' => 'all', 'toolbar' => 'full', 'media_upload' => 0, 'delay' => 0,
+                'instructions' => 'Full terms of service body. Headings (H2), paragraphs, and lists render with the page styling.',
+            ) ),
         ),
     ));
 });

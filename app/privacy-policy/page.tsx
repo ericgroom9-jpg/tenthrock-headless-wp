@@ -14,5 +14,6 @@ export async function generateMetadata() {
 
 export default async function PrivacyPolicyPage() {
   const data = await fetchPrivacyPolicyAcf();
-  return <PrivacyPolicyClient data={data} content={PRIVACY_POLICY_HTML} />;
+  const content = data?.bodyContent?.trim() || PRIVACY_POLICY_HTML;
+  return <PrivacyPolicyClient data={data} content={content} />;
 }
