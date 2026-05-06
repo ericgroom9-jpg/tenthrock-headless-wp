@@ -283,83 +283,9 @@ add_action( 'graphql_register_types', function () {
     ) );
 } );
 
-// ─────────────────────────────────────────────────────────────
-// Gutenberg sidebar panel — kept as a backup for editors who
-// prefer a dropdown over the native modal. Writes to the legacy
-// meta field, which the resolver also consults.
-// ─────────────────────────────────────────────────────────────
-
-add_action( 'enqueue_block_editor_assets', function () {
-    $screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
-    if ( $screen && isset( $screen->post_type ) && $screen->post_type !== 'page' ) {
-        return;
-    }
-
-    $templates = tr_headless_templates();
-    $options   = array();
-    foreach ( $templates as $value => $label ) {
-        $options[] = array( 'value' => $value, 'label' => $label );
-    }
-    $options_json = wp_json_encode( $options );
-
-    $js = <<<JS
-( function( wp ) {
-    if ( ! wp || ! wp.plugins || ! wp.editPost || ! wp.element || ! wp.components || ! wp.data ) {
-        return;
-    }
-    var el                          = wp.element.createElement;
-    var registerPlugin              = wp.plugins.registerPlugin;
-    var PluginDocumentSettingPanel  = wp.editPost.PluginDocumentSettingPanel;
-    var SelectControl               = wp.components.SelectControl;
-    var useSelect                   = wp.data.useSelect;
-    var useDispatch                 = wp.data.useDispatch;
-
-    var TEMPLATES = {$options_json};
-    var META_KEY  = '_headless_template';
-
-    function HeadlessTemplatePanel() {
-        var postType = useSelect( function( select ) {
-            return select( 'core/editor' ).getCurrentPostType();
-        }, [] );
-
-        if ( postType !== 'page' ) {
-            return null;
-        }
-
-        var meta = useSelect( function( select ) {
-            return select( 'core/editor' ).getEditedPostAttribute( 'meta' ) || {};
-        }, [] );
-        var current = meta[ META_KEY ] || '';
-
-        var editPost = useDispatch( 'core/editor' ).editPost;
-
-        return el(
-            PluginDocumentSettingPanel,
-            {
-                name:      'tr-headless-template',
-                title:     'Headless Template (legacy)',
-                className: 'tr-headless-template-panel',
-                icon:      'layout'
-            },
-            el( 'p', { style: { marginTop: 0, color: '#666' } },
-                'Optional fallback. Prefer the native "Template" picker above — it now includes all headless templates.'
-            ),
-            el( SelectControl, {
-                label:    'Template (fallback)',
-                value:    current,
-                options:  TEMPLATES,
-                onChange: function( value ) {
-                    var update = {};
-                    update[ META_KEY ] = value;
-                    editPost( { meta: update } );
-                }
-            } )
-        );
-    }
-
-    registerPlugin( 'tr-headless-template', { render: HeadlessTemplatePanel } );
-} )( window.wp );
-JS;
-
-    wp_add_inline_script( 'wp-edit-post', $js );
-} );
+// Note: the editor sidebar panel was removed in favor of WordPress's
+// native "Template" picker, which now lists all 15 headless templates
+// thanks to the get_block_templates / get_block_template hooks above.
+// The legacy `_headless_template` meta is still registered (and kept in
+// sync via the save_post_page hook) so any pages that were set the old
+// way continue to render correctly.
