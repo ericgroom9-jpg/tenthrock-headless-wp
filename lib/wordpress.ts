@@ -642,6 +642,8 @@ const GET_LOCATION_BY_SLUG_QUERY = gql`
         aboutDescription
         aboutBullets { bulletText }
         trustedDescription
+        infoHeading
+        infoBody
         stateAbbreviation
         cities { cityName }
         faqs { question answer }
@@ -1571,13 +1573,18 @@ function transformLocationNode(node: WpCptNode): LocationTemplateData {
     aboutDescription?: string;
     aboutBullets?: { bulletText: string }[];
     trustedDescription?: string;
+    infoHeading?: string;
+    infoBody?: string;
     stateAbbreviation?: string;
     cities?: { cityName: string }[];
     faqs?: { question: string; answer: string }[];
   } | null;
 
   const locationName = node.title.replace(/^Waste Management Services in\s*/i, '');
-  const info = parseInfoFromContent(node.content);
+  // Prefer ACF fields; fall back to legacy JSON-in-content for any unmigrated posts.
+  const acfHeading = lf?.infoHeading?.trim();
+  const acfBody = lf?.infoBody?.trim();
+  const legacy = (acfHeading && acfBody) ? null : parseInfoFromContent(node.content);
 
   return {
     locationName,
@@ -1586,8 +1593,8 @@ function transformLocationNode(node: WpCptNode): LocationTemplateData {
     aboutDescription: lf?.aboutDescription || '',
     aboutBullets: lf?.aboutBullets?.map(b => b.bulletText) || [],
     trustedDescription: lf?.trustedDescription || '',
-    infoHeading: info.infoHeading,
-    infoBody: info.infoBody || `Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works directly with local waste facilities and hauling partners across ${locationName} to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.`,
+    infoHeading: acfHeading || legacy?.infoHeading || 'Why Local Businesses Choose Us',
+    infoBody: acfBody || legacy?.infoBody || `Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works directly with local waste facilities and hauling partners across ${locationName} to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.`,
     stateAbbreviation: lf?.stateAbbreviation || '',
     cities: lf?.cities?.map(c => c.cityName) || [],
     faqs: lf?.faqs?.length ? lf.faqs : [],

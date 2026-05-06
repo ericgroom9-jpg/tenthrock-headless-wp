@@ -71,17 +71,14 @@ function titleFromSlug(slug) {
 async function upsertLocation(slug, content, cities) {
   const stateName = titleFromSlug(slug);
   const title = `Waste Management Services in ${stateName}`;
-  // The frontend stores info heading/body in post content as JSON (per parseInfoFromContent).
-  const postContent = JSON.stringify({
-    infoHeading: content.thirdHeading,
-    infoBody: content.thirdDesc,
-  });
   const acf = {
     hero_subtitle: content.subtitle || '',
     hero_image: '/images/stock/locations-hero-modern-city.jpg',
     about_description: content.aboutDesc || '',
     about_bullets: (content.bullets || []).map(b => ({ bullet_text: b })),
     trusted_description: content.trustedDesc || '',
+    info_heading: content.thirdHeading || '',
+    info_body: content.thirdDesc || '',
     state_abbreviation: cities?.abbreviation || '',
     cities: (cities?.cities || []).map(c => ({ city_name: c })),
     faqs: (content.faqs || []).map(f => ({ question: f.question, answer: f.answer })),
@@ -89,10 +86,11 @@ async function upsertLocation(slug, content, cities) {
 
   const existing = await findPostBySlug('tr_location', slug);
   if (existing) {
-    await wpReq('POST', `tr_location/${existing.id}`, { title, content: postContent, status: 'publish', acf });
+    // Clear the legacy JSON-in-content field; ACF now owns info_heading/info_body.
+    await wpReq('POST', `tr_location/${existing.id}`, { title, content: '', status: 'publish', acf });
     return { id: existing.id, action: 'updated' };
   }
-  const created = await wpReq('POST', 'tr_location', { title, slug, content: postContent, status: 'publish', acf });
+  const created = await wpReq('POST', 'tr_location', { title, slug, content: '', status: 'publish', acf });
   return { id: created.id, action: 'created' };
 }
 

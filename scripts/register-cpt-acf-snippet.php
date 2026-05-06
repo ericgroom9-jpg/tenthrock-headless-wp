@@ -275,6 +275,8 @@ add_action( 'acf/init', function () {
                 tr_acf_field( 'field_loc_about_bullets_text', 'bullet_text', 'Bullet Text' ),
             ) ),
             tr_acf_field( 'field_loc_trusted_description', 'trusted_description', 'Trusted Description', 'textarea' ),
+            tr_acf_field( 'field_loc_info_heading',        'info_heading',        'Info Section Heading' ),
+            tr_acf_field( 'field_loc_info_body',           'info_body',           'Info Section Body', 'textarea' ),
             tr_acf_field( 'field_loc_state_abbreviation',  'state_abbreviation',  'State Abbreviation (e.g. NY)' ),
             tr_acf_repeater( 'field_loc_cities', 'cities', 'Cities', array(
                 tr_acf_field( 'field_loc_city_name', 'city_name', 'City Name' ),
