@@ -4820,10 +4820,6 @@ h1, h3, h4, h5, h6, h2 {
   color: hsl(var(--muted-foreground) / var(--tw-text-opacity, 1));
 }
 
-.placeholder\:text-white\/30::placeholder {
-  color: #ffffff4d;
-}
-
 .placeholder\:text-white\/40::placeholder {
   color: #fff6;
 }
@@ -4969,11 +4965,6 @@ h1, h3, h4, h5, h6, h2 {
 
 .hover\:bg-\[\#c5d520\]\/20:hover {
   background-color: #c5d52033;
-}
-
-.hover\:bg-\[\#d4e232\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(212 226 50 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-\[\#d6d98b\]:hover {
@@ -5357,11 +5348,6 @@ h1, h3, h4, h5, h6, h2 {
 .active\:bg-\[\#F9F9F6\]:active {
   --tw-bg-opacity: 1;
   background-color: rgb(249 249 246 / var(--tw-bg-opacity, 1));
-}
-
-.active\:bg-\[\#b3c11c\]:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(179 193 28 / var(--tw-bg-opacity, 1));
 }
 
 .active\:bg-\[\#c5d520\]:active {

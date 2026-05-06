@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { submitGravityForm } from "@/lib/gf/submit-client";
+import { GF_FORM_IDS } from "@/lib/gf/form-ids";
 import { Separator } from "@/components/ui/separator";
 import Logo from "@/components/shared/Logo";
 
@@ -196,16 +199,7 @@ export default function Footer() {
             <p className="text-white/60">
               Get service updates, industry news, and waste management tips for multi-location businesses.
             </p>
-            <div className="flex gap-2">
-              <Input 
-                placeholder="Enter your email" 
-                className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6"
-                data-testid="input-footer-newsletter"
-              />
-              <Button size="lg" className="bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap no-default-hover-elevate no-default-active-elevate hover:bg-[#d4e232] active:bg-[#b3c11c]" data-testid="button-footer-newsletter">
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </div>
+            <NewsletterForm />
             <div className="pt-4 border-t border-white/10 mt-6">
               <p className="text-sm font-bold text-white mb-2">Need Immediate Help?</p>
               <a href="tel:7275105454" className="text-xl font-bold text-[#c5d520] hover:underline" data-testid="link-footer-phone">
@@ -241,5 +235,63 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function NewsletterForm() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+    if (!email || !email.includes("@") || !email.includes(".")) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    const formEl = e.currentTarget;
+    setSubmitting(true);
+    try {
+      const result = await submitGravityForm(formEl, GF_FORM_IDS.newsletter);
+      if (!result.ok) {
+        throw new Error(result.error || "Something went wrong. Please try again.");
+      }
+      router.push(result.redirectUrl || "/thank-you/");
+    } catch (err: any) {
+      setError(err.message || "Something went wrong. Please try again.");
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} data-testid="form-footer-newsletter" noValidate>
+      <div className="flex gap-2">
+        <Input
+          type="email"
+          name="input_1"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          aria-label="Email address"
+          className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6"
+          data-testid="input-footer-newsletter"
+        />
+        <Button
+          type="submit"
+          size="lg"
+          disabled={submitting}
+          className="bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap no-default-hover-elevate no-default-active-elevate hover:bg-[#d4e232] active:bg-[#b3c11c]"
+          data-testid="button-footer-newsletter"
+        >
+          <ArrowRight className="w-5 h-5" />
+        </Button>
+      </div>
+      {error && (
+        <p className="text-red-300 text-sm mt-2" data-testid="text-footer-newsletter-error">{error}</p>
+      )}
+    </form>
   );
 }

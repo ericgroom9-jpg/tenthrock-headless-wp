@@ -38,7 +38,7 @@ A high-performance, SEO-friendly headless WordPress site using Next.js and Postg
 - **API Routes:** `app/api/*`
 - **Custom Post Types & Taxonomies:** Defined in WordPress via Code Snippets (`scripts/`)
 - **ACF Field Groups:** Defined in WordPress via Code Snippets (`scripts/`)
-- **Gravity Forms Integration:** `components/gravity-forms/*` (legacy generic renderer); the 5 native lead forms (Contact, Request A Service, Join Our Network, Service Inquiry, Location Inquiry) post to `/api/forms/submit-rest` via `lib/gf/submit-client.ts`. Form IDs in `lib/gf/form-ids.ts`. Seeded by `scripts/seed-gravity-forms.mjs`.
+- **Gravity Forms Integration:** `components/gravity-forms/*` (legacy generic renderer); the 6 native forms (Contact, Request A Service, Join Our Network, Service Inquiry, Location Inquiry, Newsletter footer signup) post to `/api/forms/submit-rest` via `lib/gf/submit-client.ts`. Form IDs in `lib/gf/form-ids.ts`. Seeded by `scripts/seed-gravity-forms.mjs`. Newsletter form (id 6) is wired in `components/shared/Footer.tsx`.
 - **US Map Data:** `components/shared/us-map-data.ts`
 - **Global CSS Variables:** `styles/globals.css`
 - **Storybook:** _Populate as you build_

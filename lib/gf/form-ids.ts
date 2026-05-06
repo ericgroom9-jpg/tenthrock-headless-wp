@@ -7,6 +7,7 @@ export const GF_FORM_IDS = {
   joinOurNetwork:   3,
   serviceInquiry:   4,
   locationInquiry:  5,
+  newsletter:       6,
 } as const;
 
 export type GfFormKey = keyof typeof GF_FORM_IDS;

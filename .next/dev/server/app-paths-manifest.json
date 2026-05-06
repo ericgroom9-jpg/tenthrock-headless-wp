@@ -1,22 +1,5 @@
 {
-  "/[slug]/page": "app/[slug]/page.js",
-  "/about/page": "app/about/page.js",
   "/api/forms/submit-rest/route": "app/api/forms/submit-rest/route.js",
   "/api/menus/[location]/route": "app/api/menus/[location]/route.js",
-  "/book-a-call/page": "app/book-a-call/page.js",
-  "/commercial-waste/page": "app/commercial-waste/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/emergency-waste-removal/page": "app/emergency-waste-removal/page.js",
-  "/events-stadiums/page": "app/events-stadiums/page.js",
-  "/faq/page": "app/faq/page.js",
-  "/join-our-network/page": "app/join-our-network/page.js",
-  "/locations/[slug]/page": "app/locations/[slug]/page.js",
-  "/locations/page": "app/locations/page.js",
-  "/our-process/page": "app/our-process/page.js",
-  "/page": "app/page.js",
-  "/privacy-policy/page": "app/privacy-policy/page.js",
-  "/request-a-service/page": "app/request-a-service/page.js",
-  "/terms-of-service/page": "app/terms-of-service/page.js",
-  "/thank-you/page": "app/thank-you/page.js",
-  "/who-we-serve/page": "app/who-we-serve/page.js"
+  "/page": "app/page.js"
 }
