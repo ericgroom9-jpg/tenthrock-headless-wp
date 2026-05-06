@@ -69,6 +69,8 @@ I want to interact with the agent in an iterative development approach. I prefer
 - **Snippet Installation:** Use `node scripts/install-snippet.mjs <id-or-name> <php-file>` for re-installing/re-deploying WordPress snippets.
 - **CPT pages must `notFound()` on missing data:** the 40+ hardcoded CPT routes under `app/*/page.tsx` must call `notFound()` (not `return null`) when their `fetchServiceWithAcf`/`fetchIndustryWithAcf` returns null. Returning null produces an empty 200 that gets indexed as thin content.
 - **SEO heading audit:** `node scripts/audit-headings.mjs` fetches every page template + representative CPT, parses H1–H6, and prints a unified pass/fail table. Run after template or content changes.
+- **Deeper semantic heading audit:** `node scripts/audit-headings-semantic.mjs` additionally flags sr-only / hidden H1s and visually-styled large text (`text-3xl..text-7xl`) on non-heading tags. Numeric stat displays (e.g. `30%`, `5K+`, `10 min`) are excluded automatically — they are data, not headings.
+- **Homepage SSR:** `components/home/HomeClient.tsx` must dynamically import `TenthRockHome` WITHOUT `ssr: false` — disabling SSR strips the real `<h1>`/`<h2>`/`<h3>` from the initial HTML and crawlers / screen readers only see the loading fallback. The hero `<h1 id="hero-heading">` is the single visible H1; do not re-add an `sr-only` H1 alongside it.
 
 ## Pointers
 
