@@ -1,60 +1,77 @@
 # Headless WordPress Boilerplate
 
-## Overview
-This project delivers a modern headless WordPress boilerplate using Next.js App Router and PostgreSQL. It focuses on providing a high-performance, SEO-friendly, and robust solution for decoupled WordPress sites, specifically targeting the default "Posts" content type with full taxonomy support. The system aims to enhance the developer experience while offering advanced features like content caching, real-time previewing, and dynamic content revalidation.
+This application provides a high-performance, SEO-friendly headless WordPress site using Next.js and PostgreSQL, focusing on posts and taxonomy support.
 
-## User Preferences
+## Run & Operate
+
+- **Run Dev Server:** `npm run dev`
+- **Build:** `npm run build`
+- **Typecheck:** `npm run typecheck`
+- **Codegen (GraphQL types):** `npm run codegen`
+- **DB Push (Drizzle schema):** `drizzle-kit push:pg`
+
+**Required Environment Variables:**
+- `WORDPRESS_GRAPHQL_URL`
+- `WORDPRESS_REST_URL`
+- `WP_PREVIEW_SECRET`
+- `WP_REVALIDATE_SECRET`
+- `DATABASE_URL`
+- `PREVIEW_USER_UN` (for snippet installation)
+- `PREVIEW_USER_PASS` (for snippet installation)
+
+## Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Runtime:** Node.js (version specified in `package.json`)
+- **Language:** TypeScript
+- **ORM:** Drizzle ORM
+- **Database:** PostgreSQL
+- **UI:** Shadcn UI
+- **Build Tool:** Next.js
+
+## Where things live
+
+- **WordPress Content Sync/Caching:** `lib/wordpress.ts`, `drizzle/schema.ts`
+- **Dynamic Routes Configuration:** `lib/config/post-types.ts` (source of truth for WP post types and page templates to Next.js routes)
+- **Middleware:** `middleware.ts` (handles 301 redirects)
+- **API Routes:** `app/api/*` (e.g., `app/api/revalidate/route.ts` for on-demand revalidation)
+- **Custom Post Types & Taxonomies:** Defined in WordPress via Code Snippets (see PHP files in `scripts/`)
+- **ACF Field Groups:** Defined in WordPress via Code Snippets (see PHP files in `scripts/`)
+- **Gravity Forms Integration:** `components/gravity-forms/*`
+- **US Map Data:** `components/shared/us-map-data.ts`
+- **Global CSS Variables:** `styles/globals.css`
+- **Storybook:** `_Populate as you build_`
+
+## Architecture decisions
+
+- **Server-Side Rendering (SSR):** All pages are SSR for SEO and performance.
+- **Content Caching:** WordPress content is mirrored to PostgreSQL via Drizzle ORM for fast retrieval, including taxonomies as JSON.
+- **SEO & Preview Mode:** Integrates with Yoast SEO, proxies SEO files, and supports Next.js Draft Mode for real-time content preview.
+- **Dynamic Routing & CPTs:** Custom Post Types (`tr_service`, `tr_industry`, `tr_location`, etc.) are dynamically routed. Services and industries are served at the root (`/[slug]`), taking priority over regular pages.
+- **WordPress Backend Management:** All CPTs, taxonomies, and ACF field groups are registered and managed via WordPress Code Snippets.
+
+## Product
+
+- **Decoupled WordPress Site:** High-performance, SEO-friendly frontend for WordPress content.
+- **Content Types:** Supports WordPress "Posts" and several Custom Post Types (Services, Industries, Locations, Testimonials, Case Studies, FAQs, Partner Logos).
+- **Page Templates:** 14 distinct page templates with ACF-driven content.
+- **Preview Functionality:** Allows content editors to preview draft WordPress content before publishing.
+- **Gravity Forms Integration:** Headless module for complex forms with validation and spam protection.
+- **Global Sections:** Reusable content sections configured via ACF options pages.
+
+## User preferences
 I want to interact with the agent in an iterative development approach. I prefer detailed explanations of changes and potential impacts. The agent should ask for confirmation before making major architectural changes or introducing new dependencies.
 
-## System Architecture
-The system employs a Next.js 16 App Router frontend, utilizing TypeScript and Next.js API Routes. Content is fetched from WordPress via WPGraphQL and cached in a PostgreSQL database managed by Drizzle ORM.
+## Gotchas
 
-**Key Architectural Decisions:**
+- **Shared Stats Section Image:** The "Why Clients Call Us" stats section (`StatsSection.tsx`) hardcodes its image; do not attempt to override it per page.
+- **ACF REST API Caching:** Location page info (third heading/description) is stored in the WordPress `content` field as JSON due to ACF REST API caching limitations.
+- **Snippet Installation:** Use `node scripts/install-snippet.mjs <id-or-name> <php-file>` for re-installing/re-deploying WordPress snippets.
 
-- **Server-Side Rendering (SSR):** All pages are SSR for enhanced SEO and performance.
-- **Content Caching:** WordPress content is synced to PostgreSQL for fast retrieval, supporting taxonomies (categories, tags) embedded as JSON.
-- **SEO Integration:** Leverages Next.js Metadata API with Yoast SEO integration and proxies SEO files (sitemaps, robots.txt) from WordPress, remapping URLs to the frontend domain.
-- **Preview Mode:** Enables previewing draft WordPress content via Next.js Draft Mode, supporting authenticated GraphQL requests and basic authentication for staging environments. It allows administrators to review content changes before publishing.
-- **301 Redirects:** Next.js middleware dynamically applies 301/302 redirects fetched from WordPress.
-- **On-Demand Revalidation:** A dedicated API endpoint (`/api/revalidate`) allows for purging cached content based on specific paths, content types, or the entire site. Targeted purges also call `revalidateTag('wordpress')` to flush the WP fetch-cache layer; `type: 'all'` additionally flushes `'wordpress-redirects'`.
-- **WordPress Fetch-Cache Layer (30 min):** All public WordPress GraphQL/REST requests are cached in Next.js's fetch cache for 30 minutes (`WP_REVALIDATE_SECONDS = 1800`) and tagged `'wordpress'`. Implemented in `lib/wordpress.ts` via `getWpClient()` `requestMiddleware` which injects `next: { revalidate, tags }` into every request; preview/auth'd requests bypass cache with `cache: 'no-store'`. The middleware redirect fetch (`middleware.ts`) and `fetchRedirects()` in `lib/wordpress.ts` use the same TTL with the additional `'wordpress-redirects'` tag. Top fetchers (`fetchServiceWithAcf`, `fetchIndustryWithAcf`, `fetchLocationWithAcf`, all page-template `fetch*Acf` functions, `fetchGlobalSections`) are also wrapped with React `cache()` to dedupe identical calls within a single render (e.g. `generateMetadata` + `page` body). This guarantees WP is queried at most once per 30 minutes per unique GraphQL operation+variables tuple per server instance, regardless of static vs dynamic page rendering.
-- **ACF Global Scripts:** Supports injection of custom `<head>` and `<body>` scripts configured in WordPress via Advanced Custom Fields.
-- **Gravity Forms Integration:** Provides a reusable headless module for Gravity Forms, handling multi-page forms, conditional logic, client-side validation, spam protection, and file uploads using WPGraphQL for schema and Gravity Forms REST API for submissions.
-- **US Map Pins Animation:** Self-contained animated SVG (`components/shared/UsMapPinsAnimation.tsx`) used in the "Where to Find Us" section instead of a video. State paths and centroids in `components/shared/us-map-data.ts` (sourced from the public-domain Wikimedia "Blank US Map (states only)" SVG, with Alaska, Hawaii, and DC removed for a contiguous-48-states view). Map is fully static; one green (#BAD656) teardrop pin per state pops in sequentially west-to-east as a one-time reveal, then stays. Triggered by `IntersectionObserver` and respects `prefers-reduced-motion`. Pacing controlled by `PIN_INTERVAL_S` and `POP_DURATION_S` constants.
-- **Loading Screen & Hero Animation:** The homepage features a CSS-driven loading screen with logo reveal and progress bar, followed by staggered hero entrance animations using framer-motion.
-- **Design System:** A comprehensive design system is implemented using CSS variables for consistent styling, with a `/style-guide` page providing a visual reference.
-- **Modular Component Architecture:** Emphasizes modular React components for maintainability.
-- **Shared "Why Clients Call Us" Stats Section:** A single shared component (`components/shared/StatsSection.tsx`) renders the "Why Clients Call Us Again and Again" section identically across the homepage, the Who We Serve page, the Commercial Waste Services page, and every Service Template page. Image is hardcoded to `/images/stock/why-clients-nyc-sunrise.jpg` (the homepage hero of the section). Per-page `statsImage`/`statsImageAlt` overrides on `ServiceTemplate` were removed; do not reintroduce them — the picture must always match the homepage.
-- **Landing Page Builder (Feature Flag):** An optional module that allows self-service landing page creation using ACF Flexible Content blocks, with various pre-defined content sections (Hero, Feature Grid, CTA Banner, Form Section, Rich Text, Testimonials). It integrates with the global style guide.
-- **Service Categories:** The project defines four main service categories, each with three subcategories, structured with SEO-friendly URLs.
-- **Custom Post Types (CPT):** Seven CPTs registered via Code Snippets plugin on WordPress (mbstest1.sherstaging.com): `tr_service` (Services), `tr_industry` (Industries), `tr_location` (Locations), `tr_testimonial` (Testimonials), `tr_case_study` (Case Studies), `tr_faq` (FAQs), `tr_partner_logo` (Partner Logos). All exposed via WPGraphQL with Yoast SEO support. Services, Industries, and Locations have single pages; Testimonials, Case Studies, FAQs, and Partner Logos are list-only (no single page views). PHP snippet ID 5 in Code Snippets plugin.
-- **Page Templates:** 16 page templates (including "Default") registered in WordPress via Code Snippets plugin (snippet ID 6) using post meta (`_headless_template`) with a custom Gutenberg sidebar panel. This approach works reliably in block themes (Twenty Twenty-Five). Templates are exposed via REST API (`headless_template` field) and GraphQL (`headlessTemplate` field). Template slugs use the `template-*` prefix (e.g., `template-homepage`, `template-about`). The sidebar panel appears under "Headless Template" when editing any Page in the block editor.
-- **Post Type & Template Registry:** `lib/config/post-types.ts` is the central registry mapping WordPress post types and page templates to Next.js frontend routes. It contains `POST_TYPE_CONFIG` (7 CPTs + post + page) and `PAGE_TEMPLATE_CONFIG` (15 templates). The preview API (`app/api/preview/route.ts`) consumes the registry for preview routing. List-only CPTs correctly return 400 when previewed.
-- **Dynamic CPT Routes:** Service and industry CPTs are served at the root level (`/[slug]`) via `app/[slug]/page.tsx`, matching the old website's URL structure (no `/services/` or `/industries/` prefix). The root `[slug]` route checks for service CPT, then industry CPT, then falls back to regular WordPress pages. Static routes (33 service folders and 8 industry folders, all at root level under `app/`) take priority over the dynamic `[slug]` route per Next.js App Router convention.
+## Pointers
 
-- **ACF Field Groups:** Six ACF field group snippets (Code Snippets IDs 10-15) define structured fields for all CPTs: Services (hero, about, sub-services, process, FAQs, stats, paragraph sections), Industries (hero, about, bullet points, FAQs, paragraph sections), Locations (hero subtitle, hero image, about description, about bullets, trusted description, state abbreviation, cities, FAQs), Testimonials (quote, author, role, company, image), Case Studies (title, subtitle, tag, description, images, stats), FAQs (answer, display_order — question is the post title), Partner Logos (logo image, alt text, display order). All image fields use 'text' type for URL paths. Five custom taxonomies registered via snippet ID 9: `testimonial_context`, `case_study_industry`, `faq_category`, `faq_context`, `service_region`.
-- **ACF Page Template Fields (Snippet 17):** Code Snippets ID 17 registers ACF field groups for all 14 page templates plus a Global Sections options page. Each field group uses `'graphql_types' => array('Page')` so WPGraphQL exposes them on the `Page` type (WPGraphQL for ACF doesn't understand custom `headless_template` location rules). Field groups: `homepageFields`, `aboutFields`, `commercialWasteFields`, `whoWeServeFields`, `ourProcessFields`, `locationsFields`, `joinNetworkFields`, `faqPageFields`, `contactFields`, `requestServiceFields`, `bookCallFields`, `thankYouFields`, `privacyFields`, `termsFields`. Global sections (options page): `globalStatsSection`, `globalProcessSection`, `globalFinalCta`, `globalCtaBanner`. Local copy at `scripts/page-template-acf-snippet.php`. Snippet 14 (old commercial waste fields with `cw_` prefix) was deactivated to avoid collision.
-- **ACF-Powered Frontend:** Service, industry, and location pages fetch ACF field data from WordPress via `fetchServiceWithAcf`/`fetchIndustryWithAcf`/`fetchLocationWithAcf` and render using `ServiceTemplate`/`IndustryTemplate`/`LocationTemplateClient` components. The FAQ page (`app/faq/page.tsx`) fetches categories and questions from WordPress via `fetchAllFaqs`. All 14 page templates now fetch ACF data via `fetchHomepageAcf`, `fetchAboutAcf`, `fetchCommercialWasteAcf`, `fetchWhoWeServeAcf`, `fetchOurProcessAcf`, `fetchLocationsPageAcf`, `fetchJoinNetworkAcf`, `fetchFaqPageAcf`, `fetchContactAcf`, `fetchRequestServiceAcf`, `fetchBookCallAcf`, `fetchThankYouAcf`, `fetchPrivacyPolicyAcf`, `fetchTermsOfServiceAcf`, plus `fetchGlobalSections()` for shared sections. All client components accept ACF data props with hardcoded defaults as fallback, enabling WordPress content editing while maintaining a working frontend even with empty ACF fields. Shared components (`CaseStudySection`, `LogoReelSection`, `FaqSection`, `TestimonialsSection`, `StatsSection`, `ProcessSection`, `FinalCtaSection`, `CtaBannerSection`) accept optional data props with hardcoded defaults as fallback.
-- **Location Pages Architecture:** State location pages (`app/locations/[slug]/page.tsx`) are server components that fetch from WordPress via `fetchLocationWithAcf`, with `generateMetadata` for SEO. The rendering is delegated to `LocationTemplateClient` (client component) for interactive accordions and forms. The location info section (third heading/description) is stored in the WordPress `content` field as JSON due to ACF REST API caching limitations; `parseInfoFromContent()` extracts it. City pages (`app/locations/[slug]/[city]/page.tsx`) remain client-side with template text derived from parent state data. State outlines (`lib/data/state-outlines.ts`) are purely visual SVG data kept local.
-
-**Core Features:**
-- Full taxonomy support (categories and tags) for posts.
-- SEO-friendly URL structure and meta-data handling.
-- Development tooling for database schema pushing.
-- GraphQL queries for CPTs in `lib/wordpress.ts`: `fetchServiceWithAcf`, `fetchIndustryWithAcf`, `fetchLocationWithAcf`, `fetchAllTestimonials`, `fetchAllCaseStudies`, `fetchAllFaqs`, `fetchAllPartnerLogos`, plus legacy `fetchServiceBySlug`, `fetchIndustryBySlug`, `fetchLocationBySlug`, `fetchAllServiceSlugs`, `fetchAllIndustrySlugs`, `fetchAllLocationSlugs`.
-- GraphQL queries for page templates: A single `GET_PAGE_TEMPLATE_ACF_QUERY` fetches all 14 field groups at once (each page gets all groups but only its own has data). Individual fetcher functions extract the relevant field group. `GET_GLOBAL_SECTIONS_QUERY` fetches the ACF options page.
-- TypeScript interfaces for all ACF data: `ServiceTemplateData`, `IndustryTemplateData`, `LocationTemplateData`, `TestimonialData`, `CaseStudyData`, `FaqCategoryData`, `PartnerLogoData`, `HomepageTemplateData`, `AboutTemplateData`, `HeroPageTemplateData`, `LocationsPageTemplateData`, `JoinNetworkTemplateData`, `FaqPageTemplateData`, `ContactFormTemplateData`, `BookCallTemplateData`, `ThankYouTemplateData`, `LegalPageTemplateData`, `GlobalSectionsData`.
-
-## External Dependencies
-- **WordPress:** Content Management System.
-- **WPGraphQL Plugin:** GraphQL API for WordPress.
-- **WPGraphQL Yoast SEO Plugin:** Integrates Yoast SEO data into WPGraphQL.
-- **WPGraphQL for ACF Plugin:** Enables ACF fields within WPGraphQL.
-- **Redirection Plugin:** Manages 301 redirects in WordPress.
-- **Gravity Forms Plugin:** For building and managing forms.
-- **WPGraphQL for Gravity Forms Plugin (AxeWP):** Integrates Gravity Forms with WPGraphQL.
-- **PostgreSQL:** Primary database for cached content.
-- **Drizzle ORM:** TypeScript ORM for interacting with PostgreSQL.
-- **Next.js:** React framework for frontend and API routes.
-- **graphql-request:** GraphQL client.
-- **Shadcn UI:** UI component library.
+- **Next.js Documentation:** [https://nextjs.org/docs](https://nextjs.org/docs)
+- **Drizzle ORM Documentation:** [https://orm.drizzle.team/docs/overview](https://orm.drizzle.team/docs/overview)
+- **WPGraphQL Documentation:** [https://www.wpgraphql.com/docs/](https://www.wpgraphql.com/docs/)
+- **Shadcn UI Documentation:** [https://ui.shadcn.com/docs](https://ui.shadcn.com/docs)
+- **Framer Motion Documentation:** [https://www.framer.com/motion/](https://www.framer.com/motion/)

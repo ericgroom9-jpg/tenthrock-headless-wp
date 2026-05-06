@@ -4,22 +4,27 @@
  * via the Code Snippets v1 REST API.
  *
  * Usage:
- *   node scripts/install-snippet.mjs <snippet-id> <path-to-php> [--no-activate]
+ *   node scripts/install-snippet.mjs <id-or-name> <path-to-php> [--no-activate]
  *
- * Example:
+ * If <id-or-name> is numeric, the snippet with that ID is updated.
+ * Otherwise it is treated as a snippet name — looked up by name and
+ * created if it does not exist.
+ *
+ * Examples:
  *   node scripts/install-snippet.mjs 5 scripts/register-cpts-snippet.php
+ *   node scripts/install-snippet.mjs "Register Custom Taxonomies" scripts/register-taxonomies-snippet.php
  */
 
 import { readFileSync } from 'fs';
 
-const [, , idArg, pathArg, ...rest] = process.argv;
-if (!idArg || !pathArg) {
-  console.error('Usage: node scripts/install-snippet.mjs <snippet-id> <path-to-php> [--no-activate]');
+const [, , idOrName, pathArg, ...rest] = process.argv;
+if (!idOrName || !pathArg) {
+  console.error('Usage: node scripts/install-snippet.mjs <id-or-name> <path-to-php> [--no-activate]');
   process.exit(1);
 }
-const snippetId = Number(idArg);
 const phpPath = pathArg;
 const shouldActivate = !rest.includes('--no-activate');
+const looksNumeric = /^\d+$/.test(idOrName);
 
 const WP_API_URL = process.env.WP_API_URL;
 const USER = process.env.preview_user_un;
@@ -32,20 +37,16 @@ const baseUrl = WP_API_URL.replace(/\/graphql\/?$/, '');
 const auth = 'Basic ' + Buffer.from(`${USER}:${PASS}`).toString('base64');
 
 // Read PHP and strip the leading <?php tag — Code Snippets stores the
-// snippet body without the opening tag, otherwise the plugin fails to
-// execute it (it wraps the snippet body in <?php at run time).
+// snippet body without the opening tag.
 let phpRaw = readFileSync(phpPath, 'utf8');
 const code = phpRaw.replace(/^\s*<\?php\s*/, '').trim();
-console.log(`📄 Loaded ${phpPath} (${code.length} chars after stripping <?php)`);
+console.log(`📄 Loaded ${phpPath} (${code.length} chars)`);
 
 async function api(method, endpoint, body) {
   const url = `${baseUrl}/wp-json/code-snippets/v1${endpoint}`;
   const opts = {
     method,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: auth,
-    },
+    headers: { 'Content-Type': 'application/json', Authorization: auth },
   };
   if (body !== undefined) opts.body = JSON.stringify(body);
   const res = await fetch(url, opts);
@@ -59,29 +60,51 @@ async function api(method, endpoint, body) {
 }
 
 (async () => {
-  // 1. Fetch existing snippet to get name + scope (don't change them).
-  console.log(`🔎 Fetching snippet #${snippetId}...`);
-  const existing = await api('GET', `/snippets/${snippetId}`);
-  console.log(`   name="${existing.name}"  active=${existing.active}  scope=${existing.scope}`);
+  let snippetId, snippetName, scope = 'global';
 
-  // 2. Push the PHP body. Keep name and scope as-is. Mark as not network-wide.
+  if (looksNumeric) {
+    snippetId = Number(idOrName);
+    console.log(`🔎 Fetching snippet #${snippetId}...`);
+    const existing = await api('GET', `/snippets/${snippetId}`);
+    snippetName = existing.name;
+    scope = existing.scope || 'global';
+    console.log(`   name="${snippetName}"  active=${existing.active}  scope=${scope}`);
+  } else {
+    snippetName = idOrName;
+    console.log(`🔎 Looking up snippet by name "${snippetName}"...`);
+    const all = await api('GET', '/snippets');
+    const match = Array.isArray(all) ? all.find(s => s.name === snippetName) : null;
+    if (match) {
+      snippetId = match.id;
+      scope = match.scope || 'global';
+      console.log(`   found id=${snippetId}  active=${match.active}  scope=${scope}`);
+    } else {
+      console.log(`   not found → creating new snippet...`);
+      const created = await api('POST', '/snippets', {
+        name: snippetName,
+        code,
+        scope: 'global',
+        active: shouldActivate,
+      });
+      console.log(`✅ Created snippet #${created.id}${shouldActivate ? ' and activated' : ''}.`);
+      return;
+    }
+  }
+
   console.log(`✏️  Updating snippet body...`);
   const updated = await api('POST', `/snippets/${snippetId}`, {
-    name: existing.name,
+    name: snippetName,
     code,
-    scope: existing.scope || 'global',
+    scope,
     active: shouldActivate,
   });
   console.log(`   updated. code_len=${(updated.code || '').length}  active=${updated.active}`);
 
-  // 3. Explicitly call activate endpoint if requested (some plugin
-  //    versions do not toggle active via the update endpoint).
   if (shouldActivate && !updated.active) {
     console.log(`⚡ Activating snippet...`);
     const activated = await api('POST', `/snippets/${snippetId}/activate`);
     console.log(`   active=${activated.active}`);
   }
-
   console.log(`✅ Snippet #${snippetId} installed${shouldActivate ? ' and activated' : ''}.`);
 })().catch(err => {
   console.error('❌ Failed:', err.message);
