@@ -29,6 +29,7 @@ import { GF_FORM_IDS } from "@/lib/gf/form-ids";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import StatsSection from "@/components/shared/StatsSection";
+import ZipCheckForm from "@/components/shared/ZipCheckForm";
 
 const logoWhite = "/images/logos/Green-White-Logo.png";
 
@@ -755,15 +756,7 @@ export default function ServiceTemplate({
                   Enter your zip code below to instantly see if our network of local vendors covers your location.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center">
-                  <Input 
-                    placeholder="Enter Zip Code" 
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
-                  />
-                  <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] active:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] active:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto min-h-[52px] whitespace-nowrap">
-                    Check Now
-                  </Button>
-                </div>
+                <ZipCheckForm />
               </div>
             </FadeIn>
           </div>
