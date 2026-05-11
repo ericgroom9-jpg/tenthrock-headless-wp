@@ -174,6 +174,21 @@ export default function UiKitClient() {
                 }
               }
 
+              // 2d. Re-apply swatch background colors with !important so
+              //     html2canvas always captures the colored block, even if
+              //     a downstream stylesheet or color-adjust quirk drops it.
+              clonedDoc
+                .querySelectorAll<HTMLElement>(".pdf-swatch-color")
+                .forEach((el) => {
+                  const hex = el.getAttribute("data-pdf-bg");
+                  if (hex) {
+                    el.style.setProperty("background-color", hex, "important");
+                    el.style.setProperty("background", hex, "important");
+                    el.style.setProperty("-webkit-print-color-adjust", "exact");
+                    el.style.setProperty("print-color-adjust", "exact");
+                  }
+                });
+
               // 3. Inject keep-together rules so cards & rows aren't sliced
               //    across pages.
               const css = clonedDoc.createElement("style");
@@ -181,6 +196,10 @@ export default function UiKitClient() {
                 .pdf-no-split {
                   page-break-inside: avoid !important;
                   break-inside: avoid !important;
+                }
+                .pdf-swatch-color {
+                  -webkit-print-color-adjust: exact !important;
+                  print-color-adjust: exact !important;
                 }
               `;
               clonedDoc.head.appendChild(css);
@@ -343,7 +362,11 @@ export default function UiKitClient() {
                 className="rounded-md overflow-hidden border pdf-no-split"
                 data-testid={`swatch-${c.token}`}
               >
-                <div className="h-28" style={{ backgroundColor: c.hex }} />
+                <div
+                  className="h-28 pdf-swatch-color"
+                  data-pdf-bg={c.hex}
+                  style={{ backgroundColor: c.hex }}
+                />
                 <div className="p-4 bg-card">
                   <p className="font-semibold leading-tight">{c.name}</p>
                   <p className="text-sm font-mono text-muted-foreground mt-1">{c.hex}</p>
