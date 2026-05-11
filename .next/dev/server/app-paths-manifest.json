@@ -1,5 +1,0 @@
-{
-  "/UI-kit/page": "app/UI-kit/page.js",
-  "/api/menus/[location]/route": "app/api/menus/[location]/route.js",
-  "/page": "app/page.js"
-}
