@@ -1492,6 +1492,10 @@ h1, h3, h4, h5, h6, h2 {
   margin-top: -1rem;
 }
 
+.mb-0 {
+  margin-bottom: 0;
+}
+
 .mb-1 {
   margin-bottom: .25rem;
 }
@@ -3514,6 +3518,11 @@ h1, h3, h4, h5, h6, h2 {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .py-0\.5 {
