@@ -2,46 +2,46 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { 
-  ArrowRight, 
-  Phone, 
-  CheckCircle2, 
-  Truck, 
-  Clock, 
-  ShieldCheck, 
-  MapPin, 
-  Menu, 
-  X,
-  ChevronRight,
-  ClipboardCheck,
-  Headset,
-  Building2,
-  Factory,
-  Store,
-  HardHat,
-  Star,
-  ChevronDown,
-  Mail,
-  Instagram,
-  Twitter,
-  Facebook,
-  Linkedin,
-  ArrowUpRight,
-  Play,
-  GraduationCap,
-  Trophy,
-  Heart,
-  Landmark,
-  Utensils,
-  Siren,
-  Home as HomeIcon,
-  User
+ ArrowRight, 
+ Phone, 
+ CheckCircle2, 
+ Truck, 
+ Clock, 
+ ShieldCheck, 
+ MapPin, 
+ Menu, 
+ X,
+ ChevronRight,
+ ClipboardCheck,
+ Headset,
+ Building2,
+ Factory,
+ Store,
+ HardHat,
+ Star,
+ ChevronDown,
+ Mail,
+ Instagram,
+ Twitter,
+ Facebook,
+ Linkedin,
+ ArrowUpRight,
+ Play,
+ GraduationCap,
+ Trophy,
+ Heart,
+ Landmark,
+ Utensils,
+ Siren,
+ Home as HomeIcon,
+ User
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+ Accordion,
+ AccordionContent,
+ AccordionItem,
+ AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -90,1450 +90,1450 @@ import logoMaggianos from "@assets/partners/maggianos.png";
 import logoMcDonalds from "@assets/partners/mcdonalds.png";
 import logoRedLobster from "@assets/partners/red-lobster.png";
 const Logo = ({ className = "", variant = "main" }: { className?: string, variant?: "main" | "white" }) => {
-  const logoSrc = variant === "main" ? logoMain : logoWhite;
-  
-  return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <img 
-        src={logoSrc} 
-        alt="Tenth Rock Waste Solutions" 
-        className="h-8 md:h-10 w-auto object-contain" 
-      />
-    </div>
-  );
+ const logoSrc = variant === "main" ? logoMain : logoWhite;
+ 
+ return (
+ <div className={`flex items-center gap-2 ${className}`}>
+ <img 
+ src={logoSrc} 
+ alt="Tenth Rock Waste Solutions" 
+ className="h-8 md:h-10 w-auto object-contain" 
+ />
+ </div>
+ );
 };
 
 // Navigation
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+ const [isScrolled, setIsScrolled] = useState(false);
+ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+ const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+ useEffect(() => {
+ const handleScroll = () => setIsScrolled(window.scrollY > 20);
+ window.addEventListener("scroll", handleScroll);
+ return () => window.removeEventListener("scroll", handleScroll);
+ }, []);
 
-  return (
-    <header className="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
-      <div className="container mx-auto max-w-[92rem] bg-white rounded-[5px] shadow-lg px-6 py-3 flex items-center justify-between relative">
-        <Link href="/" className="hover:opacity-90 transition-opacity">
-          <Logo variant="main" />
-        </Link>
+ return (
+ <header className="fixed top-6 left-0 right-0 z-50 px-4 md:px-8">
+ <div className="container mx-auto max-w-[92rem] bg-white rounded-[5px] shadow-lg px-6 py-3 flex items-center justify-between relative">
+ <Link href="/" className="hover:opacity-90 transition-opacity">
+ <Logo variant="main" />
+ </Link>
 
-        {/* Desktop Nav - Centralized */}
-        <nav className="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-          <div
-            className="relative"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}
-          >
-            <button
-              type="button"
-              data-testid="button-nav-services"
-              className="inline-flex items-center gap-2 text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal"
-              aria-haspopup="menu"
-              aria-expanded={isServicesOpen}
-              onClick={() => setIsServicesOpen((v) => !v)}
-            >
-              <span>Commercial Waste Services</span>
-              <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
-            </button>
+ {/* Desktop Nav - Centralized */}
+ <nav className="hidden lg:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+ <div
+ className="relative"
+ onMouseEnter={() => setIsServicesOpen(true)}
+ onMouseLeave={() => setIsServicesOpen(false)}
+ >
+ <button
+ type="button"
+ data-testid="button-nav-services"
+ className="inline-flex items-center gap-2 text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal"
+ aria-haspopup="menu"
+ aria-expanded={isServicesOpen}
+ onClick={() => setIsServicesOpen((v) => !v)}
+ >
+ <span>Commercial Waste Services</span>
+ <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+ </button>
 
-            <AnimatePresence>
-              {isServicesOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                  transition={{ duration: 0.16, ease: "easeOut" }}
-                  className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+14px)] w-[420px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
-                  role="menu"
-                  data-testid="menu-nav-services"
-                >
-                  <div className="p-3">
-                    <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
-                      Services
-                    </div>
-                    <div className="grid gap-1">
-                      {[ 
-                        "Emergency & Overflow Waste Response",
-                        "Store Decommissioning & Remodel Support",
-                        "Event & Stadium Waste Logistics",
-                        "Dumpster Rental & Temporary Containers",
-                        "Centralized Waste Program Management",
-                        "Environmental & Compactor Maintenance Services",
-                      ].map((label) => (
-                        <a
-                          key={label}
-                          href="#services"
-                          data-testid={`link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                          className="flex items-center justify-between rounded-[5px] px-3 py-2 text-sm font-bold text-primary hover:bg-[#F9F9F6] hover:text-[#042940] transition-colors"
-                          onClick={() => setIsServicesOpen(false)}
-                        >
-                          <span className="pr-3">{label}</span>
-                          <ChevronRight className="w-4 h-4 text-primary/40" />
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+ <AnimatePresence>
+ {isServicesOpen && (
+ <motion.div
+ initial={{ opacity: 0, y: 8, scale: 0.98 }}
+ animate={{ opacity: 1, y: 0, scale: 1 }}
+ exit={{ opacity: 0, y: 8, scale: 0.98 }}
+ transition={{ duration: 0.16, ease: "easeOut" }}
+ className="absolute left-1/2 -translate-x-1/2 top-[calc(100%+14px)] w-[420px] rounded-[5px] bg-white shadow-2xl border border-primary/10 overflow-hidden"
+ role="menu"
+ data-testid="menu-nav-services"
+ >
+ <div className="p-3">
+ <div className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-primary/50 px-3 py-2">
+ Services
+ </div>
+ <div className="grid gap-1">
+ {[ 
+ "Emergency & Overflow Waste Response",
+ "Store Decommissioning & Remodel Support",
+ "Event & Stadium Waste Logistics",
+ "Dumpster Rental & Temporary Containers",
+ "Centralized Waste Program Management",
+ "Environmental & Compactor Maintenance Services",
+ ].map((label) => (
+ <a
+ key={label}
+ href="#services"
+ data-testid={`link-nav-services-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+ className="flex items-center justify-between rounded-[5px] px-3 py-2 text-sm font-bold text-primary hover:bg-[#F9F9F6] hover:text-[#042940] transition-colors"
+ onClick={() => setIsServicesOpen(false)}
+ >
+ <span className="pr-3">{label}</span>
+ <ChevronRight className="w-4 h-4 text-primary/40" />
+ </a>
+ ))}
+ </div>
+ </div>
+ </motion.div>
+ )}
+ </AnimatePresence>
+ </div>
 
-          <a href="#emergency" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Emergency Waste Removal</a>
-          <a href="#sectors" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Who We Serve</a>
-          <a href="#process" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Our Process</a>
-          <a href="#about" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">About Us</a>
-        </nav>
+ <a href="#emergency" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Emergency Waste Removal</a>
+ <a href="#sectors" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Who We Serve</a>
+ <a href="#process" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">Our Process</a>
+ <a href="#about" className="text-[13px] xl:text-sm font-bold text-primary hover:text-[#c5d520] transition-colors tracking-normal">About Us</a>
+ </nav>
 
-        {/* Right Side Actions */}
-        <div className="flex items-center gap-0">
-          <Button size="lg" variant="ghost" className="hidden lg:flex text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2">
-            Login
-          </Button>
-          <Button size="lg" className="hidden lg:flex bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-lg shadow-[#c5d520]/20">
-            Request a Quote
-          </Button>
+ {/* Right Side Actions */}
+ <div className="flex items-center gap-0">
+ <Button size="lg" variant="ghost" className="hidden lg:flex text-primary font-extrabold hover:bg-transparent hover:text-[#c5d520] transition-colors uppercase tracking-wide text-sm px-2">
+ Login
+ </Button>
+ <Button size="lg" className="hidden lg:flex bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20">
+ Request a Quote
+ </Button>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="lg:hidden p-2 text-primary"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </div>
+ {/* Mobile Menu Toggle */}
+ <button 
+ className="lg:hidden p-2 text-primary"
+ onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+ >
+ {isMobileMenuOpen ? <X /> : <Menu />}
+ </button>
+ </div>
+ </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            className="lg:hidden absolute top-24 left-4 right-4 bg-white rounded-[5px] shadow-xl p-6 border border-gray-100"
-          >
-            <div className="flex flex-col space-y-4 text-center">
-              <a href="#services" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
-              <a href="#sectors" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Industries</a>
-              <a href="#about" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Who We Are</a>
-              <a href="#contact" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-              <Button size="lg" variant="ghost" className="w-full text-primary font-bold uppercase tracking-wide text-sm" onClick={() => setIsMobileMenuOpen(false)}>
-                Login
-              </Button>
-              <Button size="lg" className="w-full bg-[#c5d520] text-[#042940] mt-2">
-                Request a Quote
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
-  );
+ {/* Mobile Menu */}
+ <AnimatePresence>
+ {isMobileMenuOpen && (
+ <motion.div
+ initial={{ opacity: 0, y: -20, scale: 0.95 }}
+ animate={{ opacity: 1, y: 0, scale: 1 }}
+ exit={{ opacity: 0, y: -20, scale: 0.95 }}
+ className="lg:hidden absolute top-24 left-4 right-4 bg-white rounded-[5px] shadow-xl p-6 border border-gray-100"
+ >
+ <div className="flex flex-col space-y-4 text-center">
+ <a href="#services" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
+ <a href="#sectors" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Industries</a>
+ <a href="#about" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Who We Are</a>
+ <a href="#contact" className="text-lg font-bold text-primary" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+ <Button size="lg" variant="ghost" className="w-full text-primary font-bold uppercase tracking-wide text-sm" onClick={() => setIsMobileMenuOpen(false)}>
+ Login
+ </Button>
+ <Button size="lg" className="w-full bg-[#c5d520] text-[#042940] mt-2">
+ Request a Quote
+ </Button>
+ </div>
+ </motion.div>
+ )}
+ </AnimatePresence>
+ </header>
+ );
 };
 
 // Hero Section
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0">
-        <img src={imgServiceEventStadium} alt="" className="w-full h-full object-cover opacity-60" />
-        <div className="absolute inset-0 bg-[#042940]/60 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-transparent to-[#042940]/30"></div>
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
-      </div>
+ return (
+ <section className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
+ {/* Background Video */}
+ <div className="absolute inset-0 z-0">
+ <img src={imgServiceEventStadium} alt="" className="w-full h-full object-cover opacity-60" />
+ <div className="absolute inset-0 bg-[#042940]/60 mix-blend-multiply"></div>
+ <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-transparent to-[#042940]/30"></div>
+ <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
+ </div>
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto text-center"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8 animate-fade-in-up">
-            <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
-            Nationwide Commercial Waste Solutions
-          </div>
+ <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">
+ <motion.div 
+ initial={{ opacity: 0, y: 30 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.8 }}
+ className="max-w-5xl mx-auto text-center"
+ >
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8 animate-fade-in-up">
+ <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
+ Nationwide Commercial Waste Solutions
+ </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg" style={{ textWrap: "balance" }}>
-            Fast, Reliable Waste Solutions—Anywhere You Need Them
-          </h1>
-          
-          <p className="text-[18px] text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md" style={{ textWrap: "balance" }}>
-            Emergency pickups, dumpster rentals, and site cleanouts. We respond in hours — not days.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform hover:-translate-y-1 hover:scale-105 border-2 border-[#c5d520]">
-              Request A Service
-            </Button>
-            <Button size="lg" variant="outline" className="backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#042940] shadow-lg transition-all transform hover:-translate-y-1 hover:scale-105" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}>
-              See How It Works
-            </Button>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
+ <h1 className="text-4xl md:text-6xl lg:text-7xl font-sans font-medium text-white leading-[1.05] tracking-tighter mb-5 drop-shadow-lg" style={{ textWrap: "balance" }}>
+ Fast, Reliable Waste Solutions—Anywhere You Need Them
+ </h1>
+ 
+ <p className="text-[18px] text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md" style={{ textWrap: "balance" }}>
+ Emergency pickups, dumpster rentals, and site cleanouts. We respond in hours — not days.
+ </p>
+ 
+ <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+ <Button size="lg" className="bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform hover:-translate-y-1 hover:scale-105 border-2 border-[#c5d520]">
+ Request A Service
+ </Button>
+ <Button size="lg" variant="outline" className="backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white hover:text-[#042940] shadow-lg transition-all transform hover:-translate-y-1 hover:scale-105" onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}>
+ See How It Works
+ </Button>
+ </div>
+ </motion.div>
+ </div>
+ </section>
+ );
 };
 
 // Counter Component
 const Counter = ({ from = 0, to, duration = 2, suffix = "", prefix = "" }: { from?: number, to: number, duration?: number, suffix?: string, prefix?: string }) => {
-  const nodeRef = useRef(null);
-  const inView = useInView(nodeRef, { once: true, margin: "-20%" });
-  const count = useMotionValue(from);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
+ const nodeRef = useRef(null);
+ const inView = useInView(nodeRef, { once: true, margin: "-20%" });
+ const count = useMotionValue(from);
+ const rounded = useTransform(count, (latest) => Math.round(latest));
 
-  useEffect(() => {
-    if (inView) {
-      animate(count, to, { duration, ease: "easeOut" });
-    }
-  }, [inView, count, to, duration]);
+ useEffect(() => {
+ if (inView) {
+ animate(count, to, { duration, ease: "easeOut" });
+ }
+ }, [inView, count, to, duration]);
 
-  return (
-    <span ref={nodeRef} className="flex items-center justify-center">
-      {prefix}
-      <motion.span>{rounded}</motion.span>
-      {suffix}
-    </span>
-  );
+ return (
+ <span ref={nodeRef} className="flex items-center justify-center">
+ {prefix}
+ <motion.span>{rounded}</motion.span>
+ {suffix}
+ </span>
+ );
 };
 
 // Simple Numbers 2
 const SimpleNumbers = () => {
-  return (
-    <section className="py-20 bg-white border-b border-primary/5">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-primary/10 max-w-5xl mx-auto">
-           <div className="flex flex-col items-center text-center px-8">
-              <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
-                 <Counter to={48} duration={2.5} />
-              </div>
-              <div className="text-lg text-primary/60">States Serviced</div>
-           </div>
-           <div className="flex flex-col items-center text-center px-8">
-              <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
-                 <Counter to={5} suffix="K+" duration={2.5} />
-              </div>
-              <div className="text-lg text-primary/60">Locations Managed</div>
-           </div>
-           <div className="flex flex-col items-center text-center px-8">
-              <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
-                 <Counter to={24} suffix="/7" duration={2.5} />
-              </div>
-              <div className="text-lg text-primary/60">Emergency Support</div>
-           </div>
-        </div>
-      </div>
-    </section>
-  );
+ return (
+ <section className="py-20 bg-white border-b border-primary/5">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="grid md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-primary/10 max-w-5xl mx-auto">
+ <div className="flex flex-col items-center text-center px-8">
+ <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
+ <Counter to={48} duration={2.5} />
+ </div>
+ <div className="text-lg text-primary/60">States Serviced</div>
+ </div>
+ <div className="flex flex-col items-center text-center px-8">
+ <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
+ <Counter to={5} suffix="K+" duration={2.5} />
+ </div>
+ <div className="text-lg text-primary/60">Locations Managed</div>
+ </div>
+ <div className="flex flex-col items-center text-center px-8">
+ <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
+ <Counter to={24} suffix="/7" duration={2.5} />
+ </div>
+ <div className="text-lg text-primary/60">Emergency Support</div>
+ </div>
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Logo Reel
 const LogoList = () => {
-  const logos = [
-    { src: logo7Eleven, alt: "7-Eleven" },
-    { src: logoArbys, alt: "Arby's" },
-    { src: logoBestBuy, alt: "Best Buy" },
-    { src: logoBonefish, alt: "Bonefish Grill" },
-    { src: logoBp, alt: "BP" },
-    { src: logoChipotle, alt: "Chipotle" },
-    { src: logoCircleK, alt: "Circle K" },
-    { src: logoDollarGeneral, alt: "Dollar General" },
-    { src: logoDoorDash, alt: "DoorDash" },
-    { src: logoDunkin, alt: "Dunkin'" },
-    { src: logoFiveBelow, alt: "Five Below" },
-    { src: logoFoodLion, alt: "Food Lion" },
-    { src: logoGNC, alt: "GNC" },
-    { src: logoGoodyear, alt: "Goodyear" },
-    { src: logoHEB, alt: "H-E-B" },
-    { src: logoKFC, alt: "KFC" },
-    { src: logoKroger, alt: "Kroger" },
-    { src: logoMaggianos, alt: "Maggiano's" },
-    { src: logoMcDonalds, alt: "McDonald's" },
-    { src: logoRedLobster, alt: "Red Lobster" }
-  ];
+ const logos = [
+ { src: logo7Eleven, alt: "7-Eleven" },
+ { src: logoArbys, alt: "Arby's" },
+ { src: logoBestBuy, alt: "Best Buy" },
+ { src: logoBonefish, alt: "Bonefish Grill" },
+ { src: logoBp, alt: "BP" },
+ { src: logoChipotle, alt: "Chipotle" },
+ { src: logoCircleK, alt: "Circle K" },
+ { src: logoDollarGeneral, alt: "Dollar General" },
+ { src: logoDoorDash, alt: "DoorDash" },
+ { src: logoDunkin, alt: "Dunkin'" },
+ { src: logoFiveBelow, alt: "Five Below" },
+ { src: logoFoodLion, alt: "Food Lion" },
+ { src: logoGNC, alt: "GNC" },
+ { src: logoGoodyear, alt: "Goodyear" },
+ { src: logoHEB, alt: "H-E-B" },
+ { src: logoKFC, alt: "KFC" },
+ { src: logoKroger, alt: "Kroger" },
+ { src: logoMaggianos, alt: "Maggiano's" },
+ { src: logoMcDonalds, alt: "McDonald's" },
+ { src: logoRedLobster, alt: "Red Lobster" }
+ ];
 
-  return (
-    <section className="py-12 bg-white border-b border-primary/5 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-8">
-          <div data-testid="text-logo-reel-headline" className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70">
-            Supporting these leading national brands
-          </div>
-        </div>
-      </div>
+ return (
+ <section className="py-12 bg-white border-b border-primary/5 overflow-hidden">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="text-center mb-8">
+ <div data-testid="text-logo-reel-headline" className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70">
+ Supporting these leading national brands
+ </div>
+ </div>
+ </div>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative flex overflow-hidden group"
-      >
-        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
-           {logos.map((logo, i) => (
-             <div key={`logo-1-${i}`} className="h-16 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-               <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
-             </div>
-           ))}
-        </div>
-        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
-           {logos.map((logo, i) => (
-             <div key={`logo-2-${i}`} className="h-16 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-               <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
-             </div>
-           ))}
-        </div>
-      </motion.div>
-    </section>
-  );
+ <motion.div 
+ initial={{ opacity: 0 }}
+ whileInView={{ opacity: 1 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.8, delay: 0.2 }}
+ className="relative flex overflow-hidden group"
+ >
+ <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
+ {logos.map((logo, i) => (
+ <div key={`logo-1-${i}`} className="h-16 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+ <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
+ </div>
+ ))}
+ </div>
+ <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
+ {logos.map((logo, i) => (
+ <div key={`logo-2-${i}`} className="h-16 w-32 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+ <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-contain" />
+ </div>
+ ))}
+ </div>
+ </motion.div>
+ </section>
+ );
 };
 
 // ServicesSection
 const ServicesSection = () => {
-  const [activeService, setActiveService] = useState(0);
+ const [activeService, setActiveService] = useState(0);
 
-  const services = [
-    {
-      title: "Emergency & Overflow Waste Response",
-      desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can’t wait. Built for retail, industrial, and multi-site emergencies.",
-      img: imgServiceEmergencyOverflow,
-      features: ["24/7 Dispatch", "Overflow & Surge Capacity", "Nationwide Network"]
-    },
-    {
-      title: "Store Decommissioning & Remodel Support",
-      desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
-      img: imgServiceStoreDecommissioning,
-      features: ["Project Scheduling", "Site Cleanouts", "Multi-location Coordination"]
-    },
-    {
-      title: "Event & Stadium Waste Logistics",
-      desc: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
-      img: imgServiceEventStadium,
-      features: ["Venue Routing", "High-volume Support", "Diversion Planning"]
-    },
-    {
-      title: "Dumpster Rental & Temporary Containers",
-      desc: "Temporary containers and compactor solutions for projects and peaks. Transparent sizing, delivery windows, and swap schedules.",
-      img: imgServiceDumpsterRental,
-      features: ["Roll-offs & Front-load", "Fast Delivery", "Flexible Terms"]
-    },
-    {
-      title: "Centralized Waste Program Management",
-      desc: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
-      img: imgServiceCentralizedProgram,
-      features: ["Standardized SLAs", "Spend Visibility", "Single Point of Contact"]
-    },
-    {
-      title: "Environmental & Compactor Maintenance Services",
-      desc: "Preventative maintenance and service for compactors and waste equipment, plus environmental support to keep sites compliant and running.",
-      img: imgServiceMaintenance,
-      features: ["PM Schedules", "On-site Repairs", "Compliance Support"]
-    }
-  ];
+ const services = [
+ {
+ title: "Emergency & Overflow Waste Response",
+ desc: "Rapid-response hauling, overflow pickups, and surge capacity when your operations can’t wait. Built for retail, industrial, and multi-site emergencies.",
+ img: imgServiceEmergencyOverflow,
+ features: ["24/7 Dispatch", "Overflow & Surge Capacity", "Nationwide Network"]
+ },
+ {
+ title: "Store Decommissioning & Remodel Support",
+ desc: "Cleanouts, roll-offs, and coordinated haul schedules for remodels, closures, and fixture swaps—without disrupting day-to-day operations.",
+ img: imgServiceStoreDecommissioning,
+ features: ["Project Scheduling", "Site Cleanouts", "Multi-location Coordination"]
+ },
+ {
+ title: "Event & Stadium Waste Logistics",
+ desc: "End-to-end waste plans for venues and large events—placement, swaps, post-event sweeps, and recycling streams managed on tight timelines.",
+ img: imgServiceEventStadium,
+ features: ["Venue Routing", "High-volume Support", "Diversion Planning"]
+ },
+ {
+ title: "Dumpster Rental & Temporary Containers",
+ desc: "Temporary containers and compactor solutions for projects and peaks. Transparent sizing, delivery windows, and swap schedules.",
+ img: imgServiceDumpsterRental,
+ features: ["Roll-offs & Front-load", "Fast Delivery", "Flexible Terms"]
+ },
+ {
+ title: "Centralized Waste Program Management",
+ desc: "One partner to standardize vendors, pricing, reporting, and service levels across all your locations—improving control and visibility.",
+ img: imgServiceCentralizedProgram,
+ features: ["Standardized SLAs", "Spend Visibility", "Single Point of Contact"]
+ },
+ {
+ title: "Environmental & Compactor Maintenance Services",
+ desc: "Preventative maintenance and service for compactors and waste equipment, plus environmental support to keep sites compliant and running.",
+ img: imgServiceMaintenance,
+ features: ["PM Schedules", "On-site Repairs", "Compliance Support"]
+ }
+ ];
 
-  return (
-    <section id="services" className="py-24 bg-[#F9F9F6]">
-      <div className="container mx-auto px-4 md:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 max-w-2xl"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              Our Services
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary leading-tight mb-4 tracking-tighter">
-            Commercial Waste Services
-          </h2>
-          <p className="text-lg text-primary/60">
-            Comprehensive solutions for businesses of all sizes, available nationwide.
-          </p>
-        </motion.div>
-        
-        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-           {/* Navigation List */}
-           <div className="lg:col-span-4 flex flex-col space-y-[6px]">
-             {services.map((service, i) => (
-               <button
-                 key={i}
-                 onClick={() => setActiveService(i)}
-                 onMouseEnter={() => setActiveService(i)}
-                 className={`text-left px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group ${
-                   activeService === i 
-                     ? "bg-white shadow-lg text-primary border border-primary/5" 
-                     : "text-primary/40 hover:text-primary hover:bg-white/50"
-                 }`}
-               >
-                 <span className="relative z-10 flex items-center justify-between">
-                   {service.title}
-                   {activeService === i && (
-                     <motion.span layoutId="active-indicator" className="w-2 h-2 rounded-full bg-[#c5d520]" />
-                   )}
-                 </span>
-                 {activeService === i && (
-                   <motion.div
-                     layoutId="active-bg"
-                     className="absolute left-0 top-0 bottom-0 w-1 bg-[#c5d520]"
-                     initial={{ opacity: 0 }}
-                     animate={{ opacity: 1 }}
-                     exit={{ opacity: 0 }}
-                   />
-                 )}
-               </button>
-             ))}
-           </div>
+ return (
+ <section id="services" className="py-24 bg-[#F9F9F6]">
+ <div className="container mx-auto px-4 md:px-8">
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="mb-16 max-w-2xl"
+ >
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
+ <span className="w-2 h-2 rounded-full bg-secondary"></span>
+ Our Services
+ </div>
+ <h2 className="text-4xl md:text-5xl font-medium text-primary leading-tight mb-4 tracking-tighter">
+ Commercial Waste Services
+ </h2>
+ <p className="text-lg text-primary/60">
+ Comprehensive solutions for businesses of all sizes, available nationwide.
+ </p>
+ </motion.div>
+ 
+ <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+ {/* Navigation List */}
+ <div className="lg:col-span-4 flex flex-col space-y-[6px]">
+ {services.map((service, i) => (
+ <button
+ key={i}
+ onClick={() => setActiveService(i)}
+ onMouseEnter={() => setActiveService(i)}
+ className={`text-left px-8 py-4 rounded-[5px] transition-all duration-300 font-bold text-base md:text-lg relative overflow-hidden group ${
+ activeService === i 
+ ? "bg-white shadow-lg text-primary border border-primary/5" 
+ : "text-primary/40 hover:text-primary hover:bg-white/50"
+ }`}
+ >
+ <span className="relative z-10 flex items-center justify-between">
+ {service.title}
+ {activeService === i && (
+ <motion.span layoutId="active-indicator" className="w-2 h-2 rounded-full bg-[#c5d520]" />
+ )}
+ </span>
+ {activeService === i && (
+ <motion.div
+ layoutId="active-bg"
+ className="absolute left-0 top-0 bottom-0 w-1 bg-[#c5d520]"
+ initial={{ opacity: 0 }}
+ animate={{ opacity: 1 }}
+ exit={{ opacity: 0 }}
+ />
+ )}
+ </button>
+ ))}
+ </div>
 
-           {/* Content Display */}
-           <div className="lg:col-span-8 cursor-pointer h-full" onClick={() => console.log('Navigate to service details')}>
-             <div className="relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group">
-               <AnimatePresence mode="wait">
-                 <motion.div
-                   key={activeService}
-                   initial={{ opacity: 0, scale: 1.05 }}
-                   animate={{ opacity: 1, scale: 1 }}
-                   exit={{ opacity: 0 }}
-                   transition={{ duration: 0.5 }}
-                   className="absolute inset-0"
-                 >
-                   <img 
-                     src={services[activeService].img} 
-                     alt={services[activeService].title} 
-                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/60 to-transparent opacity-90"></div>
-                   
-                   <div className="absolute inset-0 p-12 flex flex-col justify-end">
-                     <motion.div
-                       initial={{ opacity: 0, y: 20 }}
-                       animate={{ opacity: 1, y: 0 }}
-                       transition={{ delay: 0.2 }}
-                     >
-                       <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-                         {services[activeService].title}
-                       </h3>
-                       <p className="text-white/90 text-xl leading-relaxed max-w-2xl font-medium mb-8">
-                         {services[activeService].desc}
-                       </p>
-                       
-                       <div className="flex flex-wrap gap-4 mb-8">
-                         {services[activeService].features.map((feature, idx) => (
-                           <span key={idx} className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white text-sm font-bold border border-white/10 hover:bg-white/20 transition-colors">
-                             {feature}
-                           </span>
-                         ))}
-                       </div>
+ {/* Content Display */}
+ <div className="lg:col-span-8 cursor-pointer h-full" onClick={() => console.log('Navigate to service details')}>
+ <div className="relative h-full min-h-[560px] rounded-[5px] overflow-hidden shadow-2xl group">
+ <AnimatePresence mode="wait">
+ <motion.div
+ key={activeService}
+ initial={{ opacity: 0, scale: 1.05 }}
+ animate={{ opacity: 1, scale: 1 }}
+ exit={{ opacity: 0 }}
+ transition={{ duration: 0.5 }}
+ className="absolute inset-0"
+ >
+ <img 
+ src={services[activeService].img} 
+ alt={services[activeService].title} 
+ className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+ />
+ <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/60 to-transparent opacity-90"></div>
+ 
+ <div className="absolute inset-0 p-12 flex flex-col justify-end">
+ <motion.div
+ initial={{ opacity: 0, y: 20 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ delay: 0.2 }}
+ >
+ <h3 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+ {services[activeService].title}
+ </h3>
+ <p className="text-white/90 text-xl leading-relaxed max-w-2xl font-medium mb-8">
+ {services[activeService].desc}
+ </p>
+ 
+ <div className="flex flex-wrap gap-4 mb-8">
+ {services[activeService].features.map((feature, idx) => (
+ <span key={idx} className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white text-sm font-bold border border-white/10 hover:bg-white/20 transition-colors">
+ {feature}
+ </span>
+ ))}
+ </div>
 
-                       <div className="flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide group-hover:gap-4 transition-all">
-                         Learn More <ArrowRight className="w-5 h-5" />
-                       </div>
-                     </motion.div>
-                   </div>
-                 </motion.div>
-               </AnimatePresence>
-             </div>
-           </div>
-        </div>
-      </div>
-    </section>
-  );
+ <div className="flex items-center gap-2 text-[#c5d520] font-bold uppercase tracking-wide group-hover:gap-4 transition-all">
+ Learn More <ArrowRight className="w-5 h-5" />
+ </div>
+ </motion.div>
+ </div>
+ </motion.div>
+ </AnimatePresence>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Feature 3 (Sectors / Who We Help)
 const WhoWeHelp = () => {
-  const sectors = [
-    { title: "Educational", img: imgIndustryEducational, icon: <GraduationCap className="w-6 h-6" /> },
-    { title: "Stadiums & Events", img: imgIndustryStadiumsEvents, icon: <Trophy className="w-6 h-6" /> },
-    { title: "Faith Based", img: imgIndustryFaithBased, icon: <Heart className="w-6 h-6" /> },
-    { title: "Municipalities", img: imgIndustryMunicipalities, icon: <Landmark className="w-6 h-6" /> },
-    { title: "Hospitality", img: imgIndustryHospitality, icon: <Utensils className="w-6 h-6" /> },
-    { title: "Natural Disasters", img: imgIndustryNaturalDisasters, icon: <Siren className="w-6 h-6" /> },
-    { title: "Real Estate", img: imgIndustryRealEstate, icon: <HomeIcon className="w-6 h-6" /> },
-    { title: "Retail", img: imgIndustryRetail, icon: <Store className="w-6 h-6" /> }
-  ];
+ const sectors = [
+ { title: "Educational", img: imgIndustryEducational, icon: <GraduationCap className="w-6 h-6" /> },
+ { title: "Stadiums & Events", img: imgIndustryStadiumsEvents, icon: <Trophy className="w-6 h-6" /> },
+ { title: "Faith Based", img: imgIndustryFaithBased, icon: <Heart className="w-6 h-6" /> },
+ { title: "Municipalities", img: imgIndustryMunicipalities, icon: <Landmark className="w-6 h-6" /> },
+ { title: "Hospitality", img: imgIndustryHospitality, icon: <Utensils className="w-6 h-6" /> },
+ { title: "Natural Disasters", img: imgIndustryNaturalDisasters, icon: <Siren className="w-6 h-6" /> },
+ { title: "Real Estate", img: imgIndustryRealEstate, icon: <HomeIcon className="w-6 h-6" /> },
+ { title: "Retail", img: imgIndustryRetail, icon: <Store className="w-6 h-6" /> }
+ ];
 
-  return (
-    <section id="sectors" className="py-24 bg-[#F9F9F6]">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              Industries
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">Who We Help</h2>
-          <p className="text-lg text-primary/60">
-            From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {sectors.map((sector, i) => (
-            <motion.div 
-              key={i} 
-              className="group relative h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              viewport={{ once: true }}
-            >
-              <img 
-                src={sector.img} 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                alt={sector.title} 
-              />
-              <div className="absolute inset-0 bg-[#042940]/80 group-hover:bg-[#042940]/60 transition-colors duration-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#042940] to-transparent opacity-90"></div>
-              
-              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                 <div className="transform transition-transform duration-300 translate-y-4 group-hover:translate-y-0">
-                    <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 group-hover:bg-[#c5d520] group-hover:text-[#042940] transition-colors duration-300">
-                       {sector.icon}
-                    </div>
-                    <h3 className="text-white font-bold text-xl leading-tight mb-2">{sector.title}</h3>
-                    <div className="h-0 group-hover:h-auto overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300">
-                       <p className="text-white/80 text-sm mt-2">
-                         Tailored solutions for {sector.title}.
-                       </p>
-                       <div className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-4">
-                          Learn More <ArrowRight className="w-4 h-4" />
-                       </div>
-                    </div>
-                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+ return (
+ <section id="sectors" className="py-24 bg-[#F9F9F6]">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="text-center max-w-4xl mx-auto mb-16">
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
+ <span className="w-2 h-2 rounded-full bg-secondary"></span>
+ Industries
+ </div>
+ <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">Who We Help</h2>
+ <p className="text-lg text-primary/60">
+ From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.
+ </p>
+ </div>
+ 
+ <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+ {sectors.map((sector, i) => (
+ <motion.div 
+ key={i} 
+ className="group relative h-[320px] rounded-[5px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: i * 0.05 }}
+ viewport={{ once: true }}
+ >
+ <img 
+ src={sector.img} 
+ className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+ alt={sector.title} 
+ />
+ <div className="absolute inset-0 bg-[#042940]/80 group-hover:bg-[#042940]/60 transition-colors duration-300"></div>
+ <div className="absolute inset-0 bg-gradient-to-t from-[#042940] to-transparent opacity-90"></div>
+ 
+ <div className="absolute inset-0 p-6 flex flex-col justify-end">
+ <div className="transform transition-transform duration-300 translate-y-4 group-hover:translate-y-0">
+ <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white mb-4 group-hover:bg-[#c5d520] group-hover:text-[#042940] transition-colors duration-300">
+ {sector.icon}
+ </div>
+ <h3 className="text-white font-bold text-xl leading-tight mb-2">{sector.title}</h3>
+ <div className="h-0 group-hover:h-auto overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300">
+ <p className="text-white/80 text-sm mt-2">
+ Tailored solutions for {sector.title}.
+ </p>
+ <div className="flex items-center gap-2 text-[#c5d520] text-sm font-bold mt-4">
+ Learn More <ArrowRight className="w-4 h-4" />
+ </div>
+ </div>
+ </div>
+ </div>
+ </motion.div>
+ ))}
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Case Study Section
 const CaseStudySection = () => {
-  const stats = [
-    { value: "32%", label: "Cost Reduction" },
-    { value: "98%", label: "Recycling Rate" },
-    { value: "12hr", label: "Response Time" },
-    { value: "0", label: "Compliance Issues" }
-  ];
+ const stats = [
+ { value: "32%", label: "Cost Reduction" },
+ { value: "98%", label: "Recycling Rate" },
+ { value: "12hr", label: "Response Time" },
+ { value: "0", label: "Compliance Issues" }
+ ];
 
-  return (
-    <section className="py-24 bg-white border-b border-primary/5">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Images */}
-          <div className="space-y-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="rounded-[5px] overflow-hidden h-[400px]"
-            >
-              <img 
-                src={imgServiceEventStadium} 
-                alt="Case Study Main" 
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-              />
-            </motion.div>
-            <div className="grid grid-cols-3 gap-4">
-              {[imgServiceEmergencyOverflow, imgServiceDumpsterRental, imgServiceMaintenance].map((img, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                  className="rounded-[5px] overflow-hidden aspect-square"
-                >
-                  <img 
-                    src={img} 
-                    alt={`Case Study Detail ${i + 1}`} 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" 
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
+ return (
+ <section className="py-24 bg-white border-b border-primary/5">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="grid lg:grid-cols-2 gap-12 items-center">
+ {/* Left Column - Images */}
+ <div className="space-y-4">
+ <motion.div
+ initial={{ opacity: 0, scale: 0.95 }}
+ whileInView={{ opacity: 1, scale: 1 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="rounded-[5px] overflow-hidden h-[400px]"
+ >
+ <img 
+ src={imgServiceEventStadium} 
+ alt="Case Study Main" 
+ className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+ />
+ </motion.div>
+ <div className="grid grid-cols-3 gap-4">
+ {[imgServiceEmergencyOverflow, imgServiceDumpsterRental, imgServiceMaintenance].map((img, i) => (
+ <motion.div
+ key={i}
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+ className="rounded-[5px] overflow-hidden aspect-square"
+ >
+ <img 
+ src={img} 
+ alt={`Case Study Detail ${i + 1}`} 
+ className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" 
+ />
+ </motion.div>
+ ))}
+ </div>
+ </div>
 
-          {/* Right Column - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:pl-8"
-          >
-            <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">
-              Case Study: <br/>Urban Redevelopment
-            </h2>
-            <p className="text-lg text-primary/70 mb-12 leading-relaxed">
-              When a major metropolitan development needed a complete waste management overhaul for a 3-year project, they turned to Tenth Rock. We implemented a comprehensive diversion strategy that saved costs and exceeded sustainability goals.
-            </p>
+ {/* Right Column - Content */}
+ <motion.div
+ initial={{ opacity: 0, x: 20 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="lg:pl-8"
+ >
+ <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter">
+ Case Study: <br/>Urban Redevelopment
+ </h2>
+ <p className="text-lg text-primary/70 mb-12 leading-relaxed">
+ When a major metropolitan development needed a complete waste management overhaul for a 3-year project, they turned to Tenth Rock. We implemented a comprehensive diversion strategy that saved costs and exceeded sustainability goals.
+ </p>
 
-            <div className="grid grid-cols-2 gap-8 mb-12">
-              {stats.map((stat, i) => (
-                <div key={i}>
-                  <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
-                  <div className="text-sm font-bold text-primary uppercase tracking-wide">{stat.label}</div>
-                  <div className="h-1 w-12 bg-primary/10 mt-3"></div>
-                </div>
-              ))}
-            </div>
+ <div className="grid grid-cols-2 gap-8 mb-12">
+ {stats.map((stat, i) => (
+ <div key={i}>
+ <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
+ <div className="text-sm font-bold text-primary uppercase tracking-wide">{stat.label}</div>
+ <div className="h-1 w-12 bg-primary/10 mt-3"></div>
+ </div>
+ ))}
+ </div>
 
-            <div className="flex gap-4">
-              <button 
-                className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white text-primary transition-all duration-300 shadow-sm hover:shadow-lg"
-                aria-label="Previous case study"
-              >
-                <ArrowRight className="w-5 h-5 rotate-180" />
-              </button>
-              <button 
-                className="w-14 h-14 rounded-full bg-[#042940] text-white flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                aria-label="Next case study"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+ <div className="flex gap-4">
+ <button 
+ className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-white text-primary transition-all duration-300 shadow-sm hover:shadow-lg"
+ aria-label="Previous case study"
+ >
+ <ArrowRight className="w-5 h-5 rotate-180" />
+ </button>
+ <button 
+ className="w-14 h-14 rounded-full bg-[#042940] text-white flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+ aria-label="Next case study"
+ >
+ <ArrowRight className="w-5 h-5" />
+ </button>
+ </div>
+ </motion.div>
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Why You'll Love Tenth Rock (Simple Accordion 1)
 const WhyUs = () => {
-  const [activeItem, setActiveItem] = useState("item-0");
+ const [activeItem, setActiveItem] = useState("item-0");
 
-  const items = [
-    { 
-      title: "Speed You Can Count On", 
-      content: "We leverage our nationwide network to ensure rapid deployment and timely pickups, minimizing downtime for your operations.",
-      icon: <Clock className="w-5 h-5 text-[#c5d520]" />
-    },
-    { 
-      title: "Nationwide, Local Execution", 
-      content: "One contract, one point of contact, but serviced by local experts who know the regulations and requirements of your specific area.",
-      icon: <MapPin className="w-5 h-5 text-[#c5d520]" />
-    }
-  ];
+ const items = [
+ { 
+ title: "Speed You Can Count On", 
+ content: "We leverage our nationwide network to ensure rapid deployment and timely pickups, minimizing downtime for your operations.",
+ icon: <Clock className="w-5 h-5 text-[#c5d520]" />
+ },
+ { 
+ title: "Nationwide, Local Execution", 
+ content: "One contract, one point of contact, but serviced by local experts who know the regulations and requirements of your specific area.",
+ icon: <MapPin className="w-5 h-5 text-[#c5d520]" />
+ }
+ ];
 
-  return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-           {/* Left Image Side */}
-           <motion.div 
-             initial={{ opacity: 0, x: -20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8 }}
-             className="h-[600px] relative rounded-[5px] overflow-hidden"
-           >
-              <img src={imgServiceDumpsterRental} alt="Tenth Rock Operations" className="absolute inset-0 w-full h-full object-cover" />
-           </motion.div>
-           
-           {/* Right Content Side */}
-           <motion.div 
-             initial={{ opacity: 0, x: 20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.8 }}
-             className="flex flex-col justify-center"
-           >
-             <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-12 tracking-tighter">
-               Why You’ll Love Tenth Rock
-             </h2>
-             
-             <div className="space-y-6 mb-12">
-               {items.map((item, i) => (
-                 <div key={i} className="p-6 rounded-[5px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex items-start gap-4">
-                       <div className="mt-1">
-                          {item.icon}
-                       </div>
-                       <div>
-                          <h3 className="text-xl font-bold text-[#042940] mb-2">{item.title}</h3>
-                          <p className="text-[#042940]/70 leading-relaxed">
-                            {item.content}
-                          </p>
-                       </div>
-                    </div>
-                 </div>
-               ))}
-             </div>
+ return (
+ <section className="py-24 bg-white">
+ <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+ <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+ {/* Left Image Side */}
+ <motion.div 
+ initial={{ opacity: 0, x: -20 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.8 }}
+ className="h-[600px] relative rounded-[5px] overflow-hidden"
+ >
+ <img src={imgServiceDumpsterRental} alt="Tenth Rock Operations" className="absolute inset-0 w-full h-full object-cover" />
+ </motion.div>
+ 
+ {/* Right Content Side */}
+ <motion.div 
+ initial={{ opacity: 0, x: 20 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.8 }}
+ className="flex flex-col justify-center"
+ >
+ <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight mb-12 tracking-tighter">
+ Why You’ll Love Tenth Rock
+ </h2>
+ 
+ <div className="space-y-6 mb-12">
+ {items.map((item, i) => (
+ <div key={i} className="p-6 rounded-[5px] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+ <div className="flex items-start gap-4">
+ <div className="mt-1">
+ {item.icon}
+ </div>
+ <div>
+ <h3 className="text-xl font-bold text-[#042940] mb-2">{item.title}</h3>
+ <p className="text-[#042940]/70 leading-relaxed">
+ {item.content}
+ </p>
+ </div>
+ </div>
+ </div>
+ ))}
+ </div>
 
-             <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b]">
-                  Get Started
-                </Button>
-                <Button size="lg" variant="outline" className="border-[#042940] text-[#042940] hover:bg-[#042940] hover:text-white">
-                  Read More
-                </Button>
-             </div>
-           </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+ <div className="flex flex-col sm:flex-row gap-4">
+ <Button size="lg" className="bg-[#c5d520] text-[#042940]">
+ Get Started
+ </Button>
+ <Button size="lg" variant="outline" className="border-[#042940] text-[#042940] hover:bg-[#042940] hover:text-white">
+ Read More
+ </Button>
+ </div>
+ </motion.div>
+ </div>
+ </div>
+ </section>
+ );
 // Single CTA Banner (Command Center Concept)
 };
 const CtaBanner = () => {
-  return (
-    <section className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative bg-[#042940] rounded-[5px] p-12 md:p-20 overflow-hidden shadow-2xl text-center"
-        >
-           {/* Background Grid & Glow */}
-           <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: `url(${imgIndustryMunicipalities})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-           <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-           
-           {/* Center Glow */}
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none"></div>
+ return (
+ <section className="py-24 bg-white relative overflow-hidden">
+ <div className="container mx-auto px-4 md:px-8 relative z-10">
+ <motion.div 
+ initial={{ opacity: 0, y: 40 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.8 }}
+ className="relative bg-[#042940] rounded-[5px] p-12 md:p-20 overflow-hidden shadow-2xl text-center"
+ >
+ {/* Background Grid & Glow */}
+ <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: `url(${imgIndustryMunicipalities})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+ <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+ 
+ {/* Center Glow */}
+ <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#c5d520]/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-sm shadow-sm mb-8">
-                <div className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></div>
-                Service Availability
-             </div>
-             
-             <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6 tracking-tighter">
-               Check If We Service <span className="text-[#c5d520]">Your Area.</span>
-             </h2>
-             <p className="text-xl text-white/70 font-medium leading-relaxed max-w-xl mb-10">
-               Enter your zip code below to instantly see if our network of local vendors covers your location.
-             </p>
-             
-             <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center">
-               <Input 
-                 placeholder="Enter Zip Code" 
-                 className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
-               />
-               <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto">
-                 Check Now
-               </Button>
-             </div>
-           </div>
-        </motion.div>
-      </div>
-    </section>
-  );
+ <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-sm shadow-sm mb-8">
+ <div className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></div>
+ Service Availability
+ </div>
+ 
+ <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-6 tracking-tighter">
+ Check If We Service <span className="text-[#c5d520]">Your Area.</span>
+ </h2>
+ <p className="text-xl text-white/70 font-medium leading-relaxed max-w-xl mb-10">
+ Enter your zip code below to instantly see if our network of local vendors covers your location.
+ </p>
+ 
+ <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg justify-center items-center">
+ <Input 
+ placeholder="Enter Zip Code" 
+ className="bg-white/10 border-white/20 text-white placeholder:text-white/40 h-14 rounded-full px-6 text-lg focus-visible:ring-[#c5d520] flex-1 w-full" 
+ />
+ <Button size="lg" className="bg-[#c5d520] text-[#042940] shadow-[0_0_30px_rgba(197,213,32,0.3)] hover:shadow-[0_0_50px_rgba(197,213,32,0.5)] transition-all duration-300 w-full sm:w-auto">
+ Check Now
+ </Button>
+ </div>
+ </div>
+ </motion.div>
+ </div>
+ </section>
+ );
 };
 
 // Process Section (How it Works - Interactive)
 const Process = () => {
-  const steps = [
-    { num: "01", title: "You Request Service", desc: "Call us or book online. We are ready 24/7 to handle your waste needs immediately." },
-    { num: "02", title: "We Dispatch Your Team", desc: "Local crews are deployed within hours, not days, ensuring your project stays on schedule." },
-    { num: "03", title: "We Execute The Job", desc: "Professional removal, haulage, and site clearing with full safety compliance." },
-    { num: "04", title: "Documentation Provided", desc: "We provide full digital documentation and audit trails for every job completed." },
-    { num: "05", title: "Satisfaction Guaranteed", desc: "We ensure your site is spotless and follow up to confirm you are 100% satisfied with our service." },
-  ];
+ const steps = [
+ { num: "01", title: "You Request Service", desc: "Call us or book online. We are ready 24/7 to handle your waste needs immediately." },
+ { num: "02", title: "We Dispatch Your Team", desc: "Local crews are deployed within hours, not days, ensuring your project stays on schedule." },
+ { num: "03", title: "We Execute The Job", desc: "Professional removal, haulage, and site clearing with full safety compliance." },
+ { num: "04", title: "Documentation Provided", desc: "We provide full digital documentation and audit trails for every job completed." },
+ { num: "05", title: "Satisfaction Guaranteed", desc: "We ensure your site is spotless and follow up to confirm you are 100% satisfied with our service." },
+ ];
 
-  return (
-    <section id="process" className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-              Our Process
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
-            How It Works
-          </h2>
-          <p className="text-lg text-[#042940]/60">
-            A simple, transparent process designed to get your problem solved fast.
-          </p>
-        </div>
+ return (
+ <section id="process" className="py-24 bg-white relative overflow-hidden">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="text-center max-w-3xl mx-auto mb-16">
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
+ <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+ Our Process
+ </div>
+ <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
+ How It Works
+ </h2>
+ <p className="text-lg text-[#042940]/60">
+ A simple, transparent process designed to get your problem solved fast.
+ </p>
+ </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
-          {steps.map((step, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-center text-center hover:-translate-y-1"
-            >
-              <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
-                {step.num}
-              </div>
-              <h3 className="text-xl font-bold text-[#042940] mb-4 group-hover:text-[#c5d520] transition-colors duration-300">
-                {step.title}
-              </h3>
-              <p className="text-[#042940]/70 leading-relaxed text-sm">
-                {step.desc}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+ <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+ {steps.map((step, i) => (
+ <motion.div 
+ key={i}
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5, delay: i * 0.1 }}
+ className="group bg-white p-10 rounded-[5px] border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] transition-all duration-300 relative h-full flex flex-col items-center text-center hover:-translate-y-1"
+ >
+ <div className="w-16 h-16 rounded-full bg-[#F9F9F6] group-hover:bg-[#c5d520] transition-colors duration-300 flex items-center justify-center text-lg font-bold text-[#042940] mb-8 shrink-0">
+ {step.num}
+ </div>
+ <h3 className="text-xl font-bold text-[#042940] mb-4 group-hover:text-[#c5d520] transition-colors duration-300">
+ {step.title}
+ </h3>
+ <p className="text-[#042940]/70 leading-relaxed text-sm">
+ {step.desc}
+ </p>
+ </motion.div>
+ ))}
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Reasons Section (Grid with Sticky Feature)
 const Reasons = () => {
-  const features = [
-    { title: "Dedicated Point of Contact", icon: <Headset className="w-6 h-6" />, desc: "One person to handle everything. No call centers, no runarounds, just answers." },
-    { title: "Job Completion Proof", icon: <CheckCircle2 className="w-6 h-6" />, desc: "Visual confirmation for every job we complete, available instantly." },
-    { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner." },
-    { title: "Real Cost Savings", icon: <Truck className="w-6 h-6" />, desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service." }
-  ];
+ const features = [
+ { title: "Dedicated Point of Contact", icon: <Headset className="w-6 h-6" />, desc: "One person to handle everything. No call centers, no runarounds, just answers." },
+ { title: "Job Completion Proof", icon: <CheckCircle2 className="w-6 h-6" />, desc: "Visual confirmation for every job we complete, available instantly." },
+ { title: "Local Crews, National Reach", icon: <MapPin className="w-6 h-6" />, desc: "Vetted local crews across 48 states. You get the responsiveness of a local provider with the accountability of a national partner." },
+ { title: "Real Cost Savings", icon: <Truck className="w-6 h-6" />, desc: "Clients typically save up to 30% through vendor consolidation, rate negotiation, and right-sized service." }
+ ];
 
-  return (
-    <section className="py-24 bg-[#F8F8F8]">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-          {/* Left Sticky Content */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32">
-             <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.6 }}
-             >
-               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
-                  <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                  Benefits
-               </div>
-               <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
-                 More Reasons You’ll Love Us
-               </h2>
-               <p className="text-lg text-primary/60 mb-8 leading-relaxed">
-                 We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.
-               </p>
-               <Button size="lg" className="bg-secondary text-primary hover:bg-secondary/90">
-                  Request a Service
-               </Button>
-             </motion.div>
-          </div>
+ return (
+ <section className="py-24 bg-[#F8F8F8]">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+ {/* Left Sticky Content */}
+ <div className="lg:col-span-5 lg:sticky lg:top-32">
+ <motion.div
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ >
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
+ <span className="w-2 h-2 rounded-full bg-secondary"></span>
+ Benefits
+ </div>
+ <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
+ More Reasons You’ll Love Us
+ </h2>
+ <p className="text-lg text-primary/60 mb-8 leading-relaxed">
+ We've rebuilt waste management from the ground up to serve modern businesses. Say goodbye to hidden fees and confusing contracts.
+ </p>
+ <Button size="lg" className="bg-secondary text-primary">
+ Request a Service
+ </Button>
+ </motion.div>
+ </div>
 
-          {/* Right Grid Content */}
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
-            {features.map((item, i) => (
-              <motion.div 
-                key={i} 
-                className="group bg-white p-8 rounded-[5px] shadow-sm border border-transparent hover:border-secondary/20 hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="w-14 h-14 rounded-[5px] bg-[#F9F9F6] group-hover:bg-secondary group-hover:text-primary transition-colors duration-300 flex items-center justify-center text-primary mb-6">
-                  {item.icon}
-                </div>
-                
-                <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
-                <p className="text-primary/60 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+ {/* Right Grid Content */}
+ <div className="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+ {features.map((item, i) => (
+ <motion.div 
+ key={i} 
+ className="group bg-white p-8 rounded-[5px] shadow-sm border border-transparent hover:border-secondary/20 hover:shadow-xl transition-all duration-300"
+ whileHover={{ y: -5 }}
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: i * 0.1 }}
+ viewport={{ once: true }}
+ >
+ <div className="w-14 h-14 rounded-[5px] bg-[#F9F9F6] group-hover:bg-secondary group-hover:text-primary transition-colors duration-300 flex items-center justify-center text-primary mb-6">
+ {item.icon}
+ </div>
+ 
+ <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
+ <p className="text-primary/60 leading-relaxed group-hover:text-primary/80 transition-colors duration-300">{item.desc}</p>
+ </motion.div>
+ ))}
+ </div>
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Stats Section (Numbers and Media 1)
 const Stats = () => {
-  return (
-    <section className="py-24 bg-[#FDFDFD]">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="sticky top-32">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
-                  <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                  Key Metrics
-              </div>
-              <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
-                Why Clients Call Us Again and Again.
-              </h2>
-              <p className="text-lg text-primary/60 mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary text-white">
-                  Request a Service
-                </Button>
-                <Button size="lg" variant="ghost" className="text-primary hover:bg-transparent hover:underline flex items-center gap-2">
-                   <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
-                </Button>
-              </div>
-            </motion.div>
-          </div>
+ return (
+ <section className="py-24 bg-[#FDFDFD]">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="grid lg:grid-cols-2 gap-16 items-start">
+ <div className="sticky top-32">
+ <motion.div
+ initial={{ opacity: 0, x: -20 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ >
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
+ <span className="w-2 h-2 rounded-full bg-secondary"></span>
+ Key Metrics
+ </div>
+ <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 leading-tight tracking-tighter">
+ Why Clients Call Us Again and Again.
+ </h2>
+ <p className="text-lg text-primary/60 mb-8">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+ </p>
+ <div className="flex flex-col sm:flex-row gap-4">
+ <Button size="lg" className="bg-primary text-white">
+ Request a Service
+ </Button>
+ <Button size="lg" variant="ghost" className="text-primary hover:bg-transparent hover:underline flex items-center gap-2">
+ <Phone className="w-5 h-5 text-secondary" /> (888) 555-0123
+ </Button>
+ </div>
+ </motion.div>
+ </div>
 
-          <div className="grid gap-8">
-             <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: 0.1 }}
-               className="border border-primary/10 p-8 rounded-[5px] bg-white"
-             >
-                <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
-                <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
-                <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-             </motion.div>
-             
-             <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: 0.2 }}
-               className="border border-primary/10 p-8 rounded-[5px] bg-white"
-             >
-                <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                  <img src={imgIndustryHospitality} className="w-full h-full object-cover" alt="Stats Visual" />
-                </div>
-                <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
-                <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
-                <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-             </motion.div>
+ <div className="grid gap-8">
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5, delay: 0.1 }}
+ className="border border-primary/10 p-8 rounded-[5px] bg-white"
+ >
+ <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+ <div className="text-7xl font-extrabold text-primary mb-4">30%</div>
+ <Separator className="bg-primary/10 mb-4" />
+ <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ </motion.div>
+ 
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5, delay: 0.2 }}
+ className="border border-primary/10 p-8 rounded-[5px] bg-white"
+ >
+ <div className="h-64 w-full rounded-[5px] overflow-hidden mb-8">
+ <img src={imgIndustryHospitality} className="w-full h-full object-cover" alt="Stats Visual" />
+ </div>
+ <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+ <div className="text-7xl font-extrabold text-primary mb-4">70K</div>
+ <Separator className="bg-primary/10 mb-4" />
+ <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ </motion.div>
 
-             <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: 0.3 }}
-               className="border border-primary/10 p-8 rounded-[5px] bg-white"
-             >
-                <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
-                <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
-                <Separator className="bg-primary/10 mb-4" />
-                <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-             </motion.div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5, delay: 0.3 }}
+ className="border border-primary/10 p-8 rounded-[5px] bg-white"
+ >
+ <div className="font-semibold text-xl text-primary mb-4">Case / Stat Here</div>
+ <div className="text-7xl font-extrabold text-primary mb-4">80%</div>
+ <Separator className="bg-primary/10 mb-4" />
+ <p className="text-primary/60">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+ </motion.div>
+ </div>
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Testimonial (Interactive Slider)
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+ const [currentIndex, setCurrentIndex] = useState(0);
 
-  const testimonials = [
-    {
-      quote: "Tenth Rock transformed our waste management. We saved 30% in the first quarter alone.",
-      author: "Sarah Jenkins",
-      role: "Director of Operations",
-      company: "Retail Giant Co.",
-      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
-    },
-    {
-      quote: "The single point of contact is a game changer. No more chasing vendors across 15 states.",
-      author: "Michael Ross",
-      role: "Facility Manager",
-      company: "National Logistics Inc.",
-      img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
-    },
-    {
-      quote: "Finally, a partner that understands compliance. The audit trail features are exactly what we needed.",
-      author: "David Chen",
-      role: "Compliance Officer",
-      company: "BioTech Solutions",
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
-    }
-  ];
+ const testimonials = [
+ {
+ quote: "Tenth Rock transformed our waste management. We saved 30% in the first quarter alone.",
+ author: "Sarah Jenkins",
+ role: "Director of Operations",
+ company: "Retail Giant Co.",
+ img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200"
+ },
+ {
+ quote: "The single point of contact is a game changer. No more chasing vendors across 15 states.",
+ author: "Michael Ross",
+ role: "Facility Manager",
+ company: "National Logistics Inc.",
+ img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200&h=200"
+ },
+ {
+ quote: "Finally, a partner that understands compliance. The audit trail features are exactly what we needed.",
+ author: "David Chen",
+ role: "Compliance Officer",
+ company: "BioTech Solutions",
+ img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
+ }
+ ];
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+ const nextTestimonial = () => {
+ setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+ };
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+ const prevTestimonial = () => {
+ setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+ };
 
-  return (
-    <section className="py-24 bg-[#042940] text-white relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
-      
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-      
-      {/* Glow Effect */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#c5d520]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+ return (
+ <section className="py-24 bg-[#042940] text-white relative overflow-hidden">
+ {/* Background Gradient */}
+ <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
+ 
+ {/* Background Pattern */}
+ <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+ 
+ {/* Glow Effect */}
+ <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#c5d520]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
-           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-bold text-sm backdrop-blur-md shadow-sm mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
-              Client Stories
-           </div>
+ <div className="container mx-auto px-4 md:px-8 relative z-10">
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="max-w-4xl mx-auto"
+ >
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white font-bold text-sm backdrop-blur-md shadow-sm mb-8">
+ <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
+ Client Stories
+ </div>
 
-           <div className="flex gap-1 mb-8">
-              {[1,2,3,4,5].map(i => <Star key={i} className="w-6 h-6 fill-[#c5d520] text-[#c5d520]" />)}
-           </div>
-           
-           <div className="relative min-h-[300px]">
-             <AnimatePresence mode="wait">
-               <motion.div
-                 key={currentIndex}
-                 initial={{ opacity: 0, y: 20 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 exit={{ opacity: 0, y: -20 }}
-                 transition={{ duration: 0.5 }}
-               >
-                 <blockquote className="text-3xl md:text-5xl font-bold leading-tight mb-10 tracking-tight">
-                   "{testimonials[currentIndex].quote}"
-                 </blockquote>
-                 
-                 <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
-                       <img src={testimonials[currentIndex].img} alt={testimonials[currentIndex].author} className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                       <div className="font-bold text-xl text-white">{testimonials[currentIndex].author}</div>
-                       <div className="text-white/60 font-medium">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</div>
-                    </div>
-                 </div>
-               </motion.div>
-             </AnimatePresence>
-           </div>
+ <div className="flex gap-1 mb-8">
+ {[1,2,3,4,5].map(i => <Star key={i} className="w-6 h-6 fill-[#c5d520] text-[#c5d520]" />)}
+ </div>
+ 
+ <div className="relative min-h-[300px]">
+ <AnimatePresence mode="wait">
+ <motion.div
+ key={currentIndex}
+ initial={{ opacity: 0, y: 20 }}
+ animate={{ opacity: 1, y: 0 }}
+ exit={{ opacity: 0, y: -20 }}
+ transition={{ duration: 0.5 }}
+ >
+ <blockquote className="text-3xl md:text-5xl font-bold leading-tight mb-10 tracking-tight">
+ "{testimonials[currentIndex].quote}"
+ </blockquote>
+ 
+ <div className="flex items-center gap-4">
+ <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
+ <img src={testimonials[currentIndex].img} alt={testimonials[currentIndex].author} className="w-full h-full object-cover" />
+ </div>
+ <div>
+ <div className="font-bold text-xl text-white">{testimonials[currentIndex].author}</div>
+ <div className="text-white/60 font-medium">{testimonials[currentIndex].role}, {testimonials[currentIndex].company}</div>
+ </div>
+ </div>
+ </motion.div>
+ </AnimatePresence>
+ </div>
 
-           {/* Controls */}
-           <div className="flex gap-4 pt-8">
-              <button 
-                onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 text-white transition-all duration-300"
-                aria-label="Previous testimonial"
-              >
-                <ArrowRight className="w-5 h-5 rotate-180" />
-              </button>
-              <button 
-                onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full bg-[#c5d520] text-[#042940] flex items-center justify-center hover:bg-[#d6d98b] transition-all duration-300 shadow-lg hover:scale-110"
-                aria-label="Next testimonial"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
-           </div>
-        </motion.div>
-      </div>
-    </section>
-  );
+ {/* Controls */}
+ <div className="flex gap-4 pt-8">
+ <button 
+ onClick={prevTestimonial}
+ className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 text-white transition-all duration-300"
+ aria-label="Previous testimonial"
+ >
+ <ArrowRight className="w-5 h-5 rotate-180" />
+ </button>
+ <button 
+ onClick={nextTestimonial}
+ className="w-12 h-12 rounded-full bg-[#c5d520] text-[#042940] flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110"
+ aria-label="Next testimonial"
+ >
+ <ArrowRight className="w-5 h-5" />
+ </button>
+ </div>
+ </motion.div>
+ </div>
+ </section>
+ );
 };
 
 // FAQ (FAQ 1)
 const Faq = () => {
-  const [openItem, setOpenItem] = useState("item-0");
+ const [openItem, setOpenItem] = useState("item-0");
 
-  const faqs = [
-    {
-      question: "How Quickly Can You Arrange a Pickup?",
-      answer: "For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night."
-    },
-    {
-      question: "Do You Service Multiple Locations Nationwide?",
-      answer: "Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
-    },
-    {
-      question: "What Types of Waste Do You Handle?",
-      answer: "We handle almost all non-hazardous commercial waste streams including general trash, recycling (cardboard, plastic, metal), construction debris, organic waste, and e-waste. We also coordinate specialized hazmat disposal upon request."
-    },
-    {
-      question: "Are There Long-Term Contracts?",
-      answer: "We believe in earning your business every day. While we offer contract savings, many of our services are available with flexible terms. We want you to stay because you're happy, not because you're locked in."
-    },
-    {
-      question: "How Do You Help With Sustainability Goals?",
-      answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials."
-    }
-  ];
+ const faqs = [
+ {
+ question: "How Quickly Can You Arrange a Pickup?",
+ answer: "For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night."
+ },
+ {
+ question: "Do You Service Multiple Locations Nationwide?",
+ answer: "Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice."
+ },
+ {
+ question: "What Types of Waste Do You Handle?",
+ answer: "We handle almost all non-hazardous commercial waste streams including general trash, recycling (cardboard, plastic, metal), construction debris, organic waste, and e-waste. We also coordinate specialized hazmat disposal upon request."
+ },
+ {
+ question: "Are There Long-Term Contracts?",
+ answer: "We believe in earning your business every day. While we offer contract savings, many of our services are available with flexible terms. We want you to stay because you're happy, not because you're locked in."
+ },
+ {
+ question: "How Do You Help With Sustainability Goals?",
+ answer: "Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials."
+ }
+ ];
 
-  return (
-    <section id="faq" className="py-24 bg-[#F9F9F6] relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
-      
-      <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-4">
-              <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              Common Questions
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
-          <p className="text-lg text-primary/60 max-w-2xl mx-auto">
-            Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
-          </p>
-        </div>
+ return (
+ <section id="faq" className="py-24 bg-[#F9F9F6] relative overflow-hidden">
+ {/* Background Decor */}
+ <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
+ 
+ <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
+ <div className="text-center mb-16 space-y-4">
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-4">
+ <span className="w-2 h-2 rounded-full bg-secondary"></span>
+ Common Questions
+ </div>
+ <h2 className="text-4xl md:text-5xl font-medium text-primary tracking-tighter">Frequently Asked Questions</h2>
+ <p className="text-lg text-primary/60 max-w-2xl mx-auto">
+ Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.
+ </p>
+ </div>
 
-        <div className="grid gap-4">
-          {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div 
-                className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
-                  openItem === `item-${i}` 
-                    ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
-                    : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
-                }`}
-                onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
-              >
-                <button className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none">
-                  <span className={`text-xl font-bold transition-colors duration-300 ${
-                    openItem === `item-${i}` ? "text-white" : "text-primary"
-                  }`}>
-                    {faq.question}
-                  </span>
-                  <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    openItem === `item-${i}` 
-                      ? "bg-[#c5d520] rotate-180" 
-                      : "bg-primary/5 group-hover:bg-primary/10"
-                  }`}>
-                    <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
-                      openItem === `item-${i}` ? "text-[#042940]" : "text-primary"
-                    }`} />
-                  </div>
-                </button>
-                <div 
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    openItem === `item-${i}` ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="px-6 md:px-8 pb-8 pt-0">
-                    <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        
-        <div className="mt-16 text-center">
-           <p className="text-primary/60 mb-4 font-medium">Still Have Questions?</p>
-           <Button size="lg" className="shadow-lg">
-              Contact Us
-           </Button>
-        </div>
-      </div>
-    </section>
-  );
+ <div className="grid gap-4">
+ {faqs.map((faq, i) => (
+ <motion.div
+ key={i}
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.4, delay: i * 0.1 }}
+ viewport={{ once: true }}
+ >
+ <div 
+ className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
+ openItem === `item-${i}` 
+ ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
+ : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
+ }`}
+ onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
+ >
+ <button className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none">
+ <span className={`text-xl font-bold transition-colors duration-300 ${
+ openItem === `item-${i}` ? "text-white" : "text-primary"
+ }`}>
+ {faq.question}
+ </span>
+ <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+ openItem === `item-${i}` 
+ ? "bg-[#c5d520] rotate-180" 
+ : "bg-primary/5 group-hover:bg-primary/10"
+ }`}>
+ <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
+ openItem === `item-${i}` ? "text-[#042940]" : "text-primary"
+ }`} />
+ </div>
+ </button>
+ <div 
+ className={`transition-all duration-300 ease-in-out overflow-hidden ${
+ openItem === `item-${i}` ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+ }`}
+ >
+ <div className="px-6 md:px-8 pb-8 pt-0">
+ <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6">
+ {faq.answer}
+ </p>
+ </div>
+ </div>
+ </div>
+ </motion.div>
+ ))}
+ </div>
+ 
+ <div className="mt-16 text-center">
+ <p className="text-primary/60 mb-4 font-medium">Still Have Questions?</p>
+ <Button size="lg" className="shadow-lg">
+ Contact Us
+ </Button>
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // One Location 2
 const Location = () => {
-  return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-secondary"></span>
-              Locations
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium text-primary mb-2 tracking-tighter">Where To Find Us</h2>
-          <p className="text-lg text-primary/60">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.
-          </p>
-        </motion.div>
+ return (
+ <section className="py-24 bg-white">
+ <div className="container mx-auto px-4 md:px-8">
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="text-center mb-16"
+ >
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
+ <span className="w-2 h-2 rounded-full bg-secondary"></span>
+ Locations
+ </div>
+ <h2 className="text-4xl md:text-5xl font-medium text-primary mb-2 tracking-tighter">Where To Find Us</h2>
+ <p className="text-lg text-primary/60">
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.
+ </p>
+ </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-           <motion.div 
-             initial={{ opacity: 0, x: -20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
-             className="space-y-8"
-           >
-              <div className="flex gap-6">
-                 <MapPin className="w-8 h-8 text-secondary shrink-0" />
-                 <div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Office</h3>
-                    <p className="text-lg text-primary/70 mb-4">123 Sample St, Sydney NSW 2000 AU</p>
-                  </div>
-              </div>
+ <div className="grid lg:grid-cols-2 gap-12 items-center">
+ <motion.div 
+ initial={{ opacity: 0, x: -20 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="space-y-8"
+ >
+ <div className="flex gap-6">
+ <MapPin className="w-8 h-8 text-secondary shrink-0" />
+ <div>
+ <h3 className="text-2xl font-bold text-primary mb-2">Office</h3>
+ <p className="text-lg text-primary/70 mb-4">123 Sample St, Sydney NSW 2000 AU</p>
+ </div>
+ </div>
 
-              <div className="flex gap-6">
-                 <Phone className="w-8 h-8 text-secondary shrink-0" />
-                 <div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Phone</h3>
-                    <p className="text-lg text-primary/70">
-                      <a
-                        href="tel:+17275105454"
-                        className="underline underline-offset-4 decoration-primary/25 hover:decoration-primary/60 transition-colors"
-                        data-testid="link-phone"
-                      >
-                        (727) 510-5454
-                      </a>
-                    </p>
-                 </div>
-              </div>
+ <div className="flex gap-6">
+ <Phone className="w-8 h-8 text-secondary shrink-0" />
+ <div>
+ <h3 className="text-2xl font-bold text-primary mb-2">Phone</h3>
+ <p className="text-lg text-primary/70">
+ <a
+ href="tel:+17275105454"
+ className="underline underline-offset-4 decoration-primary/25 hover:decoration-primary/60 transition-colors"
+ data-testid="link-phone"
+ >
+ (727) 510-5454
+ </a>
+ </p>
+ </div>
+ </div>
 
-              <div className="flex gap-6">
-                 <Mail className="w-8 h-8 text-secondary shrink-0" />
-                 <div>
-                    <h3 className="text-2xl font-bold text-primary mb-2">Email</h3>
-                    <p className="text-lg text-primary/70">
-                      <a
-                        href="mailto:hello@tenthrock.com"
-                        className="underline underline-offset-4 decoration-primary/25 hover:decoration-primary/60 transition-colors"
-                        data-testid="link-email"
-                      >
-                        hello@tenthrock.com
-                      </a>
-                    </p>
-                 </div>
-              </div>
+ <div className="flex gap-6">
+ <Mail className="w-8 h-8 text-secondary shrink-0" />
+ <div>
+ <h3 className="text-2xl font-bold text-primary mb-2">Email</h3>
+ <p className="text-lg text-primary/70">
+ <a
+ href="mailto:hello@tenthrock.com"
+ className="underline underline-offset-4 decoration-primary/25 hover:decoration-primary/60 transition-colors"
+ data-testid="link-email"
+ >
+ hello@tenthrock.com
+ </a>
+ </p>
+ </div>
+ </div>
 
-           </motion.div>
+ </motion.div>
 
-           <motion.div 
-             initial={{ opacity: 0, x: 20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6 }}
-             className="h-[600px] overflow-visible relative bg-white"
-           >
-              {/* Map */}
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#042940]/5 to-[#c5d520]/10" data-testid="map-coverage-placeholder"><div className="text-6xl font-bold text-primary/20">48 States</div></div>
-           </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+ <motion.div 
+ initial={{ opacity: 0, x: 20 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.6 }}
+ className="h-[600px] overflow-visible relative bg-white"
+ >
+ {/* Map */}
+ <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#042940]/5 to-[#c5d520]/10" data-testid="map-coverage-placeholder"><div className="text-6xl font-bold text-primary/20">48 States</div></div>
+ </motion.div>
+ </div>
+ </div>
+ </section>
+ );
 };
 
 // Final CTA (Split Layout with Visual)
 const FinalCta = () => {
-  return (
-    <section className="py-16 bg-white">
-       <div className="container mx-auto px-4 md:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
-          >
-             {/* Content Side */}
-             <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-                
-                <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
-                  Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
-                </h2>
-                <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">
-                   Join thousands of businesses optimizing their disposal costs and sustainability with Tenth Rock. One partner, zero headaches.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4">
-                   <Button size="lg" className="bg-[#c5d520] text-[#042940] hover:bg-[#d6d98b] shadow-lg hover:scale-105 transition-all duration-300">
-                      Request a Service
-                   </Button>
-                </div>
-             </div>
+ return (
+ <section className="py-16 bg-white">
+ <div className="container mx-auto px-4 md:px-8">
+ <motion.div 
+ initial={{ opacity: 0, y: 40 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.8 }}
+ className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row"
+ >
+ {/* Content Side */}
+ <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center relative z-10">
+ <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
+ 
+ <h2 className="text-4xl md:text-5xl font-medium text-white mb-4 leading-[1.1] tracking-tighter">
+ Streamline Your <span className="text-[#c5d520]">Waste Management</span>&nbsp;Today
+ </h2>
+ <p className="text-white/80 text-lg font-medium mb-8 max-w-lg leading-relaxed">
+ Join thousands of businesses optimizing their disposal costs and sustainability with Tenth Rock. One partner, zero headaches.
+ </p>
+ 
+ <div className="flex flex-col sm:flex-row gap-4">
+ <Button size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg hover:scale-105 transition-all duration-300">
+ Request a Service
+ </Button>
+ </div>
+ </div>
 
-             {/* Image Side */}
-             <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
-                <img src={imgIndustryEducational} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-[#042940]/20 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#042940] to-transparent lg:via-[#042940]/50"></div>
-                
-             {/* Floating Stat Card */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.4 }}
-                  className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-[5px] max-w-xs hidden md:block transform hover:scale-105 transition-transform duration-300"
-                >
-                   <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
-                         <Phone className="w-6 h-6" />
-                      </div>
-                      <div>
-                         <div className="text-[#c5d520] text-xl font-bold">(888) 555-0123</div>
-                      </div>
-                   </div>
-                </motion.div>
-             </div>
-          </motion.div>
-       </div>
-    </section>
-  );
+ {/* Image Side */}
+ <div className="lg:w-1/2 relative min-h-[300px] lg:min-h-full">
+ <img src={imgIndustryEducational} alt="Ready to start" className="absolute inset-0 w-full h-full object-cover" />
+ <div className="absolute inset-0 bg-[#042940]/20 mix-blend-multiply"></div>
+ <div className="absolute inset-0 bg-gradient-to-r from-[#042940] to-transparent lg:via-[#042940]/50"></div>
+ 
+ {/* Floating Stat Card */}
+ <motion.div 
+ initial={{ opacity: 0, scale: 0.8 }}
+ whileInView={{ opacity: 1, scale: 1 }}
+ viewport={{ once: true }}
+ transition={{ delay: 0.5, duration: 0.4 }}
+ className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-[5px] max-w-xs hidden md:block transform hover:scale-105 transition-transform duration-300"
+ >
+ <div className="flex items-center gap-4">
+ <div className="w-12 h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
+ <Phone className="w-6 h-6" />
+ </div>
+ <div>
+ <div className="text-[#c5d520] text-xl font-bold">(888) 555-0123</div>
+ </div>
+ </div>
+ </motion.div>
+ </div>
+ </motion.div>
+ </div>
+ </section>
+ );
 };
 
 // Footer (Modern Dark)
 const Footer = () => {
-  return (
-    <footer className="bg-[#042940] text-white py-20 border-t border-white/5">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          
-          {/* Brand Column */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-8"
-          >
-            <Logo variant="white" />
-            <p className="text-white/60 leading-relaxed max-w-xs">
-              Redefining commercial waste management with speed, transparency, and reliability across 48 states.
-            </p>
-            <div className="flex gap-4">
-               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                 <Linkedin className="w-5 h-5" />
-               </div>
-               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                 <Twitter className="w-5 h-5" />
-               </div>
-               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                 <Instagram className="w-5 h-5" />
-               </div>
-               <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
-                 <Facebook className="w-5 h-5" />
-               </div>
-            </div>
-          </motion.div>
-          
-          {/* Services Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-             <h4 className="font-bold text-lg mb-6 text-white">Services</h4>
-             <ul className="space-y-4 text-white/60">
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Waste Removal</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Dumpster Rentals</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Recycling Programs</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Emergency Cleanups</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Compliance Audits</a></li>
-             </ul>
-          </motion.div>
+ return (
+ <footer className="bg-[#042940] text-white py-20 border-t border-white/5">
+ <div className="container mx-auto px-4 md:px-8">
+ <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+ 
+ {/* Brand Column */}
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5 }}
+ className="space-y-8"
+ >
+ <Logo variant="white" />
+ <p className="text-white/60 leading-relaxed max-w-xs">
+ Redefining commercial waste management with speed, transparency, and reliability across 48 states.
+ </p>
+ <div className="flex gap-4">
+ <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+ <Linkedin className="w-5 h-5" />
+ </div>
+ <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+ <Twitter className="w-5 h-5" />
+ </div>
+ <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+ <Instagram className="w-5 h-5" />
+ </div>
+ <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c5d520] hover:text-[#042940] transition-colors cursor-pointer">
+ <Facebook className="w-5 h-5" />
+ </div>
+ </div>
+ </motion.div>
+ 
+ {/* Services Column */}
+ <motion.div
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5, delay: 0.1 }}
+ >
+ <h4 className="font-bold text-lg mb-6 text-white">Services</h4>
+ <ul className="space-y-4 text-white/60">
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Waste Removal</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Dumpster Rentals</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Recycling Programs</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Emergency Cleanups</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Compliance Audits</a></li>
+ </ul>
+ </motion.div>
 
-          {/* Company Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-             <h4 className="font-bold text-lg mb-6 text-white">Company</h4>
-             <ul className="space-y-4 text-white/60">
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Success Stories</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Partner Program</a></li>
-                <li><a href="#" className="hover:text-[#c5d520] transition-colors">Contact</a></li>
-             </ul>
-          </motion.div>
+ {/* Company Column */}
+ <motion.div
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5, delay: 0.2 }}
+ >
+ <h4 className="font-bold text-lg mb-6 text-white">Company</h4>
+ <ul className="space-y-4 text-white/60">
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">About Us</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Careers</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Success Stories</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Partner Program</a></li>
+ <li><a href="#" className="hover:text-[#c5d520] transition-colors">Contact</a></li>
+ </ul>
+ </motion.div>
 
-          {/* Newsletter/Contact Column */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="space-y-6"
-          >
-             <h4 className="font-bold text-lg text-white">Stay Updated</h4>
-             <p className="text-white/60">
-                Get the latest industry insights and compliance updates.
-             </p>
-             <div className="flex gap-2">
-                <Input 
-                  placeholder="Enter your email" 
-                  className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6" 
-                />
-                <Button size="lg" className="bg-[#c5d520] hover:bg-[#d6d98b] text-[#042940]">
-                   <ArrowRight className="w-5 h-5" />
-                </Button>
-             </div>
-             <div className="pt-4 border-t border-white/10 mt-6">
-                <p className="text-sm font-bold text-white mb-2">Need Immediate Help?</p>
-                <a href="tel:8885550123" className="text-xl font-bold text-[#c5d520] hover:underline">
-                   (888) 555-0123
-                </a>
-             </div>
-          </motion.div>
-        </div>
-        
-        <Separator className="bg-white/10 mb-8" />
-        
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
-           <p>© 2026 Tenth Rock. All rights reserved.</p>
-           <div className="flex gap-8 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
-           </div>
-        </div>
-      </div>
-    </footer>
-  );
+ {/* Newsletter/Contact Column */}
+ <motion.div 
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.5, delay: 0.3 }}
+ className="space-y-6"
+ >
+ <h4 className="font-bold text-lg text-white">Stay Updated</h4>
+ <p className="text-white/60">
+ Get the latest industry insights and compliance updates.
+ </p>
+ <div className="flex gap-2">
+ <Input 
+ placeholder="Enter your email" 
+ className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-14 focus-visible:ring-[#c5d520] rounded-full px-6" 
+ />
+ <Button size="lg" className="bg-[#c5d520] text-[#042940]">
+ <ArrowRight className="w-5 h-5" />
+ </Button>
+ </div>
+ <div className="pt-4 border-t border-white/10 mt-6">
+ <p className="text-sm font-bold text-white mb-2">Need Immediate Help?</p>
+ <a href="tel:8885550123" className="text-xl font-bold text-[#c5d520] hover:underline">
+ (888) 555-0123
+ </a>
+ </div>
+ </motion.div>
+ </div>
+ 
+ <Separator className="bg-white/10 mb-8" />
+ 
+ <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+ <p>© 2026 Tenth Rock. All rights reserved.</p>
+ <div className="flex gap-8 mt-4 md:mt-0">
+ <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+ <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+ <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
+ </div>
+ </div>
+ </div>
+ </footer>
+ );
 };
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
-      <Navbar />
-      <Hero />
-      <LogoList />
-      <ServicesSection />
-      <WhoWeHelp />
-      <CtaBanner />
-      <Process />
-      <CaseStudySection />
-      <Reasons />
-      <Stats />
-      <Testimonials />
-      <Faq />
-      <Location />
-      <FinalCta />
-      <Footer />
-    </div>
-  );
+ return (
+ <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
+ <Navbar />
+ <Hero />
+ <LogoList />
+ <ServicesSection />
+ <WhoWeHelp />
+ <CtaBanner />
+ <Process />
+ <CaseStudySection />
+ <Reasons />
+ <Stats />
+ <Testimonials />
+ <Faq />
+ <Location />
+ <FinalCta />
+ <Footer />
+ </div>
+ );
 }
 
 

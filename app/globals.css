@@ -336,30 +336,59 @@
 }
 
 
+/* Touch / no-hover devices: always reveal body + render the CTA as a proper
+   bordered, full-width, rounded tappable button so it reads as an action
+   affordance and has a 44px tap target. */
 .ind-card .ind-card-body {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-}
-.ind-card:hover .ind-card-body,
-.ind-card:focus-within .ind-card-body {
   max-height: 8rem;
   opacity: 1;
+  overflow: hidden;
 }
 .ind-card .ind-card-cta {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.2s ease-out;
-}
-.ind-card:hover .ind-card-cta,
-.ind-card:focus-within .ind-card-cta {
-  max-height: 2rem;
+  max-height: none;
   opacity: 1;
+  overflow: visible;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid rgba(197, 213, 32, 0.5);
+  border-radius: 9999px;
+  padding: 0.625rem 1rem;
+  min-height: 44px;
 }
-.ind-card:hover .ind-card-cta {
-  transform: translateX(4px);
+
+/* Devices that genuinely support hover (desktops): keep the reveal-on-hover
+   inline CTA behavior — strip the mobile button styling. */
+@media (hover: hover) {
+  .ind-card .ind-card-body {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  }
+  .ind-card:hover .ind-card-body,
+  .ind-card:focus-within .ind-card-body {
+    max-height: 8rem;
+    opacity: 1;
+  }
+  .ind-card .ind-card-cta {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: auto;
+    justify-content: flex-start;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    min-height: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.2s ease-out;
+  }
+  .ind-card:hover .ind-card-cta,
+  .ind-card:focus-within .ind-card-cta {
+    max-height: 2rem;
+    opacity: 1;
+  }
+  .ind-card:hover .ind-card-cta {
+    transform: translateX(4px);
+  }
 }
 
 @keyframes heroFadeUp {

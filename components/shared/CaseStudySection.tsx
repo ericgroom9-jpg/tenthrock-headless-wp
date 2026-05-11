@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
+import AnimatedStatValue from "@/components/shared/AnimatedStatValue";
 import { ArrowRight } from "lucide-react";
 
 export interface CaseStudy {
@@ -146,59 +147,114 @@ interface CaseStudySectionProps {
 export default function CaseStudySection({ caseStudies }: CaseStudySectionProps) {
   const studies = caseStudies && caseStudies.length > 0 ? caseStudies : defaultCaseStudies;
   const [currentIndex, setCurrentIndex] = useState(0);
+  // 0 = featured/main image; 1..N = thumbImages[i-1]. Reset when the carousel slide changes.
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const goToPrev = () => {
+    setActiveImageIndex(0);
     setCurrentIndex((prev) => (prev === 0 ? studies.length - 1 : prev - 1));
   };
 
   const goToNext = () => {
+    setActiveImageIndex(0);
     setCurrentIndex((prev) => (prev === studies.length - 1 ? 0 : prev + 1));
   };
 
   const study = studies[currentIndex];
+  // Flat list of all 4 images for this study: [main, thumb0, thumb1, thumb2].
+  const allImages = [
+    { src: study.mainImage, alt: study.mainImageAlt },
+    ...study.thumbImages,
+  ];
+  const featured = allImages[activeImageIndex] ?? allImages[0];
+  // Thumbnail row keeps 3 fixed slots. Slot i normally shows allImages[i+1];
+  // when allImages[i+1] is the currently-featured one, that slot instead
+  // shows the originally-main image — so the previously-featured image
+  // always rotates into the empty slot and nothing ever disappears.
+  const thumbSlots = [0, 1, 2].map((i) => {
+    const naturalIndex = i + 1;
+    const imageIndex = naturalIndex === activeImageIndex ? 0 : naturalIndex;
+    return { imageIndex, image: allImages[imageIndex] };
+  });
 
   return (
     <section className="py-16 md:py-24 bg-white border-b border-primary/5" aria-label="Case studies" data-testid="section-case-studies">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4 order-2 lg:order-1">
+        <div className="grid xl:grid-cols-2 gap-12 items-center">
+          <div className="space-y-4 order-2 xl:order-1">
             
               <FadeIn
-                key={`main-${currentIndex}`}
+                key={`main-${currentIndex}-${activeImageIndex}`}
                 className="relative rounded-[5px] overflow-hidden h-[400px]"
               >
                 <Image
-                  src={study.mainImage}
-                  alt={study.mainImageAlt}
+                  src={featured.src}
+                  alt={featured.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover transition-opacity duration-500"
                   loading="lazy"
+                  data-testid="img-case-study-featured"
                 />
               </FadeIn>
             
             <div className="grid grid-cols-3 gap-4">
               
-                {study.thumbImages.map((img, i) => (
+                {thumbSlots.map((slot, i) => (
                   <FadeIn
-                    key={`thumb-${currentIndex}-${i}`}
-                    className="relative rounded-[5px] overflow-hidden aspect-square"
+                    key={`thumb-${currentIndex}-${i}-${slot.imageIndex}`}
+                    className="relative aspect-square"
                   >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      sizes="(max-width: 1024px) 33vw, 16vw"
-                      className="object-cover"
-                      loading="lazy"
-                    />
+                    <button
+                      type="button"
+                      onClick={() => setActiveImageIndex(slot.imageIndex)}
+                      aria-label={`Show image: ${slot.image.alt}`}
+                      data-testid={`button-case-study-thumb-${i}`}
+                      className="group relative block w-full h-full rounded-[5px] overflow-hidden cursor-pointer ring-1 ring-transparent hover:ring-2 hover:ring-[#c5d520]/60 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 transition-all duration-300"
+                    >
+                      <Image
+                        src={slot.image.src}
+                        alt={slot.image.alt}
+                        fill
+                        sizes="(max-width: 1024px) 33vw, 16vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        loading="lazy"
+                      />
+                      <span
+                        className="pointer-events-none absolute inset-0 bg-[#042940]/20 transition-colors duration-300 group-hover:bg-[#042940]/0"
+                        aria-hidden="true"
+                      />
+                    </button>
                   </FadeIn>
                 ))}
               
             </div>
+
+            {/* Mobile-only carousel controls (sit below the images on small screens) */}
+            <div className="flex xl:hidden items-center gap-4 pt-2">
+              <button
+                onClick={goToPrev}
+                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
+                aria-label="Previous case study"
+                data-testid="button-case-study-prev-mobile"
+              >
+                <ArrowRight className="w-5 h-5 rotate-180" />
+              </button>
+              <button
+                onClick={goToNext}
+                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
+                aria-label="Next case study"
+                data-testid="button-case-study-next-mobile"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              <span className="text-sm text-primary/40 ml-2" data-testid="text-case-study-counter-mobile">
+                {currentIndex + 1} / {studies.length}
+              </span>
+            </div>
           </div>
 
-          <div className="lg:pl-8 order-1 lg:order-2">
+          <div className="xl:pl-8 order-1 xl:order-2">
             
               <FadeIn
                 key={`content-${currentIndex}`}
@@ -218,7 +274,9 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
                 <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
                   {study.stats.map((stat, i) => (
                     <div key={i} data-testid={`stat-case-study-${i}`}>
-                      <div className="text-4xl font-extrabold text-[#c5d520] mb-1">{stat.value}</div>
+                      <div className="text-4xl font-extrabold text-[#c5d520] mb-1 tabular-nums">
+                        <AnimatedStatValue value={stat.value} duration={1000} />
+                      </div>
                       <div className="text-sm font-bold text-primary uppercase tracking-wide">{stat.label}</div>
                       <div className="h-1 w-12 bg-primary/10 mt-3"></div>
                     </div>
@@ -227,10 +285,10 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
               </FadeIn>
             
 
-            <div className="flex items-center gap-4">
+            <div className="hidden xl:flex items-center gap-4">
               <button
                 onClick={goToPrev}
-                className="w-14 h-14 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary active:bg-primary hover:text-white active:text-white text-primary transition-all duration-300 shadow-sm hover:shadow-lg active:shadow-lg min-w-[44px] min-h-[44px]"
+                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
                 aria-label="Previous case study"
                 data-testid="button-case-study-prev"
               >
@@ -238,7 +296,7 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
               </button>
               <button
                 onClick={goToNext}
-                className="w-14 h-14 rounded-full bg-[#042940] text-white flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] hover:text-[#042940] active:text-[#042940] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
+                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
                 aria-label="Next case study"
                 data-testid="button-case-study-next"
               >

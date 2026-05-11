@@ -113,7 +113,14 @@ export default function Footer() {
           <FadeIn
             className="space-y-8"
           >
-            <Logo variant="white" />
+            <Link
+              href="/"
+              aria-label="Tenth Rock — Home"
+              className="inline-block rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520]"
+              data-testid="link-footer-logo"
+            >
+              <Logo variant="white" />
+            </Link>
             <p className="text-white/60 leading-relaxed max-w-xs">
               Redefining commercial waste management with speed, transparency, and reliability across 48 states.
             </p>

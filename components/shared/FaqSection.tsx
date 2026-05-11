@@ -55,6 +55,11 @@ export default function FaqSection({
 }: FaqSectionProps) {
   const [openItem, setOpenItem] = useState<string>("item-0");
 
+  const handleToggle = (key: string) => {
+    if (openItem === key) return;
+    setOpenItem(key);
+  };
+
   return (
     <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
@@ -77,15 +82,15 @@ export default function FaqSection({
               key={i}
             >
               <div 
-                className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
+                className={`group rounded-[5px] border transition-colors duration-300 overflow-hidden ${
                   openItem === `item-${i}` 
-                    ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]" 
+                    ? "bg-[#042940] border-[#042940] shadow-xl" 
                     : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
                 }`}
               >
                 <button 
                   className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
-                  onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
+                  onClick={() => handleToggle(`item-${i}`)}
                   aria-expanded={openItem === `item-${i}`}
                   data-testid={`faq-trigger-${i}`}
                 >
@@ -105,14 +110,17 @@ export default function FaqSection({
                   </div>
                 </button>
                 <div 
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    openItem === `item-${i}` ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    openItem === `item-${i}` ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}
+                  aria-hidden={openItem !== `item-${i}`}
                 >
-                  <div className="px-6 md:px-8 pb-8 pt-0">
-                    <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6">
-                      {faq.answer}
-                    </p>
+                  <div className="overflow-hidden">
+                    <div className="px-6 md:px-8 pb-8 pt-0 min-h-[180px] md:min-h-[160px]">
+                      <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

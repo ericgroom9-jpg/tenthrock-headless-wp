@@ -100,8 +100,8 @@ export default function CommercialWasteServices({
           </p>
         </FadeIn>
         
-        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-           <div className="lg:col-span-4 flex flex-col space-y-[6px]">
+        <div className="grid xl:grid-cols-12 gap-6 xl:gap-8 items-stretch">
+           <div className="xl:col-span-4 flex flex-col space-y-[6px]">
              {services.map((service, i) => (
                <button
                  key={i}
@@ -129,7 +129,7 @@ export default function CommercialWasteServices({
              ))}
            </div>
 
-           <div className="lg:col-span-8">
+           <div className="xl:col-span-8">
              
                <FadeIn
                  key={activeService}
@@ -148,7 +148,7 @@ export default function CommercialWasteServices({
                          src={item.img}
                          alt={item.label}
                          fill
-                         sizes="(min-width: 1024px) 280px, (min-width: 640px) 33vw, 100vw"
+                         sizes="(min-width: 1280px) 280px, (min-width: 640px) 33vw, 100vw"
                          className="object-cover transition-transform duration-700 group-hover:scale-110"
                        />
                        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/80 to-[#042940]/30 group-hover:via-[#042940]/70 group-hover:to-[#042940]/20 transition-all duration-300"></div>
@@ -163,7 +163,7 @@ export default function CommercialWasteServices({
                            {item.desc}
                          </p>
                          <span
-                           className="inline-flex items-center gap-2 mt-4 text-sm font-bold text-[#c5d520] opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+                           className="flex sm:inline-flex items-center justify-center sm:justify-start gap-2 mt-4 text-sm font-bold text-[#c5d520] w-full sm:w-auto border border-[#c5d520]/50 sm:border-0 rounded-full sm:rounded-none px-4 sm:px-0 py-2.5 sm:py-0 min-h-[44px] sm:min-h-0 opacity-100 sm:opacity-0 translate-y-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-300"
                            aria-hidden="true"
                          >
                            Learn More <ArrowRight className="w-4 h-4" />

@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
+import AnimatedStatValue from "@/components/shared/AnimatedStatValue";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -60,7 +61,8 @@ export default function StatsSection({
               <p className="text-lg text-primary/70 mb-8">
                 {subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
+              {/* Desktop CTAs: stay inside the left column on lg+, hidden on mobile */}
+              <div className="hidden lg:flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
                   <Link href={ctaLink}>{ctaLabel}</Link>
                 </Button>
@@ -80,12 +82,24 @@ export default function StatsSection({
                     </div>
                   )}
                   <h3 className="font-semibold text-xl text-primary mb-4">{card.title}</h3>
-                  <div className="text-7xl font-extrabold text-primary mb-4">{card.value}</div>
+                  <div className="text-7xl font-extrabold text-primary mb-4 tabular-nums">
+                    <AnimatedStatValue value={card.value} />
+                  </div>
                   <Separator className="bg-primary/10 mb-4" />
                   <p className="text-primary/70">{card.description}</p>
                </div>
              ))}
           </div>
+        </div>
+
+        {/* Mobile-only CTAs: stack below the stat cards in the natural vertical flow */}
+        <div className="lg:hidden mt-10 flex flex-col sm:flex-row gap-4">
+          <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full" data-testid="button-stats-cta-mobile" asChild>
+            <Link href={ctaLink}>{ctaLabel}</Link>
+          </Button>
+          <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" data-testid="button-stats-phone-mobile" asChild>
+            <a href={phoneLink}><Phone className="w-5 h-5 text-secondary" /> {phoneLabel}</a>
+          </Button>
         </div>
       </div>
     </section>

@@ -47,7 +47,7 @@ export default function ProcessSection({
           </p>
         </div>
 
-        <div className={`grid md:grid-cols-2 ${steps.length === 5 ? "lg:grid-cols-5" : steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-5"} gap-3`}>
+        <div className={`grid md:grid-cols-2 ${steps.length === 5 ? "xl:grid-cols-5" : steps.length === 4 ? "xl:grid-cols-4" : "xl:grid-cols-5"} gap-3`}>
           {steps.map((step, i) => (
             <FadeIn 
               key={i}
