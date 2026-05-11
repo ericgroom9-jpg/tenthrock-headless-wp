@@ -1584,6 +1584,10 @@ h1, h3, h4, h5, h6, h2 {
   height: 5rem;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .h-3 {
   height: .75rem;
 }
@@ -1682,6 +1686,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .max-h-0 {
   max-height: 0;
+}
+
+.max-h-24 {
+  max-height: 6rem;
 }
 
 .max-h-96 {
@@ -2312,6 +2320,10 @@ h1, h3, h4, h5, h6, h2 {
   align-items: center;
 }
 
+.items-baseline {
+  align-items: baseline;
+}
+
 .items-stretch {
   align-items: stretch;
 }
@@ -2575,6 +2587,11 @@ h1, h3, h4, h5, h6, h2 {
 .rounded-t-\[10px\] {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.rounded-t-md {
+  border-top-left-radius: .375rem;
+  border-top-right-radius: .375rem;
 }
 
 .rounded-tl-sm {
@@ -3026,6 +3043,10 @@ h1, h3, h4, h5, h6, h2 {
   background-color: hsl(var(--secondary) / var(--tw-bg-opacity, 1));
 }
 
+.bg-secondary\/20 {
+  background-color: hsl(var(--secondary) / .2);
+}
+
 .bg-sidebar {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--sidebar) / var(--tw-bg-opacity, 1));
@@ -3253,6 +3274,10 @@ h1, h3, h4, h5, h6, h2 {
   padding: 2.5rem;
 }
 
+.p-12 {
+  padding: 3rem;
+}
+
 .p-2 {
   padding: .5rem;
 }
@@ -3442,6 +3467,10 @@ h1, h3, h4, h5, h6, h2 {
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .pb-6 {
@@ -4921,6 +4950,10 @@ h1, h3, h4, h5, h6, h2 {
 .last\:rounded-r-md:last-child {
   border-top-right-radius: .375rem;
   border-bottom-right-radius: .375rem;
+}
+
+.last\:border-b-0:last-child {
+  border-bottom-width: 0;
 }
 
 .focus-within\:relative:focus-within {
@@ -6850,12 +6883,20 @@ h1, h3, h4, h5, h6, h2 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-\[180px_1fr\] {
+    grid-template-columns: 180px 1fr;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
 
   .md\:items-end {
     align-items: flex-end;
+  }
+
+  .md\:items-center {
+    align-items: center;
   }
 
   .md\:justify-center {
@@ -6940,6 +6981,11 @@ h1, h3, h4, h5, h6, h2 {
   .md\:px-0 {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .md\:px-8 {
