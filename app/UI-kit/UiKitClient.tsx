@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -46,22 +47,37 @@ const LOGOS = [
 ];
 
 export default function UiKitClient() {
-  const handlePrint = () => {
-    if (typeof window !== "undefined") window.print();
+  const printRef = useRef<HTMLDivElement>(null);
+  const [generating, setGenerating] = useState(false);
+
+  const handleDownloadPdf = async () => {
+    if (!printRef.current || generating) return;
+    setGenerating(true);
+    try {
+      const mod: any = await import("html2pdf.js");
+      const html2pdf = mod.default ?? mod;
+      await html2pdf()
+        .set({
+          margin: [12, 12, 12, 12],
+          filename: "TenthRock-UI-Kit.pdf",
+          image: { type: "jpeg", quality: 0.95 },
+          html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff" },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+          pagebreak: { mode: ["css", "legacy"], before: ".page-break" },
+        })
+        .from(printRef.current)
+        .save();
+    } catch (err) {
+      console.error("PDF generation failed", err);
+      alert("Sorry — the PDF couldn't be generated. Please try again.");
+    } finally {
+      setGenerating(false);
+    }
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <style jsx global>{`
-        @media print {
-          .no-print { display: none !important; }
-          body { background: white !important; }
-          .ui-kit-page { padding: 0 !important; }
-          .page-break { page-break-before: always; }
-        }
-      `}</style>
-
-      <div className="ui-kit-page max-w-6xl mx-auto px-6 py-12 md:px-10 md:py-16">
+      <div ref={printRef} className="ui-kit-page max-w-6xl mx-auto px-6 py-12 md:px-10 md:py-16">
         {/* Header */}
         <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
@@ -74,10 +90,15 @@ export default function UiKitClient() {
               components, and logo assets ready to download.
             </p>
           </div>
-          <div className="no-print flex flex-wrap gap-3">
-            <Button onClick={handlePrint} data-testid="button-download-pdf" className="gap-2">
+          <div className="no-print flex flex-wrap gap-3" data-html2canvas-ignore="true">
+            <Button
+              onClick={handleDownloadPdf}
+              disabled={generating}
+              data-testid="button-download-pdf"
+              className="gap-2"
+            >
               <Printer className="w-4 h-4" />
-              Download PDF
+              {generating ? "Generating PDF..." : "Download PDF"}
             </Button>
           </div>
         </header>
@@ -109,7 +130,7 @@ export default function UiKitClient() {
                       <p className="font-semibold">{logo.name}</p>
                       <p className="text-sm text-muted-foreground">PNG · transparent background</p>
                     </div>
-                    <Button asChild variant="outline" size="sm" className="no-print gap-2">
+                    <Button asChild variant="outline" size="sm" className="no-print gap-2" data-html2canvas-ignore="true">
                       <a
                         href={logo.file}
                         download={logo.download}

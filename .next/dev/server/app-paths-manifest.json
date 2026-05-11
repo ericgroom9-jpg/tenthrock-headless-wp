@@ -1,3 +1,4 @@
 {
+  "/UI-kit/page": "app/UI-kit/page.js",
   "/page": "app/page.js"
 }
