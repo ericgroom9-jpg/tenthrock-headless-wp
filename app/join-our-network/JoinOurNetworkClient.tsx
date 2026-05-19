@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
@@ -61,6 +61,61 @@ const defaultStatsNumbers: StatNumber[] = [
 
 interface Props {
  acf: JoinNetworkTemplateData | null;
+}
+
+function AnimatedStatNumber({ value, duration = 2000 }: { value: string; duration?: number }) {
+ const ref = useRef<HTMLSpanElement>(null);
+ const match = value.match(/^(\d+(?:\.\d+)?)(.*)$/);
+ const target = match ? parseFloat(match[1]) : null;
+ const suffix = match ? match[2] : "";
+ const decimals = match && match[1].includes(".") ? match[1].split(".")[1].length : 0;
+ const [display, setDisplay] = useState<string>(target !== null ? (decimals ? (0).toFixed(decimals) : "0") : value);
+ const hasAnimated = useRef(false);
+
+ useEffect(() => {
+ if (target === null) return;
+ const node = ref.current;
+ if (!node) return;
+ const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+ if (prefersReducedMotion) {
+ setDisplay(decimals ? target.toFixed(decimals) : String(target));
+ hasAnimated.current = true;
+ return;
+ }
+ const observer = new IntersectionObserver(
+ (entries) => {
+ entries.forEach((entry) => {
+ if (entry.isIntersecting && !hasAnimated.current) {
+ hasAnimated.current = true;
+ const start = performance.now();
+ const tick = (now: number) => {
+ const elapsed = now - start;
+ const progress = Math.min(elapsed / duration, 1);
+ const eased = 1 - Math.pow(1 - progress, 3);
+ const current = target * eased;
+ setDisplay(decimals ? current.toFixed(decimals) : String(Math.floor(current)));
+ if (progress < 1) requestAnimationFrame(tick);
+ else setDisplay(decimals ? target.toFixed(decimals) : String(target));
+ };
+ requestAnimationFrame(tick);
+ }
+ });
+ },
+ { threshold: 0.3 }
+ );
+ observer.observe(node);
+ return () => observer.disconnect();
+ }, [target, duration, decimals]);
+
+ if (target === null) {
+ return <span ref={ref}>{value}</span>;
+ }
+ return (
+ <span ref={ref}>
+ {display}
+ {suffix}
+ </span>
+ );
 }
 
 export default function JoinOurNetworkClient({ acf }: Props) {
@@ -213,11 +268,13 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  </div>
  </FadeIn>
 
- <FadeIn className="grid grid-cols-3 gap-4">
+ <FadeIn className="grid grid-cols-3 gap-2 sm:gap-4">
  {statsNumbers.map((stat, i) => (
- <div key={i} className="text-center p-6 rounded-[5px] bg-white/5 border border-white/10" data-testid={`stat-join-${i}`}>
- <div className="text-4xl md:text-5xl font-extrabold text-[#c5d520] mb-2">{stat.value}</div>
- <div className="text-sm text-white/60 font-medium">{stat.label}</div>
+ <div key={i} className="text-center p-3 sm:p-6 rounded-[5px] bg-white/5 border border-white/10 min-w-0 overflow-hidden" data-testid={`stat-join-${i}`}>
+ <div className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#c5d520] mb-2 leading-tight break-words">
+ <AnimatedStatNumber value={stat.value} />
+ </div>
+ <div className="text-xs sm:text-sm text-white/60 font-medium">{stat.label}</div>
  </div>
  ))}
  </FadeIn>
@@ -289,9 +346,9 @@ function EmailCaptureSection({
  <p className="text-lg text-[#042940]/70 mb-8 max-w-lg mx-auto">
  {subtitle}
  </p>
- <form onSubmit={handleSubmit} className="max-w-md mx-auto" data-testid="form-join-email">
- <div className="flex flex-col sm:flex-row gap-3">
- <div className="relative flex-1">
+ <form onSubmit={handleSubmit} className="max-w-lg mx-auto" data-testid="form-join-email">
+ <div className="flex flex-col sm:flex-row gap-3 items-stretch">
+ <div className="relative w-full sm:flex-1 h-[52px]">
  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#042940]/40 pointer-events-none" />
  <input
  type="email"
@@ -299,7 +356,7 @@ function EmailCaptureSection({
  placeholder={placeholder}
  value={email}
  onChange={(e) => setEmail(e.target.value)}
- className="w-full pl-12 pr-4 py-4 rounded-full border border-[#042940]/20 text-[#042940] placeholder:text-[#042940]/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-base"
+ className="w-full h-full pl-12 pr-4 rounded-full border border-[#042940]/20 text-[#042940] placeholder:text-[#042940]/40 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-base leading-none"
  required
  data-testid="input-join-email"
  />

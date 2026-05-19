@@ -257,7 +257,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  </div>
 
  {/* Desktop inline nav - visible on xl+ */}
- <nav className="hidden xl:flex items-center gap-6 flex-1 justify-center">
+ <nav className="hidden xl:flex flex-nowrap items-center gap-4 2xl:gap-6 flex-1 justify-center">
  <div
  className="relative"
  onMouseEnter={() => openDropdown(setIsServicesOpen, [setIsSectorsOpen, setIsLocationsOpen, setIsAboutOpen])}
@@ -269,7 +269,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <Link
  href={topLabels.services.href}
- className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+ className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors whitespace-nowrap"
  data-testid="link-nav-services"
  >
  {topLabels.services.label}
@@ -339,7 +339,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <a
  href={topLabels.sectors.href}
- className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+ className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors whitespace-nowrap"
  data-testid="link-nav-who-we-serve"
  >
  {topLabels.sectors.label}
@@ -405,7 +405,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <Link
  href={topLabels.locations.href}
- className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+ className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors whitespace-nowrap"
  data-testid="link-nav-locations"
  >
  {topLabels.locations.label}
@@ -488,7 +488,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <a
  href={topLabels.about.href}
- className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors"
+ className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors whitespace-nowrap"
  data-testid="link-nav-about"
  >
  {topLabels.about.label}
@@ -547,7 +547,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  <Link
  key={`extra-${item.label}-${item.href}`}
  href={item.href}
- className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] inline-flex items-center"
+ className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[44px] inline-flex items-center whitespace-nowrap"
  data-testid={`link-nav-extra-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-") || "item"}`}
  >
  {item.label}

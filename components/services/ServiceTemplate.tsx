@@ -149,6 +149,39 @@ const defaultParagraphSection2: ParagraphSection = {
  ],
 };
 
+function renderDescWithPhoneLinks(desc: string, stepIdx: number) {
+ if (!desc) return desc;
+ const phoneRegex = /(\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}/g;
+ const parts: (string | JSX.Element)[] = [];
+ let lastIndex = 0;
+ let matchIdx = 0;
+ let match: RegExpExecArray | null;
+ while ((match = phoneRegex.exec(desc)) !== null) {
+ if (match.index > lastIndex) {
+ parts.push(desc.slice(lastIndex, match.index));
+ }
+ const raw = match[0];
+ const digits = raw.replace(/\D/g, "");
+ const tel = digits.length === 10 ? `+1${digits}` : `+${digits}`;
+ parts.push(
+ <a
+ key={`phone-${stepIdx}-${matchIdx}`}
+ href={`tel:${tel}`}
+ className="text-[#042940] hover:text-[#c5d520] transition-colors"
+ data-testid={`link-how-it-works-phone-${stepIdx}-${matchIdx}`}
+ >
+ {raw}
+ </a>
+ );
+ lastIndex = match.index + raw.length;
+ matchIdx++;
+ }
+ if (lastIndex < desc.length) {
+ parts.push(desc.slice(lastIndex));
+ }
+ return parts.length > 0 ? parts : desc;
+}
+
 export default function ServiceTemplate({
  serviceName,
  heroTitle,
@@ -257,7 +290,7 @@ export default function ServiceTemplate({
  {/* About Service + Form Section */}
  <section className="relative bg-white">
  <div className="container mx-auto px-4 md:px-8 pt-8 md:pt-10 pb-12 md:pb-16">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+ <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-start">
  {/* Left - About Service */}
  <FadeIn
  >
@@ -349,7 +382,7 @@ export default function ServiceTemplate({
  </div>
  <span>
  {step.title && <strong>{step.title}: </strong>}
- {step.desc}
+ {renderDescWithPhoneLinks(step.desc, sIdx)}
  </span>
  </li>
  ))}
@@ -432,6 +465,7 @@ export default function ServiceTemplate({
  name="input_1"
  type="text"
  required
+ placeholder="Enter your first name"
  className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
  data-testid="input-first-name"
  />
@@ -445,6 +479,7 @@ export default function ServiceTemplate({
  name="input_2"
  type="text"
  required
+ placeholder="Enter your last name"
  className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
  data-testid="input-last-name"
  />
@@ -461,6 +496,7 @@ export default function ServiceTemplate({
  name="input_3"
  type="email"
  required
+ placeholder="Enter your email"
  className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
  data-testid="input-email"
  />
@@ -489,6 +525,7 @@ export default function ServiceTemplate({
  name="input_5"
  type="text"
  required
+ placeholder="Enter your company name"
  className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
  data-testid="input-company"
  />
@@ -566,7 +603,7 @@ export default function ServiceTemplate({
  {/* Paragraph Section 1 */}
  <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
  <div className="container mx-auto px-4 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+ <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
  >
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-1">
@@ -596,7 +633,7 @@ export default function ServiceTemplate({
  <Button 
  asChild 
  size="lg" 
- className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-1-cta"
  >
  <Link href="/request-a-service">Request A Service</Link>
@@ -610,12 +647,20 @@ export default function ServiceTemplate({
  src={paragraphSection1.image} 
  alt={paragraphSection1.imageAlt || ""} 
  fill 
- sizes="(max-width: 1024px) 100vw, 50vw" 
+ sizes="(max-width: 1280px) 100vw, 50vw" 
  className="object-cover" 
  loading="lazy" 
  />
  </FadeIn>
  )}
+ <Button
+ asChild
+ size="lg"
+ className="xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ data-testid="button-paragraph-1-cta-mobile"
+ >
+ <Link href="/request-a-service">Request A Service</Link>
+ </Button>
  </div>
  </div>
  </section>
@@ -663,23 +708,23 @@ export default function ServiceTemplate({
  {/* Paragraph Section 2 */}
  <section className="py-16 md:py-24 bg-white" aria-labelledby="paragraph-section-2-heading" data-testid="section-paragraph-2">
  <div className="container mx-auto px-4 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+ <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  {paragraphSection2.image && (
  <FadeIn
- className="order-2 lg:order-1 relative rounded-[5px] overflow-hidden aspect-[4/3]"
+ className="order-2 xl:order-1 relative rounded-[5px] overflow-hidden aspect-[4/3]"
  >
  <Image 
  src={paragraphSection2.image} 
  alt={paragraphSection2.imageAlt || ""} 
  fill 
- sizes="(max-width: 1024px) 100vw, 50vw" 
+ sizes="(max-width: 1280px) 100vw, 50vw" 
  className="object-cover" 
  loading="lazy" 
  />
  </FadeIn>
  )}
  <FadeIn
- className="order-1 lg:order-2"
+ className="order-1 xl:order-2"
  >
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-2">
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
@@ -708,12 +753,20 @@ export default function ServiceTemplate({
  <Button 
  asChild 
  size="lg" 
- className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-2-cta"
  >
  <Link href="/request-a-service">Request A Service</Link>
  </Button>
  </FadeIn>
+ <Button
+ asChild
+ size="lg"
+ className="order-3 xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ data-testid="button-paragraph-2-cta-mobile"
+ >
+ <Link href="/request-a-service">Request A Service</Link>
+ </Button>
  </div>
  </div>
  </section>

@@ -158,12 +158,12 @@ export default function AboutClient({ acf, globalSections }: Props) {
                     data-testid={`accordion-item-${index}`}
                   >
                     <AccordionTrigger 
-                      className="text-xl md:text-2xl font-semibold text-primary py-4 px-6 rounded-[5px] hover:no-underline data-[state=open]:bg-[#c5d520]/10 transition-colors"
+                      className="text-xl md:text-2xl font-semibold text-primary text-left py-4 px-0 sm:px-6 rounded-[5px] hover:no-underline data-[state=open]:bg-[#c5d520]/10 transition-colors"
                       data-testid={`accordion-trigger-${index}`}
                     >
                       {value.title}
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 pt-0">
+                    <AccordionContent className="px-0 sm:px-6 pb-4 pt-0">
                       <p className="text-base text-primary/70 leading-relaxed">
                         {value.description}
                       </p>
@@ -172,7 +172,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
                 ))}
               </Accordion>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
+              <div className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
                 <Button 
                   size="lg" 
                   className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold min-h-[52px] whitespace-nowrap"
@@ -206,6 +206,29 @@ export default function AboutClient({ acf, globalSections }: Props) {
                 loading="lazy"
               />
             </FadeIn>
+
+            <div className="order-3 lg:hidden flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold min-h-[52px] whitespace-nowrap"
+                data-testid="button-schedule-demo-mobile"
+                asChild
+              >
+                <Link href={coreCtaLink}>
+                  <Calendar className="w-5 h-5 mr-2" />
+                  {coreCtaLabel}
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto border-primary text-primary rounded-full font-bold min-h-[52px] whitespace-nowrap"
+                data-testid="button-more-solutions-mobile"
+                asChild
+              >
+                <Link href={coreSecondaryLink}>{coreSecondaryLabel}</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -264,7 +287,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
                 </p>
               ))}
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 
                   size="lg" 
                   className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold min-h-[52px] whitespace-nowrap"
@@ -287,6 +310,29 @@ export default function AboutClient({ acf, globalSections }: Props) {
                 </Button>
               </div>
             </FadeIn>
+
+            <div className="order-3 lg:hidden flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-[#c5d520] text-primary shadow-[0_0_40px_rgba(197,213,32,0.3)] rounded-full font-bold min-h-[52px] whitespace-nowrap"
+                data-testid="button-community-cta-mobile"
+                asChild
+              >
+                <Link href={communityCtaLink}>{communityCtaLabel}</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto border-primary text-primary rounded-full font-bold min-h-[52px] whitespace-nowrap"
+                data-testid="button-community-phone-mobile"
+                asChild
+              >
+                <a href={communitySecondaryLink}>
+                  <Phone className="w-5 h-5 mr-2" />
+                  {communitySecondaryLabel}
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

@@ -142,7 +142,6 @@ const MENUS = [
       { title: 'Our Process', url: '/waste-management-process' },
       { title: 'Who We Serve', url: '/industries' },
       { title: 'Locations', url: '/locations' },
-      { title: 'Success Stories', url: '#' },
       { title: 'Join Our Network', url: '/join-our-network' },
       { title: 'FAQ', url: '/faq' },
       { title: 'Contact', url: '/contact-us' },

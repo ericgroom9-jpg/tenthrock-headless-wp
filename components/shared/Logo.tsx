@@ -20,7 +20,8 @@ export default function Logo({ className = "", variant = "main" }: LogoProps) {
           src={logoSrc}
           alt="Tenth Rock Waste Solutions"
           fill
-          sizes="(max-width: 640px) 160px, (max-width: 768px) 200px, 240px"
+          sizes="(max-width: 640px) 480px, (max-width: 768px) 600px, 720px"
+          quality={95}
           className="object-contain object-left"
           loading="eager"
           priority

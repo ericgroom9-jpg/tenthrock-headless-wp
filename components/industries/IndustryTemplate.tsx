@@ -75,7 +75,7 @@ const defaultParagraphSection2: ParagraphSection = {
 
 const defaultParagraphSection3: ParagraphSection = {
  badge: "Sustainability Focus",
- heading: "Environmental Responsibility Built In",
+ heading: "Environmental Responsibility Built\u00a0In",
  body: "Responsibility is the baseline for every project we manage. By utilizing local recovery and processing facilities across the country, we move waste more effectively to keep your sites clear and materials out of landfills. We provide the visibility you need to understand your property's waste flow without adding a single step to your daily operations.",
  image: "/images/stock/sustainability-park-with-city.jpg",
  imageAlt: "Lush green park beside a city skyline reflecting Tenth Rock's sustainability focus",
@@ -113,11 +113,22 @@ export default function IndustryTemplate({
  <section 
  className="relative min-h-[50vh] sm:min-h-[55vh] md:min-h-[65vh] lg:min-h-[70vh] flex items-center overflow-hidden"
  style={{
- backgroundImage: `linear-gradient(to right, rgba(4, 41, 64, 0.9), rgba(4, 41, 64, 0.7)), url(${heroImage})`,
+ backgroundImage: `url(${heroImage})`,
  backgroundSize: 'cover',
  backgroundPosition: 'center',
  }}
  >
+ {/* Overlay — darker solid on mobile for readability, gradient on sm+ */}
+ <div
+ aria-hidden="true"
+ className="absolute inset-0 sm:hidden"
+ style={{ backgroundColor: "rgba(4, 41, 64, 0.9)" }}
+ />
+ <div
+ aria-hidden="true"
+ className="absolute inset-0 hidden sm:block"
+ style={{ backgroundImage: "linear-gradient(to right, rgba(4,41,64,0.9), rgba(4,41,64,0.7))" }}
+ />
  <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
  <FadeIn
  className="max-w-3xl"
@@ -221,7 +232,7 @@ export default function IndustryTemplate({
  })}
  </div>
 
- <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8 md:mt-10">
+ <div className="hidden md:flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8 md:mt-10">
  <Button 
  asChild
  size="lg" 
@@ -248,6 +259,18 @@ export default function IndustryTemplate({
  />
  </div>
  </FadeIn>
+
+ {/* Mobile-only CTA below image */}
+ <div className="md:hidden">
+ <Button
+ asChild
+ size="lg"
+ className="bg-[#c5d520] text-[#042940] rounded-full min-h-[52px] w-full whitespace-nowrap"
+ data-testid="button-about-cta-mobile"
+ >
+ <Link href="/request-a-service">Request A Service</Link>
+ </Button>
+ </div>
  </div>
  </div>
  </section>
@@ -255,14 +278,14 @@ export default function IndustryTemplate({
  {/* Paragraph Section 1 - Text Left, Image Right */}
  <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
  <div className="container mx-auto px-4 sm:px-6 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+ <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
  >
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-1">
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection1.badge}
  </div>
- <h2 id="industry-paragraph-1-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-1">
+ <h2 id="industry-paragraph-1-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter text-balance" data-testid="heading-industry-paragraph-1">
  {paragraphSection1.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-1-body">
@@ -285,7 +308,7 @@ export default function IndustryTemplate({
  <Button 
  asChild
  size="lg" 
- className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-industry-paragraph-1-cta"
  >
  <Link href="/request-a-service">Request A Service</Link>
@@ -299,12 +322,20 @@ export default function IndustryTemplate({
  src={paragraphSection1.image} 
  alt={paragraphSection1.imageAlt || ""} 
  fill 
- sizes="(max-width: 1024px) 100vw, 50vw" 
+ sizes="(max-width: 1280px) 100vw, 50vw" 
  className="object-cover" 
  loading="lazy" 
  />
  </FadeIn>
  )}
+ <Button
+ asChild
+ size="lg"
+ className="xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ data-testid="button-industry-paragraph-1-cta-mobile"
+ >
+ <Link href="/request-a-service">Request A Service</Link>
+ </Button>
  </div>
  </div>
  </section>
@@ -315,29 +346,29 @@ export default function IndustryTemplate({
  {/* Paragraph Section 2 - Image Left, Text Right */}
  <section className="py-16 md:py-24 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
  <div className="container mx-auto px-4 sm:px-6 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+ <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  {paragraphSection2.image && (
  <FadeIn
- className="order-2 lg:order-1 relative rounded-[5px] overflow-hidden aspect-[4/3]"
+ className="order-2 xl:order-1 relative rounded-[5px] overflow-hidden aspect-[4/3]"
  >
  <Image 
  src={paragraphSection2.image} 
  alt={paragraphSection2.imageAlt || ""} 
  fill 
- sizes="(max-width: 1024px) 100vw, 50vw" 
+ sizes="(max-width: 1280px) 100vw, 50vw" 
  className="object-cover" 
  loading="lazy" 
  />
  </FadeIn>
  )}
  <FadeIn
- className="order-1 lg:order-2"
+ className="order-1 xl:order-2"
  >
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-2">
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection2.badge}
  </div>
- <h2 id="industry-paragraph-2-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-2">
+ <h2 id="industry-paragraph-2-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter text-balance" data-testid="heading-industry-paragraph-2">
  {paragraphSection2.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-2-body">
@@ -359,13 +390,21 @@ export default function IndustryTemplate({
  )}
  <Button 
  size="lg" 
- className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-industry-paragraph-2-cta"
  asChild
  >
  <Link href="/request-a-service">Request A Service</Link>
  </Button>
  </FadeIn>
+ <Button
+ asChild
+ size="lg"
+ className="order-3 xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ data-testid="button-industry-paragraph-2-cta-mobile"
+ >
+ <Link href="/request-a-service">Request A Service</Link>
+ </Button>
  </div>
  </div>
  </section>
@@ -376,14 +415,14 @@ export default function IndustryTemplate({
  {/* Paragraph Section 3 - Text Left, Image Right (alternating) */}
  <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
  <div className="container mx-auto px-4 sm:px-6 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+ <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
  >
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-industry-paragraph-3">
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection3.badge}
  </div>
- <h2 id="industry-paragraph-3-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-3">
+ <h2 id="industry-paragraph-3-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter text-balance" data-testid="heading-industry-paragraph-3">
  {paragraphSection3.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-3-body">
@@ -406,7 +445,7 @@ export default function IndustryTemplate({
  <Button 
  asChild
  size="lg" 
- className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-industry-paragraph-3-cta"
  >
  <Link href="/request-a-service">Request A Service</Link>
@@ -420,12 +459,20 @@ export default function IndustryTemplate({
  src={paragraphSection3.image} 
  alt={paragraphSection3.imageAlt || ""} 
  fill 
- sizes="(max-width: 1024px) 100vw, 50vw" 
+ sizes="(max-width: 1280px) 100vw, 50vw" 
  className="object-cover" 
  loading="lazy" 
  />
  </FadeIn>
  )}
+ <Button
+ asChild
+ size="lg"
+ className="xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
+ data-testid="button-industry-paragraph-3-cta-mobile"
+ >
+ <Link href="/request-a-service">Request A Service</Link>
+ </Button>
  </div>
  </div>
  </section>

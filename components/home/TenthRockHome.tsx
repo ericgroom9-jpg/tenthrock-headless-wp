@@ -167,11 +167,22 @@ const LoadingScreen = () => {
  const [removed, setRemoved] = useState(false);
 
  useEffect(() => {
- const fadeTimer = setTimeout(() => setHiding(true), LOADER_FADE_START_MS);
+ const prevBodyOverflow = document.body.style.overflow;
+ const prevHtmlOverflow = document.documentElement.style.overflow;
+ document.body.style.overflow = "hidden";
+ document.documentElement.style.overflow = "hidden";
+ window.scrollTo(0, 0);
+ const fadeTimer = setTimeout(() => {
+ setHiding(true);
+ document.body.style.overflow = prevBodyOverflow;
+ document.documentElement.style.overflow = prevHtmlOverflow;
+ }, LOADER_FADE_START_MS);
  const removeTimer = setTimeout(() => setRemoved(true), LOADER_TOTAL_MS);
  return () => {
  clearTimeout(fadeTimer);
  clearTimeout(removeTimer);
+ document.body.style.overflow = prevBodyOverflow;
+ document.documentElement.style.overflow = prevHtmlOverflow;
  };
  }, []);
 
@@ -562,7 +573,7 @@ const WhyUs = () => {
  ))}
  </div>
 
- <div className="flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
+ <div className="hidden lg:flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full" asChild>
  <Link href="/request-a-service">Request A Service</Link>
  </Button>
@@ -571,6 +582,15 @@ const WhyUs = () => {
  </Button>
  </div>
  </motion.div>
+
+ <div className="order-3 lg:hidden flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
+ <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full" asChild>
+ <Link href="/request-a-service">Request A Service</Link>
+ </Button>
+ <Button size="lg" variant="outline" className="w-full sm:w-auto border-[#042940] text-[#042940] active:bg-[#042940] active:text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
+ <Link href="/commercial-waste">View Our Services</Link>
+ </Button>
+ </div>
  </div>
  </div>
  </section>

@@ -311,7 +311,7 @@ export default function CityLocationPage() {
  <p className="text-[#042940]/70 leading-relaxed mb-8" data-testid="text-city-info-desc">
  Managing waste across commercial sites in {cityName} requires reliable coordination and experienced service partners. Tenth Rock Waste Solutions works directly with local waste facilities and hauling partners throughout {stateName} to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.
  </p>
- <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+ <div className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4">
  <Button
  size="lg"
  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
@@ -347,6 +347,29 @@ export default function CityLocationPage() {
  loading="lazy"
  />
  </FadeIn>
+
+ <div className="order-3 lg:hidden flex flex-col sm:flex-row gap-3 sm:gap-4">
+ <Button
+ size="lg"
+ className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] transition-all transform active:scale-95 min-h-[52px] whitespace-nowrap"
+ data-testid="button-city-info-cta-mobile"
+ asChild
+ >
+ <Link href="/request-a-service">Get a Quote</Link>
+ </Button>
+ <Button
+ size="lg"
+ variant="outline"
+ className="w-full sm:w-auto border-[#042940]/20 text-[#042940] active:bg-[#042940] active:text-white transition-all transform active:scale-95 min-h-[52px] whitespace-nowrap"
+ data-testid="button-city-info-phone-mobile"
+ asChild
+ >
+ <a href="tel:+17275105454">
+ <Phone className="mr-2 h-5 w-5" />
+ 727.510.5454
+ </a>
+ </Button>
+ </div>
  </div>
  </div>
  </section>

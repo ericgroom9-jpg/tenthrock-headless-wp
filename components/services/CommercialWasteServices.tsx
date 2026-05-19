@@ -349,12 +349,20 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
 
  <Button 
  size="lg"
- className="bg-[#c5d520] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto whitespace-nowrap"
+ className="hidden lg:inline-flex bg-[#c5d520] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto whitespace-nowrap"
  asChild
  >
  <a href={acf?.caseStudyCtaLink || "/request-a-service"}>{acf?.caseStudyCtaLabel || "Request A Service"}</a>
  </Button>
  </FadeIn>
+
+ <Button
+ size="lg"
+ className="order-3 lg:hidden bg-[#c5d520] text-[#042940] min-h-[52px] rounded-full w-full sm:w-auto whitespace-nowrap"
+ asChild
+ >
+ <a href={acf?.caseStudyCtaLink || "/request-a-service"}>{acf?.caseStudyCtaLabel || "Request A Service"}</a>
+ </Button>
  </div>
  </div>
  </section>

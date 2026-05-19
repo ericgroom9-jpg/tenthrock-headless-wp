@@ -37,7 +37,6 @@ const DEFAULT_COMPANY_LINKS: FlatLink[] = [
   { label: "Our Process", href: "/waste-management-process" },
   { label: "Who We Serve", href: "/industries" },
   { label: "Locations", href: "/locations" },
-  { label: "Success Stories", href: "#" },
   { label: "Join Our Network", href: "/join-our-network" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact-us" },
@@ -97,7 +96,7 @@ export default function Footer() {
       if (cancelled) return;
       if (svc)  setServiceLinks(svc);
       if (ind)  setIndustryLinks(ind);
-      if (comp) setCompanyLinks(comp);
+      if (comp) setCompanyLinks(comp.filter(l => !/success\s*stories/i.test(l.label)));
       if (leg)  setLegalLinks(leg);
       if (soc)  setSocialLinks(soc);
     })();
@@ -107,7 +106,7 @@ export default function Footer() {
   return (
     <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white py-20 border-t border-white/5">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_2fr] gap-12 lg:gap-10 mb-16">
+        <div className="grid md:grid-cols-2 xl:grid-cols-[2fr_1fr_1fr_1fr_2fr] gap-12 lg:gap-14 xl:gap-10 mb-16">
           
           {/* Brand Column */}
           <FadeIn
@@ -153,7 +152,7 @@ export default function Footer() {
             <ul className="space-y-1 text-white/60 text-sm">
               {serviceLinks.map((service) => (
                 <li key={service.href}>
-                  <Link href={service.href} className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid={`link-footer-service-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <Link href={service.href} className="inline-flex items-center w-fit py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px]" data-testid={`link-footer-service-${service.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
                     {service.label}
                   </Link>
                 </li>
@@ -168,7 +167,7 @@ export default function Footer() {
             <ul className="space-y-1 text-white/60 text-sm">
               {industryLinks.map((industry) => (
                 <li key={industry.href}>
-                  <Link href={industry.href} className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center" data-testid={`link-footer-industry-${industry.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
+                  <Link href={industry.href} className="inline-flex items-center w-fit py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px]" data-testid={`link-footer-industry-${industry.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
                     {industry.label}
                   </Link>
                 </li>
@@ -187,7 +186,7 @@ export default function Footer() {
                   <li key={`${item.label}-${item.href}`}>
                     <Link
                       href={item.href}
-                      className="block py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px] flex items-center"
+                      className="inline-flex items-center w-fit py-2.5 hover:text-[#c5d520] focus-visible:text-[#c5d520] focus-visible:underline focus-visible:outline-none transition-colors min-h-[44px]"
                       data-testid={`link-footer-company-${slug}`}
                     >
                       {item.label}
@@ -218,20 +217,20 @@ export default function Footer() {
         
         <Separator className="bg-white/10 mb-8" />
         
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/70" suppressHydrationWarning>
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2" suppressHydrationWarning>
-            <p data-testid="text-footer-copyright" suppressHydrationWarning>© 2026 Tenth Rock. All rights reserved.</p>
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-4 text-sm text-white/70" suppressHydrationWarning>
+          <div className="flex flex-col sm:flex-row sm:flex-nowrap items-center gap-1 sm:gap-2" suppressHydrationWarning>
+            <p className="whitespace-nowrap" data-testid="text-footer-copyright" suppressHydrationWarning>© 2026 Tenth Rock. All rights reserved.</p>
             <span className="hidden sm:inline text-white/30">|</span>
-            <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:underline" data-testid="text-footer-address">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=140+Island+Way+Ste+159+Clearwater+Beach+FL+33767" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap text-white/50 hover:underline" data-testid="text-footer-address">140 Island Way Ste. 159, Clearwater Beach, FL 33767</a>
           </div>
-          <div className="flex gap-6 mt-2 md:mt-0">
+          <div className="flex flex-nowrap gap-6 mt-2 md:mt-0">
             {legalLinks.map((item) => {
               const slug = item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
               return (
                 <Link
                   key={`${item.label}-${item.href}`}
                   href={item.href}
-                  className="py-2 hover:text-white transition-colors min-h-[44px] flex items-center"
+                  className="py-2 whitespace-nowrap hover:text-white transition-colors min-h-[44px] flex items-center"
                   data-testid={`link-footer-legal-${slug}`}
                 >
                   {item.label}

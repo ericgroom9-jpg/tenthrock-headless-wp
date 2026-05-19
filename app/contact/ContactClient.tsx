@@ -85,9 +85,9 @@ function ContactSection({ data }: { data: ContactFormTemplateData | null }) {
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white" data-testid="section-contact">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 items-start">
+        <div className="grid xl:grid-cols-2 gap-12 xl:gap-0 items-start">
 
-          <FadeIn className="lg:pr-16 xl:pr-24">
+          <FadeIn className="xl:pr-16 2xl:pr-24">
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-[#042940] leading-[1.05] tracking-tighter mb-6" data-testid="text-contact-heading">
               {pageHeading}
             </h1>
@@ -131,7 +131,7 @@ function ContactSection({ data }: { data: ContactFormTemplateData | null }) {
             </div>
           </FadeIn>
 
-          <FadeIn className="border-t border-[#042940]/10 pt-12 lg:border-t-0 lg:pt-0 lg:pl-16 xl:pl-24 lg:border-l lg:border-[#042940]/10">
+          <FadeIn className="border-t border-[#042940]/10 pt-12 xl:border-t-0 xl:pt-0 xl:pl-16 2xl:pl-24 xl:border-l xl:border-[#042940]/10">
             <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
               <div className="mb-6">
                 <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2" data-testid="text-form-heading">{formHeading}</h3>
@@ -141,17 +141,17 @@ function ContactSection({ data }: { data: ContactFormTemplateData | null }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="contact-first-name" className="block text-sm font-medium text-[#042940] mb-2">First name</label>
-                    <Input id="contact-first-name" name="input_1" type="text" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-first-name" />
+                    <Input id="contact-first-name" name="input_1" type="text" required placeholder="Enter your first name" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-first-name" />
                   </div>
                   <div>
                     <label htmlFor="contact-last-name" className="block text-sm font-medium text-[#042940] mb-2">Last name</label>
-                    <Input id="contact-last-name" name="input_2" type="text" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-last-name" />
+                    <Input id="contact-last-name" name="input_2" type="text" required placeholder="Enter your last name" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-last-name" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="contact-email" className="block text-sm font-medium text-[#042940] mb-2">Email</label>
-                    <Input id="contact-email" name="input_3" type="email" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-email" />
+                    <Input id="contact-email" name="input_3" type="email" required placeholder="Enter your email" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-email" />
                   </div>
                   <div>
                     <label htmlFor="contact-phone" className="block text-sm font-medium text-[#042940] mb-2">Phone number</label>
@@ -161,7 +161,7 @@ function ContactSection({ data }: { data: ContactFormTemplateData | null }) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="contact-company" className="block text-sm font-medium text-[#042940] mb-2">Company</label>
-                    <Input id="contact-company" name="input_5" type="text" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-company" />
+                    <Input id="contact-company" name="input_5" type="text" required placeholder="Enter your company name" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-contact-company" />
                   </div>
                   <div>
                     <label htmlFor="contact-interest" className="block text-sm font-medium text-[#042940] mb-2">I&apos;m interested in help with:</label>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
@@ -142,17 +142,39 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
   const [activeCategory, setActiveCategory] = useState(faqCategories[0]?.id || "general");
   const [openItem, setOpenItem] = useState<string>("item-0");
   const accordionRef = useRef<HTMLDivElement>(null);
+  const answerContentRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
+  const [answerHeights, setAnswerHeights] = useState<number[]>([]);
 
   const currentCategory = faqCategories.find((cat) => cat.id === activeCategory) || faqCategories[0];
 
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);
-    setOpenItem("");
+    setOpenItem("item-0");
     if (accordionRef.current) {
       const top = accordionRef.current.getBoundingClientRect().top + window.scrollY - 120;
       window.scrollTo({ top, behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    const measure = () => {
+      const heights = currentCategory.faqs.map((_, i) => {
+        const el = answerContentRefs.current.get(i);
+        return el ? el.scrollHeight : 0;
+      });
+      setAnswerHeights((prev) =>
+        prev.length === heights.length && prev.every((h, i) => h === heights[i]) ? prev : heights
+      );
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [activeCategory, currentCategory.faqs]);
+
+  const maxAnswerHeight = answerHeights.length > 0 ? Math.max(...answerHeights, 0) : 0;
+  const openIndex = openItem ? parseInt(openItem.replace("item-", ""), 10) : -1;
+  const openHeight = openIndex >= 0 ? answerHeights[openIndex] || 0 : 0;
+  const gridPaddingBottom = Math.max(maxAnswerHeight - openHeight, 0);
 
   return (
     <>
@@ -194,9 +216,9 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
       </section>
 
       {/* Category Navigation */}
-      <nav aria-label="FAQ categories" className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-[96px] z-40" role="tablist" data-testid="nav-faq-categories">
+      <nav aria-label="FAQ categories" className="bg-white/95 backdrop-blur-sm border-b border-gray-100 xl:sticky xl:top-[96px] xl:z-40" role="tablist" data-testid="nav-faq-categories">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex overflow-x-auto scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 md:justify-center gap-2 md:gap-3 py-4">
+          <div className="flex flex-col md:flex-row md:overflow-x-auto md:scrollbar-hide md:-mx-0 md:px-0 md:justify-center gap-2 md:gap-3 py-4">
             {faqCategories.map((cat) => (
               <button
                 key={cat.id}
@@ -206,7 +228,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
                 aria-controls={`faq-panel-${cat.id}`}
                 onClick={() => handleCategoryChange(cat.id)}
                 data-testid={`button-faq-category-${cat.id}`}
-                className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shrink-0 focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 outline-none min-h-[44px] ${
+                className={`w-full md:w-auto md:whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 md:shrink-0 focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 outline-none min-h-[44px] ${
                   activeCategory === cat.id
                     ? "bg-[#042940] text-white shadow-md"
                     : "bg-gray-100 text-[#042940]/70"
@@ -241,7 +263,10 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
             </div>
 
             {/* Accordion - matches FaqSection.tsx pattern */}
-            <div className="grid gap-4">
+            <div
+              className="grid gap-4 transition-[padding] duration-300 ease-in-out"
+              style={{ paddingBottom: `${gridPaddingBottom}px` }}
+            >
               {currentCategory.faqs.map((faq, i) => {
                 const isOpen = openItem === `item-${i}`;
 
@@ -252,7 +277,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
                     <div
                       className={`group rounded-[5px] border transition-all duration-300 overflow-hidden ${
                         isOpen
-                          ? "bg-[#042940] border-[#042940] shadow-xl transform scale-[1.02]"
+                          ? "bg-[#042940] border-[#042940] shadow-xl"
                           : "bg-white border-transparent shadow-sm"
                       }`}
                     >
@@ -283,11 +308,19 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
                         id={`faq-answer-${activeCategory}-${i}`}
                         role="region"
                         aria-labelledby={`faq-trigger-${activeCategory}-${i}`}
-                        className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                        }`}
+                        className="transition-[height,opacity] duration-300 ease-in-out overflow-hidden"
+                        style={{
+                          height: isOpen ? `${answerHeights[i] ?? 0}px` : "0px",
+                          opacity: isOpen ? 1 : 0,
+                        }}
                       >
-                        <div className="px-6 md:px-8 pb-8 pt-0">
+                        <div
+                          ref={(el) => {
+                            if (el) answerContentRefs.current.set(i, el);
+                            else answerContentRefs.current.delete(i);
+                          }}
+                          className="px-6 md:px-8 pb-8 pt-0"
+                        >
                           <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6" data-testid={`text-faq-answer-${activeCategory}-${i}`}>
                             {faq.answer}
                           </p>
@@ -307,10 +340,10 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
             <p className="text-[#042940]/70 mb-4 font-medium" data-testid="text-faq-still-questions">
               {acf?.ctaText || "Still have questions?"}
             </p>
-            <Link href={acf?.ctaLink || "/contact"} data-testid="link-faq-contact-us">
+            <Link href={acf?.ctaLink || "/contact"} className="block sm:inline-block w-full sm:w-auto" data-testid="link-faq-contact-us">
               <Button
                 size="lg"
-                className="shadow-lg min-h-[52px] whitespace-nowrap rounded-full px-8"
+                className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap rounded-full px-8"
                 data-testid="button-faq-contact-us"
               >
                 {acf?.ctaLabel || "Contact Us"}

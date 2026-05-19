@@ -237,9 +237,10 @@ export default function LocationTemplateClient({
  id="firstName"
  name="input_1"
  required
+ placeholder="Enter your first name"
  value={formData.firstName}
  onChange={(e) => handleInputChange("firstName", e.target.value)}
- className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
+ className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
  data-testid="input-firstName"
  />
  </div>
@@ -252,9 +253,10 @@ export default function LocationTemplateClient({
  id="lastName"
  name="input_2"
  required
+ placeholder="Enter your last name"
  value={formData.lastName}
  onChange={(e) => handleInputChange("lastName", e.target.value)}
- className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
+ className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
  data-testid="input-lastName"
  />
  </div>
@@ -270,9 +272,10 @@ export default function LocationTemplateClient({
  id="email"
  name="input_3"
  required
+ placeholder="Enter your email"
  value={formData.email}
  onChange={(e) => handleInputChange("email", e.target.value)}
- className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
+ className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
  data-testid="input-email"
  />
  </div>
@@ -302,9 +305,10 @@ export default function LocationTemplateClient({
  id="company"
  name="input_5"
  required
+ placeholder="Enter your company name"
  value={formData.company}
  onChange={(e) => handleInputChange("company", e.target.value)}
- className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
+ className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
  data-testid="input-company"
  />
  </div>
@@ -395,7 +399,7 @@ export default function LocationTemplateClient({
  <p className="text-primary/70 leading-relaxed mb-8">
  {infoBody}
  </p>
- <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+ <div className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4">
  <Button
  size="lg"
  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
@@ -429,6 +433,29 @@ export default function LocationTemplateClient({
  loading="lazy"
  />
  </FadeIn>
+
+ <div className="order-3 lg:hidden flex flex-col sm:flex-row gap-3 sm:gap-4">
+ <Button
+ size="lg"
+ className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform active:scale-95 min-h-[52px] whitespace-nowrap"
+ data-testid="button-info-cta-mobile"
+ asChild
+ >
+ <Link href="/request-a-service">Get a Quote</Link>
+ </Button>
+ <Button
+ size="lg"
+ variant="outline"
+ className="w-full sm:w-auto border-[#042940]/20 text-[#042940] active:bg-[#042940] active:text-white transition-all transform active:scale-95 min-h-[52px] whitespace-nowrap"
+ data-testid="button-info-phone-mobile"
+ asChild
+ >
+ <a href="tel:+17275105454">
+ <Phone className="mr-2 h-5 w-5" />
+ 727.510.5454
+ </a>
+ </Button>
+ </div>
  </div>
  </div>
  </section>
