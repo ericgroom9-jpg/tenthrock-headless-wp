@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import FadeIn from "@/components/shared/FadeIn";
 import { ChevronDown } from "lucide-react";
@@ -54,6 +54,28 @@ export default function FaqSection({
   ctaLink = "/contact",
 }: FaqSectionProps) {
   const [openItem, setOpenItem] = useState<string>("item-0");
+  const answerContentRefs = useRef<Map<number, HTMLDivElement | null>>(new Map());
+  const [answerHeights, setAnswerHeights] = useState<number[]>([]);
+
+  useEffect(() => {
+    const measure = () => {
+      const heights = faqs.map((_, i) => {
+        const el = answerContentRefs.current.get(i);
+        return el ? el.scrollHeight : 0;
+      });
+      setAnswerHeights((prev) =>
+        prev.length === heights.length && prev.every((h, i) => h === heights[i]) ? prev : heights
+      );
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [faqs]);
+
+  const maxAnswerHeight = answerHeights.length > 0 ? Math.max(...answerHeights, 0) : 0;
+  const openIndex = openItem ? parseInt(openItem.replace("item-", ""), 10) : -1;
+  const openHeight = openIndex >= 0 ? answerHeights[openIndex] || 0 : 0;
+  const gridPaddingBottom = Math.max(maxAnswerHeight - openHeight, 0);
 
   const handleToggle = (key: string) => {
     if (openItem === key) return;
@@ -76,56 +98,67 @@ export default function FaqSection({
           </p>
         </div>
 
-        <div className="grid gap-4">
-          {faqs.map((faq, i) => (
-            <FadeIn
-              key={i}
-            >
-              <div 
-                className={`group rounded-[5px] border transition-colors duration-300 overflow-hidden ${
-                  openItem === `item-${i}` 
-                    ? "bg-[#042940] border-[#042940] shadow-xl" 
-                    : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
-                }`}
-              >
-                <button 
-                  className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
-                  onClick={() => handleToggle(`item-${i}`)}
-                  aria-expanded={openItem === `item-${i}`}
-                  data-testid={`faq-trigger-${i}`}
-                >
-                  <span className={`text-xl font-bold transition-colors duration-300 ${
-                    openItem === `item-${i}` ? "text-white" : "text-primary"
-                  }`}>
-                    {faq.question}
-                  </span>
-                  <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    openItem === `item-${i}` 
-                      ? "bg-[#c5d520] rotate-180" 
-                      : "bg-primary/5 group-hover:bg-primary/10"
-                  }`}>
-                    <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
-                      openItem === `item-${i}` ? "text-[#042940]" : "text-primary"
-                    }`} />
-                  </div>
-                </button>
-                <div 
-                  className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
-                    openItem === `item-${i}` ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        <div
+          className="grid gap-4 transition-[padding] duration-300 ease-in-out"
+          style={{ paddingBottom: `${gridPaddingBottom}px` }}
+        >
+          {faqs.map((faq, i) => {
+            const isOpen = openItem === `item-${i}`;
+            const answerHeight = answerHeights[i] ?? 0;
+            return (
+              <FadeIn key={i}>
+                <div
+                  className={`group rounded-[5px] border transition-colors duration-300 overflow-hidden ${
+                    isOpen
+                      ? "bg-[#042940] border-[#042940] shadow-xl"
+                      : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
                   }`}
-                  aria-hidden={openItem !== `item-${i}`}
                 >
-                  <div className="overflow-hidden">
-                    <div className="px-6 md:px-8 pb-8 pt-0 min-h-[180px] md:min-h-[160px]">
+                  <button
+                    className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
+                    onClick={() => handleToggle(`item-${i}`)}
+                    aria-expanded={isOpen}
+                    data-testid={`faq-trigger-${i}`}
+                  >
+                    <span className={`text-xl font-bold transition-colors duration-300 ${
+                      isOpen ? "text-white" : "text-primary"
+                    }`}>
+                      {faq.question}
+                    </span>
+                    <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                      isOpen
+                        ? "bg-[#c5d520] rotate-180"
+                        : "bg-primary/5 group-hover:bg-primary/10"
+                    }`}>
+                      <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${
+                        isOpen ? "text-[#042940]" : "text-primary"
+                      }`} />
+                    </div>
+                  </button>
+                  <div
+                    className="transition-[height,opacity] duration-300 ease-in-out overflow-hidden"
+                    style={{
+                      height: isOpen ? `${answerHeight}px` : "0px",
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                    aria-hidden={!isOpen}
+                  >
+                    <div
+                      ref={(el) => {
+                        if (el) answerContentRefs.current.set(i, el);
+                        else answerContentRefs.current.delete(i);
+                      }}
+                      className="px-6 md:px-8 pb-8 pt-0"
+                    >
                       <p className="text-white/80 text-lg leading-relaxed border-t border-white/10 pt-6">
                         {faq.answer}
                       </p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
+              </FadeIn>
+            );
+          })}
         </div>
         
         <div className="mt-16 text-left sm:text-center">

@@ -149,7 +149,7 @@ const Logo = ({ className = "", variant = "main" }: { className?: string, varian
  src={logoSrc} 
  alt="Tenth Rock Waste Solutions" 
  fill
- sizes="180px"
+ sizes="360px"
  className="object-contain object-left" 
  priority
  />
@@ -201,7 +201,7 @@ const LoadingScreen = () => {
  src={logoWhite}
  alt="Tenth Rock Waste Solutions"
  fill
- sizes="(max-width: 768px) 176px, 224px"
+ sizes="(max-width: 768px) 352px, 448px"
  className="object-contain"
  priority
  />
@@ -328,7 +328,7 @@ const Counter = ({ from = 0, to, duration = 2, suffix = "", prefix = "" }: { fro
 const SimpleNumbers = () => {
  return (
  <section aria-label="Company statistics" className="py-12 md:py-20 bg-white border-b border-primary/5">
- <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+ <div className="container mx-auto px-4 md:px-8">
  <div className="grid md:grid-cols-3 gap-6 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-primary/10 max-w-5xl mx-auto">
  <div className="flex flex-col items-center text-center px-4 md:px-8 pt-6 md:pt-0">
  <div className="text-5xl md:text-6xl font-extrabold text-primary mb-2 flex items-center justify-center">
@@ -530,7 +530,7 @@ const WhyUs = () => {
 
  return (
  <section className="py-16 md:py-24 bg-white" aria-label="About Tenth Rock">
- <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+ <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
  {/* Left Image Side (order-2 on mobile) */}
  <motion.div 

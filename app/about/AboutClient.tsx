@@ -158,7 +158,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
                     data-testid={`accordion-item-${index}`}
                   >
                     <AccordionTrigger 
-                      className="text-xl md:text-2xl font-semibold text-primary text-left py-4 px-0 sm:px-6 rounded-[5px] hover:no-underline data-[state=open]:bg-[#c5d520]/10 transition-colors"
+                      className="relative text-xl md:text-2xl font-semibold text-primary text-left py-4 pl-3 sm:pl-6 pr-0 sm:pr-6 hover:no-underline before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-6 before:w-[3px] before:rounded-full before:bg-transparent data-[state=open]:before:bg-[#c5d520] before:transition-colors"
                       data-testid={`accordion-trigger-${index}`}
                     >
                       {value.title}
@@ -246,8 +246,10 @@ export default function AboutClient({ acf, globalSections }: Props) {
                 key={i}
                 src={item.logo}
                 alt={item.altText}
-                width={128}
-                height={64}
+                width={512}
+                height={256}
+                sizes="(max-width: 768px) 192px, 256px"
+                quality={90}
                 className="h-12 md:h-16 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                 loading="lazy"
                 data-testid={`img-association-logo-${i}`}

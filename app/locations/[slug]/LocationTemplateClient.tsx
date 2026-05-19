@@ -118,7 +118,7 @@ export default function LocationTemplateClient({
  aria-hidden="true"
  priority
  />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
+ <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
  </div>
  <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
  <div className="max-w-2xl">
@@ -468,7 +468,7 @@ export default function LocationTemplateClient({
 
  {cities.length > 0 && (
  <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="cities-we-serve-heading" data-testid="section-cities-we-serve">
- <div className="container mx-auto px-4 sm:px-6 md:px-8">
+ <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
  <FadeIn className="lg:sticky lg:top-32">
  <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square max-w-md mx-auto lg:mx-0 shadow-2xl" data-testid="map-state-visual" role="img" aria-label={`Service coverage map for ${locationName}`}>

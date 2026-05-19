@@ -225,7 +225,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  ? "fixed top-6 left-0 right-0 z-50 px-4 md:px-8" 
  : "sticky top-0 z-50 px-4 md:px-8 py-3 bg-white/95 backdrop-blur-sm"
  }>
- <div className={`container mx-auto max-w-[92rem] ${isFloating ? "bg-white rounded-[5px] shadow-lg px-3 sm:px-6 py-3" : "px-0"}`}>
+ <div className={`container mx-auto ${isFloating ? "bg-white rounded-[5px] shadow-lg px-3 sm:px-6 py-3" : "px-0"}`}>
  <div className="flex items-center justify-between gap-1 sm:gap-4">
  <Link href="/" className="hover:opacity-90 transition-opacity inline-flex items-center min-h-[44px] min-w-0" data-testid="link-nav-home">
  <Logo variant="main" />
@@ -296,7 +296,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  onMouseEnter={clearCloseTimer}
  onMouseLeave={() => delayedClose(setIsServicesOpen)}
  >
- <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
+ <div className="container mx-auto bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
  <div className="grid grid-cols-4 gap-8">
  {serviceCategories.map((category) => (
  <div key={category.label} className="space-y-1">
@@ -366,7 +366,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  onMouseEnter={clearCloseTimer}
  onMouseLeave={() => delayedClose(setIsSectorsOpen)}
  >
- <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
+ <div className="container mx-auto bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
  <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
  <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
  <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">
@@ -432,7 +432,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  onMouseEnter={clearCloseTimer}
  onMouseLeave={() => delayedClose(setIsLocationsOpen)}
  >
- <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
+ <div className="container mx-auto bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
  <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
  <div className="flex items-center gap-2">
  <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
@@ -515,7 +515,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  onMouseEnter={clearCloseTimer}
  onMouseLeave={() => delayedClose(setIsAboutOpen)}
  >
- <div className="container mx-auto max-w-[92rem] bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
+ <div className="container mx-auto bg-[#042940] rounded-[5px] shadow-2xl px-8 py-10">
  <div className="flex items-center gap-2 pb-4 mb-6 border-b border-white/10">
  <div className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></div>
  <span className="text-[11px] font-extrabold tracking-[0.18em] uppercase text-[#c5d520]/80">

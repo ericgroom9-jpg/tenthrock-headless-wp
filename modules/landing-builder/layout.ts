@@ -12,8 +12,8 @@ export const layout = {
   },
   container: {
     base: 'container mx-auto px-6 lg:px-12',
-    maxWidth: 'max-w-[1200px]',
-    full: 'container mx-auto px-6 lg:px-12 max-w-[1200px]',
+    maxWidth: '',
+    full: 'container mx-auto px-6 lg:px-12',
   },
   gap: {
     sm: 'gap-4',

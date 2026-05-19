@@ -3,10 +3,13 @@
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import FadeIn from "@/components/shared/FadeIn";
 import Link from "next/link";
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import type { BookCallTemplateData } from "@/lib/wordpress";
+
+const CALENDLY_URL = "https://calendly.com/mandy-tenthrock/30min";
 
 const defaultExpectations = [
   "Personalized waste strategy review for your business",
@@ -22,8 +25,6 @@ export default function BookACallClient({ data }: Props) {
   const heading = data?.heading || "Book A Call";
   const expectations = data?.expectations?.map(e => e.text) || defaultExpectations;
   const description = data?.description || "Schedule a quick call with one of our waste management consultants. We'll learn about your specific needs and put together a customized plan that saves you time and money, with no obligation.";
-  const calendarFallbackHeading = data?.calendarFallbackHeading || "Calendar Loading";
-  const calendarFallbackText = data?.calendarFallbackText || "Our scheduling tool will appear here. If it doesn't load, call us directly at 727.510.5454 to book your consultation.";
   const skipText = data?.skipText || "Already booked or prefer to skip?";
   const continueLabel = data?.continueLabel || "Continue";
   const continueLink = data?.continueLink || "/thank-you";
@@ -64,17 +65,18 @@ export default function BookACallClient({ data }: Props) {
                   dangerouslySetInnerHTML={{ __html: data.calendarEmbed }}
                 />
               ) : (
-                <div className="bg-[#f5f5f5] rounded-[5px] w-full min-h-[480px] sm:min-h-[520px] lg:min-h-[560px] flex flex-col items-center justify-center px-6 text-center">
-                  <div className="w-16 h-16 rounded-full bg-[#042940]/10 flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-[#042940]/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" strokeWidth="2"/><path d="M16 2v4M8 2v4M3 10h18" strokeWidth="2" strokeLinecap="round"/></svg>
-                  </div>
-                  <p className="text-xl sm:text-2xl font-bold text-[#042940] mb-2">
-                    {calendarFallbackHeading}
-                  </p>
-                  <p className="text-sm text-[#042940]/60 max-w-sm">
-                    {calendarFallbackText}
-                  </p>
-                </div>
+                <>
+                  <div
+                    className="calendly-inline-widget w-full"
+                    data-url={CALENDLY_URL}
+                    style={{ minWidth: 320, height: 1000 }}
+                    data-testid="calendly-widget"
+                  />
+                  <Script
+                    src="https://assets.calendly.com/assets/external/widget.js"
+                    strategy="afterInteractive"
+                  />
+                </>
               )}
 
               <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">

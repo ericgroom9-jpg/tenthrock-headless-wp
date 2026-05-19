@@ -45,7 +45,7 @@ export function ValuesBlock({ block }: Props) {
 
   return (
     <section className="bg-background py-24 lg:py-36" data-testid="block-values">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div className="container mx-auto px-6 lg:px-12">
         {/* Header */}
         {(block.sectionTitle || block.sectionDescription) && (
           <div className="text-center mb-20 max-w-[640px] mx-auto">

@@ -150,7 +150,7 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  <section className="relative bg-[#042940] pt-24 md:pt-28 overflow-hidden" data-testid="section-join-hero">
  <div className="absolute inset-0">
  <Image src={heroImage} alt="" fill sizes="100vw" className="object-cover" aria-hidden="true" priority />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/95 to-[#042940]/70" />
+ <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
  </div>
  <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
  <div className="max-w-2xl">

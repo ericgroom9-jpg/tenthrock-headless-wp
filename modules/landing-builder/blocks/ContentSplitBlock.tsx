@@ -19,7 +19,7 @@ export function ContentSplitBlock({ block }: Props) {
 
   return (
     <section className="bg-background py-24 lg:py-36" data-testid="block-content-split">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div className="container mx-auto px-6 lg:px-12">
         <div className={`grid lg:grid-cols-2 gap-12 lg:gap-12 items-center ${imageOnLeft ? '' : 'lg:flex-row-reverse'}`}>
           {/* Image */}
           <div className={imageOnLeft ? '' : 'lg:order-2'}>

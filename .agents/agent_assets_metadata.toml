@@ -1,0 +1,25 @@
+uploads = []
+
+[[generated]]
+id = "582xJw4iM7I98pwm03Imx"
+uri = "file://public/images/stock/industry-stadiums-events.jpg.tmp.png"
+type = "image"
+title = "stadium-events-hero"
+
+[[outputs]]
+id = "RoASCo9kPvqyiD6i0QydA"
+uri = "file://attached_assets/stock_images/industry-stadiums-events-hires_1.jpg"
+type = "image"
+title = "stadium with crowd at night, wide aerial view, concert event, vibrant lights, professional photo"
+
+[[outputs]]
+id = "yywWeg6sY7_eM-SA-6IiW"
+uri = "file://attached_assets/stock_images/industry-stadiums-events-hires_2.jpg"
+type = "image"
+title = "stadium with crowd at night, wide aerial view, concert event, vibrant lights, professional photo"
+
+[[outputs]]
+id = "wuKCcJUBsV_rDBDdD3_D5"
+uri = "file://attached_assets/stock_images/industry-stadiums-events-hires_3.jpg"
+type = "image"
+title = "stadium with crowd at night, wide aerial view, concert event, vibrant lights, professional photo"

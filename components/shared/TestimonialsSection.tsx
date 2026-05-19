@@ -71,7 +71,7 @@ export default function TestimonialsSection({
  <div className="flex items-center gap-4">
  {current.img && (
  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20">
- <Image src={current.img} alt={current.author} width={64} height={64} className="w-full h-full object-cover" loading="lazy" />
+ <Image src={current.img} alt={current.author} width={128} height={128} sizes="64px" quality={90} className="w-full h-full object-cover" loading="lazy" />
  </div>
  )}
  {!current.img && (

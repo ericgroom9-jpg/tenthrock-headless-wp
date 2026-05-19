@@ -28,7 +28,7 @@ export function CtaBannerBlock({ block }: Props) {
       className={`py-24 lg:py-36 ${bgColorClasses[bgColor]}`}
       data-testid="block-cta-banner"
     >
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px] text-center">
+      <div className="container mx-auto px-6 lg:px-12 text-center">
         {block.headline && (
           <h2 className="text-h2 mb-6 max-w-[680px] mx-auto" data-testid="cta-headline">
             {block.headline}

@@ -127,9 +127,9 @@ export default function IndustryTemplate({
  <div
  aria-hidden="true"
  className="absolute inset-0 hidden sm:block"
- style={{ backgroundImage: "linear-gradient(to right, rgba(4,41,64,0.9), rgba(4,41,64,0.7))" }}
+ style={{ backgroundImage: "linear-gradient(to right, rgba(4,41,64,1), rgba(4,41,64,0.8) 60%, rgba(4,41,64,0.15))" }}
  />
- <div className="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
+ <div className="container mx-auto px-4 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
  <FadeIn
  className="max-w-3xl"
  >
@@ -168,7 +168,7 @@ export default function IndustryTemplate({
 
  {/* About Industry Section */}
  <section className="py-16 md:py-20 lg:py-24 bg-white">
- <div className="container mx-auto px-4 sm:px-6 md:px-8">
+ <div className="container mx-auto px-4 md:px-8">
  <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
  {/* Left Content */}
  <FadeIn
@@ -277,7 +277,7 @@ export default function IndustryTemplate({
 
  {/* Paragraph Section 1 - Text Left, Image Right */}
  <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
- <div className="container mx-auto px-4 sm:px-6 md:px-8">
+ <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
  >
@@ -345,7 +345,7 @@ export default function IndustryTemplate({
 
  {/* Paragraph Section 2 - Image Left, Text Right */}
  <section className="py-16 md:py-24 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
- <div className="container mx-auto px-4 sm:px-6 md:px-8">
+ <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  {paragraphSection2.image && (
  <FadeIn
@@ -414,7 +414,7 @@ export default function IndustryTemplate({
 
  {/* Paragraph Section 3 - Text Left, Image Right (alternating) */}
  <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
- <div className="container mx-auto px-4 sm:px-6 md:px-8">
+ <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
  >

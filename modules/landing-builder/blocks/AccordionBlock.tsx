@@ -43,7 +43,7 @@ export function AccordionBlock({ block }: Props) {
   if (layout === 'split') {
     return (
       <section className="bg-background py-24 lg:py-36" data-testid="block-accordion">
-        <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+        <div className="container mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             {/* Left side - Title and CTA (fixed width) */}
             <div className="w-full lg:w-[360px] lg:flex-shrink-0">
@@ -75,7 +75,7 @@ export function AccordionBlock({ block }: Props) {
   // Centered layout
   return (
     <section className="bg-background py-24 lg:py-36" data-testid="block-accordion">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-[800px] mx-auto">
           {(block.sectionTitle || block.sectionDescription) && (
             <div className="text-center mb-20">

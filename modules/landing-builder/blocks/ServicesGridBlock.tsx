@@ -18,7 +18,7 @@ export function ServicesGridBlock({ block }: Props) {
 
   return (
     <section className="bg-background py-24 lg:py-36" data-testid="block-services-grid">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div className="container mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           {block.sectionTitle && (

@@ -192,8 +192,8 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
             className="object-cover opacity-40"
             priority
           />
-          <div className="absolute inset-0 bg-[#042940]/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-[#042940]/55"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#042940]/80 via-[#042940]/20 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-left sm:text-center">
@@ -217,7 +217,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
 
       {/* Category Navigation */}
       <nav aria-label="FAQ categories" className="bg-white/95 backdrop-blur-sm border-b border-gray-100 xl:sticky xl:top-[96px] xl:z-40" role="tablist" data-testid="nav-faq-categories">
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <div className="flex flex-col md:flex-row md:overflow-x-auto md:scrollbar-hide md:-mx-0 md:px-0 md:justify-center gap-2 md:gap-3 py-4">
             {faqCategories.map((cat) => (
               <button
@@ -243,7 +243,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
 
       {/* FAQ Content */}
       <section ref={accordionRef} aria-labelledby="faq-section-heading" className="py-16 md:py-24 lg:py-28 bg-[#F9F9F6]">
-        <div className="container mx-auto px-4 md:px-8">
+        <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <FadeIn
             key={activeCategory}
             className="max-w-3xl mx-auto"

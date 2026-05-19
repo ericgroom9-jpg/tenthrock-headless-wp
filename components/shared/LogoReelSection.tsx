@@ -54,14 +54,14 @@ export default function LogoReelSection({
         <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
           {partnerLogos.map((logo, i) => (
             <div key={`logo-1-${i}`} className="relative h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
-              <Image src={logo.src} alt={logo.alt} fill sizes="128px" className="object-contain" loading="lazy" />
+              <Image src={logo.src} alt={logo.alt} fill sizes="256px" quality={90} className="object-contain" loading="lazy" />
             </div>
           ))}
         </div>
         <div className="animate-marquee flex gap-16 items-center whitespace-nowrap min-w-full shrink-0 px-8">
           {partnerLogos.map((logo, i) => (
             <div key={`logo-2-${i}`} className="relative h-16 w-32 flex items-center justify-center grayscale md:grayscale opacity-60 md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300">
-              <Image src={logo.src} alt={logo.alt} fill sizes="128px" className="object-contain" loading="lazy" />
+              <Image src={logo.src} alt={logo.alt} fill sizes="256px" quality={90} className="object-contain" loading="lazy" />
             </div>
           ))}
         </div>

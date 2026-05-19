@@ -30,7 +30,7 @@ export function RichTextBlock({ block }: Props) {
       className="bg-background py-24 lg:py-36"
       data-testid="block-rich-text"
     >
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div className="container mx-auto px-6 lg:px-12">
         <div className={`${maxWidthClasses[maxWidth]} mx-auto`}>
           <div 
             className="prose prose-lg max-w-none dark:prose-invert

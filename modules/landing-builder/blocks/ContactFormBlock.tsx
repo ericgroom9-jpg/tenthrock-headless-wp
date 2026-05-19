@@ -83,7 +83,7 @@ export function ContactFormBlock({ block }: Props) {
 
   return (
     <section className="bg-background py-24 lg:py-36" data-testid="block-contact-form">
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left side - Content (max 480px) */}
           <div className="max-w-[480px]">

@@ -46,7 +46,7 @@ export function FeatureGridBlock({ block }: Props) {
       className="bg-background py-24 lg:py-36"
       data-testid="block-feature-grid"
     >
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1200px]">
+      <div className="container mx-auto px-6 lg:px-12">
         {(block.sectionTitle || block.sectionDescription) && (
           <div className="text-center mb-16 max-w-[640px] mx-auto">
             {block.sectionTitle && (
