@@ -269,6 +269,13 @@ add_action( 'acf/init', function () {
             _tr_f( 'field_gs_faq_tagline', 'Tagline', 'faq_section_tagline' ),
             _tr_f( 'field_gs_faq_heading', 'Heading', 'faq_section_heading' ),
             _tr_f( 'field_gs_faq_subtitle', 'Subtitle', 'faq_section_subtitle', 'textarea' ),
+            _tr_f( 'field_gs_faq_items', 'FAQ Items', 'faq_items', 'repeater', array(
+                'layout' => 'block',
+                'sub_fields' => array(
+                    _tr_f( 'field_gs_faq_q', 'Question', 'question' ),
+                    _tr_f( 'field_gs_faq_a', 'Answer', 'answer', 'textarea' ),
+                ),
+            )),
             _tr_f( 'field_gs_faq_cta_text', 'CTA Text', 'faq_section_cta_text' ),
             _tr_f( 'field_gs_faq_cta_label', 'CTA Label', 'faq_section_cta_label' ),
             _tr_f( 'field_gs_faq_cta_link', 'CTA Link', 'faq_section_cta_link' ),

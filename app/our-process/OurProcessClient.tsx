@@ -116,6 +116,7 @@ export default function OurProcessClient({ acf, globalSections }: Props) {
         tagline={gs?.faq?.tagline}
         heading={gs?.faq?.heading}
         subtitle={gs?.faq?.subtitle}
+        faqs={gs?.faq?.faqs}
         ctaText={gs?.faq?.ctaText}
         ctaLabel={gs?.faq?.ctaLabel}
         ctaLink={gs?.faq?.ctaLink}

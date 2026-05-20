@@ -2200,6 +2200,7 @@ export interface GlobalSectionsData {
     tagline?: string;
     heading?: string;
     subtitle?: string;
+    faqs?: InlineFaqItem[];
     ctaText?: string;
     ctaLabel?: string;
     ctaLink?: string;
@@ -2533,6 +2534,7 @@ const GET_GLOBAL_SECTIONS_QUERY = gql`
         faqSectionTagline
         faqSectionHeading
         faqSectionSubtitle
+        faqItems { question answer }
         faqSectionCtaText
         faqSectionCtaLabel
         faqSectionCtaLink
@@ -3117,6 +3119,7 @@ export const fetchGlobalSections = cache(async (): Promise<GlobalSectionsData | 
         tagline: faq.faqSectionTagline || undefined,
         heading: faq.faqSectionHeading || undefined,
         subtitle: faq.faqSectionSubtitle || undefined,
+        faqs: nonEmpty(faq.faqItems),
         ctaText: faq.faqSectionCtaText || undefined,
         ctaLabel: faq.faqSectionCtaLabel || undefined,
         ctaLink: faq.faqSectionCtaLink || undefined,

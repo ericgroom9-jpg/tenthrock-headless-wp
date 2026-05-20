@@ -114,6 +114,13 @@ function tr_backfill_global_sections_handler() {
     tr_gs_set_if_empty('field_gs_faq_tagline',   'faq_section_tagline',  'Common Questions', $report);
     tr_gs_set_if_empty('field_gs_faq_heading',   'faq_section_heading',  'Frequently Asked Questions', $report);
     tr_gs_set_if_empty('field_gs_faq_subtitle',  'faq_section_subtitle', "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.", $report);
+    tr_gs_set_if_empty('field_gs_faq_items', 'faq_items', array(
+        array('field_gs_faq_q' => 'How Quickly Can You Arrange a Pickup?',          'field_gs_faq_a' => 'For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night.'),
+        array('field_gs_faq_q' => 'Do You Service Multiple Locations Nationwide?',  'field_gs_faq_a' => 'Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice.'),
+        array('field_gs_faq_q' => 'What Types of Waste Do You Handle?',             'field_gs_faq_a' => 'We handle almost all non-hazardous commercial waste streams including general trash, recycling (cardboard, plastic, metal), construction debris, organic waste, and e-waste. We also coordinate specialized hazmat disposal upon request.'),
+        array('field_gs_faq_q' => 'Are There Long-Term Contracts?',                 'field_gs_faq_a' => "We believe in earning your business every day. While we offer contract savings, many of our services are available with flexible terms. We want you to stay because you're happy, not because you're locked in."),
+        array('field_gs_faq_q' => 'How Do You Help With Sustainability Goals?',     'field_gs_faq_a' => 'Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials.'),
+    ), $report);
     tr_gs_set_if_empty('field_gs_faq_cta_text',  'faq_section_cta_text', 'Still Have Questions?', $report);
     tr_gs_set_if_empty('field_gs_faq_cta_label', 'faq_section_cta_label','Contact Us', $report);
     tr_gs_set_if_empty('field_gs_faq_cta_link',  'faq_section_cta_link', '/contact', $report);

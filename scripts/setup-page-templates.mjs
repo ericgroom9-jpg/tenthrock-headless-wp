@@ -618,6 +618,13 @@ const GLOBAL_SECTIONS = {
   faq_section_tagline: 'Common Questions',
   faq_section_heading: 'Frequently Asked Questions',
   faq_section_subtitle: "Everything you need to know about our services, coverage, and process. Can't find the answer you're looking for? Reach out to our team.",
+  faq_items: [
+    { question: 'How Quickly Can You Arrange a Pickup?', answer: 'For emergencies, we can often have crews on-site within hours. For standard scheduled services, we typically start within 24-48 hours of account setup. Our 24/7 dispatch center takes your call day or night.' },
+    { question: 'Do You Service Multiple Locations Nationwide?', answer: 'Yes, we operate across 48 states. Our centralized management platform allows you to handle waste services for hundreds of locations through a single point of contact and one consolidated invoice.' },
+    { question: 'What Types of Waste Do You Handle?', answer: 'We handle almost all non-hazardous commercial waste streams including general trash, recycling (cardboard, plastic, metal), construction debris, organic waste, and e-waste. We also coordinate specialized hazmat disposal upon request.' },
+    { question: 'Are There Long-Term Contracts?', answer: "We believe in earning your business every day. While we offer contract savings, many of our services are available with flexible terms. We want you to stay because you're happy, not because you're locked in." },
+    { question: 'How Do You Help With Sustainability Goals?', answer: 'Our goal is to minimize your landfill footprint and maximize potential rebates for recyclable materials.' },
+  ],
   faq_section_cta_text: 'Still Have Questions?',
   faq_section_cta_label: 'Contact Us',
   faq_section_cta_link: '/contact',

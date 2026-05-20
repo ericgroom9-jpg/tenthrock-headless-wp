@@ -140,11 +140,11 @@ function RequestAServiceSection({ data }: { data: ContactFormTemplateData | null
               <form className="space-y-5" data-testid="form-request-service" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="request-name" className="block text-sm font-medium text-[#042940] mb-2">Name</label>
-                  <Input id="request-name" name="input_1" type="text" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-name" />
+                  <Input id="request-name" name="input_1" type="text" required placeholder="Enter your name" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-name" />
                 </div>
                 <div>
                   <label htmlFor="request-email" className="block text-sm font-medium text-[#042940] mb-2">Email</label>
-                  <Input id="request-email" name="input_2" type="email" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-email" />
+                  <Input id="request-email" name="input_2" type="email" required placeholder="Enter your email" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-email" />
                 </div>
                 <div>
                   <label htmlFor="request-phone" className="block text-sm font-medium text-[#042940] mb-2">Phone Number</label>

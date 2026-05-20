@@ -864,7 +864,7 @@ export default function Home({ acf, globalSections, testimonials, caseStudies, p
  tagline={acf?.faqTagline || gs?.faq?.tagline}
  heading={acf?.faqHeading || gs?.faq?.heading}
  subtitle={acf?.faqSubtitle || gs?.faq?.subtitle}
- faqs={acf?.faqItems && acf.faqItems.length > 0 ? acf.faqItems : undefined}
+ faqs={gs?.faq?.faqs}
  ctaText={acf?.faqCtaText || gs?.faq?.ctaText}
  ctaLabel={acf?.faqCtaLabel || gs?.faq?.ctaLabel}
  ctaLink={acf?.faqCtaLink || gs?.faq?.ctaLink}
