@@ -33,6 +33,7 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: "2mb",
     },
+    optimizeCss: true,
     optimizePackageImports: [
       "lucide-react",
       "framer-motion",
