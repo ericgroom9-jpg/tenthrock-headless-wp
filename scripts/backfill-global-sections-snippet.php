@@ -13,7 +13,40 @@ add_action('rest_api_init', function () {
         'permission_callback' => function () { return current_user_can('edit_posts'); },
         'callback' => 'tr_backfill_global_sections_handler',
     ));
+    // Unconditionally overwrite specific Global Sections fields. Body:
+    //   { "fields": { "<field_key>": <value>, ... } }
+    // Field keys must be the ACF field_key (e.g. field_gs_loc_hq_image) so
+    // ACF resolves the type/group correctly. Returns the per-field write status.
+    register_rest_route('tr/v1', '/update-global-sections', array(
+        'methods'  => 'POST',
+        // Administrator-only: this route writes arbitrary ACF Options fields
+        // unconditionally and can rewrite sitewide content. Editors must not
+        // have access.
+        'permission_callback' => function () { return current_user_can('manage_options'); },
+        'callback' => 'tr_update_global_sections_handler',
+    ));
 });
+
+function tr_update_global_sections_handler($request) {
+    if (!function_exists('update_field')) {
+        return new WP_Error('acf_missing', 'ACF Pro required', array('status' => 500));
+    }
+    $params = $request->get_json_params();
+    $fields = isset($params['fields']) && is_array($params['fields']) ? $params['fields'] : array();
+    if (empty($fields)) {
+        return new WP_Error('no_fields', 'Provide { fields: { field_key: value, ... } }', array('status' => 400));
+    }
+    $written = array(); $failed = array();
+    foreach ($fields as $key => $value) {
+        $ok = update_field($key, $value, 'option');
+        if ($ok) { $written[$key] = $value; } else { $failed[] = $key; }
+    }
+    return rest_ensure_response(array(
+        'success' => empty($failed),
+        'written' => $written,
+        'failed'  => $failed,
+    ));
+}
 
 function tr_gs_is_empty($v) {
     if ($v === null || $v === '' || $v === false) return true;
@@ -107,7 +140,7 @@ function tr_backfill_global_sections_handler() {
     tr_gs_set_if_empty('field_gs_loc_phone_link',  'location_phone_link',  'tel:+17275105454', $report);
     tr_gs_set_if_empty('field_gs_loc_email',       'location_email',       'hello@tenthrock.com', $report);
     tr_gs_set_if_empty('field_gs_loc_email_link',  'location_email_link',  'mailto:hello@tenthrock.com', $report);
-    tr_gs_set_if_empty('field_gs_loc_hq_image',    'location_hq_image',    '/images/stock/location-clearwater-beach-v2.jpg', $report);
+    tr_gs_set_if_empty('field_gs_loc_hq_image',    'location_hq_image',    '/images/stock/location-clearwater-beach-v2.webp', $report);
     tr_gs_set_if_empty('field_gs_loc_hq_img_alt',  'location_hq_image_alt','Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina near Tenth Rock headquarters', $report);
 
     // ── FAQ Section ────────────────────────────────────

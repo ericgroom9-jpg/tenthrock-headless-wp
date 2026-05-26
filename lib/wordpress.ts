@@ -2225,8 +2225,6 @@ export interface GlobalSectionsData {
     phoneLink?: string;
     email?: string;
     emailLink?: string;
-    hqImage?: string;
-    hqImageAlt?: string;
   };
   faq?: {
     tagline?: string;
@@ -3178,8 +3176,6 @@ export const fetchGlobalSections = cache(async (): Promise<GlobalSectionsData | 
         phoneLink: loc.locationPhoneLink || undefined,
         email: loc.locationEmail || undefined,
         emailLink: loc.locationEmailLink || undefined,
-        hqImage: loc.locationHqImage || undefined,
-        hqImageAlt: loc.locationHqImageAlt || undefined,
       } : undefined,
       faq: faq ? {
         tagline: faq.faqSectionTagline || undefined,

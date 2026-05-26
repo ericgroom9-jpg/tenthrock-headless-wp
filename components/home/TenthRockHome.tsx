@@ -920,8 +920,6 @@ export default function Home({ acf, globalSections, testimonials, caseStudies, p
  phoneLink={gs?.location?.phoneLink}
  email={gs?.location?.email}
  emailLink={gs?.location?.emailLink}
- hqImage={gs?.location?.hqImage}
- hqImageAlt={gs?.location?.hqImageAlt}
  />
  <FinalCtaSection
  heading={gs?.finalCta?.heading}

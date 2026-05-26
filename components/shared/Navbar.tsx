@@ -236,7 +236,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  <Button
  asChild
  size="sm"
- className="bg-[#c5d520] text-[#042940] font-bold rounded-full px-2.5 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20"
+ className="bg-[#c5d520] text-[#042940] font-bold uppercase rounded-full px-2.5 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20"
  data-testid="button-mobile-cta"
  >
  <Link href={primaryCta.href}>
