@@ -1,0 +1,91 @@
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 4,535 ms
+Initial Navigation
+https://tenthrock.sher.dev - 4,152 ms, 30.74 KiB
+…chunks/76fb9d408e40a69b.css(tenthrock.sher.dev) - 4,535 ms, 22.76 KiB
+…chunks/4a1f51db98d1ed57.css(tenthrock.sher.dev) - 4,421 ms, 1.36 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://tenthrock.sherstaging.com/
+head > link
+<link rel="preconnect" href="https://tenthrock.sherstaging.com" crossorigin="anonymous">
+Unused preconnect. Only use preconnect for origins that the page is likely to request.
+https://images.unsplash.com/
+head > link
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin="anonymous">
+Unused preconnect. Only use preconnect for origins that the page is likely to request.
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Improve image delivery Est savings of 1,201 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+sher.dev 1st party
+1,614.2 KiB	1,201.2 KiB
+section.py-16 > div.container > div.relative > div.absolute
+<div class="absolute inset-0 opacity-10 mix-blend-overlay" style="background-image: url(&quot;/assets_export/generated_images/line_art_us_map_illus…&quot;);">
+…generated_images/line_art_us_map_illustration.png(tenthrock.sher.dev)
+1,087.6 KiB
+911.6 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+911.6 KiB
+section.relative > div.absolute > div.relative > video.absolute
+<video autoplay="" loop="" playsinline="" preload="none" poster="/videos/hero-poster.jpg" disablepictureinpicture="" disableremoteplayback="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+/videos/hero-poster.jpg(tenthrock.sher.dev)
+191.4 KiB
+96.5 KiB
+Using a modern image format (WebP, AVIF) or increasing the image compression could improve this image's download size.
+96.5 KiB
+Stadiums & Events
+<img alt="Stadiums &amp; Events" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 group-hover:scale-110 group…" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" srcset="/_next/image?url=%2Fimages%2Findustries%2Findustry-stadiums-events.jpg&amp;w=9…" src="https://tenthrock.sher.dev/_next/image?url=%2Fimages%2Findustries%2Findust…" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
+/_next/image?url=…(tenthrock.sher.dev)
+54.2 KiB
+43.9 KiB
+Increasing the image compression factor could improve this image's download size.
+43.9 KiB
+Temporary Capacity & Stabilization
+<img alt="Temporary Capacity &amp; Stabilization" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 group-hover:scale-110" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="(min-width: 1280px) 280px, (min-width: 640px) 33vw, 100vw" srcset="/_next/image?url=%2Fimages%2Fstock%2Fsite-stabilization-1.webp&amp;w=128&amp;q=75 …" src="https://tenthrock.sher.dev/_next/image?url=%2Fimages%2Fstock%2Fsite-stabil…">
+/_next/image?url=…(tenthrock.sher.dev)
+79.5 KiB
+41.3 KiB
+Increasing the image compression factor could improve this image's download size.
+30.3 KiB
+This image file is larger than it needs to be (523x578) for its displayed dimensions (558x420). Use responsive images to reduce the image download size.
+17.9 KiB
+Unplanned Cleanouts & Debris
+<img alt="Unplanned Cleanouts &amp; Debris" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 group-hover:scale-110" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="(min-width: 1280px) 280px, (min-width: 640px) 33vw, 100vw" srcset="/_next/image?url=%2Fimages%2Fstock%2Funplanned-cleanouts-1.webp&amp;w=128&amp;q=75…" src="https://tenthrock.sher.dev/_next/image?url=%2Fimages%2Fstock%2Funplanned-c…">
+/_next/image?url=…(tenthrock.sher.dev)
+75.3 KiB
+37.2 KiB
+Increasing the image compression factor could improve this image's download size.
+26.1 KiB
+This image file is larger than it needs to be (523x578) for its displayed dimensions (558x420). Use responsive images to reduce the image download size.
+16.9 KiB
+Product & Perishable Removal
+<img alt="Product &amp; Perishable Removal" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 group-hover:scale-110" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="(min-width: 1280px) 280px, (min-width: 640px) 33vw, 100vw" srcset="/_next/image?url=%2Fimages%2Fstock%2Fservice-emergency-overflow.jpg&amp;w=128&amp;…" src="https://tenthrock.sher.dev/_next/image?url=%2Fimages%2Fstock%2Fservice-eme…">
+/_next/image?url=…(tenthrock.sher.dev)
+53.1 KiB
+35.5 KiB
+This image file is larger than it needs to be (695x768) for its displayed dimensions (420x420). Use responsive images to reduce the image download size.
+35.5 KiB
+Retail
+<img alt="Retail" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 group-hover:scale-110 group…" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" srcset="/_next/image?url=%2Fimages%2Fstock%2Fretail-rodeo-drive-v2.webp&amp;w=96&amp;q=75 …" src="https://tenthrock.sher.dev/_next/image?url=%2Fimages%2Fstock%2Fretail-rode…" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
+/_next/image?url=…(tenthrock.sher.dev)
+45.5 KiB
+22.8 KiB
+Increasing the image compression factor could improve this image's download size.
+4.3 KiB
+This image file is larger than it needs to be (586x432) for its displayed dimensions (498x280). Use responsive images to reduce the image download size.
+20.5 KiB
+section.relative > div.absolute > div.relative > img.object-cover
+<img alt="" fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover opacity-80" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="100vw" srcset="/_next/image?url=%2Fvideos%2Fhero-poster.jpg&amp;w=360&amp;q=70 360w, /_next/image…" src="https://tenthrock.sher.dev/_next/image?url=%2Fvideos%2Fhero-poster.jpg&amp;w=7…">
+/_next/image?url=%2Fvideos%2Fhero-poster.jpg&w=768&q=70(tenthrock.sher.dev)
+27.5 KiB
+12.3 KiB
+Increasing the image compression factor could improve this image's download size.
+12.3 KiB
