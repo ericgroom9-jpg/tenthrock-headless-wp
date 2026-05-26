@@ -5,6 +5,7 @@ import { PostContent } from '@/components/posts/PostContent';
 import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
 import { storage } from '@/lib/storage';
 import { fetchPostPreviewBySlug, fetchPostPreview, fetchPostPreviewById } from '@/lib/wordpress';
+import { DEFAULT_OG_IMAGE } from '@/lib/seo-metadata';
 import type { Metadata } from 'next';
 
 interface PageProps {
@@ -47,13 +48,13 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
       title: seo?.opengraphTitle || post.title,
       description: seo?.opengraphDescription || post.excerpt?.replace(/<[^>]*>/g, '').slice(0, 160),
       type: 'article',
-      images: seo?.opengraphImage ? [seo.opengraphImage] : post.featuredImage ? [post.featuredImage] : undefined,
+      images: [seo?.opengraphImage || post.featuredImage || DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: seo?.twitterTitle || post.title,
       description: seo?.twitterDescription || post.excerpt?.replace(/<[^>]*>/g, '').slice(0, 160),
-      images: seo?.twitterImage ? [seo.twitterImage] : post.featuredImage ? [post.featuredImage] : undefined,
+      images: [seo?.twitterImage || seo?.opengraphImage || post.featuredImage || DEFAULT_OG_IMAGE],
     },
   };
 }

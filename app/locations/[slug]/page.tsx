@@ -3,6 +3,7 @@ import { getStateData } from "@/lib/data/state-cities";
 import { getStateLocationContent } from "@/lib/data/state-location-content";
 import LocationTemplateClient from "./LocationTemplateClient";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo-metadata";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -24,6 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: seo?.opengraphTitle || `Waste Management in ${locationName}`,
       description: seo?.opengraphDescription || `On-demand waste removal and managed programs for businesses across ${locationName}.`,
+      images: [seo?.opengraphImage || DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo?.twitterTitle || seo?.opengraphTitle || `Waste Management in ${locationName}`,
+      description: seo?.twitterDescription || seo?.opengraphDescription || `On-demand waste removal across ${locationName}.`,
+      images: [seo?.twitterImage || seo?.opengraphImage || DEFAULT_OG_IMAGE],
     },
   };
 }

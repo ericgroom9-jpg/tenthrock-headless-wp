@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import type { SeoMetadata } from "@/shared/schema";
 
+/**
+ * Site-wide default OG/Twitter image used when neither WP SEO nor the page
+ * itself supplies one. Keeps every shared link rendering with a Tenth Rock
+ * preview card instead of falling back to nothing.
+ */
+export const DEFAULT_OG_IMAGE =
+  "https://tenthrock.sherstaging.com/wp-content/uploads/2026/05/tr-fi-img-1.jpg";
+
 interface BuildPageMetadataOptions {
   seo?: SeoMetadata | null;
   fallbackTitle: string;
@@ -23,7 +31,7 @@ export function buildPageMetadata({
   const description = seo?.metaDesc || fallbackDescription;
   const ogTitle = seo?.opengraphTitle || title;
   const ogDescription = seo?.opengraphDescription || description;
-  const ogImage = seo?.opengraphImage || fallbackImage || undefined;
+  const ogImage = seo?.opengraphImage || fallbackImage || DEFAULT_OG_IMAGE;
   const twitterImage = seo?.twitterImage || ogImage;
 
   const metadata: Metadata = {

@@ -7,6 +7,7 @@ import { isLandingBuilderEnabled } from '@/lib/config/features';
 import ServiceTemplate from '@/components/services/ServiceTemplate';
 import IndustryTemplate from '@/components/industries/IndustryTemplate';
 import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
+import { DEFAULT_OG_IMAGE } from '@/lib/seo-metadata';
 import type { Metadata } from 'next';
 
 import { 
@@ -29,21 +30,13 @@ function buildSeoMetadata(title: string, seo: any, featuredImageUrl?: string | n
       title: seo?.opengraphTitle || plainTitle,
       description: seo?.opengraphDescription || '',
       type: 'website',
-      images: seo?.opengraphImage
-        ? [seo.opengraphImage]
-        : featuredImageUrl
-          ? [featuredImageUrl]
-          : undefined,
+      images: [seo?.opengraphImage || featuredImageUrl || DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: seo?.twitterTitle || plainTitle,
       description: seo?.twitterDescription || '',
-      images: seo?.twitterImage
-        ? [seo.twitterImage]
-        : featuredImageUrl
-          ? [featuredImageUrl]
-          : undefined,
+      images: [seo?.twitterImage || seo?.opengraphImage || featuredImageUrl || DEFAULT_OG_IMAGE],
     },
     ...(seo?.canonical ? { alternates: { canonical: seo.canonical } } : {}),
   };
