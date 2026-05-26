@@ -388,6 +388,8 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  phoneLink={gs?.location?.phoneLink}
  email={gs?.location?.email}
  emailLink={gs?.location?.emailLink}
+ hqImage={gs?.location?.hqImage}
+ hqImageAlt={gs?.location?.hqImageAlt}
  />
 
  <FinalCtaSection

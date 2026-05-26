@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import FadeIn from "@/components/shared/FadeIn";
 import { MapPin, Phone, Mail } from "lucide-react";
@@ -21,6 +22,8 @@ interface LocationSectionProps {
   phoneLink?: string;
   email?: string;
   emailLink?: string;
+  hqImage?: string;
+  hqImageAlt?: string;
 }
 
 export default function LocationSection({
@@ -33,6 +36,8 @@ export default function LocationSection({
   phoneLink = "tel:+17275105454",
   email = "hello@tenthrock.com",
   emailLink = "mailto:hello@tenthrock.com",
+  hqImage = "/images/stock/location-clearwater-beach-v2.webp",
+  hqImageAlt = "Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina near Tenth Rock headquarters",
 }: LocationSectionProps = {}) {
   return (
     <section className="py-10 md:py-24 bg-white" aria-labelledby="location-heading">
@@ -52,6 +57,17 @@ export default function LocationSection({
           <FadeIn
             className="space-y-6 lg:space-y-8"
           >
+            <div className="relative rounded-[5px] overflow-hidden aspect-[4/3]">
+              <Image
+                src={hqImage}
+                alt={hqImageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover"
+                loading="lazy"
+                data-testid="img-location-clearwater-beach"
+              />
+            </div>
             <div>
               <div className="flex items-center gap-3 mb-2">
                 <MapPin className="h-6 w-6 text-[#c5d520]" />
