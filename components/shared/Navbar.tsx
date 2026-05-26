@@ -1,21 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/shared/Logo";
+import { useNavMenus } from "@/components/shared/MenuProvider";
+import type { MenuNode } from "@/lib/menus";
 
 interface NavbarProps {
  variant?: "floating" | "sticky";
-}
-
-interface MenuNode {
- id: number;
- label: string;
- href: string;
- target?: string;
- children: MenuNode[];
 }
 
 const DEFAULT_SERVICE_CATEGORIES = [
@@ -110,34 +104,30 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  const [isLocationsOpen, setIsLocationsOpen] = useState(false);
  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
- // Menus from WordPress (with hardcoded fallbacks while loading or if WP unreachable)
- const [serviceCategories, setServiceCategories] = useState(DEFAULT_SERVICE_CATEGORIES);
- const [sectorLinks, setSectorLinks] = useState(DEFAULT_SECTOR_LINKS);
- const [locationLinks, setLocationLinks] = useState(DEFAULT_LOCATION_LINKS);
- const [aboutLinks, setAboutLinks] = useState(DEFAULT_ABOUT_LINKS);
- const [headerCtas, setHeaderCtas] = useState(DEFAULT_HEADER_CTAS);
- // Top-level dropdown trigger labels & hrefs (so editor renames flow through)
- const [topLabels, setTopLabels] = useState(DEFAULT_TOP_LABELS);
- // Any top-level WP menu items that don't map to one of the 4 known dropdowns
- // (Services / Who We Serve / Locations / About). Rendered as plain links
- // after About Us, in document order.
- const [extraTopLinks, setExtraTopLinks] = useState<{ label: string; href: string }[]>([]);
+ // Menus are fetched server-side in app/layout.tsx and provided via context,
+ // so the navbar renders the real data on first paint with no flash.
+ const navMenus = useNavMenus();
 
- useEffect(() => {
- let cancelled = false;
- const load = async () => {
- try {
- const [primaryRes, ctasRes, locsRes] = await Promise.all([
- fetch("/api/menus/primary").then(r => r.ok ? r.json() : null).catch(() => null),
- fetch("/api/menus/header-ctas").then(r => r.ok ? r.json() : null).catch(() => null),
- fetch("/api/menus/locations-dropdown").then(r => r.ok ? r.json() : null).catch(() => null),
- ]);
- if (cancelled) return;
+ const {
+ serviceCategories,
+ sectorLinks,
+ locationLinks,
+ aboutLinks,
+ headerCtas,
+ topLabels,
+ extraTopLinks,
+ } = useMemo(() => {
+ let serviceCategories = DEFAULT_SERVICE_CATEGORIES;
+ let sectorLinks = DEFAULT_SECTOR_LINKS;
+ let locationLinks = DEFAULT_LOCATION_LINKS;
+ let aboutLinks = DEFAULT_ABOUT_LINKS;
+ let headerCtas = DEFAULT_HEADER_CTAS;
+ let topLabels = DEFAULT_TOP_LABELS;
+ let extraTopLinks: { label: string; href: string }[] = [];
 
- const primary: MenuNode[] | null = primaryRes?.tree ?? null;
+ const primary = navMenus.primary;
  if (primary && primary.length) {
- // Match by label (case-insensitive contains) so editors can rename freely.
- const byLabel = (needle: string) => primary.find(n =>
+ const byLabel = (needle: string) => primary.find((n: MenuNode) =>
  n.label.toLowerCase().includes(needle.toLowerCase())
  );
  const services = byLabel("service") || byLabel("waste management");
@@ -145,53 +135,43 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  const locations = byLabel("location");
  const about = byLabel("about");
 
- // Update trigger label + href for each top-level group present in WP
- setTopLabels({
+ topLabels = {
  services: services ? { label: services.label, href: services.href || DEFAULT_TOP_LABELS.services.href } : DEFAULT_TOP_LABELS.services,
  sectors: sectors ? { label: sectors.label, href: sectors.href || DEFAULT_TOP_LABELS.sectors.href } : DEFAULT_TOP_LABELS.sectors,
  locations: locations ? { label: locations.label, href: locations.href || DEFAULT_TOP_LABELS.locations.href } : DEFAULT_TOP_LABELS.locations,
  about: about ? { label: about.label, href: about.href || DEFAULT_TOP_LABELS.about.href } : DEFAULT_TOP_LABELS.about,
- });
+ };
 
  if (services && services.children.length) {
- setServiceCategories(services.children.map(cat => ({
+ serviceCategories = services.children.map((cat: MenuNode) => ({
  label: cat.label,
  href: cat.href,
- subServices: cat.children.map(s => ({ label: s.label, href: s.href })),
- })));
+ subServices: cat.children.map((s: MenuNode) => ({ label: s.label, href: s.href })),
+ }));
  }
  if (sectors && sectors.children.length) {
- setSectorLinks(sectors.children.map(s => ({ label: s.label, href: s.href })));
+ sectorLinks = sectors.children.map((s: MenuNode) => ({ label: s.label, href: s.href }));
  }
  if (about && about.children.length) {
- setAboutLinks(about.children.map(s => ({ label: s.label, href: s.href })));
+ aboutLinks = about.children.map((s: MenuNode) => ({ label: s.label, href: s.href }));
  }
 
- // Anything not matched to one of the 4 known groups becomes an extra link.
  const matched = new Set([services?.id, sectors?.id, locations?.id, about?.id].filter(Boolean));
- setExtraTopLinks(
- primary
- .filter(n => !matched.has(n.id))
- .map(n => ({ label: n.label, href: n.href || "#" }))
- );
+ extraTopLinks = primary
+ .filter((n: MenuNode) => !matched.has(n.id))
+ .map((n: MenuNode) => ({ label: n.label, href: n.href || "#" }));
  }
 
- const ctas: MenuNode[] | null = ctasRes?.tree ?? null;
- if (ctas && ctas.length) {
- setHeaderCtas(ctas.map(c => ({ label: c.label, href: c.href })));
+ if (navMenus.headerCtas && navMenus.headerCtas.length) {
+ headerCtas = navMenus.headerCtas.map((c: MenuNode) => ({ label: c.label, href: c.href }));
  }
 
- const locs: MenuNode[] | null = locsRes?.tree ?? null;
- if (locs && locs.length) {
- setLocationLinks(locs.map(l => ({ label: l.label, href: l.href })));
+ if (navMenus.locationsDropdown && navMenus.locationsDropdown.length) {
+ locationLinks = navMenus.locationsDropdown.map((l: MenuNode) => ({ label: l.label, href: l.href }));
  }
- } catch {
- // keep defaults on error
- }
- };
- load();
- return () => { cancelled = true; };
- }, []);
+
+ return { serviceCategories, sectorLinks, locationLinks, aboutLinks, headerCtas, topLabels, extraTopLinks };
+ }, [navMenus]);
 
  // If WP has only 1 header CTA, treat it as the primary action and keep
  // Login from the defaults so we never render two identical buttons.
@@ -337,13 +317,13 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  className="inline-flex items-center gap-1 min-h-[44px]"
  data-testid="button-nav-sectors"
  >
- <a
+ <Link
  href={topLabels.sectors.href}
  className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors whitespace-nowrap"
  data-testid="link-nav-who-we-serve"
  >
  {topLabels.sectors.label}
- </a>
+ </Link>
  <button
  type="button"
  aria-haspopup="menu"
@@ -375,7 +355,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  </div>
  <div className="grid grid-cols-4 gap-x-8 gap-y-1">
  {sectorLinks.map((sector) => (
- <a
+ <Link
  key={sector.label}
  href={sector.href}
  data-testid={`link-nav-sectors-${sector.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
@@ -384,7 +364,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
  <span>{sector.label}</span>
- </a>
+ </Link>
  ))}
  </div>
  </div>
@@ -486,13 +466,13 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  className="inline-flex items-center gap-1 min-h-[44px]"
  data-testid="button-nav-about"
  >
- <a
+ <Link
  href={topLabels.about.href}
  className="text-sm font-bold text-primary hover:text-[#c5d520] active:text-[#c5d520] transition-colors whitespace-nowrap"
  data-testid="link-nav-about"
  >
  {topLabels.about.label}
- </a>
+ </Link>
  <button
  type="button"
  aria-haspopup="menu"
@@ -524,7 +504,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  </div>
  <div className="grid grid-cols-4 gap-x-8 gap-y-1">
  {aboutLinks.map((item) => (
- <a
+ <Link
  key={item.label}
  href={item.href}
  data-testid={`link-nav-about-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
@@ -533,7 +513,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <ChevronRight className="w-3.5 h-3.5 text-[#c5d520]/50 group-hover:text-[#c5d520] transition-colors flex-shrink-0" />
  <span>{item.label}</span>
- </a>
+ </Link>
  ))}
  </div>
  </div>
@@ -636,13 +616,13 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  className="flex items-center justify-between w-full py-3 px-4 min-h-[52px]"
  data-testid="button-mobile-sectors"
  >
- <a
+ <Link
  href={topLabels.sectors.href}
  className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
  onClick={() => setIsNavExpanded(false)}
  >
  {topLabels.sectors.label}
- </a>
+ </Link>
  <button
  type="button"
  onClick={() => setIsSectorsOpen(!isSectorsOpen)}
@@ -660,7 +640,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <div className="pl-4 pb-3">
  {sectorLinks.map((sector) => (
- <a
+ <Link
  key={sector.label}
  href={sector.href}
  className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
@@ -668,7 +648,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  data-testid={`link-mobile-sectors-${sector.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
  >
  {sector.label}
- </a>
+ </Link>
  ))}
  </div>
  </div>
@@ -728,13 +708,13 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  className="flex items-center justify-between w-full py-3 px-4 min-h-[52px]"
  data-testid="button-mobile-about"
  >
- <a
+ <Link
  href={topLabels.about.href}
  className="font-bold text-primary text-[15px] hover:text-[#c5d520] transition-colors flex-1"
  onClick={() => setIsNavExpanded(false)}
  >
  {topLabels.about.label}
- </a>
+ </Link>
  <button
  type="button"
  onClick={() => setIsAboutOpen(!isAboutOpen)}
@@ -752,7 +732,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  >
  <div className="pl-4 pb-3">
  {aboutLinks.map((item) => (
- <a
+ <Link
  key={item.label}
  href={item.href}
  className="font-medium text-primary/80 text-[15px] py-3 px-4 rounded-[5px] hover:bg-[#F9F9F6] active:bg-[#F9F9F6] hover:text-[#c5d520] active:text-[#c5d520] transition-colors min-h-[48px] flex items-center"
@@ -760,7 +740,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  data-testid={`link-mobile-about-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
  >
  {item.label}
- </a>
+ </Link>
  ))}
  </div>
  </div>

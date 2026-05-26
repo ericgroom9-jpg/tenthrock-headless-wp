@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useNavMenus } from "@/components/shared/MenuProvider";
 import FadeIn from "@/components/shared/FadeIn";
 import { ArrowRight, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -79,40 +80,20 @@ function resolveSocialHref(label: string, href: string): string {
 }
 
 export default function Footer() {
-  const [serviceLinks, setServiceLinks]   = useState<FlatLink[]>(DEFAULT_SERVICE_LINKS);
-  const [industryLinks, setIndustryLinks] = useState<FlatLink[]>(DEFAULT_INDUSTRY_LINKS);
-  const [companyLinks, setCompanyLinks]   = useState<FlatLink[]>(DEFAULT_COMPANY_LINKS);
-  const [legalLinks, setLegalLinks]       = useState<FlatLink[]>(DEFAULT_LEGAL_LINKS);
-  const [socialLinks, setSocialLinks]     = useState<FlatLink[]>(DEFAULT_SOCIAL_LINKS);
-
-  useEffect(() => {
-    let cancelled = false;
-    const fetchOne = async (loc: string): Promise<FlatLink[] | null> => {
-      try {
-        const res = await fetch(`/api/menus/${loc}`);
-        if (!res.ok) return null;
-        const data = await res.json();
-        if (!Array.isArray(data?.flat) || data.flat.length === 0) return null;
-        return data.flat as FlatLink[];
-      } catch { return null; }
-    };
-    (async () => {
-      const [svc, ind, comp, leg, soc] = await Promise.all([
-        fetchOne("footer-services"),
-        fetchOne("footer-industries"),
-        fetchOne("footer-company"),
-        fetchOne("footer-legal"),
-        fetchOne("footer-social"),
-      ]);
-      if (cancelled) return;
-      if (svc)  setServiceLinks(svc);
-      if (ind)  setIndustryLinks(ind);
-      if (comp) setCompanyLinks(comp.filter(l => !/success\s*stories/i.test(l.label)));
-      if (leg)  setLegalLinks(leg);
-      if (soc)  setSocialLinks(soc);
-    })();
-    return () => { cancelled = true; };
-  }, []);
+  // Menus are fetched server-side in app/layout.tsx and provided via context,
+  // so the footer renders the real data on first paint with no flash.
+  const navMenus = useNavMenus();
+  const serviceLinks  = navMenus.footerServices && navMenus.footerServices.length
+    ? navMenus.footerServices : DEFAULT_SERVICE_LINKS;
+  const industryLinks = navMenus.footerIndustries && navMenus.footerIndustries.length
+    ? navMenus.footerIndustries : DEFAULT_INDUSTRY_LINKS;
+  const companyLinks  = navMenus.footerCompany && navMenus.footerCompany.length
+    ? navMenus.footerCompany.filter(l => !/success\s*stories/i.test(l.label))
+    : DEFAULT_COMPANY_LINKS;
+  const legalLinks    = navMenus.footerLegal && navMenus.footerLegal.length
+    ? navMenus.footerLegal : DEFAULT_LEGAL_LINKS;
+  const socialLinks   = navMenus.footerSocial && navMenus.footerSocial.length
+    ? navMenus.footerSocial : DEFAULT_SOCIAL_LINKS;
 
   return (
     <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white pt-20 pb-8 border-t border-white/5">

@@ -169,7 +169,13 @@ async function getRedirects(): Promise<Redirect[]> {
 
 export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  const redirects = await getRedirects();
+  // Run both WordPress fetches concurrently so middleware blocks on the
+  // slower of the two rather than the sum. Both are tagged `wordpress`
+  // (or `wordpress-redirects`) so webhook-driven revalidation still works.
+  const [redirects, slugRoutingData] = await Promise.all([
+    getRedirects(),
+    getSlugRoutingData(),
+  ]);
 
   // Check for exact match or match without trailing slash
   const match = redirects.find(r => 
@@ -201,7 +207,7 @@ export async function middleware(request: NextRequest) {
   // Collision guard: if the WP slug matches an existing service or
   // industry CPT slug, we skip — never hijack a CPT URL.
   // ─────────────────────────────────────────────────────────────
-  const { templateSlugMap, reservedCptSlugs } = await getSlugRoutingData();
+  const { templateSlugMap, reservedCptSlugs } = slugRoutingData;
   if (Object.keys(templateSlugMap).length > 0) {
     const normalize = (p: string) => (p !== '/' && p.endsWith('/') ? p.slice(0, -1) : p);
     const reqPath = normalize(path);
