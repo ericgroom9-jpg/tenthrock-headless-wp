@@ -1,9 +1,13 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const isDev = process.env.NODE_ENV !== "production";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
+  turbopack: {
+    root: path.resolve("."),
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [360, 640, 768, 1024, 1280, 1536, 1920],
