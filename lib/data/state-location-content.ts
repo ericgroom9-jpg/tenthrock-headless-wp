@@ -181,6 +181,25 @@ export interface StateLocationContent {
       { question: "How do you help businesses meet sustainability goals?", answer: "We help businesses improve waste diversion through recycling programs, detailed reporting, and waste audits. Our goal is to reduce landfill use, identify recycling opportunities, and help Georgia businesses maximize potential rebates for recyclable materials." },
     ],
   },
+  "idaho": {
+    subtitle: "Commercial waste removal services for businesses across Idaho. From large facility cleanouts to urgent disposal needs, Tenth Rock Waste Solutions helps companies keep sites clear, compliant, and operating efficiently.",
+    bullets: [
+      "Emergency waste removal for Idaho businesses",
+      "Rapid coordination for compactor failures and waste overflow",
+      "Perishable inventory disposal and bulk debris removal",
+    ],
+    aboutDesc: "Businesses across Idaho rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep sites safe, compliant, and operational.",
+    trustedDesc: "Tenth Rock has supported businesses across Idaho for years, working with commercial clients throughout the state. Our established relationships with Idaho waste facilities help ensure efficient routing, responsive service, and competitive disposal pricing for local operations.",
+    thirdHeading: "Rapid waste response for Idaho businesses",
+    thirdDesc: "Waste disruptions rarely happen on a convenient schedule. When refrigeration systems fail, compactors break down, or waste overflow begins affecting operations, businesses need a response partner that can act quickly.",
+    faqs: [
+      { question: "How quickly can you arrange a waste pickup in Idaho?", answer: "We specialize in rapid response waste services. For emergency requests in Idaho, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours of account setup." },
+      { question: "Do you service multiple locations nationwide?", answer: "Yes. Tenth Rock provides commercial waste management services in all 50 states, including Idaho. Our centralized management platform allows businesses to coordinate waste services for hundreds of locations through a single point of contact and one consolidated invoice." },
+      { question: "What types of commercial waste do you handle in Idaho?", answer: "We handle most non-hazardous commercial waste streams in Idaho, including general trash, recycling materials like cardboard, plastic, and metal, construction debris, organic waste, and e-waste. We can also coordinate specialized hazmat disposal services when needed." },
+      { question: "Are there long-term contracts for waste services?", answer: "We believe in earning your business every day. While we offer cost savings through long-term service agreements, many of our commercial waste services in Idaho are available with flexible terms. We want clients to stay because they’re satisfied with the service, not because they’re locked into a contract." },
+      { question: "How do you help businesses meet sustainability goals?", answer: "We help businesses improve waste diversion through recycling programs, detailed reporting, and waste audits. Our goal is to reduce landfill use, identify recycling opportunities, and help Idaho businesses maximize potential rebates for recyclable materials." },
+    ],
+  },
   "illinois": {
     subtitle: "Commercial waste removal services for businesses across Illinois. From large facility cleanouts to urgent disposal needs, Tenth Rock Waste Solutions helps companies keep sites clear, compliant, and operating efficiently.",
     bullets: [
