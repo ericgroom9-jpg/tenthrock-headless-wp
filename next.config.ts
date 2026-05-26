@@ -47,6 +47,15 @@ const nextConfig: NextConfig = {
       "@radix-ui/react-tooltip",
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/natural-disaster-mobilization",
+        destination: "/natural-disaster-cleanup",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

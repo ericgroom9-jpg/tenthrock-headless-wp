@@ -62,7 +62,7 @@ const MENUS = [
         { title: 'Specialized Project Logistics', url: '/specialized-project-logistics', children: [
           { title: 'Site Closures & Remodels', url: '/site-closures-remodels' },
           { title: 'Events & Stadiums', url: '/events-stadiums' },
-          { title: 'Natural Disasters', url: '/natural-disaster-mobilization' },
+          { title: 'Natural Disasters', url: '/natural-disaster-cleanup' },
         ]},
         { title: 'Dumpster Rentals', url: '/dumpsters-containers', children: [
           { title: 'On-Demand Service', url: '/on-demand-service' },
