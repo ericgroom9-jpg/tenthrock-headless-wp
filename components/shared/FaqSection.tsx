@@ -114,6 +114,7 @@ export default function FaqSection({
                       : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
                   }`}
                 >
+                  <h3 className="m-0">
                   <button
                     className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
                     onClick={() => handleToggle(`item-${i}`)}
@@ -135,6 +136,7 @@ export default function FaqSection({
                       }`} />
                     </div>
                   </button>
+                  </h3>
                   <div
                     className="transition-[height,opacity] duration-300 ease-in-out overflow-hidden"
                     style={{

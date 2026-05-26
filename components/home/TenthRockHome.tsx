@@ -721,6 +721,7 @@ const Faq = () => {
  : "bg-white border-transparent hover:border-primary/10 shadow-sm hover:shadow-md"
  }`}
  >
+ <h3 className="m-0">
  <button 
  className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none"
  onClick={() => setOpenItem(openItem === `item-${i}` ? "" : `item-${i}`)}
@@ -742,6 +743,7 @@ const Faq = () => {
  }`} />
  </div>
  </button>
+ </h3>
  <div 
  className={`transition-all duration-300 ease-in-out overflow-hidden ${
  openItem === `item-${i}` ? "max-h-96 opacity-100" : "max-h-0 opacity-0"

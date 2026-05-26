@@ -281,6 +281,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
                           : "bg-white border-transparent shadow-sm"
                       }`}
                     >
+                      <h3 className="m-0">
                       <button
                         id={`faq-trigger-${activeCategory}-${i}`}
                         className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 rounded-[5px]"
@@ -304,6 +305,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
                           }`} />
                         </div>
                       </button>
+                      </h3>
                       <div
                         id={`faq-answer-${activeCategory}-${i}`}
                         role="region"
