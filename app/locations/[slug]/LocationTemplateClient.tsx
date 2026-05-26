@@ -118,18 +118,18 @@ export default function LocationTemplateClient({
  aria-hidden="true"
  priority
  />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+ <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
- <div className="max-w-2xl">
+ <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="max-w-2xl lg:max-w-5xl">
  <FadeIn>
  <h1
  id="location-hero-heading"
- className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px]"
+ className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-none"
  >
  Waste Management Services in {locationName}
  </h1>
- <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
+ <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md lg:max-w-4xl leading-relaxed [text-wrap:balance]">
  {heroSubtitle}
  </p>
  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -174,7 +174,7 @@ export default function LocationTemplateClient({
  >
  <h2
  id={idx === 0 ? "about-location-heading" : undefined}
- className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight text-left"
+ className="text-3xl font-medium text-primary tracking-tighter leading-tight text-left"
  >
  {section.title}
  </h2>
@@ -386,7 +386,7 @@ export default function LocationTemplateClient({
  </div>
  </section>
 
- <section className="py-16 md:py-24 bg-white overflow-hidden" aria-labelledby="info-block-heading">
+ <section className="py-10 md:py-24 bg-white overflow-hidden" aria-labelledby="info-block-heading">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
  <FadeIn>
@@ -467,11 +467,11 @@ export default function LocationTemplateClient({
  <CtaBannerSection />
 
  {cities.length > 0 && (
- <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="cities-we-serve-heading" data-testid="section-cities-we-serve">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="cities-we-serve-heading" data-testid="section-cities-we-serve">
  <div className="container mx-auto px-4 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
- <FadeIn className="lg:sticky lg:top-32">
- <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square max-w-md mx-auto lg:mx-0 shadow-2xl" data-testid="map-state-visual" role="img" aria-label={`Service coverage map for ${locationName}`}>
+ <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-stretch">
+ <FadeIn className="lg:h-full">
+ <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square lg:aspect-auto lg:h-full max-w-md mx-auto lg:mx-0 lg:max-w-none shadow-2xl" data-testid="map-state-visual" role="img" aria-label={`Service coverage map for ${locationName}`}>
  <div className="absolute inset-0 opacity-20" aria-hidden="true" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
  {stateOutlines[slug] && (
  <svg
@@ -519,7 +519,7 @@ export default function LocationTemplateClient({
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  Service Areas
  </div>
- <h2 id="cities-we-serve-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-4 leading-tight tracking-tighter" data-testid="heading-cities-we-serve">
+ <h2 id="cities-we-serve-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-4 leading-tight tracking-tighter" data-testid="heading-cities-we-serve">
  Cities We Serve in {locationName}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-10" data-testid="text-cities-description">

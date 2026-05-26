@@ -54,7 +54,7 @@ import Footer from "@/components/shared/Footer";
 import LogoReelSection from "@/components/shared/LogoReelSection";
 
 const SectionSkeleton = () => (
- <div className="py-16 md:py-24 animate-pulse">
+ <div className="py-10 md:py-24 animate-pulse">
  <div className="container mx-auto px-4 md:px-8">
  <div className="h-8 bg-gray-200 rounded w-1/3 mb-4" />
  <div className="h-4 bg-gray-100 rounded w-2/3 mb-8" />
@@ -311,7 +311,7 @@ const Hero = ({
 
  <h1
  id="hero-heading"
- className="hero-fade-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-5"
+ className="hero-fade-up text-[48px] sm:text-[64px] xl:text-7xl font-medium text-white leading-[1.05] tracking-[-0.04em] mb-5"
  style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER}s` }}
  >
  {heroHeading || "Centralized Waste Logistics for Businesses at Scale"}
@@ -319,7 +319,7 @@ const Hero = ({
  
  <p
  className="hero-fade-up text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md"
- style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 2}s` }}
+ style={{ animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 2}s` }}
  >
  {heroSubheading || "Coordinated execution for complex projects, multi-site operations, and urgent demands across 48 states."}
  </p>
@@ -444,7 +444,7 @@ const ServicesSection = () => {
  const categoryIcons = [Siren, HardHat, Container, LineChart];
 
  return (
- <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
+ <section id="services" aria-labelledby="services-heading" className="py-10 md:py-24 bg-[#F9F9F6]">
  <div className="container mx-auto px-4 md:px-8">
  <motion.div 
  initial={{ opacity: 0, y: 20 }}
@@ -524,7 +524,7 @@ const ServicesSection = () => {
  <h3 className="font-bold text-primary text-base leading-snug">
  {item.label}
  </h3>
- <p className="text-primary/70 text-sm leading-relaxed">
+ <p className="text-primary/70 text-base leading-relaxed">
  {item.desc}
  </p>
  </div>
@@ -568,7 +568,7 @@ const WhyUs = () => {
  ];
 
  return (
- <section className="py-16 md:py-24 bg-white" aria-label="About Tenth Rock">
+ <section className="py-10 md:py-24 bg-white" aria-label="About Tenth Rock">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
  {/* Left Image Side (order-2 on mobile) */}
@@ -646,7 +646,7 @@ const Reasons = () => {
  ];
 
  return (
- <section className="py-16 md:py-24 bg-[#F8F8F8]" aria-label="Reasons to choose Tenth Rock">
+ <section className="py-10 md:py-24 bg-[#F8F8F8]" aria-label="Reasons to choose Tenth Rock">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start">
  {/* Left Sticky Content */}
@@ -728,7 +728,7 @@ const Faq = () => {
  ];
 
  return (
- <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
+ <section id="faq" aria-labelledby="faq-heading" className="py-10 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
  {/* Background Decor */}
  <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
  

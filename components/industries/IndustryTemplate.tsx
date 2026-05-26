@@ -134,7 +134,7 @@ export default function IndustryTemplate({
  className="absolute inset-0 hidden sm:block"
  style={{ backgroundImage: "linear-gradient(to right, rgba(4,41,64,1), rgba(4,41,64,0.8) 60%, rgba(4,41,64,0.15))" }}
  />
- <div className="container mx-auto px-4 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
+ <div className="container mx-auto px-4 md:px-8 py-12 sm:py-10 md:py-20 lg:py-24 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
  <FadeIn
  className="max-w-3xl"
  >
@@ -172,7 +172,7 @@ export default function IndustryTemplate({
  </section>
 
  {/* About Industry Section */}
- <section className="py-16 md:py-20 lg:py-24 bg-white">
+ <section className="py-10 md:py-20 lg:py-24 bg-white">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
  {/* Left Content */}
@@ -253,7 +253,7 @@ export default function IndustryTemplate({
  <FadeIn
  className="relative"
  >
- <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-[4/5] rounded-[5px] overflow-hidden shadow-2xl relative">
+ <div className="aspect-[16/10] sm:aspect-[4/3] rounded-[5px] overflow-hidden shadow-2xl relative">
  <Image 
  src={aboutImage} 
  alt={`${industryName} services`}
@@ -281,7 +281,7 @@ export default function IndustryTemplate({
  </section>
 
  {/* Paragraph Section 1 - Text Left, Image Right */}
- <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
@@ -290,7 +290,7 @@ export default function IndustryTemplate({
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection1.badge}
  </div>
- <h2 id="industry-paragraph-1-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter text-balance" data-testid="heading-industry-paragraph-1">
+ <h2 id="industry-paragraph-1-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-1">
  {paragraphSection1.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-1-body">
@@ -349,7 +349,7 @@ export default function IndustryTemplate({
  <ProcessSection />
 
  {/* Paragraph Section 2 - Image Left, Text Right */}
- <section className="py-16 md:py-24 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
+ <section className="py-10 md:py-24 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  {paragraphSection2.image && (
@@ -373,7 +373,7 @@ export default function IndustryTemplate({
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection2.badge}
  </div>
- <h2 id="industry-paragraph-2-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter text-balance" data-testid="heading-industry-paragraph-2">
+ <h2 id="industry-paragraph-2-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-2">
  {paragraphSection2.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-2-body">
@@ -418,7 +418,7 @@ export default function IndustryTemplate({
  {faqs && faqs.length > 0 && <FaqSection faqs={faqs} />}
 
  {/* Paragraph Section 3 - Text Left, Image Right (alternating) */}
- <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
@@ -427,7 +427,7 @@ export default function IndustryTemplate({
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection3.badge}
  </div>
- <h2 id="industry-paragraph-3-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter text-balance" data-testid="heading-industry-paragraph-3">
+ <h2 id="industry-paragraph-3-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-industry-paragraph-3">
  {paragraphSection3.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-industry-paragraph-3-body">

@@ -36,9 +36,9 @@ export default function WhoWeServeClient({ acf, globalSections }: Props) {
  className="absolute inset-0 bg-cover bg-center"
  style={{ backgroundImage: `url(${acf?.heroImage || imgHero})` }}
  />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+ <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
 
- <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
+ <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-28 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
  <FadeIn className="max-w-2xl">
  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
  {acf?.heroHeading || "Who We Serve"}

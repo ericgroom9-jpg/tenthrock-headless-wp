@@ -83,7 +83,7 @@ function ContactSection({ data }: { data: ContactFormTemplateData | null }) {
   };
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white" data-testid="section-contact">
+    <section className="py-10 sm:py-20 lg:py-24 bg-white" data-testid="section-contact">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid xl:grid-cols-2 gap-12 xl:gap-0 items-start">
 

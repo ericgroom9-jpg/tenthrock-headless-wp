@@ -131,7 +131,7 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  const benefitsSubtitle = acf?.benefitsSubtitle || "Access a reliable, high-volume stream of commercial projects with a dedicated logistics partner that prioritizes clear communication and efficient site coordination.";
  const benefitsCards = acf?.benefitsCards || defaultBenefits;
  const howHeading = acf?.howHeading || "How It Works";
- const howSubtitle = acf?.howSubtitle || "Four Steps To Your First Opportunity";
+ const howSubtitle = acf?.howSubtitle || "Four Steps to Your First Opportunity";
  const howSteps = acf?.howSteps || defaultHowSteps;
  const statsHeading = acf?.statsHeading || "A Growing Network Built on Performance";
  const statsBullets = acf?.statsBullets || defaultStatsBullets;
@@ -150,9 +150,9 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  <section className="relative bg-[#042940] pt-24 md:pt-28 overflow-hidden" data-testid="section-join-hero">
  <div className="absolute inset-0">
  <Image src={heroImage} alt="" fill sizes="100vw" className="object-cover" aria-hidden="true" priority />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+ <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
+ <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
  <div className="max-w-2xl">
  <FadeIn>
  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
@@ -191,7 +191,7 @@ export default function JoinOurNetworkClient({ acf }: Props) {
 
  <LogoReelSection headline={logosHeadline} testIdPrefix="join-logos" />
 
- <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-join-benefits">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" data-testid="section-join-benefits">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn className="max-w-2xl mb-12 md:mb-16">
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -210,10 +210,10 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  {benefitsCards.map((benefit, i) => (
  <FadeIn
  key={i}
- className="group bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-transparent hover:border-[#c5d520]/20 active:border-[#c5d520]/20 hover:shadow-xl active:shadow-xl transition-all duration-300"
+ className="bg-white p-6 md:p-8 rounded-[5px] shadow-sm border border-transparent"
  data-testid={`card-join-benefit-${i}`}
  >
- <div className="w-14 h-14 rounded-[5px] bg-[#F9F9F6] group-hover:bg-[#c5d520] group-hover:text-[#042940] transition-colors duration-300 flex items-center justify-center text-[#042940] mb-6">
+ <div className="w-14 h-14 rounded-[5px] bg-[#F9F9F6] flex items-center justify-center text-[#042940] mb-6">
  {iconMap[benefit.iconName] || <Globe className="w-6 h-6" />}
  </div>
  <h3 className="text-xl font-bold text-[#042940] mb-3">{benefit.title}</h3>
@@ -224,7 +224,7 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  </div>
  </section>
 
- <section className="py-16 md:py-24 bg-white" data-testid="section-join-how-it-works">
+ <section className="py-10 md:py-24 bg-white" data-testid="section-join-how-it-works">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn className="text-left sm:text-center max-w-2xl mx-auto mb-12 md:mb-16">
  <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
@@ -244,18 +244,18 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  >
  <div className="text-[#c5d520] font-bold text-sm mb-4">{step.number}</div>
  <h3 className="text-lg font-semibold text-[#042940] mb-3">{step.title}</h3>
- <p className="text-sm text-[#042940]/70 leading-relaxed">{step.description}</p>
+ <p className="text-base text-[#042940]/70 leading-relaxed">{step.description}</p>
  </FadeIn>
  ))}
  </div>
  </div>
  </section>
 
- <section className="py-16 md:py-20 bg-[#042940]" data-testid="section-join-stats">
+ <section className="py-10 md:py-20 bg-[#042940]" data-testid="section-join-stats">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
  <FadeIn>
- <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight tracking-tighter mb-6">
+ <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight tracking-tighter mb-6">
  {statsHeading}
  </h2>
  <div className="space-y-4 mb-8">
@@ -333,14 +333,14 @@ function EmailCaptureSection({
  };
 
  return (
- <section id="email-capture" className="py-16 md:py-24 bg-white" data-testid="section-join-email">
+ <section id="email-capture" className="py-10 md:py-24 bg-white" data-testid="section-join-email">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn className="max-w-2xl mx-auto text-left sm:text-center">
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9F9F6] border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {tagline}
  </div>
- <h2 className="text-3xl md:text-4xl font-medium text-[#042940] tracking-tighter mb-4">
+ <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-4">
  {heading}
  </h2>
  <p className="text-lg text-[#042940]/70 mb-8 max-w-lg mx-auto">

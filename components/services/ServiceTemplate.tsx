@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import FadeIn from "@/components/shared/FadeIn";
 import { 
  ArrowRight, 
@@ -186,6 +186,33 @@ function renderDescWithPhoneLinks(desc: string, stepIdx: number) {
  return parts.length > 0 ? parts : desc;
 }
 
+const PARENT_VALUE_TO_TITLE: Record<string, string> = {
+ "emergency-waste-removal": "Emergency Waste Removal",
+ "specialized-project-logistics": "Specialized Project Logistics",
+ "dumpsters-containers": "Dumpster Rentals",
+ "waste-operations-advisory": "Waste Advisory",
+};
+
+const SUB_SERVICE_TO_PARENT_VALUE: Record<string, string> = {
+ "emergency-product-removal": "emergency-waste-removal",
+ "site-stabilization": "emergency-waste-removal",
+ "unplanned-cleanouts": "emergency-waste-removal",
+ "site-closures-remodels": "specialized-project-logistics",
+ "events-stadiums": "specialized-project-logistics",
+ "event-stadium": "specialized-project-logistics",
+ "natural-disaster-mobilization": "specialized-project-logistics",
+ "natural-disasters": "specialized-project-logistics",
+ "on-demand-service": "dumpsters-containers",
+ "multiple-sizes": "dumpsters-containers",
+ "multiple-sizes-types": "dumpsters-containers",
+ "recycling-specialty-containers": "dumpsters-containers",
+ "dumpster-rental": "dumpsters-containers",
+ "dumpster-rentals": "dumpsters-containers",
+ "waste-program-assessments": "waste-operations-advisory",
+ "standards-sops-training": "waste-operations-advisory",
+ "ongoing-advisory": "waste-operations-advisory",
+};
+
 export default function ServiceTemplate({
  serviceName,
  heroTitle,
@@ -211,6 +238,9 @@ export default function ServiceTemplate({
  seoMetadata,
 }: ServiceTemplateProps) {
  const router = useRouter();
+ const pathname = usePathname();
+ const currentSlug = (pathname || "").replace(/^\/+|\/+$/g, "").split("/").pop() || "";
+ const isSubServicePage = !!SUB_SERVICE_TO_PARENT_VALUE[currentSlug];
  const [activeStep, setActiveStep] = useState(0);
  const [activeService, setActiveService] = useState(0);
  const [openAccordion, setOpenAccordion] = useState<string | null>("about");
@@ -253,16 +283,16 @@ export default function ServiceTemplate({
  aria-hidden="true"
  priority
  />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+ <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
- <div className="max-w-2xl">
+ <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="max-w-2xl lg:max-w-5xl">
  <FadeIn
  >
- <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-[950px] whitespace-pre-line">
+ <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-none whitespace-pre-line">
  {heroTitle || serviceName}
  </h1>
- <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md leading-relaxed">
+ <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md lg:max-w-4xl leading-relaxed [text-wrap:balance]">
  {serviceDescription}
  </p>
  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -306,7 +336,7 @@ export default function ServiceTemplate({
  className="w-full flex items-center justify-between py-6 group cursor-pointer"
  data-testid="accordion-about-service"
  >
- <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">About {serviceName}</h2>
+ <h2 className="text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">About {serviceName}</h2>
  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === "about" 
  ? "border-2 border-[#042940] bg-transparent" 
@@ -353,7 +383,7 @@ export default function ServiceTemplate({
  className="w-full flex items-center justify-between py-6 group cursor-pointer"
  data-testid="accordion-how-service-works"
  >
- <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">How Service Works</h2>
+ <h2 className="text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">How {serviceName} Works</h2>
  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === "how" 
  ? "border-2 border-[#042940] bg-transparent" 
@@ -405,7 +435,7 @@ export default function ServiceTemplate({
  className="w-full flex items-center justify-between py-6 group cursor-pointer"
  data-testid="accordion-other-services"
  >
- <h2 className="text-2xl md:text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">Other Services</h2>
+ <h2 className="text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">Other Services</h2>
  <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === "other" 
  ? "border-2 border-[#042940] bg-transparent" 
@@ -456,7 +486,7 @@ export default function ServiceTemplate({
  className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8 lg:-mt-32 relative z-10"
  >
  <div className="mb-6">
- <h2 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h2>
+ <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
  <p className="text-[#042940]/70 text-sm">Fill out the form below and we'll get back to you shortly.</p>
  </div>
  <form className="space-y-5" onSubmit={handleFormSubmit}>
@@ -520,12 +550,26 @@ export default function ServiceTemplate({
  </div>
  </div>
  
- <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+ {(() => {
+ const interestOptions = [
+ { value: "emergency-waste-removal", label: "Emergency Waste Removal" },
+ { value: "specialized-project-logistics", label: "Specialized Project Logistics" },
+ { value: "dumpsters-containers", label: "Dumpster Rentals" },
+ { value: "waste-operations-advisory", label: "Waste Advisory" },
+ ];
+ const currentSlug = (pathname || "").replace(/^\/+|\/+$/g, "").split("/").pop() || "";
+ const isSubService = !!SUB_SERVICE_TO_PARENT_VALUE[currentSlug];
+ const currentInterest =
+ interestOptions.find((s) => s.label === serviceName)?.value ||
+ SUB_SERVICE_TO_PARENT_VALUE[currentSlug] ||
+ "";
+ return (
+ <div className={`grid grid-cols-1 ${isSubService ? "" : "sm:grid-cols-2"} gap-4`}>
  <div>
  <label htmlFor="company" className="block text-sm font-medium text-[#042940] mb-2">
  Company
  </label>
- <Input 
+ <Input
  id="company"
  name="input_5"
  type="text"
@@ -535,27 +579,32 @@ export default function ServiceTemplate({
  data-testid="input-company"
  />
  </div>
+ {isSubService ? (
+ <input type="hidden" name="input_6" value={currentInterest} data-testid="input-interest-hidden" />
+ ) : (
  <div>
  <label htmlFor="interest" className="block text-sm font-medium text-[#042940] mb-2">
  I'm interested in help with:
  </label>
- <select 
+ <select
  id="interest"
  name="input_6"
  required
  className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
  data-testid="select-interest"
- defaultValue=""
+ defaultValue={currentInterest}
  >
  <option value="" disabled>Select one...</option>
- <option value="emergency-waste-removal">Emergency Waste Removal</option>
- <option value="specialized-project-logistics">Specialized Project Logistics</option>
- <option value="dumpsters-containers">Dumpster Rentals</option>
- <option value="waste-operations-advisory">Waste Advisory</option>
+ {interestOptions.map((s) => (
+ <option key={s.value} value={s.value}>{s.label}</option>
+ ))}
  <option value="other">Other</option>
  </select>
  </div>
+ )}
  </div>
+ );
+ })()}
  
  <div>
  <label htmlFor="message" className="block text-sm font-medium text-[#042940] mb-2">
@@ -606,7 +655,7 @@ export default function ServiceTemplate({
  </section>
 
  {/* Paragraph Section 1 */}
- <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
@@ -615,7 +664,7 @@ export default function ServiceTemplate({
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection1.badge}
  </div>
- <h2 id="paragraph-section-1-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-paragraph-1">
+ <h2 id="paragraph-section-1-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-paragraph-1">
  {paragraphSection1.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-paragraph-1-body">
@@ -670,11 +719,17 @@ export default function ServiceTemplate({
  </div>
  </section>
 
- {/* Commercial Waste Services - Shared Component */}
- <CommercialWasteServices />
+ {/* Commercial Waste Services - Shared Component (hidden on sub-service pages) */}
+ {!isSubServicePage && (
+ <CommercialWasteServices
+ activeServiceTitle={
+ PARENT_VALUE_TO_TITLE[SUB_SERVICE_TO_PARENT_VALUE[currentSlug]] || serviceName
+ }
+ />
+ )}
 
  {/* How It Works Section - Matching Homepage Design Exactly */}
- <section id="process" aria-labelledby="process-heading" className="py-16 md:py-24 bg-white relative overflow-hidden">
+ <section id="process" aria-labelledby="process-heading" className="py-10 md:py-24 bg-white relative overflow-hidden">
  <div className="container mx-auto px-4 md:px-8">
  <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -684,7 +739,7 @@ export default function ServiceTemplate({
  <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
  How It Works
  </h2>
- <p className="text-lg text-[#042940]/70">
+ <p className="text-lg text-[#042940]/70 [text-wrap:balance]">
  {processSubtitle || "A simple, transparent process designed to get your problem solved fast."}
  </p>
  </div>
@@ -711,7 +766,7 @@ export default function ServiceTemplate({
  </section>
 
  {/* Paragraph Section 2 */}
- <section className="py-16 md:py-24 bg-white" aria-labelledby="paragraph-section-2-heading" data-testid="section-paragraph-2">
+ <section className="py-10 md:py-24 bg-white" aria-labelledby="paragraph-section-2-heading" data-testid="section-paragraph-2">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  {paragraphSection2.image && (
@@ -735,7 +790,7 @@ export default function ServiceTemplate({
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {paragraphSection2.badge}
  </div>
- <h2 id="paragraph-section-2-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-paragraph-2">
+ <h2 id="paragraph-section-2-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter" data-testid="heading-paragraph-2">
  {paragraphSection2.heading}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-8" data-testid="text-paragraph-2-body">
@@ -777,7 +832,7 @@ export default function ServiceTemplate({
  </section>
 
  {/* Zipcode Checker Section - Matching Homepage Design Exactly */}
- <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+ <section className="py-10 md:py-24 bg-white relative overflow-hidden">
  <div className="container mx-auto px-4 md:px-8 relative z-10">
  <FadeIn
  className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"

@@ -178,31 +178,28 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
   });
 
   return (
-    <section className="py-16 md:py-24 bg-white border-b border-primary/5" aria-label="Case studies" data-testid="section-case-studies">
+    <section className="py-10 md:py-24 bg-white border-b border-primary/5" aria-label="Case studies" data-testid="section-case-studies">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid xl:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 order-2 xl:order-1">
             
-              <FadeIn
-                key={`main-${currentIndex}-${activeImageIndex}`}
-                className="relative rounded-[5px] overflow-hidden h-[400px]"
-              >
+              <div className="relative rounded-[5px] overflow-hidden h-[400px] bg-primary/5 hidden xl:block">
                 <Image
                   src={featured.src}
                   alt={featured.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-opacity duration-500"
-                  loading="lazy"
+                  className="object-cover"
+                  priority
                   data-testid="img-case-study-featured"
                 />
-              </FadeIn>
+              </div>
             
-            <div className="grid grid-cols-3 gap-4">
+            <div className="hidden xl:grid grid-cols-3 gap-4">
               
                 {thumbSlots.map((slot, i) => (
-                  <FadeIn
-                    key={`thumb-${currentIndex}-${i}-${slot.imageIndex}`}
+                  <div
+                    key={`thumb-${i}`}
                     className="relative aspect-square"
                   >
                     <button
@@ -210,7 +207,7 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
                       onClick={() => setActiveImageIndex(slot.imageIndex)}
                       aria-label={`Show image: ${slot.image.alt}`}
                       data-testid={`button-case-study-thumb-${i}`}
-                      className="group relative block w-full h-full rounded-[5px] overflow-hidden cursor-pointer ring-1 ring-transparent hover:ring-2 hover:ring-[#c5d520]/60 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 transition-all duration-300"
+                      className="group relative block w-full h-full rounded-[5px] overflow-hidden cursor-pointer bg-primary/5 ring-1 ring-transparent hover:ring-2 hover:ring-[#c5d520]/60 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2 transition-all duration-300"
                     >
                       <Image
                         src={slot.image.src}
@@ -218,39 +215,15 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
                         fill
                         sizes="(max-width: 1024px) 33vw, 16vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                        loading="lazy"
                       />
                       <span
                         className="pointer-events-none absolute inset-0 bg-[#042940]/20 transition-colors duration-300 group-hover:bg-[#042940]/0"
                         aria-hidden="true"
                       />
                     </button>
-                  </FadeIn>
+                  </div>
                 ))}
               
-            </div>
-
-            {/* Mobile-only carousel controls (sit below the images on small screens) */}
-            <div className="flex xl:hidden items-center gap-4 pt-2">
-              <button
-                onClick={goToPrev}
-                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
-                aria-label="Previous case study"
-                data-testid="button-case-study-prev-mobile"
-              >
-                <ArrowRight className="w-5 h-5 rotate-180" />
-              </button>
-              <button
-                onClick={goToNext}
-                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
-                aria-label="Next case study"
-                data-testid="button-case-study-next-mobile"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <span className="text-sm text-primary/40 ml-2" data-testid="text-case-study-counter-mobile">
-                {currentIndex + 1} / {studies.length}
-              </span>
             </div>
           </div>
 
@@ -283,7 +256,29 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
                   ))}
                 </div>
               </FadeIn>
-            
+
+            {/* Mobile-only carousel controls (sit directly below the content) */}
+            <div className="flex xl:hidden items-center gap-4">
+              <button
+                onClick={goToPrev}
+                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
+                aria-label="Previous case study"
+                data-testid="button-case-study-prev-mobile"
+              >
+                <ArrowRight className="w-5 h-5 rotate-180" />
+              </button>
+              <button
+                onClick={goToNext}
+                className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
+                aria-label="Next case study"
+                data-testid="button-case-study-next-mobile"
+              >
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              <span className="text-sm text-primary/40 ml-2" data-testid="text-case-study-counter-mobile">
+                {currentIndex + 1} / {studies.length}
+              </span>
+            </div>
 
             <div className="hidden xl:flex items-center gap-4">
               <button

@@ -41,8 +41,8 @@ export default function LogoReelSection({
   return (
     <section className="py-12 bg-white border-b border-primary/5 overflow-hidden" data-testid={`section-${testIdPrefix}`}>
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-left sm:text-center mb-8">
-          <div data-testid={`text-${testIdPrefix}-headline`} className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70">
+        <div className="text-center mb-8">
+          <div data-testid={`text-${testIdPrefix}-headline`} className="text-xs md:text-sm font-extrabold tracking-[0.2em] uppercase text-primary/70 [text-wrap:balance] sm:[text-wrap:normal]">
             {headline}
           </div>
         </div>

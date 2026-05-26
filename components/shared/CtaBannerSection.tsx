@@ -19,7 +19,7 @@ export default function CtaBannerSection({
   buttonLabel = "Check Now",
 }: CtaBannerSectionProps = {}) {
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden" aria-label="Check service availability">
+    <section className="py-10 md:py-24 bg-white relative overflow-hidden" aria-label="Check service availability">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <FadeIn
           className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"

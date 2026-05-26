@@ -83,7 +83,7 @@ export default function FaqSection({
   };
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-16 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
+    <section id="faq" aria-labelledby="faq-heading" className="py-10 md:py-24 bg-[#F9F9F6] relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none -translate-x-1/2 -translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">

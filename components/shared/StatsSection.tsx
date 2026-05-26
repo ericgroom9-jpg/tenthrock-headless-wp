@@ -32,7 +32,7 @@ const defaultCards = [
 
 export default function StatsSection({
   tagline = "Key Metrics",
-  heading = "Why Clients Call Us Again and Again.",
+  heading = "Why Clients Call Us Again and Again",
   subtitle = "Numbers tell the story. Our clients stick with us because we deliver measurable results: lower costs, faster response, and fewer headaches managing waste across multiple locations.",
   ctaLabel = "Request A Service",
   ctaLink = "/request-a-service",
@@ -45,7 +45,7 @@ export default function StatsSection({
   const statsImage = imgParkWater;
   const statsImageAlt = image ? (imageAlt || "Tenth Rock nationwide waste operations") : "Tenth Rock nationwide waste operations";
   return (
-    <section className="py-16 md:py-24 bg-[#FDFDFD]" aria-label="Key metrics and statistics">
+    <section className="py-10 md:py-24 bg-[#FDFDFD]" aria-label="Key metrics and statistics">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-32">

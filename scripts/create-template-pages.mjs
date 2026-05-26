@@ -205,7 +205,7 @@ Our network provides the infrastructure, and the expertise behind it drives the 
         { logo: '/images/associations/ifma.png', alt_text: 'IFMA - International Facility Management Association' },
         { logo: '/images/associations/icsc.png', alt_text: 'ICSC' },
       ],
-      community_heading: 'In The Community',
+      community_heading: 'In the Community',
       community_body: `Real change begins at the local level. As a nationwide company, Tenth Rock is committed to sustainability and protecting the natural resources of the communities where we live and work. We believe our responsibility extends beyond the job site to include the health and longevity of the neighborhoods we serve.
 
 We are proud to support organizations that drive meaningful impact and foster environmental awareness. By providing waste management expertise and logistical resources for local initiatives, we help reduce litter, restore natural habitats, and educate the community on sustainable practices. Tenth Rock provides more than just waste solutions; we provide the support and visibility needed to build more inclusive and supportive communities.`,

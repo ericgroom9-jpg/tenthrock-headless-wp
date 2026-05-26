@@ -159,9 +159,9 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  aria-hidden="true"
  priority
  />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+ <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-28">
+ <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-28">
  <FadeIn
  className="max-w-2xl"
  >
@@ -203,7 +203,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  <SharedCommercialWasteServices />
 
  {/* How It Works Section - Matching Homepage Design */}
- <section id="process" aria-labelledby="process-heading" className="py-16 md:py-24 bg-white relative overflow-hidden">
+ <section id="process" aria-labelledby="process-heading" className="py-10 md:py-24 bg-white relative overflow-hidden">
  <div className="container mx-auto px-4 md:px-8">
  <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -213,7 +213,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  <h2 id="process-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 leading-tight tracking-tighter">
  {acf?.processHeading || "How It Works"}
  </h2>
- <p className="text-lg text-[#042940]/70">
+ <p className="text-lg text-[#042940]/70 [text-wrap:balance]">
  {acf?.processSubtitle || "A simple, transparent process designed to get your problem solved fast."}
  </p>
  </div>
@@ -240,7 +240,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  </section>
 
  {/* Check If We Service Your Area - Matching Homepage Design */}
- <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+ <section className="py-10 md:py-24 bg-white relative overflow-hidden">
  <div className="container mx-auto px-4 md:px-8 relative z-10">
  <FadeIn
  className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"
@@ -288,7 +288,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  <StatsSection />
 
  {/* Case Study Section - Matching Homepage Design */}
- <section className="py-16 md:py-24 bg-white border-b border-[#042940]/5">
+ <section className="py-10 md:py-24 bg-white border-b border-[#042940]/5">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 items-center">
  <div className="space-y-4 order-2 lg:order-1">

@@ -32,7 +32,7 @@ export default function BookACallClient({ data }: Props) {
   return (
     <main>
       <Navbar variant="sticky" />
-      <section className="py-16 sm:py-20 lg:py-28 bg-white" data-testid="section-book-a-call">
+      <section className="py-10 sm:py-20 lg:py-28 bg-white" data-testid="section-book-a-call">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 

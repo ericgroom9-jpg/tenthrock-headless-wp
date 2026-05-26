@@ -19,7 +19,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Alabama rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates fast, reliable waste removal to keep sites safe, compliant, and operational",
     trustedDesc: "Tenth Rock has supported businesses across Alabama for years, working with commercial clients throughout the state. Our established relationships with Alabama waste facilities help ensure efficient routing, responsive service, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste solutions built for commercial operations",
+    thirdHeading: "Waste Solutions Built for Commercial Operations",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works directly with local waste facilities and hauling partners across Alabama to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Alabama?", answer: "We specialize in rapid response waste services. For emergency requests in Alabama, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours of account setup." },
@@ -190,7 +190,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Idaho rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep sites safe, compliant, and operational.",
     trustedDesc: "Tenth Rock has supported businesses across Idaho for years, working with commercial clients throughout the state. Our established relationships with Idaho waste facilities help ensure efficient routing, responsive service, and competitive disposal pricing for local operations.",
-    thirdHeading: "Rapid waste response for Idaho businesses",
+    thirdHeading: "Rapid Waste Response for Idaho Businesses",
     thirdDesc: "Waste disruptions rarely happen on a convenient schedule. When refrigeration systems fail, compactors break down, or waste overflow begins affecting operations, businesses need a response partner that can act quickly.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Idaho?", answer: "We specialize in rapid response waste services. For emergency requests in Idaho, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours of account setup." },
@@ -209,7 +209,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Illinois rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep sites safe, compliant, and operational.",
     trustedDesc: "Tenth Rock has supported businesses across Illinois for years, working with commercial clients throughout the state. Our established relationships with Illinois waste facilities help ensure efficient routing, responsive service, and competitive disposal pricing for local operations.",
-    thirdHeading: "Rapid waste response for Illinois businesses",
+    thirdHeading: "Rapid Waste Response for Illinois Businesses",
     thirdDesc: "Waste disruptions rarely happen on a convenient schedule. When refrigeration systems fail, compactors break down, or waste overflow begins affecting operations, businesses need a response partner that can act quickly.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Illinois?", answer: "We specialize in rapid response waste services. For emergency requests in Illinois, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours of account setup." },
@@ -247,7 +247,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Iowa rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Iowa for years, partnering with commercial clients throughout the state. Our established relationships with Iowa waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Reliable waste solutions for smooth operations",
+    thirdHeading: "Reliable Waste Solutions for Smooth Operations",
     thirdDesc: "Managing waste across commercial properties requires dependable coordination and experienced service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners throughout Iowa to coordinate bulk waste removal, site cleanouts, and operational waste disruptions while minimizing downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Iowa?", answer: "We specialize in fast-response waste services. For emergency requests in Iowa, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -266,7 +266,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Kansas rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Kansas for years, partnering with commercial clients throughout the state. Our established relationships with Kansas waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste Solutions Built for your Business",
+    thirdHeading: "Waste Solutions Built for Your Business",
     thirdDesc: "Managing waste across commercial properties requires dependable coordination and experienced service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners throughout Kansas to coordinate bulk waste removal, site cleanouts, and operational waste disruptions while minimizing downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Kansas?", answer: "We specialize in fast-response waste services. For emergency requests in Kansas, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -285,7 +285,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Kentucky rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Kentucky for years, partnering with commercial clients throughout the state. Our established relationships with Kentucky waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste solutions that keep your operations on track",
+    thirdHeading: "Waste Solutions That Keep Your Operations on Track",
     thirdDesc: "Keeping commercial properties clean and operational requires reliable waste coordination. Tenth Rock Waste Solutions partners with disposal facilities and hauling providers across Kentucky to manage bulk debris removal, facility cleanouts, and unexpected waste issues while helping businesses avoid unnecessary downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Kentucky?", answer: "We specialize in fast-response waste services. For emergency requests in Kentucky, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -342,7 +342,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Maryland rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Maryland for years, partnering with commercial clients throughout the state. Our established relationships with Maryland waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste management solutions that keep businesses moving",
+    thirdHeading: "Waste Management Solutions That Keep Businesses Moving",
     thirdDesc: "Large-scale waste removal often requires coordination between multiple service providers. Tenth Rock Waste Solutions works throughout Maryland to connect businesses with reliable hauling partners and disposal facilities for cleanouts, debris removal, and other waste management needs.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Maryland?", answer: "We specialize in fast-response waste services. For emergency requests in Maryland, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -361,7 +361,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Massachusetts rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Massachusetts for years, partnering with commercial clients throughout the state. Our established relationships with Massachusetts waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Reliable waste management that keeps operations on track",
+    thirdHeading: "Reliable Waste Management That Keeps Operations on Track",
     thirdDesc: "Handling waste across commercial properties requires organized logistics and trusted partners. Tenth Rock Waste Solutions works with hauling providers and disposal facilities across Massachusetts to arrange bulk debris removal, large cleanouts, and other waste challenges while helping businesses keep operations moving.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Massachusetts?", answer: "We specialize in fast-response waste services. For emergency requests in Massachusetts, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -380,7 +380,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Michigan rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Michigan for years, partnering with commercial clients throughout the state. Our established relationships with Michigan waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Operational waste support built for commercial facilities",
+    thirdHeading: "Operational Waste Support Built for Commercial Facilities",
     thirdDesc: "Managing waste across commercial properties requires dependable coordination and experienced service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners throughout Michigan to coordinate bulk waste removal, site cleanouts, and operational waste disruptions while minimizing downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Michigan?", answer: "We specialize in fast-response waste services. For emergency requests in Michigan, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -399,7 +399,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Minnesota rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Minnesota for years, partnering with commercial clients throughout the state. Our established relationships with Minnesota waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Commercial waste solutions for busy operations",
+    thirdHeading: "Commercial Waste Solutions for Busy Operations",
     thirdDesc: "Managing waste across commercial properties requires dependable coordination and experienced service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners throughout Minnesota to coordinate bulk waste removal, site cleanouts, and operational waste disruptions while minimizing downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Minnesota?", answer: "We specialize in fast-response waste services. For emergency requests in Minnesota, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -418,7 +418,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Mississippi rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Mississippi for years, partnering with commercial clients throughout the state. Our established relationships with Mississippi waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Commercial waste handling you can depend on",
+    thirdHeading: "Commercial Waste Handling You Can Depend On",
     thirdDesc: "Managing waste across commercial properties requires dependable coordination and experienced service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners throughout Mississippi to coordinate bulk waste removal, site cleanouts, and operational waste disruptions while minimizing downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Mississippi?", answer: "We specialize in fast-response waste services. For emergency requests in Mississippi, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -551,7 +551,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across New Mexico rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across New Mexico for years, partnering with commercial clients throughout the state. Our established relationships with New Mexico waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Operational waste solutions for busy facilities",
+    thirdHeading: "Operational Waste Solutions for Busy Facilities",
     thirdDesc: "When waste disruptions occur, quick and reliable coordination is essential. Tenth Rock Waste Solutions connects New Mexico businesses with trusted hauling partners and disposal facilities to manage bulk waste removal, facility cleanouts, and other commercial waste needs.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in New Mexico?", answer: "We specialize in rapid response waste services. For emergency requests in New Mexico, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -570,7 +570,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "When waste issues interrupt normal operations, businesses across New York turn to Tenth Rock Waste Solutions for support. Our team coordinates reliable removal services for situations ranging from large facility cleanouts to unexpected waste events, helping companies maintain safe and compliant environments.",
     trustedDesc: "Tenth Rock has supported businesses across New York for years, partnering with commercial clients throughout the state. Our established relationships with New York waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste solutions tailored for business facilities",
+    thirdHeading: "Waste Solutions Tailored for Business Facilities",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners across New York to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in New York?", answer: "We specialize in rapid response waste services. For emergency requests in New York, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -589,7 +589,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across North Carolina rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across North Carolina for years, partnering with commercial clients throughout the state. Our established relationships with North Carolina waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste solutions built for commercial operations",
+    thirdHeading: "Waste Solutions Built for Commercial Operations",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners across North Carolina to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in North Carolina?", answer: "We specialize in rapid response waste services. For emergency requests in North Carolina, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -646,7 +646,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Oklahoma rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Oklahoma for years, partnering with commercial clients throughout the state. Our established relationships with Oklahoma waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste solutions built for commercial operations",
+    thirdHeading: "Waste Solutions Built for Commercial Operations",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners across Oklahoma to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Oklahoma?", answer: "We specialize in rapid response waste services. For emergency requests in Oklahoma, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -684,7 +684,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Pennsylvania rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations.",
     trustedDesc: "Tenth Rock has supported businesses across Pennsylvania for years, partnering with commercial clients throughout the state. Our established relationships with Pennsylvania waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Rapid waste response for Pennsylvania businesses",
+    thirdHeading: "Rapid Waste Response for Pennsylvania Businesses",
     thirdDesc: "Waste emergencies rarely happen on a convenient schedule. When refrigeration systems fail, compactors break down, or waste overflow begins affecting operations, businesses need a response partner that can move quickly.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Pennsylvania?", answer: "We specialize in rapid response waste services. For emergency requests in Pennsylvania, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -741,7 +741,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across South Dakota rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across South Dakota for years, partnering with commercial clients throughout the state. Our established relationships with South Dakota waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste solutions built to keep operations running",
+    thirdHeading: "Waste Solutions Built to Keep Operations Running",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners across South Dakota to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in South Dakota?", answer: "We specialize in rapid response waste services. For emergency requests in South Dakota, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -817,7 +817,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Vermont rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Vermont for years, partnering with commercial clients throughout the state. Our established relationships with Vermont waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Coordinated waste solutions when operations can’t slow down",
+    thirdHeading: "Coordinated Waste Solutions When Operations Can’t Slow Down",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners across Vermont to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Vermont?", answer: "We specialize in rapid response waste services. For emergency requests in Vermont, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -836,7 +836,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Virginia rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Virginia for years, partnering with commercial clients throughout the state. Our established relationships with Virginia waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Coordinated waste solutions when operations can’t slow down",
+    thirdHeading: "Coordinated Waste Solutions When Operations Can’t Slow Down",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners across Virginia to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Virginia?", answer: "We specialize in rapid response waste services. For emergency requests in Virginia, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -855,7 +855,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Washington rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations.",
     trustedDesc: "Tenth Rock has supported businesses across Washington for years, partnering with commercial clients throughout the state. Our established relationships with Washington waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste coordination built for operational demands",
+    thirdHeading: "Waste Coordination Built for Operational Demands",
     thirdDesc: "Coordinating commercial waste removal often requires quick response times and reliable service partners. Tenth Rock Waste Solutions collaborates with local hauling providers and disposal facilities across Washington to manage bulk waste removal, site cleanouts, and operational waste disruptions while keeping business downtime to a minimum.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Washington?", answer: "We specialize in rapid response waste services. For emergency requests in Washington, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -874,7 +874,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across West Virginia rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across West Virginia for years, partnering with commercial clients throughout the state. Our established relationships with West Virginia waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Coordinated waste removal for busy operations",
+    thirdHeading: "Coordinated Waste Removal for Busy Operations",
     thirdDesc: "Commercial waste challenges require fast coordination and dependable service partners. Tenth Rock Waste Solutions works with local disposal facilities and hauling partners across West Virginia to coordinate bulk waste removal, site cleanouts, and operational waste disruptions with minimal downtime.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in West Virginia?", answer: "We specialize in rapid response waste services. For emergency requests in West Virginia, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -893,7 +893,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Wisconsin rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Wisconsin for years, partnering with commercial clients throughout the state. Our established relationships with Wisconsin waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Waste solutions that keep operations running smoothly",
+    thirdHeading: "Waste Solutions That Keep Operations Running Smoothly",
     thirdDesc: "Managing large waste volumes requires quick response and reliable partners. Tenth Rock Waste Solutions coordinates with hauling providers and disposal facilities throughout Wisconsin to handle bulk debris removal, site cleanouts, and unexpected waste issues while keeping operations moving.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Wisconsin?", answer: "We specialize in rapid response waste services. For emergency requests in Wisconsin, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },
@@ -912,7 +912,7 @@ export interface StateLocationContent {
     ],
     aboutDesc: "Businesses across Wyoming rely on Tenth Rock Waste Solutions when unexpected waste problems disrupt operations. From spoiled inventory and refrigeration failures to large commercial cleanouts, our team coordinates dependable waste removal to keep facilities safe, compliant, and running smoothly.",
     trustedDesc: "Tenth Rock has supported businesses across Wyoming for years, partnering with commercial clients throughout the state. Our established relationships with Wyoming waste facilities help ensure efficient routing, responsive service coordination, and competitive disposal pricing for local operations.",
-    thirdHeading: "Dependable waste coordination when it matters most",
+    thirdHeading: "Dependable Waste Coordination When It Matters Most",
     thirdDesc: "Waste disruptions can slow down business operations without the right support. Tenth Rock Waste Solutions works with hauling providers and disposal facilities throughout Wyoming to arrange large-volume waste removal, facility cleanouts, and urgent debris management with minimal interruption.",
     faqs: [
       { question: "How quickly can you arrange a waste pickup in Wyoming?", answer: "We specialize in rapid response waste services. For emergency requests in Wyoming, we can often coordinate on-site pickup within hours. For standard commercial waste services, most businesses can begin service within 24-48 hours after account setup." },

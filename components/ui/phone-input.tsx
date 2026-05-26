@@ -57,7 +57,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
         value={displayValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        placeholder="(555) 000-0000"
+        placeholder="Enter your phone number"
         className={className}
         {...props}
       />

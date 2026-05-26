@@ -83,7 +83,7 @@ function RequestAServiceSection({ data }: { data: ContactFormTemplateData | null
   };
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white" data-testid="section-request-service">
+    <section className="py-10 sm:py-20 lg:py-24 bg-white" data-testid="section-request-service">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 items-start">
 

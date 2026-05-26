@@ -423,3 +423,8 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 14px;
+}

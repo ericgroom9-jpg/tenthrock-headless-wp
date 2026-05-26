@@ -74,7 +74,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
   const coreSecondaryLink = acf?.coreSecondaryLink || "/commercial-waste";
   const associationsHeading = acf?.associationsHeading || "Associations";
   const associationsLogos = acf?.associationsLogos || defaultAssociationLogos;
-  const communityHeading = acf?.communityHeading || "In The Community";
+  const communityHeading = acf?.communityHeading || "In the Community";
   const communityBody = acf?.communityBody || defaultCommunityBody;
   const communityImage = acf?.communityImage || "/images/stock/community-park-sunset.webp";
   const communityImageAlt = acf?.communityImageAlt || "Families enjoying a sunny afternoon at a community park";
@@ -85,6 +85,9 @@ export default function AboutClient({ acf, globalSections }: Props) {
 
   const storyHasHtml = /<\/?[a-z][\s\S]*?>/i.test(storyBody);
   const storyParagraphs = storyHasHtml ? [] : storyBody.split("\n").filter(p => p.trim());
+
+  const communityHasHtml = /<\/?[a-z][\s\S]*?>/i.test(communityBody);
+  const communityParagraphs = communityHasHtml ? [] : communityBody.split("\n").filter(p => p.trim());
 
   return (
     <main className="min-h-screen bg-white">
@@ -136,7 +139,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
       </section>
 
       <section 
-        className="py-16 md:py-24 lg:py-32 bg-white"
+        className="py-10 md:py-24 lg:py-32 bg-white"
         aria-labelledby="core-heading"
       >
         <div className="container mx-auto px-4 md:px-8">
@@ -196,7 +199,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
               </div>
             </FadeIn>
             
-            <FadeIn className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square">
+            <FadeIn className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-[4/3]">
               <Image 
                 src={coreImage} 
                 alt={coreImageAlt} 
@@ -233,7 +236,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
         </div>
       </section>
 
-      <section className="py-16 md:py-20 bg-[#F9F9F6]" aria-labelledby="associations-heading">
+      <section className="py-10 md:py-20 bg-[#F9F9F6]" aria-labelledby="associations-heading">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="text-left sm:text-center mb-10 md:mb-14">
             <h2 id="associations-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">
@@ -260,12 +263,12 @@ export default function AboutClient({ acf, globalSections }: Props) {
       </section>
 
       <section 
-        className="py-16 md:py-24 lg:py-32 bg-white"
+        className="py-10 md:py-24 lg:py-32 bg-white"
         aria-labelledby="community-heading"
       >
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <FadeIn className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-square order-2 lg:order-1">
+            <FadeIn className="relative rounded-[5px] overflow-hidden aspect-[4/5] lg:aspect-[4/3] order-2 lg:order-1">
               <Image 
                 src={communityImage} 
                 alt={communityImageAlt} 
@@ -283,11 +286,18 @@ export default function AboutClient({ acf, globalSections }: Props) {
               >
                 {communityHeading}
               </h2>
-              {communityBody.split("\n").filter(p => p.trim()).map((p, i) => (
-                <p key={i} className="text-base text-primary/70 leading-relaxed mb-8">
-                  {p}
-                </p>
-              ))}
+              {communityHasHtml ? (
+                <div
+                  className="text-base text-primary/70 leading-relaxed [&_p]:mb-8"
+                  dangerouslySetInnerHTML={{ __html: communityBody }}
+                />
+              ) : (
+                communityParagraphs.map((p, i) => (
+                  <p key={i} className="text-base text-primary/70 leading-relaxed mb-8">
+                    {p}
+                  </p>
+                ))
+              )}
               
               <div className="hidden lg:flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button 

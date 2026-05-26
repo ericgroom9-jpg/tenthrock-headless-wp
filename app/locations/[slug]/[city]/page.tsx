@@ -58,7 +58,7 @@ export default function CityLocationPage() {
 
  const aboutAccordions = [
  {
- title: `Dumpster rental and emergency waste support for businesses across ${cityName}, ${stateData?.abbreviation || stateName}`,
+ title: `About ${cityName} Waste Solutions`,
  benefits: [
  "Roll-off containers in 20, 30, and 40 yard sizes",
  "Rapid coordination for compactor failures, overflow, and site cleanouts",
@@ -117,10 +117,10 @@ export default function CityLocationPage() {
  aria-hidden="true"
  priority
  />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+ <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
- <div className="max-w-2xl">
+ <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="max-w-2xl lg:max-w-5xl">
  <FadeIn>
  <nav aria-label="Breadcrumb" className="mb-6" data-testid="nav-breadcrumb">
  <ol className="flex items-center gap-2 text-sm text-white/60">
@@ -134,12 +134,12 @@ export default function CityLocationPage() {
 
  <h1
  id="city-hero-heading"
- className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6"
+ className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-none"
  data-testid="heading-city-hero"
  >
  Waste Management Services in {cityName}, {stateData?.abbreviation || stateName}
  </h1>
- <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-xl leading-relaxed" data-testid="text-city-hero-subtitle">
+ <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md lg:max-w-4xl leading-relaxed [text-wrap:balance]" data-testid="text-city-hero-subtitle">
  Commercial dumpster rental and emergency waste services across {cityName}, {stateData?.abbreviation || stateName}. Tenth Rock supports multi-location businesses with roll-off containers, rapid response, and coordinated waste logistics to keep operations running without disruption.
  </p>
  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -170,7 +170,7 @@ export default function CityLocationPage() {
  </section>
 
  {/* About Accordion Section */}
- <section className="py-16 md:py-24 bg-white" aria-labelledby="about-city-heading" data-testid="section-city-about">
+ <section className="py-10 md:py-24 bg-white" aria-labelledby="about-city-heading" data-testid="section-city-about">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
  <div>
@@ -184,7 +184,7 @@ export default function CityLocationPage() {
  >
  <h2
  id={idx === 0 ? "about-city-heading" : undefined}
- className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight text-left"
+ className="text-3xl font-medium text-primary tracking-tighter leading-tight text-left"
  >
  {section.title}
  </h2>
@@ -224,9 +224,9 @@ export default function CityLocationPage() {
  {/* Contact Form */}
  <FadeIn>
  <div className="bg-[#F9F9F6] rounded-[5px] p-6 md:p-10 lg:p-12" data-testid="form-city-contact">
- <h2 className="text-2xl md:text-3xl font-medium text-[#042940] mb-2 tracking-tight" data-testid="heading-city-form">
+ <h3 className="text-2xl md:text-3xl font-medium text-[#042940] mb-2 tracking-tight" data-testid="heading-city-form">
  Get a Quote for {cityName}
- </h2>
+ </h3>
  <p className="text-[#042940]/60 text-sm mb-8">
  Fill out the form below and we'll connect you with a local representative.
  </p>
@@ -234,16 +234,16 @@ export default function CityLocationPage() {
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
  <div>
  <label htmlFor="city-firstName" className="block text-sm font-medium text-[#042940] mb-1.5">First Name</label>
- <input id="city-firstName" type="text" value={formData.firstName} onChange={(e) => handleInputChange("firstName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-first-name" />
+ <input id="city-firstName" type="text" placeholder="Enter your first name" value={formData.firstName} onChange={(e) => handleInputChange("firstName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-first-name" />
  </div>
  <div>
  <label htmlFor="city-lastName" className="block text-sm font-medium text-[#042940] mb-1.5">Last Name</label>
- <input id="city-lastName" type="text" value={formData.lastName} onChange={(e) => handleInputChange("lastName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-last-name" />
+ <input id="city-lastName" type="text" placeholder="Enter your last name" value={formData.lastName} onChange={(e) => handleInputChange("lastName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-last-name" />
  </div>
  </div>
  <div>
  <label htmlFor="city-email" className="block text-sm font-medium text-[#042940] mb-1.5">Email</label>
- <input id="city-email" type="email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-email" />
+ <input id="city-email" type="email" placeholder="Enter your email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-email" />
  </div>
  <div>
  <label htmlFor="city-phone" className="block text-sm font-medium text-[#042940] mb-1.5">Phone</label>
@@ -251,7 +251,7 @@ export default function CityLocationPage() {
  </div>
  <div>
  <label htmlFor="city-company" className="block text-sm font-medium text-[#042940] mb-1.5">Company</label>
- <input id="city-company" type="text" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-company" />
+ <input id="city-company" type="text" placeholder="Enter your company name" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-company" />
  </div>
  <div>
  <label htmlFor="city-interest" className="block text-sm font-medium text-[#042940] mb-1.5">Service Interest</label>
@@ -266,7 +266,7 @@ export default function CityLocationPage() {
  </div>
  <div>
  <label htmlFor="city-message" className="block text-sm font-medium text-[#042940] mb-1.5">Message (Optional)</label>
- <textarea id="city-message" rows={3} value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white resize-none" data-testid="textarea-city-message" />
+ <textarea id="city-message" rows={3} placeholder="Type your message..." value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white resize-none" data-testid="textarea-city-message" />
  </div>
  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-[#042940]/10">
  <label className="flex items-start gap-3 cursor-pointer" data-testid="label-city-consent">
@@ -297,7 +297,7 @@ export default function CityLocationPage() {
  </section>
 
  {/* Info Block Section */}
- <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-city-info">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" data-testid="section-city-info">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
  <FadeIn>
@@ -305,7 +305,7 @@ export default function CityLocationPage() {
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  Local Coverage
  </div>
- <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] tracking-tighter mb-6 leading-tight" data-testid="heading-city-info">
+ <h2 className="text-4xl md:text-5xl font-medium text-[#042940] tracking-tighter mb-6 leading-tight" data-testid="heading-city-info">
  Waste Solutions Built for {cityName} Operations
  </h2>
  <p className="text-[#042940]/70 leading-relaxed mb-8" data-testid="text-city-info-desc">
@@ -382,12 +382,12 @@ export default function CityLocationPage() {
 
  {/* Other Cities in This State */}
  {otherCities.length > 0 && (
- <section className="py-16 md:py-24 bg-[#F9F9F6]" aria-labelledby="other-cities-heading" data-testid="section-other-cities">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="other-cities-heading" data-testid="section-other-cities">
  <div className="container mx-auto px-4 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+ <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-stretch">
  {/* Left - State Map Visual */}
- <FadeIn className="lg:sticky lg:top-32">
- <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square max-w-md mx-auto lg:mx-0 shadow-2xl" data-testid="map-city-state-visual" role="img" aria-label={`Other service areas in ${stateName}`}>
+ <FadeIn className="lg:h-full">
+ <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square lg:aspect-auto lg:h-full max-w-md mx-auto lg:mx-0 lg:max-w-none shadow-2xl" data-testid="map-city-state-visual" role="img" aria-label={`Other service areas in ${stateName}`}>
  <div className="absolute inset-0 opacity-20" aria-hidden="true" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
  {stateOutlines[stateSlug] && (
  <svg
@@ -442,7 +442,7 @@ export default function CityLocationPage() {
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  Nearby Service Areas
  </div>
- <h2 id="other-cities-heading" className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#042940] mb-4 leading-tight tracking-tighter" data-testid="heading-other-cities">
+ <h2 id="other-cities-heading" className="text-4xl md:text-5xl font-medium text-[#042940] mb-4 leading-tight tracking-tighter" data-testid="heading-other-cities">
  Other Cities in {stateName}
  </h2>
  <p className="text-[#042940]/70 text-base md:text-lg leading-relaxed mb-10" data-testid="text-other-cities-description">

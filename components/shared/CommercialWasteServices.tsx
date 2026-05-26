@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
-import { Siren, HardHat, Container, LineChart, ArrowRight } from "lucide-react";
+import { Snowflake, AlertTriangle, Trash2, Building2, Calendar, CloudLightning, Clock, Ruler, Recycle, ClipboardList, GraduationCap, Handshake, ArrowRight, type LucideIcon } from "lucide-react";
 import type { ServiceCategory } from "@/lib/wordpress";
 
 const defaultServices = [
@@ -46,13 +46,19 @@ const defaultServices = [
   },
 ];
 
-const categoryIcons = [Siren, HardHat, Container, LineChart];
+const defaultSubItemIcons: LucideIcon[][] = [
+  [Snowflake, AlertTriangle, Trash2],
+  [Building2, Calendar, CloudLightning],
+  [Clock, Ruler, Recycle],
+  [ClipboardList, GraduationCap, Handshake],
+];
 
 interface CWSProps {
   servicesTagline?: string;
   servicesHeading?: string;
   servicesSubtitle?: string;
   servicesCategories?: ServiceCategory[] | null;
+  activeServiceTitle?: string;
 }
 
 export default function CommercialWasteServices({
@@ -60,9 +66,8 @@ export default function CommercialWasteServices({
   servicesHeading,
   servicesSubtitle,
   servicesCategories,
+  activeServiceTitle,
 }: CWSProps = {}) {
-  const [activeService, setActiveService] = useState(0);
-
   const services = (servicesCategories && servicesCategories.length > 0)
     ? servicesCategories.map((cat, i) => {
         const fallback = defaultServices[i] || defaultServices[0];
@@ -82,8 +87,13 @@ export default function CommercialWasteServices({
       })
     : defaultServices;
 
+  const initialActive = activeServiceTitle
+    ? Math.max(0, services.findIndex((s) => s.title.toLowerCase() === activeServiceTitle.toLowerCase()))
+    : 0;
+  const [activeService, setActiveService] = useState(initialActive);
+
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
+    <section id="services" aria-labelledby="services-heading" className="py-10 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <FadeIn
           className="mb-10 md:mb-16 max-w-2xl"
@@ -136,7 +146,8 @@ export default function CommercialWasteServices({
                  className="grid sm:grid-cols-3 gap-4 h-full"
                >
                  {services[activeService].items.map((item, idx) => {
-                   const Icon = categoryIcons[activeService];
+                   const categoryIcons = defaultSubItemIcons[activeService] || defaultSubItemIcons[0];
+                   const Icon = categoryIcons[idx] || categoryIcons[categoryIcons.length - 1] || defaultSubItemIcons[0][0];
                    return (
                      <Link
                        key={idx}
@@ -159,7 +170,7 @@ export default function CommercialWasteServices({
                          <h3 className="font-bold text-white text-base leading-snug mb-2 group-hover:text-[#c5d520] transition-colors">
                            {item.label}
                          </h3>
-                         <p className="text-white/75 text-sm leading-relaxed">
+                         <p className="text-white/75 text-base leading-relaxed">
                            {item.desc}
                          </p>
                          <span

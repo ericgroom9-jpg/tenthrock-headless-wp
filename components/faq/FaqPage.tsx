@@ -242,7 +242,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
       </nav>
 
       {/* FAQ Content */}
-      <section ref={accordionRef} aria-labelledby="faq-section-heading" className="py-16 md:py-24 lg:py-28 bg-[#F9F9F6]">
+      <section ref={accordionRef} aria-labelledby="faq-section-heading" className="py-10 md:py-24 lg:py-28 bg-[#F9F9F6]">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <FadeIn
             key={activeCategory}

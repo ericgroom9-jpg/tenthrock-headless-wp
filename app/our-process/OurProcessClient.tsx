@@ -46,7 +46,7 @@ export default function OurProcessClient({ acf, globalSections }: Props) {
             aria-hidden="true"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15"></div>
+          <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#042940]/40 via-transparent to-transparent"></div>
         </div>
 

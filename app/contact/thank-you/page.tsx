@@ -35,7 +35,7 @@ function ThankYouSection() {
           </h1>
 
           <p
-            className="text-base sm:text-lg text-[#042940]/70 leading-relaxed max-w-md mb-10"
+            className="text-base md:text-lg text-[#042940]/70 leading-relaxed max-w-md mb-10"
             data-testid="text-thank-you-subtitle"
           >
             We've received your submission and will be in touch with you shortly.

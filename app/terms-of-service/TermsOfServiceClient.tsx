@@ -17,7 +17,7 @@ export default function TermsOfServiceClient({ data, content }: Props) {
     <main>
       <Navbar variant="sticky" />
       <section
-        className="py-16 sm:py-20 lg:py-28 bg-white"
+        className="py-10 sm:py-20 lg:py-28 bg-white"
         data-testid="section-terms-of-service"
       >
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">

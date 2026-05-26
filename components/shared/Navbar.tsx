@@ -240,7 +240,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  data-testid="button-mobile-cta"
  >
  <Link href={primaryCta.href}>
- <span className="sm:hidden" aria-hidden="true">{primaryCta.label.length > 11 ? "Get Service" : primaryCta.label}</span>
+ <span className="sm:hidden" aria-hidden="true">Request A Service</span>
  <span className="hidden sm:inline">{primaryCta.label}</span>
  <span className="sr-only sm:hidden">{primaryCta.label}</span>
  </Link>

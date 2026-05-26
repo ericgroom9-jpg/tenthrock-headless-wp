@@ -129,9 +129,9 @@ function HeroSection() {
  aria-hidden="true"
  priority
  />
- <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+ <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-16 sm:py-20 lg:py-24">
+ <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
  <div className="max-w-2xl">
  <FadeIn
  >
@@ -172,7 +172,7 @@ function HeroSection() {
 
 function WhatYouNeedSection() {
  return (
- <section className="py-16 md:py-24 bg-[#F9F9F6]" data-testid="section-onboard-process">
+ <section className="py-10 md:py-24 bg-[#F9F9F6]" data-testid="section-onboard-process">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn
  className="max-w-2xl mb-12"
@@ -181,7 +181,7 @@ function WhatYouNeedSection() {
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  Before You Begin
  </div>
- <h2 className="text-3xl md:text-4xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
+ <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
  What You'll Need
  </h2>
  </FadeIn>
@@ -195,7 +195,7 @@ function WhatYouNeedSection() {
  01
  </div>
  <h3 className="text-xl font-bold text-[#042940] mb-4">Certificate of Insurance (COI)</h3>
- <div className="space-y-4 text-[#042940]/70 text-sm leading-relaxed">
+ <div className="space-y-4 text-[#042940]/70 text-base leading-relaxed">
  <p>
  Before starting your application, you'll need a Certificate of Insurance (COI) listing Tenth Rock as the certificate holder. This simply ensures your insurance provider notifies us if your coverage changes or lapses and does not affect your coverage.
  </p>
@@ -226,7 +226,7 @@ function WhatYouNeedSection() {
  02
  </div>
  <h3 className="text-xl font-bold text-[#042940] mb-4">Service Area Map</h3>
- <div className="space-y-4 text-[#042940]/70 text-sm leading-relaxed">
+ <div className="space-y-4 text-[#042940]/70 text-base leading-relaxed">
  <p>
  You'll be asked to drop up to six pins on a map to define your service area. Each pin represents a 30-mile radius. Please utilize as many pins as possible to accurately reflect where you operate. We only reach out for opportunities inside your pinned areas, so the more coverage you define, the more opportunities we can send your way.
  </p>
@@ -240,7 +240,7 @@ function WhatYouNeedSection() {
 
 function FormSection() {
  return (
- <section id="onboarding-form" className="py-16 md:py-24 bg-white" data-testid="section-onboard-form">
+ <section id="onboarding-form" className="py-10 md:py-24 bg-white" data-testid="section-onboard-form">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn
  className="max-w-4xl mx-auto"

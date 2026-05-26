@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import FadeIn from "@/components/shared/FadeIn";
 import { MapPin, Phone, Mail } from "lucide-react";
@@ -22,8 +21,6 @@ interface LocationSectionProps {
   phoneLink?: string;
   email?: string;
   emailLink?: string;
-  hqImage?: string;
-  hqImageAlt?: string;
 }
 
 export default function LocationSection({
@@ -36,11 +33,9 @@ export default function LocationSection({
   phoneLink = "tel:+17275105454",
   email = "hello@tenthrock.com",
   emailLink = "mailto:hello@tenthrock.com",
-  hqImage = "/images/stock/location-clearwater-beach-v2.webp",
-  hqImageAlt = "Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina near Tenth Rock headquarters",
 }: LocationSectionProps = {}) {
   return (
-    <section className="py-16 md:py-24 bg-white" aria-labelledby="location-heading">
+    <section className="py-10 md:py-24 bg-white" aria-labelledby="location-heading">
       <div className="container mx-auto px-4 md:px-8">
         <FadeIn
           className="text-left sm:text-center mb-8 sm:mb-12"
@@ -48,12 +43,12 @@ export default function LocationSection({
           <h2 id="location-heading" className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
             {heading}
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
             {subtitle}
           </p>
         </FadeIn>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
           <FadeIn
             className="space-y-6 lg:space-y-8"
           >
@@ -81,24 +76,12 @@ export default function LocationSection({
               </div>
               <a href={emailLink} className="block text-gray-600 pl-9 hover:underline">{email}</a>
             </div>
-
-            <div className="relative rounded-[5px] overflow-hidden aspect-[4/3]">
-              <Image
-                src={hqImage}
-                alt={hqImageAlt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                className="object-cover"
-                loading="lazy"
-                data-testid="img-location-clearwater-beach"
-              />
-            </div>
           </FadeIn>
 
           <FadeIn
-            className="lg:col-span-2 relative rounded-[5px] overflow-hidden self-center"
+            className="lg:col-span-2 relative rounded-[5px] overflow-hidden"
           >
-            <div className="mx-auto w-full max-w-[740px] mt-12 lg:mt-20">
+            <div className="w-full">
               <UsMapPinsAnimation />
             </div>
           </FadeIn>

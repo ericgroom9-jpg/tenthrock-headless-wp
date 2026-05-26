@@ -30,7 +30,7 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
           className="object-cover transition-transform duration-700 group-hover:scale-110 group-focus-within:scale-110"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-[rgba(4,41,64,0.88)] transition-colors duration-300 group-hover:bg-[rgba(4,41,64,0.72)] group-focus-within:bg-[rgba(4,41,64,0.72)]" />
+        <div className="absolute inset-0 bg-[rgba(4,41,64,0.55)] transition-colors duration-300 group-hover:bg-[rgba(4,41,64,0.72)] group-focus-within:bg-[rgba(4,41,64,0.72)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/50 to-transparent" />
 
         <div className="absolute inset-0 p-6 flex flex-col justify-end">
@@ -64,7 +64,7 @@ export default function WhoWeHelpSection({
   subtitle = "From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.",
 }: WhoWeHelpSectionProps = {}) {
   return (
-    <section id="sectors" aria-labelledby="sectors-heading" className="py-16 md:py-24 bg-[#F9F9F6]">
+    <section id="sectors" aria-labelledby="sectors-heading" className="py-10 md:py-24 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-left sm:text-center max-w-4xl mx-auto mb-10 md:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">

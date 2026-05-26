@@ -60,7 +60,7 @@ export default function NotFound() {
 
               <FadeIn delay={0.2}>
                 <p
-                  className="mt-5 text-base sm:text-lg text-primary/70 leading-relaxed max-w-lg mx-auto"
+                  className="mt-5 text-base md:text-lg text-primary/70 leading-relaxed max-w-lg mx-auto"
                   data-testid="text-404-description"
                 >
                   The page you&apos;re looking for may have moved, been renamed, or

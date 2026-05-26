@@ -56,15 +56,26 @@ const SOCIAL_ICONS: Array<{ match: RegExp; Icon: typeof Linkedin }> = [
   { match: /facebook/i,  Icon: Facebook },
 ];
 
+const SOCIAL_FALLBACK_URLS: Array<{ match: RegExp; href: string }> = [
+  { match: /instagram/i, href: "https://www.instagram.com/tenth_rock/" },
+  { match: /facebook/i,  href: "https://www.facebook.com/tenthrocksolutions" },
+];
+
 const DEFAULT_SOCIAL_LINKS: FlatLink[] = [
   { label: "LinkedIn",  href: "#" },
   { label: "Twitter",   href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "Facebook",  href: "#" },
+  { label: "Instagram", href: "https://www.instagram.com/tenth_rock/" },
+  { label: "Facebook",  href: "https://www.facebook.com/tenthrocksolutions" },
 ];
 
 function pickIcon(label: string): typeof Linkedin {
   return SOCIAL_ICONS.find(s => s.match.test(label))?.Icon ?? Linkedin;
+}
+
+function resolveSocialHref(label: string, href: string): string {
+  const isPlaceholder = !href || href === "#" || /^https?:\/\/\/?$/.test(href);
+  if (!isPlaceholder) return href;
+  return SOCIAL_FALLBACK_URLS.find(s => s.match.test(label))?.href ?? href;
 }
 
 export default function Footer() {
@@ -127,11 +138,12 @@ export default function Footer() {
               {socialLinks.map((social) => {
                 const Icon = pickIcon(social.label);
                 const slug = social.label.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-                const isExternal = /^https?:\/\//i.test(social.href);
+                const href = resolveSocialHref(social.label, social.href);
+                const isExternal = /^https?:\/\//i.test(href);
                 return (
                   <a
-                    key={`${social.label}-${social.href}`}
-                    href={social.href}
+                    key={`${social.label}-${href}`}
+                    href={href}
                     aria-label={social.label}
                     data-testid={`link-social-${slug}`}
                     target={isExternal ? "_blank" : undefined}

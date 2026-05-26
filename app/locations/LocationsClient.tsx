@@ -61,7 +61,7 @@ export default function LocationsClient({ acf, globalSections }: Props) {
             aria-hidden="true"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#042940] via-[#042940]/80 via-60% to-[#042940]/15" />
+          <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <FadeIn className="max-w-2xl">
@@ -101,7 +101,7 @@ export default function LocationsClient({ acf, globalSections }: Props) {
       </section>
 
       <section
-        className="py-16 md:py-24 lg:py-32 bg-[#F9F9F6]"
+        className="py-10 md:py-24 lg:py-32 bg-[#F9F9F6]"
         aria-labelledby="areas-heading"
       >
         <div className="container mx-auto px-4 md:px-8">
@@ -117,21 +117,37 @@ export default function LocationsClient({ acf, globalSections }: Props) {
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 max-w-4xl mx-auto">
+          {/* Mobile/tablet: flat 2-column grid so every row has uniform spacing */}
+          <FadeIn className="lg:hidden grid grid-cols-2 gap-x-4 gap-y-3 max-w-4xl mx-auto">
+            {states.map((state, stateIndex) => (
+              <a
+                key={stateIndex}
+                href={`/locations/${state.toLowerCase().replace(/\s+/g, '-')}`}
+                className="group flex items-center gap-2 sm:gap-3 py-1 rounded-md hover:text-[#c5d520] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
+                data-testid={`state-mobile-${stateIndex}`}
+              >
+                <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6 text-[#c5d520] flex-shrink-0" />
+                <span className="font-bold text-primary text-sm sm:text-base group-hover:text-[#c5d520] group-hover:underline underline-offset-4 transition-colors">{state}</span>
+              </a>
+            ))}
+          </FadeIn>
+
+          {/* Desktop: 4 visually-separated columns */}
+          <div className="hidden lg:grid grid-cols-4 max-w-4xl mx-auto">
             {stateColumns.map((column, columnIndex) => (
               <FadeIn
                 key={columnIndex}
-                className={`space-y-3 sm:space-y-4 lg:px-6 ${columnIndex < stateColumns.length - 1 ? 'lg:border-r lg:border-primary/10' : ''}`}
+                className={`space-y-4 px-6 ${columnIndex < stateColumns.length - 1 ? 'border-r border-primary/10' : ''}`}
               >
                 {column.map((state, stateIndex) => (
                   <a
                     key={stateIndex}
                     href={`/locations/${state.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="flex items-center gap-2 sm:gap-3 py-1 rounded-md hover:text-[#c5d520] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
+                    className="group flex items-center gap-3 py-1 rounded-md hover:text-[#c5d520] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
                     data-testid={`state-${columnIndex}-${stateIndex}`}
                   >
-                    <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6 text-[#c5d520] flex-shrink-0" />
-                    <span className="font-bold text-primary text-sm sm:text-base group-hover:text-[#c5d520] hover:text-[#c5d520] transition-colors">{state}</span>
+                    <CheckSquare className="w-6 h-6 text-[#c5d520] flex-shrink-0" />
+                    <span className="font-bold text-primary text-base group-hover:text-[#c5d520] group-hover:underline underline-offset-4 transition-colors">{state}</span>
                   </a>
                 ))}
               </FadeIn>
