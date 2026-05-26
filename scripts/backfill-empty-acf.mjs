@@ -54,7 +54,7 @@ const SERVICE_DEFAULTS = {
   para1_badge: "Why It Matters",
   para1_heading: "Built for the Demands of Modern Business",
   para1_body: "Managing waste across hundreds of locations is a competitive advantage, not a chore. Tenth Rock replaces fragmented vendors with a single, accountable partner to save your team time and budget.",
-  para1_image: "/images/stock/built-for-business-aerial-city.jpg",
+  para1_image: "/images/stock/built-for-business-aerial-city.webp",
   para1_image_alt: "Aerial view of a sprawling modern city with commercial districts",
   para1_bullets: [
     { bullet_text: "Reduce waste management overhead by up to 30%" },
@@ -65,7 +65,7 @@ const SERVICE_DEFAULTS = {
   para2_badge: "Our Commitment",
   para2_heading: "Sustainability Without Compromise",
   para2_body: "Environmental responsibility and operational efficiency go hand in hand. Our approach supports waste diversion efforts without disrupting your service or adding unnecessary complexity. We work with recovery and processing facilities across the country to help reduce landfill use while maintaining the reliable operations your business depends on.",
-  para2_image: "/images/stock/sustainability-park-skyline.jpg",
+  para2_image: "/images/stock/sustainability-park-skyline.webp",
   para2_image_alt: "Open green park with city skyline in the background, representing sustainable urban operations",
   para2_bullets: [
     { bullet_text: "Practical waste diversion and recovery" },
@@ -79,7 +79,7 @@ const SERVICE_DEFAULTS = {
     { step_title: "Scope", step_desc: "Your project manager scopes the job and sends you a flat-rate quote." },
     { step_title: "Dispatch", step_desc: "Crews arrive on schedule. You get real-time updates and photo documentation when the job is done." },
   ],
-  cta_image: "/images/stock/built-for-business-aerial-city.jpg",
+  cta_image: "/images/stock/built-for-business-aerial-city.webp",
   cta_image_alt: "Tenth Rock crews coordinating commercial waste services across multiple sites",
   about_description: "We deliver reliable commercial waste service through one accountable point of contact, replacing fragmented vendor networks with a single, consistent program tailored to your business.",
   about_bullets: [
@@ -99,7 +99,7 @@ const INDUSTRY_DEFAULTS = {
   para1_badge: "Industry Expertise",
   para1_heading: "Programs Built Around How You Operate",
   para1_body: "Every industry has unique waste challenges. From volume fluctuations to tight timelines, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean without disrupting the work that matters most.",
-  para1_image: "/images/stock/programs-built-aerial-buildings.jpg",
+  para1_image: "/images/stock/programs-built-aerial-buildings.webp",
   para1_image_alt: "Aerial view of high-rise condominium and office buildings served by Tenth Rock",
   para1_bullets: [
     { bullet_text: "Custom programs designed around your operational schedule" },
@@ -121,7 +121,7 @@ const INDUSTRY_DEFAULTS = {
   para3_badge: "Sustainability Focus",
   para3_heading: "Environmental Responsibility Built In",
   para3_body: "Responsibility is the baseline for every project we manage. By utilizing local recovery and processing facilities across the country, we move waste more effectively to keep your sites clear and materials out of landfills. We provide the visibility you need to understand your property's waste flow without adding a single step to your daily operations.",
-  para3_image: "/images/stock/sustainability-park-with-city.jpg",
+  para3_image: "/images/stock/sustainability-park-with-city.webp",
   para3_image_alt: "Lush green park beside a city skyline reflecting Tenth Rock's sustainability focus",
   para3_bullets: [
     { bullet_text: "Waste diversion and recycling solutions" },
