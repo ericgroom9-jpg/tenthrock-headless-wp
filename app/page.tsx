@@ -10,10 +10,21 @@ export async function generateMetadata() {
     title: data?.seoMetadata?.title || 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
     description: data?.seoMetadata?.metaDesc || 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
     openGraph: {
-      title: data?.seoMetadata?.title || 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
-      description: data?.seoMetadata?.metaDesc || 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
+      title: data?.seoMetadata?.opengraphTitle || data?.seoMetadata?.title || 'Tenth Rock Waste Solutions | Nationwide Commercial Waste Management',
+      description: data?.seoMetadata?.opengraphDescription || data?.seoMetadata?.metaDesc || 'Nationwide commercial waste management: waste removal, pressure washing, dumpster rental, and hauling services. 24/7 dispatch across 48 states.',
       type: 'website',
+      ...(data?.seoMetadata?.opengraphImage ? { images: [data.seoMetadata.opengraphImage] } : {}),
     },
+    ...(data?.seoMetadata?.twitterImage || data?.seoMetadata?.opengraphImage
+      ? {
+          twitter: {
+            card: 'summary_large_image' as const,
+            title: data?.seoMetadata?.twitterTitle || data?.seoMetadata?.title || 'Tenth Rock Waste Solutions',
+            description: data?.seoMetadata?.twitterDescription || data?.seoMetadata?.metaDesc || '',
+            images: [data.seoMetadata.twitterImage || data.seoMetadata.opengraphImage!],
+          },
+        }
+      : {}),
   };
 }
 
