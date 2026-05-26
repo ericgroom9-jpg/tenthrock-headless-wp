@@ -31,6 +31,8 @@ import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import FaqSection from "@/components/shared/FaqSection";
 import StatsSection from "@/components/shared/StatsSection";
 import ZipCheckForm from "@/components/shared/ZipCheckForm";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
+import type { SeoMetadata } from "@/shared/schema";
 
 const logoWhite = "/images/logos/Green-White-Logo.png";
 
@@ -83,6 +85,7 @@ interface ServiceTemplateProps {
  howItWorksSteps?: { title: string; desc: string }[];
  ctaImage?: string;
  ctaImageAlt?: string;
+ seoMetadata?: SeoMetadata | null;
 }
 
 const defaultProcessSteps = [
@@ -205,6 +208,7 @@ export default function ServiceTemplate({
  howItWorksSteps,
  ctaImage,
  ctaImageAlt,
+ seoMetadata,
 }: ServiceTemplateProps) {
  const router = useRouter();
  const [activeStep, setActiveStep] = useState(0);
@@ -229,6 +233,7 @@ export default function ServiceTemplate({
 
  return (
  <div className="flex flex-col min-h-screen bg-white">
+ <JsonLdSchema seo={seoMetadata} />
  <a href="#main-content" className="skip-link" data-testid="skip-link">
  Skip to main content
  </a>

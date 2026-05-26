@@ -12,6 +12,8 @@ import FaqSection from "@/components/shared/FaqSection";
 import LocationSection from "@/components/shared/LocationSection";
 import ProcessSection from "@/components/shared/ProcessSection";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
+import type { SeoMetadata } from "@/shared/schema";
 
 interface BulletPoint {
  title: string;
@@ -43,6 +45,7 @@ interface IndustryTemplateProps {
  paragraphSection1?: ParagraphSection;
  paragraphSection2?: ParagraphSection;
  paragraphSection3?: ParagraphSection;
+ seoMetadata?: SeoMetadata | null;
 }
 
 const defaultParagraphSection1: ParagraphSection = {
@@ -98,11 +101,13 @@ export default function IndustryTemplate({
  paragraphSection1 = defaultParagraphSection1,
  paragraphSection2 = defaultParagraphSection2,
  paragraphSection3 = defaultParagraphSection3,
+ seoMetadata,
 }: IndustryTemplateProps) {
  const [activeBullet, setActiveBullet] = useState(0);
 
  return (
  <div className="min-h-screen bg-[#F9F9F6] font-sans text-primary selection:bg-secondary selection:text-primary">
+ <JsonLdSchema seo={seoMetadata} />
  <a href="#main-content" className="skip-link" data-testid="skip-link">
  Skip to main content
  </a>
