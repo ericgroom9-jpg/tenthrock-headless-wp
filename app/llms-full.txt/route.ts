@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getFrontendUrl } from '@/lib/seo-proxy';
 import { storage } from '@/lib/storage';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 1800;
 
 export async function GET() {
   const frontendUrl = await getFrontendUrl();

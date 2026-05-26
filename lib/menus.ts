@@ -11,12 +11,11 @@
  */
 import { WP_CACHE_TAG } from './wordpress';
 
-// Menus are tiny and editors expect instant feedback after saving in WP
-// Appearance → Menus. We rely on the `wordpress` cache tag for invalidation,
-// but if the WP→Next revalidate webhook isn't reachable (e.g. on a dev
-// preview whose URL doesn't match TR_REVALIDATE_URLS), we'd be stuck on a
-// stale copy. So: short 30s window AND tagged for explicit invalidation.
-const MENU_REVALIDATE_SECONDS = 30;
+// 30-min ISR window matching WP_REVALIDATE_SECONDS. Editor edits propagate
+// instantly via the `wordpress` cache tag fired by the /api/revalidate
+// webhook (snippet #14), so a short polling interval is unnecessary and
+// would flood WP with redundant menu fetches on every cold render.
+const MENU_REVALIDATE_SECONDS = 1800;
 
 export type MenuLocation =
   | 'primary'

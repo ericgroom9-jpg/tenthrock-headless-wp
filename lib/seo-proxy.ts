@@ -52,7 +52,7 @@ export async function proxyWordPressFile(
     const authHeaders = getWordPressAuthHeaders();
     const response = await fetch(`${wpBaseUrl}${wpPath}`, { 
       headers: authHeaders,
-      next: { revalidate: 3600 }
+      next: { revalidate: 1800, tags: ['wordpress'] }
     });
     
     if (!response.ok) {
