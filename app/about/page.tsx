@@ -1,5 +1,6 @@
-import { fetchAboutAcf, fetchGlobalSections } from "@/lib/wordpress";
+import { fetchAboutAcf, fetchGlobalSections, fetchPageTemplateSeo } from "@/lib/wordpress";
 import AboutClient from "./AboutClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,9 +13,15 @@ export async function generateMetadata() {
 }
 
 export default async function AboutPage() {
-  const [acf, globalSections] = await Promise.all([
+  const [acf, globalSections, seo] = await Promise.all([
     fetchAboutAcf(),
     fetchGlobalSections(),
+    fetchPageTemplateSeo("template-about", "about"),
   ]);
-  return <AboutClient acf={acf} globalSections={globalSections} />;
+  return (
+    <>
+      <JsonLdSchema seo={acf?.seoMetadata || seo} />
+      <AboutClient acf={acf} globalSections={globalSections} />
+    </>
+  );
 }

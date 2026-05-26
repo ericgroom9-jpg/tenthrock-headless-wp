@@ -1,5 +1,6 @@
-import { fetchBookCallAcf } from "@/lib/wordpress";
+import { fetchBookCallAcf, fetchPageTemplateSeo } from "@/lib/wordpress";
 import BookACallClient from "./BookACallClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,6 +13,14 @@ export async function generateMetadata() {
 }
 
 export default async function BookACallPage() {
-  const data = await fetchBookCallAcf();
-  return <BookACallClient data={data} />;
+  const [data, seo] = await Promise.all([
+    fetchBookCallAcf(),
+    fetchPageTemplateSeo("template-book-a-call", "book-a-call"),
+  ]);
+  return (
+    <>
+      <JsonLdSchema seo={data?.seoMetadata || seo} />
+      <BookACallClient data={data} />
+    </>
+  );
 }

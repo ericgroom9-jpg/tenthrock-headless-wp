@@ -37,6 +37,9 @@ const GET_PAGE_TEMPLATE_QUERY = gql`
         twitterImage {
           sourceUrl
         }
+        schema {
+          raw
+        }
       }
     }
   }
@@ -61,6 +64,9 @@ const GET_LANDING_PAGE_SECTIONS_QUERY = gql`
         twitterDescription
         twitterImage {
           sourceUrl
+        }
+        schema {
+          raw
         }
       }
       landingSections {
@@ -155,6 +161,9 @@ const GET_LANDING_PAGE_PREVIEW_QUERY = gql`
         twitterImage {
           sourceUrl
         }
+        schema {
+          raw
+        }
       }
       landingSections {
         ... on LandingSectionsHeroSection {
@@ -237,6 +246,16 @@ interface WpSeo {
   twitterTitle?: string;
   twitterDescription?: string;
   twitterImage?: { sourceUrl: string } | null;
+  schema?: { raw: string } | null;
+}
+
+function rewriteSchemaHost(raw?: string): string | undefined {
+  if (!raw) return undefined;
+  const wpOrigin = (process.env.WP_API_URL || '').replace(/\/graphql\/?$/, '').replace(/\/$/, '');
+  const siteOrigin = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || 'https://www.tenthrock.com').replace(/\/$/, '');
+  if (!wpOrigin || wpOrigin === siteOrigin) return raw;
+  const escaped = wpOrigin.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return raw.replace(new RegExp(escaped, 'g'), siteOrigin);
 }
 
 interface WpPageTemplateResponse {
@@ -358,6 +377,7 @@ function transformSeoData(seo: WpSeo | null | undefined) {
     twitterTitle: seo.twitterTitle,
     twitterDescription: seo.twitterDescription,
     twitterImage: seo.twitterImage?.sourceUrl,
+    schema: rewriteSchemaHost(seo.schema?.raw),
   };
 }
 
@@ -376,6 +396,7 @@ export interface PageTemplateInfo {
     twitterTitle?: string;
     twitterDescription?: string;
     twitterImage?: string;
+    schema?: string;
   };
 }
 

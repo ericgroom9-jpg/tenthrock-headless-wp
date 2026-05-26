@@ -1,5 +1,6 @@
-import { fetchThankYouAcf } from "@/lib/wordpress";
+import { fetchThankYouAcf, fetchPageTemplateSeo } from "@/lib/wordpress";
 import ThankYouClient from "./ThankYouClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,6 +13,14 @@ export async function generateMetadata() {
 }
 
 export default async function ThankYouPage() {
-  const data = await fetchThankYouAcf();
-  return <ThankYouClient data={data} />;
+  const [data, seo] = await Promise.all([
+    fetchThankYouAcf(),
+    fetchPageTemplateSeo("template-thank-you", "thank-you"),
+  ]);
+  return (
+    <>
+      <JsonLdSchema seo={data?.seoMetadata || seo} />
+      <ThankYouClient data={data} />
+    </>
+  );
 }

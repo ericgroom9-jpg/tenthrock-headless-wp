@@ -6,6 +6,7 @@ import { fetchPagePreviewById, fetchServiceWithAcf, fetchIndustryWithAcf } from 
 import { isLandingBuilderEnabled } from '@/lib/config/features';
 import ServiceTemplate from '@/components/services/ServiceTemplate';
 import IndustryTemplate from '@/components/industries/IndustryTemplate';
+import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
 import type { Metadata } from 'next';
 
 import { 
@@ -113,6 +114,7 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
       if (landingData && landingData.sections.length > 0) {
         return (
           <Layout isPreview={isPreview}>
+            <JsonLdSchema seo={templateInfo.seo} />
             <LandingPageRenderer data={landingData} isPreview={isPreview} />
           </Layout>
         );
@@ -127,11 +129,21 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
   ]);
 
   if (service) {
-    return <ServiceTemplate {...service} />;
+    return (
+      <>
+        <JsonLdSchema seo={service.seoMetadata} />
+        <ServiceTemplate {...service} />
+      </>
+    );
   }
 
   if (industry) {
-    return <IndustryTemplate {...industry} />;
+    return (
+      <>
+        <JsonLdSchema seo={industry.seoMetadata} />
+        <IndustryTemplate {...industry} />
+      </>
+    );
   }
   
   let page;
@@ -151,6 +163,7 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
 
   return (
     <Layout isPreview={isPreview}>
+      <JsonLdSchema seo={page.seoMetadata} />
       <div className="py-12 md:py-16">
         <div className="container max-w-4xl mx-auto px-4">
           <article>

@@ -274,6 +274,9 @@ const SEO_FRAGMENT = gql`
     twitterImage {
       sourceUrl
     }
+    schema {
+      raw
+    }
   }
 `;
 
@@ -785,6 +788,7 @@ interface WpSeo {
   twitterTitle: string;
   twitterDescription: string;
   twitterImage: { sourceUrl: string } | null;
+  schema: { raw: string | null } | null;
 }
 
 interface WpTaxonomyTerm {
@@ -1112,10 +1116,36 @@ export interface CptEntry {
   seoMetadata?: SeoMetadata;
 }
 
+// Rewrite WordPress host -> public site host inside Yoast's JSON-LD schema.
+// Yoast emits absolute URLs pointing at the WP origin; for the public site we
+// want those same URLs to point at the frontend. We derive the WP origin from
+// WORDPRESS_GRAPHQL_URL / WP_API_URL (stripping `/graphql`) and the public
+// origin from NEXT_PUBLIC_SITE_URL or SITE_URL (default https://www.tenthrock.com).
+const rewriteSchemaHost = (raw: string): string => {
+  try {
+    const wpEndpoint =
+      process.env.WORDPRESS_GRAPHQL_URL || process.env.WP_API_URL || '';
+    if (!wpEndpoint) return raw;
+    const wpOrigin = new URL(wpEndpoint).origin;
+    const siteOrigin = (
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      process.env.SITE_URL ||
+      'https://www.tenthrock.com'
+    ).replace(/\/+$/, '');
+    if (!wpOrigin || wpOrigin === siteOrigin) return raw;
+    // Replace bare origin occurrences; works for both JSON string-escaped and
+    // raw forms because Yoast emits the URLs as plain JSON string values.
+    return raw.split(wpOrigin).join(siteOrigin);
+  } catch {
+    return raw;
+  }
+};
+
 // Transform WordPress SEO data to our schema format
 const transformSeoData = (seo: WpSeo | null): SeoMetadata | undefined => {
   if (!seo) return undefined;
   
+  const rawSchema = seo.schema?.raw || undefined;
   return {
     title: seo.title,
     metaDesc: seo.metaDesc,
@@ -1129,6 +1159,7 @@ const transformSeoData = (seo: WpSeo | null): SeoMetadata | undefined => {
     twitterTitle: seo.twitterTitle,
     twitterDescription: seo.twitterDescription,
     twitterImage: seo.twitterImage?.sourceUrl,
+    schema: rawSchema ? rewriteSchemaHost(rawSchema) : undefined,
   };
 };
 
@@ -2622,6 +2653,40 @@ async function resolveTemplateSlug(wpTemplate: string, fallback: string): Promis
   const map = await fetchPageTemplateSlugMap();
   return map[wpTemplate] || fallback;
 }
+
+// Lightweight SEO-only fetch for page templates. Use this when the matching
+// ACF fetcher may return null (because its ACF group is empty in WP) but we
+// still want the Yoast SEO schema for the page. Resolves slug via the same
+// template-slug map so editor renames propagate.
+// Look up by slug-name via the pages list rather than `page(id, URI)`, since URIs
+// like /services/ and /industries/ collide with CPT archive URIs and return null
+// from the singular `page` lookup. The `where: {name: ...}` filter resolves the
+// page entity directly by its post_name regardless of permalink collisions.
+const GET_PAGE_SEO_QUERY = gql`
+  ${SEO_FRAGMENT}
+  query GetPageSeoBySlug($slug: String!) {
+    pages(first: 1, where: { name: $slug }) {
+      nodes { seo { ...SeoFields } }
+    }
+  }
+`;
+
+export const fetchPageTemplateSeo = cache(
+  async (wpTemplate: string, fallbackSlug: string): Promise<SeoMetadata | undefined> => {
+    const client = getWpClient();
+    try {
+      const slug = await resolveTemplateSlug(wpTemplate, fallbackSlug);
+      const { pages } = await client.request<{ pages: { nodes: Array<{ seo: WpSeo | null }> } }>(
+        GET_PAGE_SEO_QUERY,
+        { slug },
+      );
+      return transformSeoData(pages?.nodes?.[0]?.seo || null);
+    } catch (error) {
+      console.error(`[WP] Failed to fetch SEO for ${wpTemplate}:`, error);
+      return undefined;
+    }
+  },
+);
 
 function hasData(obj: Record<string, unknown> | null): boolean {
   if (!obj) return false;

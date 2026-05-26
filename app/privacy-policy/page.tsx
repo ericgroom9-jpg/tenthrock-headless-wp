@@ -1,6 +1,7 @@
-import { fetchPrivacyPolicyAcf } from "@/lib/wordpress";
+import { fetchPrivacyPolicyAcf, fetchPageTemplateSeo } from "@/lib/wordpress";
 import { PRIVACY_POLICY_HTML } from "@/lib/legal-content";
 import PrivacyPolicyClient from "./PrivacyPolicyClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -13,7 +14,15 @@ export async function generateMetadata() {
 }
 
 export default async function PrivacyPolicyPage() {
-  const data = await fetchPrivacyPolicyAcf();
+  const [data, seo] = await Promise.all([
+    fetchPrivacyPolicyAcf(),
+    fetchPageTemplateSeo("template-privacy-policy", "privacy-policy"),
+  ]);
   const content = data?.bodyContent?.trim() || PRIVACY_POLICY_HTML;
-  return <PrivacyPolicyClient data={data} content={content} />;
+  return (
+    <>
+      <JsonLdSchema seo={data?.seoMetadata || seo} />
+      <PrivacyPolicyClient data={data} content={content} />
+    </>
+  );
 }

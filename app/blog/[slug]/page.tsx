@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { draftMode } from 'next/headers';
 import { Layout } from '@/components/layout/Layout';
 import { PostContent } from '@/components/posts/PostContent';
+import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
 import { storage } from '@/lib/storage';
 import { fetchPostPreviewBySlug, fetchPostPreview, fetchPostPreviewById } from '@/lib/wordpress';
 import type { Metadata } from 'next';
@@ -90,6 +91,7 @@ export default async function BlogPost({ params, searchParams }: PageProps) {
 
   return (
     <Layout isPreview={isPreview}>
+      <JsonLdSchema seo={post.seoMetadata} />
       <div className="py-12 md:py-16">
         <div className="container max-w-7xl mx-auto px-4">
           <PostContent post={post} />

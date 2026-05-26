@@ -1,5 +1,6 @@
-import { fetchJoinNetworkAcf } from "@/lib/wordpress";
+import { fetchJoinNetworkAcf, fetchPageTemplateSeo } from "@/lib/wordpress";
 import JoinOurNetworkClient from "./JoinOurNetworkClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,6 +13,14 @@ export async function generateMetadata() {
 }
 
 export default async function JoinOurNetworkPage() {
-  const acf = await fetchJoinNetworkAcf();
-  return <JoinOurNetworkClient acf={acf} />;
+  const [acf, seo] = await Promise.all([
+    fetchJoinNetworkAcf(),
+    fetchPageTemplateSeo("template-join-our-network", "join-our-network"),
+  ]);
+  return (
+    <>
+      <JsonLdSchema seo={acf?.seoMetadata || seo} />
+      <JoinOurNetworkClient acf={acf} />
+    </>
+  );
 }

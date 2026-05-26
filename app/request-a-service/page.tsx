@@ -1,5 +1,6 @@
-import { fetchRequestServiceAcf } from "@/lib/wordpress";
+import { fetchRequestServiceAcf, fetchPageTemplateSeo } from "@/lib/wordpress";
 import RequestAServiceClient from "./RequestAServiceClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,6 +13,14 @@ export async function generateMetadata() {
 }
 
 export default async function RequestAServicePage() {
-  const data = await fetchRequestServiceAcf();
-  return <RequestAServiceClient data={data} />;
+  const [data, seo] = await Promise.all([
+    fetchRequestServiceAcf(),
+    fetchPageTemplateSeo("template-request-a-service", "request-a-service"),
+  ]);
+  return (
+    <>
+      <JsonLdSchema seo={data?.seoMetadata || seo} />
+      <RequestAServiceClient data={data} />
+    </>
+  );
 }

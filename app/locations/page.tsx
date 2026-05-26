@@ -1,5 +1,6 @@
-import { fetchLocationsPageAcf, fetchGlobalSections } from "@/lib/wordpress";
+import { fetchLocationsPageAcf, fetchGlobalSections, fetchPageTemplateSeo } from "@/lib/wordpress";
 import LocationsClient from "./LocationsClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,9 +13,15 @@ export async function generateMetadata() {
 }
 
 export default async function LocationsPage() {
-  const [acf, globalSections] = await Promise.all([
+  const [acf, globalSections, seo] = await Promise.all([
     fetchLocationsPageAcf(),
     fetchGlobalSections(),
+    fetchPageTemplateSeo("template-locations", "locations"),
   ]);
-  return <LocationsClient acf={acf} globalSections={globalSections} />;
+  return (
+    <>
+      <JsonLdSchema seo={acf?.seoMetadata || seo} />
+      <LocationsClient acf={acf} globalSections={globalSections} />
+    </>
+  );
 }

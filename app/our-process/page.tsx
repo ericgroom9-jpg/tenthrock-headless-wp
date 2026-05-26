@@ -1,5 +1,6 @@
-import { fetchOurProcessAcf, fetchGlobalSections } from "@/lib/wordpress";
+import { fetchOurProcessAcf, fetchGlobalSections, fetchPageTemplateSeo } from "@/lib/wordpress";
 import OurProcessClient from "./OurProcessClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,9 +13,15 @@ export async function generateMetadata() {
 }
 
 export default async function OurProcessPage() {
-  const [acf, globalSections] = await Promise.all([
+  const [acf, globalSections, seo] = await Promise.all([
     fetchOurProcessAcf(),
     fetchGlobalSections(),
+    fetchPageTemplateSeo("template-our-process", "our-process"),
   ]);
-  return <OurProcessClient acf={acf} globalSections={globalSections} />;
+  return (
+    <>
+      <JsonLdSchema seo={acf?.seoMetadata || seo} />
+      <OurProcessClient acf={acf} globalSections={globalSections} />
+    </>
+  );
 }

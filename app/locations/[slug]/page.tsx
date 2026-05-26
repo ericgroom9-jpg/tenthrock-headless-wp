@@ -2,6 +2,7 @@ import { fetchLocationWithAcf } from "@/lib/wordpress";
 import { getStateData } from "@/lib/data/state-cities";
 import { getStateLocationContent } from "@/lib/data/state-location-content";
 import LocationTemplateClient from "./LocationTemplateClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -53,19 +54,22 @@ export default async function LocationTemplatePage({ params }: PageProps) {
   const faqs = (wpData?.faqs?.length ? wpData.faqs : null) || localContent?.faqs || [];
 
   return (
-    <LocationTemplateClient
-      slug={slug}
-      locationName={locationName}
-      heroSubtitle={heroSubtitle}
-      heroImage={heroImage}
-      aboutDescription={aboutDescription}
-      aboutBullets={aboutBullets}
-      trustedDescription={trustedDescription}
-      infoHeading={infoHeading}
-      infoBody={infoBody}
-      abbreviation={abbreviation}
-      cities={cities}
-      faqs={faqs}
-    />
+    <>
+      <JsonLdSchema seo={wpData?.seoMetadata} />
+      <LocationTemplateClient
+        slug={slug}
+        locationName={locationName}
+        heroSubtitle={heroSubtitle}
+        heroImage={heroImage}
+        aboutDescription={aboutDescription}
+        aboutBullets={aboutBullets}
+        trustedDescription={trustedDescription}
+        infoHeading={infoHeading}
+        infoBody={infoBody}
+        abbreviation={abbreviation}
+        cities={cities}
+        faqs={faqs}
+      />
+    </>
   );
 }

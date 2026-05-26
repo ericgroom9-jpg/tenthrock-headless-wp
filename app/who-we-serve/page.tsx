@@ -1,5 +1,6 @@
-import { fetchWhoWeServeAcf, fetchGlobalSections } from "@/lib/wordpress";
+import { fetchWhoWeServeAcf, fetchGlobalSections, fetchPageTemplateSeo } from "@/lib/wordpress";
 import WhoWeServeClient from "./WhoWeServeClient";
+import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
 
 export const revalidate = 1800;
 
@@ -12,9 +13,15 @@ export async function generateMetadata() {
 }
 
 export default async function WhoWeServePage() {
-  const [acf, globalSections] = await Promise.all([
+  const [acf, globalSections, seo] = await Promise.all([
     fetchWhoWeServeAcf(),
     fetchGlobalSections(),
+    fetchPageTemplateSeo("template-who-we-serve", "who-we-serve"),
   ]);
-  return <WhoWeServeClient acf={acf} globalSections={globalSections} />;
+  return (
+    <>
+      <JsonLdSchema seo={acf?.seoMetadata || seo} />
+      <WhoWeServeClient acf={acf} globalSections={globalSections} />
+    </>
+  );
 }

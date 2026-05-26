@@ -18,6 +18,7 @@ export const seoMetadataSchema = z.object({
   twitterDescription: z.string().optional(),
   twitterImage: z.string().optional(),
   twitterCard: z.string().optional(),
+  schema: z.string().optional(),
 });
 
 export type SeoMetadata = z.infer<typeof seoMetadataSchema>;

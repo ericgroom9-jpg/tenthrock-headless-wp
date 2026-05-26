@@ -1,5 +1,6 @@
 import { fetchHomepageAcf, fetchGlobalSections, fetchAllTestimonials, fetchAllCaseStudies, fetchAllPartnerLogos } from '@/lib/wordpress';
 import HomeClient from '@/components/home/HomeClient';
+import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
 
 export const revalidate = 1800;
 
@@ -25,12 +26,15 @@ export default async function Home() {
     fetchAllPartnerLogos(),
   ]);
   return (
-    <HomeClient
-      acf={acf}
-      globalSections={globalSections}
-      testimonials={testimonials}
-      caseStudies={caseStudies}
-      partnerLogos={partnerLogos}
-    />
+    <>
+      <JsonLdSchema seo={acf?.seoMetadata} />
+      <HomeClient
+        acf={acf}
+        globalSections={globalSections}
+        testimonials={testimonials}
+        caseStudies={caseStudies}
+        partnerLogos={partnerLogos}
+      />
+    </>
   );
 }
