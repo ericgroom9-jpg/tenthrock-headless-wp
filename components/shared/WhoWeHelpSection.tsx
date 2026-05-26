@@ -26,7 +26,7 @@ function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: num
           src={sector.img}
           alt={sector.title}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(min-width: 1280px) 320px, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-700 group-hover:scale-110 group-focus-within:scale-110"
           loading="lazy"
         />

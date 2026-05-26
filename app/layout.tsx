@@ -21,18 +21,31 @@ export const metadata: Metadata = {
   description: "Leading commercial waste management solutions across 48 states. Dumpster rental, emergency overflow, event services, and centralized waste programs for businesses.",
 };
 
+function deriveWpOrigin(): string | null {
+  const url = process.env.WORDPRESS_GRAPHQL_URL || process.env.WORDPRESS_REST_URL;
+  if (!url) return null;
+  try {
+    return new URL(url).origin;
+  } catch {
+    return null;
+  }
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const wpOrigin = deriveWpOrigin();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://tenthrock.sherstaging.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://tenthrock.sherstaging.com" />
-        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        {wpOrigin && (
+          <>
+            <link rel="preconnect" href={wpOrigin} crossOrigin="anonymous" />
+            <link rel="dns-prefetch" href={wpOrigin} />
+          </>
+        )}
       </head>
       <body className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`} suppressHydrationWarning>
         <GlobalScripts />

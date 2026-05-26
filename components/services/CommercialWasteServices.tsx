@@ -248,7 +248,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  <div 
  className="absolute inset-0 opacity-10 mix-blend-overlay" 
  style={{ 
- backgroundImage: `url(/assets_export/generated_images/line_art_us_map_illustration.png)`, 
+ backgroundImage: `url(/assets_export/generated_images/line_art_us_map_illustration.webp)`, 
  backgroundSize: 'cover', 
  backgroundPosition: 'center' 
  }} 

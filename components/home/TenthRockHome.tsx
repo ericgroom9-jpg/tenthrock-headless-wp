@@ -113,7 +113,7 @@ const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
 // Hero video
 const heroVideo = "/videos/hero-bg.mp4";
-const heroPoster = "/videos/hero-poster.jpg";
+const heroPoster = "/videos/hero-poster.webp";
 
 // Homepage testimonials
 const homeTestimonials = [
