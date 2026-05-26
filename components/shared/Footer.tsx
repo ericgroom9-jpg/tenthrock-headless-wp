@@ -104,7 +104,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white py-20 border-t border-white/5">
+    <footer role="contentinfo" aria-label="Site footer" className="bg-[#042940] text-white pt-20 pb-8 border-t border-white/5">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 xl:grid-cols-[2fr_1fr_1fr_1fr_2fr] gap-12 lg:gap-14 xl:gap-10 mb-16">
           
