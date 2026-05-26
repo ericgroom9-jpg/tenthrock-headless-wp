@@ -2,15 +2,17 @@ import { fetchCommercialWasteAcf, fetchGlobalSections, fetchPageTemplateSeo } fr
 import type { CommercialWasteTemplateData, GlobalSectionsData } from "@/lib/wordpress";
 import CommercialWasteServices from "@/components/services/CommercialWasteServices";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
+import { buildPageMetadata } from "@/lib/seo-metadata";
 
 export const revalidate = 1800;
 
 export async function generateMetadata() {
   const data = await fetchCommercialWasteAcf();
-  return {
-    title: data?.seoMetadata?.title || "Commercial Waste Services | Tenth Rock",
-    description: data?.seoMetadata?.metaDesc || "Nationwide commercial waste services including emergency removal, dumpster rentals, and waste advisory.",
-  };
+  return buildPageMetadata({
+    seo: data?.seoMetadata,
+    fallbackTitle: "Commercial Waste Services | Tenth Rock",
+    fallbackDescription: "Nationwide commercial waste services including emergency removal, dumpster rentals, and waste advisory.",
+  });
 }
 
 export default async function CommercialWasteServicesPage() {
