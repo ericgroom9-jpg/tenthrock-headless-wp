@@ -184,7 +184,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
       <section aria-labelledby="faq-hero-heading" className="relative pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-44 lg:pb-32 overflow-hidden bg-[#042940]">
         <div className="absolute inset-0 z-0">
           <Image
-            src={acf?.heroImage || "/images/stock/clean-city-hero.jpg"}
+            src={acf?.heroImage || "/images/stock/clean-city-hero.webp"}
             alt=""
             aria-hidden="true"
             fill

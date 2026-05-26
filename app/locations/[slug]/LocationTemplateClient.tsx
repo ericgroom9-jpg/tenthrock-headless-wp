@@ -24,7 +24,7 @@ const LocationSection = dynamic(() => import("@/components/shared/LocationSectio
 const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
 const ProcessSection = dynamic(() => import("@/components/shared/ProcessSection"));
 
-const imgInfoBlock = "/images/stock/service-dumpster-rental-v2.jpg";
+const imgInfoBlock = "/images/stock/service-dumpster-rental-v2.webp";
 
 interface LocationTemplateClientProps {
  slug: string;

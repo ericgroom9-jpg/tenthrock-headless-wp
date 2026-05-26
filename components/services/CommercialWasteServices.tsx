@@ -39,10 +39,10 @@ import ZipCheckForm from "@/components/shared/ZipCheckForm";
 const logoWhite = "/images/logos/Green-White-Logo.png";
 
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
-const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
-const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
+const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.webp";
+const imgServiceEventStadium = "/images/stock/service-event-stadium.webp";
 const imgServiceMaintenance = "/images/stock/service-maintenance.jpg";
-const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
+const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.webp";
 const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.jpg";
 
 const imgCaseStudyMain = "/images/stock/case-study-main.jpg";

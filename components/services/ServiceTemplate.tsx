@@ -37,9 +37,9 @@ import type { SeoMetadata } from "@/shared/schema";
 const logoWhite = "/images/logos/Green-White-Logo.png";
 
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
-const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
-const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
-const imgParkWater = "/images/stock/sustainability-park-skyline.jpg";
+const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.webp";
+const imgServiceEventStadium = "/images/stock/service-event-stadium.webp";
+const imgParkWater = "/images/stock/sustainability-park-skyline.webp";
 
 interface ParagraphSection {
  badge: string;
@@ -129,7 +129,7 @@ const defaultParagraphSection1: ParagraphSection = {
  badge: "Why It Matters",
  heading: "Built for the Demands of Modern Business",
  body: "Managing waste across hundreds of locations is a competitive advantage, not a chore. Tenth Rock replaces fragmented vendors with a single, accountable partner to save your team time and budget.",
- image: "/images/stock/built-for-business-aerial-city.jpg",
+ image: "/images/stock/built-for-business-aerial-city.webp",
  imageAlt: "Aerial view of a sprawling modern city with commercial districts",
  bulletPoints: [
  "Reduce waste management overhead by up to 30%",

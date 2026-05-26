@@ -62,11 +62,11 @@ export default function AboutClient({ acf, globalSections }: Props) {
   const storyTagline = acf?.storyTagline || "Our Story";
   const storyHeading = acf?.storyHeading || "Built From the Ground Up to Fix a Broken Industry";
   const storyBody = acf?.storyBody || defaultStoryBody;
-  const storyImage = acf?.storyImage || "/images/stock/about-our-story-clearwater-beach.jpg";
+  const storyImage = acf?.storyImage || "/images/stock/about-our-story-clearwater-beach.webp";
   const storyImageAlt = acf?.storyImageAlt || "Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina, near Tenth Rock headquarters";
   const coreHeading = acf?.coreHeading || "At Our Core";
   const coreValues = acf?.coreValues || defaultCoreValues;
-  const coreImage = acf?.coreImage || "/images/stock/about-tampa-skyline.jpg";
+  const coreImage = acf?.coreImage || "/images/stock/about-tampa-skyline.webp";
   const coreImageAlt = acf?.coreImageAlt || "Downtown Tampa, Florida skyline along the waterway near Tenth Rock headquarters";
   const coreCtaLabel = acf?.coreCtaLabel || "Book a Call";
   const coreCtaLink = acf?.coreCtaLink || "/book-a-call";
@@ -76,7 +76,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
   const associationsLogos = acf?.associationsLogos || defaultAssociationLogos;
   const communityHeading = acf?.communityHeading || "In The Community";
   const communityBody = acf?.communityBody || defaultCommunityBody;
-  const communityImage = acf?.communityImage || "/images/stock/community-park-sunset.jpg";
+  const communityImage = acf?.communityImage || "/images/stock/community-park-sunset.webp";
   const communityImageAlt = acf?.communityImageAlt || "Families enjoying a sunny afternoon at a community park";
   const communityCtaLabel = acf?.communityCtaLabel || "Learn More";
   const communityCtaLink = acf?.communityCtaLink || "/contact";

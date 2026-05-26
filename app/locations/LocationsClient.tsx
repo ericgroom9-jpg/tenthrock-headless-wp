@@ -53,7 +53,7 @@ export default function LocationsClient({ acf, globalSections }: Props) {
       >
         <div className="absolute inset-0">
           <Image
-            src={acf?.heroImage || "/images/stock/locations-hero-modern-city.jpg"}
+            src={acf?.heroImage || "/images/stock/locations-hero-modern-city.webp"}
             alt=""
             fill
             sizes="100vw"

@@ -1,9 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import FadeIn from "@/components/shared/FadeIn";
 import { MapPin, Phone, Mail } from "lucide-react";
-import UsMapPinsAnimation from "@/components/shared/UsMapPinsAnimation";
+
+// Heavy framer-motion + SVG map — defer to client only so it doesn't ship
+// with the initial JS for every page that embeds the location footer block.
+const UsMapPinsAnimation = dynamic(
+  () => import("@/components/shared/UsMapPinsAnimation"),
+  { ssr: false }
+);
 
 interface LocationSectionProps {
   heading?: string;
@@ -29,7 +36,7 @@ export default function LocationSection({
   phoneLink = "tel:+17275105454",
   email = "hello@tenthrock.com",
   emailLink = "mailto:hello@tenthrock.com",
-  hqImage = "/images/stock/location-clearwater-beach-v2.jpg",
+  hqImage = "/images/stock/location-clearwater-beach-v2.webp",
   hqImageAlt = "Aerial view of Clearwater Beach with white sand, turquoise water, hotels, and marina near Tenth Rock headquarters",
 }: LocationSectionProps = {}) {
   return (

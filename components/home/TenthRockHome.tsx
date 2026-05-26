@@ -83,25 +83,25 @@ const logoWhite = "/images/logos/Green-White-Logo.png";
 
 // Stock images for services
 const imgServiceEmergencyOverflow = "/images/stock/service-emergency-overflow.jpg";
-const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.jpg";
-const imgServiceEventStadium = "/images/stock/service-event-stadium.jpg";
+const imgServiceDumpsterRental = "/images/stock/service-dumpster-rental.webp";
+const imgServiceEventStadium = "/images/stock/service-event-stadium.webp";
 const imgServiceMaintenance = "/images/stock/service-maintenance.jpg";
-const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.jpg";
+const imgServiceStoreDecommissioning = "/images/stock/service-store-decommissioning.webp";
 const imgServiceCentralizedProgram = "/images/stock/service-centralized-program.jpg";
 
 // Stock images for industries
-const imgIndustryEducational = "/images/stock/university.jpg";
+const imgIndustryEducational = "/images/stock/university.webp";
 const imgIndustryStadiumsEvents = "/images/industries/industry-stadiums-events.jpg";
-const imgIndustryFaithBased = "/images/stock/industry-faith-based.jpg";
-const imgIndustryMunicipalities = "/images/stock/clean-city.jpg";
-const imgIndustryHospitality = "/images/stock/industry-hospitality.jpg";
+const imgIndustryFaithBased = "/images/stock/industry-faith-based.webp";
+const imgIndustryMunicipalities = "/images/stock/clean-city.webp";
+const imgIndustryHospitality = "/images/stock/industry-hospitality.webp";
 const imgIndustryNaturalDisasters = "/images/stock/industry-natural-disasters-storm.jpg";
 const imgIndustryRealEstate = "/images/stock/industry-real-estate-balconies.jpg";
-const imgIndustryRetail = "/images/stock/hotel.jpg";
+const imgIndustryRetail = "/images/stock/hotel.webp";
 
 // Decorative/Section-specific images
-const imgTruck = "/images/stock/white-truck.jpg";
-const imgCleanCity = "/images/stock/clean-city.jpg";
+const imgTruck = "/images/stock/white-truck.webp";
+const imgCleanCity = "/images/stock/clean-city.webp";
 const imgHeroSkyscrapers = "/images/stock/hero-skyscrapers.jpg";
 const imgUSMap = "/images/generated/3d-usa-map.png";
 
@@ -239,8 +239,13 @@ const Hero = ({
  heroVideoSrc?: string;
 } = {}) => {
  const videoSrc = heroVideoSrc || heroVideo;
+ const videoWebmSrc = !heroVideoSrc ? "/videos/hero-bg.webm" : null;
  const [videoMounted, setVideoMounted] = useState(false);
  useEffect(() => {
+ // Respect Reduced Motion: keep the poster as the hero and skip the video.
+ if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+ return;
+ }
  // Defer video load until the browser is idle so the optimized poster
  // becomes the LCP element and the video downloads off the critical path.
  let done = false;
@@ -278,13 +283,15 @@ const Hero = ({
  loop
  muted
  playsInline
- preload="auto"
+ preload="none"
  poster={heroPoster}
  disablePictureInPicture
  disableRemotePlayback
  className="absolute inset-0 w-full h-full object-cover opacity-80"
- src={videoSrc}
- />
+ >
+ {videoWebmSrc && <source src={videoWebmSrc} type="video/webm" />}
+ <source src={videoSrc} type="video/mp4" />
+ </video>
  )}
  </div>
  <div className="absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"></div>

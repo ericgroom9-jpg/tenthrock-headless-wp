@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -59,13 +60,14 @@ export function PostContent({ post }: PostContentProps) {
       </nav>
 
       {post.featuredImage && (
-        <div className="aspect-video rounded-lg overflow-hidden mb-8 bg-muted">
-          <img
+        <div className="relative aspect-video rounded-lg overflow-hidden mb-8 bg-muted">
+          <Image
             src={post.featuredImage}
             alt={post.featuredImageAlt || post.title}
-            className="w-full h-full object-cover"
-            loading="eager"
-            decoding="async"
+            fill
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            priority
+            className="object-cover"
             data-testid="img-post-hero"
           />
         </div>

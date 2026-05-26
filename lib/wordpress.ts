@@ -1621,7 +1621,7 @@ function transformLocationNode(node: WpCptNode): LocationTemplateData {
   return {
     locationName,
     heroSubtitle: lf?.heroSubtitle || '',
-    heroImage: lf?.heroImage || '/images/stock/locations-hero-modern-city.jpg',
+    heroImage: lf?.heroImage || '/images/stock/locations-hero-modern-city.webp',
     aboutDescription: lf?.aboutDescription || '',
     aboutBullets: lf?.aboutBullets?.map(b => b.bulletText) || [],
     trustedDescription: lf?.trustedDescription || '',
@@ -1765,7 +1765,7 @@ function transformServiceNode(node: WpCptNode): ServiceTemplateData {
 
 function transformIndustryNode(node: WpCptNode): IndustryTemplateData {
   const inf = node.industryFields;
-  const defaultImg = '/images/stock/service-dumpster-rental.jpg';
+  const defaultImg = '/images/stock/service-dumpster-rental.webp';
   return {
     industryName: node.title,
     heroImage: inf?.heroImage || node.featuredImage?.node?.sourceUrl || defaultImg,

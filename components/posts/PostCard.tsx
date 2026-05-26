@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, User } from 'lucide-react';
@@ -22,12 +23,13 @@ export function PostCard({ post }: PostCardProps) {
       <Card className="h-full overflow-hidden hover-elevate active-elevate-2 transition-all duration-200 cursor-pointer group">
         <div className="aspect-video bg-muted relative overflow-hidden">
           {post.featuredImage ? (
-            <img
+            <Image
               src={post.featuredImage}
               alt={post.featuredImageAlt || post.title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
               loading="lazy"
-              decoding="async"
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
               data-testid={`img-post-${post.slug}`}
             />
           ) : (

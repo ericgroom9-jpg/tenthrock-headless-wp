@@ -52,7 +52,7 @@ const defaultParagraphSection1: ParagraphSection = {
  badge: "Industry Expertise",
  heading: "Programs Built Around How You Operate",
  body: "Every industry has unique waste challenges. From volume fluctuations to tight timelines, our team understands the nuances that generic providers miss. We design custom waste programs that align with your operational rhythm, reduce costs, and keep your facilities clean without disrupting the work that matters most.",
- image: "/images/stock/programs-built-aerial-buildings.jpg",
+ image: "/images/stock/programs-built-aerial-buildings.webp",
  imageAlt: "Aerial view of high-rise condominium and office buildings served by Tenth Rock",
  bulletPoints: [
  "Custom programs designed around your operational schedule",
@@ -80,7 +80,7 @@ const defaultParagraphSection3: ParagraphSection = {
  badge: "Sustainability Focus",
  heading: "Environmental Responsibility Built\u00a0In",
  body: "Responsibility is the baseline for every project we manage. By utilizing local recovery and processing facilities across the country, we move waste more effectively to keep your sites clear and materials out of landfills. We provide the visibility you need to understand your property's waste flow without adding a single step to your daily operations.",
- image: "/images/stock/sustainability-park-with-city.jpg",
+ image: "/images/stock/sustainability-park-with-city.webp",
  imageAlt: "Lush green park beside a city skyline reflecting Tenth Rock's sustainability focus",
  bulletPoints: [
  "Waste diversion and recycling solutions",

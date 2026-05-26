@@ -11,10 +11,11 @@ const nextConfig: NextConfig = {
     qualities: [50, 60, 70, 75, 80, 85, 90, 95],
     minimumCacheTTL: 2592000,
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-      },
+      { protocol: "https", hostname: "tenthrock.sherstaging.com" },
+      { protocol: "https", hostname: "www.tenthrock.com" },
+      { protocol: "https", hostname: "tenthrock.com" },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "secure.gravatar.com" },
     ],
   },
   allowedDevOrigins: [

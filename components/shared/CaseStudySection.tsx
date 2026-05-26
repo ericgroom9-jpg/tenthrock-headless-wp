@@ -24,12 +24,12 @@ const defaultCaseStudies: CaseStudy[] = [
     tag: "Speed",
     description:
       "A missed pickup at a National Coffee Chain location sent waste overflowing into the backroom mid-operation, creating immediate operational risk and customer-facing exposure during normal business hours. Tenth Rock received the call at 6:16 PM, confirmed dispatch in under 10 minutes, and had a team on-site clearing waste within an hour. The location remained operational, risks were mitigated, and full documentation was provided, all in under 4 hours.",
-    mainImage: "/images/stock/coffee-case-1.jpg",
+    mainImage: "/images/stock/coffee-case-1.webp",
     mainImageAlt: "National coffee chain interior with customers and barista at the counter",
     thumbImages: [
       { src: "/images/stock/coffee-case-2.jpg", alt: "Stacked bags of commercial waste piled up after a missed pickup" },
-      { src: "/images/stock/coffee-case-3.jpg", alt: "Quiet city street at night where the response was dispatched" },
-      { src: "/images/stock/coffee-case-4.jpg", alt: "Brick storefront with large windows after stabilization" },
+      { src: "/images/stock/coffee-case-3.webp", alt: "Quiet city street at night where the response was dispatched" },
+      { src: "/images/stock/coffee-case-4.webp", alt: "Brick storefront with large windows after stabilization" },
     ],
     stats: [
       { value: "10 min", label: "Response Time" },
@@ -47,9 +47,9 @@ const defaultCaseStudies: CaseStudy[] = [
     mainImage: "/images/stock/industry-natural-disasters-storm.jpg",
     mainImageAlt: "Florida hurricane emergency dumpster deployment by Tenth Rock",
     thumbImages: [
-      { src: "/images/stock/hurricane-dumpster-blue.png", alt: "Blue roll-off dumpster filled with hurricane debris staged for deployment" },
+      { src: "/images/stock/hurricane-dumpster-blue.webp", alt: "Blue roll-off dumpster filled with hurricane debris staged for deployment" },
       { src: "/images/stock/service-maintenance.jpg", alt: "Multi-site debris coordination" },
-      { src: "/images/stock/hurricane-damage-mobile-homes.jpg", alt: "Aerial view of a Florida mobile home community heavily damaged by hurricane debris" },
+      { src: "/images/stock/hurricane-damage-mobile-homes.webp", alt: "Aerial view of a Florida mobile home community heavily damaged by hurricane debris" },
     ],
     stats: [
       { value: "36M+", label: "Cubic Yards of Debris" },
@@ -64,12 +64,12 @@ const defaultCaseStudies: CaseStudy[] = [
     tag: "Multi-Site Execution",
     description:
       "During a multi-location retail transition, stores required a full cleanout after asset recovery teams completed their work. Remaining fixtures, shelving, signage, and debris still needed to be removed for broom-clean turnover. Tenth Rock coordinated labor crews, hauling, and dumpster deployment across multiple locations, handling minor demolition and final punch-list items that had fallen between vendors.",
-    mainImage: "/images/stock/closures-1.jpg",
+    mainImage: "/images/stock/closures-1.webp",
     mainImageAlt: "Closed retail storefront with windows papered over during decommissioning",
     thumbImages: [
-      { src: "/images/stock/closures-2.jpg", alt: "Vacated retail interior cleared and ready for broom-clean turnover" },
-      { src: "/images/stock/closures-3.jpg", alt: "Hauling truck transporting debris across state lines" },
-      { src: "/images/stock/closures-4.jpg", alt: "Aerial view of a multi-site commercial coordination effort" },
+      { src: "/images/stock/closures-2.webp", alt: "Vacated retail interior cleared and ready for broom-clean turnover" },
+      { src: "/images/stock/closures-3.webp", alt: "Hauling truck transporting debris across state lines" },
+      { src: "/images/stock/closures-4.webp", alt: "Aerial view of a multi-site commercial coordination effort" },
     ],
     stats: [
       { value: "20+", label: "Stores Delivered Broom-Clean" },
@@ -84,12 +84,12 @@ const defaultCaseStudies: CaseStudy[] = [
     tag: "Creative Solutions",
     description:
       "During a high-traffic holiday period, a national retail location experienced packaging overflow spilling into public areas, creating immediate safety and reputational risk. The store requested a 30-yard open-top dumpster late in the evening, but no containers were available. Tenth Rock deployed a stabilization crew within the hour, consolidated overflowing waste into a controlled staging area, and secured a 30-yard roll-off for 7:00 AM delivery. The store opened safely and on schedule.",
-    mainImage: "/images/stock/holiday-1.jpg",
+    mainImage: "/images/stock/holiday-1.webp",
     mainImageAlt: "Modern retail center lit up at dusk during a high-traffic holiday season",
     thumbImages: [
-      { src: "/images/stock/holiday-2.jpg", alt: "Crowds of holiday shoppers moving through a store entrance with shopping bags" },
-      { src: "/images/stock/holiday-3.jpg", alt: "Back-of-house loading area where overflow waste was staged overnight" },
-      { src: "/images/stock/holiday-4.png", alt: "Clean 30-yard open-top roll-off dumpster delivered for next morning" },
+      { src: "/images/stock/holiday-2.webp", alt: "Crowds of holiday shoppers moving through a store entrance with shopping bags" },
+      { src: "/images/stock/holiday-3.webp", alt: "Back-of-house loading area where overflow waste was staged overnight" },
+      { src: "/images/stock/holiday-4.webp", alt: "Clean 30-yard open-top roll-off dumpster delivered for next morning" },
     ],
     stats: [
       { value: "0", label: "Overtime Staff Required" },
@@ -104,12 +104,12 @@ const defaultCaseStudies: CaseStudy[] = [
     tag: "Cost Savings",
     description:
       "Following a regional power outage caused by severe storms, multiple retail locations were left with large volumes of temperature-sensitive products requiring immediate removal to prevent odor, pest activity, and potential health code violations. Tenth Rock mobilized live-load hauling providers, allowing trailers to be staged and loaded immediately as product was removed from refrigeration areas, eliminating the wait for roll-off containers.",
-    mainImage: "/images/stock/outage-1.png",
+    mainImage: "/images/stock/outage-1.webp",
     mainImageAlt: "Severe storm clouds and lightning rolling over a retail shopping center before a power outage",
     thumbImages: [
-      { src: "/images/stock/outage-2.png", alt: "Darkened commercial storefront at night during a regional power outage" },
-      { src: "/images/stock/outage-3.png", alt: "Long-haul trailer backed up to a commercial loading dock for live-load hauling" },
-      { src: "/images/stock/outage-4.png", alt: "Wide shot of a rain-slicked commercial shopping center after the storm" },
+      { src: "/images/stock/outage-2.webp", alt: "Darkened commercial storefront at night during a regional power outage" },
+      { src: "/images/stock/outage-3.webp", alt: "Long-haul trailer backed up to a commercial loading dock for live-load hauling" },
+      { src: "/images/stock/outage-4.webp", alt: "Wide shot of a rain-slicked commercial shopping center after the storm" },
     ],
     stats: [
       { value: "1", label: "Point of Contact" },
@@ -124,11 +124,11 @@ const defaultCaseStudies: CaseStudy[] = [
     tag: "Project Management",
     description:
       "A big-box retail location experienced a compactor failure after the unit became overfilled, forcing the door open and preventing the provider from safely transporting it. Tenth Rock deployed a stabilization crew to reduce the load, secured the compactor door for safe transport, arranged a same-day open-top dumpster, and coordinated vendors to clean and prepare the compactor area for repair upon return.",
-    mainImage: "/images/stock/compactor-1.jpg",
+    mainImage: "/images/stock/compactor-1.webp",
     mainImageAlt: "Overfilled retail compactor with door jammed open by trapped debris",
     thumbImages: [
-      { src: "/images/stock/compactor-2.png", alt: "Same-day open-top dumpster deployed to relieve compactor overflow" },
-      { src: "/images/stock/compactor-3.jpg", alt: "Loading dock and trailer staged for vendor coordination" },
+      { src: "/images/stock/compactor-2.webp", alt: "Same-day open-top dumpster deployed to relieve compactor overflow" },
+      { src: "/images/stock/compactor-3.webp", alt: "Loading dock and trailer staged for vendor coordination" },
       { src: "/images/stock/compactor-4.jpg", alt: "Big-box retail warehouse exterior at sunset where stabilization took place" },
     ],
     stats: [
