@@ -1,5 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath, revalidateTag } from 'next/cache';
+import { fetchAcfGlobalScripts } from '@/lib/wordpress';
+import { storage } from '@/lib/storage';
+
+async function refreshGlobalScripts(): Promise<
+  { ok: true; head: string | null; body: string | null } | { ok: false; error: string }
+> {
+  try {
+    const gs = await fetchAcfGlobalScripts();
+    // Always upsert (including null/empty) so that *clearing* the field in
+    // WP propagates as a clear here — otherwise removing GTM in WP would
+    // leave the stale script injecting on the site forever.
+    await storage.upsertGlobalSetting({ key: 'global_head_scripts', value: gs.headScripts });
+    await storage.upsertGlobalSetting({ key: 'global_body_scripts', value: gs.bodyScripts });
+    return { ok: true, head: gs.headScripts, body: gs.bodyScripts };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : 'Unknown error' };
+  }
+}
 
 export const dynamic = 'force-dynamic';
 
@@ -68,6 +86,27 @@ export async function POST(request: NextRequest) {
       revalidateTag('wordpress', 'max');
       revalidateTag('wordpress-redirects', 'max');
       revalidatedPaths.push('/ (entire site)', 'tag:wordpress', 'tag:wordpress-redirects');
+
+      // Global scripts (SHER Options ACF) are stored in our local DB rather
+      // than the Next fetch cache, so tag invalidation alone won't refresh
+      // them. Re-pull from WPGraphQL and upsert so editor edits to
+      // "Global Head/Body Scripts" propagate without a full /api/wordpress/sync.
+      const gsResult = await refreshGlobalScripts();
+      if (!gsResult.ok) {
+        console.error('[Revalidate] global_scripts refresh failed:', gsResult.error);
+        return NextResponse.json(
+          {
+            success: false,
+            revalidated: revalidatedPaths,
+            global_scripts_error: gsResult.error,
+            timestamp: new Date().toISOString(),
+          },
+          { status: 502 }
+        );
+      }
+      revalidatedPaths.push(
+        `global_scripts:head=${gsResult.head ? gsResult.head.length + 'c' : 'null'},body=${gsResult.body ? gsResult.body.length + 'c' : 'null'}`
+      );
     } else if (path || (type && slug)) {
       // For any targeted revalidation, also flush the WP data cache so the
       // newly-rendered page fetches fresh content instead of serving from

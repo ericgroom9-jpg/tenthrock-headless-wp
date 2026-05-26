@@ -80,20 +80,17 @@ export async function POST() {
 
   try {
     const globalScripts = await fetchAcfGlobalScripts();
-    if (globalScripts.headScripts !== null) {
-      await storage.upsertGlobalSetting({
-        key: 'global_head_scripts',
-        value: globalScripts.headScripts,
-      });
-      results.globalSettings.count++;
-    }
-    if (globalScripts.bodyScripts !== null) {
-      await storage.upsertGlobalSetting({
-        key: 'global_body_scripts',
-        value: globalScripts.bodyScripts,
-      });
-      results.globalSettings.count++;
-    }
+    // Always upsert (including null) so clearing the field in WP propagates
+    // as a clear here. Otherwise the old script keeps injecting forever.
+    await storage.upsertGlobalSetting({
+      key: 'global_head_scripts',
+      value: globalScripts.headScripts,
+    });
+    await storage.upsertGlobalSetting({
+      key: 'global_body_scripts',
+      value: globalScripts.bodyScripts,
+    });
+    results.globalSettings.count = 2;
   } catch (error) {
     results.globalSettings.status = 'error';
     results.globalSettings.error = error instanceof Error ? error.message : 'Unknown error';

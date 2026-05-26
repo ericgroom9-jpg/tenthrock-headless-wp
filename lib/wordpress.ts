@@ -528,11 +528,12 @@ const GET_REDIRECTS_QUERY = gql`
 // These fields should be registered in ACF Options page with field names:
 // - global_head_scripts
 // - global_body_scripts
-// Note: The query field name is based on your ACF Options Page name (e.g., "SherOptions" -> "sherOptions")
-// Update this query if your Options Page has a different name
+// Note: WPGraphQL exposes the SHER Options page as `sHEROptions` (acronym preserved,
+// only the first letter is lowercased). Do NOT change to `sherOptions` — that field
+// does not exist on the schema and the query will silently return null.
 const GET_ACF_OPTIONS_QUERY = gql`
   query GetAcfOptions {
-    sherOptions {
+    sHEROptions {
       globalScripts {
         globalHeadScripts
         globalBodyScripts
@@ -836,7 +837,7 @@ interface WpRedirect {
 }
 
 interface WpAcfOptions {
-  sherOptions: {
+  sHEROptions: {
     globalScripts: {
       globalHeadScripts: string | null;
       globalBodyScripts: string | null;
@@ -1431,7 +1432,7 @@ export async function fetchAcfGlobalScripts(): Promise<GlobalScripts> {
   try {
     const response = await client.request<WpAcfOptions>(GET_ACF_OPTIONS_QUERY);
 
-    const globalScripts = response.sherOptions?.globalScripts;
+    const globalScripts = response.sHEROptions?.globalScripts;
     
     return {
       headScripts: globalScripts?.globalHeadScripts || null,
