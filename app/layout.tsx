@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { GlobalScripts } from "@/components/scripts/GlobalScripts";
 import { fetchMenu, flatten } from "@/lib/menus";
 import { MenuProvider, type NavMenus } from "@/components/shared/MenuProvider";
+import ForceFullPageNavigation from "@/components/shared/NavigationProgress";
 
 const manrope = Manrope({ 
   subsets: ["latin"], 
@@ -84,6 +85,7 @@ export default async function RootLayout({
       </head>
       <body className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`} suppressHydrationWarning>
         <GlobalScripts />
+        <ForceFullPageNavigation />
         <MenuProvider value={navMenus}>
           {children}
         </MenuProvider>
