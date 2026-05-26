@@ -8,6 +8,7 @@
 import type { VideoSectionBlock as VideoSectionBlockType } from '../types';
 import { Button } from '@/components/ui/button';
 import { Check, Phone, Play } from 'lucide-react';
+import Image from 'next/image';
 
 interface Props {
   block: VideoSectionBlockType;
@@ -63,10 +64,13 @@ export function VideoSectionBlock({ block }: Props) {
               data-testid="video-player"
             >
               {block.videoThumbnail?.sourceUrl ? (
-                <img
+                <Image
                   src={block.videoThumbnail.sourceUrl}
                   alt={block.videoThumbnail.altText || 'Video thumbnail'}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  className="object-cover"
                 />
               ) : null}
               

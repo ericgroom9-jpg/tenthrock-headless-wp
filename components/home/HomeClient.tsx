@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import type { HomepageTemplateData, GlobalSectionsData, TestimonialData, CaseStudyData, PartnerLogoData } from "@/lib/wordpress";
 
 const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
@@ -10,11 +11,12 @@ const TenthRockHome = dynamic(() => import("./TenthRockHome"), {
   loading: () => (
     <div className="min-h-screen bg-[#042940] flex items-center justify-center">
       <div className="flex flex-col items-center gap-6">
-        <img
+        <Image
           src="/images/logos/Green-White-Logo.png"
           alt="Tenth Rock Waste Solutions"
           width={220}
           height={55}
+          priority
           className="w-44 md:w-56 h-auto"
         />
         <div className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden">

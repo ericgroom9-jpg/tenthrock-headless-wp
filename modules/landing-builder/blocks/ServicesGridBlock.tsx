@@ -8,6 +8,7 @@
 import type { ServicesGridBlock as ServicesGridBlockType } from '../types';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import Image from 'next/image';
 
 interface Props {
   block: ServicesGridBlockType;
@@ -43,10 +44,13 @@ export function ServicesGridBlock({ block }: Props) {
               <Card className="relative aspect-[3/4] overflow-hidden border-0 rounded-xl">
                 {/* Background Image */}
                 {service.image?.sourceUrl ? (
-                  <img
+                  <Image
                     src={service.image.sourceUrl}
                     alt={service.image.altText || service.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-muted" />

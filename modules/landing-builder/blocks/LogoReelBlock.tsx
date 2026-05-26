@@ -7,6 +7,7 @@
 
 import type { LogoReelBlock as LogoReelBlockType } from '../types';
 import { layout } from '../layout';
+import Image from 'next/image';
 
 interface Props {
   block: LogoReelBlockType;
@@ -34,10 +35,14 @@ export function LogoReelBlock({ block }: Props) {
         <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
           {hasLogos ? (
             logos.map((logo, index) => (
-              <img
+              <Image
                 key={index}
                 src={logo.sourceUrl}
                 alt={logo.altText || `Partner logo ${index + 1}`}
+                width={160}
+                height={40}
+                loading="lazy"
+                sizes="160px"
                 className="h-8 lg:h-10 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"
                 data-testid={`logo-${index}`}
               />

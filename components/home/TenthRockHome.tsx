@@ -113,6 +113,7 @@ const imgCaseStudyThumb3 = "/images/stock/case-study-thumb3.jpg";
 
 // Hero video
 const heroVideo = "/videos/hero-bg.mp4";
+const heroPoster = "/videos/hero-poster.jpg";
 
 // Homepage testimonials
 const homeTestimonials = [
@@ -238,22 +239,53 @@ const Hero = ({
  heroVideoSrc?: string;
 } = {}) => {
  const videoSrc = heroVideoSrc || heroVideo;
+ const [videoMounted, setVideoMounted] = useState(false);
+ useEffect(() => {
+ // Defer video load until the browser is idle so the optimized poster
+ // becomes the LCP element and the video downloads off the critical path.
+ let done = false;
+ const mount = () => { if (!done) { done = true; setVideoMounted(true); } };
+ const w = window as Window & { requestIdleCallback?: (cb: () => void, opts?: { timeout?: number }) => number; cancelIdleCallback?: (id: number) => void };
+ let idleId: number | undefined;
+ if (typeof w.requestIdleCallback === "function") {
+ idleId = w.requestIdleCallback(mount, { timeout: 1500 });
+ }
+ const t = setTimeout(mount, idleId !== undefined ? 2000 : 800);
+ return () => {
+ done = true;
+ clearTimeout(t);
+ if (idleId !== undefined && typeof w.cancelIdleCallback === "function") w.cancelIdleCallback(idleId);
+ };
+ }, []);
  return (
  <section aria-labelledby="hero-heading" className="relative min-h-screen flex items-center justify-center pt-32 pb-32 overflow-hidden bg-[#042940]">
  {/* Background Video */}
  <div className="absolute inset-0 z-0">
- <div className="w-full h-full hero-video-zoom">
- <video 
- autoPlay 
- loop 
- muted 
+ <div className="relative w-full h-full hero-video-zoom">
+ <Image
+ src={heroPoster}
+ alt=""
+ fill
+ sizes="100vw"
+ priority
+ fetchPriority="high"
+ quality={70}
+ className="object-cover opacity-80"
+ />
+ {videoMounted && (
+ <video
+ autoPlay
+ loop
+ muted
  playsInline
- preload="metadata"
+ preload="auto"
+ poster={heroPoster}
  disablePictureInPicture
  disableRemotePlayback
- className="w-full h-full object-cover opacity-80"
+ className="absolute inset-0 w-full h-full object-cover opacity-80"
  src={videoSrc}
  />
+ )}
  </div>
  <div className="absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"></div>
  <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/20 md:via-transparent to-[#042940]/40 md:to-[#042940]/30"></div>

@@ -8,6 +8,7 @@
 import type { ContentSplitBlock as ContentSplitBlockType } from '../types';
 import { Button } from '@/components/ui/button';
 import { Phone } from 'lucide-react';
+import Image from 'next/image';
 
 interface Props {
   block: ContentSplitBlockType;
@@ -24,12 +25,17 @@ export function ContentSplitBlock({ block }: Props) {
           {/* Image */}
           <div className={imageOnLeft ? '' : 'lg:order-2'}>
             {block.image?.sourceUrl ? (
-              <img
-                src={block.image.sourceUrl}
-                alt={block.image.altText || ''}
-                className="w-full h-auto aspect-[4/3] object-cover rounded-xl"
-                data-testid="content-split-image"
-              />
+              <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
+                <Image
+                  src={block.image.sourceUrl}
+                  alt={block.image.altText || ''}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  className="object-cover"
+                  data-testid="content-split-image"
+                />
+              </div>
             ) : (
               <div className="w-full aspect-[4/3] bg-muted rounded-xl" />
             )}

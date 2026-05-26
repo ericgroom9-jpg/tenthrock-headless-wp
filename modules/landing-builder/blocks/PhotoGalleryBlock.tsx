@@ -7,6 +7,7 @@
 
 import type { PhotoGalleryBlock as PhotoGalleryBlockType } from '../types';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 interface Props {
   block: PhotoGalleryBlockType;
@@ -59,11 +60,14 @@ export function PhotoGalleryBlock({ block }: Props) {
         {/* Photo Grid - 2 columns with matched heights */}
         <div className="grid lg:grid-cols-2 gap-6 mb-12">
           {/* Large photo - fills left column */}
-          <div className="aspect-square lg:aspect-auto lg:row-span-2 overflow-hidden rounded-xl">
-            <img
+          <div className="relative aspect-square lg:aspect-auto lg:row-span-2 overflow-hidden rounded-xl">
+            <Image
               src={mainPhoto.sourceUrl}
               alt={mainPhoto.altText || 'Gallery photo'}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
+              className="object-cover"
               data-testid="gallery-main-photo"
             />
           </div>
@@ -71,11 +75,14 @@ export function PhotoGalleryBlock({ block }: Props) {
           {/* 2x2 Grid - matches height of main photo */}
           <div className="grid grid-cols-2 gap-6">
             {gridPhotos.map((photo, index) => (
-              <div key={index} className="aspect-[4/3] overflow-hidden rounded-xl">
-                <img
+              <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image
                   src={photo.sourceUrl}
                   alt={photo.altText || `Gallery photo ${index + 2}`}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  loading="lazy"
+                  className="object-cover"
                   data-testid={`gallery-photo-${index + 1}`}
                 />
               </div>

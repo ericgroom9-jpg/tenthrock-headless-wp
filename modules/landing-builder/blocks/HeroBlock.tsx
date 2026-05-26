@@ -9,6 +9,7 @@ import type { HeroBlock as HeroBlockType } from '../types';
 import { layout } from '../layout';
 import { Button } from '@/components/ui/button';
 import { Check, Star, Phone } from 'lucide-react';
+import Image from 'next/image';
 
 interface Props {
   block: HeroBlockType;
@@ -112,13 +113,18 @@ export function HeroBlock({ block }: Props) {
           {/* Right side - Hero Image */}
           {hasHeroImage && (
             <div className="relative order-first lg:order-last">
-              <div className="aspect-[4/3] lg:aspect-square overflow-hidden rounded-2xl bg-muted">
-                <img
-                  src={block.heroImage?.sourceUrl}
-                  alt={block.heroImage?.altText || 'Hero image'}
-                  className="w-full h-full object-cover"
-                  data-testid="hero-image"
-                />
+              <div className="relative aspect-[4/3] lg:aspect-square overflow-hidden rounded-2xl bg-muted">
+                {block.heroImage?.sourceUrl && (
+                  <Image
+                    src={block.heroImage.sourceUrl}
+                    alt={block.heroImage?.altText || 'Hero image'}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                    className="object-cover"
+                    data-testid="hero-image"
+                  />
+                )}
               </div>
             </div>
           )}
