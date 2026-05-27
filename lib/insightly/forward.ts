@@ -141,10 +141,15 @@ interface InsightlyLeadPayload {
   PHONE?: string;
   ORGANISATION_NAME?: string; // Insightly uses UK spelling
   LEAD_DESCRIPTION?: string;
+  LEAD_SOURCE_ID?: number; // Numeric FK into Insightly Settings → System Settings → Lead Sources
   ADDRESS_STREET?: string;
   TAGS?: InsightlyTag[];
   CUSTOMFIELDS?: InsightlyCustomField[];
 }
+
+// All form submissions are tagged with the "Web" Lead Source. Override via
+// INSIGHTLY_LEAD_SOURCE_ID env var if the Insightly dropdown is reconfigured.
+const DEFAULT_LEAD_SOURCE_ID = 3755464; // "Web"
 
 export function buildInsightlyPayload(
   formId: number,
@@ -196,6 +201,10 @@ export function buildInsightlyPayload(
   // --- Message → LEAD_DESCRIPTION ---
   const message = str(formData, map.message);
   if (message) payload.LEAD_DESCRIPTION = message;
+
+  // --- LEAD_SOURCE_ID: "Web" for all form submissions ---
+  const sourceId = Number(process.env.INSIGHTLY_LEAD_SOURCE_ID) || DEFAULT_LEAD_SOURCE_ID;
+  payload.LEAD_SOURCE_ID = sourceId;
 
   // --- Location (only for Location Inquiry) → ADDRESS_STREET ---
   if (formKey === "locationInquiry") {
