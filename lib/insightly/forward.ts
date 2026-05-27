@@ -19,16 +19,19 @@ const FORM_ID_TO_KEY: Record<number, FormKey> = Object.fromEntries(
   Object.entries(GF_FORM_IDS).map(([k, v]) => [v, k as FormKey]),
 ) as Record<number, FormKey>;
 
-// Human-readable source label + tag per form.
-// Insightly rejects tags containing whitespace ("Spaces in tags are not
-// allowed"), so tag values are hyphenated. Source labels stay human-readable.
-const FORM_META: Record<FormKey, { source: string; tag: string }> = {
-  contact:         { source: "Website - Contact Form",        tag: "Contact"             },
-  requestAService: { source: "Website - Request A Service",   tag: "Request-A-Service"   },
-  joinOurNetwork:  { source: "Website - Vendor Application",  tag: "Vendor-Application"  },
-  serviceInquiry:  { source: "Website - Service Inquiry",     tag: "Service-Inquiry"     },
-  locationInquiry: { source: "Website - Location Inquiry",    tag: "Location-Inquiry"    },
-  newsletter:      { source: "Website - Newsletter Signup",   tag: "Newsletter"          },
+// Source tag per form.
+// Insightly's standard `LEAD_SOURCE_ID` is a numeric FK into a dropdown
+// configured in Insightly (Settings → System Settings → Lead Sources), so we
+// can't set source by name without pre-fetching those IDs. Instead, the
+// source is added as a second TAG (prefixed `Source-`) so editors / sales
+// can still filter by it. Tags must contain no spaces.
+const FORM_META: Record<FormKey, { tag: string; sourceTag: string }> = {
+  contact:         { tag: "Contact",            sourceTag: "Source-Contact-Form"        },
+  requestAService: { tag: "Request-A-Service",  sourceTag: "Source-Request-A-Service"   },
+  joinOurNetwork:  { tag: "Vendor-Application", sourceTag: "Source-Vendor-Application"  },
+  serviceInquiry:  { tag: "Service-Inquiry",    sourceTag: "Source-Service-Inquiry"     },
+  locationInquiry: { tag: "Location-Inquiry",   sourceTag: "Source-Location-Inquiry"    },
+  newsletter:      { tag: "Newsletter",         sourceTag: "Source-Newsletter-Signup"   },
 };
 
 // Interest dropdown slug → Insightly boolean custom-field API name.
@@ -134,11 +137,10 @@ interface InsightlyTag {
 interface InsightlyLeadPayload {
   FIRST_NAME?: string;
   LAST_NAME?: string;
-  EMAIL_ADDRESS?: string;
+  EMAIL?: string; // Insightly Lead schema uses EMAIL (not EMAIL_ADDRESS, which is the Contact field)
   PHONE?: string;
-  ORGANIZATION_NAME?: string;
-  DESCRIPTION?: string;
-  LEAD_SOURCE?: string;
+  ORGANISATION_NAME?: string; // Insightly uses UK spelling
+  LEAD_DESCRIPTION?: string;
   ADDRESS_STREET?: string;
   TAGS?: InsightlyTag[];
   CUSTOMFIELDS?: InsightlyCustomField[];
@@ -174,20 +176,26 @@ export function buildInsightlyPayload(
 
   // --- Email / phone / company ---
   const email = str(formData, map.email);
-  if (email) payload.EMAIL_ADDRESS = email;
+  if (email) payload.EMAIL = email;
+
+  // Insightly Leads require LAST_NAME. For email-only forms (Newsletter,
+  // Vendor) where the user didn't supply a name, synthesize one from the
+  // email local-part so the record is still identifiable in the CRM list.
+  if (!payload.FIRST_NAME && !payload.LAST_NAME && email) {
+    const local = email.split("@")[0] || email;
+    payload.FIRST_NAME = local;
+    payload.LAST_NAME = `(${meta.tag})`;
+  }
 
   const phone = str(formData, map.phone);
   if (phone) payload.PHONE = phone;
 
   const company = str(formData, map.company);
-  if (company) payload.ORGANIZATION_NAME = company;
+  if (company) payload.ORGANISATION_NAME = company;
 
-  // --- Message → DESCRIPTION ---
+  // --- Message → LEAD_DESCRIPTION ---
   const message = str(formData, map.message);
-  if (message) payload.DESCRIPTION = message;
-
-  // --- Source → LEAD_SOURCE ---
-  payload.LEAD_SOURCE = meta.source;
+  if (message) payload.LEAD_DESCRIPTION = message;
 
   // --- Location (only for Location Inquiry) → ADDRESS_STREET ---
   if (formKey === "locationInquiry") {
@@ -195,8 +203,11 @@ export function buildInsightlyPayload(
     if (loc) payload.ADDRESS_STREET = loc;
   }
 
-  // --- Tags → form type ---
-  payload.TAGS = [{ TAG_NAME: meta.tag }];
+  // --- Tags: form type + source (Insightly's LEAD_SOURCE_ID is a numeric FK we can't set by name) ---
+  payload.TAGS = [
+    { TAG_NAME: meta.tag },
+    { TAG_NAME: meta.sourceTag },
+  ];
 
   // --- Interest dropdown → boolean custom fields ---
   const interest = str(formData, map.interest);
@@ -240,7 +251,7 @@ export async function forwardToInsightly(
     }
 
     // Insightly Leads require either a name or email to create a record.
-    if (!payload.EMAIL_ADDRESS && !payload.FIRST_NAME && !payload.LAST_NAME) {
+    if (!payload.EMAIL && !payload.FIRST_NAME && !payload.LAST_NAME) {
       console.warn(`[insightly] formId=${formId} missing both name and email — skipping`);
       return false;
     }
