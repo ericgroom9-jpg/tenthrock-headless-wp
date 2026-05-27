@@ -244,15 +244,36 @@ export async function forwardToInsightly(
     }
 
     const credentials = Buffer.from(`${apiKey}:`).toString("base64");
-    const res = await fetch(getInsightlyUrl(), {
-      method: "POST",
-      headers: {
-        "Authorization": `Basic ${credentials}`,
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+
+    // Hard timeout so a slow/down Insightly API can never stall the user's
+    // form response. 4s is well below typical browser/proxy timeouts and
+    // long enough for a healthy CRM round-trip.
+    const controller = new AbortController();
+    const timeoutMs = Number(process.env.INSIGHTLY_TIMEOUT_MS) || 4000;
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+
+    let res: Response;
+    try {
+      res = await fetch(getInsightlyUrl(), {
+        method: "POST",
+        headers: {
+          "Authorization": `Basic ${credentials}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+    } catch (err) {
+      const aborted = (err as { name?: string })?.name === "AbortError";
+      console.error(
+        `[insightly] POST ${aborted ? "aborted (timeout)" : "errored"} formId=${formId}`,
+        aborted ? `after ${timeoutMs}ms` : err,
+      );
+      return false;
+    } finally {
+      clearTimeout(timer);
+    }
 
     if (!res.ok) {
       const text = await res.text().catch(() => "");
