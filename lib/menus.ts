@@ -106,11 +106,18 @@ export async function fetchMenu(location: MenuLocation): Promise<MenuNode[] | nu
   if (!base) return null;
 
   const url = `${base}/wp-json/headless/v1/menus/${encodeURIComponent(location)}`;
-  const fetchOnce = (extra: Record<string, string>) =>
-    fetch(url, {
+  // Per-menu timeout: never let one slow WP REST call block the document
+  // response. Hardcoded defaults in Navbar/Footer absorb a null result.
+  const MENU_FETCH_TIMEOUT_MS = 1500;
+  const fetchOnce = (extra: Record<string, string>) => {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), MENU_FETCH_TIMEOUT_MS);
+    return fetch(url, {
       headers: { Accept: 'application/json', ...extra },
+      signal: ctrl.signal,
       next: { revalidate: MENU_REVALIDATE_SECONDS, tags: [WP_CACHE_TAG] },
-    } as RequestInit);
+    } as RequestInit).finally(() => clearTimeout(timer));
+  };
 
   try {
     let res = await fetchOnce({});

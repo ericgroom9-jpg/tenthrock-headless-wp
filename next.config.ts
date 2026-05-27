@@ -58,6 +58,15 @@ const nextConfig: NextConfig = {
         destination: "/natural-disaster-cleanup",
         permanent: true,
       },
+      {
+        // Legacy stadium asset was deleted after the JPG → WebP perf
+        // conversion (saves ~135KB per request). Any cached HTML, external
+        // backlinks, or stale srcsets still pointing at the .jpg get a 301
+        // to the new .webp so they never break.
+        source: "/images/industries/industry-stadiums-events.jpg",
+        destination: "/images/industries/industry-stadiums-events.webp",
+        permanent: true,
+      },
     ];
   },
   async headers() {
@@ -82,6 +91,18 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/assets_export/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=2592000, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        // Optimized images served by Next's image pipeline. Browser cache for
+        // 30 days; matches the upstream `minimumCacheTTL` so repeat visits
+        // and PSI re-runs reuse the same /_next/image responses.
+        source: "/_next/image",
         headers: [
           {
             key: "Cache-Control",

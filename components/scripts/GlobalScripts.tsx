@@ -35,13 +35,23 @@ export async function GlobalScripts() {
   let bodyRaw: string | null = null;
 
   try {
-    const settings = await storage.getAllGlobalSettings();
+    // 1s timeout: this call runs on every page render and a slow/failing
+    // DB connection should never block the document response. Editor-
+    // supplied global scripts are nice-to-have, not critical-path.
+    const settings = await Promise.race([
+      storage.getAllGlobalSettings(),
+      new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('global-scripts timeout (1s)')), 1000),
+      ),
+    ]);
     for (const setting of settings) {
       if (setting.key === 'global_head_scripts') headRaw = setting.value;
       else if (setting.key === 'global_body_scripts') bodyRaw = setting.value;
     }
   } catch (error) {
-    console.error('Error fetching global scripts:', error);
+    // Downgraded from console.error → warn: in normal operation this is a
+    // benign DB hiccup and the page still renders correctly via fallbacks.
+    console.warn('[global-scripts] skipped:', (error as Error).message);
   }
 
   const head = hasMeaningfulContent(headRaw) ? extractScriptBodies(headRaw) : null;
