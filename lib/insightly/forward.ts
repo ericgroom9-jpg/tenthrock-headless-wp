@@ -20,12 +20,14 @@ const FORM_ID_TO_KEY: Record<number, FormKey> = Object.fromEntries(
 ) as Record<number, FormKey>;
 
 // Human-readable source label + tag per form.
+// Insightly rejects tags containing whitespace ("Spaces in tags are not
+// allowed"), so tag values are hyphenated. Source labels stay human-readable.
 const FORM_META: Record<FormKey, { source: string; tag: string }> = {
   contact:         { source: "Website - Contact Form",        tag: "Contact"             },
-  requestAService: { source: "Website - Request A Service",   tag: "Request A Service"   },
-  joinOurNetwork:  { source: "Website - Vendor Application",  tag: "Vendor Application"  },
-  serviceInquiry:  { source: "Website - Service Inquiry",     tag: "Service Inquiry"     },
-  locationInquiry: { source: "Website - Location Inquiry",    tag: "Location Inquiry"    },
+  requestAService: { source: "Website - Request A Service",   tag: "Request-A-Service"   },
+  joinOurNetwork:  { source: "Website - Vendor Application",  tag: "Vendor-Application"  },
+  serviceInquiry:  { source: "Website - Service Inquiry",     tag: "Service-Inquiry"     },
+  locationInquiry: { source: "Website - Location Inquiry",    tag: "Location-Inquiry"    },
   newsletter:      { source: "Website - Newsletter Signup",   tag: "Newsletter"          },
 };
 
