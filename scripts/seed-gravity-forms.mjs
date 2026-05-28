@@ -85,21 +85,22 @@ function leadFormFields() {
   ];
 }
 
-// Form 2 — Request A Service (single Name field)
+// Form 2 — Request A Service (First/Last name pair like the lead forms)
 function requestServiceFields() {
   return [
-    { id: 1, type: "text", label: "Name", isRequired: true },
-    { id: 2, type: "email", label: "Email", isRequired: true },
-    { id: 3, type: "phone", label: "Phone Number", isRequired: true, phoneFormat: "standard" },
+    { id: 1, type: "text", label: "First name", isRequired: true },
+    { id: 2, type: "text", label: "Last name", isRequired: true },
+    { id: 3, type: "email", label: "Email", isRequired: true },
+    { id: 4, type: "phone", label: "Phone Number", isRequired: true, phoneFormat: "international" },
     {
-      id: 4, type: "select", label: "I'm interested in help with", isRequired: true,
+      id: 5, type: "select", label: "I'm interested in help with", isRequired: true,
       placeholder: "Select an option", choices: interestChoices,
     },
-    { id: 5, type: "textarea", label: "What can we help you with?", isRequired: true },
+    { id: 6, type: "textarea", label: "What can we help you with?", isRequired: true },
     {
-      id: 6, type: "checkbox", label: "Privacy Policy", isRequired: true, labelPlacement: "hidden_label",
+      id: 7, type: "checkbox", label: "Privacy Policy", isRequired: true, labelPlacement: "hidden_label",
       choices: [{ text: "I accept the Privacy Policy", value: "1", isSelected: false }],
-      inputs: [{ id: "6.1", label: "I accept the Privacy Policy" }],
+      inputs: [{ id: "7.1", label: "I accept the Privacy Policy" }],
     },
   ];
 }
@@ -172,6 +173,7 @@ export const GF_FORM_IDS = {
   joinOurNetwork:   ${ids.joinOurNetwork},
   serviceInquiry:   ${ids.serviceInquiry},
   locationInquiry:  ${ids.locationInquiry},
+  newsletter:       6,
 } as const;
 
 export type GfFormKey = keyof typeof GF_FORM_IDS;

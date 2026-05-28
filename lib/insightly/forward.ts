@@ -66,9 +66,9 @@ const FIELD_MAPS: Record<FormKey, FieldMap> = {
     interest: "input_6", message: "input_7",
   },
   requestAService: {
-    firstName: null, lastName: null, fullName: "input_1",
-    email: "input_2", phone: "input_3", company: null,
-    interest: "input_4", message: "input_5",
+    firstName: "input_1", lastName: "input_2", fullName: null,
+    email: "input_3", phone: "input_4", company: null,
+    interest: "input_5", message: "input_6",
   },
   joinOurNetwork: {
     firstName: null, lastName: null, fullName: null,

@@ -1,0 +1,1 @@
+- [GF seed script and newsletter](gf-seed-newsletter.md) — seed-gravity-forms.mjs rewrites lib/gf/form-ids.ts but doesn't manage the Newsletter form (id 6); template must hardcode it or footer breaks.
