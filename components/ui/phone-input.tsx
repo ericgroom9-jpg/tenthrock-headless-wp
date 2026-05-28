@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef, useState, useCallback } from "react";
-import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
 
 function formatPhoneNumber(value: string): string {
   const digits = value.replace(/\D/g, "").slice(0, 10);
@@ -17,7 +17,7 @@ interface PhoneInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElemen
 }
 
 const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
-  ({ className, value: controlledValue, onChange, ...props }, ref) => {
+  ({ className, value: controlledValue, onChange, placeholder, ...props }, ref) => {
     const [internalValue, setInternalValue] = useState("");
     const displayValue = controlledValue !== undefined ? controlledValue : internalValue;
 
@@ -49,18 +49,15 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     );
 
     return (
-      <input
+      <Input
         ref={ref}
         type="tel"
         inputMode="numeric"
         value={displayValue}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        placeholder="Enter your phone number"
-        className={cn(
-          "w-full h-12 px-4 border rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 outline-none focus:ring-1 transition-colors",
-          className
-        )}
+        placeholder={placeholder ?? "Enter your phone number"}
+        className={className}
         {...props}
       />
     );

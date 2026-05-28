@@ -20,24 +20,51 @@ const AUTH = Buffer.from(
 const PUBLIC_STOCK = join(process.cwd(), 'public', 'images', 'stock');
 const onDisk = new Set(readdirSync(PUBLIC_STOCK).filter(f => statSync(join(PUBLIC_STOCK, f)).isFile()));
 
+const ASSETS_EXPORT_STOCK = join(process.cwd(), 'public', 'assets_export', 'stock_images');
+let assetsExportOnDisk = new Set();
+try {
+  assetsExportOnDisk = new Set(
+    readdirSync(ASSETS_EXPORT_STOCK).filter(f => statSync(join(ASSETS_EXPORT_STOCK, f)).isFile())
+  );
+} catch { /* directory may not exist */ }
+
 const STOCK_RE = /^\/images\/stock\/([A-Za-z0-9._-]+)$/;
+const ASSETS_EXPORT_RE = /^\/assets_export\/stock_images\/([A-Za-z0-9._-]+)$/;
+
+function findInStock(file) {
+  if (onDisk.has(file)) return `/images/stock/${file}`;
+  const base = file.replace(/\.[^.]+$/, '');
+  for (const ext of ['webp', 'jpg', 'jpeg', 'png']) {
+    const cand = `${base}.${ext}`;
+    if (onDisk.has(cand)) return `/images/stock/${cand}`;
+  }
+  return null;
+}
+
 const fixCache = new Map();
 function fixPath(p) {
   if (typeof p !== 'string') return p;
   if (fixCache.has(p)) return fixCache.get(p);
-  const m = STOCK_RE.exec(p);
-  if (!m) { fixCache.set(p, p); return p; }
-  const file = m[1];
-  if (onDisk.has(file)) { fixCache.set(p, p); return p; }
-  const base = file.replace(/\.[^.]+$/, '');
-  for (const ext of ['webp', 'jpg', 'jpeg', 'png']) {
-    const cand = `${base}.${ext}`;
-    if (onDisk.has(cand)) {
-      const fixed = `/images/stock/${cand}`;
-      fixCache.set(p, fixed);
-      return fixed;
-    }
+
+  // Case 1: /images/stock/<file> — rewrite to a matching on-disk sibling
+  let m = STOCK_RE.exec(p);
+  if (m) {
+    if (onDisk.has(m[1])) { fixCache.set(p, p); return p; }
+    const fixed = findInStock(m[1]);
+    fixCache.set(p, fixed || p);
+    return fixed || p;
   }
+
+  // Case 2: /assets_export/stock_images/<file> — if the file does not ship on
+  // disk under that path, fall back to a sibling in /images/stock/.
+  m = ASSETS_EXPORT_RE.exec(p);
+  if (m) {
+    if (assetsExportOnDisk.has(m[1])) { fixCache.set(p, p); return p; }
+    const fixed = findInStock(m[1]);
+    fixCache.set(p, fixed || p);
+    return fixed || p;
+  }
+
   fixCache.set(p, p);
   return p;
 }
