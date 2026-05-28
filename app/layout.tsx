@@ -3,8 +3,7 @@ import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { GlobalScripts } from "@/components/scripts/GlobalScripts";
-import { fetchMenu, flatten } from "@/lib/menus";
-import { MenuProvider, type NavMenus } from "@/components/shared/MenuProvider";
+import { MenuProvider } from "@/components/shared/MenuProvider";
 import ForceFullPageNavigation from "@/components/shared/NavigationProgress";
 
 const manrope = Manrope({ 
@@ -34,45 +33,12 @@ function deriveWpOrigin(): string | null {
   }
 }
 
-async function loadNavMenus(): Promise<NavMenus> {
-  const [
-    primary,
-    headerCtas,
-    locationsDropdown,
-    footerServices,
-    footerIndustries,
-    footerCompany,
-    footerLegal,
-    footerSocial,
-  ] = await Promise.all([
-    fetchMenu("primary"),
-    fetchMenu("header-ctas"),
-    fetchMenu("locations-dropdown"),
-    fetchMenu("footer-services"),
-    fetchMenu("footer-industries"),
-    fetchMenu("footer-company"),
-    fetchMenu("footer-legal"),
-    fetchMenu("footer-social"),
-  ]);
-  return {
-    primary,
-    headerCtas,
-    locationsDropdown,
-    footerServices: flatten(footerServices),
-    footerIndustries: flatten(footerIndustries),
-    footerCompany: flatten(footerCompany),
-    footerLegal: flatten(footerLegal),
-    footerSocial: flatten(footerSocial),
-  };
-}
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const wpOrigin = deriveWpOrigin();
-  const navMenus = await loadNavMenus();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -86,7 +52,7 @@ export default async function RootLayout({
       <body className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`} suppressHydrationWarning>
         <GlobalScripts />
         <ForceFullPageNavigation />
-        <MenuProvider value={navMenus}>
+        <MenuProvider>
           {children}
         </MenuProvider>
         <Toaster />

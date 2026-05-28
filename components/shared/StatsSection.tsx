@@ -78,7 +78,7 @@ export default function StatsSection({
                <div key={i} className="border border-primary/10 p-8 rounded-[5px] bg-white">
                   {i === 1 && (
                     <div className="relative h-64 w-full rounded-[5px] overflow-hidden mb-8">
-                      <Image src={statsImage} alt={statsImageAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" loading="lazy" />
+                      <Image src={statsImage} alt={statsImageAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
                     </div>
                   )}
                   <h3 className="font-semibold text-xl text-primary mb-4">{card.title}</h3>
