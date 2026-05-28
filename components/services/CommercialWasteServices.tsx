@@ -290,7 +290,7 @@ export default function CommercialWasteServices({ acf, globalSections }: Commerc
  {/* Case Study Section - Matching Homepage Design */}
  <section className="py-8 md:py-16 bg-white border-b border-[#042940]/5">
  <div className="container mx-auto px-4 md:px-8">
- <div className="grid lg:grid-cols-2 gap-12 items-center">
+ <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
  <div className="space-y-4 order-2 lg:order-1">
  <FadeIn
  className="rounded-[5px] overflow-hidden h-[400px] relative"

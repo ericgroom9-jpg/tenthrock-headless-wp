@@ -1,7 +1,6 @@
 "use client";
 
 import { forwardRef, useState, useCallback } from "react";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 function formatPhoneNumber(value: string): string {
@@ -50,7 +49,7 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     );
 
     return (
-      <Input
+      <input
         ref={ref}
         type="tel"
         inputMode="numeric"
@@ -58,7 +57,10 @@ const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder="Enter your phone number"
-        className={className}
+        className={cn(
+          "w-full h-12 px-4 border rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 outline-none focus:ring-1 transition-colors",
+          className
+        )}
         {...props}
       />
     );

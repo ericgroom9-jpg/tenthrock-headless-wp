@@ -202,6 +202,7 @@ const SUB_SERVICE_TO_PARENT_VALUE: Record<string, string> = {
  "events-stadiums": "specialized-project-logistics",
  "event-stadium": "specialized-project-logistics",
  "natural-disaster-mobilization": "specialized-project-logistics",
+ "natural-disaster-cleanup": "specialized-project-logistics",
  "natural-disasters": "specialized-project-logistics",
  "on-demand-service": "dumpsters-containers",
  "multiple-sizes": "dumpsters-containers",
@@ -669,7 +670,7 @@ export default function ServiceTemplate({
  {/* Paragraph Section 1 */}
  <section className="py-8 md:py-16 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
  <div className="container mx-auto px-4 md:px-8">
- <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
+ <div className="grid xl:grid-cols-2 gap-6 xl:gap-16 items-center">
  <FadeIn
  >
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6" data-testid="badge-paragraph-1">
@@ -780,7 +781,7 @@ export default function ServiceTemplate({
  {/* Paragraph Section 2 */}
  <section className="py-8 md:py-16 bg-white" aria-labelledby="paragraph-section-2-heading" data-testid="section-paragraph-2">
  <div className="container mx-auto px-4 md:px-8">
- <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
+ <div className="grid xl:grid-cols-2 gap-6 xl:gap-16 items-center">
  {paragraphSection2.image && (
  <FadeIn
  className="order-2 xl:order-1 relative rounded-[5px] overflow-hidden aspect-[4/3]"

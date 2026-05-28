@@ -163,7 +163,7 @@ export default function FaqSection({
           })}
         </div>
         
-        <div className="mt-16 text-left sm:text-center">
+        <div className="mt-8 md:mt-16 text-left sm:text-center">
            <p className="text-primary/70 mb-4 font-medium">{ctaText}</p>
            <Button size="lg" className="w-full sm:w-auto shadow-lg min-h-[52px] whitespace-nowrap rounded-full" asChild>
               <Link href={ctaLink}>{ctaLabel}</Link>

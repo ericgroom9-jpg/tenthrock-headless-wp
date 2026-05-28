@@ -242,7 +242,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
       </nav>
 
       {/* FAQ Content */}
-      <section ref={accordionRef} aria-labelledby="faq-section-heading" className="py-8 md:py-16 lg:py-20 bg-[#F9F9F6]">
+      <section ref={accordionRef} aria-labelledby="faq-section-heading" className="pt-8 pb-6 md:py-16 lg:py-20 bg-[#F9F9F6]">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <FadeIn
             key={activeCategory}
@@ -337,7 +337,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
 
           {/* Contact CTA */}
           <FadeIn
-            className="text-center mt-16 md:mt-20"
+            className="text-center mt-8 md:mt-20"
           >
             <p className="text-[#042940]/70 mb-4 font-medium" data-testid="text-faq-still-questions">
               {acf?.ctaText || "Still have questions?"}

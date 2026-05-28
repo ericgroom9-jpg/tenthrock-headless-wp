@@ -33,10 +33,10 @@ export default function FinalCtaSection({
  const src = image || DEFAULT_IMAGE;
  const alt = imageAlt || DEFAULT_IMAGE_ALT;
  return (
- <section className="py-16 bg-white" aria-label="Get started with waste management">
+ <section className="py-8 md:py-16 bg-white" aria-label="Get started with waste management">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn
- className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row min-h-[480px] lg:min-h-0"
+ className="relative bg-[#042940] rounded-[5px] overflow-hidden shadow-2xl flex flex-col lg:flex-row lg:min-h-0"
  >
  <div className="lg:w-1/2 p-6 sm:p-10 md:p-14 flex flex-col justify-center relative z-10">
  <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c5d520]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
@@ -52,6 +52,18 @@ export default function FinalCtaSection({
  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full" asChild>
  <Link href={ctaLink}>{ctaLabel}</Link>
  </Button>
+ <Button
+ size="lg"
+ variant="outline"
+ className="lg:hidden w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all active:scale-95 min-h-[52px] whitespace-nowrap rounded-full"
+ data-testid="button-cta-phone-mobile"
+ asChild
+ >
+ <a href={phoneLink}>
+ <Phone className="mr-2 h-5 w-5" />
+ {phone}
+ </a>
+ </Button>
  </div>
  </div>
 
@@ -61,7 +73,7 @@ export default function FinalCtaSection({
  <div className="absolute inset-0 bg-[#042940]/80 lg:bg-[#042940]/20 mix-blend-multiply"></div>
  <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-[#042940] via-[#042940]/50 to-transparent"></div>
 
- <FadeIn className="absolute inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-8 sm:right-8 md:bottom-12 md:right-12">
+ <FadeIn className="hidden lg:block absolute lg:bottom-8 lg:right-8 xl:bottom-12 xl:right-12">
  <Button
  size="lg"
  variant="outline"

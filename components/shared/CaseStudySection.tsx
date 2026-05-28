@@ -205,7 +205,7 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
   return (
     <section className="py-8 md:py-16 bg-white border-b border-primary/5" aria-label="Case studies" data-testid="section-case-studies">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid xl:grid-cols-2 gap-12 items-center">
+        <div className="grid xl:grid-cols-2 gap-6 xl:gap-12 items-center">
           <div className="space-y-4 order-2 xl:order-1">
             
               <div className="relative rounded-[5px] overflow-hidden h-[400px] bg-primary/5 hidden xl:block">

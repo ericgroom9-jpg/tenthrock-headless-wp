@@ -67,6 +67,7 @@ export default function ZipCheckForm({
  {buttonLabel}
  </Button>
  </div>
+ {result && (
  <p
  role="status"
  aria-live="polite"
@@ -74,9 +75,7 @@ export default function ZipCheckForm({
  className={`mt-6 min-h-[1.5rem] text-base font-medium text-left sm:text-center ${
  result === "ok"
  ? "text-[#c5d520]"
- : result === "no" || result === "empty" || result === "invalid"
- ? "text-red-300"
- : ""
+ : "text-red-300"
  }`}
  >
  {result === "ok"
@@ -85,10 +84,9 @@ export default function ZipCheckForm({
  ? "Please enter a ZIP code."
  : result === "invalid"
  ? "Please enter a valid 5-digit ZIP code."
- : result === "no"
- ? "We don't serve that area."
- : ""}
+ : "We don't serve that area."}
  </p>
+ )}
  </form>
  );
 }
