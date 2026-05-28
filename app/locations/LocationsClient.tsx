@@ -101,11 +101,11 @@ export default function LocationsClient({ acf, globalSections }: Props) {
       </section>
 
       <section
-        className="py-10 md:py-24 lg:py-32 bg-[#F9F9F6]"
+        className="py-8 md:py-16 lg:py-20 bg-[#F9F9F6]"
         aria-labelledby="areas-heading"
       >
         <div className="container mx-auto px-4 md:px-8">
-          <FadeIn className="text-left sm:text-center mb-12 md:mb-16">
+          <FadeIn className="text-left sm:text-center mb-6 md:mb-16">
             <h2
               id="areas-heading"
               className="text-4xl md:text-5xl font-medium text-primary tracking-tighter mb-6 leading-tight"

@@ -31,7 +31,7 @@ export default function ThankYouClient({ data }: Props) {
   return (
     <main>
       <Navbar variant="sticky" />
-      <section className="py-20 sm:py-28 lg:py-36 bg-white" data-testid="section-thank-you">
+      <section className="py-8 md:py-16 lg:py-20 bg-white" data-testid="section-thank-you">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <FadeIn className="mb-8">

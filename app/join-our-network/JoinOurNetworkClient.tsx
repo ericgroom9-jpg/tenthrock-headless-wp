@@ -14,7 +14,8 @@ import {
  Headphones,
  Ban,
  Monitor,
- TrendingUp
+ TrendingUp,
+ Loader2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
@@ -131,7 +132,7 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  const benefitsSubtitle = acf?.benefitsSubtitle || "Access a reliable, high-volume stream of commercial projects with a dedicated logistics partner that prioritizes clear communication and efficient site coordination.";
  const benefitsCards = acf?.benefitsCards || defaultBenefits;
  const howHeading = acf?.howHeading || "How It Works";
- const howSubtitle = acf?.howSubtitle || "Four Steps to Your First Opportunity";
+ const howSubtitle = "Four steps to your first opportunity.";
  const howSteps = acf?.howSteps || defaultHowSteps;
  const statsHeading = acf?.statsHeading || "A Growing Network Built on Performance";
  const statsBullets = acf?.statsBullets || defaultStatsBullets;
@@ -152,7 +153,7 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  <Image src={heroImage} alt="" fill sizes="100vw" className="object-cover" aria-hidden="true" priority />
  <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="relative container mx-auto px-4 md:px-8 py-8 md:py-16 lg:py-20">
  <div className="max-w-2xl">
  <FadeIn>
  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6">
@@ -191,9 +192,9 @@ export default function JoinOurNetworkClient({ acf }: Props) {
 
  <LogoReelSection headline={logosHeadline} testIdPrefix="join-logos" />
 
- <section className="py-10 md:py-24 bg-[#F9F9F6]" data-testid="section-join-benefits">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" data-testid="section-join-benefits">
  <div className="container mx-auto px-4 md:px-8">
- <FadeIn className="max-w-2xl mb-12 md:mb-16">
+ <FadeIn className="max-w-2xl mb-6 md:mb-16">
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
  <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>
  {benefitsTagline}
@@ -224,9 +225,9 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  </div>
  </section>
 
- <section className="py-10 md:py-24 bg-white" data-testid="section-join-how-it-works">
+ <section className="py-8 md:py-16 bg-white" data-testid="section-join-how-it-works">
  <div className="container mx-auto px-4 md:px-8">
- <FadeIn className="text-left sm:text-center max-w-2xl mx-auto mb-12 md:mb-16">
+ <FadeIn className="text-left sm:text-center max-w-2xl mx-auto mb-6 md:mb-16">
  <h2 className="text-4xl md:text-5xl font-medium text-[#042940] leading-tight tracking-tighter mb-4">
  {howHeading}
  </h2>
@@ -251,7 +252,7 @@ export default function JoinOurNetworkClient({ acf }: Props) {
  </div>
  </section>
 
- <section className="py-10 md:py-20 bg-[#042940]" data-testid="section-join-stats">
+ <section className="py-8 md:py-16 bg-[#042940]" data-testid="section-join-stats">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
  <FadeIn>
@@ -333,7 +334,7 @@ function EmailCaptureSection({
  };
 
  return (
- <section id="email-capture" className="py-10 md:py-24 bg-white" data-testid="section-join-email">
+ <section id="email-capture" className="py-8 md:py-16 bg-white" data-testid="section-join-email">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn className="max-w-2xl mx-auto text-left sm:text-center">
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F9F9F6] border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -368,7 +369,7 @@ function EmailCaptureSection({
  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full px-8"
  data-testid="button-join-submit"
  >
- {submitting ? "Submitting…" : submitLabel}
+ {submitting ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" />Submitting…</>) : submitLabel}
  </Button>
  </div>
  {error && (

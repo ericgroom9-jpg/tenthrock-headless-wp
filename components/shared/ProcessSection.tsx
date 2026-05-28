@@ -32,7 +32,7 @@ export default function ProcessSection({
   testIdPrefix = "process",
 }: ProcessSectionProps) {
   return (
-    <section id="process" aria-labelledby={`${testIdPrefix}-heading`} className="py-10 md:py-24 bg-white relative overflow-hidden">
+    <section id="process" aria-labelledby={`${testIdPrefix}-heading`} className="py-8 md:py-16 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">

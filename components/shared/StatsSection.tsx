@@ -45,7 +45,7 @@ export default function StatsSection({
   const statsImage = imgParkWater;
   const statsImageAlt = image ? (imageAlt || "Tenth Rock nationwide waste operations") : "Tenth Rock nationwide waste operations";
   return (
-    <section className="py-10 md:py-24 bg-[#FDFDFD]" aria-label="Key metrics and statistics">
+    <section className="py-8 md:py-16 bg-[#FDFDFD]" aria-label="Key metrics and statistics">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-32">
@@ -66,8 +66,8 @@ export default function StatsSection({
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
                   <Link href={ctaLink}>{ctaLabel}</Link>
                 </Button>
-                <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" asChild>
-                   <a href={phoneLink}><Phone className="w-5 h-5 text-secondary" /> {phoneLabel}</a>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/20 text-primary flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" asChild>
+                   <a href={phoneLink}><Phone className="w-5 h-5 text-primary" /> {phoneLabel}</a>
                 </Button>
               </div>
             </FadeIn>
@@ -97,8 +97,8 @@ export default function StatsSection({
           <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full" data-testid="button-stats-cta-mobile" asChild>
             <Link href={ctaLink}>{ctaLabel}</Link>
           </Button>
-          <Button size="lg" variant="ghost" className="w-full sm:w-auto text-primary hover:bg-transparent hover:underline flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" data-testid="button-stats-phone-mobile" asChild>
-            <a href={phoneLink}><Phone className="w-5 h-5 text-secondary" /> {phoneLabel}</a>
+          <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/20 text-primary flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" data-testid="button-stats-phone-mobile" asChild>
+            <a href={phoneLink}><Phone className="w-5 h-5 text-primary" /> {phoneLabel}</a>
           </Button>
         </div>
       </div>

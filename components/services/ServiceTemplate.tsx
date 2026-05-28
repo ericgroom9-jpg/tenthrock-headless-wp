@@ -14,7 +14,8 @@ import {
  ChevronDown,
  Plus,
  Minus,
- Mail
+ Mail,
+ Loader2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -285,7 +286,7 @@ export default function ServiceTemplate({
  />
  <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="relative container mx-auto px-4 md:px-8 py-8 md:py-16 lg:py-20">
  <div className="max-w-2xl lg:max-w-5xl">
  <FadeIn
  >
@@ -337,7 +338,7 @@ export default function ServiceTemplate({
  data-testid="accordion-about-service"
  >
  <h2 className="text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">About {serviceName}</h2>
- <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+ <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === "about" 
  ? "border-2 border-[#042940] bg-transparent" 
  : "bg-[#042940] group-hover:bg-[#c5d520]"
@@ -383,8 +384,19 @@ export default function ServiceTemplate({
  className="w-full flex items-center justify-between py-6 group cursor-pointer"
  data-testid="accordion-how-service-works"
  >
- <h2 className="text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">How {serviceName} Works</h2>
- <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+ {(() => {
+                          const howNameOverrides: Record<string, string> = {
+                            "natural-disaster-cleanup": "Natural Disaster Clean Up",
+                          };
+                          const howName = howNameOverrides[currentSlug] || serviceName;
+                          const trimmed = howName.trim();
+                          const isCompound = /\s&\s|\s+and\s+/i.test(trimmed);
+                          const verb = isCompound || /\bs\b|s$/i.test(trimmed) ? "Work" : "Works";
+                          return (
+                            <h2 className="text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">How {howName} {verb}</h2>
+                          );
+                        })()}
+ <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === "how" 
  ? "border-2 border-[#042940] bg-transparent" 
  : "bg-[#042940] group-hover:bg-[#c5d520]"
@@ -436,7 +448,7 @@ export default function ServiceTemplate({
  data-testid="accordion-other-services"
  >
  <h2 className="text-3xl font-medium text-[#042940] leading-tight tracking-tighter text-left">Other Services</h2>
- <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+ <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === "other" 
  ? "border-2 border-[#042940] bg-transparent" 
  : "bg-[#042940] group-hover:bg-[#c5d520]"
@@ -590,7 +602,7 @@ export default function ServiceTemplate({
  id="interest"
  name="input_6"
  required
- className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
+ className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-base md:text-sm text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
  data-testid="select-interest"
  defaultValue={currentInterest}
  >
@@ -642,7 +654,7 @@ export default function ServiceTemplate({
  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] hover:shadow-[0_0_30px_rgba(197,213,32,0.5)] transition-all whitespace-nowrap"
  data-testid="button-form-submit"
  >
- {submitting ? "Submitting…" : "Submit Request"}
+ {submitting ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" />Submitting…</>) : "Submit Request"}
  </Button>
  </div>
  {submitError && (
@@ -655,7 +667,7 @@ export default function ServiceTemplate({
  </section>
 
  {/* Paragraph Section 1 */}
- <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" aria-labelledby="paragraph-section-1-heading" data-testid="section-paragraph-1">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
@@ -729,7 +741,7 @@ export default function ServiceTemplate({
  )}
 
  {/* How It Works Section - Matching Homepage Design Exactly */}
- <section id="process" aria-labelledby="process-heading" className="py-10 md:py-24 bg-white relative overflow-hidden">
+ <section id="process" aria-labelledby="process-heading" className="py-8 md:py-16 bg-white relative overflow-hidden">
  <div className="container mx-auto px-4 md:px-8">
  <div className="text-left sm:text-center max-w-3xl mx-auto mb-16">
  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
@@ -740,7 +752,7 @@ export default function ServiceTemplate({
  How It Works
  </h2>
  <p className="text-lg text-[#042940]/70 [text-wrap:balance]">
- {processSubtitle || "A simple, transparent process designed to get your problem solved fast."}
+ {"A simple, transparent process designed to get your problem solved fast."}
  </p>
  </div>
 
@@ -766,7 +778,7 @@ export default function ServiceTemplate({
  </section>
 
  {/* Paragraph Section 2 */}
- <section className="py-10 md:py-24 bg-white" aria-labelledby="paragraph-section-2-heading" data-testid="section-paragraph-2">
+ <section className="py-8 md:py-16 bg-white" aria-labelledby="paragraph-section-2-heading" data-testid="section-paragraph-2">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  {paragraphSection2.image && (
@@ -832,7 +844,7 @@ export default function ServiceTemplate({
  </section>
 
  {/* Zipcode Checker Section - Matching Homepage Design Exactly */}
- <section className="py-10 md:py-24 bg-white relative overflow-hidden">
+ <section className="py-8 md:py-16 bg-white relative overflow-hidden">
  <div className="container mx-auto px-4 md:px-8 relative z-10">
  <FadeIn
  className="relative bg-[#042940] rounded-[5px] p-8 md:p-12 lg:p-20 overflow-hidden shadow-2xl text-left sm:text-center"

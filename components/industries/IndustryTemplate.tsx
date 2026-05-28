@@ -115,14 +115,18 @@ export default function IndustryTemplate({
 
  <main id="main-content">
  {/* Hero Section */}
- <section 
- className="relative min-h-[50vh] sm:min-h-[55vh] md:min-h-[65vh] lg:min-h-[70vh] flex items-center overflow-hidden"
- style={{
- backgroundImage: `url(${heroImage})`,
- backgroundSize: 'cover',
- backgroundPosition: 'center',
- }}
+ <section
+ className="relative min-h-[50vh] sm:min-h-[55vh] md:min-h-[65vh] lg:min-h-[70vh] flex items-center overflow-hidden bg-[#042940]"
  >
+ <Image
+ src={heroImage}
+ alt=""
+ fill
+ sizes="100vw"
+ priority
+ aria-hidden="true"
+ className="object-cover object-center sm:object-right"
+ />
  {/* Overlay — darker solid on mobile for readability, gradient on sm+ */}
  <div
  aria-hidden="true"
@@ -134,7 +138,7 @@ export default function IndustryTemplate({
  className="absolute inset-0 hidden sm:block"
  style={{ backgroundImage: "linear-gradient(to right, rgba(4,41,64,1), rgba(4,41,64,0.8) 60%, rgba(4,41,64,0.15))" }}
  />
- <div className="container mx-auto px-4 md:px-8 py-12 sm:py-10 md:py-20 lg:py-24 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
+ <div className="container mx-auto px-4 md:px-8 py-8 md:py-16 lg:py-20 relative z-10 pt-32 sm:pt-36 md:pt-40 lg:pt-44">
  <FadeIn
  className="max-w-3xl"
  >
@@ -172,13 +176,13 @@ export default function IndustryTemplate({
  </section>
 
  {/* About Industry Section */}
- <section className="py-10 md:py-20 lg:py-24 bg-white">
+ <section className="py-8 md:py-16 lg:py-20 bg-white">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
  {/* Left Content */}
  <FadeIn
  >
- <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-8 md:mb-12 tracking-tighter leading-tight">
+ <h2 className="text-4xl md:text-5xl font-medium text-[#042940] mb-6 md:mb-12 tracking-tighter leading-tight">
  {aboutTitle}
  </h2>
 
@@ -281,7 +285,7 @@ export default function IndustryTemplate({
  </section>
 
  {/* Paragraph Section 1 - Text Left, Image Right */}
- <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-1-heading" data-testid="section-industry-paragraph-1">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn
@@ -349,7 +353,7 @@ export default function IndustryTemplate({
  <ProcessSection />
 
  {/* Paragraph Section 2 - Image Left, Text Right */}
- <section className="py-10 md:py-24 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
+ <section className="py-8 md:py-16 bg-white" aria-labelledby="industry-paragraph-2-heading" data-testid="section-industry-paragraph-2">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  {paragraphSection2.image && (
@@ -418,7 +422,7 @@ export default function IndustryTemplate({
  {faqs && faqs.length > 0 && <FaqSection faqs={faqs} />}
 
  {/* Paragraph Section 3 - Text Left, Image Right (alternating) */}
- <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" aria-labelledby="industry-paragraph-3-heading" data-testid="section-industry-paragraph-3">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
  <FadeIn

@@ -131,7 +131,7 @@ function HeroSection() {
  />
  <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="relative container mx-auto px-4 md:px-8 py-8 md:py-16 lg:py-20">
  <div className="max-w-2xl">
  <FadeIn
  >
@@ -172,7 +172,7 @@ function HeroSection() {
 
 function WhatYouNeedSection() {
  return (
- <section className="py-10 md:py-24 bg-[#F9F9F6]" data-testid="section-onboard-process">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" data-testid="section-onboard-process">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn
  className="max-w-2xl mb-12"
@@ -240,7 +240,7 @@ function WhatYouNeedSection() {
 
 function FormSection() {
  return (
- <section id="onboarding-form" className="py-10 md:py-24 bg-white" data-testid="section-onboard-form">
+ <section id="onboarding-form" className="py-8 md:py-16 bg-white" data-testid="section-onboard-form">
  <div className="container mx-auto px-4 md:px-8">
  <FadeIn
  className="max-w-4xl mx-auto"

@@ -242,7 +242,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
       </nav>
 
       {/* FAQ Content */}
-      <section ref={accordionRef} aria-labelledby="faq-section-heading" className="py-10 md:py-24 lg:py-28 bg-[#F9F9F6]">
+      <section ref={accordionRef} aria-labelledby="faq-section-heading" className="py-8 md:py-16 lg:py-20 bg-[#F9F9F6]">
         <div className="container mx-auto px-4 md:px-8 max-w-4xl">
           <FadeIn
             key={activeCategory}
@@ -252,7 +252,7 @@ export default function FaqPage({ categories, acf, globalSections }: FaqPageProp
             aria-labelledby={`tab-faq-${activeCategory}`}
           >
             {/* Section Header */}
-            <div className="text-left sm:text-center mb-12 md:mb-16">
+            <div className="text-left sm:text-center mb-6 md:mb-16">
               <h2 id="faq-section-heading" className="text-4xl md:text-5xl font-medium tracking-tighter leading-tight text-[#042940] mb-4" data-testid="text-faq-section-heading">
                 {currentCategory.label}{" "}
                 <span className="text-[#c5d520]">FAQs</span>

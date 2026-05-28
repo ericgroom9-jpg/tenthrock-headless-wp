@@ -94,11 +94,11 @@ export default function AboutClient({ acf, globalSections }: Props) {
       <Navbar />
       
       <section 
-        className="pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-16 md:pb-24 bg-white"
+        className="pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-10 md:pb-12 bg-white"
         aria-labelledby="our-story-heading"
       >
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-start mb-12 md:mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-start mb-6 md:mb-16">
             <FadeIn>
               <span className="inline-block text-sm font-bold text-[#c5d520] uppercase tracking-wider mb-4">
                 {storyTagline}
@@ -125,7 +125,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
             </FadeIn>
           </div>
           
-          <FadeIn className="relative rounded-[5px] overflow-hidden aspect-[16/9] md:aspect-[21/9]">
+          <FadeIn className="relative rounded-[5px] overflow-hidden aspect-[16/9] md:aspect-[3/1] lg:aspect-[18/5]">
             <Image 
               src={storyImage} 
               alt={storyImageAlt} 
@@ -139,7 +139,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
       </section>
 
       <section 
-        className="py-10 md:py-24 lg:py-32 bg-white"
+        className="py-8 md:py-16 lg:py-20 bg-white"
         aria-labelledby="core-heading"
       >
         <div className="container mx-auto px-4 md:px-8">
@@ -236,9 +236,9 @@ export default function AboutClient({ acf, globalSections }: Props) {
         </div>
       </section>
 
-      <section className="py-10 md:py-20 bg-[#F9F9F6]" aria-labelledby="associations-heading">
+      <section className="py-8 md:py-16 bg-[#F9F9F6]" aria-labelledby="associations-heading">
         <div className="container mx-auto px-4 md:px-8">
-          <FadeIn className="text-left sm:text-center mb-10 md:mb-14">
+          <FadeIn className="text-left sm:text-center mb-6 md:mb-14">
             <h2 id="associations-heading" className="text-4xl md:text-5xl font-medium text-primary tracking-tighter leading-tight">
               {associationsHeading}
             </h2>
@@ -263,7 +263,7 @@ export default function AboutClient({ acf, globalSections }: Props) {
       </section>
 
       <section 
-        className="py-10 md:py-24 lg:py-32 bg-white"
+        className="py-8 md:py-16 lg:py-20 bg-white"
         aria-labelledby="community-heading"
       >
         <div className="container mx-auto px-4 md:px-8">

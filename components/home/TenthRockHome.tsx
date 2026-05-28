@@ -23,7 +23,7 @@ import Footer from "@/components/shared/Footer";
 import LogoReelSection from "@/components/shared/LogoReelSection";
 
 const SectionSkeleton = () => (
- <div className="py-10 md:py-24 animate-pulse">
+ <div className="py-8 md:py-16 animate-pulse">
  <div className="container mx-auto px-4 md:px-8">
  <div className="h-8 bg-gray-200 rounded w-1/3 mb-4" />
  <div className="h-4 bg-gray-100 rounded w-2/3 mb-8" />

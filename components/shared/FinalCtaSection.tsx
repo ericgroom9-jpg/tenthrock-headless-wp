@@ -60,16 +60,20 @@ export default function FinalCtaSection({
  <Image src={src} alt={alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center lg:object-right" loading="lazy" />
  <div className="absolute inset-0 bg-[#042940]/80 lg:bg-[#042940]/20 mix-blend-multiply"></div>
  <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-[#042940] via-[#042940]/50 to-transparent"></div>
- 
- <FadeIn
- className="absolute inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-5 rounded-[5px] transform md:hover:scale-105 transition-transform duration-300"
+
+ <FadeIn className="absolute inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-8 sm:right-8 md:bottom-12 md:right-12">
+ <Button
+ size="lg"
+ variant="outline"
+ className="w-full sm:w-auto backdrop-blur-md bg-white/5 border-white/20 text-white hover:bg-white active:bg-white hover:text-[#042940] active:text-[#042940] shadow-lg transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap rounded-full"
+ data-testid="button-cta-phone"
+ asChild
  >
- <a href={phoneLink} className="flex items-center justify-center sm:justify-start gap-3 hover:underline" data-testid="link-cta-phone-card">
- <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#c5d520] rounded-full flex items-center justify-center text-[#042940] shrink-0">
- <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
- </div>
- <span className="text-[#c5d520] text-base sm:text-xl font-bold whitespace-nowrap">{phone}</span>
+ <a href={phoneLink}>
+ <Phone className="mr-2 h-5 w-5" />
+ {phone}
  </a>
+ </Button>
  </FadeIn>
  </div>
  </FadeIn>

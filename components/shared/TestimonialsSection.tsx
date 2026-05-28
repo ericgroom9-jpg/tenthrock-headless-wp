@@ -40,7 +40,7 @@ export default function TestimonialsSection({
  const authorLine = [current.role, current.company].filter(Boolean).join(", ");
 
  return (
- <section className="py-10 md:py-24 bg-[#042940] text-white relative overflow-hidden" aria-label="Testimonials" data-testid={`section-${testIdPrefix}`}>
+ <section className="py-8 md:py-16 bg-[#042940] text-white relative overflow-hidden" aria-label="Testimonials" data-testid={`section-${testIdPrefix}`}>
  <div className="absolute inset-0 bg-gradient-to-br from-[#042940] to-[#0a3a55]"></div>
  
  <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#c5d520]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>

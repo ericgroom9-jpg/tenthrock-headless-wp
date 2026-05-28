@@ -8,7 +8,7 @@ import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/shared/FadeIn";
 import { PhoneInput } from "@/components/ui/phone-input";
-import { Phone, Check, ArrowUpRight, ArrowDown, MapPin, ChevronRight } from "lucide-react";
+import { Phone, Check, ArrowUpRight, ArrowDown, ArrowRight, MapPin, ChevronRight } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 
@@ -119,7 +119,7 @@ export default function CityLocationPage() {
  />
  <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="relative container mx-auto px-4 md:px-8 py-8 md:py-16 lg:py-20">
  <div className="max-w-2xl lg:max-w-5xl">
  <FadeIn>
  <nav aria-label="Breadcrumb" className="mb-6" data-testid="nav-breadcrumb">
@@ -134,10 +134,10 @@ export default function CityLocationPage() {
 
  <h1
  id="city-hero-heading"
- className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-none"
+ className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-none [text-wrap:balance]"
  data-testid="heading-city-hero"
  >
- Waste Management Services in {cityName}, {stateData?.abbreviation || stateName}
+ Waste Management Services in&nbsp;{cityName},&nbsp;{stateData?.abbreviation || stateName}
  </h1>
  <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md lg:max-w-4xl leading-relaxed [text-wrap:balance]" data-testid="text-city-hero-subtitle">
  Commercial dumpster rental and emergency waste services across {cityName}, {stateData?.abbreviation || stateName}. Tenth Rock supports multi-location businesses with roll-off containers, rapid response, and coordinated waste logistics to keep operations running without disruption.
@@ -170,7 +170,7 @@ export default function CityLocationPage() {
  </section>
 
  {/* About Accordion Section */}
- <section className="py-10 md:py-24 bg-white" aria-labelledby="about-city-heading" data-testid="section-city-about">
+ <section className="py-8 md:py-16 bg-white" aria-labelledby="about-city-heading" data-testid="section-city-about">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
  <div>
@@ -189,13 +189,19 @@ export default function CityLocationPage() {
  {section.title}
  </h2>
  <div
- className={`w-11 h-11 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+ className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === idx
- ? "bg-[#c5d520] border-[#c5d520] text-[#042940] rotate-180"
- : "border-[#042940]/20 text-[#042940]/50 group-hover:border-[#c5d520] group-hover:text-[#c5d520]"
+ ? "border-2 border-[#042940] bg-transparent"
+ : "bg-[#042940] group-hover:bg-[#c5d520]"
  }`}
  >
- <ArrowDown className="w-5 h-5" />
+ <ArrowRight
+ className={`w-5 h-5 transition-transform ${
+ openAccordion === idx
+ ? "text-[#042940] -rotate-45"
+ : "text-white group-hover:text-[#042940]"
+ }`}
+ />
  </div>
  </button>
  {openAccordion === idx && (
@@ -297,7 +303,7 @@ export default function CityLocationPage() {
  </section>
 
  {/* Info Block Section */}
- <section className="py-10 md:py-24 bg-[#F9F9F6]" data-testid="section-city-info">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" data-testid="section-city-info">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
  <FadeIn>
@@ -382,7 +388,7 @@ export default function CityLocationPage() {
 
  {/* Other Cities in This State */}
  {otherCities.length > 0 && (
- <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="other-cities-heading" data-testid="section-other-cities">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" aria-labelledby="other-cities-heading" data-testid="section-other-cities">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-stretch">
  {/* Left - State Map Visual */}

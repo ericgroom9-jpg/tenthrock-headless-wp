@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
-import { Snowflake, AlertTriangle, Trash2, Building2, Calendar, CloudLightning, Clock, Ruler, Recycle, ClipboardList, GraduationCap, Handshake, ArrowRight, type LucideIcon } from "lucide-react";
+import { Snowflake, AlertTriangle, Trash2, Building2, Calendar, CloudLightning, Clock, Ruler, Recycle, ClipboardList, BookOpenCheck, Handshake, ArrowRight, type LucideIcon } from "lucide-react";
 import type { ServiceCategory } from "@/lib/wordpress";
 
 const defaultServices = [
@@ -50,7 +50,7 @@ const defaultSubItemIcons: LucideIcon[][] = [
   [Snowflake, AlertTriangle, Trash2],
   [Building2, Calendar, CloudLightning],
   [Clock, Ruler, Recycle],
-  [ClipboardList, GraduationCap, Handshake],
+  [ClipboardList, BookOpenCheck, Handshake],
 ];
 
 interface CWSProps {
@@ -93,10 +93,10 @@ export default function CommercialWasteServices({
   const [activeService, setActiveService] = useState(initialActive);
 
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-10 md:py-24 bg-[#F9F9F6]">
+    <section id="services" aria-labelledby="services-heading" className="py-8 md:py-16 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
         <FadeIn
-          className="mb-10 md:mb-16 max-w-2xl"
+          className="mb-6 md:mb-16 max-w-2xl"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#042940]/10 text-[#042940] font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-[#c5d520]"></span>

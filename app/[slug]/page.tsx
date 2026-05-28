@@ -157,7 +157,7 @@ export default async function WordPressPage({ params, searchParams }: PageProps)
   return (
     <Layout isPreview={isPreview}>
       <JsonLdSchema seo={page.seoMetadata} />
-      <div className="py-12 md:py-16">
+      <div className="py-8 md:py-16">
         <div className="container max-w-4xl mx-auto px-4">
           <article>
             <h1 

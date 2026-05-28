@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { after } from 'next/server';
 import { forwardToInsightly } from '@/lib/insightly/forward';
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -151,13 +152,16 @@ export async function POST(request: NextRequest) {
       } catch { /* keep as-is */ }
       confirmation = { type: 'redirect', url };
     }
-    // Forward to Insightly CRM as a Lead. Awaited (not background) so the
-    // call actually runs in a serverless environment — background promises
-    // are killed when the response is sent. Wrapped + caught inside
-    // `forwardToInsightly` so it can NEVER break the user-facing form.
+    // Forward to Insightly CRM as a Lead. Deferred with `after()` so the
+    // user-facing response (and thank-you redirect) returns immediately;
+    // Next.js keeps the serverless invocation alive until this resolves
+    // instead of killing it the moment the response is sent.
+    // Wrapped + caught inside `forwardToInsightly` so it can NEVER break
+    // the user-facing form.
     const formIdNum = Number(formId);
+    const referer = request.headers.get('referer');
     if (Number.isFinite(formIdNum)) {
-      await forwardToInsightly(formIdNum, formData, request.headers.get('referer'));
+      after(() => forwardToInsightly(formIdNum, formData, referer));
     }
 
     return NextResponse.json({

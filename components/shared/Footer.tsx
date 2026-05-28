@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useNavMenus } from "@/components/shared/MenuProvider";
 import FadeIn from "@/components/shared/FadeIn";
-import { ArrowRight, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
+import { ArrowRight, Linkedin, Twitter, Instagram, Facebook, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { submitGravityForm } from "@/lib/gf/submit-client";
@@ -27,7 +27,6 @@ const DEFAULT_INDUSTRY_LINKS: FlatLink[] = [
   { label: "Stadiums & Events", href: "/stadiums-events" },
   { label: "Faith Based", href: "/faith-based" },
   { label: "Real Estate", href: "/real-estate" },
-  { label: "Natural Disasters", href: "/natural-disasters" },
   { label: "Hospitality", href: "/hospitality" },
   { label: "Educational", href: "/educational" },
   { label: "Municipalities", href: "/municipalities" },
@@ -58,13 +57,15 @@ const SOCIAL_ICONS: Array<{ match: RegExp; Icon: typeof Linkedin }> = [
 ];
 
 const SOCIAL_FALLBACK_URLS: Array<{ match: RegExp; href: string }> = [
+  { match: /linkedin/i,  href: "https://www.linkedin.com/company/tenth-rock" },
+  { match: /twitter|^x$|x\.com/i, href: "https://x.com/Tenth_Rock" },
   { match: /instagram/i, href: "https://www.instagram.com/tenth_rock/" },
   { match: /facebook/i,  href: "https://www.facebook.com/tenthrocksolutions" },
 ];
 
 const DEFAULT_SOCIAL_LINKS: FlatLink[] = [
-  { label: "LinkedIn",  href: "#" },
-  { label: "Twitter",   href: "#" },
+  { label: "LinkedIn",  href: "https://www.linkedin.com/company/tenth-rock" },
+  { label: "Twitter",   href: "https://x.com/Tenth_Rock" },
   { label: "Instagram", href: "https://www.instagram.com/tenth_rock/" },
   { label: "Facebook",  href: "https://www.facebook.com/tenthrocksolutions" },
 ];
@@ -110,7 +111,11 @@ export default function Footer() {
               className="inline-block rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520]"
               data-testid="link-footer-logo"
             >
-              <Logo variant="white" />
+              <Logo
+                variant="white"
+                sizeClassName="h-12 sm:h-10 md:h-10 w-[200px] sm:w-[200px] md:w-[240px]"
+                sizes="(max-width: 639px) 200px, (max-width: 767px) 200px, 240px"
+              />
             </Link>
             <p className="text-white/60 leading-relaxed max-w-xs">
               Redefining commercial waste management with speed, transparency, and reliability across 48 states.
@@ -285,7 +290,7 @@ function NewsletterForm() {
           className="bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap no-default-hover-elevate no-default-active-elevate hover:bg-[#d4e232] active:bg-[#b3c11c]"
           data-testid="button-footer-newsletter"
         >
-          <ArrowRight className="w-5 h-5" />
+          {submitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <ArrowRight className="w-5 h-5" />}
         </Button>
       </div>
       {error && (

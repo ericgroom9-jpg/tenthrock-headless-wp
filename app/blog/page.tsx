@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function Blog() {
   return (
     <Layout>
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-16">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="mb-12">
             <h1 

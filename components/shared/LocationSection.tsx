@@ -35,7 +35,7 @@ export default function LocationSection({
   emailLink = "mailto:hello@tenthrock.com",
 }: LocationSectionProps = {}) {
   return (
-    <section className="py-10 md:py-24 bg-white" aria-labelledby="location-heading">
+    <section className="py-8 md:py-16 bg-white" aria-labelledby="location-heading">
       <div className="container mx-auto px-4 md:px-8">
         <FadeIn
           className="text-left sm:text-center mb-8 sm:mb-12"
@@ -48,7 +48,7 @@ export default function LocationSection({
           </p>
         </FadeIn>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-12 xl:gap-16 items-center max-w-6xl xl:max-w-7xl 2xl:max-w-[90rem] mx-auto">
           <FadeIn
             className="space-y-6 lg:space-y-8"
           >
@@ -79,9 +79,9 @@ export default function LocationSection({
           </FadeIn>
 
           <FadeIn
-            className="lg:col-span-2 relative rounded-[5px] overflow-hidden"
+            className="relative rounded-[5px] overflow-hidden"
           >
-            <div className="w-full">
+            <div className="w-full max-w-2xl lg:max-w-none mx-auto">
               <UsMapPinsAnimation />
             </div>
           </FadeIn>

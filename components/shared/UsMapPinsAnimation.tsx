@@ -18,10 +18,10 @@ const POP_DURATION_S = 0.45;
 
 const TOOLTIP_FILL = "#042940";
 const TOOLTIP_TEXT = "#FFFFFF";
-const TOOLTIP_FONT_SIZE = 14;
-const TOOLTIP_PAD_X = 8;
-const TOOLTIP_PAD_Y = 5;
-const TOOLTIP_GAP = 6;
+const TOOLTIP_FONT_SIZE = 26;
+const TOOLTIP_PAD_X = 14;
+const TOOLTIP_PAD_Y = 9;
+const TOOLTIP_GAP = 8;
 
 function stateSlug(name: string) {
   return name.toLowerCase().replace(/\s+/g, "-");
@@ -34,6 +34,8 @@ function Pin({
   code,
   onHover,
   onLeave,
+  activeCode,
+  setActiveCode,
 }: {
   x: number;
   y: number;
@@ -41,11 +43,21 @@ function Pin({
   code: string;
   onHover: (code: string) => void;
   onLeave: (code: string) => void;
+  activeCode: string | null;
+  setActiveCode: (code: string | null) => void;
 }) {
   const router = useRouter();
   const href = `/locations/${stateSlug(name)}`;
+  const lastPointerTypeRef = useRef<string>("mouse");
   const handleClick = (e: React.MouseEvent) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    // On touch devices, first tap reveals the tooltip; second tap navigates.
+    if (lastPointerTypeRef.current === "touch" && activeCode !== code) {
+      e.preventDefault();
+      setActiveCode(code);
+      onHover(code);
+      return;
+    }
     e.preventDefault();
     router.push(href);
   };
@@ -53,6 +65,9 @@ function Pin({
     <a
       href={href}
       onClick={handleClick}
+      onPointerDown={(e) => {
+        lastPointerTypeRef.current = e.pointerType || "mouse";
+      }}
       aria-label={`View locations and services in ${name}`}
       data-testid={`link-pin-${code}`}
       style={{ cursor: "pointer" }}
@@ -62,8 +77,12 @@ function Pin({
         role="img"
         aria-label={name}
         data-testid={`pin-${code}`}
-        onPointerEnter={() => onHover(code)}
-        onPointerLeave={() => onLeave(code)}
+        onPointerEnter={(e) => {
+          if (e.pointerType !== "touch") onHover(code);
+        }}
+        onPointerLeave={(e) => {
+          if (e.pointerType !== "touch") onLeave(code);
+        }}
         onFocus={() => onHover(code)}
         onBlur={() => onLeave(code)}
       >
@@ -129,7 +148,7 @@ export default function UsMapPinsAnimation() {
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         aria-label="Map of the contiguous United States with a pin in every state representing nationwide service coverage"
-        className="w-full h-auto block"
+        className="w-full h-auto max-h-[60vh] block mx-auto"
         preserveAspectRatio="xMidYMid meet"
         style={{ overflow: "visible" }}
       >
@@ -172,6 +191,8 @@ export default function UsMapPinsAnimation() {
                   code={p.code}
                   onHover={handleHover}
                   onLeave={handleLeave}
+                  activeCode={hoveredCode}
+                  setActiveCode={setHoveredCode}
                 />
               ))}
             </g>
@@ -199,6 +220,8 @@ export default function UsMapPinsAnimation() {
                   code={p.code}
                   onHover={handleHover}
                   onLeave={handleLeave}
+                  activeCode={hoveredCode}
+                  setActiveCode={setHoveredCode}
                 />
               </motion.g>
             ))}

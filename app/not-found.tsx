@@ -29,7 +29,7 @@ export default function NotFound() {
         />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-20 md:py-28">
+          <div className="min-h-[calc(100vh-200px)] flex items-center justify-center py-8 md:py-16">
             <div className="max-w-2xl mx-auto text-center">
               <FadeIn>
                 <div

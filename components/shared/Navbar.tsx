@@ -56,7 +56,6 @@ const DEFAULT_SECTOR_LINKS = [
  { label: "Stadiums & Events", href: "/stadiums-events" },
  { label: "Faith Based", href: "/faith-based" },
  { label: "Real Estate", href: "/real-estate" },
- { label: "Natural Disasters", href: "/natural-disasters" },
  { label: "Hospitality", href: "/hospitality" },
  { label: "Educational", href: "/educational" },
  { label: "Municipalities", href: "/municipalities" },
@@ -216,11 +215,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  <Button
  asChild
  size="sm"
- className="bg-[#c5d520] text-[#042940] font-bold uppercase rounded-full px-2.5 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20"
+ className="bg-[#c5d520] text-[#042940] font-bold uppercase rounded-full px-3.5 sm:px-4 min-h-[44px] whitespace-nowrap text-xs sm:text-sm shadow-md shadow-[#c5d520]/20 max-[375px]:px-2.5 max-[375px]:text-[11px]"
  data-testid="button-mobile-cta"
  >
  <Link href={primaryCta.href}>
- <span className="sm:hidden" aria-hidden="true">Request A Service</span>
+ <span className="sm:hidden" aria-hidden="true">Request Service</span>
  <span className="hidden sm:inline">{primaryCta.label}</span>
  <span className="sr-only sm:hidden">{primaryCta.label}</span>
  </Link>
@@ -537,9 +536,12 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
 
  {/* Right Side Actions - desktop only */}
  <div className="hidden xl:flex items-center gap-3 shrink-0">
+ {/* Login button hidden for now */}
+ {false && (
  <Button asChild size="lg" variant="ghost" className="text-primary font-extrabold transition-colors uppercase tracking-wide text-sm px-2 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-login">
  <Link href={loginCta.href}>{loginCta.label}</Link>
  </Button>
+ )}
  <Button asChild size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
  <Link href={primaryCta.href}>{primaryCta.label}</Link>
  </Button>
@@ -763,9 +765,12 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  ))}
 
  <div className="pt-4 px-4 space-y-3">
+ {/* Login button hidden for now */}
+ {false && (
  <Button asChild variant="ghost" className="w-full justify-center font-extrabold text-primary uppercase tracking-wide min-h-[52px] whitespace-nowrap" data-testid="button-mobile-login">
  <Link href={loginCta.href} onClick={() => setIsNavExpanded(false)}>{loginCta.label}</Link>
  </Button>
+ )}
  <Button 
  asChild 
  size="lg" 

@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/shared/FadeIn";
 import { PhoneInput } from "@/components/ui/phone-input";
-import { Phone, Check, ArrowUpRight, ArrowDown, MapPin } from "lucide-react";
+import { Phone, Check, ArrowUpRight, ArrowDown, ArrowRight, MapPin, Loader2 } from "lucide-react";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { stateOutlines } from "@/lib/data/state-outlines";
@@ -120,14 +120,14 @@ export default function LocationTemplateClient({
  />
  <div className="absolute inset-0 bg-[#042940]/85 md:bg-transparent md:bg-gradient-to-r md:from-[#042940] md:via-[#042940]/80 md:via-60% md:to-[#042940]/15" />
  </div>
- <div className="relative container mx-auto px-4 md:px-8 py-10 sm:py-20 lg:py-24">
+ <div className="relative container mx-auto px-4 md:px-8 py-8 md:py-16 lg:py-20">
  <div className="max-w-2xl lg:max-w-5xl">
  <FadeIn>
  <h1
  id="location-hero-heading"
- className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-none"
+ className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.05] tracking-tighter mb-4 sm:mb-6 max-w-[800px] lg:max-w-none [text-wrap:balance]"
  >
- Waste Management Services in {locationName}
+ Waste Management Services in&nbsp;{locationName}
  </h1>
  <p className="text-base text-white/80 mb-6 sm:mb-8 max-w-md lg:max-w-4xl leading-relaxed [text-wrap:balance]">
  {heroSubtitle}
@@ -179,17 +179,19 @@ export default function LocationTemplateClient({
  {section.title}
  </h2>
  <div
- className={`w-11 h-11 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
+ className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
  openAccordion === idx
- ? "bg-primary border-primary"
- : "border-primary/20 group-hover:border-primary/40"
+ ? "border-2 border-[#042940] bg-transparent"
+ : "bg-[#042940] group-hover:bg-[#c5d520]"
  }`}
  >
- {openAccordion === idx ? (
- <ArrowDown className="w-5 h-5 text-white" />
- ) : (
- <ArrowUpRight className="w-5 h-5 text-primary" />
- )}
+ <ArrowRight
+ className={`w-5 h-5 transition-transform ${
+ openAccordion === idx
+ ? "text-[#042940] -rotate-45"
+ : "text-white group-hover:text-[#042940]"
+ }`}
+ />
  </div>
  </button>
 
@@ -322,7 +324,7 @@ export default function LocationTemplateClient({
  required
  value={formData.interest}
  onChange={(e) => handleInputChange("interest", e.target.value)}
- className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
+ className="w-full h-12 pl-4 pr-10 text-sm border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat"
  data-testid="select-interest"
  >
  <option value="" disabled>Select one...</option>
@@ -374,7 +376,7 @@ export default function LocationTemplateClient({
  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] font-bold min-h-[52px] rounded-full px-10 shadow-[0_0_20px_rgba(197,213,32,0.3)] hover:shadow-[0_0_30px_rgba(197,213,32,0.5)] transition-all whitespace-nowrap"
  data-testid="button-form-submit"
  >
- {submitting ? "Submitting…" : "Submit Request"}
+ {submitting ? (<><Loader2 className="w-4 h-4 mr-2 animate-spin" />Submitting…</>) : "Submit Request"}
  </Button>
  </div>
  {submitError && (
@@ -386,7 +388,7 @@ export default function LocationTemplateClient({
  </div>
  </section>
 
- <section className="py-10 md:py-24 bg-white overflow-hidden" aria-labelledby="info-block-heading">
+ <section className="py-8 md:py-16 bg-white overflow-hidden" aria-labelledby="info-block-heading">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
  <FadeIn>
@@ -467,7 +469,7 @@ export default function LocationTemplateClient({
  <CtaBannerSection />
 
  {cities.length > 0 && (
- <section className="py-10 md:py-24 bg-[#F9F9F6]" aria-labelledby="cities-we-serve-heading" data-testid="section-cities-we-serve">
+ <section className="py-8 md:py-16 bg-[#F9F9F6]" aria-labelledby="cities-we-serve-heading" data-testid="section-cities-we-serve">
  <div className="container mx-auto px-4 md:px-8">
  <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-stretch">
  <FadeIn className="lg:h-full">

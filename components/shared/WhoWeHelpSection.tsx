@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, GraduationCap, Trophy, Heart, Landmark, Utensils, Siren, Home as HomeIcon, Store } from "lucide-react";
+import { ArrowRight, GraduationCap, Calendar, Heart, Landmark, Utensils, CloudLightning, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
   { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/retail-rodeo-drive-v2.webp", icon: <Store className="w-6 h-6" />, href: "/retail" },
-  { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.webp", icon: <Trophy className="w-6 h-6" />, href: "/stadiums-events" },
+  { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.webp", icon: <Calendar className="w-6 h-6" />, href: "/stadiums-events" },
   { title: "Faith Based", desc: "Scheduled and on-demand waste service for churches, campuses, and community event cleanup.", img: "/images/stock/industry-faith-based.webp", icon: <Heart className="w-6 h-6" />, href: "/faith-based" },
   { title: "Real Estate", desc: "Tenant turnover cleanouts, construction debris removal, and ongoing service for managed properties.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/real-estate" },
-  { title: "Natural Disasters", desc: "Rapid debris removal, emergency roll-offs, and storm damage cleanup deployed within hours.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <Siren className="w-6 h-6" />, href: "/natural-disasters" },
+  { title: "Natural Disasters", desc: "Rapid debris removal, emergency roll-offs, and storm damage cleanup deployed within hours.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <CloudLightning className="w-6 h-6" />, href: "/natural-disasters" },
   { title: "Hospitality", desc: "Daily waste pickup, grease trap service, and pressure washing to keep guest-facing areas spotless.", img: "/images/stock/industry-hospitality.webp", icon: <Utensils className="w-6 h-6" />, href: "/hospitality" },
   { title: "Educational", desc: "Campus-wide waste programs, recycling coordination, and event cleanup for schools and universities.", img: "/images/stock/university.webp", icon: <GraduationCap className="w-6 h-6" />, href: "/educational" },
   { title: "Municipalities", desc: "Illegal dumping cleanup, public space maintenance, and disaster response for local governments.", img: "/images/stock/municipalities-american-flag.webp", icon: <Landmark className="w-6 h-6" />, href: "/municipalities" },
@@ -64,15 +64,15 @@ export default function WhoWeHelpSection({
   subtitle = "From single-site operators to national brands, we support businesses that require reliable, consistent waste operations.",
 }: WhoWeHelpSectionProps = {}) {
   return (
-    <section id="sectors" aria-labelledby="sectors-heading" className="py-10 md:py-24 bg-[#F9F9F6]">
+    <section id="sectors" aria-labelledby="sectors-heading" className="py-8 md:py-16 bg-[#F9F9F6]">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="text-left sm:text-center max-w-4xl mx-auto mb-10 md:mb-16">
+        <div className="text-left sm:text-center max-w-4xl mx-auto mb-6 md:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/10 text-primary font-bold text-sm shadow-sm mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary"></span>
               {tagline}
           </div>
           <h2 id="sectors-heading" className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">{heading}</h2>
-          <p className="text-lg text-primary/70">
+          <p className="text-lg text-primary/70 max-w-3xl mx-auto [text-wrap:balance]">
             {subtitle}
           </p>
         </div>

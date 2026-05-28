@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import FadeIn from "@/components/shared/FadeIn";
 import AnimatedStatValue from "@/components/shared/AnimatedStatValue";
@@ -149,6 +149,21 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
   const [currentIndex, setCurrentIndex] = useState(0);
   // 0 = featured/main image; 1..N = thumbImages[i-1]. Reset when the carousel slide changes.
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const headingRef = useRef<HTMLDivElement | null>(null);
+  const shouldScrollOnNextRenderRef = useRef(false);
+
+  useEffect(() => {
+    if (!shouldScrollOnNextRenderRef.current) return;
+    shouldScrollOnNextRenderRef.current = false;
+    const el = headingRef.current;
+    if (!el) return;
+    requestAnimationFrame(() => {
+      const rect = el.getBoundingClientRect();
+      const offset = 96; // approx mobile navbar clearance
+      const top = rect.top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  }, [currentIndex]);
 
   const goToPrev = () => {
     setActiveImageIndex(0);
@@ -158,6 +173,16 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
   const goToNext = () => {
     setActiveImageIndex(0);
     setCurrentIndex((prev) => (prev === studies.length - 1 ? 0 : prev + 1));
+  };
+
+  const goToPrevMobile = () => {
+    shouldScrollOnNextRenderRef.current = true;
+    goToPrev();
+  };
+
+  const goToNextMobile = () => {
+    shouldScrollOnNextRenderRef.current = true;
+    goToNext();
   };
 
   const study = studies[currentIndex];
@@ -178,7 +203,7 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
   });
 
   return (
-    <section className="py-10 md:py-24 bg-white border-b border-primary/5" aria-label="Case studies" data-testid="section-case-studies">
+    <section className="py-8 md:py-16 bg-white border-b border-primary/5" aria-label="Case studies" data-testid="section-case-studies">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid xl:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 order-2 xl:order-1">
@@ -232,19 +257,19 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
               <FadeIn
                 key={`content-${currentIndex}`}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5d520]/10 text-[#042940] font-bold text-xs uppercase tracking-wider mb-4" data-testid="badge-case-study-tag">
+                <div ref={headingRef} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c5d520]/10 text-[#042940] font-bold text-xs uppercase tracking-wider mb-4" data-testid="badge-case-study-tag">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#c5d520]"></span>
                   {study.tag}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-medium text-primary mb-6 tracking-tighter leading-tight">
                   {study.title} <br />
-                  <span className="text-3xl md:text-4xl">{study.subtitle}</span>
+                  <span>{study.subtitle}</span>
                 </h2>
-                <p className="text-base text-primary/70 mb-8 md:mb-12 leading-relaxed">
+                <p className="text-base text-primary/70 mb-6 md:mb-12 leading-relaxed">
                   {study.description}
                 </p>
 
-                <div className="grid grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
+                <div className="grid grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
                   {study.stats.map((stat, i) => (
                     <div key={i} data-testid={`stat-case-study-${i}`}>
                       <div className="text-4xl font-extrabold text-[#c5d520] mb-1 tabular-nums">
@@ -260,7 +285,7 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
             {/* Mobile-only carousel controls (sit directly below the content) */}
             <div className="flex xl:hidden items-center gap-4">
               <button
-                onClick={goToPrev}
+                onClick={goToPrevMobile}
                 className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
                 aria-label="Previous case study"
                 data-testid="button-case-study-prev-mobile"
@@ -268,7 +293,7 @@ export default function CaseStudySection({ caseStudies }: CaseStudySectionProps)
                 <ArrowRight className="w-5 h-5 rotate-180" />
               </button>
               <button
-                onClick={goToNext}
+                onClick={goToNextMobile}
                 className="w-14 h-14 rounded-full bg-white text-[#042940] flex items-center justify-center hover:bg-[#c5d520] active:bg-[#c5d520] transition-all duration-300 shadow-lg hover:shadow-xl active:shadow-xl active:scale-95 min-w-[44px] min-h-[44px]"
                 aria-label="Next case study"
                 data-testid="button-case-study-next-mobile"
