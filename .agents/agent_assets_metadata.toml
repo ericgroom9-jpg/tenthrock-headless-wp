@@ -23,3 +23,9 @@ id = "wuKCcJUBsV_rDBDdD3_D5"
 uri = "file://attached_assets/stock_images/industry-stadiums-events-hires_3.jpg"
 type = "image"
 title = "stadium with crowd at night, wide aerial view, concert event, vibrant lights, professional photo"
+
+[[outputs]]
+id = "FjJoFvigQa58zI3-g2Lko"
+uri = "file://.local/tasks/all-site-urls.txt"
+type = "text"
+title = "All Site URLs (889 pages)"
