@@ -96,7 +96,11 @@ export default function CityLocationPage() {
  setFormData((prev) => ({ ...prev, [field]: value }));
  };
 
- const otherCities = stateData?.cities.filter((c) => cityToSlug(c) !== citySlug).slice(0, 16) || [];
+ const otherCities = stateData?.cities
+ .slice()
+ .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }))
+ .filter((c) => cityToSlug(c) !== citySlug)
+ .slice(0, 16) || [];
 
  return (
  <main className="min-h-screen bg-white">
@@ -149,7 +153,7 @@ export default function CityLocationPage() {
  data-testid="button-city-cta"
  asChild
  >
- <Link href="/request-a-service">Request A Service</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -229,9 +233,9 @@ export default function CityLocationPage() {
 
  {/* Contact Form */}
  <FadeIn>
- <div className="bg-[#F9F9F6] rounded-[5px] p-6 md:p-10 lg:p-12" data-testid="form-city-contact">
+ <div id="request-a-service" className="bg-[#F9F9F6] rounded-[5px] p-6 md:p-10 lg:p-12 scroll-mt-24" data-testid="form-city-contact">
  <h3 className="text-2xl md:text-3xl font-medium text-[#042940] mb-2 tracking-tight" data-testid="heading-city-form">
- Get a Quote for {cityName}
+ Request a Service in {cityName}
  </h3>
  <p className="text-[#042940]/60 text-sm mb-8">
  Fill out the form below and we'll connect you with a local representative.
@@ -252,7 +256,7 @@ export default function CityLocationPage() {
  <input id="city-email" type="email" placeholder="Enter your email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-email" />
  </div>
  <div>
- <label htmlFor="city-phone" className="block text-sm font-medium text-[#042940] mb-1.5">Phone</label>
+ <label htmlFor="city-phone" className="block text-sm font-medium text-[#042940] mb-1.5">Phone number</label>
  <PhoneInput id="city-phone" value={formData.phone} onChange={(val) => handleInputChange("phone", val || "")} className="w-full" data-testid="input-city-phone" />
  </div>
  <div>
@@ -261,7 +265,7 @@ export default function CityLocationPage() {
  </div>
  <div>
  <label htmlFor="city-interest" className="block text-sm font-medium text-[#042940] mb-1.5">Service Interest</label>
- <select id="city-interest" value={formData.interest} onChange={(e) => handleInputChange("interest", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="select-city-interest">
+ <select id="city-interest" value={formData.interest} onChange={(e) => handleInputChange("interest", e.target.value)} className="w-full pl-4 pr-10 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat" data-testid="select-city-interest">
  <option value="">Select a service</option>
  <option value="emergency">Emergency Waste Removal</option>
  <option value="dumpster">Dumpster Rental</option>
@@ -324,7 +328,7 @@ export default function CityLocationPage() {
  data-testid="button-city-info-cta"
  asChild
  >
- <Link href="/request-a-service">Get a Quote</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -361,7 +365,7 @@ export default function CityLocationPage() {
  data-testid="button-city-info-cta-mobile"
  asChild
  >
- <Link href="/request-a-service">Get a Quote</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -455,11 +459,11 @@ export default function CityLocationPage() {
  We serve businesses across {stateName}. Explore waste management services in other cities near {cityName}.
  </p>
 
- <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0 list-none p-0 m-0" role="list" aria-label={`Other cities served in ${stateName}`} data-testid="list-other-cities">
+ <ul className="columns-1 sm:columns-2 gap-x-8 list-none p-0 m-0" role="list" aria-label={`Other cities served in ${stateName}`} data-testid="list-other-cities">
  {otherCities.map((city, i) => (
  <li
  key={i}
- className="border-b border-[#042940]/5"
+ className="border-b border-[#042940]/5 break-inside-avoid"
  data-testid={`other-city-item-${i}`}
  >
  <Link

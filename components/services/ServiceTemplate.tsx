@@ -304,7 +304,7 @@ export default function ServiceTemplate({
  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
  data-testid="button-hero-cta"
  >
- <Link href="/request-a-service">Request A Service</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  <Button 
  size="lg"
@@ -496,10 +496,11 @@ export default function ServiceTemplate({
 
  {/* Right - Contact Form */}
  <FadeIn
- className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8 lg:-mt-32 relative z-10"
+ id="request-a-service"
+ className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8 lg:-mt-32 relative z-10 scroll-mt-24"
  >
  <div className="mb-6">
- <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
+ <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Service</h3>
  <p className="text-[#042940]/70 text-sm">Fill out the form below and we'll get back to you shortly.</p>
  </div>
  <form className="space-y-5" onSubmit={handleFormSubmit}>
@@ -703,7 +704,7 @@ export default function ServiceTemplate({
  className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-1-cta"
  >
- <Link href="/request-a-service">Request A Service</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  </FadeIn>
  {paragraphSection1.image && (
@@ -726,7 +727,7 @@ export default function ServiceTemplate({
  className="xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-1-cta-mobile"
  >
- <Link href="/request-a-service">Request A Service</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  </div>
  </div>
@@ -829,7 +830,7 @@ export default function ServiceTemplate({
  className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-2-cta"
  >
- <Link href="/request-a-service">Request A Service</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  </FadeIn>
  <Button
@@ -838,7 +839,7 @@ export default function ServiceTemplate({
  className="order-3 xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-2-cta-mobile"
  >
- <Link href="/request-a-service">Request A Service</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  </div>
  </div>

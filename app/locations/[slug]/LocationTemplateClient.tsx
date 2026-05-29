@@ -139,7 +139,7 @@ export default function LocationTemplateClient({
  data-testid="button-location-cta"
  asChild
  >
- <Link href="/request-a-service">Request A Service</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -219,9 +219,9 @@ export default function LocationTemplateClient({
  ))}
  </FadeIn>
 
- <FadeIn className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8 lg:-mt-32 relative z-10">
+ <FadeIn id="request-a-service" className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 sm:p-8 lg:-mt-32 relative z-10 scroll-mt-24">
  <div className="mb-6">
- <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Quote</h3>
+ <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2">Request a Service</h3>
  <p className="text-[#042940]/70 text-sm">Fill out the form below and we'll get back to you shortly.</p>
  </div>
  <form
@@ -408,7 +408,7 @@ export default function LocationTemplateClient({
  data-testid="button-info-cta"
  asChild
  >
- <Link href="/request-a-service">Get a Quote</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -443,7 +443,7 @@ export default function LocationTemplateClient({
  data-testid="button-info-cta-mobile"
  asChild
  >
- <Link href="/request-a-service">Get a Quote</Link>
+ <a href="#request-a-service">Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -528,11 +528,14 @@ export default function LocationTemplateClient({
  Our network of vetted local vendors ensures fast, reliable waste management services across {locationName}. Select a city below to learn more about coverage in your area.
  </p>
 
- <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0 list-none p-0 m-0" role="list" aria-label={`Cities served in ${locationName}`} data-testid="list-cities">
- {cities.map((city, i) => (
+ <ul className="columns-1 sm:columns-2 gap-x-8 list-none p-0 m-0" role="list" aria-label={`Cities served in ${locationName}`} data-testid="list-cities">
+ {cities
+ .slice()
+ .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }))
+ .map((city, i) => (
  <li
  key={i}
- className="border-b border-[#042940]/5"
+ className="border-b border-[#042940]/5 break-inside-avoid"
  data-testid={`city-item-${i}`}
  >
  <Link

@@ -57,8 +57,6 @@ function ContactSection({ data }: { data: ContactFormTemplateData | null }) {
   const email = data?.email || "hello@tenthrock.com";
   const emailLink = data?.emailLink || "mailto:hello@tenthrock.com";
   const hours = data?.hours?.map(h => h.line) || defaultHours;
-  const formHeading = data?.formHeading || "Request a Quote";
-  const formSubtitle = data?.formSubtitle || "Fill out the form below and we'll get back to you shortly.";
   const interestOptions = data?.interestOptions || defaultInterestOptions;
   const messageLabel = data?.messageLabel || "Message";
   const submitLabel = data?.submitLabel || "Submit Request";
@@ -133,10 +131,6 @@ function ContactSection({ data }: { data: ContactFormTemplateData | null }) {
 
           <FadeIn className="border-t border-[#042940]/10 pt-12 xl:border-t-0 xl:pt-0 xl:pl-16 2xl:pl-24 xl:border-l xl:border-[#042940]/10">
             <div className="bg-white rounded-[5px] shadow-xl border border-[#042940]/5 p-6 md:p-8">
-              <div className="mb-6">
-                <h3 className="text-xl md:text-2xl font-bold text-[#042940] mb-2" data-testid="text-form-heading">{formHeading}</h3>
-                <p className="text-[#042940]/70 text-sm">{formSubtitle}</p>
-              </div>
               <form className="space-y-5" data-testid="form-contact" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
