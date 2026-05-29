@@ -40,7 +40,7 @@ async function gf(path, init = {}) {
 
 const REDIRECT_URL = "/"; // testing — editor can change later in WP
 
-const defaultRedirectConfirmation = () => ({
+const redirectConfirmation = (url = REDIRECT_URL) => ({
   // Gravity Forms uses string IDs for confirmations
   "5d4d9b38f6b5a": {
     id: "5d4d9b38f6b5a",
@@ -48,7 +48,7 @@ const defaultRedirectConfirmation = () => ({
     isDefault: true,
     type: "redirect",
     message: "",
-    url: REDIRECT_URL,
+    url,
     pageId: "",
     queryString: "",
     disableAutoformat: false,
@@ -115,12 +115,12 @@ function joinNetworkFields() {
 const FORMS = [
   { key: "contact",          title: "Contact Us",        button: { type: "text", text: "Submit Request" }, fields: leadFormFields() },
   { key: "requestAService",  title: "Request A Service", button: { type: "text", text: "Submit Request" }, fields: requestServiceFields() },
-  { key: "joinOurNetwork",   title: "Join Our Network",  button: { type: "text", text: "Submit" },         fields: joinNetworkFields() },
+  { key: "joinOurNetwork",   title: "Join Our Network",  button: { type: "text", text: "Submit" },         fields: joinNetworkFields(), confirmationUrl: "/join-our-network-thank-you" },
   { key: "serviceInquiry",   title: "Service Inquiry",   button: { type: "text", text: "Submit Request" }, fields: leadFormFields() },
   { key: "locationInquiry",  title: "Location Inquiry",  button: { type: "text", text: "Submit Request" }, fields: leadFormFields() },
 ];
 
-function buildBody({ title, fields, button }) {
+function buildBody({ title, fields, button, confirmationUrl }) {
   return {
     title,
     description: "",
@@ -128,7 +128,7 @@ function buildBody({ title, fields, button }) {
     descriptionPlacement: "below",
     button,
     fields,
-    confirmations: defaultRedirectConfirmation(),
+    confirmations: redirectConfirmation(confirmationUrl),
     is_active: "1",
     notifications: {}, // editor can add their own in WP UI
     useCurrentUserAsAuthor: false,
