@@ -3,6 +3,7 @@ import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { GlobalScripts } from "@/components/scripts/GlobalScripts";
+import { CookieConsent } from "@/components/scripts/CookieConsent";
 import { MenuProvider } from "@/components/shared/MenuProvider";
 import ForceFullPageNavigation from "@/components/shared/NavigationProgress";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
             <link rel="dns-prefetch" href={wpOrigin} />
           </>
         )}
+        <CookieConsent />
       </head>
       <body className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`} suppressHydrationWarning>
         <GlobalScripts />

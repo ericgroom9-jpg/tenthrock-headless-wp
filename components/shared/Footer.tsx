@@ -46,6 +46,7 @@ const DEFAULT_COMPANY_LINKS: FlatLink[] = [
 const DEFAULT_LEGAL_LINKS: FlatLink[] = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-of-service" },
+  { label: "Cookie Policy", href: "/cookie-policy" },
 ];
 
 // Match WP social menu items to their lucide icon by label substring.
@@ -91,8 +92,13 @@ export default function Footer() {
   const companyLinks  = navMenus.footerCompany && navMenus.footerCompany.length
     ? navMenus.footerCompany.filter(l => !/success\s*stories/i.test(l.label))
     : DEFAULT_COMPANY_LINKS;
-  const legalLinks    = navMenus.footerLegal && navMenus.footerLegal.length
+  const baseLegalLinks = navMenus.footerLegal && navMenus.footerLegal.length
     ? navMenus.footerLegal : DEFAULT_LEGAL_LINKS;
+  // Always surface the Cookie Policy link, even when the legal menu is served
+  // from WP (which is not yet aware of /cookie-policy).
+  const legalLinks = baseLegalLinks.some(l => l.href === "/cookie-policy")
+    ? baseLegalLinks
+    : [...baseLegalLinks, { label: "Cookie Policy", href: "/cookie-policy" }];
   const socialLinks   = navMenus.footerSocial && navMenus.footerSocial.length
     ? navMenus.footerSocial : DEFAULT_SOCIAL_LINKS;
 

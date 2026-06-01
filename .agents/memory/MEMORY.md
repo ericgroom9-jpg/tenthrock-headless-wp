@@ -1,3 +1,5 @@
 - [GF seed script and newsletter](gf-seed-newsletter.md) — seed-gravity-forms.mjs rewrites lib/gf/form-ids.ts but doesn't manage the Newsletter form (id 6); template must hardcode it or footer breaks.
 - [Shared CTA hydration race](shared-cta-hydration-race.md) — on form pages render Request-A-Service CTAs as native `#request-a-service` anchors (scrollToForm prop), not onClick-on-Link, or they redirect before hydration.
 - [Form placeholder/select color convention](form-placeholder-consistency.md) — lead-form placeholders use `text-[#042940]/40`; override base Input muted-foreground per field; gray unselected `<select>` via `invalid:` variant (uncontrolled) or controlled conditional.
+- [Termageddon embed load race](termageddon-embed-load-race.md) — embed targets a div whose id is the policy key + binds to window `load`; in a Next SPA fetch the render endpoint directly instead of the embed `<script>`.
+- [Usercentrics CMP loader](usercentrics-cmp-loader.md) — consent banner wired in root layout head (not GlobalScripts); exact endpoints + the 403-on-bad-translations-URL gotcha.
