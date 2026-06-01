@@ -5,6 +5,7 @@ import Link from "next/link";
 import FadeIn from "@/components/shared/FadeIn";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { scrollToRequestForm } from "@/lib/utils/scroll-to-request-form";
 
 const DEFAULT_IMAGE = "/images/stock/final-cta-highway-sunset.jpg";
 const DEFAULT_IMAGE_ALT = "Aerial view of an open highway at sunset symbolizing nationwide waste logistics";
@@ -18,6 +19,7 @@ interface FinalCtaSectionProps {
  imageAlt?: string;
  phone?: string;
  phoneLink?: string;
+ scrollToForm?: boolean;
 }
 
 export default function FinalCtaSection({
@@ -29,6 +31,7 @@ export default function FinalCtaSection({
  imageAlt,
  phone = "727.510.5454",
  phoneLink = "tel:+17275105454",
+ scrollToForm = false,
 }: FinalCtaSectionProps = {}) {
  const src = image || DEFAULT_IMAGE;
  const alt = imageAlt || DEFAULT_IMAGE_ALT;
@@ -50,7 +53,11 @@ export default function FinalCtaSection({
  
  <div className="flex flex-col sm:flex-row gap-4">
  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-lg md:hover:scale-105 active:scale-95 transition-all duration-300 min-h-[52px] whitespace-nowrap rounded-full" asChild>
+ {scrollToForm ? (
+ <a href="#request-a-service" onClick={scrollToRequestForm}>{ctaLabel}</a>
+ ) : (
  <Link href={ctaLink}>{ctaLabel}</Link>
+ )}
  </Button>
  <Button
  size="lg"

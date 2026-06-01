@@ -27,6 +27,7 @@ import LocationSection from "@/components/shared/LocationSection";
 import Logo from "@/components/shared/Logo";
 import { submitGravityForm } from "@/lib/gf/submit-client";
 import { GF_FORM_IDS } from "@/lib/gf/form-ids";
+import { scrollToRequestForm } from "@/lib/utils/scroll-to-request-form";
 import CommercialWasteServices from "@/components/shared/CommercialWasteServices";
 import FinalCtaSection from "@/components/shared/FinalCtaSection";
 import FaqSection from "@/components/shared/FaqSection";
@@ -304,7 +305,7 @@ export default function ServiceTemplate({
  className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 min-h-[52px] whitespace-nowrap"
  data-testid="button-hero-cta"
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  <Button 
  size="lg"
@@ -704,7 +705,7 @@ export default function ServiceTemplate({
  className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-1-cta"
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  </FadeIn>
  {paragraphSection1.image && (
@@ -727,7 +728,7 @@ export default function ServiceTemplate({
  className="xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-1-cta-mobile"
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  </div>
  </div>
@@ -830,7 +831,7 @@ export default function ServiceTemplate({
  className="hidden xl:inline-flex w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-2-cta"
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  </FadeIn>
  <Button
@@ -839,7 +840,7 @@ export default function ServiceTemplate({
  className="order-3 xl:hidden w-full sm:w-auto bg-[#c5d520] text-[#042940] min-h-[52px] whitespace-nowrap rounded-full shadow-[0_0_20px_rgba(197,213,32,0.3)]"
  data-testid="button-paragraph-2-cta-mobile"
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  </div>
  </div>
@@ -890,7 +891,7 @@ export default function ServiceTemplate({
  </section>
 
  {/* Stats Section - shared with homepage */}
- <StatsSection />
+ <StatsSection scrollToForm />
 
 
  {/* FAQ Section - Shared (matches homepage) */}
@@ -900,7 +901,7 @@ export default function ServiceTemplate({
  <LocationSection />
 
  {/* Final CTA Banner - Uses shared FinalCtaSection (matches homepage) */}
- <FinalCtaSection image={ctaImage} imageAlt={ctaImageAlt} />
+ <FinalCtaSection image={ctaImage} imageAlt={ctaImageAlt} scrollToForm />
  </main>
 
  {/* Footer - Shared Component */}

@@ -8,6 +8,7 @@ import AnimatedStatValue from "@/components/shared/AnimatedStatValue";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { scrollToRequestForm } from "@/lib/utils/scroll-to-request-form";
 
 const imgParkWater = "/images/stock/why-clients-nyc-sunrise.jpg";
 
@@ -22,6 +23,7 @@ interface StatsSectionProps {
   image?: string;
   imageAlt?: string;
   cards?: { title: string; value: string; description: string }[];
+  scrollToForm?: boolean;
 }
 
 const defaultCards = [
@@ -41,6 +43,7 @@ export default function StatsSection({
   image,
   imageAlt,
   cards = defaultCards,
+  scrollToForm = false,
 }: StatsSectionProps) {
   const statsImage = imgParkWater;
   const statsImageAlt = image ? (imageAlt || "Tenth Rock nationwide waste operations") : "Tenth Rock nationwide waste operations";
@@ -64,7 +67,11 @@ export default function StatsSection({
               {/* Desktop CTAs: stay inside the left column on lg+, hidden on mobile */}
               <div className="hidden lg:flex flex-col sm:flex-row gap-4 max-w-md sm:max-w-none">
                 <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full" asChild>
-                  <Link href={ctaLink}>{ctaLabel}</Link>
+                  {scrollToForm ? (
+                    <a href="#request-a-service" onClick={scrollToRequestForm}>{ctaLabel}</a>
+                  ) : (
+                    <Link href={ctaLink}>{ctaLabel}</Link>
+                  )}
                 </Button>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/20 text-primary flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" asChild>
                    <a href={phoneLink}><Phone className="w-5 h-5 text-primary" /> {phoneLabel}</a>
@@ -95,7 +102,11 @@ export default function StatsSection({
         {/* Mobile-only CTAs: stack below the stat cards in the natural vertical flow */}
         <div className="lg:hidden mt-10 flex flex-col sm:flex-row gap-4">
           <Button size="lg" className="w-full sm:w-auto bg-primary text-white min-h-[52px] whitespace-nowrap rounded-full" data-testid="button-stats-cta-mobile" asChild>
-            <Link href={ctaLink}>{ctaLabel}</Link>
+            {scrollToForm ? (
+                    <a href="#request-a-service" onClick={scrollToRequestForm}>{ctaLabel}</a>
+                  ) : (
+                    <Link href={ctaLink}>{ctaLabel}</Link>
+                  )}
           </Button>
           <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/20 text-primary flex items-center justify-center gap-2 min-h-[52px] whitespace-nowrap rounded-full" data-testid="button-stats-phone-mobile" asChild>
             <a href={phoneLink}><Phone className="w-5 h-5 text-primary" /> {phoneLabel}</a>

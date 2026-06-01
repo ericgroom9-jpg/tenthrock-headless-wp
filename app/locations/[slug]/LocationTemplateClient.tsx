@@ -15,6 +15,7 @@ import { stateOutlines } from "@/lib/data/state-outlines";
 import { cityToSlug } from "@/lib/data/state-cities";
 import { submitGravityForm } from "@/lib/gf/submit-client";
 import { GF_FORM_IDS } from "@/lib/gf/form-ids";
+import { scrollToRequestForm } from "@/lib/utils/scroll-to-request-form";
 
 const CommercialWasteServices = dynamic(() => import("@/components/shared/CommercialWasteServices"));
 const CtaBannerSection = dynamic(() => import("@/components/shared/CtaBannerSection"));
@@ -139,7 +140,7 @@ export default function LocationTemplateClient({
  data-testid="button-location-cta"
  asChild
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -408,7 +409,7 @@ export default function LocationTemplateClient({
  data-testid="button-info-cta"
  asChild
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -443,7 +444,7 @@ export default function LocationTemplateClient({
  data-testid="button-info-cta-mobile"
  asChild
  >
- <a href="#request-a-service">Request A Service</a>
+ <a href="#request-a-service" onClick={scrollToRequestForm}>Request A Service</a>
  </Button>
  <Button
  size="lg"
@@ -566,7 +567,7 @@ export default function LocationTemplateClient({
 
  <LocationSection />
 
- <FinalCtaSection />
+ <FinalCtaSection scrollToForm />
 
  <Footer />
  </main>
