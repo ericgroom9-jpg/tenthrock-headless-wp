@@ -42,7 +42,7 @@ export default function RootLayout({
   const wpOrigin = deriveWpOrigin();
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <head suppressHydrationWarning>
         {wpOrigin && (
           <>
             <link rel="preconnect" href={wpOrigin} crossOrigin="anonymous" />

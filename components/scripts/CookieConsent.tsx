@@ -10,10 +10,18 @@ import Script from "next/script";
  *
  * Order matters: the `uc-block` bundle must load before any tag it is meant
  * to gate, and it also defines the global `uc` object that
- * `uc.setCustomTranslations(...)` depends on. We therefore load the block
- * bundle and the CMP loader with `beforeInteractive` so they are present in
- * the initial document, and guard the translations call so it never throws if
- * `uc` is not yet defined (avoids console errors / hydration warnings).
+ * `uc.setCustomTranslations(...)` depends on. The translations call is guarded
+ * with a polling check so it never throws if `uc` is not yet defined.
+ *
+ * Strategy = `afterInteractive` (NOT `beforeInteractive`): the Usercentrics
+ * "Smart Data Protector" (`uc-block`) mutates the document DOM (rewrites/adds
+ * script and head nodes) as soon as it executes. Running it `beforeInteractive`
+ * meant it mutated the server-rendered HTML *before* React hydrated, so the
+ * client tree no longer matched the server tree — producing recoverable
+ * "Hydration failed" runtime errors (surfaced as the dev error overlay).
+ * Loading `afterInteractive` defers execution until React has hydrated and owns
+ * the DOM, so the later mutations are tolerated. The scripts still load in
+ * source order and the CMP banner appears normally.
  *
  * URLs/IDs are the customer-provided snippet verbatim.
  */
@@ -30,18 +38,18 @@ export function CookieConsent() {
       <Script
         id="usercentrics-uc-block"
         src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
 
       <Script
         id="usercentrics-cmp"
         src="https://app.usercentrics.eu/browser-ui/latest/loader.js"
         data-settings-id="VSh7S8F0CRv14Q"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         async
       />
 
-      <Script id="usercentrics-custom-translations" strategy="beforeInteractive">
+      <Script id="usercentrics-custom-translations" strategy="afterInteractive">
         {`(function(){var t=0;function s(){if(typeof uc!=='undefined'&&typeof uc.setCustomTranslations==='function'){uc.setCustomTranslations('https://termageddon.ams3.cdn.digitaloceanspaces.com/translations/');}else if(t++<60){setTimeout(s,50);}}s();})();`}
       </Script>
     </>

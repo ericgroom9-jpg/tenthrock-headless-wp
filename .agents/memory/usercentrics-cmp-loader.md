@@ -14,4 +14,7 @@ Customer-provided snippet uses these exact endpoints (don't "correct" them):
 
 **Gotcha:** an invalid `setCustomTranslations` URL logs `Error fetching translations: status = 403` in console. The translations URL is account-specific — get it verbatim from the customer, don't guess. The call is guarded with `typeof uc !== 'undefined'` so it never throws if `uc` isn't ready.
 
-**Order:** block bundle + loader use `strategy="beforeInteractive"` so `uc-block` loads before any tag it gates and defines the global `uc`.
+**Order:** scripts load in source order — `uc-block` first (defines global `uc`), then loader, then the translations call (guarded by a poll on `uc`).
+
+**Strategy MUST be `afterInteractive`, NOT `beforeInteractive`:** `uc-block` is a "Smart Data Protector" that mutates the document DOM (rewrites/adds script + head nodes) the instant it runs. With `beforeInteractive` it mutated the server HTML *before* React hydrated → recoverable "Hydration failed" runtime errors (the Next dev error overlay = perceived "crash"). The failure is intermittent: it only fires when the CDN script actually loads (in the Replit sandbox it sometimes 404s, hiding the bug). `suppressHydrationWarning` on `<head>` does NOT fix it (Next hoists head contents; the mutations also hit body/script nodes React owns). `afterInteractive` defers execution until after hydration so the mutations are tolerated; the banner still appears.
+**Why:** consent-gating order (block-before-gated-tags) is a separate concern (handled by the gating task), and is not worth re-introducing a hydration crash for.

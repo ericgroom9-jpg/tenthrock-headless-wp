@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -132,11 +132,29 @@ const LOADER_FADE_START_MS = 2000;
 const LOADER_FADE_MS = 600;
 const LOADER_TOTAL_MS = LOADER_FADE_START_MS + LOADER_FADE_MS;
 
+// Module-level flag: the loading animation should play exactly once per page
+// load. In dev, Next.js Fast Refresh unmounts/remounts components on every hot
+// reload, which would otherwise restart the 2s timer indefinitely and leave the
+// overlay stuck. Module state survives Fast Refresh re-executions within the
+// same session but resets on a hard reload — so the first visit still plays the
+// animation, and subsequent remounts are no-ops.
+let alreadyShown = false;
+
 const LoadingScreen = () => {
+ // Decide once per mount whether this instance plays the intro. Captured in a
+ // ref so the value is stable for the instance's entire lifetime — this keeps
+ // it safe under React Strict Mode (which double-invokes effects in dev) and
+ // safe across re-renders (an early `return null` keyed off the mutable module
+ // flag would change the hook count once the flag flips, crashing the rules of
+ // hooks). The first mount of a page load sees `alreadyShown === false` and
+ // plays; any later remount (Fast Refresh) sees it `true` and no-ops.
+ const playRef = useRef(!alreadyShown);
  const [hiding, setHiding] = useState(false);
  const [removed, setRemoved] = useState(false);
 
  useEffect(() => {
+ if (!playRef.current) return;
+ alreadyShown = true;
  const prevBodyOverflow = document.body.style.overflow;
  const prevHtmlOverflow = document.documentElement.style.overflow;
  document.body.style.overflow = "hidden";
@@ -156,7 +174,7 @@ const LoadingScreen = () => {
  };
  }, []);
 
- if (removed) return null;
+ if (!playRef.current || removed) return null;
 
  return (
  <div
