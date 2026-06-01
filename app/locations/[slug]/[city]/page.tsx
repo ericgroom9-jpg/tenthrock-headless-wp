@@ -19,24 +19,17 @@ const FaqSection = dynamic(() => import("@/components/shared/FaqSection"));
 const LocationSection = dynamic(() => import("@/components/shared/LocationSection"));
 const FinalCtaSection = dynamic(() => import("@/components/shared/FinalCtaSection"));
 const ProcessSection = dynamic(() => import("@/components/shared/ProcessSection"));
-import { getStateData, getStateName, getCityFromSlug, cityToSlug } from "@/lib/data/state-cities";
+import { getStateData, getStateName, getCityFromSlug, cityToSlug, stripLocationSuffix } from "@/lib/data/state-cities";
 import { stateOutlines } from "@/lib/data/state-outlines";
 
 const imgPlaceholder = "/images/stock/locations-hero-modern-city.webp";
 const imgInfoBlock = "/images/stock/service-dumpster-rental-v2.webp";
 
-function formatSlug(slug: string): string {
- return slug
- .split("-")
- .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
- .join(" ");
-}
-
 export default function CityLocationPage() {
  const params = useParams();
  const stateSlug = (params?.slug as string) || "new-york";
  const citySlug = (params?.city as string) || "";
- const stateName = formatSlug(stateSlug);
+ const stateName = getStateName(stateSlug);
  const stateData = getStateData(stateSlug);
  const cityName = getCityFromSlug(stateSlug, citySlug);
 
@@ -399,10 +392,10 @@ export default function CityLocationPage() {
  <FadeIn className="lg:h-full">
  <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square lg:aspect-auto lg:h-full max-w-md mx-auto lg:mx-0 lg:max-w-none shadow-2xl" data-testid="map-city-state-visual" role="img" aria-label={`Other service areas in ${stateName}`}>
  <div className="absolute inset-0 opacity-20" aria-hidden="true" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
- {stateOutlines[stateSlug] && (
+ {stateOutlines[stripLocationSuffix(stateSlug)] && (
  <svg
  className="absolute inset-0 w-full h-full pointer-events-none"
- viewBox={stateOutlines[stateSlug].viewBox}
+ viewBox={stateOutlines[stripLocationSuffix(stateSlug)].viewBox}
  preserveAspectRatio="xMidYMid meet"
  aria-hidden="true"
  >
@@ -413,7 +406,7 @@ export default function CityLocationPage() {
  </linearGradient>
  </defs>
  <path
- d={stateOutlines[stateSlug].path}
+ d={stateOutlines[stripLocationSuffix(stateSlug)].path}
  fill="url(#cityStateGradient)"
  stroke="#c5d520"
  strokeWidth="1.5"

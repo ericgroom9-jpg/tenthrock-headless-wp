@@ -16,20 +16,20 @@ import Logo from "@/components/shared/Logo";
 interface FlatLink { label: string; href: string }
 
 const DEFAULT_SERVICE_LINKS: FlatLink[] = [
-  { label: "Emergency Waste Removal", href: "/emergency-waste-removal" },
-  { label: "Specialized Project Logistics", href: "/specialized-project-logistics" },
-  { label: "Dumpster Rentals", href: "/dumpsters-containers" },
-  { label: "Waste Advisory", href: "/waste-operations-advisory" },
+  { label: "Emergency Waste Removal", href: "/services/emergency-waste-removal" },
+  { label: "Specialized Project Logistics", href: "/services/specialized-project-logistics" },
+  { label: "Dumpster Rentals", href: "/services/dumpsters-containers" },
+  { label: "Waste Advisory", href: "/services/waste-operations-advisory" },
 ];
 
 const DEFAULT_INDUSTRY_LINKS: FlatLink[] = [
-  { label: "Retail", href: "/retail" },
-  { label: "Stadiums & Events", href: "/stadiums-events" },
-  { label: "Faith Based", href: "/faith-based" },
-  { label: "Real Estate", href: "/real-estate" },
-  { label: "Hospitality", href: "/hospitality" },
-  { label: "Educational", href: "/educational" },
-  { label: "Municipalities", href: "/municipalities" },
+  { label: "Retail", href: "/industries/retail-store-junk-removal" },
+  { label: "Stadiums & Events", href: "/industries/stadium-and-event-junk-removal" },
+  { label: "Faith Based", href: "/industries/church-junk-removal" },
+  { label: "Real Estate", href: "/industries/real-estate-junk-removal" },
+  { label: "Hospitality", href: "/industries/hospitality-junk-removal" },
+  { label: "Educational", href: "/industries/school-junk-and-trash-removal" },
+  { label: "Municipalities", href: "/industries/community-junk-removal" },
 ];
 
 const DEFAULT_COMPANY_LINKS: FlatLink[] = [

@@ -122,7 +122,7 @@ export default function LocationsClient({ acf, globalSections }: Props) {
             {states.map((state, stateIndex) => (
               <a
                 key={stateIndex}
-                href={`/locations/${state.toLowerCase().replace(/\s+/g, '-')}`}
+                href={`/locations/${state.toLowerCase().replace(/\s+/g, '-')}-junk-removal`}
                 className="group flex items-center gap-2 sm:gap-3 py-1 rounded-md hover:text-[#c5d520] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
                 data-testid={`state-mobile-${stateIndex}`}
               >
@@ -142,7 +142,7 @@ export default function LocationsClient({ acf, globalSections }: Props) {
                 {column.map((state, stateIndex) => (
                   <a
                     key={stateIndex}
-                    href={`/locations/${state.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={`/locations/${state.toLowerCase().replace(/\s+/g, '-')}-junk-removal`}
                     className="group flex items-center gap-3 py-1 rounded-md hover:text-[#c5d520] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c5d520] focus-visible:ring-offset-2"
                     data-testid={`state-${columnIndex}-${stateIndex}`}
                   >

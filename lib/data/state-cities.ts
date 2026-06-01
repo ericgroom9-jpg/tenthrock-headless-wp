@@ -198,12 +198,29 @@ export const stateCitiesMap: Record<string, StateData> = {
   },
 };
 
+// Public location URLs carry a "-junk-removal" suffix on the state segment
+// (e.g. /locations/texas-junk-removal). The underlying WP slugs and the keys
+// in `stateCitiesMap` remain bare. These helpers strip the suffix so the same
+// lookups work whether they receive a bare key or a public (suffixed) slug.
+export const LOCATION_URL_SUFFIX = "-junk-removal";
+
+export function stripLocationSuffix(slug: string): string {
+  return slug.endsWith(LOCATION_URL_SUFFIX)
+    ? slug.slice(0, -LOCATION_URL_SUFFIX.length)
+    : slug;
+}
+
+/** Build a public location URL segment from a bare state key. */
+export function toLocationSlug(stateKey: string): string {
+  return `${stateKey}${LOCATION_URL_SUFFIX}`;
+}
+
 export function getStateData(slug: string): StateData | null {
-  return stateCitiesMap[slug] || null;
+  return stateCitiesMap[stripLocationSuffix(slug)] || null;
 }
 
 export function getStateName(slug: string): string {
-  return slug
+  return stripLocationSuffix(slug)
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -217,7 +234,7 @@ export function cityToSlug(city: string): string {
 }
 
 export function getCityFromSlug(stateSlug: string, citySlug: string): string | null {
-  const state = stateCitiesMap[stateSlug];
+  const state = stateCitiesMap[stripLocationSuffix(stateSlug)];
   if (!state) return null;
   return state.cities.find((c) => cityToSlug(c) === citySlug) || null;
 }

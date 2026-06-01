@@ -10,6 +10,7 @@
  * via the existing /api/revalidate webhook.
  */
 import { WP_CACHE_TAG } from './wordpress';
+import { rewriteLegacyHref } from './config/url-redirects';
 
 // 30-min ISR window matching WP_REVALIDATE_SECONDS. Editor edits propagate
 // instantly via the `wordpress` cache tag fired by the /api/revalidate
@@ -79,7 +80,7 @@ function toTree(items: RawMenuItem[]): MenuNode[] {
     byId.set(it.id, {
       id: it.id,
       label: it.label,
-      href: it.url || '#',
+      href: rewriteLegacyHref(it.url || '#'),
       target: it.target || undefined,
       children: [],
     });

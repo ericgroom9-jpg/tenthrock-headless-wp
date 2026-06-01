@@ -1,4 +1,5 @@
 import { headers } from 'next/headers';
+import { getLegacyRedirectTarget } from '@/lib/config/url-redirects';
 
 function getWordPressBaseUrl(): string {
   const wpApiUrl = process.env.WP_API_URL || '';
@@ -41,7 +42,8 @@ function escapeRegExp(string: string): string {
 
 export async function proxyWordPressFile(
   wpPath: string, 
-  frontendUrl: string
+  frontendUrl: string,
+  rewritePaths = false
 ): Promise<{ content: string; contentType: string } | null> {
   const wpBaseUrl = getWordPressBaseUrl();
   if (!wpBaseUrl) {
@@ -70,6 +72,24 @@ export async function proxyWordPressFile(
     
     content = content.replace(new RegExp(escapeRegExp(wpDomain), 'g'), frontendUrl);
     content = content.replace(new RegExp(`//${escapeRegExp(wpHost)}`, 'g'), `//${frontendHost}`);
+
+    // Sitemap/loc URL path rewriting: after the host has been swapped to the
+    // frontend, rewrite any legacy service/industry/location path to its new
+    // canonical home so crawled URLs never 301-bounce. Only enabled for XML
+    // sitemaps (CSS/other proxied files have no such paths).
+    if (rewritePaths) {
+      const feOrigin = frontendUrlObj.origin;
+      content = content.replace(
+        new RegExp(escapeRegExp(feOrigin) + '(/[^<>"\\s]*)', 'g'),
+        (full: string, p: string) => {
+          const hadTrailing = p.length > 1 && p.endsWith('/');
+          const lookup = hadTrailing ? p.slice(0, -1) : p;
+          const target = getLegacyRedirectTarget(lookup);
+          if (!target) return full;
+          return `${feOrigin}${target}${hadTrailing ? '/' : ''}`;
+        }
+      );
+    }
 
     return { content, contentType };
   } catch (error) {

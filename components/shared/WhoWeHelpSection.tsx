@@ -5,14 +5,14 @@ import Link from "next/link";
 import { ArrowRight, GraduationCap, Calendar, Heart, Landmark, Utensils, CloudLightning, Home as HomeIcon, Store } from "lucide-react";
 
 const sectors = [
-  { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/retail-rodeo-drive-v2.webp", icon: <Store className="w-6 h-6" />, href: "/retail" },
-  { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.webp", icon: <Calendar className="w-6 h-6" />, href: "/stadiums-events" },
-  { title: "Faith Based", desc: "Scheduled and on-demand waste service for churches, campuses, and community event cleanup.", img: "/images/stock/industry-faith-based.webp", icon: <Heart className="w-6 h-6" />, href: "/faith-based" },
-  { title: "Real Estate", desc: "Tenant turnover cleanouts, construction debris removal, and ongoing service for managed properties.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/real-estate" },
-  { title: "Natural Disasters", desc: "Rapid debris removal, emergency roll-offs, and storm damage cleanup deployed within hours.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <CloudLightning className="w-6 h-6" />, href: "/natural-disasters" },
-  { title: "Hospitality", desc: "Daily waste pickup, grease trap service, and pressure washing to keep guest-facing areas spotless.", img: "/images/stock/industry-hospitality.webp", icon: <Utensils className="w-6 h-6" />, href: "/hospitality" },
-  { title: "Educational", desc: "Campus-wide waste programs, recycling coordination, and event cleanup for schools and universities.", img: "/images/stock/university.webp", icon: <GraduationCap className="w-6 h-6" />, href: "/educational" },
-  { title: "Municipalities", desc: "Illegal dumping cleanup, public space maintenance, and disaster response for local governments.", img: "/images/stock/municipalities-american-flag.webp", icon: <Landmark className="w-6 h-6" />, href: "/municipalities" },
+  { title: "Retail", desc: "Overflow pickups, compactor service, and store cleanouts for chains with 5 to 5,000 locations.", img: "/images/stock/retail-rodeo-drive-v2.webp", icon: <Store className="w-6 h-6" />, href: "/industries/retail-store-junk-removal" },
+  { title: "Stadiums & Events", desc: "Pre-event container placement, real-time monitoring, and post-event haul-off for venues of any size.", img: "/images/industries/industry-stadiums-events.webp", icon: <Calendar className="w-6 h-6" />, href: "/industries/stadium-and-event-junk-removal" },
+  { title: "Faith Based", desc: "Scheduled and on-demand waste service for churches, campuses, and community event cleanup.", img: "/images/stock/industry-faith-based.webp", icon: <Heart className="w-6 h-6" />, href: "/industries/church-junk-removal" },
+  { title: "Real Estate", desc: "Tenant turnover cleanouts, construction debris removal, and ongoing service for managed properties.", img: "/images/stock/industry-real-estate-balconies.jpg", icon: <HomeIcon className="w-6 h-6" />, href: "/industries/real-estate-junk-removal" },
+  { title: "Natural Disasters", desc: "Rapid debris removal, emergency roll-offs, and storm damage cleanup deployed within hours.", img: "/images/stock/industry-natural-disasters-storm.jpg", icon: <CloudLightning className="w-6 h-6" />, href: "/industries/natural-disaster-junk-removal" },
+  { title: "Hospitality", desc: "Daily waste pickup, grease trap service, and pressure washing to keep guest-facing areas spotless.", img: "/images/stock/industry-hospitality.webp", icon: <Utensils className="w-6 h-6" />, href: "/industries/hospitality-junk-removal" },
+  { title: "Educational", desc: "Campus-wide waste programs, recycling coordination, and event cleanup for schools and universities.", img: "/images/stock/university.webp", icon: <GraduationCap className="w-6 h-6" />, href: "/industries/school-junk-and-trash-removal" },
+  { title: "Municipalities", desc: "Illegal dumping cleanup, public space maintenance, and disaster response for local governments.", img: "/images/stock/municipalities-american-flag.webp", icon: <Landmark className="w-6 h-6" />, href: "/industries/community-junk-removal" },
 ];
 
 function IndustryCard({ sector, index }: { sector: typeof sectors[0]; index: number }) {

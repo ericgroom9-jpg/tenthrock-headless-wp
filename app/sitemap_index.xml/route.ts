@@ -6,9 +6,9 @@ export const revalidate = 1800;
 export async function GET() {
   const frontendUrl = await getFrontendUrl();
   
-  let result = await proxyWordPressFile('/sitemap_index.xml', frontendUrl);
+  let result = await proxyWordPressFile('/sitemap_index.xml', frontendUrl, true);
   if (!result) {
-    result = await proxyWordPressFile('/wp-sitemap.xml', frontendUrl);
+    result = await proxyWordPressFile('/wp-sitemap.xml', frontendUrl, true);
   }
   
   if (!result) {

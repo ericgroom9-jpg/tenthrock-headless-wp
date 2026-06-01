@@ -1,5 +1,5 @@
 import { fetchLocationWithAcf } from "@/lib/wordpress";
-import { getStateData } from "@/lib/data/state-cities";
+import { getStateData, getStateName, stripLocationSuffix } from "@/lib/data/state-cities";
 import { getStateLocationContent } from "@/lib/data/state-location-content";
 import { toTitleCase } from "@/lib/utils/title-case";
 import LocationTemplateClient from "./LocationTemplateClient";
@@ -15,9 +15,10 @@ export const revalidate = 1800;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const locationName = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const stateKey = stripLocationSuffix(slug);
+  const locationName = getStateName(slug);
 
-  const wpData = await fetchLocationWithAcf(slug).catch(() => null);
+  const wpData = await fetchLocationWithAcf(stateKey).catch(() => null);
   const seo = wpData?.seoMetadata;
 
   return {
@@ -39,13 +40,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function LocationTemplatePage({ params }: PageProps) {
   const { slug } = await params;
+  const stateKey = stripLocationSuffix(slug);
 
-  const wpData = await fetchLocationWithAcf(slug).catch(() => null);
+  const wpData = await fetchLocationWithAcf(stateKey).catch(() => null);
 
-  const localStateData = getStateData(slug);
-  const localContent = getStateLocationContent(slug);
+  const localStateData = getStateData(stateKey);
+  const localContent = getStateLocationContent(stateKey);
 
-  const locationName = wpData?.locationName || slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const locationName = wpData?.locationName || getStateName(slug);
 
   const heroSubtitle = wpData?.heroSubtitle || localContent?.subtitle || "On-demand waste removal, dumpster rentals, and managed programs for businesses across the region. Local crews, nationwide support.";
   const aboutDescription = wpData?.aboutDescription || localContent?.aboutDesc || "Our local crews are fully licensed, insured, and trained to handle commercial waste for businesses of all sizes. From emergency overflow pickups to scheduled dumpster service, we deliver fast, reliable waste solutions backed by our nationwide infrastructure.";

@@ -47,7 +47,7 @@ function Pin({
   setActiveCode: (code: string | null) => void;
 }) {
   const router = useRouter();
-  const href = `/locations/${stateSlug(name)}`;
+  const href = `/locations/${stateSlug(name)}-junk-removal`;
   const lastPointerTypeRef = useRef<string>("mouse");
   const handleClick = (e: React.MouseEvent) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;

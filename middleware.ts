@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { PAGE_TEMPLATE_CONFIG } from '@/lib/config/post-types';
+import { getLegacyRedirectTarget } from '@/lib/config/url-redirects';
 
 type Redirect = {
   origin: string;
@@ -169,6 +170,23 @@ async function getRedirects(): Promise<Redirect[]> {
 
 export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
+
+  // ─────────────────────────────────────────────────────────────
+  // Site-wide slug restructure (front-end only). 301 legacy URLs to
+  // their new homes BEFORE any WordPress lookup so these are instant and
+  // never depend on WP being reachable:
+  //   /<service-wp-slug>            → /services/<public-slug>
+  //   /<industry-wp-slug>           → /industries/<public-slug>
+  //   /locations/<state>            → /locations/<state>-junk-removal
+  // ─────────────────────────────────────────────────────────────
+  const legacyTarget = getLegacyRedirectTarget(path);
+  if (legacyTarget && legacyTarget !== path) {
+    const url = request.nextUrl.clone();
+    url.pathname = legacyTarget;
+    // Preserve any existing query string on the redirect.
+    return NextResponse.redirect(url, 301);
+  }
+
   // Run both WordPress fetches concurrently so middleware blocks on the
   // slower of the two rather than the sum. Both are tagged `wordpress`
   // (or `wordpress-redirects`) so webhook-driven revalidation still works.

@@ -15,50 +15,50 @@ interface NavbarProps {
 const DEFAULT_SERVICE_CATEGORIES = [
  {
  label: "Emergency Waste Removal",
- href: "/emergency-waste-removal",
+ href: "/services/emergency-waste-removal",
  subServices: [
- { label: "Emergency Product & Perishable Removal", href: "/emergency-product-removal" },
- { label: "Site Stabilization", href: "/site-stabilization" },
- { label: "Unplanned Cleanouts & Debris Removal", href: "/unplanned-cleanouts" },
+ { label: "Emergency Product & Perishable Removal", href: "/services/emergency-product-removal" },
+ { label: "Site Stabilization", href: "/services/site-stabilization" },
+ { label: "Unplanned Cleanouts & Debris Removal", href: "/services/unplanned-cleanouts" },
  ],
  },
  {
  label: "Specialized Project Logistics",
- href: "/specialized-project-logistics",
+ href: "/services/specialized-project-logistics",
  subServices: [
- { label: "Site Closures & Remodels", href: "/site-closures-remodels" },
- { label: "Events & Stadiums", href: "/events-stadiums" },
- { label: "Natural Disasters", href: "/natural-disaster-mobilization" },
+ { label: "Site Closures & Remodels", href: "/services/site-closure-remodels" },
+ { label: "Events & Stadiums", href: "/services/stadium-event-cleanup" },
+ { label: "Natural Disasters", href: "/services/natural-disaster-cleanup" },
  ],
  },
  {
  label: "Dumpster Rentals",
- href: "/dumpsters-containers",
+ href: "/services/dumpsters-containers",
  subServices: [
- { label: "On-Demand Service", href: "/on-demand-service" },
- { label: "Multiple Sizes", href: "/multiple-sizes" },
- { label: "Recycling Dumpsters", href: "/recycling-specialty-containers" },
+ { label: "On-Demand Service", href: "/services/on-demand-dumpster-rental" },
+ { label: "Multiple Sizes", href: "/services/multiple-size-dumpsters" },
+ { label: "Recycling Dumpsters", href: "/services/recycling-dumpster-containers" },
  ],
  },
  {
  label: "Waste Advisory",
- href: "/waste-operations-advisory",
+ href: "/services/waste-operations-advisory",
  subServices: [
- { label: "Waste Program Assessments & Roadmaps", href: "/waste-program-assessments" },
- { label: "Standards & Vendor Training", href: "/standards-sops-training" },
- { label: "Ongoing Advisory & Program Implementation", href: "/ongoing-advisory" },
+ { label: "Waste Program Assessments & Roadmaps", href: "/services/waste-program-assessments" },
+ { label: "Standards & Vendor Training", href: "/services/waste-program-standards-and-sops" },
+ { label: "Ongoing Advisory & Program Implementation", href: "/services/waste-program-advisory" },
  ],
  },
 ];
 
 const DEFAULT_SECTOR_LINKS = [
- { label: "Retail", href: "/retail" },
- { label: "Stadiums & Events", href: "/stadiums-events" },
- { label: "Faith Based", href: "/faith-based" },
- { label: "Real Estate", href: "/real-estate" },
- { label: "Hospitality", href: "/hospitality" },
- { label: "Educational", href: "/educational" },
- { label: "Municipalities", href: "/municipalities" },
+ { label: "Retail", href: "/industries/retail-store-junk-removal" },
+ { label: "Stadiums & Events", href: "/industries/stadium-and-event-junk-removal" },
+ { label: "Faith Based", href: "/industries/church-junk-removal" },
+ { label: "Real Estate", href: "/industries/real-estate-junk-removal" },
+ { label: "Hospitality", href: "/industries/hospitality-junk-removal" },
+ { label: "Educational", href: "/industries/school-junk-and-trash-removal" },
+ { label: "Municipalities", href: "/industries/community-junk-removal" },
 ];
 
 const DEFAULT_LOCATION_LINKS = [
@@ -74,7 +74,7 @@ const DEFAULT_LOCATION_LINKS = [
  "Washington", "West Virginia", "Wisconsin", "Wyoming"
 ].map(state => ({
  label: state,
- href: `/locations/${state.toLowerCase().replace(/\s+/g, "-")}`,
+ href: `/locations/${state.toLowerCase().replace(/\s+/g, "-")}-junk-removal`,
 }));
 
 const DEFAULT_ABOUT_LINKS = [

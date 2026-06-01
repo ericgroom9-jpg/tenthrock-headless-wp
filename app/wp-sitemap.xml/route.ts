@@ -5,7 +5,7 @@ export const revalidate = 1800;
 
 export async function GET() {
   const frontendUrl = await getFrontendUrl();
-  const result = await proxyWordPressFile('/wp-sitemap.xml', frontendUrl);
+  const result = await proxyWordPressFile('/wp-sitemap.xml', frontendUrl, true);
   
   if (!result) {
     return new NextResponse('WordPress sitemap not found', { 

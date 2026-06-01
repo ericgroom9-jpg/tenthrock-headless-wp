@@ -12,7 +12,7 @@ import { Phone, Check, ArrowUpRight, ArrowDown, ArrowRight, MapPin, Loader2 } fr
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { stateOutlines } from "@/lib/data/state-outlines";
-import { cityToSlug } from "@/lib/data/state-cities";
+import { cityToSlug, stripLocationSuffix } from "@/lib/data/state-cities";
 import { submitGravityForm } from "@/lib/gf/submit-client";
 import { GF_FORM_IDS } from "@/lib/gf/form-ids";
 import { scrollToRequestForm } from "@/lib/utils/scroll-to-request-form";
@@ -476,10 +476,10 @@ export default function LocationTemplateClient({
  <FadeIn className="lg:h-full">
  <figure className="relative bg-[#042940] rounded-[5px] overflow-hidden aspect-square lg:aspect-auto lg:h-full max-w-md mx-auto lg:mx-0 lg:max-w-none shadow-2xl" data-testid="map-state-visual" role="img" aria-label={`Service coverage map for ${locationName}`}>
  <div className="absolute inset-0 opacity-20" aria-hidden="true" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
- {stateOutlines[slug] && (
+ {stateOutlines[stripLocationSuffix(slug)] && (
  <svg
  className="absolute inset-0 w-full h-full pointer-events-none"
- viewBox={stateOutlines[slug].viewBox}
+ viewBox={stateOutlines[stripLocationSuffix(slug)].viewBox}
  preserveAspectRatio="xMidYMid meet"
  aria-hidden="true"
  >
@@ -490,7 +490,7 @@ export default function LocationTemplateClient({
  </linearGradient>
  </defs>
  <path
- d={stateOutlines[slug].path}
+ d={stateOutlines[stripLocationSuffix(slug)].path}
  fill="url(#stateGradient)"
  stroke="#c5d520"
  strokeWidth="1.5"

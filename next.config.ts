@@ -55,7 +55,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/natural-disaster-mobilization",
-        destination: "/natural-disaster-cleanup",
+        destination: "/services/natural-disaster-cleanup",
         permanent: true,
       },
       {
