@@ -209,5 +209,18 @@ export function rewriteLegacyHref(href: string): string {
   return `${origin}${target}${hadTrailing ? "/" : ""}${suffix}`;
 }
 
+/**
+ * Rewrite every absolute http(s) URL embedded in a block of text (e.g. a Yoast
+ * JSON-LD `schema.raw` string) so legacy paths point at their new URLs. Each
+ * matched URL is run through rewriteLegacyHref, which preserves origin, query,
+ * hash and trailing slash and leaves non-legacy URLs untouched. Used to fix
+ * `@id`/`url`/breadcrumb URLs in JSON-LD that WordPress still emits with the
+ * old (front-end-unchanged) slugs.
+ */
+export function rewriteLegacyUrlsInText(text: string): string {
+  if (!text) return text;
+  return text.replace(/https?:\/\/[^\s"'<>\\]+/g, (m) => rewriteLegacyHref(m));
+}
+
 // Re-export for convenience so consumers can import suffix helpers from here.
 export { LOCATION_URL_SUFFIX, stripLocationSuffix };

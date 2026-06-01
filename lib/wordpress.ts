@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { GraphQLClient, gql } from 'graphql-request';
 import type { SeoMetadata, TaxonomyTerm } from '@/shared/schema';
+import { rewriteLegacyHref, rewriteLegacyUrlsInText } from '@/lib/config/url-redirects';
 
 // WordPress session cookie cache for preview authentication
 // This avoids re-authenticating on every preview request
@@ -1149,17 +1150,21 @@ const transformSeoData = (seo: WpSeo | null): SeoMetadata | undefined => {
   return {
     title: seo.title,
     metaDesc: seo.metaDesc,
-    canonical: seo.canonical,
+    canonical: seo.canonical ? rewriteLegacyHref(seo.canonical) : seo.canonical,
     opengraphTitle: seo.opengraphTitle,
     opengraphDescription: seo.opengraphDescription,
     opengraphImage: seo.opengraphImage?.sourceUrl,
     opengraphType: seo.opengraphType,
-    opengraphUrl: seo.opengraphUrl,
+    opengraphUrl: seo.opengraphUrl ? rewriteLegacyHref(seo.opengraphUrl) : seo.opengraphUrl,
     opengraphSiteName: seo.opengraphSiteName,
     twitterTitle: seo.twitterTitle,
     twitterDescription: seo.twitterDescription,
     twitterImage: seo.twitterImage?.sourceUrl,
-    schema: rawSchema ? rewriteSchemaHost(rawSchema) : undefined,
+    // Rewrite host first (WP origin -> public origin), then legacy paths inside
+    // every embedded URL so JSON-LD @id/url/breadcrumbs match the new scheme.
+    schema: rawSchema
+      ? rewriteLegacyUrlsInText(rewriteSchemaHost(rawSchema))
+      : undefined,
   };
 };
 
