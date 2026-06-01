@@ -1,0 +1,93 @@
+https://tenthrock.sher.dev/brand-protection/	
+https://tenthrock.sher.dev/centralized-programs/	
+https://tenthrock.sher.dev/commercial-dumpster-rental/	
+https://tenthrock.sher.dev/compliance-support/	
+https://tenthrock.sher.dev/dumpster-rentals/	
+https://tenthrock.sher.dev/dumpsters-containers/	
+https://tenthrock.sher.dev/emergency-product-removal/	/services/emergency-product-removal
+https://tenthrock.sher.dev/emergency-waste-removal/	
+https://tenthrock.sher.dev/environmental-maintenance/	
+https://tenthrock.sher.dev/event-stadium/	
+https://tenthrock.sher.dev/events-stadiums/	/services/stadium-event-cleanup
+https://tenthrock.sher.dev/flexible-terms/	
+https://tenthrock.sher.dev/multiple-sizes/	/services/multiple-size-dumpsters
+https://tenthrock.sher.dev/multiple-sizes-types/	
+https://tenthrock.sher.dev/natrual-disaster-cleanup/ ← ⚠ typo in WP slug ("natrual"); also appears under industries	/services/natural-disaster-cleanup
+https://tenthrock.sher.dev/on-demand-service/	/services/on-demand-dumpster-rental
+https://tenthrock.sher.dev/ongoing-advisory/	/services/waste-program-advisory
+https://tenthrock.sher.dev/performance-tracking/	
+https://tenthrock.sher.dev/pressure-washing-services/	
+https://tenthrock.sher.dev/recycling-specialty-containers/	/services/recycling-dumpster-containers
+https://tenthrock.sher.dev/single-point-of-contact/	
+https://tenthrock.sher.dev/site-closures-remodels/	/services/site-closure-remodels
+https://tenthrock.sher.dev/site-stabilization/	/services/site-stabilization
+https://tenthrock.sher.dev/specialized-project-logistics/	
+https://tenthrock.sher.dev/spend-optimization/	
+https://tenthrock.sher.dev/standards-sops-training/	/services/waste-program-standards-and-sops
+https://tenthrock.sher.dev/store-decommissioning/	
+https://tenthrock.sher.dev/unplanned-cleanouts/	/services/unplanned-cleanouts
+https://tenthrock.sher.dev/waste-equipment-hauling-services/	
+https://tenthrock.sher.dev/waste-operations-advisory/	
+https://tenthrock.sher.dev/waste-program-assessments/	/services/waste-program-assessments
+https://tenthrock.sher.dev/waste-removal-services/	
+	
+Industries (8)	
+https://tenthrock.sher.dev/church-junk-removal/	/industries/church-junk-removal/
+https://tenthrock.sher.dev/hospitality-junk-removal/	/industries/hospitality-junk-removal/
+https://tenthrock.sher.dev/natrual-disaster-cleanup/	/industries/natural-disaster-junk-removal
+https://tenthrock.sher.dev/property-management-junk-removal/	/industries/real-estate-junk-removal/
+https://tenthrock.sher.dev/public-space-junk-removal/	/industries/community-junk-removal
+https://tenthrock.sher.dev/retail-store-junk-removal/	/industries/retail-store-junk-removal
+https://tenthrock.sher.dev/school-junk-management/	/industries/school-junk-and-trash-removal
+https://tenthrock.sher.dev/stadiums-events-junk-removal/	/industries/stadium-and-event-junk-removal
+	
+Locations (48 states + index)	
+https://tenthrock.sher.dev/locations/	
+https://tenthrock.sher.dev/locations/alabama/	/locations/alabama-junk-removal
+https://tenthrock.sher.dev/locations/arizona/	/locations/arizona-junk-removal
+https://tenthrock.sher.dev/locations/arkansas/	/locations/arkansas-junk-removal
+https://tenthrock.sher.dev/locations/california/	/locations/california-junk-removal
+https://tenthrock.sher.dev/locations/colorado/	/locations/colorado-junk-removal
+https://tenthrock.sher.dev/locations/connecticut/	/locations/connecticut-junk-removal
+https://tenthrock.sher.dev/locations/delaware/	/locations/delaware-junk-removal
+https://tenthrock.sher.dev/locations/florida/	/locations/florida-junk-removal
+https://tenthrock.sher.dev/locations/georgia/	/locations/georgia-junk-removal
+https://tenthrock.sher.dev/locations/idaho/	/locations/idaho-junk-removal
+https://tenthrock.sher.dev/locations/illinois/	/locations/illinois-junk-removal
+https://tenthrock.sher.dev/locations/indiana/	/locations/indiana-junk-removal
+https://tenthrock.sher.dev/locations/iowa/	/locations/iowa-junk-removal
+https://tenthrock.sher.dev/locations/kansas/	/locations/kansas-junk-removal
+https://tenthrock.sher.dev/locations/kentucky/	/locations/kentucky-junk-removal
+https://tenthrock.sher.dev/locations/louisiana/	/locations/louisiana-junk-removal
+https://tenthrock.sher.dev/locations/maine/	/locations/maine-junk-removal
+https://tenthrock.sher.dev/locations/maryland/	/locations/maryland-junk-removal
+https://tenthrock.sher.dev/locations/massachusetts/	/locations/massachusetts-junk-removal
+https://tenthrock.sher.dev/locations/michigan/	/locations/michigan-junk-removal
+https://tenthrock.sher.dev/locations/minnesota/	/locations/minnesota-junk-removal
+https://tenthrock.sher.dev/locations/mississippi/	/locations/missisippi-junk-removal
+https://tenthrock.sher.dev/locations/missouri/	/locations/missouri-junk-removal
+https://tenthrock.sher.dev/locations/montana/	/locations/montana-junk-removal
+https://tenthrock.sher.dev/locations/nebraska/	/locations/nebraska-junk-removal
+https://tenthrock.sher.dev/locations/nevada/	/locations/nevada-junk-removal
+https://tenthrock.sher.dev/locations/new-hampshire/	/locations/new-hampshire-junk-removal
+https://tenthrock.sher.dev/locations/new-jersey/	/locations/new-jersey-junk-removal
+https://tenthrock.sher.dev/locations/new-mexico/	/locations/new-mexico-junk-removal
+https://tenthrock.sher.dev/locations/new-york/	/locations/new-york-junk-removal
+https://tenthrock.sher.dev/locations/north-carolina/	/locations/north-carolina-junk-removal
+https://tenthrock.sher.dev/locations/north-dakota/	/locations/north-dakota-junk-removal
+https://tenthrock.sher.dev/locations/ohio/	/locations/ohio-junk-removal
+https://tenthrock.sher.dev/locations/oklahoma/	/locations/oklahoma-junk-removal
+https://tenthrock.sher.dev/locations/oregon/	/locations/oregon-junk-removal
+https://tenthrock.sher.dev/locations/pennsylvania/	/locations/pennsylvania-junk-removal
+https://tenthrock.sher.dev/locations/rhode-island/	/locations/rhode-island-junk-removal
+https://tenthrock.sher.dev/locations/south-carolina/	/locations/south-carolina-junk-removal
+https://tenthrock.sher.dev/locations/south-dakota/	/locations/south-dakota-junk-removal
+https://tenthrock.sher.dev/locations/tennessee/	/locations/tennessee-junk-removal
+https://tenthrock.sher.dev/locations/texas/	/locations/texas-junk-removal
+https://tenthrock.sher.dev/locations/utah/	/locations/utah-junk-removal
+https://tenthrock.sher.dev/locations/vermont/	/locations/vermont-junk-removal
+https://tenthrock.sher.dev/locations/virginia/	/locations/virginia-junk-removal
+https://tenthrock.sher.dev/locations/washington/	/locations/washington-junk-removal
+https://tenthrock.sher.dev/locations/west-virginia/	/locations/west-virginia-junk-removal
+https://tenthrock.sher.dev/locations/wisconsin/	/locations/wisconsin-junk-removal
+https://tenthrock.sher.dev/locations/wyoming/	/locations/wyoming-junk-removal
