@@ -244,28 +244,28 @@ export default function CityLocationPage() {
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
  <div>
  <label htmlFor="city-firstName" className="block text-sm font-medium text-[#042940] mb-1.5">First Name</label>
- <input id="city-firstName" type="text" placeholder="Enter your first name" value={formData.firstName} onChange={(e) => handleInputChange("firstName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-first-name" />
+ <input id="city-firstName" type="text" placeholder="Enter your first name" value={formData.firstName} onChange={(e) => handleInputChange("firstName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white placeholder:text-[#042940]/40" data-testid="input-city-first-name" />
  </div>
  <div>
  <label htmlFor="city-lastName" className="block text-sm font-medium text-[#042940] mb-1.5">Last Name</label>
- <input id="city-lastName" type="text" placeholder="Enter your last name" value={formData.lastName} onChange={(e) => handleInputChange("lastName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-last-name" />
+ <input id="city-lastName" type="text" placeholder="Enter your last name" value={formData.lastName} onChange={(e) => handleInputChange("lastName", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white placeholder:text-[#042940]/40" data-testid="input-city-last-name" />
  </div>
  </div>
  <div>
  <label htmlFor="city-email" className="block text-sm font-medium text-[#042940] mb-1.5">Email</label>
- <input id="city-email" type="email" placeholder="Enter your email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-email" />
+ <input id="city-email" type="email" placeholder="Enter your email" value={formData.email} onChange={(e) => handleInputChange("email", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white placeholder:text-[#042940]/40" data-testid="input-city-email" />
  </div>
  <div>
  <label htmlFor="city-phone" className="block text-sm font-medium text-[#042940] mb-1.5">Phone number</label>
- <PhoneInput id="city-phone" value={formData.phone} onChange={(val) => handleInputChange("phone", val || "")} className="w-full" data-testid="input-city-phone" />
+ <PhoneInput id="city-phone" value={formData.phone} onChange={(val) => handleInputChange("phone", val || "")} className="w-full h-auto px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent focus-visible:ring-[#c5d520] focus-visible:ring-offset-0 text-sm bg-white placeholder:text-[#042940]/40" data-testid="input-city-phone" />
  </div>
  <div>
  <label htmlFor="city-company" className="block text-sm font-medium text-[#042940] mb-1.5">Company</label>
- <input id="city-company" type="text" placeholder="Enter your company name" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white" data-testid="input-city-company" />
+ <input id="city-company" type="text" placeholder="Enter your company name" value={formData.company} onChange={(e) => handleInputChange("company", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white placeholder:text-[#042940]/40" data-testid="input-city-company" />
  </div>
  <div>
  <label htmlFor="city-interest" className="block text-sm font-medium text-[#042940] mb-1.5">Service Interest</label>
- <select id="city-interest" value={formData.interest} onChange={(e) => handleInputChange("interest", e.target.value)} className="w-full pl-4 pr-10 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat" data-testid="select-city-interest">
+ <select id="city-interest" value={formData.interest} onChange={(e) => handleInputChange("interest", e.target.value)} className={`w-full pl-4 pr-10 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat ${formData.interest ? "text-[#042940]" : "text-[#042940]/40"}`} data-testid="select-city-interest">
  <option value="">Select a service</option>
  <option value="emergency">Emergency Waste Removal</option>
  <option value="dumpster">Dumpster Rental</option>
@@ -276,7 +276,7 @@ export default function CityLocationPage() {
  </div>
  <div>
  <label htmlFor="city-message" className="block text-sm font-medium text-[#042940] mb-1.5">Message (Optional)</label>
- <textarea id="city-message" rows={3} placeholder="Type your message..." value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white resize-none" data-testid="textarea-city-message" />
+ <textarea id="city-message" rows={3} placeholder="Type your message..." value={formData.message} onChange={(e) => handleInputChange("message", e.target.value)} className="w-full px-4 py-3 rounded-[5px] border border-[#042940]/15 focus:outline-none focus:ring-2 focus:ring-[#c5d520] focus:border-transparent text-sm bg-white resize-none placeholder:text-[#042940]/40" data-testid="textarea-city-message" />
  </div>
  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-4 border-t border-[#042940]/10">
  <label className="flex items-start gap-3 cursor-pointer" data-testid="label-city-consent">

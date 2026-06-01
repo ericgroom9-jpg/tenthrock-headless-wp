@@ -141,24 +141,24 @@ function RequestAServiceSection({ data }: { data: ContactFormTemplateData | null
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="request-first-name" className="block text-sm font-medium text-[#042940] mb-2">First name</label>
-                    <Input id="request-first-name" name="input_1" type="text" required placeholder="Enter your first name" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-first-name" />
+                    <Input id="request-first-name" name="input_1" type="text" required placeholder="Enter your first name" className="w-full h-12 border-[#042940]/20 rounded-[5px] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-first-name" />
                   </div>
                   <div>
                     <label htmlFor="request-last-name" className="block text-sm font-medium text-[#042940] mb-2">Last name</label>
-                    <Input id="request-last-name" name="input_2" type="text" required placeholder="Enter your last name" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-last-name" />
+                    <Input id="request-last-name" name="input_2" type="text" required placeholder="Enter your last name" className="w-full h-12 border-[#042940]/20 rounded-[5px] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-last-name" />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="request-email" className="block text-sm font-medium text-[#042940] mb-2">Email</label>
-                  <Input id="request-email" name="input_3" type="email" required placeholder="Enter your email" className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-email" />
+                  <Input id="request-email" name="input_3" type="email" required placeholder="Enter your email" className="w-full h-12 border-[#042940]/20 rounded-[5px] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-email" />
                 </div>
                 <div>
                   <label htmlFor="request-phone" className="block text-sm font-medium text-[#042940] mb-2">Phone Number</label>
-                  <PhoneInput id="request-phone" name="input_4" required className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-phone" />
+                  <PhoneInput id="request-phone" name="input_4" required className="w-full h-12 border-[#042940]/20 rounded-[5px] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors" data-testid="input-request-phone" />
                 </div>
                 <div>
                   <label htmlFor="request-interest" className="block text-sm font-medium text-[#042940] mb-2">I&apos;m interested in help with:</label>
-                  <select id="request-interest" name="input_5" required className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-base md:text-sm text-[#042940] focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat" data-testid="select-request-interest" defaultValue="">
+                  <select id="request-interest" name="input_5" required className="w-full h-12 pl-4 pr-10 border border-[#042940]/20 rounded-[5px] bg-white text-base md:text-sm text-[#042940] invalid:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23042940%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat" data-testid="select-request-interest" defaultValue="">
                     <option value="" disabled>Select one...</option>
                     {interestOptions.map((opt) => (
                       <option key={opt.value} value={opt.value}>{opt.label}</option>

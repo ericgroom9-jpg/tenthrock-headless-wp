@@ -292,7 +292,7 @@ export default function LocationTemplateClient({
  required
  value={formData.phone}
  onChange={(value) => handleInputChange("phone", value)}
- className="w-full h-12 border-[#042940]/20 rounded-[5px] focus:border-[#c5d520] focus:ring-[#c5d520] transition-colors"
+ className="w-full h-12 px-4 border border-[#042940]/20 rounded-[5px] bg-white text-[#042940] placeholder:text-[#042940]/40 focus:border-[#c5d520] focus:ring-1 focus:ring-[#c5d520] outline-none transition-colors"
  data-testid="input-phone"
  />
  </div>
