@@ -428,3 +428,14 @@ input::placeholder,
 textarea::placeholder {
   font-size: 14px;
 }
+
+/*
+ * Hide the Usercentrics floating privacy/consent trigger ("fingerprint" button).
+ * V3 (browser-ui) renders this button inside a Shadow DOM hosted on the
+ * <uc-privacy-button> custom element, so we hide the host from page CSS.
+ * The consent banner (uc-banner) and settings modal (uc-second-layer) are
+ * unaffected. !important is required to override Usercentrics' injected styles.
+ */
+uc-privacy-button {
+  display: none !important;
+}
