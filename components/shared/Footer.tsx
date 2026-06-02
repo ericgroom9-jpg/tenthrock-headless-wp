@@ -241,6 +241,17 @@ export default function Footer() {
                 </Link>
               );
             })}
+            <button
+              type="button"
+              onClick={() => {
+                const uc = (window as unknown as { UC_UI?: { showSecondLayer?: () => void } }).UC_UI;
+                uc?.showSecondLayer?.();
+              }}
+              className="py-2 whitespace-nowrap hover:text-white transition-colors min-h-[44px] flex items-center"
+              data-testid="link-footer-privacy-settings"
+            >
+              Privacy Settings
+            </button>
           </div>
         </div>
       </div>
