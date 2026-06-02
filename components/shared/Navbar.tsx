@@ -542,7 +542,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  <Link href={loginCta.href}>{loginCta.label}</Link>
  </Button>
  )}
- <Button asChild size="lg" variant="default" className="bg-[#042940] text-white min-h-[52px] whitespace-nowrap" data-testid="button-desktop-book-call">
+ <Button asChild size="lg" variant="outline" className="border-[#042940] text-[#042940] bg-transparent min-h-[52px] whitespace-nowrap" data-testid="button-desktop-book-call">
  <Link href="/book-a-call">Book a Call</Link>
  </Button>
  <Button asChild size="lg" className="bg-[#c5d520] text-[#042940] shadow-lg shadow-[#c5d520]/20 min-h-[52px] whitespace-nowrap" data-testid="button-desktop-cta">
@@ -777,8 +777,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  <Button 
  asChild 
  size="lg" 
- variant="default"
- className="w-full justify-center bg-[#042940] text-white min-h-[52px] whitespace-nowrap rounded-full"
+ variant="outline"
+ className="w-full justify-center border-[#042940] text-[#042940] bg-transparent min-h-[52px] whitespace-nowrap rounded-full"
  data-testid="button-mobile-menu-book-call"
  >
  <Link href="/book-a-call" onClick={() => setIsNavExpanded(false)}>Book a Call</Link>
