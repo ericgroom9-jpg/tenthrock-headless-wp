@@ -52,6 +52,19 @@ export function CookieConsent() {
       <Script id="usercentrics-custom-translations" strategy="afterInteractive">
         {`(function(){var t=0;function s(){if(typeof uc!=='undefined'&&typeof uc.setCustomTranslations==='function'){uc.setCustomTranslations('https://termageddon.ams3.cdn.digitaloceanspaces.com/translations/');}else if(t++<60){setTimeout(s,50);}}s();})();`}
       </Script>
+
+      {/*
+       * Hide the floating Usercentrics privacy trigger ("fingerprint" button).
+       * The CMP (browser-ui) renders it as <button data-testid="uc-privacy-button">
+       * INSIDE the #usercentrics-root Shadow DOM, so page-level CSS cannot reach
+       * it. We inject a scoped <style> into that shadow root once it exists, and
+       * keep re-checking for ~20s so it survives the CMP's initial re-renders.
+       * The consent banner and the footer "Privacy Settings" link (which calls
+       * UC_UI.showSecondLayer) remain fully functional.
+       */}
+      <Script id="usercentrics-hide-privacy-button" strategy="afterInteractive">
+        {`(function(){function inject(){var r=document.getElementById('usercentrics-root');if(!(r&&r.shadowRoot))return;if(!r.shadowRoot.getElementById('uc-hide-privacy-btn')){var s=document.createElement('style');s.id='uc-hide-privacy-btn';s.textContent='[data-testid="uc-privacy-button"]{display:none !important;}';r.shadowRoot.appendChild(s);}}var n=0,iv=setInterval(function(){inject();if(++n>100)clearInterval(iv);},200);})();`}
+      </Script>
     </>
   );
 }

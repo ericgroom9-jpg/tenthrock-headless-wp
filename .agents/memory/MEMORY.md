@@ -1,1 +1,2 @@
 - [WP slug quirks](wp-slug-quirks.md) — misspelled shared slug `natrual-disaster-cleanup` (service wins), marketing-alias root double-hops, Yoast sitemap-index→child structure.
+- [Usercentrics Shadow DOM](usercentrics-shadow-dom.md) — CMP UI lives in `#usercentrics-root` shadow root; page CSS can't reach it. Hide/restyle by injecting a `<style>` into the shadow root, target by `data-testid`.
