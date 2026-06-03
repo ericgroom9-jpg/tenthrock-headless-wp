@@ -1,3 +1,4 @@
 - [WP slug quirks](wp-slug-quirks.md) — misspelled shared slug `natrual-disaster-cleanup` (service wins), marketing-alias root double-hops, Yoast sitemap-index→child structure.
+- [GF redirect URL parsing](gf-redirect-url-parsing.md) — GF returns `http:///slug` (empty authority); `new URL().host` reads slug as host, so detect empty authority from the raw string, not `URL.host`.
 - [GF form testing](gf-form-testing.md) — GF /submissions returns confirmation at top-level `confirmation_redirect` (empty-host), omits entry_id; clean test entries by email; form config lives in WP and drifts from replit.md (phoneFormat).
 - [Usercentrics Shadow DOM](usercentrics-shadow-dom.md) — CMP UI lives in `#usercentrics-root` shadow root; page CSS can't reach it. Hide/restyle by injecting a `<style>` into the shadow root, target by `data-testid`.
