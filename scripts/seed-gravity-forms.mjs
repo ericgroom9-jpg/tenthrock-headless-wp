@@ -38,7 +38,13 @@ async function gf(path, init = {}) {
   return data;
 }
 
-const REDIRECT_URL = "/"; // testing — editor can change later in WP
+// Confirmation redirects are pass-through (the app forwards GF's confirmation
+// URL unchanged), so they MUST be absolute canonical URLs — a relative path is
+// emitted by GF as an empty-authority `http:///slug` that misroutes in the
+// browser. Override the base with SITE_BASE_URL if seeding a non-prod site.
+const SITE_BASE = (process.env.SITE_BASE_URL || "https://tenthrock.com").replace(/\/+$/, "");
+const abs = (p) => (/^https?:\/\//i.test(p) ? p : SITE_BASE + (p.startsWith("/") ? p : `/${p}`));
+const REDIRECT_URL = abs("/"); // editor can change later in WP
 
 const redirectConfirmation = (url = REDIRECT_URL) => ({
   // Gravity Forms uses string IDs for confirmations
@@ -128,7 +134,7 @@ function buildBody({ title, fields, button, confirmationUrl }) {
     descriptionPlacement: "below",
     button,
     fields,
-    confirmations: redirectConfirmation(confirmationUrl),
+    confirmations: redirectConfirmation(abs(confirmationUrl)),
     is_active: "1",
     notifications: {}, // editor can add their own in WP UI
     useCurrentUserAsAuthor: false,

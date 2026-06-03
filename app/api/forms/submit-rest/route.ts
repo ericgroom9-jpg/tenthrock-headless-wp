@@ -31,29 +31,6 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
-// Gravity Forms emits empty-authority absolute URLs like "http:///foo" for
-// relative confirmation redirects (it can't resolve a base host). The WHATWG
-// URL parser mis-reads these — `new URL("http:///foo").host` returns "foo",
-// not "" — so the first path segment leaks into the host and the browser
-// navigates to "http://foo". Detect the empty authority from the RAW string
-// and return a relative path so the redirect stays on the current domain.
-function normalizeConfirmationUrl(raw: string): string {
-  if (!raw) return raw;
-  // "http:///thank-you" or "https:///foo/bar" -> "/thank-you" / "/foo/bar"
-  if (/^https?:\/\//i.test(raw)) {
-    const afterScheme = raw.replace(/^https?:\/\//i, '');
-    if (afterScheme.startsWith('/')) return afterScheme; // empty authority
-  }
-  // Genuine empty-host parse (defensive) — keep relative path.
-  try {
-    const u = new URL(raw);
-    if (!u.host) return u.pathname + u.search + u.hash;
-  } catch {
-    /* already relative (e.g. "/foo") — keep as-is */
-  }
-  return raw;
-}
-
 function getWpRestBaseUrl(): string {
   // Prefer the canonical REST URL, then derive from the GraphQL URL or the
   // legacy WP_API_URL secret. All three resolve to the same `<host>/wp-json` base.
@@ -160,16 +137,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Surface the confirmation object from upstream so the client can follow
-    // redirect-type confirmations (editor-managed in WP → Forms → Confirmations).
-    // GF nests the resolved confirmation under `data.form.confirmation` and also
-    // exposes `confirmation_redirect` / `confirmation_type` at the top level.
+    // Surface the confirmation object from upstream EXACTLY as Gravity Forms
+    // returns it — the redirect destination is fully editor-managed in
+    // WP → Forms → Confirmations. We do NOT rewrite or normalize the URL here;
+    // whatever the editor configures (an absolute URL is recommended so there's
+    // no cross-domain hop) is what the client follows. GF nests the resolved
+    // confirmation under `data.form.confirmation` and also exposes
+    // `confirmation_redirect` / `confirmation_type` at the top level.
     let confirmation = data?.form?.confirmation ?? null;
-    if (confirmation && confirmation.type === 'redirect' && typeof confirmation.url === 'string') {
-      confirmation = { ...confirmation, url: normalizeConfirmationUrl(confirmation.url) };
-    }
     if (!confirmation && data.confirmation_type === 'redirect' && data.confirmation_redirect) {
-      confirmation = { type: 'redirect', url: normalizeConfirmationUrl(data.confirmation_redirect) };
+      confirmation = { type: 'redirect', url: data.confirmation_redirect };
     }
     // Forward to Insightly CRM as a Lead. Deferred with `after()` so the
     // user-facing response (and thank-you redirect) returns immediately;

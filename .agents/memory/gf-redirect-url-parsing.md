@@ -1,14 +1,14 @@
 ---
-name: GF confirmation redirect URL parsing trap
-description: Why Gravity Forms relative redirects broke (slug became the host) and how the proxy normalizes them
+name: GF form redirects are pure pass-through (editor-controlled)
+description: Form redirect destination comes only from the Gravity Forms confirmation; no code fallback/normalization, and why editors must use absolute canonical URLs
 ---
 
-# Gravity Forms empty-authority redirect URLs
+# Gravity Forms redirects are 100% editor-controlled
 
-Gravity Forms returns relative confirmation redirects as **empty-authority absolute URLs** with a triple slash, e.g. `http:///request-a-service/thank-you` (it can't determine a base host headlessly). The submission response usually has ONLY the top-level `confirmation_redirect`; `data.form.confirmation` (which would carry a clean relative `url`) is frequently absent, so the proxy fallback path is what actually runs.
+By explicit product decision, the form submission redirect destination is **whatever Gravity Forms returns** and nothing else. The proxy (`app/api/forms/submit-rest/route.ts`) forwards GF's confirmation (`data.form.confirmation.url`, or top-level `confirmation_redirect` when the nested object is absent) **unchanged** — no normalize, no rewrite, no strip. `submit-client.ts` builds `redirectUrl` from `confirmation.url` (+ `queryString`) or returns `undefined`. Every form client does `if (result.redirectUrl) router.push(result.redirectUrl)` — there is **no** hardcoded `"/"` / `"/thank-you/"` fallback.
 
-**The trap:** `new URL("http:///request-a-service/thank-you").host` returns `"request-a-service"`, NOT `""`. The WHATWG/Node URL parser collapses `///` and reads the first path segment as the host. So an `if (!u.host)` guard never fires, the malformed string passes through, and the browser navigates to `http://request-a-service/thank-you` (slug treated as host).
+**Why:** the editor owns the redirect in WP → Forms → Confirmations; code that "helped" by normalizing or supplying a default was masking misconfiguration and causing surprises (a slug-as-host break, and a cross-domain double hop when the confirmation pointed at a non-canonical host). Removing all coded redirect logic makes behavior predictable and fully driven by WP.
 
-**Why:** never trust `URL.host` to detect an empty authority for these strings — the parser lies. Detect the empty authority from the **raw string** instead.
+**The parser trap that makes absolute URLs mandatory:** GF emits a *relative* confirmation as an empty-authority absolute URL with a triple slash, e.g. `http:///request-a-service/thank-you` (it can't resolve a base host headlessly). `new URL("http:///foo/bar").host` returns `"foo"`, NOT `""` — the WHATWG/Node parser collapses `///` and reads the first path segment as the host, so the browser would navigate to `http://foo`. Because the code no longer compensates for this, the **editor must set each confirmation to an absolute URL on the canonical domain** (`https://tenthrock.com/...`). A relative path breaks; a non-canonical absolute host (e.g. a staging domain) causes a cross-domain double redirect.
 
-**How to apply:** `app/api/forms/submit-rest/route.ts` → `normalizeConfirmationUrl()`. If the raw string matches `^https?://` and the remainder after the scheme starts with `/`, it's empty-authority → return that remainder (the relative path). Genuine external absolute URLs (authority does not start with `/`) are left untouched. Returning a relative path keeps the redirect on the current host (prod → `https://tenthrock.com/<slug>`). This one proxy fix covers all 6 forms, since every form funnels redirects through `submit-client.ts` → `router.push(result.redirectUrl)`.
+**How to apply:** if a form redirect "doesn't work" or double-hops, fix it in WordPress (the GF confirmation URL), not in the code. Do not reintroduce `normalizeConfirmationUrl` or any `router.push(redirectUrl || "...")` fallback.

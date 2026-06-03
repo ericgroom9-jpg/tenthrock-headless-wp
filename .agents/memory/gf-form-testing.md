@@ -12,7 +12,7 @@ POST `/forms/{id}/submissions` (multipart FormData with `input_{id}` keys) on su
 ```
 { is_valid:true, confirmation_type:"redirect", confirmation_redirect:"http:///contact/thank-you", entry_id (often OMITTED for redirect confirmations) }
 ```
-- The redirect URL has an **empty host** (`http:///path`) because GF can't determine a base. The site proxy (`app/api/forms/submit-rest/route.ts`) strips it back to a relative path.
+- The redirect URL has an **empty host** (`http:///path`) when the confirmation is configured relative, because GF can't determine a base. The site proxy forwards the GF confirmation URL **unchanged** (no normalization), so confirmations must be set as absolute canonical URLs in WP — see `gf-redirect-url-parsing.md`.
 - **`entry_id` is omitted** on redirect-type confirmations, so you cannot delete a test entry from the submit response. To clean up test entries: `GET /entries?paging[page_size]=100&sorting[key]=id&sorting[direction]=DESC`, filter by your test email value, then `DELETE /entries/{id}`.
 - `example.com` / reserved-domain emails are rejected as "invalid" by GF's email validator — use a real-looking domain (e.g. gmail) when testing.
 

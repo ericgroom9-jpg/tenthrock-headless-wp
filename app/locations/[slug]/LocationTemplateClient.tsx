@@ -98,7 +98,7 @@ export default function LocationTemplateClient({
  setSubmitError(result.error || "Submission failed. Please try again.");
  return;
  }
- router.push(result.redirectUrl || "/");
+ if (result.redirectUrl) router.push(result.redirectUrl);
  };
 
  return (

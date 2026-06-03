@@ -279,7 +279,7 @@ function NewsletterForm() {
       if (!result.ok) {
         throw new Error(result.error || "Something went wrong. Please try again.");
       }
-      router.push(result.redirectUrl || "/thank-you/");
+      if (result.redirectUrl) router.push(result.redirectUrl);
     } catch (err: any) {
       setError(err.message || "Something went wrong. Please try again.");
       setSubmitting(false);
