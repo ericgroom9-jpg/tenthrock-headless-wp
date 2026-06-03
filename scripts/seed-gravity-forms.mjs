@@ -113,11 +113,11 @@ function joinNetworkFields() {
 }
 
 const FORMS = [
-  { key: "contact",          title: "Contact Us",        button: { type: "text", text: "Submit Request" }, fields: leadFormFields() },
-  { key: "requestAService",  title: "Request A Service", button: { type: "text", text: "Submit Request" }, fields: requestServiceFields() },
-  { key: "joinOurNetwork",   title: "Join Our Network",  button: { type: "text", text: "Submit" },         fields: joinNetworkFields(), confirmationUrl: "/join-our-network-thank-you" },
-  { key: "serviceInquiry",   title: "Service Inquiry",   button: { type: "text", text: "Submit Request" }, fields: leadFormFields() },
-  { key: "locationInquiry",  title: "Location Inquiry",  button: { type: "text", text: "Submit Request" }, fields: leadFormFields() },
+  { key: "contact",          title: "Contact Us",        button: { type: "text", text: "Submit Request" }, fields: leadFormFields(),       confirmationUrl: "/contact/thank-you" },
+  { key: "requestAService",  title: "Request A Service", button: { type: "text", text: "Submit Request" }, fields: requestServiceFields(), confirmationUrl: "/request-a-service/thank-you" },
+  { key: "joinOurNetwork",   title: "Join Our Network",  button: { type: "text", text: "Submit" },         fields: joinNetworkFields(),    confirmationUrl: "/join-our-network-thank-you" },
+  { key: "serviceInquiry",   title: "Service Inquiry",   button: { type: "text", text: "Submit Request" }, fields: leadFormFields(),       confirmationUrl: "/service-inquiry-thank-you" },
+  { key: "locationInquiry",  title: "Location Inquiry",  button: { type: "text", text: "Submit Request" }, fields: leadFormFields(),       confirmationUrl: "/location-inquiry-thank-you" },
 ];
 
 function buildBody({ title, fields, button, confirmationUrl }) {
