@@ -32,7 +32,7 @@ export default function JoinThankYouClient() {
                 className="text-lg sm:text-xl text-[#042940]/90 leading-relaxed"
                 data-testid="text-join-thank-you-subtitle"
               >
-                Check your inbox to start your onboarding process.
+                Don't forget to check your spam folder if you don't see our email.
               </p>
             </FadeIn>
           </div>
