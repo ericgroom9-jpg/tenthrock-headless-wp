@@ -135,6 +135,16 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 
+  /* Safety net: prevent stray off-canvas elements (e.g. decorative blobs,
+     wide rows) from causing horizontal page scroll on small screens.
+     `overflow-x: clip` clips the horizontal bleed WITHOUT creating a scroll
+     container, so it never breaks the sticky navbar or vertical scrolling.
+     `hidden` is kept only as a fallback for browsers without `clip` support. */
+  html, body {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
   h1, h3, h4, h5, h6 {
     font-family: var(--font-display);
     @apply tracking-tight text-primary;
