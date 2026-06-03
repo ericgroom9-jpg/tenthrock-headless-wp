@@ -42,7 +42,7 @@ async function gf(path, init = {}) {
 // URL unchanged), so they MUST be absolute canonical URLs — a relative path is
 // emitted by GF as an empty-authority `http:///slug` that misroutes in the
 // browser. Override the base with SITE_BASE_URL if seeding a non-prod site.
-const SITE_BASE = (process.env.SITE_BASE_URL || "https://tenthrock.com").replace(/\/+$/, "");
+const SITE_BASE = (process.env.SITE_BASE_URL || "https://tenthrock.sher.dev").replace(/\/+$/, "");
 const abs = (p) => (/^https?:\/\//i.test(p) ? p : SITE_BASE + (p.startsWith("/") ? p : `/${p}`));
 const REDIRECT_URL = abs("/"); // editor can change later in WP
 
