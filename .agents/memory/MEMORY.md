@@ -1,4 +1,5 @@
 - [WP slug quirks](wp-slug-quirks.md) — misspelled shared slug `natrual-disaster-cleanup` (service wins), marketing-alias root double-hops, Yoast sitemap-index→child structure.
+- [WP call rate-limiting](wp-call-rate-limiting.md) — cap WordPress at ~once/30min: Next caches only GET fetches (POST/signal opt out), so per-visit menu proxy uses unstable_cache and middleware uses in-memory TTL.
 - [GF form redirects](gf-redirect-url-parsing.md) — form redirect is pure pass-through of the GF confirmation (no code fallback/normalize); editor must set absolute canonical URLs or GF's `http:///slug` breaks.
 - [GF form testing](gf-form-testing.md) — GF /submissions returns confirmation at top-level `confirmation_redirect` (empty-host), omits entry_id; clean test entries by email; form config lives in WP and drifts from replit.md (phoneFormat).
 - [Usercentrics Shadow DOM](usercentrics-shadow-dom.md) — CMP UI lives in `#usercentrics-root` shadow root; page CSS can't reach it. Hide/restyle by injecting a `<style>` into the shadow root, target by `data-testid`.

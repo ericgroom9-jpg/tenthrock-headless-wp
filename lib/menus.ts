@@ -9,6 +9,7 @@
  * Cache: tagged 'wordpress' so menu edits in WP propagate within seconds
  * via the existing /api/revalidate webhook.
  */
+import { unstable_cache } from 'next/cache';
 import { WP_CACHE_TAG } from './wordpress';
 import { rewriteLegacyHref } from './config/url-redirects';
 
@@ -99,16 +100,17 @@ function toTree(items: RawMenuItem[]): MenuNode[] {
 }
 
 /**
- * Fetch a menu by location. Returns a tree of nodes, or `null` if no menu
- * is assigned (callers should fall back to their built-in defaults).
+ * Network fetch for one menu location. Returns `[]` when no menu is
+ * assigned (a valid, cacheable "empty" state) and THROWS on any network /
+ * HTTP failure so the unstable_cache wrapper never caches a failure — the
+ * next request retries instead of pinning defaults for the whole window.
  */
-export async function fetchMenu(location: MenuLocation): Promise<MenuNode[] | null> {
+async function fetchMenuFromWp(location: MenuLocation): Promise<MenuNode[]> {
   const base = getWpRestBase();
-  if (!base) return null;
+  if (!base) return [];
 
   const url = `${base}/wp-json/headless/v1/menus/${encodeURIComponent(location)}`;
-  // Per-menu timeout: never let one slow WP REST call block the document
-  // response. Hardcoded defaults in Navbar/Footer absorb a null result.
+  // Per-menu timeout: never let one slow WP REST call block the response.
   const MENU_FETCH_TIMEOUT_MS = 1500;
   const fetchOnce = (extra: Record<string, string>) => {
     const ctrl = new AbortController();
@@ -120,19 +122,41 @@ export async function fetchMenu(location: MenuLocation): Promise<MenuNode[] | nu
     } as RequestInit).finally(() => clearTimeout(timer));
   };
 
+  let res = await fetchOnce({});
+  if (res.status === 401) {
+    // Staging gate kicked in — retry with preview creds.
+    res = await fetchOnce(buildPreviewAuthHeader());
+  }
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
+  }
+  const data = (await res.json()) as { items?: RawMenuItem[] };
+  if (!data || !Array.isArray(data.items) || data.items.length === 0) return [];
+  return toTree(data.items);
+}
+
+// Cache each location's menu for 30 minutes so WordPress's REST API is hit
+// at most once per location per window — even though MenuProvider requests
+// all 8 locations on every page view (client-side, outside the page ISR
+// cache). A plain `next: { revalidate }` is unreliable here because the
+// per-menu AbortSignal opts the fetch out of Next's Data Cache; unstable_cache
+// caches the function RESULT regardless. It's tagged `wordpress`, so an editor
+// menu edit still propagates the instant /api/revalidate fires
+// revalidateTag('wordpress') — no waiting out the 30-min window.
+const getCachedMenu = unstable_cache(
+  (location: MenuLocation) => fetchMenuFromWp(location),
+  ['nav-menu'],
+  { revalidate: MENU_REVALIDATE_SECONDS, tags: [WP_CACHE_TAG] },
+);
+
+/**
+ * Fetch a menu by location. Returns a tree of nodes, or `null` if no menu
+ * is assigned / the fetch failed (callers fall back to built-in defaults).
+ */
+export async function fetchMenu(location: MenuLocation): Promise<MenuNode[] | null> {
   try {
-    let res = await fetchOnce({});
-    if (res.status === 401) {
-      // Staging gate kicked in — retry with preview creds.
-      res = await fetchOnce(buildPreviewAuthHeader());
-    }
-    if (!res.ok) {
-      console.warn(`[menus] ${location} → HTTP ${res.status}`);
-      return null;
-    }
-    const data = (await res.json()) as { items?: RawMenuItem[] };
-    if (!data || !Array.isArray(data.items) || data.items.length === 0) return null;
-    return toTree(data.items);
+    const nodes = await getCachedMenu(location);
+    return nodes.length > 0 ? nodes : null;
   } catch (e) {
     console.warn(`[menus] ${location} fetch failed:`, (e as Error).message);
     return null;

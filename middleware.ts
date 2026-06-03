@@ -20,11 +20,14 @@ const CACHE_DURATION_MS = 30 * 60 * 1000; // 30 minutes
 // Plus CPT slug set used as a collision guard so a renamed template
 // slug never hijacks an existing service / industry URL.
 //
-// We deliberately DO NOT keep a process-memory TTL here. Both fetches
-// are tagged `wordpress`, and snippet #11 fires `revalidateTag('wordpress')`
-// on every WP save — so the Next data cache is the single source of
-// truth for freshness. Each middleware invocation does a fetch() that's
-// served from the data cache (cheap) until the tag is invalidated.
+// This slug map is a GraphQL POST, and middleware runs on EVERY request.
+// Next.js only caches GET fetches in its Data Cache — a POST is never
+// cached — so `next: { revalidate }` alone would let this query hit
+// WordPress on every single page view. We therefore mirror getRedirects()
+// and keep a process-memory TTL (CACHE_DURATION_MS) so WP is queried at
+// most ~twice per hour per instance. Trade-off: editor slug renames take
+// up to 30 min to surface, since module memory can't be purged by the
+// `wordpress` revalidation tag.
 // ─────────────────────────────────────────────────────────────
 type SlugRoutingData = {
   templateSlugMap: Record<string, string>;
@@ -35,6 +38,9 @@ const EMPTY_SLUG_DATA: SlugRoutingData = {
   templateSlugMap: {},
   reservedCptSlugs: new Set(),
 };
+
+let slugRoutingCache: SlugRoutingData = EMPTY_SLUG_DATA;
+let slugLastFetch = 0;
 
 function basicAuthHeader(): string | null {
   if (process.env.WP_AUTH_USER && process.env.WP_AUTH_PASSWORD) {
@@ -60,8 +66,19 @@ async function fetchWpWithFallback(
 }
 
 async function getSlugRoutingData(): Promise<SlugRoutingData> {
+  const now = Date.now();
+
+  // Honor the cache window even on empty/failure so we never hammer WP on
+  // every request (this is a POST, which Next's Data Cache won't cache).
+  if (slugLastFetch > 0 && now - slugLastFetch < CACHE_DURATION_MS) {
+    return slugRoutingCache;
+  }
+
   const wpApiUrl = process.env.WP_API_URL;
-  if (!wpApiUrl) return EMPTY_SLUG_DATA;
+  if (!wpApiUrl) {
+    slugLastFetch = now;
+    return slugRoutingCache;
+  }
   try {
     const res = await fetchWpWithFallback(wpApiUrl, {
       method: 'POST',
@@ -75,7 +92,10 @@ async function getSlugRoutingData(): Promise<SlugRoutingData> {
       // @ts-ignore - Next.js extends RequestInit with `next`
       next: { revalidate: 1800, tags: ['wordpress'] },
     });
-    if (!res.ok) return EMPTY_SLUG_DATA;
+    if (!res.ok) {
+      slugLastFetch = now;
+      return slugRoutingCache;
+    }
     const json = await res.json();
     const templateSlugMap: Record<string, string> = {};
     for (const node of json?.data?.pages?.nodes || []) {
@@ -90,10 +110,13 @@ async function getSlugRoutingData(): Promise<SlugRoutingData> {
     for (const node of json?.data?.industries?.nodes || []) {
       if (node?.slug) reservedCptSlugs.add(node.slug);
     }
-    return { templateSlugMap, reservedCptSlugs };
+    slugRoutingCache = { templateSlugMap, reservedCptSlugs };
+    slugLastFetch = now;
+    return slugRoutingCache;
   } catch (error) {
     console.error('[TemplateSlugs] Failed to fetch slug routing data:', error);
-    return EMPTY_SLUG_DATA;
+    slugLastFetch = now;
+    return slugRoutingCache;
   }
 }
 
