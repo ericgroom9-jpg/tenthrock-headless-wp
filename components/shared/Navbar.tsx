@@ -229,7 +229,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  </Link>
  </Button>
  <button 
- className="p-3 text-primary rounded-[5px] transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
+ className="-ml-[5px] p-3 text-primary rounded-[5px] transition-colors flex items-center justify-center min-w-[44px] min-h-[44px]"
  onClick={() => setIsNavExpanded(!isNavExpanded)}
  aria-expanded={isNavExpanded}
  aria-label="Toggle navigation menu"
