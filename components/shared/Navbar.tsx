@@ -205,7 +205,7 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  : "sticky top-0 z-50 px-4 md:px-8 py-3 bg-white/95 backdrop-blur-sm"
  }>
  <div className={`container mx-auto ${isFloating ? "bg-white rounded-[5px] shadow-lg px-3 sm:px-6 py-3" : "px-0"}`}>
- <div className="flex items-center justify-between gap-1 sm:gap-4">
+ <div className="flex items-center justify-between gap-3 sm:gap-4">
  <Link href="/" className="hover:opacity-90 transition-opacity inline-flex items-center min-h-[44px] min-w-0" data-testid="link-nav-home">
  <Logo
             variant="main"
