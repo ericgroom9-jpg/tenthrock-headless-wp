@@ -207,7 +207,11 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  <div className={`container mx-auto ${isFloating ? "bg-white rounded-[5px] shadow-lg px-3 sm:px-6 py-3" : "px-0"}`}>
  <div className="flex items-center justify-between gap-1 sm:gap-4">
  <Link href="/" className="hover:opacity-90 transition-opacity inline-flex items-center min-h-[44px] min-w-0" data-testid="link-nav-home">
- <Logo variant="main" />
+ <Logo
+            variant="main"
+            sizeClassName="h-[42px] md:h-[48px] w-[169px] sm:w-[260px] md:w-[288px]"
+            sizes="(max-width: 639px) 169px, (max-width: 767px) 260px, 288px"
+          />
  </Link>
 
  {/* Mobile: Primary CTA + Hamburger visible in top bar */}
