@@ -209,8 +209,8 @@ export default function Navbar({ variant = "floating" }: NavbarProps) {
  <Link href="/" className="hover:opacity-90 transition-opacity inline-flex items-center min-h-[44px] min-w-0" data-testid="link-nav-home">
  <Logo
             variant="main"
-            sizeClassName="h-[42px] md:h-[48px] w-[169px] sm:w-[260px] md:w-[288px]"
-            sizes="(max-width: 639px) 169px, (max-width: 767px) 260px, 288px"
+            sizeClassName="h-[40px] md:h-[46px] w-[161px] sm:w-[247px] md:w-[274px]"
+            sizes="(max-width: 639px) 161px, (max-width: 767px) 247px, 274px"
           />
  </Link>
 
