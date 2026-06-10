@@ -340,6 +340,30 @@
   animation: loadingBarFill 1.4s 0.5s ease-in-out forwards;
 }
 
+/* Mobile-only: shorten the branded loading flash to ~1s and fade the overlay
+   via CSS (NOT gated on JS hydration) so the high-priority hero poster can
+   become the LCP element at ~1s. Desktop keeps the JS-timed ~2.6s intro — see
+   the LoadingScreen effect in components/home/TenthRockHome.tsx. The ~1s total
+   here (0.6s hold + 0.4s fade) must stay in sync with MOBILE_LOADER_TOTAL_MS. */
+@keyframes loaderMobileFade {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@media (max-width: 767px) {
+  .loader-overlay {
+    animation: loaderMobileFade 0.4s 0.6s ease-in-out forwards;
+  }
+  .loading-logo-reveal {
+    animation-duration: 0.3s;
+  }
+  .loading-bar-container {
+    animation: loadingBarShow 0.2s 0.05s ease-out forwards;
+  }
+  .loading-bar-fill {
+    animation: loadingBarFill 0.5s 0.05s ease-in-out forwards;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
@@ -411,13 +435,31 @@
   100% { transform: scale(1); }
 }
 
+/* Hero entrance timing. On desktop the staggered hero animations wait for the
+   branded loading intro (~2.6s). On mobile the intro is shortened to ~1s and
+   the overlay fades via CSS, so the hero animates immediately and the hero
+   poster can become the LCP element. Delays are driven by CSS variables so the
+   switch is pure-CSS (no hydration flash, reliable under Lighthouse emulation).
+   The per-element stagger is added inline via calc(). */
+:root {
+  --hero-anim-delay: 2.7s;
+  --hero-zoom-delay: 2.6s;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --hero-anim-delay: 0s;
+    --hero-zoom-delay: 0s;
+  }
+}
+
 .hero-fade-up {
   opacity: 0;
   animation: heroFadeUp 0.7s ease-out forwards;
 }
 
 .hero-video-zoom {
-  animation: heroVideoZoom 2s 2.6s ease-out forwards;
+  animation: heroVideoZoom 2s var(--hero-zoom-delay) ease-out forwards;
   transform: scale(1.15);
 }
 

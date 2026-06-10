@@ -30,10 +30,14 @@ export function CookieConsent() {
     <>
       <link rel="preconnect" href="https://privacy-proxy.usercentrics.eu" />
       <link rel="preconnect" href="https://app.usercentrics.eu" />
+      {/*
+        No crossOrigin here: the custom-translations JSON is fetched WITHOUT
+        CORS, so a crossorigin preconnect opens a connection that the actual
+        request can't reuse (Lighthouse flags it "Unused preconnect").
+      */}
       <link
         rel="preconnect"
         href="https://termageddon.ams3.cdn.digitaloceanspaces.com"
-        crossOrigin="anonymous"
       />
       <link
         rel="preload"

@@ -132,6 +132,13 @@ const LOADER_FADE_START_MS = 2000;
 const LOADER_FADE_MS = 600;
 const LOADER_TOTAL_MS = LOADER_FADE_START_MS + LOADER_FADE_MS;
 
+// Mobile shortens the intro to ~1s. The visual fade is driven by the CSS
+// `.loader-overlay` animation (see globals.css) so it is NOT gated on JS
+// hydration — this lets the high-priority hero poster become the LCP element
+// quickly. JS only removes the already-hidden node afterwards. Keep this total
+// in sync with the loaderMobileFade timing (0.6s hold + 0.4s fade).
+const MOBILE_LOADER_TOTAL_MS = 1000;
+
 // Module-level flag: the loading animation should play exactly once per page
 // load. In dev, Next.js Fast Refresh unmounts/remounts components on every hot
 // reload, which would otherwise restart the 2s timer indefinitely and leave the
@@ -155,6 +162,16 @@ const LoadingScreen = () => {
  useEffect(() => {
  if (!playRef.current) return;
  alreadyShown = true;
+ const isMobile = window.matchMedia("(max-width: 767px)").matches;
+ if (isMobile) {
+ // Mobile: the overlay fades purely via the CSS `.loader-overlay` animation
+ // (not gated on hydration) so the hero poster can win LCP at ~1s. We skip
+ // the scroll-lock here — the fixed overlay already hides the page, and a
+ // JS lock that fires late (slow hydration) would lock scroll after the
+ // overlay has visually gone. JS only removes the already-hidden node.
+ const removeTimer = setTimeout(() => setRemoved(true), MOBILE_LOADER_TOTAL_MS + 150);
+ return () => clearTimeout(removeTimer);
+ }
  const prevBodyOverflow = document.body.style.overflow;
  const prevHtmlOverflow = document.documentElement.style.overflow;
  document.body.style.overflow = "hidden";
@@ -179,7 +196,7 @@ const LoadingScreen = () => {
  return (
  <div
  style={{ transitionDuration: `${LOADER_FADE_MS}ms` }}
- className={`fixed inset-0 z-[100] flex items-center justify-center bg-[#042940] transition-opacity ease-in-out ${hiding ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+ className={`loader-overlay fixed inset-0 z-[100] flex items-center justify-center bg-[#042940] transition-opacity ease-in-out ${hiding ? "opacity-0 pointer-events-none" : "opacity-100"}`}
  data-testid="loading-screen"
  >
  <div className="flex flex-col items-center gap-6">
@@ -203,9 +220,9 @@ const LoadingScreen = () => {
  );
 };
 
-const HERO_BASE_DELAY = `${(LOADER_TOTAL_MS / 1000) + 0.1}s`;
-const HERO_STAGGER = 0.15;
-
+// Hero entrance delays are driven by the `--hero-anim-delay` CSS variable
+// (globals.css), which is 2.7s on desktop (waits for the intro) and 0s on
+// mobile (intro is shortened). The per-element stagger is added with calc().
 const Hero = ({
  heroTagline,
  heroHeading,
@@ -261,7 +278,7 @@ const Hero = ({
  sizes="100vw"
  priority
  fetchPriority="high"
- quality={70}
+ quality={60}
  className="object-cover opacity-80"
  />
  {videoMounted && (
@@ -290,7 +307,7 @@ const Hero = ({
  <div className="max-w-5xl mx-auto text-left sm:text-center">
  <div
  className="hero-fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#c5d520] font-bold text-sm backdrop-blur-md shadow-sm mb-8"
- style={{ animationDelay: HERO_BASE_DELAY }}
+ style={{ animationDelay: "var(--hero-anim-delay)" }}
  >
  <span className="w-2 h-2 rounded-full bg-[#c5d520] animate-pulse"></span>
  {heroTagline || "Nationwide Commercial Waste Management"}
@@ -299,21 +316,21 @@ const Hero = ({
  <h1
  id="hero-heading"
  className="hero-fade-up text-[48px] sm:text-[64px] xl:text-7xl font-medium text-white leading-[1.05] tracking-[-0.04em] mb-5"
- style={{ textWrap: "balance", animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER}s` }}
+ style={{ textWrap: "balance", animationDelay: "calc(var(--hero-anim-delay) + 0.15s)" }}
  >
  {heroHeading || "Centralized Waste Logistics for Businesses at Scale"}
  </h1>
  
  <p
  className="hero-fade-up text-base text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto font-normal tracking-tight drop-shadow-md"
- style={{ animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 2}s` }}
+ style={{ animationDelay: "calc(var(--hero-anim-delay) + 0.3s)" }}
  >
  {heroSubheading || "Coordinated execution for complex projects, multi-site operations, and urgent demands across 48 states."}
  </p>
  
  <div
  className="hero-fade-up flex flex-col sm:flex-row gap-4 sm:justify-center sm:items-center max-w-md sm:max-w-none mx-auto sm:mx-0 w-full"
- style={{ animationDelay: `${(LOADER_TOTAL_MS / 1000) + 0.1 + HERO_STAGGER * 3}s` }}
+ style={{ animationDelay: "calc(var(--hero-anim-delay) + 0.45s)" }}
  >
  <Button size="lg" className="w-full sm:w-auto bg-[#c5d520] text-[#042940] shadow-[0_0_40px_rgba(197,213,32,0.3)] hover:shadow-[0_0_60px_rgba(197,213,32,0.5)] active:shadow-[0_0_60px_rgba(197,213,32,0.5)] transition-all transform md:hover:-translate-y-1 md:hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-offset-2 min-h-[52px] whitespace-nowrap rounded-full" aria-label="Request a waste removal service" data-testid="button-hero-cta" asChild>
  <Link href={heroCtaLink || "/request-a-service"}>{heroCtaLabel || "Request A Service"}</Link>
