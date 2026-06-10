@@ -1,40 +1,37 @@
 ---
 name: Mobile LCP vs loading overlay
-description: Why the homepage loading-intro overlay fades via CSS (not JS) on mobile, and how hero entrance timing is viewport-switched.
+description: Why a full-screen intro overlay must fade independently of JS hydration on mobile, or it becomes the LCP bottleneck.
 ---
 
-# Loading overlay must not gate LCP on hydration (mobile)
+# A loading overlay faded by a JS timer gates LCP on hydration
 
-A full-screen branded loading overlay that is SSR'd opaque and only faded by a
-JS timer (`useEffect` setTimeout) **gates LCP on hydration**: the priority hero
-poster is painted but stays covered until JS hydrates and drops the overlay
-opacity. On the Tenth Rock homepage this made the slow Usercentrics consent
-banner win LCP (mobile LCP ~7.4s).
+A full-screen branded intro overlay that is server-rendered opaque and only
+dismissed by a client-side timer (`useEffect` setTimeout) keeps the priority
+hero image covered until JS hydrates. Under mobile emulation that delayed LCP
+badly (the slow third-party consent banner won LCP at ~7s instead of the hero).
 
-**Rule:** On mobile, fade the overlay with a **pure CSS animation** (media-query
-scoped `.loader-overlay { animation: loaderMobileFade ... forwards }` whose end
-state is `opacity:0; visibility:hidden; pointer-events:none`). CSS animations run
-from first paint, independent of hydration, so the hero poster can become LCP at
-~1s. The JS `useEffect` on mobile then ONLY schedules DOM removal and **skips the
-scroll-lock** (a late JS lock under slow hydration would lock scroll after the
-overlay already visually cleared). Desktop keeps the JS-timed (~2.6s) path.
+**Rule:** fade the overlay with a CSS animation whose end state is fully
+non-blocking (transparent + hidden + non-interactive). CSS animations run from
+first paint, independent of hydration, so the hero can become LCP early.
 
-**Why CSS animation overrides Tailwind `opacity-100`:** an active/forwards CSS
-animation composites the animated property over class-level declarations, so the
-`opacity-100` class on the same element is correctly overridden.
+**Why:** LCP is gated by *when the largest element becomes visible*, not by when
+JS runs. Anything covering it must clear via a mechanism that doesn't wait on
+hydration.
 
-**Hero entrance timing is viewport-switched via CSS vars, not JS:** delays use
-`--hero-anim-delay` (2.7s desktop / 0s mobile via `@media (max-width:767px)`),
-applied inline as `calc(var(--hero-anim-delay) + Ns)`. Pure-CSS so there is no
-hydration flash and it is reliable under Lighthouse mobile emulation. Avoid
-computing animation delays from JS state — that flashes the desktop delay before
-hydration switches it.
+**Corollary — scroll-lock:** don't apply a JS scroll-lock alongside a
+hydration-independent fade; under slow hydration the lock can land after the
+overlay has already visually cleared, freezing a usable page.
 
-**How to apply:** when a perf change must change LCP-blocking visuals per
-viewport, prefer CSS media queries / CSS animations over JS `matchMedia`+state.
-Keep `MOBILE_LOADER_TOTAL_MS` in `TenthRockHome.tsx` in sync with the
-`loaderMobileFade` hold+fade timing in `globals.css`.
+**Corollary — per-viewport timing:** when intro/animation timing must differ by
+viewport, drive it from CSS (media queries / CSS custom properties) rather than
+JS `matchMedia` + state, to avoid a pre-hydration flash of the wrong timing and
+to stay reliable under Lighthouse emulation.
 
-**Still-open PageSpeed items (deferred, risky):** render-blocking CSS chunk
-(~22KB) and Next/Turbopack legacy JS polyfills (~13KB); browserslist tweaks did
-not remove the polyfills in prior attempts.
+**How to apply:** any perf change that alters LCP-blocking visuals per viewport
+should prefer CSS media queries / CSS animations over JS-driven visibility.
+
+**Deferred PageSpeed items (need owner sign-off, not done here):** render-blocking
+global CSS — `optimizeCss` only inlines critical CSS if its engine dependency is
+actually installed; it is a silent no-op otherwise, so confirm the dep is present
+before assuming critical-CSS inlining works. Legacy JS polyfills are governed by
+the browserslist target (a modern target is already configured).
