@@ -288,7 +288,6 @@ const Hero = ({
  muted
  playsInline
  preload="none"
- poster={heroPoster}
  disablePictureInPicture
  disableRemotePlayback
  className="absolute inset-0 w-full h-full object-cover opacity-80"

@@ -35,3 +35,21 @@ global CSS — `optimizeCss` only inlines critical CSS if its engine dependency 
 actually installed; it is a silent no-op otherwise, so confirm the dep is present
 before assuming critical-CSS inlining works. Legacy JS polyfills are governed by
 the browserslist target (a modern target is already configured).
+
+**The "Legacy JavaScript" PSI audit here is Next's `nomodule` polyfill bundle**
+(`build-manifest.json` → `polyfillFiles`, ~112KB raw). Modern Chrome (which PSI
+mobile uses) does NOT download `nomodule` scripts, so this audit is *Unscored*
+and has ~zero impact on the measured mobile LCP/TBT. Do not spend effort
+"removing legacy polyfills" for the metric — refreshing caniuse-lite changed no
+resolved targets, and Next gives no supported knob to drop the nomodule bundle.
+
+**Hero `<video poster>` was a redundant duplicate fetch of the priority hero
+`<Image>`.** The background `<video>` carried `poster={heroPoster}` pointing at
+the RAW `/videos/hero-poster.webp` (~80KB, NOT Next-optimized) — that is exactly
+what PSI's "Improve image delivery" flagged, not the optimized `<Image>`. The
+priority `<Image>` (always rendered, same src, same `opacity-80`, sitting behind
+the idle-mounted video) already paints the identical frame, so the `poster` attr
+just double-downloaded the raw file. **Rule:** when a priority `<Image>` already
+renders the same poster frame behind a deferred background `<video>`, drop the
+video's `poster` attribute — the Image shows through until the first video frame
+decodes (no flash, and it stays as a graceful fallback if the video never loads).
