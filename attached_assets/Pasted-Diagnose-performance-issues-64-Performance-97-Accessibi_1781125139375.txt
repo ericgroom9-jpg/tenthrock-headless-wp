@@ -1,0 +1,323 @@
+Diagnose performance issues
+64
+Performance
+97
+Accessibility
+100
+Best Practices
+100
+SEO
+64
+FCP
++6
+LCP
++1
+TBT
++30
+CLS
++25
+SI
++2
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+2.8 s
+Largest Contentful Paint
+7.4 s
+Total Blocking Time
+30 ms
+Cumulative Layout Shift
+0
+Speed Index
+7.8 s
+Captured at Jun 11, 2026, 4:55 AM GMT+8
+Emulated Moto G Power with Lighthouse 13.3.0
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 146.0.7680.177 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Use efficient cache lifetimes Est savings of 120 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+equally.ai
+85 KiB
+/equally-widget.min.js(widget.prod.equally.ai)
+None
+85 KiB
+Usercentrics CMP consent-provider 
+43 KiB
+/latest/uc-block.bundle.js(privacy-proxy.usercentrics.eu)
+1h
+31 KiB
+…latest/loader.js(app.usercentrics.eu)
+1h
+11 KiB
+/session/1px.png?settingsId=VSh7S8F0CRv14Q(app.usercentrics.eu)
+30m
+1 KiB
+Improve image delivery Est savings of 49 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+tenthrock.com 1st party
+135.5 KiB	49.3 KiB
+section.relative > div.absolute > div.relative > video.absolute
+<video autoplay="" loop="" playsinline="" preload="none" poster="/videos/hero-poster.webp" disablepictureinpicture="" disableremoteplayback="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+/videos/hero-poster.webp(tenthrock.com)
+79.1 KiB
+19.1 KiB
+Increasing the image compression factor could improve this image's download size.
+19.1 KiB
+Stadiums & Events
+<img alt="Stadiums &amp; Events" loading="lazy" decoding="async" data-nimg="fill" class="object-cover transition-transform duration-700 group-hover:scale-110 group…" sizes="(min-width: 1280px) 320px, (min-width: 640px) 50vw, 100vw" srcset="/_next/image?url=%2Fimages%2Findustries%2Findustry-stadiums-events.webp&amp;w=…" src="https://tenthrock.com/_next/image?url=%2Fimages%2Findustries%2Findustry-st…" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
+/_next/image?url=…(tenthrock.com)
+23.3 KiB
+13.0 KiB
+Increasing the image compression factor could improve this image's download size.
+13.0 KiB
+section.relative > div.absolute > div.relative > img.object-cover
+<img alt="" fetchpriority="high" decoding="async" data-nimg="fill" class="object-cover opacity-80" sizes="100vw" srcset="/_next/image?url=%2Fvideos%2Fhero-poster.webp&amp;w=360&amp;q=70 360w, /_next/imag…" src="https://tenthrock.com/_next/image?url=%2Fvideos%2Fhero-poster.webp&amp;w=768&amp;q…" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
+/_next/image?url=%2Fvideos%2Fhero-poster.webp&w=768&q=70(tenthrock.com)
+27.8 KiB
+12.8 KiB
+Increasing the image compression factor could improve this image's download size.
+12.8 KiB
+DoorDash
+<img alt="DoorDash" loading="lazy" decoding="async" data-nimg="fill" class="object-contain" sizes="128px" srcset="/_next/image?url=%2Fimages%2Flogos%2Fdoordash.png&amp;w=16&amp;q=80 16w, /_next/im…" src="https://tenthrock.com/_next/image?url=%2Fimages%2Flogos%2Fdoordash.png&amp;w=2…" style="position: absolute; height: 100%; width: 100%; inset: 0px;">
+/_next/image?url=%2Fimages%2Flogos%2Fdoordash.png&w=256&q=80(tenthrock.com)
+5.3 KiB
+4.4 KiB
+Increasing the image compression factor could improve this image's download size.
+4.4 KiB
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Source
+Total reflow time
+/equally-widget.min.js:2:179148(widget.prod.equally.ai)
+0 ms
+[unattributed]
+1 ms
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Subpart
+Duration
+Time to first byte
+0 ms
+Element render delay
+2,920 ms
+This site uses third-party website tracking technologies to provide and continu…
+<div>
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 685 ms
+Initial Navigation
+https://tenthrock.com - 405 ms, 31.52 KiB
+…chunks/4a1f51db98d1ed57.css(tenthrock.com) - 685 ms, 1.36 KiB
+…chunks/46fba0cd74c9c47f.css(tenthrock.com) - 684 ms, 22.65 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://privacy-proxy.usercentrics.eu/
+head > link
+<link rel="preconnect" href="https://privacy-proxy.usercentrics.eu">
+https://app.usercentrics.eu/
+head > link
+<link rel="preconnect" href="https://app.usercentrics.eu">
+https://termageddon.ams3.cdn.digitaloceanspaces.com/
+head > link
+<link rel="preconnect" href="https://termageddon.ams3.cdn.digitaloceanspaces.com" crossorigin="anonymous">
+Unused preconnect. Check that the crossorigin attribute is used properly.
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+Origin
+Est LCP savings
+https://widget.prod.equally.ai
+310 ms
+https://termageddon.ams3.cdn.digitaloceanspaces.com
+300 ms
+Render-blocking requests
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+tenthrock.com 1st party
+24.0 KiB	930 ms
+…chunks/4a1f51db98d1ed57.css(tenthrock.com)
+1.4 KiB
+160 ms
+…chunks/46fba0cd74c9c47f.css(tenthrock.com)
+22.7 KiB
+770 ms
+Legacy JavaScript Est savings of 24 KiB
+Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support older browsers. Learn why most sites can deploy ES6+ code without transpilingLCPFCPUnscored
+URL
+Wasted bytes
+tenthrock.com 1st party
+13.5 KiB
+…chunks/a50cdeda2eda214d.js(tenthrock.com)
+13.5 KiB
+…chunks/a50cdeda2eda214d.js:1:5123(tenthrock.com)
+Array.prototype.at
+…chunks/a50cdeda2eda214d.js:1:4511(tenthrock.com)
+Array.prototype.flat
+…chunks/a50cdeda2eda214d.js:1:4624(tenthrock.com)
+Array.prototype.flatMap
+…chunks/a50cdeda2eda214d.js:1:5000(tenthrock.com)
+Object.fromEntries
+…chunks/a50cdeda2eda214d.js:1:5258(tenthrock.com)
+Object.hasOwn
+…chunks/a50cdeda2eda214d.js:1:4253(tenthrock.com)
+String.prototype.trimEnd
+…chunks/a50cdeda2eda214d.js:1:4168(tenthrock.com)
+String.prototype.trimStart
+Usercentrics CMP consent-provider 
+10.9 KiB
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+10.9 KiB
+…3.102.0/VirtualSe….js:109:43935(app.usercentrics.eu)
+@babel/plugin-transform-classes
+…3.102.0/VirtualSe….js:109:31632(app.usercentrics.eu)
+Array.prototype.find
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 167 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+Usercentrics CMP consent-provider 
+169.1 KiB	84.1 KiB
+…3.102.0/index.module.js(app.usercentrics.eu)
+120.5 KiB
+54.4 KiB
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+48.6 KiB
+29.6 KiB
+tenthrock.com 1st party
+114.4 KiB	53.6 KiB
+…chunks/c9b30609dbe2a873.js(tenthrock.com)
+48.8 KiB
+33.1 KiB
+…chunks/a50cdeda2eda214d.js(tenthrock.com)
+65.5 KiB
+20.5 KiB
+equally.ai
+83.9 KiB	28.9 KiB
+/equally-widget.min.js(widget.prod.equally.ai)
+83.9 KiB
+28.9 KiB
+Reduce unused CSS Est savings of 18 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+tenthrock.com 1st party
+22.2 KiB	18.4 KiB
+…chunks/46fba0cd74c9c47f.css(tenthrock.com)
+22.2 KiB
+18.4 KiB
+Minimize main-thread work 2.0 s
+Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. Learn how to minimize main-thread workTBTUnscored
+Category
+Time Spent
+Script Evaluation
+873 ms
+Other
+532 ms
+Style & Layout
+344 ms
+Script Parsing & Compilation
+154 ms
+Rendering
+98 ms
+Parse HTML & CSS
+22 ms
+Garbage Collection
+12 ms
+Avoid enormous network payloads Total size was 2,775 KiB
+Large network payloads cost users real money and are highly correlated with long load times. Learn how to reduce payload sizes.Unscored
+URL
+Transfer Size
+tenthrock.com 1st party
+1,869.1 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-poster.webp(tenthrock.com)
+79.6 KiB
+…generated_images/line_art_us_map_illustration.webp(tenthrock.com)
+76.6 KiB
+…chunks/a50cdeda2eda214d.js(tenthrock.com)
+66.1 KiB
+…chunks/c9b30609dbe2a873.js(tenthrock.com)
+49.3 KiB
+…media/83afe278b6a6bb3c-s.p.3a6ba036.woff2(tenthrock.com)
+47.7 KiB
+/_next/image?url=…(tenthrock.com)
+37.4 KiB
+Usercentrics CMP consent-provider 
+171.3 KiB
+…3.102.0/index.module.js(app.usercentrics.eu)
+121.6 KiB
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+49.7 KiB
+equally.ai
+84.8 KiB
+/equally-widget.min.js(widget.prod.equally.ai)
+84.8 KiB
+Avoid long main-thread tasks 2 long tasks found
+Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. Learn how to avoid long main-thread tasksTBTUnscored
+URL
+Start Time
+Duration
+tenthrock.com 1st party
+71 ms
+…chunks/a50cdeda2eda214d.js(tenthrock.com)
+3,907 ms
+71 ms
+Usercentrics CMP consent-provider 
+62 ms
+…3.102.0/index.module.js(app.usercentrics.eu)
+6,250 ms
+62 ms
+Avoid non-composited animations 1 animated element found
+Animations which are not composited can be janky and increase CLS. Learn how to avoid non-composited animationsCLSUnscored
+Element
+Name
+How Quickly Can You Arrange a Pickup? For emergencies, we can often have crews…
+<div class="grid gap-4 transition-[padding] duration-300 ease-in-out" style="padding-bottom: 29px;">
+Unsupported CSS Property: padding-bottom
+padding-bottom
+More information about the performance of your application. These numbers don't directly affect the Performance score.
