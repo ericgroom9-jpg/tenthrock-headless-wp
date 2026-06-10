@@ -1,0 +1,538 @@
+
+Diagnose performance issues
+35
+Performance
+97
+Accessibility
+96
+Best Practices
+100
+SEO
+35
+FCP
++10
+LCP
++0
+TBT
++0
+CLS
++25
+SI
++0
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+1.2 s
+Largest Contentful Paint
+9.2 s
+Total Blocking Time
+4,950 ms
+Cumulative Layout Shift
+0
+Speed Index
+14.6 s
+Captured at Jun 10, 2026, 8:01 PM GMT+8
+Emulated Moto G Power with Lighthouse 13.3.0
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 146.0.7680.177 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Render-blocking requests Est savings of 570 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+tenthrock.com 1st party
+24.0 KiB	760 ms
+…chunks/af30be0aef6bb25b.css(tenthrock.com)
+22.7 KiB
+610 ms
+…chunks/4a1f51db98d1ed57.css(tenthrock.com)
+1.4 KiB
+160 ms
+Use efficient cache lifetimes Est savings of 120 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+equally.ai
+85 KiB
+/equally-widget.min.js(widget.prod.equally.ai)
+None
+85 KiB
+Usercentrics CMP consent-provider 
+43 KiB
+/latest/uc-block.bundle.js(privacy-proxy.usercentrics.eu)
+1h
+31 KiB
+…latest/loader.js(app.usercentrics.eu)
+1h
+11 KiB
+/session/1px.png?settingsId=VSh7S8F0CRv14Q(app.usercentrics.eu)
+30m
+1 KiB
+Legacy JavaScript Est savings of 24 KiB
+Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support older browsers. Learn why most sites can deploy ES6+ code without transpilingLCPFCPUnscored
+URL
+Wasted bytes
+tenthrock.com 1st party
+13.5 KiB
+…chunks/82f86bbf1a6afe9a.js(tenthrock.com)
+13.5 KiB
+…chunks/82f86bbf1a6afe9a.js:1:5107(tenthrock.com)
+Array.prototype.at
+…chunks/82f86bbf1a6afe9a.js:1:4495(tenthrock.com)
+Array.prototype.flat
+…chunks/82f86bbf1a6afe9a.js:1:4608(tenthrock.com)
+Array.prototype.flatMap
+…chunks/82f86bbf1a6afe9a.js:1:4984(tenthrock.com)
+Object.fromEntries
+…chunks/82f86bbf1a6afe9a.js:1:5242(tenthrock.com)
+Object.hasOwn
+…chunks/82f86bbf1a6afe9a.js:1:4237(tenthrock.com)
+String.prototype.trimEnd
+…chunks/82f86bbf1a6afe9a.js:1:4152(tenthrock.com)
+String.prototype.trimStart
+Usercentrics CMP consent-provider 
+10.9 KiB
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+10.9 KiB
+…3.102.0/VirtualSe….js:109:43935(app.usercentrics.eu)
+@babel/plugin-transform-classes
+…3.102.0/VirtualSe….js:109:31632(app.usercentrics.eu)
+Array.prototype.find
+Improve image delivery Est savings of 138 KiB
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Top function call
+Total reflow time
+…3.102.0/index.module.js:2:437343(app.usercentrics.eu)
+344 ms
+Source
+Total reflow time
+[unattributed]
+56 ms
+/latest/uc-block.bundle.js:1:97998(privacy-proxy.usercentrics.eu)
+30 ms
+/equally-widget.min.js:2:179148(widget.prod.equally.ai)
+8 ms
+/equally-widget.min.js:2:188046(widget.prod.equally.ai)
+2 ms
+…chunks/db8d744663e0dadb.js:1:1964(tenthrock.com)
+7 ms
+…3.102.0/index.module.js:1:388287(app.usercentrics.eu)
+1 ms
+…3.102.0/index.module.js:1:395597(app.usercentrics.eu)
+113 ms
+…3.102.0/index.module.js:1:437129(app.usercentrics.eu)
+344 ms
+…3.102.0/VirtualSe….js:109:9601(app.usercentrics.eu)
+22 ms
+…3.102.0/VirtualSe….js:159:14583(app.usercentrics.eu)
+4 ms
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Subpart
+Duration
+Time to first byte
+20 ms
+Element render delay
+12,080 ms
+This site uses third-party website tracking technologies to provide and continu…
+<div>
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 758 ms
+Initial Navigation
+https://tenthrock.com - 465 ms, 31.17 KiB
+…chunks/4a1f51db98d1ed57.css(tenthrock.com) - 722 ms, 1.36 KiB
+…chunks/af30be0aef6bb25b.css(tenthrock.com) - 758 ms, 22.68 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://privacy-proxy.usercentrics.eu/
+head > link
+<link rel="preconnect" href="https://privacy-proxy.usercentrics.eu">
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+Origin
+Est LCP savings
+https://grainy-gradients.vercel.app
+340 ms
+https://widget.prod.equally.ai
+310 ms
+Optimize DOM size
+A large DOM can increase the duration of style calculations and layout reflows, impacting page responsiveness. A large DOM will also increase memory usage. Learn how to avoid an excessive DOM size.Unscored
+Statistic
+Element
+Value
+Total elements
+1,017
+DOM depth
+g > g > g > path
+<path d="M30.0094932,-0.5 C32.8534346,-0.5 35.4330697,0.632406246 37.3226603,2.4715…" stroke="#ffffff" fill="#595959">
+23
+Most children
+div.w-full > div.relative > svg.w-full > g
+<g>
+48
+3rd parties
+3rd party code can significantly impact load performance. Reduce and defer loading of 3rd party code to prioritize your page's content.Unscored
+3rd party
+Transfer size
+Main thread time
+Usercentrics CMP consent-provider 
+253 KiB	1,308 ms
+…3.102.0/index.module.js(app.usercentrics.eu)
+122 KiB
+921 ms
+/latest/uc-block.bundle.js(privacy-proxy.usercentrics.eu)
+31 KiB
+259 ms
+…latest/loader.js(app.usercentrics.eu)
+11 KiB
+115 ms
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+50 KiB
+13 ms
+…latest/en.json(api.usercentrics.eu)
+9 KiB
+0 ms
+/translations/translations-en.json(api.usercentrics.eu)
+5 KiB
+0 ms
+…3.102.0/PrivacyButton-6fe64831.js(app.usercentrics.eu)
+3 KiB
+0 ms
+…3.102.0/index-56c25cca.js(app.usercentrics.eu)
+3 KiB
+0 ms
+…3.102.0/DefaultTabs-fb089c27.js(app.usercentrics.eu)
+3 KiB
+0 ms
+…3.102.0/FirstLaye….js(app.usercentrics.eu)
+2 KiB
+0 ms
+…3.102.0/DefaultData-b709c3f8-ec7801dc.js(app.usercentrics.eu)
+2 KiB
+0 ms
+/latest/en.json(privacy-proxy.usercentrics.eu)
+2 KiB
+0 ms
+…3.102.0/index-8d00879d.js(app.usercentrics.eu)
+2 KiB
+0 ms
+…3.102.0/DefaultUI-998eb6d2-0140494c.js(app.usercentrics.eu)
+2 KiB
+0 ms
+…3.102.0/SaveButton-37f7effe.js(app.usercentrics.eu)
+2 KiB
+0 ms
+…3.102.0/SecondLay….js(app.usercentrics.eu)
+1 KiB
+0 ms
+/session/1px.png?settingsId=VSh7S8F0CRv14Q(app.usercentrics.eu)
+1 KiB
+0 ms
+…3.102.0/ButtonsCustomization-cfeb1c62-b1120458.js(app.usercentrics.eu)
+1 KiB
+0 ms
+…latest/languages.json(api.usercentrics.eu)
+1 KiB
+0 ms
+/uct?v=…(uct.service.usercentrics.eu)
+0 KiB
+0 ms
+…uw/3(consent-api.service.consent.usercentrics.eu)
+0 KiB
+0 ms
+equally.ai
+96 KiB	680 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+85 KiB
+680 ms
+…widget/config?apiKey=slGVp8Spl…&userID=d910574…(lb.prod.equally.ai)
+2 KiB
+0 ms
+…widget/config?apiKey=slGVp8Spl…&userID=undefined(lb.prod.equally.ai)
+1 KiB
+0 ms
+/locales/en.json(widget.prod.equally.ai)
+5 KiB
+0 ms
+/assets/enter-key.svg(widget.prod.equally.ai)
+2 KiB
+0 ms
+…activation-icons/human-curve.svg(widget.prod.equally.ai)
+2 KiB
+0 ms
+vercel.app
+0 KiB	0 ms
+/noise.svg(grainy-gradients.vercel.app)
+0 KiB
+0 ms
+digitaloceanspaces.com
+2 KiB	0 ms
+/translations/en.json(termageddon.ams3.cdn.digitaloceanspaces.com)
+2 KiB
+0 ms
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Minimize main-thread work 15.5 s
+Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. Learn how to minimize main-thread workTBTUnscored
+Category
+Time Spent
+Script Evaluation
+7,048 ms
+Style & Layout
+3,308 ms
+Other
+3,125 ms
+Script Parsing & Compilation
+1,166 ms
+Rendering
+366 ms
+Parse HTML & CSS
+251 ms
+Garbage Collection
+192 ms
+Reduce JavaScript execution time 7.9 s
+Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. Learn how to reduce Javascript execution time.TBTUnscored
+URL
+Total CPU Time
+Script Evaluation
+Script Parse
+tenthrock.com 1st party
+6,458 ms	2,910 ms	360 ms
+…chunks/82f86bbf1a6afe9a.js(tenthrock.com)
+3,154 ms
+2,574 ms
+164 ms
+https://tenthrock.com
+2,892 ms
+105 ms
+50 ms
+…chunks/6740f161f60c6ab5.js(tenthrock.com)
+167 ms
+90 ms
+46 ms
+…chunks/b2952d0b1aeb40df.js(tenthrock.com)
+135 ms
+64 ms
+67 ms
+…chunks/turbopack-e48651e4a7708d70.js(tenthrock.com)
+59 ms
+43 ms
+15 ms
+…chunks/56e9c4890a8e5137.js(tenthrock.com)
+51 ms
+34 ms
+17 ms
+equally.ai
+3,395 ms	1,708 ms	178 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+3,395 ms
+1,708 ms
+178 ms
+Usercentrics CMP consent-provider 
+3,218 ms	2,029 ms	408 ms
+…3.102.0/index.module.js(app.usercentrics.eu)
+2,615 ms
+1,715 ms
+181 ms
+/latest/uc-block.bundle.js(privacy-proxy.usercentrics.eu)
+343 ms
+196 ms
+95 ms
+…latest/loader.js(app.usercentrics.eu)
+157 ms
+118 ms
+36 ms
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+102 ms
+0 ms
+95 ms
+Unattributable
+1,984 ms	305 ms	0 ms
+Unattributable
+1,984 ms
+305 ms
+0 ms
+Reduce unused JavaScript Est savings of 166 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+Usercentrics CMP consent-provider 
+169.1 KiB	84.1 KiB
+…3.102.0/index.module.js(app.usercentrics.eu)
+120.5 KiB
+54.4 KiB
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+48.6 KiB
+29.6 KiB
+tenthrock.com 1st party
+113.9 KiB	52.6 KiB
+…chunks/b2952d0b1aeb40df.js(tenthrock.com)
+48.3 KiB
+32.4 KiB
+…chunks/82f86bbf1a6afe9a.js(tenthrock.com)
+65.5 KiB
+20.2 KiB
+equally.ai
+83.9 KiB	29.4 KiB
+/equally-widget.min.js(widget.prod.equally.ai)
+83.9 KiB
+29.4 KiB
+Reduce unused CSS Est savings of 18 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+tenthrock.com 1st party
+22.2 KiB	18.4 KiB
+…chunks/af30be0aef6bb25b.css(tenthrock.com)
+22.2 KiB
+18.4 KiB
+Avoid enormous network payloads Total size was 13,522 KiB
+Large network payloads cost users real money and are highly correlated with long load times. Learn how to reduce payload sizes.Unscored
+URL
+Transfer Size
+tenthrock.com 1st party
+12,099.0 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+/videos/hero-bg.mp4(tenthrock.com)
+1,512.4 KiB
+Usercentrics CMP consent-provider 
+121.6 KiB
+…3.102.0/index.module.js(app.usercentrics.eu)
+121.6 KiB
+equally.ai
+84.8 KiB
+/equally-widget.min.js(widget.prod.equally.ai)
+84.8 KiB
+Avoid long main-thread tasks 20 long tasks found
+Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. Learn how to avoid long main-thread tasksTBTUnscored
+URL
+Start Time
+Duration
+equally.ai
+2,364 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+7,988 ms
+681 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+7,343 ms
+338 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+11,003 ms
+234 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+11,388 ms
+211 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+9,903 ms
+208 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+12,031 ms
+202 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+11,599 ms
+191 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+9,631 ms
+160 ms
+/equally-widget.min.js(widget.prod.equally.ai)
+12,233 ms
+139 ms
+Usercentrics CMP consent-provider 
+1,704 ms
+…3.102.0/index.module.js(app.usercentrics.eu)
+10,233 ms
+701 ms
+…3.102.0/index.module.js(app.usercentrics.eu)
+9,092 ms
+337 ms
+…3.102.0/index.module.js(app.usercentrics.eu)
+7,681 ms
+258 ms
+…3.102.0/index.module.js(app.usercentrics.eu)
+1,828 ms
+206 ms
+/latest/uc-block.bundle.js(privacy-proxy.usercentrics.eu)
+5,384 ms
+202 ms
+tenthrock.com 1st party
+1,316 ms
+…chunks/82f86bbf1a6afe9a.js(tenthrock.com)
+4,054 ms
+478 ms
+…chunks/82f86bbf1a6afe9a.js(tenthrock.com)
+5,163 ms
+214 ms
+https://tenthrock.com
+1,347 ms
+178 ms
+…chunks/82f86bbf1a6afe9a.js(tenthrock.com)
+7,166 ms
+177 ms
+…chunks/b2952d0b1aeb40df.js(tenthrock.com)
+7,031 ms
+135 ms
+…chunks/82f86bbf1a6afe9a.js(tenthrock.com)
+6,794 ms
+134 ms
+Avoid non-composited animations 2 animated elements found
+Animations which are not composited can be janky and increase CLS. Learn how to avoid non-composited animationsCLSUnscored
+Element
+Name
+For emergencies, we can often have crews on-site within hours. For standard sch…
+<div class="transition-[height,opacity] duration-300 ease-in-out overflow-hidden" style="height: 233px; opacity: 1;" aria-hidden="false">
+Unsupported CSS Property: height
+height
+How Quickly Can You Arrange a Pickup? For emergencies, we can often have crews…
+<div class="grid gap-4 transition-[padding] duration-300 ease-in-out" style="padding-bottom: 29px;">
+Unsupported CSS Property: padding-bottom
+padding-bottom
