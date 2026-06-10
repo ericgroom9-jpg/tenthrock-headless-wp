@@ -160,6 +160,7 @@ export default function CommercialWasteServices({
                          alt={item.label}
                          fill
                          sizes="(min-width: 1280px) 280px, (min-width: 640px) 33vw, 100vw"
+                         quality={60}
                          className="object-cover transition-transform duration-700 group-hover:scale-110"
                        />
                        <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/80 to-[#042940]/30 group-hover:via-[#042940]/70 group-hover:to-[#042940]/20 transition-all duration-300"></div>

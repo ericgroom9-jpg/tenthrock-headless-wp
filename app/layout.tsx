@@ -44,13 +44,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head suppressHydrationWarning>
-        {wpOrigin && (
-          <>
-            <link rel="preconnect" href={wpOrigin} crossOrigin="anonymous" />
-            <link rel="dns-prefetch" href={wpOrigin} />
-          </>
-        )}
-        <link rel="preconnect" href="https://widget.prod.equally.ai" crossOrigin="anonymous" />
+        {/*
+          WordPress origin and the Equally accessibility widget are NOT on the
+          critical render path: WP content is fetched server-side (client menu
+          calls hit the same-origin /api/menus proxy), and the Equally widget is
+          deliberately deferred to idle/first-interaction. Holding early
+          preconnects open for them would compete with the cookie-consent CMP
+          origins, which DO gate LCP (the consent banner is the LCP element).
+          So these get cheap dns-prefetch only, leaving the ~4 preconnect slots
+          for the CMP origins declared in <CookieConsent />.
+        */}
+        {wpOrigin && <link rel="dns-prefetch" href={wpOrigin} />}
         <link rel="dns-prefetch" href="https://widget.prod.equally.ai" />
         <CookieConsent />
       </head>

@@ -29,10 +29,21 @@ export function CookieConsent() {
   return (
     <>
       <link rel="preconnect" href="https://privacy-proxy.usercentrics.eu" />
+      <link rel="preconnect" href="https://app.usercentrics.eu" />
+      <link
+        rel="preconnect"
+        href="https://termageddon.ams3.cdn.digitaloceanspaces.com"
+        crossOrigin="anonymous"
+      />
       <link
         rel="preload"
         as="script"
         href="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"
+      />
+      <link
+        rel="preload"
+        as="script"
+        href="https://app.usercentrics.eu/browser-ui/latest/loader.js"
       />
 
       <Script
