@@ -1,0 +1,190 @@
+Diagnose performance issues
+66
+Performance
+97
+Accessibility
+100
+Best Practices
+100
+SEO
+66
+FCP
++6
+LCP
++2
+TBT
++30
+CLS
++25
+SI
++3
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+2.8 s
+Largest Contentful Paint
+6.5 s
+Total Blocking Time
+30 ms
+Cumulative Layout Shift
+0
+Speed Index
+6.8 s
+Captured at Jun 11, 2026, 7:01 AM GMT+8
+Emulated Moto G Power with Lighthouse 13.3.0
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 146.0.7680.177 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Legacy JavaScript Est savings of 24 KiB
+Polyfills and transforms enable older browsers to use new JavaScript features. However, many aren't necessary for modern browsers. Consider modifying your JavaScript build process to not transpile Baseline features, unless you know you must support older browsers. Learn why most sites can deploy ES6+ code without transpilingLCPFCPUnscored
+URL
+Wasted bytes
+tenthrock.com 1st party
+13.5 KiB
+…chunks/a50cdeda2eda214d.js(tenthrock.com)
+13.5 KiB
+…chunks/a50cdeda2eda214d.js:1:5123(tenthrock.com)
+Array.prototype.at
+…chunks/a50cdeda2eda214d.js:1:4511(tenthrock.com)
+Array.prototype.flat
+…chunks/a50cdeda2eda214d.js:1:4624(tenthrock.com)
+Array.prototype.flatMap
+…chunks/a50cdeda2eda214d.js:1:5000(tenthrock.com)
+Object.fromEntries
+…chunks/a50cdeda2eda214d.js:1:5258(tenthrock.com)
+Object.hasOwn
+…chunks/a50cdeda2eda214d.js:1:4253(tenthrock.com)
+String.prototype.trimEnd
+…chunks/a50cdeda2eda214d.js:1:4168(tenthrock.com)
+String.prototype.trimStart
+Usercentrics CMP consent-provider 
+10.9 KiB
+…3.102.0/VirtualSe….js(app.usercentrics.eu)
+10.9 KiB
+…3.102.0/VirtualSe….js:109:43935(app.usercentrics.eu)
+@babel/plugin-transform-classes
+…3.102.0/VirtualSe….js:109:31632(app.usercentrics.eu)
+Array.prototype.find
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Source
+Total reflow time
+/equally-widget.min.js:2:179148(widget.prod.equally.ai)
+0 ms
+[unattributed]
+33 ms
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Subpart
+Duration
+Time to first byte
+0 ms
+Element render delay
+2,990 ms
+This site uses third-party website tracking technologies to provide and continu…
+<div>
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 743 ms
+Initial Navigation
+https://tenthrock.com - 402 ms, 31.48 KiB
+…chunks/4a1f51db98d1ed57.css(tenthrock.com) - 690 ms, 1.36 KiB
+…chunks/cc8fdd0cce08d4c4.css(tenthrock.com) - 743 ms, 22.76 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+Origin
+Source
+https://privacy-proxy.usercentrics.eu/
+head > link
+<link rel="preconnect" href="https://privacy-proxy.usercentrics.eu">
+Unused preconnect. Check that the crossorigin attribute is used properly.
+https://app.usercentrics.eu/
+head > link
+<link rel="preconnect" href="https://app.usercentrics.eu">
+https://termageddon.ams3.cdn.digitaloceanspaces.com/
+head > link
+<link rel="preconnect" href="https://termageddon.ams3.cdn.digitaloceanspaces.com">
+Unused preconnect. Check that the crossorigin attribute is used properly.
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+Origin
+Est LCP savings
+https://termageddon.ams3.cdn.digitaloceanspaces.com
+310 ms
+https://privacy-proxy.usercentrics.eu
+300 ms
+Use efficient cache lifetimes Est savings of 120 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+equally.ai
+85 KiB
+/equally-widget.min.js(widget.prod.equally.ai)
+None
+85 KiB
+Usercentrics CMP consent-provider 
+43 KiB
+/latest/uc-block.bundle.js(privacy-proxy.usercentrics.eu)
+1h
+31 KiB
+…latest/loader.js(app.usercentrics.eu)
+1h
+11 KiB
+/session/1px.png?settingsId=VSh7S8F0CRv14Q(app.usercentrics.eu)
+30m
+1 KiB
+Improve image delivery Est savings of 19 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+tenthrock.com 1st party
+79.1 KiB	19.1 KiB
+section.relative > div.absolute > div.relative > video.absolute
+<video autoplay="" loop="" playsinline="" preload="none" poster="/videos/hero-poster.webp" disablepictureinpicture="" disableremoteplayback="" class="absolute inset-0 w-full h-full object-cover opacity-80">
+/videos/hero-poster.webp(tenthrock.com)
+79.1 KiB
+19.1 KiB
+Increasing the image compression factor could improve this image's download size.
+19.1 KiB
+Render-blocking requests
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+tenthrock.com 1st party
+24.1 KiB	930 ms
+…chunks/cc8fdd0cce08d4c4.css(tenthrock.com)
+22.8 KiB
+770 ms
+…chunks/4a1f51db98d1ed57.css(tenthrock.com)
