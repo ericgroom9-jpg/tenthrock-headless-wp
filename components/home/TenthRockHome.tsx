@@ -283,7 +283,7 @@ const Hero = ({
  </div>
  <div className="absolute inset-0 bg-[#042940]/70 md:bg-[#042940]/60 mix-blend-multiply"></div>
  <div className="absolute inset-0 bg-gradient-to-t from-[#042940] via-[#042940]/20 md:via-transparent to-[#042940]/40 md:to-[#042940]/30"></div>
- <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
+ <div className="absolute inset-0 bg-[url('/images/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"></div>
  </div>
 
  <div className="container mx-auto px-4 md:px-8 relative z-10 mt-12">

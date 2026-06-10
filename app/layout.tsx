@@ -50,6 +50,8 @@ export default function RootLayout({
             <link rel="dns-prefetch" href={wpOrigin} />
           </>
         )}
+        <link rel="preconnect" href="https://widget.prod.equally.ai" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://widget.prod.equally.ai" />
         <CookieConsent />
       </head>
       <body className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`} suppressHydrationWarning>
@@ -58,7 +60,7 @@ export default function RootLayout({
           id="equally-accessibility-widget"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `document.addEventListener('load', function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "https://widget.prod.equally.ai/equally-widget.min.js";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'equallyWidget'));!window.EQUALLY_AI_API_KEY&&(window.EQUALLY_AI_API_KEY="slGVp8SplRks0wxkiCSnZpByGx1qLXiM",intervalId=setInterval(function(){window.EquallyAi&&(clearInterval(intervalId),window.EquallyAi=new EquallyAi)},500));`,
+            __html: `(function(){var loaded=false;function load(){if(loaded)return;loaded=true;cleanup();var d=document,s='script',id='equallyWidget',fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){var js=d.createElement(s);js.id=id;js.src="https://widget.prod.equally.ai/equally-widget.min.js";fjs.parentNode.insertBefore(js,fjs);}if(!window.EQUALLY_AI_API_KEY){window.EQUALLY_AI_API_KEY="slGVp8SplRks0wxkiCSnZpByGx1qLXiM";var iv=setInterval(function(){window.EquallyAi&&(clearInterval(iv),window.EquallyAi=new EquallyAi)},500);}}var ev=['scroll','pointerdown','keydown','touchstart','mousemove'];function onInteract(){load();}function cleanup(){ev.forEach(function(e){window.removeEventListener(e,onInteract)});}ev.forEach(function(e){window.addEventListener(e,onInteract,{passive:true})});if('requestIdleCallback' in window){requestIdleCallback(function(){load();},{timeout:5000});}else{setTimeout(load,4000);}})();`,
           }}
         />
         <ForceFullPageNavigation />
