@@ -4,7 +4,7 @@ import { getStateLocationContent } from "@/lib/data/state-location-content";
 import { toTitleCase } from "@/lib/utils/title-case";
 import LocationTemplateClient from "./LocationTemplateClient";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
-import { DEFAULT_OG_IMAGE } from "@/lib/seo-metadata";
+import { DEFAULT_OG_IMAGE, toCanonicalUrl } from "@/lib/seo-metadata";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: seo?.title || `Waste Management Services in ${locationName} | Tenth Rock`,
     description: seo?.metaDesc || `Commercial waste removal services for businesses across ${locationName}. Emergency waste removal, dumpster rentals, and managed programs.`,
+    alternates: { canonical: toCanonicalUrl(`/locations/${slug}`) },
     openGraph: {
       title: seo?.opengraphTitle || `Waste Management in ${locationName}`,
       description: seo?.opengraphDescription || `On-demand waste removal and managed programs for businesses across ${locationName}.`,

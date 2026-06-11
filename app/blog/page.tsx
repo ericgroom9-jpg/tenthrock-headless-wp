@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout/Layout';
 import { PostListServer } from '@/components/posts/PostListServer';
+import { toCanonicalUrl } from '@/lib/seo-metadata';
 import type { Metadata } from 'next';
 
 export const revalidate = 1800;
@@ -7,6 +8,7 @@ export const revalidate = 1800;
 export const metadata: Metadata = {
   title: 'Blog | WordPress Headless CMS',
   description: 'Browse all blog posts synced from WordPress.',
+  alternates: { canonical: toCanonicalUrl('/blog') },
   openGraph: {
     title: 'Blog | WordPress Headless CMS',
     description: 'Browse all blog posts synced from WordPress.',

@@ -5,7 +5,7 @@ import { PostContent } from '@/components/posts/PostContent';
 import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
 import { storage } from '@/lib/storage';
 import { fetchPostPreviewBySlug, fetchPostPreview, fetchPostPreviewById } from '@/lib/wordpress';
-import { DEFAULT_OG_IMAGE } from '@/lib/seo-metadata';
+import { DEFAULT_OG_IMAGE, toCanonicalUrl } from '@/lib/seo-metadata';
 import type { Metadata } from 'next';
 
 interface PageProps {
@@ -44,6 +44,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   return {
     title: seo?.title || post.title,
     description: seo?.metaDesc || post.excerpt?.replace(/<[^>]*>/g, '').slice(0, 160),
+    alternates: { canonical: toCanonicalUrl(`/blog/${slug}`) },
     openGraph: {
       title: seo?.opengraphTitle || post.title,
       description: seo?.opengraphDescription || post.excerpt?.replace(/<[^>]*>/g, '').slice(0, 160),

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { fetchIndustryWithAcf } from '@/lib/wordpress';
 import IndustryTemplate from '@/components/industries/IndustryTemplate';
 import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
-import { DEFAULT_OG_IMAGE } from '@/lib/seo-metadata';
+import { DEFAULT_OG_IMAGE, toCanonicalUrl } from '@/lib/seo-metadata';
 import { INDUSTRY_PUBLIC_TO_WP } from '@/lib/config/url-redirects';
 import { getFrontendUrl } from '@/lib/seo-proxy';
 import type { Metadata } from 'next';
@@ -33,7 +33,7 @@ function buildSeoMetadata(
       images: [seo?.twitterImage || seo?.opengraphImage || featuredImageUrl || DEFAULT_OG_IMAGE],
     },
     // Canonical points at the new public URL, never the legacy root slug.
-    alternates: { canonical: canonicalPath },
+    alternates: { canonical: toCanonicalUrl(canonicalPath) },
   };
 }
 

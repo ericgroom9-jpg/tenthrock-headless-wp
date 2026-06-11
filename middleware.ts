@@ -195,6 +195,29 @@ export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
   // ─────────────────────────────────────────────────────────────
+  // Host canonicalization. The deployment answers on BOTH the apex
+  // (tenthrock.com) and www (www.tenthrock.com) with 200s, which produces
+  // duplicate content across the entire site. 301 the non-www apex → www,
+  // preserving path + query, BEFORE any WordPress lookup so it's instant and
+  // never depends on WP being reachable. Dev/preview hosts (localhost,
+  // *.replit.dev, *.replit.app) are left untouched.
+  // ─────────────────────────────────────────────────────────────
+  const CANONICAL_HOST = 'www.tenthrock.com';
+  const requestHost = (
+    request.headers.get('x-forwarded-host') ||
+    request.headers.get('host') ||
+    ''
+  ).toLowerCase();
+  const hostname = requestHost.split(':')[0];
+  if (hostname === 'tenthrock.com') {
+    const target = new URL(
+      `${request.nextUrl.pathname}${request.nextUrl.search}`,
+      `https://${CANONICAL_HOST}`,
+    );
+    return NextResponse.redirect(target, 301);
+  }
+
+  // ─────────────────────────────────────────────────────────────
   // Site-wide slug restructure (front-end only). 301 legacy URLs to
   // their new homes BEFORE any WordPress lookup so these are instant and
   // never depend on WP being reachable:

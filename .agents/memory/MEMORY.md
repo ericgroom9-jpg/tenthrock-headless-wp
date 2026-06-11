@@ -4,3 +4,4 @@
 - [GF form redirects](gf-redirect-url-parsing.md) — form redirect is pure pass-through of the GF confirmation (no code fallback/normalize); editor must set absolute canonical URLs or GF's `http:///slug` breaks.
 - [GF form testing](gf-form-testing.md) — GF /submissions returns confirmation at top-level `confirmation_redirect` (empty-host), omits entry_id; clean test entries by email; form config lives in WP and drifts from replit.md (phoneFormat).
 - [Usercentrics Shadow DOM](usercentrics-shadow-dom.md) — CMP UI lives in `#usercentrics-root` shadow root; page CSS can't reach it. Hide/restyle by injecting a `<style>` into the shadow root, target by `data-testid`.
+- [www canonical host](www-canonical-host.md) — www.tenthrock.com is canonical; apex 301s→www in middleware (Replit serves both 200); canonicals normalized via toCanonicalUrl; FRONTEND_URL prod-only.

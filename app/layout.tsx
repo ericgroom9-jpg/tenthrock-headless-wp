@@ -7,6 +7,7 @@ import { GlobalScripts } from "@/components/scripts/GlobalScripts";
 import { CookieConsent } from "@/components/scripts/CookieConsent";
 import { MenuProvider } from "@/components/shared/MenuProvider";
 import ForceFullPageNavigation from "@/components/shared/NavigationProgress";
+import { CANONICAL_ORIGIN } from "@/lib/seo-metadata";
 
 const manrope = Manrope({ 
   subsets: ["latin"], 
@@ -21,6 +22,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(CANONICAL_ORIGIN),
   title: "Tenth Rock Waste Solutions | Nationwide Commercial Waste Management",
   description: "Leading commercial waste management solutions across 48 states. Dumpster rental, emergency overflow, event services, and centralized waste programs for businesses.",
 };

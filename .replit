@@ -45,3 +45,8 @@ integrations = ["javascript_database:1.0.0"]
 [postMerge]
 path = "scripts/post-merge.sh"
 timeoutMs = 180000
+
+[userenv]
+
+[userenv.production]
+FRONTEND_URL = "https://www.tenthrock.com"
