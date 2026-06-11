@@ -44,6 +44,13 @@ interface BuildPageMetadataOptions {
   fallbackTitle: string;
   fallbackDescription: string;
   fallbackImage?: string | null;
+  /**
+   * Self-referencing canonical (path or absolute URL) used ONLY when the Yoast
+   * payload doesn't supply one. Normalized to the www host via toCanonicalUrl,
+   * so pages whose WP page has no Yoast canonical still emit a correct
+   * self-referencing canonical instead of none.
+   */
+  fallbackCanonical?: string;
 }
 
 /**
@@ -56,6 +63,7 @@ export function buildPageMetadata({
   fallbackTitle,
   fallbackDescription,
   fallbackImage,
+  fallbackCanonical,
 }: BuildPageMetadataOptions): Metadata {
   const title = seo?.title || fallbackTitle;
   const description = seo?.metaDesc || fallbackDescription;
@@ -81,8 +89,9 @@ export function buildPageMetadata({
     },
   };
 
-  if (seo?.canonical) {
-    metadata.alternates = { canonical: toCanonicalUrl(seo.canonical) };
+  const canonical = seo?.canonical || fallbackCanonical;
+  if (canonical) {
+    metadata.alternates = { canonical: toCanonicalUrl(canonical) };
   }
 
   return metadata;
