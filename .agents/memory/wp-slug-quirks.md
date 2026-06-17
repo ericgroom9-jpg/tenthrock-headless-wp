@@ -7,19 +7,37 @@ description: Non-obvious WP-origin slug facts that drive the front-end URL restr
 
 These are facts about the WordPress origin (tenthrock.sherstaging.com) that are
 NOT discoverable from the Next.js code alone — they come from how content was
-authored in WP. WP write access is not available, so all routing/redirect work
-is front-end only.
+authored in WP.
 
-## Misspelled shared slug: `natrual-disaster-cleanup`
+## WP REST write access (how to rename/patch CPT posts)
 
-- The WP slug is literally **`natrual-disaster-cleanup`** (typo: "natrual"), and
-  it is shared by BOTH a service CPT and an industry CPT.
-- In redirect resolution the **service wins** (legacy `/natrual-disaster-cleanup`
-  and `/natural-disasters` → `/services/natural-disaster-cleanup`). The industry
-  is reachable only via its renamed public slug `/industries/natural-disaster-junk-removal`.
-- **Consequence:** the industry Yoast child sitemap entry for this page rewrites
-  to the *service* URL (path-based rewriting can't tell the two CPTs apart). This
-  is accepted/consistent with prior root behaviour, not a bug to chase.
+- WP REST writes DO work, but only with the lowercase env creds
+  `preview_user_un` / `preview_user_pass` (user `headless_sync`, full caps),
+  Basic-auth'd against the REST base `${WP_API_URL origin}/wp-json/wp/v2`.
+- `WP_ADMIN_*` and `WP_AUTH_*` both return 401 `invalid_username` for REST — do
+  NOT use them (WP_AUTH_* are GraphQL-only). `WP_API_URL` itself is the GraphQL
+  endpoint, not REST — derive REST from its origin.
+- Rename a CPT slug: `POST /wp-json/wp/v2/tr_service/<id>` with `{"slug":"..."}`,
+  then flush Next data cache via `POST /api/revalidate {secret:WP_PREVIEW_SECRET,
+  type:"all"}`.
+
+## Service WP slugs now == public slugs (alias layer collapsed)
+
+- The 8 `tr_service` posts whose WP slug differed from the public URL were renamed
+  in WP so `SERVICE_PUBLIC_TO_WP` is now identity for them. `SERVICE_RENAMED_WP_SLUGS`
+  (public → previous WP slug) is a TRANSITION bridge in `url-redirects.ts` +
+  `app/services/[slug]/page.tsx` (resolver falls back to old slug) so the system is
+  deploy/rename-order-independent. **Safe to delete that bridge once the renamed
+  build is live everywhere and no old-slug sitemap `<loc>` can still be cached.**
+
+## Misspelled shared slug: `natrual-disaster-cleanup` (now industry-only)
+
+- The typo slug **`natrual-disaster-cleanup`** ("natrual") USED to be shared by
+  both the service and industry CPT. The **service** (id 117) was renamed to the
+  correct `natural-disaster-cleanup`; the **industry** (id 138) still carries the
+  typo (out of scope). The collision is resolved — the service no longer shares it.
+- Redirect resolution still has the **service win** for the public slug
+  `natural-disaster-cleanup` (legacy `/natural-disasters` → `/services/natural-disaster-cleanup`).
 
 ## Legacy marketing-alias root slugs chain through canonical service roots
 
