@@ -21,15 +21,18 @@ import { LOCATION_URL_SUFFIX, stripLocationSuffix } from "@/lib/data/state-citie
 
 /** Services: public URL slug -> the slug WordPress actually stores (32). */
 export const SERVICE_PUBLIC_TO_WP: Record<string, string> = {
-  // renamed (public differs from WP)
-  "stadium-event-cleanup": "events-stadiums",
-  "multiple-size-dumpsters": "multiple-sizes",
-  "natural-disaster-cleanup": "natrual-disaster-cleanup",
-  "on-demand-dumpster-rental": "on-demand-service",
-  "waste-program-advisory": "ongoing-advisory",
-  "recycling-dumpster-containers": "recycling-specialty-containers",
-  "site-closure-remodels": "site-closures-remodels",
-  "waste-program-standards-and-sops": "standards-sops-training",
+  // Formerly renamed; the WP post slugs have been renamed to match the public
+  // URL, so these are now identity mappings (alias collapsed). The PREVIOUS WP
+  // slugs live in SERVICE_RENAMED_WP_SLUGS for transition-safe fetch + sitemap
+  // rewriting while the rename + deploy settle.
+  "stadium-event-cleanup": "stadium-event-cleanup",
+  "multiple-size-dumpsters": "multiple-size-dumpsters",
+  "natural-disaster-cleanup": "natural-disaster-cleanup",
+  "on-demand-dumpster-rental": "on-demand-dumpster-rental",
+  "waste-program-advisory": "waste-program-advisory",
+  "recycling-dumpster-containers": "recycling-dumpster-containers",
+  "site-closure-remodels": "site-closure-remodels",
+  "waste-program-standards-and-sops": "waste-program-standards-and-sops",
   // unchanged (public === WP)
   "brand-protection": "brand-protection",
   "centralized-programs": "centralized-programs",
@@ -55,6 +58,25 @@ export const SERVICE_PUBLIC_TO_WP: Record<string, string> = {
   "waste-operations-advisory": "waste-operations-advisory",
   "waste-program-assessments": "waste-program-assessments",
   "waste-removal-services": "waste-removal-services",
+};
+
+/**
+ * Transition map: public slug -> the PREVIOUS WP slug, for the services whose WP
+ * post slug was renamed to match the public URL. Lets the route resolver fall
+ * back to the old slug, and lets the sitemap proxy still rewrite an old-slug
+ * <loc> to /services/<public>, so the system is correct whether WordPress has
+ * been renamed yet or not (deploy/rename order-independent). Safe to delete once
+ * WP is fully renamed and this build is live everywhere.
+ */
+export const SERVICE_RENAMED_WP_SLUGS: Record<string, string> = {
+  "stadium-event-cleanup": "events-stadiums",
+  "multiple-size-dumpsters": "multiple-sizes",
+  "natural-disaster-cleanup": "natrual-disaster-cleanup",
+  "on-demand-dumpster-rental": "on-demand-service",
+  "waste-program-advisory": "ongoing-advisory",
+  "recycling-dumpster-containers": "recycling-specialty-containers",
+  "site-closure-remodels": "site-closures-remodels",
+  "waste-program-standards-and-sops": "standards-sops-training",
 };
 
 /** Industries: public URL slug -> the slug WordPress actually stores (8). */
@@ -106,6 +128,13 @@ function buildLegacyRedirects(): Record<string, string> {
   // Services: every WP slug -> /services/<public>
   for (const [pub, wp] of Object.entries(SERVICE_PUBLIC_TO_WP)) {
     map[`/${wp}`] = `/services/${pub}`;
+  }
+
+  // Transition: also map each renamed service's PREVIOUS WP slug so an old-slug
+  // sitemap <loc> (emitted before the WP rename propagates) still rewrites to the
+  // public URL instead of being left as a bare root slug that 404s.
+  for (const [pub, oldWp] of Object.entries(SERVICE_RENAMED_WP_SLUGS)) {
+    map[`/${oldWp}`] = `/services/${pub}`;
   }
 
   // Industries: every WP slug -> /industries/<public>, but never clobber a

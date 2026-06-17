@@ -3,7 +3,7 @@ import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from '@/components/services/ServiceTemplate';
 import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
 import { DEFAULT_OG_IMAGE, toCanonicalUrl } from '@/lib/seo-metadata';
-import { SERVICE_PUBLIC_TO_WP } from '@/lib/config/url-redirects';
+import { SERVICE_PUBLIC_TO_WP, SERVICE_RENAMED_WP_SLUGS } from '@/lib/config/url-redirects';
 import { getFrontendUrl } from '@/lib/seo-proxy';
 import type { Metadata } from 'next';
 
@@ -39,12 +39,27 @@ function buildSeoMetadata(
 
 export const revalidate = 1800;
 
+/**
+ * Resolve a service by its public slug. Tries the canonical WP slug first, then
+ * falls back to the service's previous WP slug (SERVICE_RENAMED_WP_SLUGS) so the
+ * page works whether or not the WordPress rename has propagated yet.
+ */
+async function resolveService(slug: string) {
+  const wpSlug = SERVICE_PUBLIC_TO_WP[slug];
+  if (!wpSlug) return null;
+  let service = await fetchServiceWithAcf(wpSlug).catch(() => null);
+  if (!service) {
+    const previousWpSlug = SERVICE_RENAMED_WP_SLUGS[slug];
+    if (previousWpSlug && previousWpSlug !== wpSlug) {
+      service = await fetchServiceWithAcf(previousWpSlug).catch(() => null);
+    }
+  }
+  return service;
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const wpSlug = SERVICE_PUBLIC_TO_WP[slug];
-  if (!wpSlug) return { title: 'Page Not Found' };
-
-  const service = await fetchServiceWithAcf(wpSlug).catch(() => null);
+  const service = await resolveService(slug);
   if (!service) return { title: 'Page Not Found' };
 
   const base = await getFrontendUrl();
@@ -57,10 +72,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ServicePage({ params }: PageProps) {
   const { slug } = await params;
-  const wpSlug = SERVICE_PUBLIC_TO_WP[slug];
-  if (!wpSlug) notFound();
-
-  const service = await fetchServiceWithAcf(wpSlug).catch(() => null);
+  const service = await resolveService(slug);
   if (!service) notFound();
 
   return (
