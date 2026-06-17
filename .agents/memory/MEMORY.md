@@ -5,3 +5,4 @@
 - [GF form testing](gf-form-testing.md) — GF /submissions returns confirmation at top-level `confirmation_redirect` (empty-host), omits entry_id; clean test entries by email; form config lives in WP and drifts from replit.md (phoneFormat).
 - [Usercentrics Shadow DOM](usercentrics-shadow-dom.md) — CMP UI lives in `#usercentrics-root` shadow root; page CSS can't reach it. Hide/restyle by injecting a `<style>` into the shadow root, target by `data-testid`.
 - [www canonical host](www-canonical-host.md) — www.tenthrock.com is canonical; apex 301s→www in middleware (Replit serves both 200); canonicals normalized via toCanonicalUrl; FRONTEND_URL prod-only.
+- [Yoast meta via API](yoast-meta-rest-writes.md) — Yoast meta isn't writable via default WP REST (silently dropped); write via Code Snippets REST API + custom tr/v1/seo-meta route; ISR serves stale on first read.
