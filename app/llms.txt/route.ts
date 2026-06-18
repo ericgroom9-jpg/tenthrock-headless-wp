@@ -1,70 +1,106 @@
 import { NextResponse } from 'next/server';
-import { proxyWordPressFile, getFrontendUrl } from '@/lib/seo-proxy';
-import { storage } from '@/lib/storage';
 
 export const revalidate = 1800;
 
+const LLMS_TXT = `# Tenth Rock
+
+> Tenth Rock is a nationwide, on-demand commercial waste management and junk removal company. Family-owned and Florida-based, we serve businesses across 48 states with fast response, no long-term contracts, 24/7 support, and flat-rate quotes.
+
+## Company
+- [Home](https://www.tenthrock.com/)
+- [About Us](https://www.tenthrock.com/about-us)
+- [How It Works](https://www.tenthrock.com/waste-management-process)
+- [FAQ](https://www.tenthrock.com/faq)
+- [Contact](https://www.tenthrock.com/contact-us)
+- [Request a Service](https://www.tenthrock.com/request-a-service)
+- [Book a Call](https://www.tenthrock.com/book-a-call)
+- [Join Our Network](https://www.tenthrock.com/join-our-network)
+
+## Services
+- [All Commercial Waste Services](https://www.tenthrock.com/services)
+- [On-Demand Waste Removal](https://www.tenthrock.com/services/waste-removal-services)
+- [Emergency Waste Removal](https://www.tenthrock.com/services/emergency-waste-removal)
+- [On-Demand Dumpster Rental](https://www.tenthrock.com/services/on-demand-dumpster-rental)
+- [Recycling Dumpsters & Containers](https://www.tenthrock.com/services/recycling-dumpster-containers)
+- [Unplanned Cleanouts](https://www.tenthrock.com/services/unplanned-cleanouts)
+- [Store Decommissioning](https://www.tenthrock.com/services/store-decommissioning)
+- [Site Closure & Remodels](https://www.tenthrock.com/services/site-closure-remodels)
+- [Natural Disaster Cleanup](https://www.tenthrock.com/services/natural-disaster-cleanup)
+- [Pressure Washing](https://www.tenthrock.com/services/pressure-washing-services)
+- [Stadium & Event Cleanup](https://www.tenthrock.com/services/stadium-event-cleanup)
+- [Waste Program Assessments](https://www.tenthrock.com/services/waste-program-assessments)
+- [Waste Operations Advisory](https://www.tenthrock.com/services/waste-operations-advisory)
+- [Spend Optimization](https://www.tenthrock.com/services/spend-optimization)
+
+## Industries
+- [All Industries](https://www.tenthrock.com/industries)
+- [Real Estate](https://www.tenthrock.com/industries/real-estate-junk-removal)
+- [Retail](https://www.tenthrock.com/industries/retail-store-junk-removal)
+- [Hospitality](https://www.tenthrock.com/industries/hospitality-junk-removal)
+- [Schools](https://www.tenthrock.com/industries/school-junk-and-trash-removal)
+- [Stadiums & Events](https://www.tenthrock.com/industries/stadium-and-event-junk-removal)
+
+## Locations
+- [Where We Serve](https://www.tenthrock.com/locations)
+- [Alabama Junk Removal](https://www.tenthrock.com/locations/alabama-junk-removal/)
+- [Arizona Junk Removal](https://www.tenthrock.com/locations/arizona-junk-removal/)
+- [Arkansas Junk Removal](https://www.tenthrock.com/locations/arkansas-junk-removal/)
+- [California Junk Removal](https://www.tenthrock.com/locations/california-junk-removal/)
+- [Colorado Junk Removal](https://www.tenthrock.com/locations/colorado-junk-removal/)
+- [Connecticut Junk Removal](https://www.tenthrock.com/locations/connecticut-junk-removal/)
+- [Delaware Junk Removal](https://www.tenthrock.com/locations/delaware-junk-removal/)
+- [Florida Junk Removal](https://www.tenthrock.com/locations/florida-junk-removal/)
+- [Georgia Junk Removal](https://www.tenthrock.com/locations/georgia-junk-removal/)
+- [Idaho Junk Removal](https://www.tenthrock.com/locations/idaho-junk-removal/)
+- [Illinois Junk Removal](https://www.tenthrock.com/locations/illinois-junk-removal/)
+- [Indiana Junk Removal](https://www.tenthrock.com/locations/indiana-junk-removal/)
+- [Iowa Junk Removal](https://www.tenthrock.com/locations/iowa-junk-removal/)
+- [Kansas Junk Removal](https://www.tenthrock.com/locations/kansas-junk-removal/)
+- [Kentucky Junk Removal](https://www.tenthrock.com/locations/kentucky-junk-removal/)
+- [Louisiana Junk Removal](https://www.tenthrock.com/locations/louisiana-junk-removal/)
+- [Maine Junk Removal](https://www.tenthrock.com/locations/maine-junk-removal/)
+- [Maryland Junk Removal](https://www.tenthrock.com/locations/maryland-junk-removal/)
+- [Massachusetts Junk Removal](https://www.tenthrock.com/locations/massachusetts-junk-removal/)
+- [Michigan Junk Removal](https://www.tenthrock.com/locations/michigan-junk-removal/)
+- [Minnesota Junk Removal](https://www.tenthrock.com/locations/minnesota-junk-removal/)
+- [Mississippi Junk Removal](https://www.tenthrock.com/locations/mississippi-junk-removal/)
+- [Missouri Junk Removal](https://www.tenthrock.com/locations/missouri-junk-removal/)
+- [Montana Junk Removal](https://www.tenthrock.com/locations/montana-junk-removal/)
+- [Nebraska Junk Removal](https://www.tenthrock.com/locations/nebraska-junk-removal/)
+- [Nevada Junk Removal](https://www.tenthrock.com/locations/nevada-junk-removal/)
+- [New Hampshire Junk Removal](https://www.tenthrock.com/locations/new-hampshire-junk-removal/)
+- [New Jersey Junk Removal](https://www.tenthrock.com/locations/new-jersey-junk-removal/)
+- [New Mexico Junk Removal](https://www.tenthrock.com/locations/new-mexico-junk-removal/)
+- [New York Junk Removal](https://www.tenthrock.com/locations/new-york-junk-removal/)
+- [North Carolina Junk Removal](https://www.tenthrock.com/locations/north-carolina-junk-removal/)
+- [North Dakota Junk Removal](https://www.tenthrock.com/locations/north-dakota-junk-removal/)
+- [Ohio Junk Removal](https://www.tenthrock.com/locations/ohio-junk-removal/)
+- [Oklahoma Junk Removal](https://www.tenthrock.com/locations/oklahoma-junk-removal/)
+- [Oregon Junk Removal](https://www.tenthrock.com/locations/oregon-junk-removal/)
+- [Pennsylvania Junk Removal](https://www.tenthrock.com/locations/pennsylvania-junk-removal/)
+- [Rhode Island Junk Removal](https://www.tenthrock.com/locations/rhode-island-junk-removal/)
+- [South Carolina Junk Removal](https://www.tenthrock.com/locations/south-carolina-junk-removal/)
+- [South Dakota Junk Removal](https://www.tenthrock.com/locations/south-dakota-junk-removal/)
+- [Tennessee Junk Removal](https://www.tenthrock.com/locations/tennessee-junk-removal/)
+- [Texas Junk Removal](https://www.tenthrock.com/locations/texas-junk-removal/)
+- [Utah Junk Removal](https://www.tenthrock.com/locations/utah-junk-removal/)
+- [Vermont Junk Removal](https://www.tenthrock.com/locations/vermont-junk-removal/)
+- [Virginia Junk Removal](https://www.tenthrock.com/locations/virginia-junk-removal/)
+- [Washington Junk Removal](https://www.tenthrock.com/locations/washington-junk-removal/)
+- [West Virginia Junk Removal](https://www.tenthrock.com/locations/west-virginia-junk-removal/)
+- [Wisconsin Junk Removal](https://www.tenthrock.com/locations/wisconsin-junk-removal/)
+- [Wyoming Junk Removal](https://www.tenthrock.com/locations/wyoming-junk-removal/)
+
+## Contact
+- Phone: +1 727-510-5454
+- Email: hello@tenthrock.com
+`;
+
 export async function GET() {
-  const frontendUrl = await getFrontendUrl();
-  
-  const wpResult = await proxyWordPressFile('/llms.txt', frontendUrl);
-  if (wpResult) {
-    return new NextResponse(wpResult.content, {
-      headers: {
-        'Content-Type': 'text/plain',
-        'Cache-Control': 'public, max-age=3600',
-      },
-    });
-  }
-  
-  try {
-    const posts = await storage.getAllPosts();
-    const pages = await storage.getAllPages();
-    
-    let content = `# ${frontendUrl.replace(/https?:\/\//, '')}
-
-> This site is powered by headless WordPress with a Next.js frontend.
-
-## Pages
-
-`;
-    
-    for (const page of pages) {
-      const pageDesc = page.seoMetadata?.metaDesc || 
-        page.content?.replace(/<[^>]*>/g, '').slice(0, 150) || 
-        'Page content';
-      content += `- [${page.title}](${frontendUrl}/${page.slug}): ${pageDesc}\n`;
-    }
-    
-    content += `
-## Blog Posts
-
-`;
-    
-    for (const post of posts) {
-      const postDesc = post.excerpt?.replace(/<[^>]*>/g, '').slice(0, 150) || 
-        post.seoMetadata?.metaDesc || 
-        'Blog post';
-      content += `- [${post.title}](${frontendUrl}/blog/${post.slug}): ${postDesc}\n`;
-    }
-    
-    content += `
-## Optional
-
-- [Sitemap](${frontendUrl}/sitemap_index.xml)
-`;
-    
-    return new NextResponse(content, {
-      headers: {
-        'Content-Type': 'text/plain',
-        'Cache-Control': 'public, max-age=3600',
-      },
-    });
-  } catch (error) {
-    console.error('Error generating llms.txt:', error);
-    return new NextResponse('Error generating llms.txt', { 
-      status: 500,
-      headers: { 'Content-Type': 'text/plain' }
-    });
-  }
+  return new NextResponse(LLMS_TXT, {
+    headers: {
+      'Content-Type': 'text/plain',
+      'Cache-Control': 'public, max-age=3600',
+    },
+  });
 }
