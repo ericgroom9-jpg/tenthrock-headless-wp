@@ -50,3 +50,6 @@ timeoutMs = 180000
 
 [userenv.production]
 FRONTEND_URL = "https://www.tenthrock.com"
+
+[userenv.shared]
+NEXT_PUBLIC_SITE_URL = "https://www.tenthrock.com"
