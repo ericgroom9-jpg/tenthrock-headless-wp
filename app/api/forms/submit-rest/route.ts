@@ -36,9 +36,17 @@ const RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 /**
  * Verify a reCAPTCHA v3 token with Google. Enforced only when
  * RECAPTCHA_SECRET_KEY is configured, so forms keep working before the keys are
- * set. Fails OPEN on a network error reaching Google (an outage there must not
- * take the contact forms down — honeypot + rate limiting still apply), but
- * fails CLOSED on a missing token, a failed verification, or a low score.
+ * set.
+ *
+ * Consent-gated reCAPTCHA: the site runs the Usercentrics "Smart Data Protector"
+ * cookie-consent manager, which blocks Google's reCAPTCHA script until the
+ * visitor accepts the reCAPTCHA cookie category. Visitors who decline (or
+ * haven't interacted with the banner) therefore mint NO token — that's a normal
+ * legitimate state, not a bot signal. So we fail OPEN on a missing token (the
+ * honeypot + rate limiting remain as the floor) and only fail CLOSED when a
+ * token IS present but verification fails or the score is too low (a real bot
+ * signal). Also fails OPEN on a network error reaching Google so an outage there
+ * can't take the contact forms down.
  */
 async function verifyRecaptcha(
   token: string | null,
@@ -46,7 +54,8 @@ async function verifyRecaptcha(
 ): Promise<{ ok: boolean; score?: number; reason?: string }> {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
   if (!secret) return { ok: true, reason: 'not_configured' };
-  if (!token) return { ok: false, reason: 'missing_token' };
+  // No token = consent not granted (reCAPTCHA blocked by the CMP). Allow through.
+  if (!token) return { ok: true, reason: 'missing_token' };
 
   const params = new URLSearchParams({ secret, response: token });
   if (ip && ip !== 'unknown') params.set('remoteip', ip);
@@ -71,6 +80,12 @@ async function verifyRecaptcha(
       score: json.score,
       reason: `failed:${(json['error-codes'] || []).join(',')}`,
     };
+  }
+  // Bind the token to the action our client mints (submit-client uses
+  // "gf_submit"). A mismatch means a token issued for a different purpose on the
+  // same public site key is being replayed here — a bot signal, so fail CLOSED.
+  if (json.action && json.action !== 'gf_submit') {
+    return { ok: false, score: json.score, reason: `action_mismatch:${json.action}` };
   }
   if (typeof json.score === 'number' && json.score < minScore) {
     return { ok: false, score: json.score, reason: 'low_score' };
