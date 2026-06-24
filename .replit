@@ -53,3 +53,4 @@ FRONTEND_URL = "https://www.tenthrock.com"
 
 [userenv.shared]
 NEXT_PUBLIC_SITE_URL = "https://www.tenthrock.com"
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY = "6LcAazItAAAAAL2qj_0nsZdSq6UaiwHcttEfaNnD"

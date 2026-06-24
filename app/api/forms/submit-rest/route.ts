@@ -31,6 +31,53 @@ function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+const RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
+
+/**
+ * Verify a reCAPTCHA v3 token with Google. Enforced only when
+ * RECAPTCHA_SECRET_KEY is configured, so forms keep working before the keys are
+ * set. Fails OPEN on a network error reaching Google (an outage there must not
+ * take the contact forms down — honeypot + rate limiting still apply), but
+ * fails CLOSED on a missing token, a failed verification, or a low score.
+ */
+async function verifyRecaptcha(
+  token: string | null,
+  ip: string
+): Promise<{ ok: boolean; score?: number; reason?: string }> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  if (!secret) return { ok: true, reason: 'not_configured' };
+  if (!token) return { ok: false, reason: 'missing_token' };
+
+  const params = new URLSearchParams({ secret, response: token });
+  if (ip && ip !== 'unknown') params.set('remoteip', ip);
+
+  let json: any;
+  try {
+    const res = await fetch(RECAPTCHA_VERIFY_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params,
+    });
+    json = await res.json();
+  } catch (err) {
+    console.error('reCAPTCHA verify request failed (failing open):', err);
+    return { ok: true, reason: 'verify_unreachable' };
+  }
+
+  const minScore = Number(process.env.RECAPTCHA_MIN_SCORE ?? '0.5');
+  if (!json.success) {
+    return {
+      ok: false,
+      score: json.score,
+      reason: `failed:${(json['error-codes'] || []).join(',')}`,
+    };
+  }
+  if (typeof json.score === 'number' && json.score < minScore) {
+    return { ok: false, score: json.score, reason: 'low_score' };
+  }
+  return { ok: true, score: json.score };
+}
+
 function getWpRestBaseUrl(): string {
   // Prefer the canonical REST URL, then derive from the GraphQL URL or the
   // legacy WP_API_URL secret. All three resolve to the same `<host>/wp-json` base.
@@ -69,6 +116,25 @@ export async function POST(request: NextRequest) {
         confirmation_message: 'Thank you for your submission.',
         entry_id: null,
       });
+    }
+
+    // reCAPTCHA v3 verification (enforced only when RECAPTCHA_SECRET_KEY is set).
+    const recaptchaToken = formData.get('recaptcha_token');
+    const recaptcha = await verifyRecaptcha(
+      typeof recaptchaToken === 'string' ? recaptchaToken : null,
+      ip
+    );
+    if (!recaptcha.ok) {
+      console.warn(
+        'reCAPTCHA rejected submission:',
+        recaptcha.reason,
+        'score=',
+        recaptcha.score
+      );
+      return NextResponse.json(
+        { error: "We couldn't verify that you're human. Please try again." },
+        { status: 400 }
+      );
     }
 
     if (!formId) {

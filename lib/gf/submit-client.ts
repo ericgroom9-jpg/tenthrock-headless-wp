@@ -7,6 +7,8 @@
  * for compound fields like the consent checkbox).
  */
 
+import { getRecaptchaToken } from "./recaptcha";
+
 export interface GfSubmitResult {
   ok: boolean;
   redirectUrl?: string;
@@ -21,6 +23,12 @@ export async function submitGravityForm(
 ): Promise<GfSubmitResult> {
   const data = new FormData(form);
   data.set("formId", String(formId));
+
+  // Attach a reCAPTCHA v3 token (verified server-side in /api/forms/submit-rest).
+  // Resolves to undefined when reCAPTCHA isn't configured or fails to load, in
+  // which case the API route decides whether to enforce — forms never break.
+  const recaptchaToken = await getRecaptchaToken("gf_submit");
+  if (recaptchaToken) data.set("recaptcha_token", recaptchaToken);
 
   let res: Response;
   try {
