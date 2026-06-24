@@ -69,16 +69,25 @@ export function CookieConsent() {
       </Script>
 
       {/*
-       * Hide the floating Usercentrics privacy trigger ("fingerprint" button).
-       * The CMP (browser-ui) renders it as <button data-testid="uc-privacy-button">
-       * INSIDE the #usercentrics-root Shadow DOM, so page-level CSS cannot reach
-       * it. We inject a scoped <style> into that shadow root once it exists, and
-       * keep re-checking for ~20s so it survives the CMP's initial re-renders.
-       * The consent banner and the footer "Privacy Settings" link (which calls
-       * UC_UI.showSecondLayer) remain fully functional.
+       * Scoped CSS injected into the CMP's #usercentrics-root Shadow DOM.
+       * The Usercentrics browser-ui renders entirely inside that shadow root, so
+       * page-level CSS cannot reach it — we inject a <style> once the root exists
+       * and keep re-checking for ~20s so it survives the CMP's initial re-renders.
+       *
+       * Two customizations:
+       *   1. Hide the floating privacy trigger ("fingerprint" button,
+       *      [data-testid="uc-privacy-button"]). The footer "Privacy Settings"
+       *      link (UC_UI.showSecondLayer) remains fully functional.
+       *   2. Shrink the default consent banner into a compact card pinned to the
+       *      bottom-right corner ([data-testid="uc-banner-content"]). The banner's
+       *      outer layer ([data-testid="uc-default-banner"]) is a transparent,
+       *      full-viewport flex layer that centers the bar; rather than fight its
+       *      flex alignment we position the content box itself `position:fixed` in
+       *      the corner. width:calc(100% - 32px) + max-width keeps it edge-to-edge
+       *      on small screens. All consent controls remain intact and functional.
        */}
-      <Script id="usercentrics-hide-privacy-button" strategy="afterInteractive">
-        {`(function(){function inject(){var r=document.getElementById('usercentrics-root');if(!(r&&r.shadowRoot))return;if(!r.shadowRoot.getElementById('uc-hide-privacy-btn')){var s=document.createElement('style');s.id='uc-hide-privacy-btn';s.textContent='[data-testid="uc-privacy-button"]{display:none !important;}';r.shadowRoot.appendChild(s);}}var n=0,iv=setInterval(function(){inject();if(++n>100)clearInterval(iv);},200);})();`}
+      <Script id="usercentrics-cmp-styles" strategy="afterInteractive">
+        {`(function(){var css='[data-testid="uc-privacy-button"]{display:none !important;}[data-testid="uc-banner-content"]{position:fixed !important;right:16px !important;bottom:16px !important;left:auto !important;top:auto !important;max-width:420px !important;width:calc(100% - 32px) !important;max-height:calc(100vh - 32px) !important;border-radius:12px !important;box-shadow:0 10px 34px rgba(0,0,0,.25) !important;}';function inject(){var r=document.getElementById('usercentrics-root');if(!(r&&r.shadowRoot))return;var s=r.shadowRoot.getElementById('uc-custom-styles');if(!s){s=document.createElement('style');s.id='uc-custom-styles';s.textContent=css;r.shadowRoot.appendChild(s);}}var n=0,iv=setInterval(function(){inject();if(++n>100)clearInterval(iv);},200);})();`}
       </Script>
     </>
   );
