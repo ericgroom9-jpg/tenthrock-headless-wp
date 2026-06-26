@@ -88,6 +88,13 @@ interface ServiceTemplateProps {
  ctaImage?: string;
  ctaImageAlt?: string;
  seoMetadata?: SeoMetadata | null;
+ /**
+  * Extra Schema.org graph nodes (e.g. a Service node) to merge into this
+  * page's single JSON-LD script. Only the CPT service route passes this;
+  * standalone marketing pages render the template without it and keep
+  * Yoast's schema unchanged.
+  */
+ additionalSchemaNodes?: Record<string, unknown>[];
 }
 
 const defaultProcessSteps = [
@@ -239,6 +246,7 @@ export default function ServiceTemplate({
  ctaImage,
  ctaImageAlt,
  seoMetadata,
+ additionalSchemaNodes,
 }: ServiceTemplateProps) {
  const router = useRouter();
  const pathname = usePathname();
@@ -266,7 +274,7 @@ export default function ServiceTemplate({
 
  return (
  <div className="flex flex-col min-h-screen bg-white">
- <JsonLdSchema seo={seoMetadata} />
+ <JsonLdSchema seo={seoMetadata} additionalNodes={additionalSchemaNodes} />
  <a href="#main-content" className="skip-link" data-testid="skip-link">
  Skip to main content
  </a>

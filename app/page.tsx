@@ -24,7 +24,7 @@ export default async function Home() {
   ]);
   return (
     <>
-      <JsonLdSchema seo={acf?.seoMetadata} />
+      <JsonLdSchema seo={acf?.seoMetadata} upgradeOrganization />
       <HomeClient
         acf={acf}
         globalSections={globalSections}

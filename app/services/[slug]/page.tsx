@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { fetchServiceWithAcf } from '@/lib/wordpress';
 import ServiceTemplate from '@/components/services/ServiceTemplate';
-import { JsonLdSchema } from '@/components/seo/JsonLdSchema';
+import { buildServiceSchema } from '@/lib/seo-schema';
 import { DEFAULT_OG_IMAGE, toCanonicalUrl } from '@/lib/seo-metadata';
 import { SERVICE_PUBLIC_TO_WP, SERVICE_RENAMED_WP_SLUGS } from '@/lib/config/url-redirects';
 import { getFrontendUrl } from '@/lib/seo-proxy';
@@ -75,10 +75,13 @@ export default async function ServicePage({ params }: PageProps) {
   const service = await resolveService(slug);
   if (!service) notFound();
 
-  return (
-    <>
-      <JsonLdSchema seo={service.seoMetadata} />
-      <ServiceTemplate {...service} />
-    </>
-  );
+  const serviceSchema = buildServiceSchema({
+    slug,
+    name: service.serviceName,
+    description:
+      service.seoMetadata?.metaDesc ||
+      `On-demand, same-day commercial ${service.serviceName.toLowerCase()} for businesses of all sizes.`,
+  });
+
+  return <ServiceTemplate {...service} additionalSchemaNodes={[serviceSchema]} />;
 }

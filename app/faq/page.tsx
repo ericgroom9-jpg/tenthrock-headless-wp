@@ -1,6 +1,8 @@
 import FaqPage from "@/components/faq/FaqPage";
+import { defaultFaqCategories } from "@/lib/data/faq-defaults";
 import { fetchAllFaqs, fetchFaqPageAcf, fetchGlobalSections, fetchPageTemplateSeo } from "@/lib/wordpress";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
+import { buildFaqPageSchema } from "@/lib/seo-schema";
 import { buildPageMetadata } from "@/lib/seo-metadata";
 
 export const revalidate = 1800;
@@ -21,9 +23,15 @@ export default async function Page() {
     fetchGlobalSections(),
     fetchPageTemplateSeo("template-faq", "faq"),
   ]);
+  const effectiveCategories = categories.length > 0 ? categories : defaultFaqCategories;
+  const faqSchema = buildFaqPageSchema(effectiveCategories.flatMap((c) => c.faqs));
+
   return (
     <>
-      <JsonLdSchema seo={acf?.seoMetadata || seo} />
+      <JsonLdSchema
+        seo={acf?.seoMetadata || seo}
+        additionalNodes={faqSchema ? [faqSchema] : undefined}
+      />
       <FaqPage
         categories={categories.length > 0 ? categories : undefined}
         acf={acf}

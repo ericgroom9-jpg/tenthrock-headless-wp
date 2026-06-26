@@ -7,3 +7,4 @@
 - [reCAPTCHA consent-gating](recaptcha-consent-gating.md) — Usercentrics blocks reCAPTCHA until cookie consent, so GF verify must fail OPEN on missing token (only block present-but-invalid tokens).
 - [www canonical host](www-canonical-host.md) — www.tenthrock.com is canonical; apex 301s→www in middleware (Replit serves both 200); canonicals normalized via toCanonicalUrl; FRONTEND_URL prod-only.
 - [Yoast meta via API](yoast-meta-rest-writes.md) — Yoast meta isn't writable via default WP REST (silently dropped); write via Code Snippets REST API + custom tr/v1/seo-meta route; ISR serves stale on first read.
+- [RSC data imports from client modules](rsc-client-module-data-imports.md) — importing plain data from a "use client" file into a Server Component yields a client-reference stub, not the array (runtime ".flatMap is not a function"); keep shared data in a plain lib/data/*.ts module.

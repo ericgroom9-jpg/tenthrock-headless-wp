@@ -4,6 +4,7 @@ import { getStateLocationContent } from "@/lib/data/state-location-content";
 import { toTitleCase } from "@/lib/utils/title-case";
 import LocationTemplateClient from "./LocationTemplateClient";
 import { JsonLdSchema } from "@/components/seo/JsonLdSchema";
+import { buildLocationServiceSchema } from "@/lib/seo-schema";
 import { DEFAULT_OG_IMAGE, toCanonicalUrl } from "@/lib/seo-metadata";
 import type { Metadata } from "next";
 
@@ -48,7 +49,8 @@ export default async function LocationTemplatePage({ params }: PageProps) {
   const localStateData = getStateData(stateKey);
   const localContent = getStateLocationContent(stateKey);
 
-  const locationName = wpData?.locationName || getStateName(slug);
+  const stateName = getStateName(slug);
+  const locationName = wpData?.locationName || stateName;
 
   const heroSubtitle = wpData?.heroSubtitle || localContent?.subtitle || "On-demand waste removal, dumpster rentals, and managed programs for businesses across the region. Local crews, nationwide support.";
   const aboutDescription = wpData?.aboutDescription || localContent?.aboutDesc || "Our local crews are fully licensed, insured, and trained to handle commercial waste for businesses of all sizes. From emergency overflow pickups to scheduled dumpster service, we deliver fast, reliable waste solutions backed by our nationwide infrastructure.";
@@ -65,9 +67,11 @@ export default async function LocationTemplatePage({ params }: PageProps) {
   const cities = (wpData?.cities?.length ? wpData.cities : null) || localStateData?.cities || [];
   const faqs = (wpData?.faqs?.length ? wpData.faqs : null) || localContent?.faqs || [];
 
+  const locationSchema = buildLocationServiceSchema({ slug, stateName });
+
   return (
     <>
-      <JsonLdSchema seo={wpData?.seoMetadata} />
+      <JsonLdSchema seo={wpData?.seoMetadata} additionalNodes={[locationSchema]} />
       <LocationTemplateClient
         slug={slug}
         locationName={locationName}
