@@ -101,6 +101,11 @@ export const INDUSTRY_PUBLIC_TO_WP: Record<string, string> = {
  * entries below.
  */
 const LEGACY_ALIASES: Record<string, string> = {
+  // Duplicate locations hub: /nationwide-waste-management-disposal and
+  // /locations are the same intent. Keep /locations as canonical and 301 the
+  // nationwide page into it so link equity consolidates onto one hub instead of
+  // splitting across two near-identical pages.
+  "/nationwide-waste-management-disposal": "/locations",
   // Service: the clean natural-disaster root used in the primary menu.
   "/natural-disaster-cleanup": "/services/natural-disaster-cleanup",
   // Service marketing-alias roots. These previously 301'd to a canonical

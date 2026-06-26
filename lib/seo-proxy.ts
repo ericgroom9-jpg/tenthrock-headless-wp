@@ -81,12 +81,17 @@ export async function proxyWordPressFile(
       const feOrigin = frontendUrlObj.origin;
       content = content.replace(
         new RegExp(escapeRegExp(feOrigin) + '(/[^<>"\\s]*)', 'g'),
-        (full: string, p: string) => {
+        (_full: string, p: string) => {
           const hadTrailing = p.length > 1 && p.endsWith('/');
           const lookup = hadTrailing ? p.slice(0, -1) : p;
-          const target = getLegacyRedirectTarget(lookup);
-          if (!target) return full;
-          return `${feOrigin}${target}${hadTrailing ? '/' : ''}`;
+          // Resolve any legacy service/industry/location path to its new home;
+          // otherwise keep the path (already slash-stripped above for non-root).
+          const finalPath = getLegacyRedirectTarget(lookup) || lookup;
+          // Emit the final, non-redirecting URL. trailingSlash is false, so Next
+          // 308s "/path/" -> "/path"; listing the slash-stripped form keeps every
+          // sitemap <loc> a 200 that matches its self-canonical. The homepage "/"
+          // is preserved because its lookup stays "/".
+          return `${feOrigin}${finalPath}`;
         }
       );
     }
