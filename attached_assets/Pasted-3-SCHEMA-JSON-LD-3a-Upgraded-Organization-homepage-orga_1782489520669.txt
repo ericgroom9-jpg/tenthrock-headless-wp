@@ -1,0 +1,86 @@
+3) SCHEMA (JSON-LD)
+3a. Upgraded Organization (homepage #organization — currently bare: no phone, email, sameAs, address)
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.tenthrock.com/#organization",
+  "name": "Tenth Rock",
+  "url": "https://www.tenthrock.com/",
+  "description": "Nationwide, on-demand commercial waste management and junk removal for businesses. No contracts, 24/7 response, flat-rate pricing.",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.tenthrock.com/wp-content/uploads/2026/05/TenthRock-Logo.avif",
+    "width": 750,
+    "height": 135
+  },
+  "image": "https://www.tenthrock.com/wp-content/uploads/2026/05/TenthRock-Logo.avif",
+  "telephone": "+1-727-510-5454",
+  "email": "hello@tenthrock.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+1-727-510-5454",
+    "email": "hello@tenthrock.com",
+    "contactType": "customer service",
+    "areaServed": "US",
+    "availableLanguage": "English"
+  }],
+  "sameAs": [
+    "https://www.facebook.com/tenthrocksolutions",
+    "https://www.instagram.com/tenth_rock/",
+    "https://www.linkedin.com/company/tenth-rock",
+    "https://x.com/Tenth_Rock"
+  ]
+}
+
+Fill in the full street PostalAddress if you have a public business address. If you'd rather present as a service business, you can use @type: ["Organization","ProfessionalService"].
+3b. Service schema — add to each /services/* page (example: Waste Removal)
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tenthrock.com/services/waste-removal-services#service",
+  "name": "Commercial Waste Removal Services",
+  "serviceType": "Commercial waste removal",
+  "description": "On-demand, same-day commercial waste removal for businesses of all sizes.",
+  "provider": { "@id": "https://www.tenthrock.com/#organization" },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "url": "https://www.tenthrock.com/services/waste-removal-services"
+}
+3c. Service + state — add to each /locations/{state}-junk-removal page (example: Texas)
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.tenthrock.com/locations/texas-junk-removal#service",
+  "name": "Commercial Waste Management & Junk Removal in Texas",
+  "serviceType": "Commercial waste management and junk removal",
+  "provider": { "@id": "https://www.tenthrock.com/#organization" },
+  "areaServed": { "@type": "State", "name": "Texas" },
+  "url": "https://www.tenthrock.com/locations/texas-junk-removal"
+}
+
+Set areaServed.name and the slug per state. Keep the offering label consistent (commercial vs residential — see positioning note).
+3d. FAQPage — add to /faq (populate with the page's real Q&As)
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.tenthrock.com/faq#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you require a long-term contract?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Tenth Rock is on-demand with no long-term contracts." }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can you respond?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We offer same-day and 24/7 response in the areas we serve." }
+    }
+  ]
+}
+
+Replace the questions/answers with the exact text shown on your FAQ page (the on-page text must match the schema).
