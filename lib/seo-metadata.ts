@@ -96,3 +96,26 @@ export function buildPageMetadata({
 
   return metadata;
 }
+
+/**
+ * Lightweight per-page canonical + OG helper for static pages that don't pull a
+ * Yoast SEO payload. Pass a path (e.g. "/contact") or an absolute URL; it is
+ * normalized to the single canonical www origin via toCanonicalUrl (which also
+ * strips non-root trailing slashes), so the emitted canonical never points at a
+ * URL that itself 301/308-redirects — protecting, not harming, SEO.
+ *
+ * Deliberately routes through CANONICAL_ORIGIN/toCanonicalUrl rather than a raw
+ * `${process.env.NEXT_PUBLIC_SITE_URL}${path}` concat so canonicals stay on the
+ * www host in lockstep with buildPageMetadata and the middleware apex→www 301.
+ * Defaults the OG image to the shared DEFAULT_OG_IMAGE so social cards never 404.
+ */
+export function canonicalMeta(path: string, ogImage?: string): Metadata {
+  const url = toCanonicalUrl(path);
+  return {
+    alternates: { canonical: url },
+    openGraph: {
+      url,
+      images: [ogImage ?? DEFAULT_OG_IMAGE],
+    },
+  };
+}

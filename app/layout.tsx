@@ -9,14 +9,14 @@ import { MenuProvider } from "@/components/shared/MenuProvider";
 import ForceFullPageNavigation from "@/components/shared/NavigationProgress";
 import { CANONICAL_ORIGIN } from "@/lib/seo-metadata";
 
-const manrope = Manrope({ 
-  subsets: ["latin"], 
+const manrope = Manrope({
+  subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const inter = Inter({ 
-  subsets: ["latin"], 
+const inter = Inter({
+  subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -24,11 +24,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(CANONICAL_ORIGIN),
   title: "Tenth Rock Waste Solutions | Nationwide Commercial Waste Management",
-  description: "Leading commercial waste management solutions across 48 states. Dumpster rental, emergency overflow, event services, and centralized waste programs for businesses.",
+  description:
+    "Leading commercial waste management solutions across 48 states. Dumpster rental, emergency overflow, event services, and centralized waste programs for businesses.",
 };
 
 function deriveWpOrigin(): string | null {
-  const url = process.env.WORDPRESS_GRAPHQL_URL || process.env.WORDPRESS_REST_URL;
+  const url =
+    process.env.WORDPRESS_GRAPHQL_URL || process.env.WORDPRESS_REST_URL;
   if (!url) return null;
   try {
     return new URL(url).origin;
@@ -60,7 +62,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://widget.prod.equally.ai" />
         <CookieConsent />
       </head>
-      <body className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`} suppressHydrationWarning>
+      <body
+        className={`${manrope.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}
+        suppressHydrationWarning
+      >
         <GlobalScripts />
         <Script
           id="equally-accessibility-widget"
@@ -70,9 +75,7 @@ export default function RootLayout({
           }}
         />
         <ForceFullPageNavigation />
-        <MenuProvider>
-          {children}
-        </MenuProvider>
+        <MenuProvider>{children}</MenuProvider>
         <Toaster />
       </body>
     </html>
