@@ -3,7 +3,7 @@ import { PostListServer } from '@/components/posts/PostListServer';
 import { toCanonicalUrl } from '@/lib/seo-metadata';
 import type { Metadata } from 'next';
 
-export const revalidate = 1800;
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Blog | WordPress Headless CMS',

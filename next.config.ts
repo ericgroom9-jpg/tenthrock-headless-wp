@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 2592000,
     remotePatterns: [
       { protocol: "https", hostname: "tenthrock.sherstaging.com" },
+      { protocol: "https", hostname: "headlesstestsh.wpenginepowered.com" },
       { protocol: "https", hostname: "www.tenthrock.com" },
       { protocol: "https", hostname: "tenthrock.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
