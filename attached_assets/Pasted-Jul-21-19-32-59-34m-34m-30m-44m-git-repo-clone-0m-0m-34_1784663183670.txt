@@ -1,0 +1,192 @@
+Jul 21 19:32:59  [34m╭────────────[34m[30m[44m git repo clone [0m[0m[34m───────────╼[0m
+Jul 21 19:32:59  [34m│[0m [34m › fetching app source code[0m
+Jul 21 19:32:59  [34m│[0m => Selecting branch "main"
+Jul 21 19:33:49  [34m│[0m => Checking out commit "26a4b2d7ed6b713493a6765d19d6d9abe75b3df2"
+Jul 21 19:33:52  [34m│[0m 
+Jul 21 19:33:52  [34m│[0m [32m ✔ cloned repo to [35m/workspace[0m[0m
+Jul 21 19:33:52  [34m╰────────────────────────────────────────╼[0m
+Jul 21 19:33:52  
+Jul 21 19:33:52  [34m › configuring build-time app environment variables:[0m
+Jul 21 19:33:52       WP_AUTH_PASSWORD WP_ADMIN_APP_PASSWORD WP_PREVIEW_SECRET GF_CONSUMER_KEY GF_CONSUMER_SECRET RECAPTCHA_SECRET_KEY DATABASE_URL WP_API_URL INSIGHTLY_API_KEY preview_user_pass WP_AUTH_USER WP_ADMIN_USER
+Jul 21 19:33:52  
+Jul 21 19:33:52  [34m › configuring custom build command to be run at the end of the build:[0m
+Jul 21 19:33:52     [34m│[0m npm run build
+Jul 21 19:33:52  
+Jul 21 19:33:52  [34m╭────────────[34m[30m[44m buildpack detection [0m[0m[34m───────────╼[0m
+Jul 21 19:33:52  [34m│[0m [34m › using Ubuntu 22.04 stack[0m
+Jul 21 19:33:54  [34m│[0m Detected the following buildpacks suitable to build your app:
+Jul 21 19:33:54  [34m│[0m 
+Jul 21 19:33:54  [34m│[0m    digitalocean/nodejs-appdetect  v0.1.2    
+Jul 21 19:33:54  [34m│[0m    heroku/nodejs                  v0.342.5  (Node.js)
+Jul 21 19:33:54  [34m│[0m    digitalocean/procfile          v0.1.0    (Procfile)
+Jul 21 19:33:54  [34m│[0m    digitalocean/custom            v0.2.0    (Custom Build Command)
+Jul 21 19:33:54  [34m╰─────────────────────────────────────────────╼[0m
+Jul 21 19:33:54  
+Jul 21 19:33:54  [34m╭────────────[34m[30m[44m app build [0m[0m[34m───────────╼[0m
+Jul 21 19:33:54  [34m│[0m [33;1mWarning: [0mno analyzed metadata found at path '/layers/analyzed.toml'
+Jul 21 19:33:54  [34m│[0m Timer: Builder started at 2026-07-21T19:33:54Z
+Jul 21 19:33:55  [34m│[0m        
+Jul 21 19:33:55  [34m│[0m -----> Creating runtime environment
+Jul 21 19:33:55  [34m│[0m        
+Jul 21 19:33:55  [34m│[0m        NPM_CONFIG_LOGLEVEL=error
+Jul 21 19:33:55  [34m│[0m        NODE_VERBOSE=false
+Jul 21 19:33:55  [34m│[0m        NODE_ENV=
+Jul 21 19:33:55  [34m│[0m        NODE_MODULES_CACHE=true
+Jul 21 19:33:55  [34m│[0m        
+Jul 21 19:33:55  [34m│[0m -----> Installing binaries
+Jul 21 19:33:55  [34m│[0m        engines.node (package.json):   20.x
+Jul 21 19:33:55  [34m│[0m        engines.npm (package.json):    unspecified (use default)
+Jul 21 19:33:55  [34m│[0m        
+Jul 21 19:33:55  [34m│[0m        Resolving node version 20.x...
+Jul 21 19:33:55  [34m│[0m        Downloading and installing node 20.20.2...
+Jul 21 19:33:55  [34m│[0m        Validating checksum
+Jul 21 19:33:57  [34m│[0m        Using default npm version: 10.8.2
+Jul 21 19:33:58  [34m│[0m        
+Jul 21 19:33:58  [34m│[0m -----> Installing dependencies
+Jul 21 19:33:58  [34m│[0m        Installing node modules
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m        added 627 packages, and audited 628 packages in 36s
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m        76 packages are looking for funding
+Jul 21 19:34:34  [34m│[0m          run `npm fund` for details
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m        22 vulnerabilities (1 low, 9 moderate, 12 high)
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m        To address issues that do not require attention, run:
+Jul 21 19:34:34  [34m│[0m          npm audit fix
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m        To address all issues (including breaking changes), run:
+Jul 21 19:34:34  [34m│[0m          npm audit fix --force
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m        Run `npm audit` for details.
+Jul 21 19:34:34  [34m│[0m        npm notice
+Jul 21 19:34:34  [34m│[0m        npm notice New major version of npm available! 10.8.2 -> 12.0.1
+Jul 21 19:34:34  [34m│[0m        npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.1
+Jul 21 19:34:34  [34m│[0m        npm notice To update run: npm install -g npm@12.0.1
+Jul 21 19:34:34  [34m│[0m        npm notice
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m -----> Build
+Jul 21 19:34:34  [34m│[0m        
+Jul 21 19:34:34  [34m│[0m -----> Caching build
+Jul 21 19:34:34  [34m│[0m        - npm cache
+Jul 21 19:34:35  [34m│[0m        
+Jul 21 19:34:35  [34m│[0m -----> Pruning devDependencies
+Jul 21 19:34:35  [34m│[0m        Skipping because NODE_ENV is not 'production'
+Jul 21 19:34:35  [34m│[0m        
+Jul 21 19:34:35  [34m│[0m -----> Build succeeded!
+Jul 21 19:34:35  [34m│[0m Running custom build command: npm run build
+Jul 21 19:34:35  [34m│[0m 
+Jul 21 19:34:35  [34m│[0m > rest-express@1.0.0 build
+Jul 21 19:34:35  [34m│[0m > tsx script/build.ts
+Jul 21 19:34:35  [34m│[0m 
+Jul 21 19:34:36  [34m│[0m building Next.js app...
+Jul 21 19:34:36  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:37  [34m│[0m ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Jul 21 19:34:37  [34m│[0m Attention: Next.js now collects completely anonymous telemetry regarding usage.
+Jul 21 19:34:37  [34m│[0m This information is used to shape Next.js' roadmap and prioritize features.
+Jul 21 19:34:37  [34m│[0m You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+Jul 21 19:34:37  [34m│[0m https://nextjs.org/telemetry
+Jul 21 19:34:37  [34m│[0m 
+Jul 21 19:34:37  [34m│[0m    ▲ Next.js 16.0.8 (Turbopack)
+Jul 21 19:34:37  [34m│[0m    - Experiments (use with caution):
+Jul 21 19:34:37  [34m│[0m      ✓ optimizeCss
+Jul 21 19:34:37  [34m│[0m      · optimizePackageImports
+Jul 21 19:34:37  [34m│[0m      · serverActions
+Jul 21 19:34:37  [34m│[0m 
+Jul 21 19:34:37  [34m│[0m  ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+Jul 21 19:34:37  [34m│[0m    Creating an optimized production build ...
+Jul 21 19:34:37  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:46  [34m│[0m  ✓ Compiled successfully in 9.2s
+Jul 21 19:34:46  [34m│[0m    Running TypeScript ...
+Jul 21 19:34:56  [34m│[0m    Collecting page data using 9 workers ...
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:56  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:57  [34m│[0m    Generating static pages using 9 workers (0/86) ...
+Jul 21 19:34:57  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:57  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:57  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:57  [34m│[0m [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:57  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:34:58  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:07  [34m│[0m    Generating static pages using 9 workers (21/86) 
+Jul 21 19:35:11  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:11  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:11  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:11  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:11  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:11  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m [global-scripts] skipped: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m Error occurred prerendering page "/blog". Read more: https://nextjs.org/docs/messages/prerender-error
+Jul 21 19:35:12  [34m│[0m Error: getaddrinfo ENOTFOUND db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com
+Jul 21 19:35:12  [34m│[0m     at async (.next/server/chunks/ssr/lib_storage_ts_a43640e2._.js:7:32701)
+Jul 21 19:35:12  [34m│[0m     at async m (.next/server/chunks/ssr/[root-of-the-server]__df4f73c1._.js:1:4945) {
+Jul 21 19:35:12  [34m│[0m   errno: -3008,
+Jul 21 19:35:12  [34m│[0m   code: 'ENOTFOUND',
+Jul 21 19:35:12  [34m│[0m   syscall: 'getaddrinfo',
+Jul 21 19:35:12  [34m│[0m   hostname: 'db-postgresql-nyc3-xxxxx.b.db.ondigitalocean.com',
+Jul 21 19:35:12  [34m│[0m   digest: '295559673'
+Jul 21 19:35:12  [34m│[0m }
+Jul 21 19:35:12  [34m│[0m Export encountered an error on /blog/page: /blog, exiting the build.
+Jul 21 19:35:12  [34m│[0m  ⨯ Next.js build worker exited with code: 1 and signal: null
+Jul 21 19:35:12  [34m│[0m Error: Command failed: npx next build
+Jul 21 19:35:12  [34m│[0m     at genericNodeError (node:internal/errors:984:15)
+Jul 21 19:35:12  [34m│[0m     at wrappedFn (node:internal/errors:538:14)
+Jul 21 19:35:12  [34m│[0m     at checkExecSyncError (node:child_process:891:11)
+Jul 21 19:35:12  [34m│[0m     at execSync (node:child_process:963:15)
+Jul 21 19:35:12  [34m│[0m     at buildAll (/workspace/script/build.ts:35:3)
+Jul 21 19:35:12  [34m│[0m     at <anonymous> (/workspace/script/build.ts:60:1)
+Jul 21 19:35:12  [34m│[0m     at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+Jul 21 19:35:12  [34m│[0m     at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+Jul 21 19:35:12  [34m│[0m     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+Jul 21 19:35:12  [34m│[0m   status: 1,
+Jul 21 19:35:12  [34m│[0m   signal: null,
+Jul 21 19:35:12  [34m│[0m   output: [ null, null, null ],
+Jul 21 19:35:12  [34m│[0m   pid: 4051,
+Jul 21 19:35:12  [34m│[0m   stdout: null,
+Jul 21 19:35:12  [34m│[0m   stderr: null
+Jul 21 19:35:12  [34m│[0m }
+Jul 21 19:35:12  [34m│[0m npm notice
+Jul 21 19:35:12  [34m│[0m npm notice New major version of npm available! 10.8.2 -> 12.0.1
+Jul 21 19:35:12  [34m│[0m npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.1
+Jul 21 19:35:12  [34m│[0m npm notice To update run: npm install -g npm@12.0.1
+Jul 21 19:35:12  [34m│[0m npm notice
+Jul 21 19:35:12  [34m│[0m building: exit status 1
+Jul 21 19:35:12  [34m│[0m Timer: Builder ran for 1m17.632654142s and ended at 2026-07-21T19:35:12Z
+Jul 21 19:35:12  [34m│[0m [31;1mERROR: [0mfailed to build: exit status 1
+Jul 21 19:35:12  [34m│[0m 
+Jul 21 19:35:12  [34m│[0m 
+Jul 21 19:35:12  [34m│[0m [31m ✘ build failed[0m
