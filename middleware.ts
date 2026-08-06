@@ -280,9 +280,44 @@ export async function middleware(request: NextRequest) {
     const destination = match.target.startsWith('http')
       ? match.target
       : new URL(match.target, request.url).toString();
-    
-    console.log(`[Redirects] ${path} -> ${destination} (${match.type})`);
-    return NextResponse.redirect(destination, match.type);
+
+    // Loop guard: skip a WP-managed redirect whose destination is itself
+    // redirected straight back to this path by a legacy alias or another
+    // WP rule (e.g. WP sends /locations → /nationwide-waste-management-disposal
+    // while LEGACY_ALIASES sends that slug back to /locations → infinite 301s).
+    const normalizePath = (p: string) => (p !== '/' && p.endsWith('/') ? p.slice(0, -1) : p);
+    // Resolve any redirect target (relative or absolute, with query/fragment)
+    // to a bare pathname when it points at this site; null for external
+    // origins, which can never re-enter this middleware and so cannot loop.
+    const toLocalPath = (target: string): string | null => {
+      try {
+        const u = new URL(target, request.url);
+        const reqOrigin = new URL(request.url);
+        const isLocal =
+          u.hostname === reqOrigin.hostname ||
+          u.hostname === CANONICAL_HOST ||
+          u.hostname === hostname;
+        return isLocal ? normalizePath(u.pathname) : null;
+      } catch {
+        return null;
+      }
+    };
+    const destPath = toLocalPath(destination);
+    const from = normalizePath(path);
+    const legacyBack = destPath !== null ? getLegacyRedirectTarget(destPath) : null;
+    const wpBack = destPath !== null
+      ? redirects.find(r => normalizePath(r.origin) === destPath)
+      : undefined;
+    const wpBackPath = wpBack ? toLocalPath(wpBack.target) : null;
+    const bouncesBack =
+      (legacyBack !== null && normalizePath(legacyBack) === from) ||
+      (wpBackPath !== null && wpBackPath === from);
+    if (bouncesBack) {
+      console.warn(`[Redirects] Skip ${path} -> ${destination}: destination redirects back — would loop.`);
+    } else {
+      console.log(`[Redirects] ${path} -> ${destination} (${match.type})`);
+      return NextResponse.redirect(destination, match.type);
+    }
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -315,6 +350,23 @@ export async function middleware(request: NextRequest) {
 
       if (reservedCptSlugs.has(wpSlug)) {
         console.warn(`[TemplateSlugs] Skip ${config.wpTemplate}: WP slug "${wpSlug}" collides with an existing service/industry CPT slug.`);
+        continue;
+      }
+
+      // Loop guard: if a redirect (WP-managed or legacy alias) already 301s
+      // the WP slug somewhere (typically back to the canonical route),
+      // following the slug rename would create an infinite redirect loop:
+      //   canonical → wpPath (this leg) → canonical (redirect) → …
+      // Seen live on /locations ↔ /nationwide-waste-management-disposal,
+      // /services ↔ /commercial-waste, /about-us ↔ /about. Skip both legs:
+      // the canonical route serves 200 directly, and the WP-slug URL keeps
+      // its single existing 301.
+      const legacyTargetForWpPath = getLegacyRedirectTarget(wpPath);
+      const wpPathRedirected = redirects.some(r =>
+        r.origin === wpPath || r.origin === `${wpPath}/`,
+      ) || (legacyTargetForWpPath !== null && legacyTargetForWpPath !== wpPath);
+      if (wpPathRedirected) {
+        console.warn(`[TemplateSlugs] Skip ${config.wpTemplate}: WP slug path "${wpPath}" is itself redirected — following the rename would loop.`);
         continue;
       }
 
