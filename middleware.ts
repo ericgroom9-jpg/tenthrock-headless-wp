@@ -191,6 +191,34 @@ async function getRedirects(): Promise<Redirect[]> {
   return redirectsCache;
 }
 
+// ─────────────────────────────────────────────────────────────
+// RSC flight-response cache poisoning guard.
+// Next.js distinguishes RSC payloads from HTML only via
+// `Vary: rsc, next-router-state-tree, ...`, but Cloudflare ignores Vary
+// on HTML responses. Both variants otherwise share the same public
+// `s-maxage` Cache-Control, so the CDN can cache a `text/x-component`
+// flight payload under the plain page URL and serve raw payload text as
+// the document (observed live on /services). Detect RSC requests and
+// force a non-shared-cacheable Cache-Control on their responses; normal
+// HTML keeps its existing caching.
+// ─────────────────────────────────────────────────────────────
+function isRscRequest(request: NextRequest): boolean {
+  return (
+    request.headers.get('rsc') === '1' ||
+    request.headers.has('next-router-state-tree') ||
+    request.headers.has('next-router-prefetch') ||
+    request.headers.has('next-router-segment-prefetch') ||
+    request.nextUrl.searchParams.has('_rsc')
+  );
+}
+
+function withRscCacheGuard(request: NextRequest, response: NextResponse): NextResponse {
+  if (isRscRequest(request)) {
+    response.headers.set('Cache-Control', 'private, no-store, must-revalidate');
+  }
+  return response;
+}
+
 export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
@@ -295,7 +323,7 @@ export async function middleware(request: NextRequest) {
         const url = request.nextUrl.clone();
         url.pathname = canonical;
         console.log(`[TemplateSlugs] rewrite ${path} -> ${canonical} (template ${config.wpTemplate})`);
-        return NextResponse.rewrite(url);
+        return withRscCacheGuard(request, NextResponse.rewrite(url));
       }
 
       // Request hits the canonical folder route → 301 to the new WP slug,
@@ -310,7 +338,7 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  return withRscCacheGuard(request, NextResponse.next());
 }
 
 export const config = {
