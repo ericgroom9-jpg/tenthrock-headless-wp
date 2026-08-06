@@ -115,6 +115,11 @@ export default function UsMapPinsAnimation() {
 
   useEffect(() => {
     if (!containerRef.current) return;
+    // Feature-detect: without IntersectionObserver, reveal pins immediately.
+    if (typeof IntersectionObserver === "undefined") {
+      setHasStarted(true);
+      return;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -125,7 +130,13 @@ export default function UsMapPinsAnimation() {
       { threshold: 0.2 }
     );
     observer.observe(containerRef.current);
-    return () => observer.disconnect();
+    // Safety net: if the observer never fires (unsupported/stalled),
+    // show the pins anyway after a short delay.
+    const fallback = window.setTimeout(() => setHasStarted(true), 3000);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   const handleHover = (code: string) => setHoveredCode(code);
@@ -180,23 +191,35 @@ export default function UsMapPinsAnimation() {
         </g>
 
         {reducedMotion || !hasStarted ? (
-          hasStarted ? (
-            <g>
-              {MAP_PINS.map((p) => (
-                <Pin
-                  key={p.code}
-                  x={p.x}
-                  y={p.y}
-                  name={p.name}
-                  code={p.code}
-                  onHover={handleHover}
-                  onLeave={handleLeave}
-                  activeCode={hoveredCode}
-                  setActiveCode={setHoveredCode}
-                />
-              ))}
-            </g>
-          ) : null
+          <g
+            style={
+              hasStarted
+                ? undefined
+                : {
+                    // No-JS / failed-hydration safety net: pins are SSR'd
+                    // hidden and revealed by pure CSS if JS never runs. With
+                    // working JS, hasStarted flips well before 3s and the
+                    // animated branch takes over.
+                    opacity: 0,
+                    animation:
+                      "fadein-reveal-fallback 0.45s ease-out 3s forwards",
+                  }
+            }
+          >
+            {MAP_PINS.map((p) => (
+              <Pin
+                key={p.code}
+                x={p.x}
+                y={p.y}
+                name={p.name}
+                code={p.code}
+                onHover={handleHover}
+                onLeave={handleLeave}
+                activeCode={hoveredCode}
+                setActiveCode={setHoveredCode}
+              />
+            ))}
+          </g>
         ) : (
           <g>
             {MAP_PINS.map((p, i) => (

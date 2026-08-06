@@ -63,11 +63,20 @@ export default function FadeIn({
     none: "none",
   };
 
+  // Safety net: a pure-CSS animation forces the content visible even if
+  // JavaScript never runs (blocked, failed, or stalled hydration). The
+  // IntersectionObserver reveal above normally wins first; this only kicks
+  // in when it can't. Never remove — prevents blank pages without JS.
+  const FALLBACK_DELAY_S = 1.5;
+
   const inlineStyle: React.CSSProperties = {
     ...style,
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? "none" : translateMap[direction],
     transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s`,
+    animation: isVisible
+      ? "none"
+      : `fadein-reveal-fallback ${duration}s ease-out ${FALLBACK_DELAY_S + delay}s forwards`,
     willChange: "opacity, transform",
   };
 
@@ -76,6 +85,7 @@ export default function FadeIn({
       ref={ref as any}
       className={className}
       style={inlineStyle}
+      data-fadein=""
       id={id}
       {...rest}
     >

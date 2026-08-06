@@ -364,6 +364,34 @@
   }
 }
 
+/* No-JS / failed-hydration safety net for the FadeIn component:
+   forces wrapped content visible even when JavaScript never runs. */
+@keyframes fadein-reveal-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reduced motion: show FadeIn content immediately, no movement. */
+@media (prefers-reduced-motion: reduce) {
+  [data-fadein] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Desktop no-JS safety net for the homepage intro overlay: JS normally
+   removes it at ~2.6s (see LoadingScreen in TenthRockHome.tsx); if JS never
+   runs, this CSS fade dismisses it at ~3.2s so the page is never blocked. */
+@media (min-width: 768px) {
+  .loader-overlay {
+    animation: loaderMobileFade 0.6s 3.2s ease-in-out forwards;
+  }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
