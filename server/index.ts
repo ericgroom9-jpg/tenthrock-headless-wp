@@ -31,7 +31,7 @@ const command = isDev ? 'dev' : 'start';
 // cache-header rewrite and reintroduce the poisoning vector.
 const nextArgs = isDev
   ? [command, '-p', listenPort]
-  : [command, '-p', listenPort, '-H', '127.0.0.1'];
+  : [command, '-p', listenPort, '-H', 'localhost'];
 
 const nextProcess = spawn(nextBin, nextArgs, {
   stdio: 'inherit',
@@ -52,7 +52,11 @@ if (!isDev) {
   const proxy = http.createServer((req, res) => {
     const upstream = http.request(
       {
-        host: '127.0.0.1',
+        // Must be 'localhost' to match Next's bind hostname (-H localhost):
+        // Node resolves it the same way Next does, so this works whether the
+        // system maps localhost to 127.0.0.1 or ::1. Incoming headers
+        // (including the public Host) are passed through untouched.
+        host: 'localhost',
         port: Number(INTERNAL_PORT),
         path: req.url,
         method: req.method,
