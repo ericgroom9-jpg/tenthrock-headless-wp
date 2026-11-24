@@ -171,7 +171,7 @@ export const WP_REVALIDATE_SECONDS = 1800;
 export const WP_CACHE_TAG = 'wordpress';
 
 const getWpClient = (authToken?: string) => {
-  const wpApiUrl = process.env.WORDPRESS_GRAPHQL_URL;
+  const wpApiUrl = process.env.WORDPRESS_GRAPHQL_URL || process.env.WP_API_URL;
   
   if (!wpApiUrl) {
     throw new Error('WORDPRESS_GRAPHQL_URL environment variable is not set');
